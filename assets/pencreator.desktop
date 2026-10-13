@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=PenCreator
+Comment=Open-source pen plotter design and control software
+Exec=pencreator %f
+Icon=pencreator
+Terminal=false
+Categories=Graphics;2DGraphics;VectorGraphics;
+MimeType=image/svg+xml;
+StartupWMClass=pencreator

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="512" cy="330" r="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f5620f"/>
+      <stop offset="0.45" stop-color="#f5620f"/>
+      <stop offset="1" stop-color="#cf530d"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#8d949c"/>
+      <stop offset="0.35" stop-color="#eef1f4"/>
+      <stop offset="0.7" stop-color="#b9c0c7"/>
+      <stop offset="1" stop-color="#6f767e"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="1024" height="1024" rx="225"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1024" height="1024" fill="url(#bg)"/>
+    <rect y="735" width="1024" height="289" fill="#241808"/>
+    <rect y="735" width="1024" height="1" fill="#7f4317"/>
+    <rect y="736" width="1024" height="3" fill="#5a3a1a"/>
+    <!-- the line the pencil has drawn on the paper -->
+    <path d="M470 760 C380 790 320 735 230 770 C160 798 110 776 40 790" fill="none" stroke="#e9e5dc" stroke-width="16" stroke-linecap="round" opacity="0.95"/>
+    <path d="M470 760 C380 790 320 735 230 770 C160 798 110 776 40 790" fill="none" stroke="#9c978c" stroke-width="5" stroke-linecap="round" opacity="0.6" transform="translate(0 3)"/>
+    <!-- the pencil, tip down, leaning a little -->
+    <g transform="translate(470 750) rotate(10)">
+      <!-- wooden cone and the graphite -->
+      <path d="M-62 -190 L-17 -48 L17 -48 L62 -190 Z" fill="#e9c58f"/>
+      <path d="M-62 -190 L-17 -48 L-4 -48 L-30 -190 Z" fill="#d4a96b"/>
+      <path d="M-17 -48 L0 0 L17 -48 Z" fill="#33363b"/>
+      <path d="M-17 -48 L0 0 L4 -48 Z" fill="#1d1f22"/>
+      <!-- the body with its six-sided shading -->
+      <rect x="-62" y="-590" width="124" height="400" fill="#f6c21a"/>
+      <rect x="-62" y="-590" width="40" height="400" fill="#d9a30c"/>
+      <rect x="22" y="-590" width="40" height="400" fill="#e3b012"/>
+      <rect x="-22" y="-590" width="44" height="400" fill="#ffd94d"/>
+      <rect x="-62" y="-590" width="124" height="400" fill="none" stroke="#a97a08" stroke-width="3"/>
+      <!-- the ferrule, with the blue accent of the other icons -->
+      <rect x="-66" y="-670" width="132" height="86" fill="url(#steel)"/>
+      <rect x="-66" y="-654" width="132" height="14" fill="#2a4264"/>
+      <rect x="-66" y="-618" width="132" height="14" fill="#2a4264"/>
+      <rect x="-66" y="-670" width="132" height="5" fill="#ffffff" opacity="0.5"/>
+      <!-- the eraser -->
+      <path d="M-58 -670 V-722 Q-58 -756 0 -756 Q58 -756 58 -722 V-670 Z" fill="#ef7f95"/>
+      <path d="M-58 -670 V-722 Q-58 -756 -30 -756 V-670 Z" fill="#d86a82"/>
+    </g>
+    <!-- below the surface line everything is in the shade of the paper -->
+    <g fill="#e9e5dc" opacity="0.9">
+      <circle cx="505" cy="728" r="6"/><circle cx="530" cy="716" r="4"/><circle cx="548" cy="736" r="5"/>
+      <circle cx="418" cy="810" r="4"/><circle cx="318" cy="728" r="4"/>
+    </g>
+  </g>
+</svg>
