@@ -67,42 +67,42 @@
 66|Olovka spuštena
 67|Olovka podignuta
 68|Širina olovke
-69|Iscrtavanje posla
-70|Iscrtavanje posla…
-71|Ploter
-72|Napredak
-73|Svojstva
-74|Stavi odabrane oblike na ovaj sloj
-75|Pročitaj uređaj iz datoteke
-76|Spremno
-77|Poništi prikaz
-78|Spremi
-79|Spremi kao…
-80|Spremi ovaj uređaj u datoteku
-81|Uređaj je spremljen u {}
-82|Spremljeno: {}
-83|Servo (M3 S…)
-84|Postavke
-85|Oblici na ovom sloju
-86|Prikazano na kartici Kamera
-87|Prikazano u radnom području
-88|Brzina
-89|Brzina pomaka s podignutom olovkom
-90|Start
-91|Uključeno
-92|Uređaj ovog projekta
-93|Uređaj je dodan.
-94|Uređaj je spremljen.
-95|Prvo ispuna, zatim obris preko nje, da rub bude čist.
-96|Olovka prati linije oblika. Otvorene linije također rade.
-97|Olovka se podiže pomoću
-98|Radno područje je list do kojeg olovka dosiže. Nula stroja je kut u kojem olovka počinje.
-99|Nema što crtati: stavite oblike na uključene slojeve.
-100|Još nema što prikazati: nacrtajte oblike i stavite ih na uključene slojeve.
-101|Ova verzija ne može koristiti kamere računala.
-102|Ovaj uređaj nema uključenu kameru. Dodajte je u postavkama uređaja.
-103|Ovog uređaja nema na popisu: došao je s projektom
-104|Ovo je zamjenski uređaj (Dummy): zadano radno područje i brzine.
+69|Iscrtavanje posla…
+70|Ploter
+71|Pregled
+72|Svojstva
+73|Stavi odabrane oblike na ovaj sloj
+74|Pročitaj uređaj iz datoteke
+75|Spremno
+76|Poništi prikaz
+77|Spremi
+78|Spremi kao…
+79|Spremi ovaj uređaj u datoteku
+80|Uređaj je spremljen u {}
+81|Spremljeno: {}
+82|Servo (M3 S…)
+83|Postavke
+84|Oblici na ovom sloju
+85|Prikazano na kartici Kamera
+86|Prikazano u radnom području
+87|Brzina
+88|Brzina pomaka s podignutom olovkom
+89|Start
+90|Uključeno
+91|Uređaj ovog projekta
+92|Uređaj je dodan.
+93|Uređaj je spremljen.
+94|Prvo ispuna, zatim obris preko nje, da rub bude čist.
+95|Olovka prati linije oblika. Otvorene linije također rade.
+96|Olovka se podiže pomoću
+97|Radno područje je list do kojeg olovka dosiže. Nula stroja je kut u kojem olovka počinje.
+98|Nema što crtati: stavite oblike na uključene slojeve.
+99|Još nema što prikazati: nacrtajte oblike i stavite ih na uključene slojeve.
+100|Ova verzija ne može koristiti kamere računala.
+101|Ovaj uređaj nema uključenu kameru. Dodajte je u postavkama uređaja.
+102|Ovog uređaja nema na popisu: došao je s projektom
+103|Ovo je zamjenski uređaj (Dummy): zadano radno područje i brzine.
+104|Vrijeme {} / {}
 105|Previše uređaja
 106|Jedinice
 107|Prikaz

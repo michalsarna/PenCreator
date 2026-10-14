@@ -67,42 +67,42 @@
 66|Pen omlaag
 67|Pen omhoog
 68|Penbreedte
-69|Plot van de opdracht
-70|Plot van de opdracht…
-71|Plotter
-72|Voortgang
-73|Eigenschappen
-74|De geselecteerde vormen op deze laag plaatsen
-75|Een apparaat uit een bestand lezen
-76|Gereed
-77|Weergave herstellen
-78|Opslaan
-79|Opslaan als…
-80|Dit apparaat in een bestand opslaan
-81|Apparaat opgeslagen in {}
-82|{} opgeslagen
-83|Servo (M3 S…)
-84|Instellingen
-85|Vormen op deze laag
-86|Getoond in het tabblad Camera
-87|Getoond in het werkgebied
-88|Snelheid
-89|Snelheid van de bewegingen met opgeheven pen
-90|Start
-91|Ingeschakeld
-92|Het apparaat van dit project
-93|Het apparaat is toegevoegd.
-94|Het apparaat is opgeslagen.
-95|Eerst de vulling, dan de contour erover, zodat de rand netjes is.
-96|De pen volgt de lijnen van de vormen. Open lijnen werken ook.
-97|De pen wordt opgetild door
-98|Het werkgebied is het vel dat de pen bereikt. De machinenul is de hoek waar de pen begint.
-99|Er is niets te tekenen: zet vormen op ingeschakelde lagen.
-100|Er is nog niets te tonen: teken vormen en zet ze op ingeschakelde lagen.
-101|Deze versie kan de camera's van de computer niet gebruiken.
-102|Dit apparaat heeft geen ingeschakelde camera. Voeg er een toe in de apparaatinstellingen.
-103|Dit apparaat staat niet in de lijst: het kwam met het project mee
-104|Dit is het vervangende apparaat (Dummy): standaard werkgebied en snelheden.
+69|Plot van de opdracht…
+70|Plotter
+71|Voorbeeld
+72|Eigenschappen
+73|De geselecteerde vormen op deze laag plaatsen
+74|Een apparaat uit een bestand lezen
+75|Gereed
+76|Weergave herstellen
+77|Opslaan
+78|Opslaan als…
+79|Dit apparaat in een bestand opslaan
+80|Apparaat opgeslagen in {}
+81|{} opgeslagen
+82|Servo (M3 S…)
+83|Instellingen
+84|Vormen op deze laag
+85|Getoond in het tabblad Camera
+86|Getoond in het werkgebied
+87|Snelheid
+88|Snelheid van de bewegingen met opgeheven pen
+89|Start
+90|Ingeschakeld
+91|Het apparaat van dit project
+92|Het apparaat is toegevoegd.
+93|Het apparaat is opgeslagen.
+94|Eerst de vulling, dan de contour erover, zodat de rand netjes is.
+95|De pen volgt de lijnen van de vormen. Open lijnen werken ook.
+96|De pen wordt opgetild door
+97|Het werkgebied is het vel dat de pen bereikt. De machinenul is de hoek waar de pen begint.
+98|Er is niets te tekenen: zet vormen op ingeschakelde lagen.
+99|Er is nog niets te tonen: teken vormen en zet ze op ingeschakelde lagen.
+100|Deze versie kan de camera's van de computer niet gebruiken.
+101|Dit apparaat heeft geen ingeschakelde camera. Voeg er een toe in de apparaatinstellingen.
+102|Dit apparaat staat niet in de lijst: het kwam met het project mee
+103|Dit is het vervangende apparaat (Dummy): standaard werkgebied en snelheden.
+104|Tijd {} / {}
 105|Te veel apparaten
 106|Eenheden
 107|Weergave

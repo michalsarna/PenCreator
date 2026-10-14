@@ -8,17 +8,19 @@ It shares its core and its interface code with [LightCreator](https://github.com
 [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) through [baseCreator](https://github.com/michalsarna/baseCreator),
 pinned to a tag in `crates/pencreator/Cargo.toml`.
 
+## Screenshots
+
+![A badge with four pens, the Layers tab](docs/screenshots/05-layers.png)
+
+More pictures (the start screen, the device, the plot and more) are on the [screenshots page](docs/SCREENSHOTS.md).
+
 ## What it does today
 
 It looks like its siblings, because the window and its parts come from baseCreator:
 
-![The start screen](docs/screenshots/01-start.png)
-![A badge with four pens, the Layers tab](docs/screenshots/05-layers.png)
-![The plot of the job](docs/screenshots/09-plot.png)
-
 * **Devices.** The start screen lists your plotters (add, edit, duplicate, export, import, delete); the choice is kept between runs. A device has the size of the sheet it reaches, the machine zero, the speed of the moves with the pen up, how the pen is lifted (the Z axis, or a servo with `M3 S…`, with the heights or values for up and down and a wait) and up to 8 cameras with a live Camera tab. **I have no device** makes a plain device called Dummy, and **New** or **Open…** without a device take the Dummy.
 * **Pens as layers.** 16 layers, each one a pen: a colour, a pen width, a speed, outline, fill with lines (any angle and gap, crossed lines) or both, and how many times every line is drawn. When the next layer has another pen, the G-code stops with `M0` so that you can change it.
-* **Plot.** The Plotter menu opens a plot of the job (paper, the lines in the colours of the pens, the moves with the pen up dashed, a progress slider, zoom and pan, the length, the number of pen lifts and the time) and exports **G-code** for GRBL. The strokes are ordered to shorten the moves with the pen up; fill lines zigzag and leave holes empty.
+* **Plot.** The Plotter menu opens a plot of the job (paper, the lines in the colours of the pens, the moves with the pen up dashed, an animation (play, pause, speed, repeat) with a progress slider, zoom and pan, the length, the number of pen lifts and the time) and exports **G-code** for GRBL. The strokes are ordered to shorten the moves with the pen up; fill lines zigzag and leave holes empty.
 * The window has its own flat frame and title bar, a start screen (device, new design, open a file, recent files, language and colour scheme), a menu bar (the native menu bar on macOS), a control bar, a tool palette, an arrange bar and the Properties, Layers, Device, Clipart, Description and Camera tabs, and a status bar.
 * The clipart gallery of baseCreator: 310 included pictures in 9 categories, search, your own pictures, and online search of open icon collections; a picture is placed as ordinary shapes.
 * 30 languages for all texts (the shared ones from baseCreator, PenCreator's own ones in the program) and the colour schemes of LightCreator (Settings menu); the choice is kept.

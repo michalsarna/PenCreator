@@ -67,42 +67,42 @@
 66|Penn ned
 67|Penn opp
 68|Pennbredde
-69|Plott av jobben
-70|Plott av jobben…
-71|Plotter
-72|Framdrift
-73|Egenskaper
-74|Legg de valgte formene på dette laget
-75|Les en enhet fra en fil
-76|Klar
-77|Tilbakestill visningen
-78|Lagre
-79|Lagre som…
-80|Lagre denne enheten i en fil
-81|Enheten ble lagret i {}
-82|{} lagret
-83|Servo (M3 S…)
-84|Innstillinger
-85|Former på dette laget
-86|Vises i fanen Kamera
-87|Vises i arbeidsområdet
-88|Hastighet
-89|Hastighet for bevegelser med pennen oppe
-90|Start
-91|Slått på
-92|Enheten til dette prosjektet
-93|Enheten ble lagt til.
-94|Enheten ble lagret.
-95|Først fyllet, så konturen oppå, slik at kanten blir ren.
-96|Pennen følger linjene i formene. Åpne linjer fungerer også.
-97|Pennen løftes med
-98|Arbeidsområdet er arket pennen kan nå. Maskinens nullpunkt er hjørnet der pennen starter.
-99|Det er ingenting å tegne: legg former på lag som er slått på.
-100|Det er ingenting å vise ennå: tegn former og legg dem på lag som er slått på.
-101|Denne versjonen kan ikke bruke maskinens kameraer.
-102|Denne enheten har ikke noe kamera som er slått på. Legg til ett i enhetsinnstillingene.
-103|Denne enheten er ikke i listen: den fulgte med prosjektet
-104|Dette er erstatningsenheten (Dummy): standard arbeidsområde og hastigheter.
+69|Plott av jobben…
+70|Plotter
+71|Forhåndsvisning
+72|Egenskaper
+73|Legg de valgte formene på dette laget
+74|Les en enhet fra en fil
+75|Klar
+76|Tilbakestill visningen
+77|Lagre
+78|Lagre som…
+79|Lagre denne enheten i en fil
+80|Enheten ble lagret i {}
+81|{} lagret
+82|Servo (M3 S…)
+83|Innstillinger
+84|Former på dette laget
+85|Vises i fanen Kamera
+86|Vises i arbeidsområdet
+87|Hastighet
+88|Hastighet for bevegelser med pennen oppe
+89|Start
+90|Slått på
+91|Enheten til dette prosjektet
+92|Enheten ble lagt til.
+93|Enheten ble lagret.
+94|Først fyllet, så konturen oppå, slik at kanten blir ren.
+95|Pennen følger linjene i formene. Åpne linjer fungerer også.
+96|Pennen løftes med
+97|Arbeidsområdet er arket pennen kan nå. Maskinens nullpunkt er hjørnet der pennen starter.
+98|Det er ingenting å tegne: legg former på lag som er slått på.
+99|Det er ingenting å vise ennå: tegn former og legg dem på lag som er slått på.
+100|Denne versjonen kan ikke bruke maskinens kameraer.
+101|Denne enheten har ikke noe kamera som er slått på. Legg til ett i enhetsinnstillingene.
+102|Denne enheten er ikke i listen: den fulgte med prosjektet
+103|Dette er erstatningsenheten (Dummy): standard arbeidsområde og hastigheter.
+104|Tid {} / {}
 105|For mange enheter
 106|Enheter
 107|Vis

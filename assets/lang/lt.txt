@@ -67,42 +67,42 @@
 66|Rašiklis nuleistas
 67|Rašiklis pakeltas
 68|Rašiklio plotis
-69|Darbo brėžinys
-70|Darbo brėžinys…
-71|Braižytuvas
-72|Eiga
-73|Ypatybės
-74|Padėti pasirinktas formas ant šio sluoksnio
-75|Nuskaityti įrenginį iš failo
-76|Paruošta
-77|Atstatyti vaizdą
-78|Įrašyti
-79|Įrašyti kaip…
-80|Išsaugoti šį įrenginį faile
-81|Įrenginys išsaugotas: {}
-82|Įrašyta: {}
-83|Servo (M3 S…)
-84|Nustatymai
-85|Formos šiame sluoksnyje
-86|Rodoma skirtuke Kamera
-87|Rodoma darbo srityje
-88|Greitis
-89|Judesių greitis pakeltu rašikliu
-90|Pradėti
-91|Įjungta
-92|Šio projekto įrenginys
-93|Įrenginys pridėtas.
-94|Įrenginys išsaugotas.
-95|Pirmiausia užpildymas, tada kontūras ant viršaus, kad kraštas būtų švarus.
-96|Rašiklis seka formų linijas. Atviros linijos taip pat veikia.
-97|Rašiklis pakeliamas per
-98|Darbo sritis yra lapas, kurį pasiekia rašiklis. Staklių nulis yra kampas, nuo kurio rašiklis pradeda.
-99|Nėra ko piešti: padėkite formas ant įjungtų sluoksnių.
-100|Dar nėra ką rodyti: nupieškite formas ir padėkite jas ant įjungtų sluoksnių.
-101|Ši versija negali naudoti kompiuterio kamerų.
-102|Šis įrenginys neturi įjungtos kameros. Pridėkite ją įrenginio nustatymuose.
-103|Šio įrenginio sąraše nėra: jis atkeliavo su projektu
-104|Tai pakaitinis įrenginys (Dummy): numatytoji darbo sritis ir greičiai.
+69|Darbo brėžinys…
+70|Braižytuvas
+71|Peržiūra
+72|Ypatybės
+73|Padėti pasirinktas formas ant šio sluoksnio
+74|Nuskaityti įrenginį iš failo
+75|Paruošta
+76|Atstatyti vaizdą
+77|Įrašyti
+78|Įrašyti kaip…
+79|Išsaugoti šį įrenginį faile
+80|Įrenginys išsaugotas: {}
+81|Įrašyta: {}
+82|Servo (M3 S…)
+83|Nustatymai
+84|Formos šiame sluoksnyje
+85|Rodoma skirtuke Kamera
+86|Rodoma darbo srityje
+87|Greitis
+88|Judesių greitis pakeltu rašikliu
+89|Pradėti
+90|Įjungta
+91|Šio projekto įrenginys
+92|Įrenginys pridėtas.
+93|Įrenginys išsaugotas.
+94|Pirmiausia užpildymas, tada kontūras ant viršaus, kad kraštas būtų švarus.
+95|Rašiklis seka formų linijas. Atviros linijos taip pat veikia.
+96|Rašiklis pakeliamas per
+97|Darbo sritis yra lapas, kurį pasiekia rašiklis. Staklių nulis yra kampas, nuo kurio rašiklis pradeda.
+98|Nėra ko piešti: padėkite formas ant įjungtų sluoksnių.
+99|Dar nėra ką rodyti: nupieškite formas ir padėkite jas ant įjungtų sluoksnių.
+100|Ši versija negali naudoti kompiuterio kamerų.
+101|Šis įrenginys neturi įjungtos kameros. Pridėkite ją įrenginio nustatymuose.
+102|Šio įrenginio sąraše nėra: jis atkeliavo su projektu
+103|Tai pakaitinis įrenginys (Dummy): numatytoji darbo sritis ir greičiai.
+104|Laikas {} / {}
 105|Per daug įrenginių
 106|Vienetai
 107|Rodinys

@@ -67,42 +67,42 @@
 66	Pen down
 67	Pen up
 68	Pen width
-69	Plot of the job
-70	Plot of the job…
-71	Plotter
-72	Progress
-73	Properties
-74	Put the selected shapes on this layer
-75	Read a device from a file
-76	Ready
-77	Reset view
-78	Save
-79	Save as…
-80	Save this device to a file
-81	Saved the device to {}
-82	Saved {}
-83	Servo (M3 S…)
-84	Settings
-85	Shapes on this layer
-86	Shown in the Camera tab
-87	Shown in the work area
-88	Speed
-89	Speed of moves with the pen up
-90	Start
-91	Switched on
-92	The device of this project
-93	The device was added.
-94	The device was saved.
-95	The fill first, then the outline over it, so the edge is clean.
-96	The pen follows the lines of the shapes. Open lines work too.
-97	The pen is lifted by
-98	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
-99	There is nothing to draw: put shapes on layers that are switched on.
-100	There is nothing to show yet: draw shapes and put them on layers that are switched on.
-101	This build cannot use the cameras of the computer.
-102	This device has no camera that is switched on. Add one in the device settings.
-103	This device is not in the list: it came with the project
-104	This is the stand-in device (Dummy): the default work area and speeds.
+69	Plot of the job…
+70	Plotter
+71	Preview
+72	Properties
+73	Put the selected shapes on this layer
+74	Read a device from a file
+75	Ready
+76	Reset view
+77	Save
+78	Save as…
+79	Save this device to a file
+80	Saved the device to {}
+81	Saved {}
+82	Servo (M3 S…)
+83	Settings
+84	Shapes on this layer
+85	Shown in the Camera tab
+86	Shown in the work area
+87	Speed
+88	Speed of moves with the pen up
+89	Start
+90	Switched on
+91	The device of this project
+92	The device was added.
+93	The device was saved.
+94	The fill first, then the outline over it, so the edge is clean.
+95	The pen follows the lines of the shapes. Open lines work too.
+96	The pen is lifted by
+97	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
+98	There is nothing to draw: put shapes on layers that are switched on.
+99	There is nothing to show yet: draw shapes and put them on layers that are switched on.
+100	This build cannot use the cameras of the computer.
+101	This device has no camera that is switched on. Add one in the device settings.
+102	This device is not in the list: it came with the project
+103	This is the stand-in device (Dummy): the default work area and speeds.
+104	Time {} / {}
 105	Too many devices
 106	Units
 107	View

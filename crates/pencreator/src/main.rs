@@ -145,6 +145,7 @@ struct App {
     confirm_delete: bool,
     layers: Vec<PenLayer>,
     view: PlotView,
+    playback: base_ui::playback::Playback,
     show_plot: bool,
     prog: Option<Program>,
     /// Counts the changes of the project; the program is made again when it differs from `prog_rev`.
@@ -203,6 +204,7 @@ impl App {
             confirm_delete: false,
             layers: layers::default_layers(),
             view: PlotView::default(),
+            playback: base_ui::playback::Playback::default(),
             show_plot: false,
             prog: None,
             rev: 0,
@@ -656,7 +658,8 @@ impl App {
         egui::Panel::top("controls").frame(chrome).exact_size(36.0).show(ui, |ui| self.control_bar(ui));
         egui::Panel::bottom("status").frame(chrome).exact_size(26.0).show(ui, |ui| self.status_bar(ui));
         egui::Panel::left("tools").frame(chrome).exact_size(52.0).resizable(false).show(ui, |ui| base_ui::editor::tool_palette(self, ui, None));
-        egui::Panel::right("side").frame(chrome.inner_margin(egui::Margin::same(8))).default_size(410.0).show(ui, |ui| self.side_panel(ui));
+        let side = egui::Panel::right("side").frame(chrome.inner_margin(egui::Margin::same(8))).default_size(410.0).show(ui, |ui| self.side_panel(ui));
+        base_ui::widgets::panel_edge_highlight(ui.ctx(), side.response.rect, base_ui::widgets::Edge::Left);
         egui::Panel::right("arrange_bar").frame(chrome.inner_margin(egui::Margin::symmetric(2, 4))).exact_size(40.0).resizable(false).show(ui, |ui| base_ui::editor::arrange_bar(self, ui));
         egui::CentralPanel::no_frame().show(ui, |ui| self.canvas(ui));
         self.dialogs(&ctx);

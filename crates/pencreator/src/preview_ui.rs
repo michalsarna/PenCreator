@@ -70,20 +70,22 @@ impl App {
         }
         let mut open = true;
         let mut export = false;
-        popup(ctx, "preview_plot", &tr("Plot of the job"), [900.0, 680.0], &mut open, |ui| {
+        popup(ctx, "preview_plot", &tr("Preview"), [980.0, 700.0], &mut open, |ui| {
             let prog = self.prog.as_ref().expect("the program was made above");
             ui.horizontal_wrapped(|ui| {
                 if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {
                     self.view.reset();
                 }
                 ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
-                ui.label(tr("Progress"));
-                ui.add(egui::Slider::new(&mut self.view.progress, 0.0..=1.0).show_value(false));
                 if ui.button(tr("Export G-code…")).clicked() {
                     export = true;
                 }
             });
+            ui.horizontal(|ui| {
+                self.playback.show(ui, &mut self.view.progress);
+            });
             let secs = prog.estimate_seconds(&self.device, &self.layers);
+            ui.label(RichText::new(trf("Time {} / {}", &[&base_ui::widgets::fmt_time(secs * self.view.progress as f64), &base_ui::widgets::fmt_time(secs)])).strong());
             ui.label(
                 RichText::new(trf("Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min", &[&format!("{:.2}", prog.draw_length() / 1000.0), &format!("{:.2}", prog.travel_length() / 1000.0), &prog.lifts(), &format!("{:.1}", secs / 60.0)])).color(theme::text_dim()),
             );
@@ -101,6 +103,9 @@ impl App {
             self.export_gcode();
         }
         self.show_plot = open;
+        if !open {
+            self.playback.playing = false;
+        }
     }
 }
 

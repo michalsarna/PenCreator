@@ -67,42 +67,42 @@
 66|Peann síos
 67|Peann suas
 68|Leithead an phinn
-69|Plota na hoibre
-70|Plota na hoibre…
-71|Plótálaí
-72|Dul chun cinn
-73|Airíonna
-74|Cuir na cruthanna roghnaithe ar an gciseal seo
-75|Léigh gléas ó chomhad
-76|Réidh
-77|Athshocraigh an t-amharc
-78|Sábháil
-79|Sábháil mar…
-80|Sábháil an gléas seo i gcomhad
-81|Sábháladh an gléas i {}
-82|Sábháilte: {}
-83|Servo (M3 S…)
-84|Socruithe
-85|Cruthanna ar an gciseal seo
-86|Taispeántar é sa chluaisín Ceamara
-87|Taispeántar é sa limistéar oibre
-88|Luas
-89|Luas na ngluaiseachtaí le peann in airde
-90|Tosaigh
-91|Casta air
-92|Gléas an tionscadail seo
-93|Cuireadh an gléas leis.
-94|Sábháladh an gléas.
-95|An líonadh ar dtús, ansin an imlíne air, ionas go mbeidh an t-imeall glan.
-96|Leanann an peann línte na gcruthanna. Oibríonn línte oscailte freisin.
-97|Ardaítear an peann le
-98|Is é an limistéar oibre an leathán a shroicheann an peann. Is é nialas an mheaisín an choirnéal ónar tosaíonn an peann.
-99|Níl aon rud le tarraingt: cuir cruthanna ar chisil atá casta air.
-100|Níl aon rud le taispeáint fós: tarraing cruthanna agus cuir ar chisil atá casta air iad.
-101|Ní féidir leis an leagan seo ceamaraí an ríomhaire a úsáid.
-102|Níl aon cheamara casta air ag an ngléas seo. Cuir ceann leis i socruithe an ghléis.
-103|Níl an gléas seo ar an liosta: tháinig sé leis an tionscadal
-104|Seo é an gléas ionaid (Dummy): limistéar oibre agus luasanna réamhshocraithe.
+69|Plota na hoibre…
+70|Plótálaí
+71|Réamhamharc
+72|Airíonna
+73|Cuir na cruthanna roghnaithe ar an gciseal seo
+74|Léigh gléas ó chomhad
+75|Réidh
+76|Athshocraigh an t-amharc
+77|Sábháil
+78|Sábháil mar…
+79|Sábháil an gléas seo i gcomhad
+80|Sábháladh an gléas i {}
+81|Sábháilte: {}
+82|Servo (M3 S…)
+83|Socruithe
+84|Cruthanna ar an gciseal seo
+85|Taispeántar é sa chluaisín Ceamara
+86|Taispeántar é sa limistéar oibre
+87|Luas
+88|Luas na ngluaiseachtaí le peann in airde
+89|Tosaigh
+90|Casta air
+91|Gléas an tionscadail seo
+92|Cuireadh an gléas leis.
+93|Sábháladh an gléas.
+94|An líonadh ar dtús, ansin an imlíne air, ionas go mbeidh an t-imeall glan.
+95|Leanann an peann línte na gcruthanna. Oibríonn línte oscailte freisin.
+96|Ardaítear an peann le
+97|Is é an limistéar oibre an leathán a shroicheann an peann. Is é nialas an mheaisín an choirnéal ónar tosaíonn an peann.
+98|Níl aon rud le tarraingt: cuir cruthanna ar chisil atá casta air.
+99|Níl aon rud le taispeáint fós: tarraing cruthanna agus cuir ar chisil atá casta air iad.
+100|Ní féidir leis an leagan seo ceamaraí an ríomhaire a úsáid.
+101|Níl aon cheamara casta air ag an ngléas seo. Cuir ceann leis i socruithe an ghléis.
+102|Níl an gléas seo ar an liosta: tháinig sé leis an tionscadal
+103|Seo é an gléas ionaid (Dummy): limistéar oibre agus luasanna réamhshocraithe.
+104|Am {} / {}
 105|An iomarca gléasanna
 106|Aonaid
 107|Amharc

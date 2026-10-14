@@ -67,42 +67,42 @@
 66|Pliiats all
 67|Pliiats üleval
 68|Pliiatsi laius
-69|Töö joonis
-70|Töö joonis…
-71|Plotter
-72|Edenemine
-73|Atribuudid
-74|Pane valitud kujud sellele kihile
-75|Loe seade failist
-76|Valmis
-77|Lähtesta vaade
-78|Salvesta
-79|Salvesta nimega…
-80|Salvesta see seade faili
-81|Seade salvestati: {}
-82|Salvestatud: {}
-83|Servo (M3 S…)
-84|Seaded
-85|Kujud sellel kihil
-86|Näidatakse vahekaardil Kaamera
-87|Näidatakse tööalas
-88|Kiirus
-89|Liikumiste kiirus tõstetud pliiatsiga
-90|Start
-91|Sees
-92|Selle projekti seade
-93|Seade lisati.
-94|Seade salvestati.
-95|Kõigepealt täide, siis kontuur selle peale, et serv oleks puhas.
-96|Pliiats järgib kujude jooni. Avatud jooned töötavad samuti.
-97|Pliiatsit tõstetakse
-98|Tööala on leht, milleni pliiats ulatub. Masina null on nurk, kust pliiats alustab.
-99|Pole midagi joonistada: pane kujud sisselülitatud kihtidele.
-100|Pole veel midagi näidata: joonista kujud ja pane need sisselülitatud kihtidele.
-101|See versioon ei saa kasutada arvuti kaameraid.
-102|Sellel seadmel pole sisselülitatud kaamerat. Lisa see seadme sätetes.
-103|Seda seadet pole nimekirjas: see tuli projektiga kaasa
-104|See on asendusseade (Dummy): vaiketööala ja -kiirused.
+69|Töö joonis…
+70|Plotter
+71|Eelvaade
+72|Atribuudid
+73|Pane valitud kujud sellele kihile
+74|Loe seade failist
+75|Valmis
+76|Lähtesta vaade
+77|Salvesta
+78|Salvesta nimega…
+79|Salvesta see seade faili
+80|Seade salvestati: {}
+81|Salvestatud: {}
+82|Servo (M3 S…)
+83|Seaded
+84|Kujud sellel kihil
+85|Näidatakse vahekaardil Kaamera
+86|Näidatakse tööalas
+87|Kiirus
+88|Liikumiste kiirus tõstetud pliiatsiga
+89|Start
+90|Sees
+91|Selle projekti seade
+92|Seade lisati.
+93|Seade salvestati.
+94|Kõigepealt täide, siis kontuur selle peale, et serv oleks puhas.
+95|Pliiats järgib kujude jooni. Avatud jooned töötavad samuti.
+96|Pliiatsit tõstetakse
+97|Tööala on leht, milleni pliiats ulatub. Masina null on nurk, kust pliiats alustab.
+98|Pole midagi joonistada: pane kujud sisselülitatud kihtidele.
+99|Pole veel midagi näidata: joonista kujud ja pane need sisselülitatud kihtidele.
+100|See versioon ei saa kasutada arvuti kaameraid.
+101|Sellel seadmel pole sisselülitatud kaamerat. Lisa see seadme sätetes.
+102|Seda seadet pole nimekirjas: see tuli projektiga kaasa
+103|See on asendusseade (Dummy): vaiketööala ja -kiirused.
+104|Aeg {} / {}
 105|Liiga palju seadmeid
 106|Ühikud
 107|Vaade

@@ -67,42 +67,42 @@
 66|Pero dole
 67|Pero nahoře
 68|Šířka pera
-69|Vykreslení úlohy
-70|Vykreslení úlohy…
-71|Plotr
-72|Průběh
-73|Vlastnosti
-74|Dát vybrané tvary na tuto vrstvu
-75|Načíst zařízení ze souboru
-76|Připraveno
-77|Obnovit pohled
-78|Uložit
-79|Uložit jako…
-80|Uložit toto zařízení do souboru
-81|Zařízení uloženo do {}
-82|Uloženo: {}
-83|Servo (M3 S…)
-84|Nastavení
-85|Tvary na této vrstvě
-86|Zobrazeno na kartě Kamera
-87|Zobrazeno v pracovní ploše
-88|Rychlost
-89|Rychlost pohybů se zvednutým perem
-90|Start
-91|Zapnuto
-92|Zařízení tohoto projektu
-93|Zařízení bylo přidáno.
-94|Zařízení bylo uloženo.
-95|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
-96|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
-97|Pero se zvedá pomocí
-98|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
-99|Není co kreslit: dejte tvary na zapnuté vrstvy.
-100|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
-101|Tato verze nemůže používat kamery počítače.
-102|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
-103|Toto zařízení není v seznamu: přišlo s projektem
-104|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
+69|Vykreslení úlohy…
+70|Plotr
+71|Náhled
+72|Vlastnosti
+73|Dát vybrané tvary na tuto vrstvu
+74|Načíst zařízení ze souboru
+75|Připraveno
+76|Obnovit pohled
+77|Uložit
+78|Uložit jako…
+79|Uložit toto zařízení do souboru
+80|Zařízení uloženo do {}
+81|Uloženo: {}
+82|Servo (M3 S…)
+83|Nastavení
+84|Tvary na této vrstvě
+85|Zobrazeno na kartě Kamera
+86|Zobrazeno v pracovní ploše
+87|Rychlost
+88|Rychlost pohybů se zvednutým perem
+89|Start
+90|Zapnuto
+91|Zařízení tohoto projektu
+92|Zařízení bylo přidáno.
+93|Zařízení bylo uloženo.
+94|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
+95|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
+96|Pero se zvedá pomocí
+97|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
+98|Není co kreslit: dejte tvary na zapnuté vrstvy.
+99|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
+100|Tato verze nemůže používat kamery počítače.
+101|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
+102|Toto zařízení není v seznamu: přišlo s projektem
+103|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
+104|Čas {} / {}
 105|Příliš mnoho zařízení
 106|Jednotky
 107|Zobrazení

@@ -67,42 +67,42 @@
 66|Pisalo spuščeno
 67|Pisalo dvignjeno
 68|Širina pisala
-69|Izris opravila
-70|Izris opravila…
-71|Risalnik
-72|Napredek
-73|Lastnosti
-74|Postavi izbrane oblike na ta sloj
-75|Preberi napravo iz datoteke
-76|Pripravljeno
-77|Ponastavi pogled
-78|Shrani
-79|Shrani kot…
-80|Shrani to napravo v datoteko
-81|Naprava shranjena v {}
-82|Shranjeno: {}
-83|Servo (M3 S…)
-84|Nastavitve
-85|Oblike na tem sloju
-86|Prikazano na zavihku Kamera
-87|Prikazano v delovnem območju
-88|Hitrost
-89|Hitrost premikov z dvignjenim pisalom
-90|Začni
-91|Vklopljeno
-92|Naprava tega projekta
-93|Naprava je bila dodana.
-94|Naprava je bila shranjena.
-95|Najprej polnilo, nato obris čez, da je rob čist.
-96|Pisalo sledi črtam oblik. Odprte črte delujejo tudi.
-97|Pisalo se dvigne z
-98|Delovno območje je list, do katerega seže pisalo. Ničla stroja je kot, kjer pisalo začne.
-99|Ni kaj risati: postavite oblike na vklopljene sloje.
-100|Še ni kaj prikazati: narišite oblike in jih postavite na vklopljene sloje.
-101|Ta različica ne more uporabljati kamer računalnika.
-102|Ta naprava nima vklopljene kamere. Dodajte jo v nastavitvah naprave.
-103|Te naprave ni na seznamu: prišla je s projektom
-104|To je nadomestna naprava (Dummy): privzeto delovno območje in hitrosti.
+69|Izris opravila…
+70|Risalnik
+71|Predogled
+72|Lastnosti
+73|Postavi izbrane oblike na ta sloj
+74|Preberi napravo iz datoteke
+75|Pripravljeno
+76|Ponastavi pogled
+77|Shrani
+78|Shrani kot…
+79|Shrani to napravo v datoteko
+80|Naprava shranjena v {}
+81|Shranjeno: {}
+82|Servo (M3 S…)
+83|Nastavitve
+84|Oblike na tem sloju
+85|Prikazano na zavihku Kamera
+86|Prikazano v delovnem območju
+87|Hitrost
+88|Hitrost premikov z dvignjenim pisalom
+89|Začni
+90|Vklopljeno
+91|Naprava tega projekta
+92|Naprava je bila dodana.
+93|Naprava je bila shranjena.
+94|Najprej polnilo, nato obris čez, da je rob čist.
+95|Pisalo sledi črtam oblik. Odprte črte delujejo tudi.
+96|Pisalo se dvigne z
+97|Delovno območje je list, do katerega seže pisalo. Ničla stroja je kot, kjer pisalo začne.
+98|Ni kaj risati: postavite oblike na vklopljene sloje.
+99|Še ni kaj prikazati: narišite oblike in jih postavite na vklopljene sloje.
+100|Ta različica ne more uporabljati kamer računalnika.
+101|Ta naprava nima vklopljene kamere. Dodajte jo v nastavitvah naprave.
+102|Te naprave ni na seznamu: prišla je s projektom
+103|To je nadomestna naprava (Dummy): privzeto delovno območje in hitrosti.
+104|Čas {} / {}
 105|Preveč naprav
 106|Enote
 107|Pogled
