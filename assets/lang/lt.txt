@@ -184,3 +184,4 @@
 183|užpildyme per daug linijų: atstumas per mažas, todėl dalis užpildymo praleista
 184|šis projektas sukurtas kitoms staklėms: {}
 185|{} paveikslėlių sluoksniuose negalima piešti: pirmiausia paverskite juos linijomis
+186|Importuoti UGS dizainą…

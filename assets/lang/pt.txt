@@ -184,3 +184,4 @@
 183|o preenchimento tem demasiadas linhas: a distância é demasiado pequena, por isso parte do preenchimento foi omitida
 184|este projeto foi feito para outra máquina: {}
 185|{} imagem(ns) nas camadas não podem ser desenhadas: vetorize-as primeiro
+186|Importar design UGS…

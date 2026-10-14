@@ -184,3 +184,4 @@
 183|aizpildījumam ir pārāk daudz līniju: attālums ir pārāk mazs, tāpēc daļa aizpildījuma tika izlaista
 184|šis projekts izveidots citai iekārtai: {}
 185|{} attēlus uz slāņiem nevar zīmēt: vispirms pārveidojiet tos līnijās
+186|Importēt UGS dizainu…

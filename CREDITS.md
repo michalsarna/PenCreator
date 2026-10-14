@@ -11,6 +11,7 @@ listed in its [CREDITS.md](https://github.com/michalsarna/baseCreator/blob/main/
 * **[Material Design Icons](https://github.com/Templarian/MaterialDesign-SVG)** by Pictogrammers (Apache-2.0), through baseCreator: the pictures of the clipart gallery.
 * **[resvg / usvg](https://github.com/linebender/resvg)** (MPL-2.0), **[lopdf](https://github.com/J-F-Liu/lopdf)** (MIT) and **[i_overlay](https://github.com/iShape-Rust/iOverlay)** (MIT), through baseCreator: reading SVG and PDF files and the geometry of shapes.
 * **[LightBurn](https://lightburnsoftware.com/)**: the format of its projects is read for import; PenCreator contains none of its code.
+* **[Universal G-code Sender](https://github.com/winder/Universal-G-Code-Sender)**: the format of its Designer files (`.ugsd`) is read for import; PenCreator contains none of its code.
 * **[muda](https://github.com/tauri-apps/muda)** and **[objc2](https://github.com/madsmtm/objc2)**, through baseCreator: the native macOS menu bar.
 
 ## Packaging and build services

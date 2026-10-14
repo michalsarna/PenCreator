@@ -184,3 +184,4 @@
 183|tá an iomarca línte sa líonadh: tá an spás ró-bheag, mar sin fágadh cuid den líonadh ar lár
 184|rinneadh an tionscadal seo do mheaisín eile: {}
 185|Ní féidir {} pictiúr ar na cisil a tharraingt: lorg ina línte iad ar dtús
+186|Iompórtáil dearadh UGS…

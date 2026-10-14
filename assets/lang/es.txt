@@ -184,3 +184,4 @@
 183|el relleno tiene demasiadas líneas: la separación es demasiado pequeña, así que se omitió parte del relleno
 184|este proyecto se hizo para otra máquina: {}
 185|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero
+186|Importar diseño de UGS…

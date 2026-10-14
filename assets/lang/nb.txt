@@ -184,3 +184,4 @@
 183|fyllet har for mange linjer: avstanden er for liten, så en del av fyllet ble utelatt
 184|dette prosjektet ble laget for en annen maskin: {}
 185|{} bilde(r) på lagene kan ikke tegnes: spor dem til linjer først
+186|Importer UGS-design…

@@ -184,3 +184,4 @@
 183|täites on liiga palju jooni: vahe on liiga väike, seetõttu jäeti osa täitest välja
 184|see projekt tehti teisele masinale: {}
 185|{} pilti kihtidel ei saa joonistada: jälgi need esmalt joonteks
+186|Impordi UGS-i kujundus…

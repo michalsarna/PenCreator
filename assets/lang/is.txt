@@ -184,3 +184,4 @@
 183|fyllingin hefur of margar línur: bilið er of lítið svo hluta fyllingarinnar var sleppt
 184|þetta verkefni var gert fyrir aðra vél: {}
 185|{} mynd(ir) á lögunum er ekki hægt að teikna: rekjaðu þær fyrst í línur
+186|Flytja inn UGS-hönnun…

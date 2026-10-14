@@ -184,3 +184,4 @@
 183|výplň má príliš veľa čiar: rozstup je príliš malý, preto bola časť výplne vynechaná
 184|tento projekt bol vytvorený pre iný stroj: {}
 185|{} obrázkov na vrstvách sa nedá kresliť: najprv ich preveďte na čiary
+186|Importovať návrh UGS…

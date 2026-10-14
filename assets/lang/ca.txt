@@ -184,3 +184,4 @@
 183|el farciment té massa línies: la separació és massa petita, així que s'ha omès part del farciment
 184|aquest projecte es va fer per a una altra màquina: {}
 185|{} imatge(s) de les capes no es poden dibuixar: vectoritza-les primer
+186|Importa el disseny d'UGS…

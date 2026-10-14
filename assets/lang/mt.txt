@@ -184,3 +184,4 @@
 183|il-mili għandu wisq linji: id-distanza hija żgħira wisq, għalhekk parti mill-mili ġiet maħlufa
 184|dan il-proġett sar għal magna oħra: {}
 185|{} stampa/i fuq is-saffi ma jistgħux jitpinġu: ittraċċjahom f'linji l-ewwel
+186|Importa disinn UGS…
