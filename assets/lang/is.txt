@@ -67,42 +67,42 @@
 66|Penni niðri
 67|Penni uppi
 68|Breidd penna
-69|Teikning verksins
-70|Teikning verksins…
-71|Teiknivél
-72|Framvinda
-73|Eiginleikar
-74|Setja valin form á þetta lag
-75|Lesa tæki úr skrá
-76|Tilbúið
-77|Endurstilla sýn
-78|Vista
-79|Vista sem…
-80|Vista þetta tæki í skrá
-81|Tækið var vistað í {}
-82|Vistað: {}
-83|Servó (M3 S…)
-84|Stillingar
-85|Form á þessu lagi
-86|Sýnd á flipanum Myndavél
-87|Sýnt á vinnusvæðinu
-88|Hraði
-89|Hraði hreyfinga með pennann uppi
-90|Byrja
-91|Kveikt
-92|Tæki þessa verkefnis
-93|Tækinu var bætt við.
-94|Tækið var vistað.
-95|Fyrst fyllingin, svo útlínan yfir, svo brúnin verði hrein.
-96|Penninn fylgir línum formanna. Opnar línur virka líka.
-97|Pennanum er lyft með
-98|Vinnusvæðið er blaðið sem penninn nær til. Núllpunktur vélarinnar er hornið þar sem penninn byrjar.
-99|Ekkert að teikna: settu form á lög sem er kveikt á.
-100|Ekkert að sýna ennþá: teiknaðu form og settu þau á lög sem er kveikt á.
-101|Þessi útgáfa getur ekki notað myndavélar tölvunnar.
-102|Þetta tæki er ekki með kveikt á myndavél. Bættu einni við í stillingum tækisins.
-103|Þetta tæki er ekki á listanum: það kom með verkefninu
-104|Þetta er staðgengilstækið (Dummy): sjálfgefið vinnusvæði og hraði.
+69|Teikning verksins…
+70|Teiknivél
+71|Forskoðun
+72|Eiginleikar
+73|Setja valin form á þetta lag
+74|Lesa tæki úr skrá
+75|Tilbúið
+76|Endurstilla sýn
+77|Vista
+78|Vista sem…
+79|Vista þetta tæki í skrá
+80|Tækið var vistað í {}
+81|Vistað: {}
+82|Servó (M3 S…)
+83|Stillingar
+84|Form á þessu lagi
+85|Sýnd á flipanum Myndavél
+86|Sýnt á vinnusvæðinu
+87|Hraði
+88|Hraði hreyfinga með pennann uppi
+89|Byrja
+90|Kveikt
+91|Tæki þessa verkefnis
+92|Tækinu var bætt við.
+93|Tækið var vistað.
+94|Fyrst fyllingin, svo útlínan yfir, svo brúnin verði hrein.
+95|Penninn fylgir línum formanna. Opnar línur virka líka.
+96|Pennanum er lyft með
+97|Vinnusvæðið er blaðið sem penninn nær til. Núllpunktur vélarinnar er hornið þar sem penninn byrjar.
+98|Ekkert að teikna: settu form á lög sem er kveikt á.
+99|Ekkert að sýna ennþá: teiknaðu form og settu þau á lög sem er kveikt á.
+100|Þessi útgáfa getur ekki notað myndavélar tölvunnar.
+101|Þetta tæki er ekki með kveikt á myndavél. Bættu einni við í stillingum tækisins.
+102|Þetta tæki er ekki á listanum: það kom með verkefninu
+103|Þetta er staðgengilstækið (Dummy): sjálfgefið vinnusvæði og hraði.
+104|Tími {} / {}
 105|Of mörg tæki
 106|Einingar
 107|Skoða

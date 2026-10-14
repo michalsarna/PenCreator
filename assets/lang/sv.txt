@@ -67,42 +67,42 @@
 66|Penna nere
 67|Penna uppe
 68|Pennbredd
-69|Plott av jobbet
-70|Plott av jobbet…
-71|Plotter
-72|Förlopp
-73|Egenskaper
-74|Lägg de markerade formerna på det här lagret
-75|Läs en enhet från en fil
-76|Klar
-77|Återställ vyn
-78|Spara
-79|Spara som…
-80|Spara den här enheten i en fil
-81|Enheten sparades i {}
-82|{} sparad
-83|Servo (M3 S…)
-84|Inställningar
-85|Former på det här lagret
-86|Visas på fliken Kamera
-87|Visas i arbetsytan
-88|Hastighet
-89|Hastighet för förflyttningar med pennan uppe
-90|Start
-91|Påslagen
-92|Enheten för det här projektet
-93|Enheten lades till.
-94|Enheten sparades.
-95|Först fyllningen, sedan konturen ovanpå, så att kanten blir ren.
-96|Pennan följer formernas linjer. Öppna linjer fungerar också.
-97|Pennan lyfts med
-98|Arbetsytan är pappret som pennan når. Maskinens nollpunkt är hörnet där pennan startar.
-99|Det finns inget att rita: lägg former på påslagna lager.
-100|Det finns inget att visa än: rita former och lägg dem på påslagna lager.
-101|Den här versionen kan inte använda datorns kameror.
-102|Den här enheten har ingen påslagen kamera. Lägg till en i enhetens inställningar.
-103|Den här enheten finns inte i listan: den kom med projektet
-104|Det här är ersättningsenheten (Dummy): standardarbetsyta och standardhastigheter.
+69|Plott av jobbet…
+70|Plotter
+71|Förhandsgranska
+72|Egenskaper
+73|Lägg de markerade formerna på det här lagret
+74|Läs en enhet från en fil
+75|Klar
+76|Återställ vyn
+77|Spara
+78|Spara som…
+79|Spara den här enheten i en fil
+80|Enheten sparades i {}
+81|{} sparad
+82|Servo (M3 S…)
+83|Inställningar
+84|Former på det här lagret
+85|Visas på fliken Kamera
+86|Visas i arbetsytan
+87|Hastighet
+88|Hastighet för förflyttningar med pennan uppe
+89|Start
+90|Påslagen
+91|Enheten för det här projektet
+92|Enheten lades till.
+93|Enheten sparades.
+94|Först fyllningen, sedan konturen ovanpå, så att kanten blir ren.
+95|Pennan följer formernas linjer. Öppna linjer fungerar också.
+96|Pennan lyfts med
+97|Arbetsytan är pappret som pennan når. Maskinens nollpunkt är hörnet där pennan startar.
+98|Det finns inget att rita: lägg former på påslagna lager.
+99|Det finns inget att visa än: rita former och lägg dem på påslagna lager.
+100|Den här versionen kan inte använda datorns kameror.
+101|Den här enheten har ingen påslagen kamera. Lägg till en i enhetens inställningar.
+102|Den här enheten finns inte i listan: den kom med projektet
+103|Det här är ersättningsenheten (Dummy): standardarbetsyta och standardhastigheter.
+104|Tid {} / {}
 105|För många enheter
 106|Enheter
 107|Visa

@@ -67,42 +67,42 @@
 66|Stylo baissé
 67|Stylo levé
 68|Largeur du stylo
-69|Tracé du travail
-70|Tracé du travail…
-71|Traceur
-72|Progression
-73|Propriétés
-74|Mettre les formes sélectionnées sur ce calque
-75|Lire un appareil depuis un fichier
-76|Prêt
-77|Réinitialiser la vue
-78|Enregistrer
-79|Enregistrer sous…
-80|Enregistrer cet appareil dans un fichier
-81|Appareil enregistré dans {}
-82|{} enregistré
-83|Servo (M3 S…)
-84|Paramètres
-85|Formes sur ce calque
-86|Affichée dans l'onglet Caméra
-87|Affiché dans la zone de travail
-88|Vitesse
-89|Vitesse des déplacements stylo levé
-90|Démarrer
-91|Activée
-92|L'appareil de ce projet
-93|L'appareil a été ajouté.
-94|L'appareil a été enregistré.
-95|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
-96|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
-97|Le stylo est levé par
-98|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
-99|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
-100|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
-101|Cette version ne peut pas utiliser les caméras de l'ordinateur.
-102|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
-103|Cet appareil n'est pas dans la liste : il est venu avec le projet
-104|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
+69|Tracé du travail…
+70|Traceur
+71|Aperçu
+72|Propriétés
+73|Mettre les formes sélectionnées sur ce calque
+74|Lire un appareil depuis un fichier
+75|Prêt
+76|Réinitialiser la vue
+77|Enregistrer
+78|Enregistrer sous…
+79|Enregistrer cet appareil dans un fichier
+80|Appareil enregistré dans {}
+81|{} enregistré
+82|Servo (M3 S…)
+83|Paramètres
+84|Formes sur ce calque
+85|Affichée dans l'onglet Caméra
+86|Affiché dans la zone de travail
+87|Vitesse
+88|Vitesse des déplacements stylo levé
+89|Démarrer
+90|Activée
+91|L'appareil de ce projet
+92|L'appareil a été ajouté.
+93|L'appareil a été enregistré.
+94|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
+95|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
+96|Le stylo est levé par
+97|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
+98|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
+99|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
+100|Cette version ne peut pas utiliser les caméras de l'ordinateur.
+101|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
+102|Cet appareil n'est pas dans la liste : il est venu avec le projet
+103|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
+104|Temps {} / {}
 105|Trop d'appareils
 106|Unités
 107|Affichage

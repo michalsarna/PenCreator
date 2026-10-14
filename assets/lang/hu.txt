@@ -67,42 +67,42 @@
 66|Toll lent
 67|Toll fent
 68|Tollszélesség
-69|A munka rajza
-70|A munka rajza…
-71|Plotter
-72|Haladás
-73|Tulajdonságok
-74|A kijelölt alakzatok erre a rétegre
-75|Eszköz beolvasása fájlból
-76|Kész
-77|Nézet visszaállítása
-78|Mentés
-79|Mentés másként…
-80|Az eszköz mentése fájlba
-81|Az eszköz mentve ide: {}
-82|Mentve: {}
-83|Szervó (M3 S…)
-84|Beállítások
-85|Alakzatok ezen a rétegen
-86|A Kamera lapon látható
-87|A munkaterületen látható
-88|Sebesség
-89|A mozgások sebessége felemelt tollal
-90|Indítás
-91|Bekapcsolva
-92|A projekt eszköze
-93|Az eszköz hozzáadva.
-94|Az eszköz mentve.
-95|Előbb a kitöltés, majd rá a körvonal, hogy az él tiszta legyen.
-96|A toll követi az alakzatok vonalait. A nyitott vonalak is működnek.
-97|A tollat emeli:
-98|A munkaterület az a lap, amelyet a toll elér. A gép nullpontja az a sarok, ahol a toll indul.
-99|Nincs mit rajzolni: tedd az alakzatokat bekapcsolt rétegekre.
-100|Még nincs mit mutatni: rajzolj alakzatokat, és tedd őket bekapcsolt rétegekre.
-101|Ez a verzió nem tudja használni a számítógép kameráit.
-102|Ennek az eszköznek nincs bekapcsolt kamerája. Adj hozzá egyet az eszköz beállításaiban.
-103|Ez az eszköz nincs a listában: a projekttel érkezett
-104|Ez a helyettesítő eszköz (Dummy): alapértelmezett munkaterület és sebességek.
+69|A munka rajza…
+70|Plotter
+71|Előnézet
+72|Tulajdonságok
+73|A kijelölt alakzatok erre a rétegre
+74|Eszköz beolvasása fájlból
+75|Kész
+76|Nézet visszaállítása
+77|Mentés
+78|Mentés másként…
+79|Az eszköz mentése fájlba
+80|Az eszköz mentve ide: {}
+81|Mentve: {}
+82|Szervó (M3 S…)
+83|Beállítások
+84|Alakzatok ezen a rétegen
+85|A Kamera lapon látható
+86|A munkaterületen látható
+87|Sebesség
+88|A mozgások sebessége felemelt tollal
+89|Indítás
+90|Bekapcsolva
+91|A projekt eszköze
+92|Az eszköz hozzáadva.
+93|Az eszköz mentve.
+94|Előbb a kitöltés, majd rá a körvonal, hogy az él tiszta legyen.
+95|A toll követi az alakzatok vonalait. A nyitott vonalak is működnek.
+96|A tollat emeli:
+97|A munkaterület az a lap, amelyet a toll elér. A gép nullpontja az a sarok, ahol a toll indul.
+98|Nincs mit rajzolni: tedd az alakzatokat bekapcsolt rétegekre.
+99|Még nincs mit mutatni: rajzolj alakzatokat, és tedd őket bekapcsolt rétegekre.
+100|Ez a verzió nem tudja használni a számítógép kameráit.
+101|Ennek az eszköznek nincs bekapcsolt kamerája. Adj hozzá egyet az eszköz beállításaiban.
+102|Ez az eszköz nincs a listában: a projekttel érkezett
+103|Ez a helyettesítő eszköz (Dummy): alapértelmezett munkaterület és sebességek.
+104|Idő {} / {}
 105|Túl sok eszköz
 106|Mértékegységek
 107|Nézet

@@ -2,6 +2,12 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.2.1
+
+* The preview window is the same as MillCreator's and has an **animation**: back to the start, play / pause, speed (×0.25 to ×25) and repeat, with the time and the length.
+* The pointer is the tool's only over the work area; the line of the side panel and the line between the list of layers and their options light up red and thicken under the pointer, and the latter is dragged to resize the list.
+* baseCreator v0.9.0.
+
 ## v0.2.0
 
 * Devices with the start screen of MillCreator (list, add, edit, duplicate, export, import, **I have no device**; **New** and **Open…** without a device use the Dummy), cameras with a Camera tab.

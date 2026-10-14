@@ -67,42 +67,42 @@
 66|Bolígraf baixat
 67|Bolígraf aixecat
 68|Amplada del bolígraf
-69|Traçat de la feina
-70|Traçat de la feina…
-71|Traçador
-72|Progrés
-73|Propietats
-74|Posa les formes seleccionades en aquesta capa
-75|Llegeix un dispositiu d'un fitxer
-76|A punt
-77|Restableix la vista
-78|Desa
-79|Desa com a…
-80|Desa aquest dispositiu en un fitxer
-81|Dispositiu desat a {}
-82|{} desat
-83|Servo (M3 S…)
-84|Configuració
-85|Formes d'aquesta capa
-86|Es mostra a la pestanya Càmera
-87|Es mostra a l'àrea de treball
-88|Velocitat
-89|Velocitat dels moviments amb el bolígraf aixecat
-90|Inicia
-91|Activada
-92|El dispositiu d'aquest projecte
-93|S'ha afegit el dispositiu.
-94|S'ha desat el dispositiu.
-95|Primer el farciment, després el contorn a sobre, perquè la vora quedi neta.
-96|El bolígraf segueix les línies de les formes. Les línies obertes també funcionen.
-97|El bolígraf s'aixeca amb
-98|L'àrea de treball és el full que arriba el bolígraf. El zero de la màquina és la cantonada on comença el bolígraf.
-99|No hi ha res per dibuixar: posa formes en capes activades.
-100|Encara no hi ha res per mostrar: dibuixa formes i posa-les en capes activades.
-101|Aquesta versió no pot fer servir les càmeres de l'ordinador.
-102|Aquest dispositiu no té cap càmera activada. Afegeix-ne una als paràmetres del dispositiu.
-103|Aquest dispositiu no és a la llista: ha vingut amb el projecte
-104|Aquest és el dispositiu substitut (Dummy): àrea de treball i velocitats per defecte.
+69|Traçat de la feina…
+70|Traçador
+71|Previsualització
+72|Propietats
+73|Posa les formes seleccionades en aquesta capa
+74|Llegeix un dispositiu d'un fitxer
+75|A punt
+76|Restableix la vista
+77|Desa
+78|Desa com a…
+79|Desa aquest dispositiu en un fitxer
+80|Dispositiu desat a {}
+81|{} desat
+82|Servo (M3 S…)
+83|Configuració
+84|Formes d'aquesta capa
+85|Es mostra a la pestanya Càmera
+86|Es mostra a l'àrea de treball
+87|Velocitat
+88|Velocitat dels moviments amb el bolígraf aixecat
+89|Inicia
+90|Activada
+91|El dispositiu d'aquest projecte
+92|S'ha afegit el dispositiu.
+93|S'ha desat el dispositiu.
+94|Primer el farciment, després el contorn a sobre, perquè la vora quedi neta.
+95|El bolígraf segueix les línies de les formes. Les línies obertes també funcionen.
+96|El bolígraf s'aixeca amb
+97|L'àrea de treball és el full que arriba el bolígraf. El zero de la màquina és la cantonada on comença el bolígraf.
+98|No hi ha res per dibuixar: posa formes en capes activades.
+99|Encara no hi ha res per mostrar: dibuixa formes i posa-les en capes activades.
+100|Aquesta versió no pot fer servir les càmeres de l'ordinador.
+101|Aquest dispositiu no té cap càmera activada. Afegeix-ne una als paràmetres del dispositiu.
+102|Aquest dispositiu no és a la llista: ha vingut amb el projecte
+103|Aquest és el dispositiu substitut (Dummy): àrea de treball i velocitats per defecte.
+104|Temps {} / {}
 105|Massa dispositius
 106|Unitats
 107|Visualitza

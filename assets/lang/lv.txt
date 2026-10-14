@@ -67,42 +67,42 @@
 66|Pildspalva nolaista
 67|Pildspalva pacelta
 68|Pildspalvas platums
-69|Darba zīmējums
-70|Darba zīmējums…
-71|Plotters
-72|Progress
-73|Īpašības
-74|Novietot atlasītās formas uz šī slāņa
-75|Nolasīt ierīci no faila
-76|Gatavs
-77|Atiestatīt skatu
-78|Saglabāt
-79|Saglabāt kā…
-80|Saglabāt šo ierīci failā
-81|Ierīce saglabāta: {}
-82|Saglabāts: {}
-83|Servo (M3 S…)
-84|Iestatījumi
-85|Formas uz šī slāņa
-86|Tiek rādīta cilnē Kamera
-87|Tiek rādīts darba apgabalā
-88|Ātrums
-89|Kustību ātrums ar paceltu pildspalvu
-90|Sākt
-91|Ieslēgts
-92|Šī projekta ierīce
-93|Ierīce pievienota.
-94|Ierīce saglabāta.
-95|Vispirms aizpildījums, pēc tam kontūra virs tā, lai mala būtu tīra.
-96|Pildspalva seko formu līnijām. Atvērtās līnijas darbojas arī.
-97|Pildspalvu paceļ ar
-98|Darba apgabals ir lapa, ko pildspalva sasniedz. Iekārtas nulle ir stūris, no kura pildspalva sāk.
-99|Nav ko zīmēt: novietojiet formas uz ieslēgtiem slāņiem.
-100|Vēl nav ko rādīt: uzzīmējiet formas un novietojiet tās uz ieslēgtiem slāņiem.
-101|Šī versija nevar izmantot datora kameras.
-102|Šai ierīcei nav ieslēgtas kameras. Pievienojiet to ierīces iestatījumos.
-103|Šīs ierīces nav sarakstā: tā nāca līdz ar projektu
-104|Šī ir aizstājējierīce (Dummy): noklusējuma darba apgabals un ātrumi.
+69|Darba zīmējums…
+70|Plotters
+71|Priekšskatījums
+72|Īpašības
+73|Novietot atlasītās formas uz šī slāņa
+74|Nolasīt ierīci no faila
+75|Gatavs
+76|Atiestatīt skatu
+77|Saglabāt
+78|Saglabāt kā…
+79|Saglabāt šo ierīci failā
+80|Ierīce saglabāta: {}
+81|Saglabāts: {}
+82|Servo (M3 S…)
+83|Iestatījumi
+84|Formas uz šī slāņa
+85|Tiek rādīta cilnē Kamera
+86|Tiek rādīts darba apgabalā
+87|Ātrums
+88|Kustību ātrums ar paceltu pildspalvu
+89|Sākt
+90|Ieslēgts
+91|Šī projekta ierīce
+92|Ierīce pievienota.
+93|Ierīce saglabāta.
+94|Vispirms aizpildījums, pēc tam kontūra virs tā, lai mala būtu tīra.
+95|Pildspalva seko formu līnijām. Atvērtās līnijas darbojas arī.
+96|Pildspalvu paceļ ar
+97|Darba apgabals ir lapa, ko pildspalva sasniedz. Iekārtas nulle ir stūris, no kura pildspalva sāk.
+98|Nav ko zīmēt: novietojiet formas uz ieslēgtiem slāņiem.
+99|Vēl nav ko rādīt: uzzīmējiet formas un novietojiet tās uz ieslēgtiem slāņiem.
+100|Šī versija nevar izmantot datora kameras.
+101|Šai ierīcei nav ieslēgtas kameras. Pievienojiet to ierīces iestatījumos.
+102|Šīs ierīces nav sarakstā: tā nāca līdz ar projektu
+103|Šī ir aizstājējierīce (Dummy): noklusējuma darba apgabals un ātrumi.
+104|Laiks {} / {}
 105|Pārāk daudz ierīču
 106|Vienības
 107|Skats

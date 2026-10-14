@@ -67,42 +67,42 @@
 66|Bolígrafo bajado
 67|Bolígrafo levantado
 68|Anchura del bolígrafo
-69|Trazado del trabajo
-70|Trazado del trabajo…
-71|Plóter
-72|Progreso
-73|Propiedades
-74|Poner las formas seleccionadas en esta capa
-75|Leer un dispositivo desde un archivo
-76|Listo
-77|Restablecer la vista
-78|Guardar
-79|Guardar como…
-80|Guardar este dispositivo en un archivo
-81|Dispositivo guardado en {}
-82|{} guardado
-83|Servo (M3 S…)
-84|Ajustes
-85|Formas en esta capa
-86|Se muestra en la pestaña Cámara
-87|Se muestra en el área de trabajo
-88|Velocidad
-89|Velocidad de los movimientos con el bolígrafo levantado
-90|Iniciar
-91|Activada
-92|El dispositivo de este proyecto
-93|Se añadió el dispositivo.
-94|Se guardó el dispositivo.
-95|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
-96|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
-97|El bolígrafo se levanta con
-98|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
-99|No hay nada que dibujar: pon formas en capas activadas.
-100|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
-101|Esta versión no puede usar las cámaras del ordenador.
-102|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
-103|Este dispositivo no está en la lista: vino con el proyecto
-104|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
+69|Trazado del trabajo…
+70|Plóter
+71|Vista previa
+72|Propiedades
+73|Poner las formas seleccionadas en esta capa
+74|Leer un dispositivo desde un archivo
+75|Listo
+76|Restablecer la vista
+77|Guardar
+78|Guardar como…
+79|Guardar este dispositivo en un archivo
+80|Dispositivo guardado en {}
+81|{} guardado
+82|Servo (M3 S…)
+83|Ajustes
+84|Formas en esta capa
+85|Se muestra en la pestaña Cámara
+86|Se muestra en el área de trabajo
+87|Velocidad
+88|Velocidad de los movimientos con el bolígrafo levantado
+89|Iniciar
+90|Activada
+91|El dispositivo de este proyecto
+92|Se añadió el dispositivo.
+93|Se guardó el dispositivo.
+94|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
+95|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
+96|El bolígrafo se levanta con
+97|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
+98|No hay nada que dibujar: pon formas en capas activadas.
+99|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
+100|Esta versión no puede usar las cámaras del ordenador.
+101|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
+102|Este dispositivo no está en la lista: vino con el proyecto
+103|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
+104|Tiempo {} / {}
 105|Demasiados dispositivos
 106|Unidades
 107|Ver

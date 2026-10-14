@@ -67,42 +67,42 @@
 66|Pen nede
 67|Pen oppe
 68|Penbredde
-69|Plot af jobbet
-70|Plot af jobbet…
-71|Plotter
-72|Forløb
-73|Egenskaber
-74|Læg de valgte former på dette lag
-75|Læs en enhed fra en fil
-76|Klar
-77|Nulstil visning
-78|Gem
-79|Gem som…
-80|Gem denne enhed i en fil
-81|Enheden blev gemt i {}
-82|{} gemt
-83|Servo (M3 S…)
-84|Indstillinger
-85|Former på dette lag
-86|Vises på fanen Kamera
-87|Vises i arbejdsområdet
-88|Hastighed
-89|Hastighed for bevægelser med pennen oppe
-90|Start
-91|Tændt
-92|Enheden til dette projekt
-93|Enheden blev tilføjet.
-94|Enheden blev gemt.
-95|Først fyldet, så konturen oven på, så kanten bliver ren.
-96|Pennen følger formernes linjer. Åbne linjer virker også.
-97|Pennen løftes af
-98|Arbejdsområdet er arket, som pennen kan nå. Maskinens nulpunkt er hjørnet, hvor pennen starter.
-99|Der er intet at tegne: læg former på tændte lag.
-100|Der er intet at vise endnu: tegn former og læg dem på tændte lag.
-101|Denne version kan ikke bruge computerens kameraer.
-102|Denne enhed har intet tændt kamera. Tilføj et i enhedsindstillingerne.
-103|Denne enhed er ikke på listen: den kom med projektet
-104|Dette er erstatningsenheden (Dummy): standardarbejdsområde og -hastigheder.
+69|Plot af jobbet…
+70|Plotter
+71|Forhåndsvisning
+72|Egenskaber
+73|Læg de valgte former på dette lag
+74|Læs en enhed fra en fil
+75|Klar
+76|Nulstil visning
+77|Gem
+78|Gem som…
+79|Gem denne enhed i en fil
+80|Enheden blev gemt i {}
+81|{} gemt
+82|Servo (M3 S…)
+83|Indstillinger
+84|Former på dette lag
+85|Vises på fanen Kamera
+86|Vises i arbejdsområdet
+87|Hastighed
+88|Hastighed for bevægelser med pennen oppe
+89|Start
+90|Tændt
+91|Enheden til dette projekt
+92|Enheden blev tilføjet.
+93|Enheden blev gemt.
+94|Først fyldet, så konturen oven på, så kanten bliver ren.
+95|Pennen følger formernes linjer. Åbne linjer virker også.
+96|Pennen løftes af
+97|Arbejdsområdet er arket, som pennen kan nå. Maskinens nulpunkt er hjørnet, hvor pennen starter.
+98|Der er intet at tegne: læg former på tændte lag.
+99|Der er intet at vise endnu: tegn former og læg dem på tændte lag.
+100|Denne version kan ikke bruge computerens kameraer.
+101|Denne enhed har intet tændt kamera. Tilføj et i enhedsindstillingerne.
+102|Denne enhed er ikke på listen: den kom med projektet
+103|Dette er erstatningsenheden (Dummy): standardarbejdsområde og -hastigheder.
+104|Tid {} / {}
 105|For mange enheder
 106|Enheder
 107|Vis

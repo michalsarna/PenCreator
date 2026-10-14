@@ -67,42 +67,42 @@
 66|Stilou coborât
 67|Stilou ridicat
 68|Lățimea stiloului
-69|Graficul lucrării
-70|Graficul lucrării…
-71|Plotter
-72|Progres
-73|Proprietăți
-74|Pune formele selectate pe acest strat
-75|Citește un dispozitiv dintr-un fișier
-76|Gata
-77|Resetează vizualizarea
-78|Salvează
-79|Salvează ca…
-80|Salvează acest dispozitiv într-un fișier
-81|Dispozitiv salvat în {}
-82|{} salvat
-83|Servo (M3 S…)
-84|Setări
-85|Forme pe acest strat
-86|Afișată în fila Cameră
-87|Afișat în zona de lucru
-88|Viteză
-89|Viteza mișcărilor cu stiloul ridicat
-90|Start
-91|Pornit
-92|Dispozitivul acestui proiect
-93|Dispozitivul a fost adăugat.
-94|Dispozitivul a fost salvat.
-95|Mai întâi umplerea, apoi conturul peste ea, ca marginea să fie curată.
-96|Stiloul urmărește liniile formelor. Liniile deschise funcționează și ele.
-97|Stiloul este ridicat prin
-98|Zona de lucru este foaia pe care o atinge stiloul. Zeroul mașinii este colțul de unde începe stiloul.
-99|Nu e nimic de desenat: pune forme pe straturi pornite.
-100|Încă nu e nimic de arătat: desenează forme și pune-le pe straturi pornite.
-101|Această versiune nu poate folosi camerele computerului.
-102|Acest dispozitiv nu are nicio cameră pornită. Adaugă una în setările dispozitivului.
-103|Acest dispozitiv nu este în listă: a venit cu proiectul
-104|Acesta este dispozitivul înlocuitor (Dummy): zonă de lucru și viteze implicite.
+69|Graficul lucrării…
+70|Plotter
+71|Previzualizare
+72|Proprietăți
+73|Pune formele selectate pe acest strat
+74|Citește un dispozitiv dintr-un fișier
+75|Gata
+76|Resetează vizualizarea
+77|Salvează
+78|Salvează ca…
+79|Salvează acest dispozitiv într-un fișier
+80|Dispozitiv salvat în {}
+81|{} salvat
+82|Servo (M3 S…)
+83|Setări
+84|Forme pe acest strat
+85|Afișată în fila Cameră
+86|Afișat în zona de lucru
+87|Viteză
+88|Viteza mișcărilor cu stiloul ridicat
+89|Start
+90|Pornit
+91|Dispozitivul acestui proiect
+92|Dispozitivul a fost adăugat.
+93|Dispozitivul a fost salvat.
+94|Mai întâi umplerea, apoi conturul peste ea, ca marginea să fie curată.
+95|Stiloul urmărește liniile formelor. Liniile deschise funcționează și ele.
+96|Stiloul este ridicat prin
+97|Zona de lucru este foaia pe care o atinge stiloul. Zeroul mașinii este colțul de unde începe stiloul.
+98|Nu e nimic de desenat: pune forme pe straturi pornite.
+99|Încă nu e nimic de arătat: desenează forme și pune-le pe straturi pornite.
+100|Această versiune nu poate folosi camerele computerului.
+101|Acest dispozitiv nu are nicio cameră pornită. Adaugă una în setările dispozitivului.
+102|Acest dispozitiv nu este în listă: a venit cu proiectul
+103|Acesta este dispozitivul înlocuitor (Dummy): zonă de lucru și viteze implicite.
+104|Timp {} / {}
 105|Prea multe dispozitive
 106|Unități
 107|Vizualizare

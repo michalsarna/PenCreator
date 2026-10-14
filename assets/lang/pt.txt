@@ -67,42 +67,42 @@
 66|Caneta baixada
 67|Caneta levantada
 68|Largura da caneta
-69|Traçado do trabalho
-70|Traçado do trabalho…
-71|Plotter
-72|Progresso
-73|Propriedades
-74|Pôr as formas selecionadas nesta camada
-75|Ler um dispositivo de um ficheiro
-76|Pronto
-77|Repor a vista
-78|Guardar
-79|Guardar como…
-80|Guardar este dispositivo num ficheiro
-81|Dispositivo guardado em {}
-82|{} guardado
-83|Servo (M3 S…)
-84|Definições
-85|Formas nesta camada
-86|Mostrada no separador Câmara
-87|Mostrada na área de trabalho
-88|Velocidade
-89|Velocidade dos movimentos com a caneta levantada
-90|Iniciar
-91|Ligada
-92|O dispositivo deste projeto
-93|O dispositivo foi adicionado.
-94|O dispositivo foi guardado.
-95|Primeiro o preenchimento, depois o contorno por cima, para o bordo ficar limpo.
-96|A caneta segue as linhas das formas. As linhas abertas também funcionam.
-97|A caneta é levantada por
-98|A área de trabalho é a folha que a caneta alcança. O zero da máquina é o canto onde a caneta começa.
-99|Não há nada para desenhar: ponha formas em camadas ligadas.
-100|Ainda não há nada para mostrar: desenhe formas e ponha-as em camadas ligadas.
-101|Esta versão não pode usar as câmaras do computador.
-102|Este dispositivo não tem nenhuma câmara ligada. Adicione uma nas definições do dispositivo.
-103|Este dispositivo não está na lista: veio com o projeto
-104|Este é o dispositivo de substituição (Dummy): área de trabalho e velocidades predefinidas.
+69|Traçado do trabalho…
+70|Plotter
+71|Pré-visualização
+72|Propriedades
+73|Pôr as formas selecionadas nesta camada
+74|Ler um dispositivo de um ficheiro
+75|Pronto
+76|Repor a vista
+77|Guardar
+78|Guardar como…
+79|Guardar este dispositivo num ficheiro
+80|Dispositivo guardado em {}
+81|{} guardado
+82|Servo (M3 S…)
+83|Definições
+84|Formas nesta camada
+85|Mostrada no separador Câmara
+86|Mostrada na área de trabalho
+87|Velocidade
+88|Velocidade dos movimentos com a caneta levantada
+89|Iniciar
+90|Ligada
+91|O dispositivo deste projeto
+92|O dispositivo foi adicionado.
+93|O dispositivo foi guardado.
+94|Primeiro o preenchimento, depois o contorno por cima, para o bordo ficar limpo.
+95|A caneta segue as linhas das formas. As linhas abertas também funcionam.
+96|A caneta é levantada por
+97|A área de trabalho é a folha que a caneta alcança. O zero da máquina é o canto onde a caneta começa.
+98|Não há nada para desenhar: ponha formas em camadas ligadas.
+99|Ainda não há nada para mostrar: desenhe formas e ponha-as em camadas ligadas.
+100|Esta versão não pode usar as câmaras do computador.
+101|Este dispositivo não tem nenhuma câmara ligada. Adicione uma nas definições do dispositivo.
+102|Este dispositivo não está na lista: veio com o projeto
+103|Este é o dispositivo de substituição (Dummy): área de trabalho e velocidades predefinidas.
+104|Tempo {} / {}
 105|Demasiados dispositivos
 106|Unidades
 107|Ver

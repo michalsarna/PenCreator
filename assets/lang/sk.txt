@@ -67,42 +67,42 @@
 66|Pero dole
 67|Pero hore
 68|Šírka pera
-69|Vykreslenie úlohy
-70|Vykreslenie úlohy…
-71|Plotter
-72|Priebeh
-73|Vlastnosti
-74|Dať vybrané tvary na túto vrstvu
-75|Načítať zariadenie zo súboru
-76|Pripravené
-77|Obnoviť pohľad
-78|Uložiť
-79|Uložiť ako…
-80|Uložiť toto zariadenie do súboru
-81|Zariadenie uložené do {}
-82|Uložené: {}
-83|Servo (M3 S…)
-84|Nastavenia
-85|Tvary na tejto vrstve
-86|Zobrazené na karte Kamera
-87|Zobrazené v pracovnej ploche
-88|Rýchlosť
-89|Rýchlosť pohybov so zdvihnutým perom
-90|Štart
-91|Zapnuté
-92|Zariadenie tohto projektu
-93|Zariadenie bolo pridané.
-94|Zariadenie bolo uložené.
-95|Najprv výplň, potom obrys cez ňu, aby bol okraj čistý.
-96|Pero sleduje čiary tvarov. Otvorené čiary fungujú tiež.
-97|Pero sa dvíha pomocou
-98|Pracovná plocha je hárok, kam pero dosiahne. Nulový bod stroja je roh, kde pero začína.
-99|Nie je čo kresliť: dajte tvary na zapnuté vrstvy.
-100|Zatiaľ nie je čo zobraziť: nakreslite tvary a dajte ich na zapnuté vrstvy.
-101|Táto verzia nemôže používať kamery počítača.
-102|Toto zariadenie nemá zapnutú kameru. Pridajte ju v nastaveniach zariadenia.
-103|Toto zariadenie nie je v zozname: prišlo s projektom
-104|Toto je náhradné zariadenie (Dummy): predvolená pracovná plocha a rýchlosti.
+69|Vykreslenie úlohy…
+70|Plotter
+71|Náhľad
+72|Vlastnosti
+73|Dať vybrané tvary na túto vrstvu
+74|Načítať zariadenie zo súboru
+75|Pripravené
+76|Obnoviť pohľad
+77|Uložiť
+78|Uložiť ako…
+79|Uložiť toto zariadenie do súboru
+80|Zariadenie uložené do {}
+81|Uložené: {}
+82|Servo (M3 S…)
+83|Nastavenia
+84|Tvary na tejto vrstve
+85|Zobrazené na karte Kamera
+86|Zobrazené v pracovnej ploche
+87|Rýchlosť
+88|Rýchlosť pohybov so zdvihnutým perom
+89|Štart
+90|Zapnuté
+91|Zariadenie tohto projektu
+92|Zariadenie bolo pridané.
+93|Zariadenie bolo uložené.
+94|Najprv výplň, potom obrys cez ňu, aby bol okraj čistý.
+95|Pero sleduje čiary tvarov. Otvorené čiary fungujú tiež.
+96|Pero sa dvíha pomocou
+97|Pracovná plocha je hárok, kam pero dosiahne. Nulový bod stroja je roh, kde pero začína.
+98|Nie je čo kresliť: dajte tvary na zapnuté vrstvy.
+99|Zatiaľ nie je čo zobraziť: nakreslite tvary a dajte ich na zapnuté vrstvy.
+100|Táto verzia nemôže používať kamery počítača.
+101|Toto zariadenie nemá zapnutú kameru. Pridajte ju v nastaveniach zariadenia.
+102|Toto zariadenie nie je v zozname: prišlo s projektom
+103|Toto je náhradné zariadenie (Dummy): predvolená pracovná plocha a rýchlosti.
+104|Čas {} / {}
 105|Príliš veľa zariadení
 106|Jednotky
 107|Zobrazenie

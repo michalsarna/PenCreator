@@ -67,42 +67,42 @@
 66|Pinna 'l isfel
 67|Pinna 'l fuq
 68|Wisa' tal-pinna
-69|Plott tax-xogħol
-70|Plott tax-xogħol…
-71|Plotter
-72|Progress
-73|Proprjetajiet
-74|Poġġi l-forom magħżula fuq dan is-saff
-75|Aqra apparat minn fajl
-76|Lest
-77|Irrisettja l-veduta
-78|Salva
-79|Salva bħala…
-80|Aħżen dan l-apparat f'fajl
-81|L-apparat inħażen f'{}
-82|Salvat: {}
-83|Servo (M3 S…)
-84|Issettjar
-85|Forom fuq dan is-saff
-86|Murija fit-tab Kamera
-87|Murija fiż-żona tax-xogħol
-88|Veloċità
-89|Veloċità tal-movimenti bil-pinna mgħollija
-90|Ibda
-91|Mixgħul
-92|L-apparat ta' dan il-proġett
-93|L-apparat ġie miżjud.
-94|L-apparat inħażen.
-95|L-ewwel il-mili, imbagħad il-kontorn fuqu, biex it-tarf ikun nadif.
-96|Il-pinna tsegwi l-linji tal-forom. Il-linji miftuħin jaħdmu wkoll.
-97|Il-pinna titgħolla bi
-98|Iż-żona tax-xogħol hija l-folja li tilħaq il-pinna. Iż-żero tal-magna huwa r-rokna fejn tibda l-pinna.
-99|M'hemm xejn x'tpinġi: poġġi forom fuq saffi mixgħulin.
-100|M'hemm xejn x'turi għadu: ipinġi forom u poġġihom fuq saffi mixgħulin.
-101|Din il-verżjoni ma tistax tuża l-kameras tal-kompjuter.
-102|Dan l-apparat m'għandu l-ebda kamera mixgħula. Żid waħda fl-issettjar tal-apparat.
-103|Dan l-apparat mhuwiex fil-lista: ġie mal-proġett
-104|Dan huwa l-apparat sostitut (Dummy): żona tax-xogħol u veloċitajiet awtomatiċi.
+69|Plott tax-xogħol…
+70|Plotter
+71|Previżjoni
+72|Proprjetajiet
+73|Poġġi l-forom magħżula fuq dan is-saff
+74|Aqra apparat minn fajl
+75|Lest
+76|Irrisettja l-veduta
+77|Salva
+78|Salva bħala…
+79|Aħżen dan l-apparat f'fajl
+80|L-apparat inħażen f'{}
+81|Salvat: {}
+82|Servo (M3 S…)
+83|Issettjar
+84|Forom fuq dan is-saff
+85|Murija fit-tab Kamera
+86|Murija fiż-żona tax-xogħol
+87|Veloċità
+88|Veloċità tal-movimenti bil-pinna mgħollija
+89|Ibda
+90|Mixgħul
+91|L-apparat ta' dan il-proġett
+92|L-apparat ġie miżjud.
+93|L-apparat inħażen.
+94|L-ewwel il-mili, imbagħad il-kontorn fuqu, biex it-tarf ikun nadif.
+95|Il-pinna tsegwi l-linji tal-forom. Il-linji miftuħin jaħdmu wkoll.
+96|Il-pinna titgħolla bi
+97|Iż-żona tax-xogħol hija l-folja li tilħaq il-pinna. Iż-żero tal-magna huwa r-rokna fejn tibda l-pinna.
+98|M'hemm xejn x'tpinġi: poġġi forom fuq saffi mixgħulin.
+99|M'hemm xejn x'turi għadu: ipinġi forom u poġġihom fuq saffi mixgħulin.
+100|Din il-verżjoni ma tistax tuża l-kameras tal-kompjuter.
+101|Dan l-apparat m'għandu l-ebda kamera mixgħula. Żid waħda fl-issettjar tal-apparat.
+102|Dan l-apparat mhuwiex fil-lista: ġie mal-proġett
+103|Dan huwa l-apparat sostitut (Dummy): żona tax-xogħol u veloċitajiet awtomatiċi.
+104|Ħin {} / {}
 105|Apparati wisq
 106|Unitajiet
 107|Dehra
