@@ -27,4 +27,4 @@ commands to a machine, are in scope. Problems in the shared code are handled in
 
 ## Safety reminder
 
-A plotter is a machine with moving parts. PenCreator writes G-code but does not connect to a machine, and its G-code has not been tried on a real plotter: set the pen up and down values of the device with care, test new jobs with the pen lifted first and never leave a running machine unattended.
+A plotter is a machine with moving parts. PenCreator writes G-code and can stream it to a GRBL plotter, but neither has been tried on a real plotter: set the pen up and down values of the device with care, test new jobs with the pen lifted first and never leave a running machine unattended.

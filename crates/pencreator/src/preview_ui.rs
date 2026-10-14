@@ -2,6 +2,7 @@
 use crate::plot::{self, MoveKind, Program};
 use crate::App;
 use base_ui::i18n::{tr, trf};
+use base_ui::editor::EditorHost;
 use base_ui::theme;
 use base_ui::window::popup;
 use eframe::egui::{self, Color32, Pos2, RichText, Stroke};
@@ -32,6 +33,50 @@ impl App {
     /// The moves of the pen for the project as it is now.
     pub(crate) fn make_program(&self) -> Program {
         plot::generate(&self.scene, &self.layers, &self.device)
+    }
+
+    /// The program is made again when the project changed since it was made.
+    pub(crate) fn refresh_program(&mut self) {
+        if self.prog.is_none() || self.prog_rev != self.rev {
+            self.prog = Some(self.make_program());
+            self.prog_rev = self.rev;
+        }
+    }
+
+    /// The toolpaths over the work area (the Toolpaths button): the lines in the colour of their layer, the moves with
+    /// the pen up in light blue.
+    pub(crate) fn paint_toolpaths(&mut self, v: &base_ui::editor::CanvasView) {
+        if !self.toolpaths_on {
+            return;
+        }
+        self.refresh_program();
+        let Some(prog) = self.prog.as_ref() else { return };
+        let h = self.device.area.y;
+        let to_screen = |p: plot::P2| self.w2s(v.origin, base_core::geom::Pt::new(p[0], h - p[1]));
+        let many = prog.moves.len() > 100_000;
+        let mut shapes = Vec::with_capacity(prog.moves.len());
+        for m in &prog.moves {
+            let (a, b) = (to_screen(m.from), to_screen(m.to));
+            match m.kind {
+                MoveKind::Draw => {
+                    let c = self.layers.get(m.layer).map_or(Color32::RED, |l| l.color32());
+                    shapes.push(egui::Shape::line_segment([a, b], Stroke::new(1.5, c)));
+                }
+                MoveKind::Travel if !many => shapes.push(egui::Shape::line_segment([a, b], Stroke::new(0.6, Color32::from_rgb(0x70, 0x90, 0xc0).gamma_multiply(0.8)))),
+                MoveKind::Travel => {}
+            }
+        }
+        v.painter.extend(shapes);
+    }
+
+    /// The live picture of the camera in a window of its own (the Camera view button).
+    pub(crate) fn camera_window(&mut self, ctx: &egui::Context) {
+        if !self.show_camera {
+            return;
+        }
+        let mut open = true;
+        popup(ctx, "camera_window", &tr("Camera view"), [560.0, 440.0], &mut open, |ui| self.camera_tab(ui));
+        self.show_camera = open;
     }
 
     /// Open the plot window with a fresh program.
@@ -69,7 +114,6 @@ impl App {
             self.prog_rev = self.rev;
         }
         let mut open = true;
-        let mut export = false;
         popup(ctx, "preview_plot", &tr("Preview"), [980.0, 700.0], &mut open, |ui| {
             let prog = self.prog.as_ref().expect("the program was made above");
             ui.horizontal_wrapped(|ui| {
@@ -77,9 +121,6 @@ impl App {
                     self.view.reset();
                 }
                 ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
-                if ui.button(tr("Export G-code…")).clicked() {
-                    export = true;
-                }
             });
             ui.horizontal(|ui| {
                 self.playback.show(ui, &mut self.view.progress);
@@ -99,9 +140,6 @@ impl App {
                 show_plot(ui, &mut self.view, prog, &self.layers, self.device.area.x, self.device.area.y);
             }
         });
-        if export {
-            self.export_gcode();
-        }
         self.show_plot = open;
         if !open {
             self.playback.playing = false;

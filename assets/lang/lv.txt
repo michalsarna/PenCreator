@@ -1,119 +1,171 @@
 0|Slānis ir pildspalva: kad nākamajam slānim ir cita pildspalva, G-kods apstājas, lai jūs to varētu nomainīt.
-1|Otrs aizpildījuma līniju kopums šķērsām pirmajam
-2|Par programmu
-3|Pievienot kameru
-4|Pievienot ierīci
-5|Pievienot ierīci
-6|Pievienot ierīci…
-7|Adrese
-8|Izkārtot
-9|Aizmugurē pa kreisi
-10|Aizmugurē pa labi
-11|Atpakaļ uz pirmo skatu. Dubultklikšķis uz attēla dara to pašu.
-12|Kamera
-13|Kameras nosaukums
-14|Kameras numurs
-15|Šī datora kamera
-16|Kameras pagriešana
-17|Kameras
-18|Failu nevar izmantot: {}
-19|Izvēlieties iekārtu, ar kuru strādāsiet.
-20|Slēgtās formas tiek aizpildītas ar paralēlām līnijām; caurumi paliek tukši.
-21|Apstiprināt dzēšanu
-22|Kontrolleris
-23|Nokopēts uz {}
-24|Neizdevās saglabāt: {}
-25|Krustotas līnijas
-26|Dzēst šo kameru
-27|Ierīce
-28|Ierīces iestatījumi
-29|Ierīces iestatījumi…
-30|Zīmēšana
-31|Cik reižu zīmēt
-32|Tiek zīmēts: iekļauts zīmējumā un G-kodā
-33|Rediģēt
-34|Rediģēt…
-35|Eksportēt G-code…
-36|Eksportēt…
-37|Fails
-38|Aizpildījums un kontūra
-39|Aizpildījuma līniju leņķis
-40|Attālums starp aizpildījuma līnijām
-41|Aizpildīt ar līnijām
-42|Priekšā pa kreisi
-43|Priekšā pa labi
-44|Vispārīgi
-45|Palīdzība
-46|Cik reižu tiek zīmēta katra līnija: pārāk gaišai pildspalvai
-47|Man nav ierīces
-48|Importēt LightBurn projektu…
-49|Ierīce {} importēta
-50|Importēt…
-51|Slāņi
-52|Līnijas: {} m, kustības ar paceltu pildspalvu: {} m, pildspalvas pacelšanas: {}, apmēram {} min
-53|Iekārta
-54|Iekārtas nulle (0,0)
-55|Kustības ar paceltu pildspalvu
-56|Jauns
-57|Vēl nav ierīces. Pievienojiet vienu vai strādājiet bez iekārtas.
-58|Tā nav http vai https adrese.
-59|Piezīmes
-60|Piezīmes par šo iekārtu
-61|Nekas nav atlasīts
-62|Atveriet zīmējumu vai sāciet tukšu dizainu.
-63|Atvērt…
-64|Kontūra
-65|Pildspalva
-66|Pildspalva nolaista
-67|Pildspalva pacelta
-68|Pildspalvas platums
-69|Darba zīmējums…
-70|Plotters
-71|Priekšskatījums
-72|Īpašības
-73|Novietot atlasītās formas uz šī slāņa
-74|Nolasīt ierīci no faila
-75|Gatavs
-76|Atiestatīt skatu
-77|Saglabāt
-78|Saglabāt kā…
-79|Saglabāt šo ierīci failā
-80|Ierīce saglabāta: {}
-81|Saglabāts: {}
-82|Servo (M3 S…)
-83|Iestatījumi
-84|Formas uz šī slāņa
-85|Tiek rādīta cilnē Kamera
-86|Tiek rādīts darba apgabalā
-87|Ātrums
-88|Kustību ātrums ar paceltu pildspalvu
-89|Sākt
-90|Ieslēgts
-91|Šī projekta ierīce
-92|Ierīce pievienota.
-93|Ierīce saglabāta.
-94|Vispirms aizpildījums, pēc tam kontūra virs tā, lai mala būtu tīra.
-95|Pildspalva seko formu līnijām. Atvērtās līnijas darbojas arī.
-96|Pildspalvu paceļ ar
-97|Darba apgabals ir lapa, ko pildspalva sasniedz. Iekārtas nulle ir stūris, no kura pildspalva sāk.
-98|Nav ko zīmēt: novietojiet formas uz ieslēgtiem slāņiem.
-99|Vēl nav ko rādīt: uzzīmējiet formas un novietojiet tās uz ieslēgtiem slāņiem.
-100|Šī versija nevar izmantot datora kameras.
-101|Šai ierīcei nav ieslēgtas kameras. Pievienojiet to ierīces iestatījumos.
-102|Šīs ierīces nav sarakstā: tā nāca līdz ar projektu
-103|Šī ir aizstājējierīce (Dummy): noklusējuma darba apgabals un ātrumi.
-104|Laiks {} / {}
-105|Pārāk daudz ierīču
-106|Vienības
-107|Skats
-108|Skata opcijas…
-109|Gaidīšana pēc pildspalvas kustības
-110|Gaida attēlu…
-111|Ar Z asi pildspalva iet uz augstāk minētajiem augstumiem; ar servo G-kods ieslēdz vārpstas izeju ar S vērtību (M3 S…).
-112|Strādājiet ar projektu bez iekārtas: parasta ierīce ar nosaukumu Dummy ar noklusējuma darba laukumu un ātrumiem
-113|Z ass
-114|piem. Mans plotters
-115|daļa zīmējuma atrodas ārpus darba apgabala
-116|aizpildījumam ir pārāk daudz līniju: attālums ir pārāk mazs, tāpēc daļa aizpildījuma tika izlaista
-117|šis projekts izveidots citai iekārtai: {}
-118|{} attēlus uz slāņiem nevar zīmēt: vispirms pārveidojiet tos līnijās
+1|Porta nosaukums vai USB ražotāja un ražojuma ID (VID:PID, heksadecimāli): tiek izmantots ports ar šiem ID.
+2|Otrs aizpildījuma līniju kopums šķērsām pirmajam
+3|Pārtraukt notiekošo darbu
+4|Par programmu
+5|Pievienot kameru
+6|Pievienot ierīci
+7|Pievienot ierīci
+8|Pievienot ierīci…
+9|Adrese
+10|Pēc savienošanas
+11|Izkārtot
+12|Aizmugurē pa kreisi
+13|Aizmugurē pa labi
+14|Atpakaļ uz pirmo skatu. Dubultklikšķis uz attēla dara to pašu.
+15|Pārraides ātrums (baud)
+16|Piesaistīt šim portam
+17|Piesaistīta USB ierīce
+18|Kamera
+19|Kameras nosaukums
+20|Kameras numurs
+21|Šī datora kamera
+22|Kameras pagriešana
+23|Kameras skats
+24|Kameras
+25|Failu nevar izmantot: {}
+26|Vispirms ierīces iestatījumos izvēlieties portu vai resursdatoru.
+27|Izvēlieties iekārtu, ar kuru strādāsiet.
+28|Notīrīt trauksmi
+29|Notīrīt trauksmi ($X)
+30|Trauksmes notīrīšana izlaiž bāzēšanu: lietojiet tikai tad, kad zināms, ka galviņa atrodas drošā vietā.
+31|Slēgtās formas tiek aizpildītas ar paralēlām līnijām; caurumi paliek tukši.
+32|Apstiprināt dzēšanu
+33|Savienot
+34|Automātiski atkal savienoties
+35|Vispirms pievienojieties iekārtai (cilne Ierīce)
+36|Pievienots
+37|Savienojums
+38|Savienojuma veids
+39|Konsole
+40|Kontrolleris
+41|Nokopēts uz {}
+42|Neizdevās saglabāt: {}
+43|Skaitīšana piepilda kontroliera buferi un ir ātra. Vienkāršais nosūta vienu rindu un gaida tās ok: lēns, bet programmaparatūrai, kas atbild nepareizi.
+44|Krustotas līnijas
+45|Dzēst šo kameru
+46|Ierīce
+47|Ierīces iestatījumi
+48|Ierīces iestatījumi…
+49|Atvienot
+50|Zīmēšana
+51|Cik reižu zīmēt
+52|Tiek zīmēts: iekļauts zīmējumā un G-kodā
+53|Rediģēt
+54|Rediģēt…
+55|Eksportēt G-code…
+56|Eksportēt…
+57|Padeves apturēšana
+58|Fails
+59|Aizpildījums un kontūra
+60|Aizpildījuma līniju leņķis
+61|Attālums starp aizpildījuma līnijām
+62|Aizpildīt ar līnijām
+63|Rāmis
+64|Darba apgabala ierāmēšana
+65|Priekšā pa kreisi
+66|Priekšā pa labi
+67|Vispārīgi
+68|Apiet rāmi, kurā tiks strādāts
+69|Palīdzība
+70|Sākums
+71|Bāzēt iekārtu
+72|Resursdators
+73|Cik reižu tiek zīmēta katra līnija: pārāk gaišai pildspalvai
+74|Man nav ierīces
+75|Importēt LightBurn projektu…
+76|Ierīce {} importēta
+77|Importēt…
+78|Slāņi
+79|Līnijas: {} m, kustības ar paceltu pildspalvu: {} m, pildspalvas pacelšanas: {}, apmēram {} min
+80|Iekārta
+81|Iekārtas nulle (0,0)
+82|Kustības ar paceltu pildspalvu
+83|Jauns
+84|Vēl nav ierīces. Pievienojiet vienu vai strādājiet bez iekārtas.
+85|Nav porta
+86|Tā nav http vai https adrese.
+87|Piezīmes
+88|Piezīmes par šo iekārtu
+89|Nekas nav atlasīts
+90|Atveriet zīmējumu vai sāciet tukšu dizainu.
+91|Atvērt savienojumu ar kontrolieri, kas norādīts ierīces iestatījumos
+92|Atvērt priekšskatījuma logu
+93|Atvērt…
+94|Kontūra
+95|Pildspalva
+96|Pildspalva nolaista
+97|Pildspalva pacelta
+98|Pildspalvas platums
+99|Darba zīmējums…
+100|Plotters
+101|Ports
+102|Ports vai USB ID
+103|Priekšskatījums
+104|Priekšskatījums…
+105|Īpašības
+106|Novietot atlasītās formas uz šī slāņa
+107|Nolasīt ierīci no faila
+108|Gatavs
+109|Atkārtota savienošana
+110|Atsvaidzināt
+111|Atcerēties izvēlētā porta USB ID: mainoties nosaukumam, ports tiek atrasts pēc tiem.
+112|Atiestatīt skatu
+113|Turpināt
+114|STOP
+115|Saglabāt
+116|Saglabāt G-code
+117|Saglabāt kā…
+118|Saglabāt šo ierīci failā
+119|Ierīce saglabāta: {}
+120|Saglabāts: {}
+121|Servo (M3 S…)
+122|Iestatījumi
+123|Formas uz šī slāņa
+124|Rāda šīs iekārtas kameras tiešraides attēlu
+125|Rāda trajektorijas darba apgabalā
+126|Tiek rādīta cilnē Kamera
+127|Tiek rādīts darba apgabalā
+128|Ātrums
+129|Kustību ātrums ar paceltu pildspalvu
+130|Sākt
+131|Sāk darbu: {} rindas, ~{}
+132|Nosūtīt darbu pievienotajai iekārtai
+133|Straumēšana
+134|Ieslēgts
+135|TCP ports
+136|Šī projekta ierīce
+137|Ierīce pievienota.
+138|Ierīce saglabāta.
+139|Vispirms aizpildījums, pēc tam kontūra virs tā, lai mala būtu tīra.
+140|Darbs pabeigts.
+141|Darbs darbojas.
+142|Pildspalva seko formu līnijām. Atvērtās līnijas darbojas arī.
+143|Pildspalvu paceļ ar
+144|Darba apgabals ir lapa, ko pildspalva sasniedz. Iekārtas nulle ir stūris, no kura pildspalva sāk.
+145|Nav ko zīmēt: novietojiet formas uz ieslēgtiem slāņiem.
+146|Nav ko ierāmēt: novietojiet formas uz ieslēgtiem slāņiem.
+147|Vēl nav ko rādīt: uzzīmējiet formas un novietojiet tās uz ieslēgtiem slāņiem.
+148|Šī versija nevar izmantot datora kameras.
+149|Šai ierīcei nav ieslēgtas kameras. Pievienojiet to ierīces iestatījumos.
+150|Šīs ierīces nav sarakstā: tā nāca līdz ar projektu
+151|Šī ir aizstājējierīce (Dummy): noklusējuma darba apgabals un ātrumi.
+152|Laiks {} / {}
+153|Pārāk daudz ierīču
+154|Trajektorijas
+155|Atsaistīt
+156|Vienības
+157|Skats
+158|Skata opcijas…
+159|Gaidīšana pēc pildspalvas kustības
+160|Gaida attēlu…
+161|Kad savienojums pārtrūkst pats, mēģināt ik pēc dažām sekundēm, līdz nospiežat Atvienot.
+162|Ar Z asi pildspalva iet uz augstāk minētajiem augstumiem; ar servo G-kods ieslēdz vārpstas izeju ar S vērtību (M3 S…).
+163|Strādājiet ar projektu bez iekārtas: parasta ierīce ar nosaukumu Dummy ar noklusējuma darba laukumu un ātrumiem
+164|Z ass
+165|piem. Mans plotters
+166|nav
+167|daļa zīmējuma atrodas ārpus darba apgabala
+168|aizpildījumam ir pārāk daudz līniju: attālums ir pārāk mazs, tāpēc daļa aizpildījuma tika izlaista
+169|šis projekts izveidots citai iekārtai: {}
+170|{} attēlus uz slāņiem nevar zīmēt: vispirms pārveidojiet tos līnijās

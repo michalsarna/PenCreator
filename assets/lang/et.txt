@@ -1,119 +1,171 @@
 0|Kiht on pliiats: kui järgmisel kihil on teine pliiats, peatub G-kood, et saaksid selle vahetada.
-1|Teine täitejoonte komplekt esimesega risti
-2|Teave
-3|Lisa kaamera
-4|Lisa seade
-5|Lisa seade
-6|Lisa seade…
-7|Aadress
-8|Korrasta
-9|Taga vasakul
-10|Taga paremal
-11|Tagasi esimesse vaatesse. Pildil topeltklõps teeb sama.
-12|Kaamera
-13|Kaamera nimi
-14|Kaamera number
-15|Selle arvuti kaamera
-16|Kaamera pööramine
-17|Kaamerad
-18|Faili ei saa kasutada: {}
-19|Vali masin, millega töötad.
-20|Suletud kujud täidetakse paralleelsete joontega; augud jäävad tühjaks.
-21|Kinnita kustutamine
-22|Kontroller
-23|Kopeeritud: {}
-24|Salvestamine ebaõnnestus: {}
-25|Ristjooned
-26|Kustuta see kaamera
-27|Seade
-28|Seadme seaded
-29|Seadme seaded…
-30|Joonistamine
-31|Mitu korda joonistatakse
-32|Joonistatakse: kaasatud graafikusse ja G-koodi
-33|Redigeeri
-34|Redigeeri…
-35|Ekspordi G-code…
-36|Ekspordi…
-37|Fail
-38|Täide ja kontuur
-39|Täitejoonte nurk
-40|Täitejoonte vahe
-41|Täida joontega
-42|Ees vasakul
-43|Ees paremal
-44|Üldine
-45|Abi
-46|Mitu korda iga joon joonistatakse: liiga heleda pliiatsi jaoks
-47|Mul pole seadet
-48|Impordi LightBurni projekt…
-49|Seade {} imporditi
-50|Impordi…
-51|Kihid
-52|Jooned: {} m, liikumised tõstetud pliiatsiga: {} m, pliiatsi tõstmisi: {}, umbes {} min
-53|Masin
-54|Masina null (0,0)
-55|Liikumised tõstetud pliiatsiga
-56|Uus
-57|Seadet veel pole. Lisa üks või tööta ilma masinata.
-58|See pole http- ega https-aadress.
-59|Märkmed
-60|Märkmed selle masina kohta
-61|Midagi pole valitud
-62|Ava joonis või alusta tühja kavandiga.
-63|Ava…
-64|Kontuur
-65|Pliiats
-66|Pliiats all
-67|Pliiats üleval
-68|Pliiatsi laius
-69|Töö joonis…
-70|Plotter
-71|Eelvaade
-72|Atribuudid
-73|Pane valitud kujud sellele kihile
-74|Loe seade failist
-75|Valmis
-76|Lähtesta vaade
-77|Salvesta
-78|Salvesta nimega…
-79|Salvesta see seade faili
-80|Seade salvestati: {}
-81|Salvestatud: {}
-82|Servo (M3 S…)
-83|Seaded
-84|Kujud sellel kihil
-85|Näidatakse vahekaardil Kaamera
-86|Näidatakse tööalas
-87|Kiirus
-88|Liikumiste kiirus tõstetud pliiatsiga
-89|Start
-90|Sees
-91|Selle projekti seade
-92|Seade lisati.
-93|Seade salvestati.
-94|Kõigepealt täide, siis kontuur selle peale, et serv oleks puhas.
-95|Pliiats järgib kujude jooni. Avatud jooned töötavad samuti.
-96|Pliiatsit tõstetakse
-97|Tööala on leht, milleni pliiats ulatub. Masina null on nurk, kust pliiats alustab.
-98|Pole midagi joonistada: pane kujud sisselülitatud kihtidele.
-99|Pole veel midagi näidata: joonista kujud ja pane need sisselülitatud kihtidele.
-100|See versioon ei saa kasutada arvuti kaameraid.
-101|Sellel seadmel pole sisselülitatud kaamerat. Lisa see seadme sätetes.
-102|Seda seadet pole nimekirjas: see tuli projektiga kaasa
-103|See on asendusseade (Dummy): vaiketööala ja -kiirused.
-104|Aeg {} / {}
-105|Liiga palju seadmeid
-106|Ühikud
-107|Vaade
-108|Vaate valikud…
-109|Ooteaeg pliiatsi liikumise järel
-110|Ootan pilti…
-111|Z-teljega läheb pliiats ülaltoodud kõrgustele; servoga lülitab G-kood spindli väljundi sisse S-väärtusega (M3 S…).
-112|Tööta projektiga ilma masinata: lihtne seade nimega Dummy vaiketööala ja vaikekiirustega
-113|Z-telg
-114|nt Minu plotter
-115|osa joonisest jääb tööalast välja
-116|täites on liiga palju jooni: vahe on liiga väike, seetõttu jäeti osa täitest välja
-117|see projekt tehti teisele masinale: {}
-118|{} pilti kihtidel ei saa joonistada: jälgi need esmalt joonteks
+1|Pordi nimi või USB tootja ja toote tunnus (VID:PID, kuueteistkümnendsüsteemis): kasutatakse porti, millel on need tunnused.
+2|Teine täitejoonte komplekt esimesega risti
+3|Katkesta käimasolev töö
+4|Teave
+5|Lisa kaamera
+6|Lisa seade
+7|Lisa seade
+8|Lisa seade…
+9|Aadress
+10|Pärast ühendamist
+11|Korrasta
+12|Taga vasakul
+13|Taga paremal
+14|Tagasi esimesse vaatesse. Pildil topeltklõps teeb sama.
+15|Siduskiirus (baud)
+16|Seo selle pordiga
+17|Seotud USB-seade
+18|Kaamera
+19|Kaamera nimi
+20|Kaamera number
+21|Selle arvuti kaamera
+22|Kaamera pööramine
+23|Kaameravaade
+24|Kaamerad
+25|Faili ei saa kasutada: {}
+26|Vali esmalt seadme sätetes port või host.
+27|Vali masin, millega töötad.
+28|Tühista alarm
+29|Tühjenda alarm ($X)
+30|Alarmi tühistamine jätab kodustamise vahele: kasuta ainult siis, kui pea on teadaolevalt turvalises kohas.
+31|Suletud kujud täidetakse paralleelsete joontega; augud jäävad tühjaks.
+32|Kinnita kustutamine
+33|Ühenda
+34|Ühenda automaatselt uuesti
+35|Ühendu esmalt masinaga (vahekaart Seade)
+36|Ühendatud
+37|Ühendus
+38|Ühenduse tüüp
+39|Konsool
+40|Kontroller
+41|Kopeeritud: {}
+42|Salvestamine ebaõnnestus: {}
+43|Loendamine täidab kontrolleri puhvri ja on kiire. Lihtne saadab ühe rea ja ootab selle ok-d: aeglane, kuid valesti vastavale püsivarale.
+44|Ristjooned
+45|Kustuta see kaamera
+46|Seade
+47|Seadme seaded
+48|Seadme seaded…
+49|Katkesta ühendus
+50|Joonistamine
+51|Mitu korda joonistatakse
+52|Joonistatakse: kaasatud graafikusse ja G-koodi
+53|Redigeeri
+54|Redigeeri…
+55|Ekspordi G-code…
+56|Ekspordi…
+57|Söötmise peatamine
+58|Fail
+59|Täide ja kontuur
+60|Täitejoonte nurk
+61|Täitejoonte vahe
+62|Täida joontega
+63|Raam
+64|Tööala raamimine
+65|Ees vasakul
+66|Ees paremal
+67|Üldine
+68|Käi ümber raami, kus tööd tehakse
+69|Abi
+70|Algasend
+71|Kodusta masin
+72|Host
+73|Mitu korda iga joon joonistatakse: liiga heleda pliiatsi jaoks
+74|Mul pole seadet
+75|Impordi LightBurni projekt…
+76|Seade {} imporditi
+77|Impordi…
+78|Kihid
+79|Jooned: {} m, liikumised tõstetud pliiatsiga: {} m, pliiatsi tõstmisi: {}, umbes {} min
+80|Masin
+81|Masina null (0,0)
+82|Liikumised tõstetud pliiatsiga
+83|Uus
+84|Seadet veel pole. Lisa üks või tööta ilma masinata.
+85|Porti pole
+86|See pole http- ega https-aadress.
+87|Märkmed
+88|Märkmed selle masina kohta
+89|Midagi pole valitud
+90|Ava joonis või alusta tühja kavandiga.
+91|Ava seadme sätetes määratud kontrolleri ühendus
+92|Ava eelvaateaken
+93|Ava…
+94|Kontuur
+95|Pliiats
+96|Pliiats all
+97|Pliiats üleval
+98|Pliiatsi laius
+99|Töö joonis…
+100|Plotter
+101|Port
+102|Port või USB-tunnus
+103|Eelvaade
+104|Eelvaade…
+105|Atribuudid
+106|Pane valitud kujud sellele kihile
+107|Loe seade failist
+108|Valmis
+109|Taasühendus
+110|Värskenda
+111|Jäta meelde valitud pordi USB-tunnused: kui selle nimi muutub, leitakse port nende järgi.
+112|Lähtesta vaade
+113|Jätka
+114|STOPP
+115|Salvesta
+116|Salvesta G-code
+117|Salvesta nimega…
+118|Salvesta see seade faili
+119|Seade salvestati: {}
+120|Salvestatud: {}
+121|Servo (M3 S…)
+122|Seaded
+123|Kujud sellel kihil
+124|Näitab selle masina kaamera otsepilti
+125|Näitab trajektoore tööalal
+126|Näidatakse vahekaardil Kaamera
+127|Näidatakse tööalas
+128|Kiirus
+129|Liikumiste kiirus tõstetud pliiatsiga
+130|Start
+131|Töö algab: {} rida, ~{}
+132|Saada töö ühendatud masinale
+133|Voogedastus
+134|Sees
+135|TCP-port
+136|Selle projekti seade
+137|Seade lisati.
+138|Seade salvestati.
+139|Kõigepealt täide, siis kontuur selle peale, et serv oleks puhas.
+140|Töö on valmis.
+141|Töö käib.
+142|Pliiats järgib kujude jooni. Avatud jooned töötavad samuti.
+143|Pliiatsit tõstetakse
+144|Tööala on leht, milleni pliiats ulatub. Masina null on nurk, kust pliiats alustab.
+145|Pole midagi joonistada: pane kujud sisselülitatud kihtidele.
+146|Pole midagi raamida: pane kujud sisselülitatud kihtidele.
+147|Pole veel midagi näidata: joonista kujud ja pane need sisselülitatud kihtidele.
+148|See versioon ei saa kasutada arvuti kaameraid.
+149|Sellel seadmel pole sisselülitatud kaamerat. Lisa see seadme sätetes.
+150|Seda seadet pole nimekirjas: see tuli projektiga kaasa
+151|See on asendusseade (Dummy): vaiketööala ja -kiirused.
+152|Aeg {} / {}
+153|Liiga palju seadmeid
+154|Trajektoorid
+155|Eemalda sidumine
+156|Ühikud
+157|Vaade
+158|Vaate valikud…
+159|Ooteaeg pliiatsi liikumise järel
+160|Ootan pilti…
+161|Kui ühendus katkeb iseenesest, proovi mõne sekundi tagant uuesti, kuni vajutad Katkesta.
+162|Z-teljega läheb pliiats ülaltoodud kõrgustele; servoga lülitab G-kood spindli väljundi sisse S-väärtusega (M3 S…).
+163|Tööta projektiga ilma masinata: lihtne seade nimega Dummy vaiketööala ja vaikekiirustega
+164|Z-telg
+165|nt Minu plotter
+166|puudub
+167|osa joonisest jääb tööalast välja
+168|täites on liiga palju jooni: vahe on liiga väike, seetõttu jäeti osa täitest välja
+169|see projekt tehti teisele masinale: {}
+170|{} pilti kihtidel ei saa joonistada: jälgi need esmalt joonteks

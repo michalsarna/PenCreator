@@ -1,119 +1,171 @@
 0	A layer is a pen: when the next layer has another pen, the G-code stops so that you can change it.
-1	A second set of fill lines across the first
-2	About
-3	Add a camera
-4	Add a device
-5	Add device
-6	Add device…
-7	Address
-8	Arrange
-9	Back left
-10	Back right
-11	Back to the first view. Double click on the picture does the same.
-12	Camera
-13	Camera name
-14	Camera number
-15	Camera of this computer
-16	Camera rotation
-17	Cameras
-18	Cannot use the file: {}
-19	Choose the machine you will work with.
-20	Closed shapes are filled with parallel lines; holes stay empty.
-21	Confirm delete
-22	Controller
-23	Copied to {}
-24	Could not save: {}
-25	Crossed lines
-26	Delete this camera
-27	Device
-28	Device settings
-29	Device settings…
-30	Drawing
-31	Drawn times
-32	Drawn: taken into the plot and the G-code
-33	Edit
-34	Edit…
-35	Export G-code…
-36	Export…
-37	File
-38	Fill and outline
-39	Fill line angle
-40	Fill line gap
-41	Fill with lines
-42	Front left
-43	Front right
-44	General
-45	Help
-46	How many times every line is drawn: for a pen that is too light
-47	I have no device
-48	Import LightBurn project…
-49	Imported the device {}
-50	Import…
-51	Layers
-52	Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min
-53	Machine
-54	Machine zero (0,0)
-55	Moves with the pen up
-56	New
-57	No device yet. Add one, or work without a machine.
-58	Not an http or https address.
-59	Notes
-60	Notes about this machine
-61	Nothing selected
-62	Open a drawing or start an empty design.
-63	Open…
-64	Outline
-65	Pen
-66	Pen down
-67	Pen up
-68	Pen width
-69	Plot of the job…
-70	Plotter
-71	Preview
-72	Properties
-73	Put the selected shapes on this layer
-74	Read a device from a file
-75	Ready
-76	Reset view
-77	Save
-78	Save as…
-79	Save this device to a file
-80	Saved the device to {}
-81	Saved {}
-82	Servo (M3 S…)
-83	Settings
-84	Shapes on this layer
-85	Shown in the Camera tab
-86	Shown in the work area
-87	Speed
-88	Speed of moves with the pen up
-89	Start
-90	Switched on
-91	The device of this project
-92	The device was added.
-93	The device was saved.
-94	The fill first, then the outline over it, so the edge is clean.
-95	The pen follows the lines of the shapes. Open lines work too.
-96	The pen is lifted by
-97	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
-98	There is nothing to draw: put shapes on layers that are switched on.
-99	There is nothing to show yet: draw shapes and put them on layers that are switched on.
-100	This build cannot use the cameras of the computer.
-101	This device has no camera that is switched on. Add one in the device settings.
-102	This device is not in the list: it came with the project
-103	This is the stand-in device (Dummy): the default work area and speeds.
-104	Time {} / {}
-105	Too many devices
-106	Units
-107	View
-108	View options…
-109	Wait after the pen moves
-110	Waiting for the picture…
-111	With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).
-112	Work on a project without a machine: a plain device called Dummy, with the default work area and speeds
-113	Z axis
-114	e.g. My pen plotter
-115	part of the drawing lies outside the work area
-116	the fill has too many lines: the gap between them is too small, so part of the fill was left out
-117	this project was made for a different machine: {}
-118	{} picture(s) on the layers cannot be drawn: trace them to lines first
+1	A port name, or the USB vendor and product id (VID:PID, hexadecimal): the port that has these ids is used.
+2	A second set of fill lines across the first
+3	Abort the running job
+4	About
+5	Add a camera
+6	Add a device
+7	Add device
+8	Add device…
+9	Address
+10	After connecting
+11	Arrange
+12	Back left
+13	Back right
+14	Back to the first view. Double click on the picture does the same.
+15	Baud rate
+16	Bind to this port
+17	Bound USB device
+18	Camera
+19	Camera name
+20	Camera number
+21	Camera of this computer
+22	Camera rotation
+23	Camera view
+24	Cameras
+25	Cannot use the file: {}
+26	Choose a port or a host in the device settings first.
+27	Choose the machine you will work with.
+28	Clear an alarm
+29	Clear an alarm ($X)
+30	Clearing the alarm skips homing: use it only when the head is known to stand in a safe place.
+31	Closed shapes are filled with parallel lines; holes stay empty.
+32	Confirm delete
+33	Connect
+34	Connect again automatically
+35	Connect to the machine first (Device tab)
+36	Connected
+37	Connection
+38	Connection type
+39	Console
+40	Controller
+41	Copied to {}
+42	Could not save: {}
+43	Counting fills the controller's buffer and is fast. Simple sends one line and waits for its ok: slow, but for firmware that answers wrongly.
+44	Crossed lines
+45	Delete this camera
+46	Device
+47	Device settings
+48	Device settings…
+49	Disconnect
+50	Drawing
+51	Drawn times
+52	Drawn: taken into the plot and the G-code
+53	Edit
+54	Edit…
+55	Export G-code…
+56	Export…
+57	Feed hold
+58	File
+59	Fill and outline
+60	Fill line angle
+61	Fill line gap
+62	Fill with lines
+63	Frame
+64	Framing the work area
+65	Front left
+66	Front right
+67	General
+68	Go round the box where the work will be done
+69	Help
+70	Home
+71	Home the machine
+72	Host
+73	How many times every line is drawn: for a pen that is too light
+74	I have no device
+75	Import LightBurn project…
+76	Imported the device {}
+77	Import…
+78	Layers
+79	Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min
+80	Machine
+81	Machine zero (0,0)
+82	Moves with the pen up
+83	New
+84	No device yet. Add one, or work without a machine.
+85	No port
+86	Not an http or https address.
+87	Notes
+88	Notes about this machine
+89	Nothing selected
+90	Open a drawing or start an empty design.
+91	Open the link to the controller set in the device settings
+92	Open the preview window
+93	Open…
+94	Outline
+95	Pen
+96	Pen down
+97	Pen up
+98	Pen width
+99	Plot of the job…
+100	Plotter
+101	Port
+102	Port or USB id
+103	Preview
+104	Preview…
+105	Properties
+106	Put the selected shapes on this layer
+107	Read a device from a file
+108	Ready
+109	Reconnect
+110	Refresh
+111	Remember the USB ids of the chosen port: the port is found again by them when its name changes.
+112	Reset view
+113	Resume
+114	STOP
+115	Save
+116	Save G-code
+117	Save as…
+118	Save this device to a file
+119	Saved the device to {}
+120	Saved {}
+121	Servo (M3 S…)
+122	Settings
+123	Shapes on this layer
+124	Show the live camera picture of this machine
+125	Show the toolpaths on the work area
+126	Shown in the Camera tab
+127	Shown in the work area
+128	Speed
+129	Speed of moves with the pen up
+130	Start
+131	Starting job: {} lines, ~{}
+132	Stream the job to the connected machine
+133	Streaming
+134	Switched on
+135	TCP port
+136	The device of this project
+137	The device was added.
+138	The device was saved.
+139	The fill first, then the outline over it, so the edge is clean.
+140	The job is finished.
+141	The job is running.
+142	The pen follows the lines of the shapes. Open lines work too.
+143	The pen is lifted by
+144	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
+145	There is nothing to draw: put shapes on layers that are switched on.
+146	There is nothing to frame: put shapes on layers that are switched on.
+147	There is nothing to show yet: draw shapes and put them on layers that are switched on.
+148	This build cannot use the cameras of the computer.
+149	This device has no camera that is switched on. Add one in the device settings.
+150	This device is not in the list: it came with the project
+151	This is the stand-in device (Dummy): the default work area and speeds.
+152	Time {} / {}
+153	Too many devices
+154	Toolpaths
+155	Unbind
+156	Units
+157	View
+158	View options…
+159	Wait after the pen moves
+160	Waiting for the picture…
+161	When the link drops by itself, try again every few seconds until you press Disconnect.
+162	With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).
+163	Work on a project without a machine: a plain device called Dummy, with the default work area and speeds
+164	Z axis
+165	e.g. My pen plotter
+166	none
+167	part of the drawing lies outside the work area
+168	the fill has too many lines: the gap between them is too small, so part of the fill was left out
+169	this project was made for a different machine: {}
+170	{} picture(s) on the layers cannot be drawn: trace them to lines first

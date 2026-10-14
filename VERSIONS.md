@@ -2,6 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.2.2
+
+* The control bar has **Toolpaths**, **Preview…**, **Camera view**, **Frame**, **Start** / **Stop** and **Save G-code**, as in MillCreator; the device has a Connection page (serial port or network socket) and the Device tab connects to a GRBL plotter, homes, pauses and shows a console.
+* **The animation of the preview works** (its buttons were inert).
+* The preview window no longer has an *Export G-code…* button.
+* baseCreator v0.9.1.
+
 ## v0.2.1
 
 * The preview window is the same as MillCreator's and has an **animation**: back to the start, play / pause, speed (×0.25 to ×25) and repeat, with the time and the length.
