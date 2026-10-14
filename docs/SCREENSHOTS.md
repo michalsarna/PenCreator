@@ -14,3 +14,5 @@ All pictures are rendered headlessly from the real UI (`cargo test -p pencreator
 | Clipart gallery | The Description tab |
 | ![The plot of the job](screenshots/09-plot.png) | ![The plot, part way through](screenshots/10-plot-progress.png) |
 | The plot of the job | The plot, part way through |
+| ![Console tab: the traffic with the controller and a line to send a command](screenshots/11-console.png) |  |
+| Console tab: the traffic with the controller and a line to send a command |  |

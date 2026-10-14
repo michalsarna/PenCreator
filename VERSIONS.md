@@ -2,6 +2,11 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.2.3
+
+* A **Console** tab, as in LightCreator: the traffic with the controller, status polls on request, auto-scroll, clear and a line to send a command. It replaces the small console of the Device tab.
+* baseCreator v0.9.2.
+
 ## v0.2.2
 
 * The control bar has **Toolpaths**, **Preview…**, **Camera view**, **Frame**, **Start** / **Stop** and **Save G-code**, as in MillCreator; the device has a Connection page (serial port or network socket) and the Device tab connects to a GRBL plotter, homes, pauses and shows a console.
