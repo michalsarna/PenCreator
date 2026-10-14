@@ -76,96 +76,99 @@
 75|Importa un projecte de LightBurn…
 76|Dispositiu {} importat
 77|Importa…
-78|Capes
-79|Línies: {} m, moviments amb el bolígraf aixecat: {} m, aixecaments: {}, uns {} min
-80|Màquina
-81|Zero de la màquina (0,0)
-82|Moviments amb el bolígraf aixecat
-83|Nou
-84|Encara no hi ha cap dispositiu. Afegeix-ne un o treballa sense màquina.
-85|Cap port
-86|No és una adreça http o https.
-87|Notes
-88|Notes sobre aquesta màquina
-89|No hi ha res seleccionat
-90|Obre un dibuix o comença un disseny buit.
-91|Obre l'enllaç amb el controlador indicat als paràmetres del dispositiu
-92|Obre la finestra de previsualització
-93|Obre…
-94|Contorn
-95|Bolígraf
-96|Bolígraf baixat
-97|Bolígraf aixecat
-98|Amplada del bolígraf
-99|Traçat de la feina…
-100|Traçador
-101|Port
-102|Port o identificador USB
-103|Previsualització
-104|Previsualització…
-105|Propietats
-106|Posa les formes seleccionades en aquesta capa
-107|Llegeix un dispositiu d'un fitxer
-108|A punt
-109|Reconnexió
-110|Actualitza
-111|Recorda els identificadors USB del port triat: si el nom canvia, el port es troba amb ells.
-112|Restableix la vista
-113|Reprèn
-114|ATURA
-115|Desa
-116|Desa el G-code
-117|Desa com a…
-118|Desa aquest dispositiu en un fitxer
-119|Dispositiu desat a {}
-120|{} desat
-121|Servo (M3 S…)
-122|Configuració
-123|Formes d'aquesta capa
-124|Mostra la imatge en directe de la càmera d'aquesta màquina
-125|Mostra els traçats a l'àrea de treball
-126|Es mostra a la pestanya Càmera
-127|Es mostra a l'àrea de treball
-128|Velocitat
-129|Velocitat dels moviments amb el bolígraf aixecat
-130|Inicia
-131|S'inicia el treball: {} línies, ~{}
-132|Envia la feina a la màquina connectada
-133|Transmissió
-134|Activada
-135|Port TCP
-136|El dispositiu d'aquest projecte
-137|S'ha afegit el dispositiu.
-138|S'ha desat el dispositiu.
-139|Primer el farciment, després el contorn a sobre, perquè la vora quedi neta.
-140|La feina ha acabat.
-141|La feina està en marxa.
-142|El bolígraf segueix les línies de les formes. Les línies obertes també funcionen.
-143|El bolígraf s'aixeca amb
-144|L'àrea de treball és el full que arriba el bolígraf. El zero de la màquina és la cantonada on comença el bolígraf.
-145|No hi ha res per dibuixar: posa formes en capes activades.
-146|No hi ha res per emmarcar: posa formes en capes activades.
-147|Encara no hi ha res per mostrar: dibuixa formes i posa-les en capes activades.
-148|Aquesta versió no pot fer servir les càmeres de l'ordinador.
-149|Aquest dispositiu no té cap càmera activada. Afegeix-ne una als paràmetres del dispositiu.
-150|Aquest dispositiu no és a la llista: ha vingut amb el projecte
-151|Aquest és el dispositiu substitut (Dummy): àrea de treball i velocitats per defecte.
-152|Temps {} / {}
-153|Massa dispositius
-154|Traçats
-155|Desvincula
-156|Unitats
-157|Visualitza
-158|Opcions de visualització…
-159|Espera després de moure el bolígraf
-160|S'espera la imatge…
-161|Quan l'enllaç cau tot sol, torna-ho a provar cada pocs segons fins que premeu Desconnecta.
-162|Amb l'eix Z el bolígraf va a les alçades de dalt; amb un servo el G-code activa la sortida de l'eix amb el valor S (M3 S…).
-163|Treballa en un projecte sense màquina: un dispositiu simple anomenat Dummy, amb l'àrea de treball i les velocitats per defecte
-164|Eix Z
-165|p. ex. El meu traçador
-166|cap
-167|part del dibuix queda fora de l'àrea de treball
-168|el farciment té massa línies: la separació és massa petita, així que s'ha omès part del farciment
-169|aquest projecte es va fer per a una altra màquina: {}
-170|{} imatge(s) de les capes no es poden dibuixar: vectoritza-les primer
+78|Horitzontal
+79|Capes
+80|Línies: {} m, moviments amb el bolígraf aixecat: {} m, aixecaments: {}, uns {} min
+81|Màquina
+82|Zero de la màquina (0,0)
+83|Moviments amb el bolígraf aixecat
+84|Nou
+85|Encara no hi ha cap dispositiu. Afegeix-ne un o treballa sense màquina.
+86|Cap port
+87|No és una adreça http o https.
+88|Notes
+89|Notes sobre aquesta màquina
+90|No hi ha res seleccionat
+91|Obre un dibuix o comença un disseny buit.
+92|Obre l'enllaç amb el controlador indicat als paràmetres del dispositiu
+93|Obre la finestra de previsualització
+94|Obre…
+95|Contorn
+96|Paper
+97|Bolígraf
+98|Bolígraf baixat
+99|Bolígraf aixecat
+100|Amplada del bolígraf
+101|Traçat de la feina…
+102|Traçador
+103|Port
+104|Port o identificador USB
+105|Vertical
+106|Previsualització
+107|Previsualització…
+108|Propietats
+109|Posa les formes seleccionades en aquesta capa
+110|Llegeix un dispositiu d'un fitxer
+111|A punt
+112|Reconnexió
+113|Actualitza
+114|Recorda els identificadors USB del port triat: si el nom canvia, el port es troba amb ells.
+115|Restableix la vista
+116|Reprèn
+117|ATURA
+118|Desa
+119|Desa el G-code
+120|Desa com a…
+121|Desa aquest dispositiu en un fitxer
+122|Dispositiu desat a {}
+123|{} desat
+124|Servo (M3 S…)
+125|Configuració
+126|Formes d'aquesta capa
+127|Mostra la imatge en directe de la càmera d'aquesta màquina
+128|Mostra els traçats a l'àrea de treball
+129|Es mostra a la pestanya Càmera
+130|Es mostra a l'àrea de treball
+131|Velocitat
+132|Velocitat dels moviments amb el bolígraf aixecat
+133|Inicia
+134|S'inicia el treball: {} línies, ~{}
+135|Envia la feina a la màquina connectada
+136|Transmissió
+137|Activada
+138|Port TCP
+139|El dispositiu d'aquest projecte
+140|S'ha afegit el dispositiu.
+141|S'ha desat el dispositiu.
+142|Primer el farciment, després el contorn a sobre, perquè la vora quedi neta.
+143|La feina ha acabat.
+144|La feina està en marxa.
+145|El bolígraf segueix les línies de les formes. Les línies obertes també funcionen.
+146|El bolígraf s'aixeca amb
+147|L'àrea de treball és el full que arriba el bolígraf. El zero de la màquina és la cantonada on comença el bolígraf.
+148|No hi ha res per dibuixar: posa formes en capes activades.
+149|No hi ha res per emmarcar: posa formes en capes activades.
+150|Encara no hi ha res per mostrar: dibuixa formes i posa-les en capes activades.
+151|Aquesta versió no pot fer servir les càmeres de l'ordinador.
+152|Aquest dispositiu no té cap càmera activada. Afegeix-ne una als paràmetres del dispositiu.
+153|Aquest dispositiu no és a la llista: ha vingut amb el projecte
+154|Aquest és el dispositiu substitut (Dummy): àrea de treball i velocitats per defecte.
+155|Temps {} / {}
+156|Massa dispositius
+157|Traçats
+158|Desvincula
+159|Unitats
+160|Visualitza
+161|Opcions de visualització…
+162|Espera després de moure el bolígraf
+163|S'espera la imatge…
+164|Quan l'enllaç cau tot sol, torna-ho a provar cada pocs segons fins que premeu Desconnecta.
+165|Amb l'eix Z el bolígraf va a les alçades de dalt; amb un servo el G-code activa la sortida de l'eix amb el valor S (M3 S…).
+166|Treballa en un projecte sense màquina: un dispositiu simple anomenat Dummy, amb l'àrea de treball i les velocitats per defecte
+167|Eix Z
+168|p. ex. El meu traçador
+169|cap
+170|part del dibuix queda fora de l'àrea de treball
+171|el farciment té massa línies: la separació és massa petita, així que s'ha omès part del farciment
+172|aquest projecte es va fer per a una altra màquina: {}
+173|{} imatge(s) de les capes no es poden dibuixar: vectoritza-les primer

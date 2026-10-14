@@ -76,96 +76,99 @@
 75|Importar projeto do LightBurn…
 76|Dispositivo {} importado
 77|Importar…
-78|Camadas
-79|Linhas: {} m, movimentos com a caneta levantada: {} m, levantamentos: {}, cerca de {} min
-80|Máquina
-81|Zero da máquina (0,0)
-82|Movimentos com a caneta levantada
-83|Novo
-84|Ainda não há dispositivo. Adicione um ou trabalhe sem máquina.
-85|Sem porta
-86|Não é um endereço http ou https.
-87|Notas
-88|Notas sobre esta máquina
-89|Nada selecionado
-90|Abra um desenho ou comece um desenho vazio.
-91|Abrir a ligação ao controlador definido nas definições do dispositivo
-92|Abrir a janela de pré-visualização
-93|Abrir…
-94|Contorno
-95|Caneta
-96|Caneta baixada
-97|Caneta levantada
-98|Largura da caneta
-99|Traçado do trabalho…
-100|Plotter
-101|Porta
-102|Porta ou id USB
-103|Pré-visualização
-104|Pré-visualização…
-105|Propriedades
-106|Pôr as formas selecionadas nesta camada
-107|Ler um dispositivo de um ficheiro
-108|Pronto
-109|Religação
-110|Atualizar
-111|Lembra os id USB da porta escolhida: se o nome mudar, a porta é encontrada de novo por eles.
-112|Repor a vista
-113|Retomar
-114|PARAR
-115|Guardar
-116|Guardar G-code
-117|Guardar como…
-118|Guardar este dispositivo num ficheiro
-119|Dispositivo guardado em {}
-120|{} guardado
-121|Servo (M3 S…)
-122|Definições
-123|Formas nesta camada
-124|Mostra a imagem em direto da câmara desta máquina
-125|Mostra os percursos na área de trabalho
-126|Mostrada no separador Câmara
-127|Mostrada na área de trabalho
-128|Velocidade
-129|Velocidade dos movimentos com a caneta levantada
-130|Iniciar
-131|A iniciar o trabalho: {} linhas, ~{}
-132|Enviar o trabalho para a máquina ligada
-133|Transmissão
-134|Ligada
-135|Porta TCP
-136|O dispositivo deste projeto
-137|O dispositivo foi adicionado.
-138|O dispositivo foi guardado.
-139|Primeiro o preenchimento, depois o contorno por cima, para o bordo ficar limpo.
-140|O trabalho terminou.
-141|O trabalho está em curso.
-142|A caneta segue as linhas das formas. As linhas abertas também funcionam.
-143|A caneta é levantada por
-144|A área de trabalho é a folha que a caneta alcança. O zero da máquina é o canto onde a caneta começa.
-145|Não há nada para desenhar: ponha formas em camadas ligadas.
-146|Nada para enquadrar: ponha formas em camadas ligadas.
-147|Ainda não há nada para mostrar: desenhe formas e ponha-as em camadas ligadas.
-148|Esta versão não pode usar as câmaras do computador.
-149|Este dispositivo não tem nenhuma câmara ligada. Adicione uma nas definições do dispositivo.
-150|Este dispositivo não está na lista: veio com o projeto
-151|Este é o dispositivo de substituição (Dummy): área de trabalho e velocidades predefinidas.
-152|Tempo {} / {}
-153|Demasiados dispositivos
-154|Percursos
-155|Desassociar
-156|Unidades
-157|Ver
-158|Opções de visualização…
-159|Espera depois de a caneta se mover
-160|A aguardar a imagem…
-161|Quando a ligação cai sozinha, tenta de novo a cada poucos segundos até premir Desligar.
-162|Com o eixo Z a caneta vai às alturas indicadas; com um servo o G-code liga a saída do fuso com o valor S (M3 S…).
-163|Trabalhe num projeto sem máquina: um dispositivo simples chamado Dummy, com a área de trabalho e as velocidades predefinidas
-164|Eixo Z
-165|p. ex. O meu plotter
-166|nenhum
-167|parte do desenho fica fora da área de trabalho
-168|o preenchimento tem demasiadas linhas: a distância é demasiado pequena, por isso parte do preenchimento foi omitida
-169|este projeto foi feito para outra máquina: {}
-170|{} imagem(ns) nas camadas não podem ser desenhadas: vetorize-as primeiro
+78|Paisagem
+79|Camadas
+80|Linhas: {} m, movimentos com a caneta levantada: {} m, levantamentos: {}, cerca de {} min
+81|Máquina
+82|Zero da máquina (0,0)
+83|Movimentos com a caneta levantada
+84|Novo
+85|Ainda não há dispositivo. Adicione um ou trabalhe sem máquina.
+86|Sem porta
+87|Não é um endereço http ou https.
+88|Notas
+89|Notas sobre esta máquina
+90|Nada selecionado
+91|Abra um desenho ou comece um desenho vazio.
+92|Abrir a ligação ao controlador definido nas definições do dispositivo
+93|Abrir a janela de pré-visualização
+94|Abrir…
+95|Contorno
+96|Papel
+97|Caneta
+98|Caneta baixada
+99|Caneta levantada
+100|Largura da caneta
+101|Traçado do trabalho…
+102|Plotter
+103|Porta
+104|Porta ou id USB
+105|Retrato
+106|Pré-visualização
+107|Pré-visualização…
+108|Propriedades
+109|Pôr as formas selecionadas nesta camada
+110|Ler um dispositivo de um ficheiro
+111|Pronto
+112|Religação
+113|Atualizar
+114|Lembra os id USB da porta escolhida: se o nome mudar, a porta é encontrada de novo por eles.
+115|Repor a vista
+116|Retomar
+117|PARAR
+118|Guardar
+119|Guardar G-code
+120|Guardar como…
+121|Guardar este dispositivo num ficheiro
+122|Dispositivo guardado em {}
+123|{} guardado
+124|Servo (M3 S…)
+125|Definições
+126|Formas nesta camada
+127|Mostra a imagem em direto da câmara desta máquina
+128|Mostra os percursos na área de trabalho
+129|Mostrada no separador Câmara
+130|Mostrada na área de trabalho
+131|Velocidade
+132|Velocidade dos movimentos com a caneta levantada
+133|Iniciar
+134|A iniciar o trabalho: {} linhas, ~{}
+135|Enviar o trabalho para a máquina ligada
+136|Transmissão
+137|Ligada
+138|Porta TCP
+139|O dispositivo deste projeto
+140|O dispositivo foi adicionado.
+141|O dispositivo foi guardado.
+142|Primeiro o preenchimento, depois o contorno por cima, para o bordo ficar limpo.
+143|O trabalho terminou.
+144|O trabalho está em curso.
+145|A caneta segue as linhas das formas. As linhas abertas também funcionam.
+146|A caneta é levantada por
+147|A área de trabalho é a folha que a caneta alcança. O zero da máquina é o canto onde a caneta começa.
+148|Não há nada para desenhar: ponha formas em camadas ligadas.
+149|Nada para enquadrar: ponha formas em camadas ligadas.
+150|Ainda não há nada para mostrar: desenhe formas e ponha-as em camadas ligadas.
+151|Esta versão não pode usar as câmaras do computador.
+152|Este dispositivo não tem nenhuma câmara ligada. Adicione uma nas definições do dispositivo.
+153|Este dispositivo não está na lista: veio com o projeto
+154|Este é o dispositivo de substituição (Dummy): área de trabalho e velocidades predefinidas.
+155|Tempo {} / {}
+156|Demasiados dispositivos
+157|Percursos
+158|Desassociar
+159|Unidades
+160|Ver
+161|Opções de visualização…
+162|Espera depois de a caneta se mover
+163|A aguardar a imagem…
+164|Quando a ligação cai sozinha, tenta de novo a cada poucos segundos até premir Desligar.
+165|Com o eixo Z a caneta vai às alturas indicadas; com um servo o G-code liga a saída do fuso com o valor S (M3 S…).
+166|Trabalhe num projeto sem máquina: um dispositivo simples chamado Dummy, com a área de trabalho e as velocidades predefinidas
+167|Eixo Z
+168|p. ex. O meu plotter
+169|nenhum
+170|parte do desenho fica fora da área de trabalho
+171|o preenchimento tem demasiadas linhas: a distância é demasiado pequena, por isso parte do preenchimento foi omitida
+172|este projeto foi feito para outra máquina: {}
+173|{} imagem(ns) nas camadas não podem ser desenhadas: vetorize-as primeiro

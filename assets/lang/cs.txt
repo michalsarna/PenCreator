@@ -76,96 +76,99 @@
 75|Importovat projekt LightBurn…
 76|Zařízení {} bylo importováno
 77|Importovat…
-78|Vrstvy
-79|Čáry: {} m, pohyby se zvednutým perem: {} m, zvednutí pera: {}, asi {} min
-80|Stroj
-81|Nula stroje (0,0)
-82|Pohyby se zvednutým perem
-83|Nový
-84|Zatím žádné zařízení. Přidejte jedno, nebo pracujte bez stroje.
-85|Žádný port
-86|Není to adresa http ani https.
-87|Poznámky
-88|Poznámky k tomuto stroji
-89|Nic není vybráno
-90|Otevřete kresbu, nebo začněte prázdný návrh.
-91|Otevřít spojení s ovladačem nastaveným v nastavení zařízení
-92|Otevřít okno náhledu
-93|Otevřít…
-94|Obrys
-95|Pero
-96|Pero dole
-97|Pero nahoře
-98|Šířka pera
-99|Vykreslení úlohy…
-100|Plotr
-101|Port
-102|Port nebo USB id
-103|Náhled
-104|Náhled…
-105|Vlastnosti
-106|Dát vybrané tvary na tuto vrstvu
-107|Načíst zařízení ze souboru
-108|Připraveno
-109|Opětovné připojení
-110|Obnovit
-111|Zapamatovat USB identifikátory zvoleného portu: při změně jeho názvu se port podle nich znovu najde.
-112|Obnovit pohled
-113|Pokračovat
-114|STOP
-115|Uložit
-116|Uložit G-code
-117|Uložit jako…
-118|Uložit toto zařízení do souboru
-119|Zařízení uloženo do {}
-120|Uloženo: {}
-121|Servo (M3 S…)
-122|Nastavení
-123|Tvary na této vrstvě
-124|Zobrazí živý obraz z kamery tohoto stroje
-125|Zobrazí dráhy na pracovní ploše
-126|Zobrazeno na kartě Kamera
-127|Zobrazeno v pracovní ploše
-128|Rychlost
-129|Rychlost pohybů se zvednutým perem
-130|Start
-131|Spouští se úloha: {} řádků, ~{}
-132|Odeslat úlohu do připojeného stroje
-133|Streamování
-134|Zapnuto
-135|Port TCP
-136|Zařízení tohoto projektu
-137|Zařízení bylo přidáno.
-138|Zařízení bylo uloženo.
-139|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
-140|Úloha je hotová.
-141|Úloha běží.
-142|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
-143|Pero se zvedá pomocí
-144|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
-145|Není co kreslit: dejte tvary na zapnuté vrstvy.
-146|Není co orámovat: dejte tvary na zapnuté vrstvy.
-147|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
-148|Tato verze nemůže používat kamery počítače.
-149|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
-150|Toto zařízení není v seznamu: přišlo s projektem
-151|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
-152|Čas {} / {}
-153|Příliš mnoho zařízení
-154|Dráhy
-155|Zrušit vazbu
-156|Jednotky
-157|Zobrazení
-158|Možnosti zobrazení…
-159|Čekání po pohybu pera
-160|Čekání na obraz…
-161|Když spojení samo spadne, zkoušet to každých pár sekund, dokud nestisknete Odpojit.
-162|U osy Z jede pero do výše uvedených výšek; u serva G-kód zapne výstup vřetene hodnotou S (M3 S…).
-163|Práce na projektu bez stroje: obyčejné zařízení jménem Dummy s výchozí pracovní plochou a rychlostmi
-164|Osa Z
-165|např. Můj plotr
-166|žádné
-167|část kresby leží mimo pracovní plochu
-168|výplň má příliš mnoho čar: rozteč je příliš malá, proto byla část výplně vynechána
-169|tento projekt byl vytvořen pro jiný stroj: {}
-170|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry
+78|Na šířku
+79|Vrstvy
+80|Čáry: {} m, pohyby se zvednutým perem: {} m, zvednutí pera: {}, asi {} min
+81|Stroj
+82|Nula stroje (0,0)
+83|Pohyby se zvednutým perem
+84|Nový
+85|Zatím žádné zařízení. Přidejte jedno, nebo pracujte bez stroje.
+86|Žádný port
+87|Není to adresa http ani https.
+88|Poznámky
+89|Poznámky k tomuto stroji
+90|Nic není vybráno
+91|Otevřete kresbu, nebo začněte prázdný návrh.
+92|Otevřít spojení s ovladačem nastaveným v nastavení zařízení
+93|Otevřít okno náhledu
+94|Otevřít…
+95|Obrys
+96|Papír
+97|Pero
+98|Pero dole
+99|Pero nahoře
+100|Šířka pera
+101|Vykreslení úlohy…
+102|Plotr
+103|Port
+104|Port nebo USB id
+105|Na výšku
+106|Náhled
+107|Náhled…
+108|Vlastnosti
+109|Dát vybrané tvary na tuto vrstvu
+110|Načíst zařízení ze souboru
+111|Připraveno
+112|Opětovné připojení
+113|Obnovit
+114|Zapamatovat USB identifikátory zvoleného portu: při změně jeho názvu se port podle nich znovu najde.
+115|Obnovit pohled
+116|Pokračovat
+117|STOP
+118|Uložit
+119|Uložit G-code
+120|Uložit jako…
+121|Uložit toto zařízení do souboru
+122|Zařízení uloženo do {}
+123|Uloženo: {}
+124|Servo (M3 S…)
+125|Nastavení
+126|Tvary na této vrstvě
+127|Zobrazí živý obraz z kamery tohoto stroje
+128|Zobrazí dráhy na pracovní ploše
+129|Zobrazeno na kartě Kamera
+130|Zobrazeno v pracovní ploše
+131|Rychlost
+132|Rychlost pohybů se zvednutým perem
+133|Start
+134|Spouští se úloha: {} řádků, ~{}
+135|Odeslat úlohu do připojeného stroje
+136|Streamování
+137|Zapnuto
+138|Port TCP
+139|Zařízení tohoto projektu
+140|Zařízení bylo přidáno.
+141|Zařízení bylo uloženo.
+142|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
+143|Úloha je hotová.
+144|Úloha běží.
+145|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
+146|Pero se zvedá pomocí
+147|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
+148|Není co kreslit: dejte tvary na zapnuté vrstvy.
+149|Není co orámovat: dejte tvary na zapnuté vrstvy.
+150|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
+151|Tato verze nemůže používat kamery počítače.
+152|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
+153|Toto zařízení není v seznamu: přišlo s projektem
+154|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
+155|Čas {} / {}
+156|Příliš mnoho zařízení
+157|Dráhy
+158|Zrušit vazbu
+159|Jednotky
+160|Zobrazení
+161|Možnosti zobrazení…
+162|Čekání po pohybu pera
+163|Čekání na obraz…
+164|Když spojení samo spadne, zkoušet to každých pár sekund, dokud nestisknete Odpojit.
+165|U osy Z jede pero do výše uvedených výšek; u serva G-kód zapne výstup vřetene hodnotou S (M3 S…).
+166|Práce na projektu bez stroje: obyčejné zařízení jménem Dummy s výchozí pracovní plochou a rychlostmi
+167|Osa Z
+168|např. Můj plotr
+169|žádné
+170|část kresby leží mimo pracovní plochu
+171|výplň má příliš mnoho čar: rozteč je příliš malá, proto byla část výplně vynechána
+172|tento projekt byl vytvořen pro jiný stroj: {}
+173|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry

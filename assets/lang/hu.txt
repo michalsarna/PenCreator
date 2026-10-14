@@ -76,96 +76,99 @@
 75|LightBurn-projekt importálása…
 76|A(z) {} eszköz importálva
 77|Importálás…
-78|Rétegek
-79|Vonalak: {} m, mozgások felemelt tollal: {} m, tollemelések: {}, körülbelül {} perc
-80|Gép
-81|Gép nullpontja (0,0)
-82|Mozgások felemelt tollal
-83|Új
-84|Még nincs eszköz. Adj hozzá egyet, vagy dolgozz gép nélkül.
-85|Nincs port
-86|Nem http vagy https cím.
-87|Jegyzetek
-88|Jegyzetek erről a gépről
-89|Nincs kijelölve semmi
-90|Nyiss meg egy rajzot, vagy kezdj üres tervet.
-91|A kapcsolat megnyitása az eszköz beállításaiban megadott vezérlővel
-92|Az előnézeti ablak megnyitása
-93|Megnyitás…
-94|Körvonal
-95|Toll
-96|Toll lent
-97|Toll fent
-98|Tollszélesség
-99|A munka rajza…
-100|Plotter
-101|Port
-102|Port vagy USB-azonosító
-103|Előnézet
-104|Előnézet…
-105|Tulajdonságok
-106|A kijelölt alakzatok erre a rétegre
-107|Eszköz beolvasása fájlból
-108|Kész
-109|Újracsatlakozás
-110|Frissítés
-111|Megjegyzi a kiválasztott port USB-azonosítóit: ha a neve megváltozik, ezekkel találja meg újra.
-112|Nézet visszaállítása
-113|Folytatás
-114|STOP
-115|Mentés
-116|G-code mentése
-117|Mentés másként…
-118|Az eszköz mentése fájlba
-119|Az eszköz mentve ide: {}
-120|Mentve: {}
-121|Szervó (M3 S…)
-122|Beállítások
-123|Alakzatok ezen a rétegen
-124|Megjeleníti ennek a gépnek az élő kameraképét
-125|Megjeleníti a pályákat a munkaterületen
-126|A Kamera lapon látható
-127|A munkaterületen látható
-128|Sebesség
-129|A mozgások sebessége felemelt tollal
-130|Indítás
-131|A munka indul: {} sor, ~{}
-132|A munka elküldése a csatlakoztatott gépre
-133|Streamelés
-134|Bekapcsolva
-135|TCP-port
-136|A projekt eszköze
-137|Az eszköz hozzáadva.
-138|Az eszköz mentve.
-139|Előbb a kitöltés, majd rá a körvonal, hogy az él tiszta legyen.
-140|A munka kész.
-141|A munka fut.
-142|A toll követi az alakzatok vonalait. A nyitott vonalak is működnek.
-143|A tollat emeli:
-144|A munkaterület az a lap, amelyet a toll elér. A gép nullpontja az a sarok, ahol a toll indul.
-145|Nincs mit rajzolni: tedd az alakzatokat bekapcsolt rétegekre.
-146|Nincs mit körbejárni: tedd az alakzatokat bekapcsolt rétegekre.
-147|Még nincs mit mutatni: rajzolj alakzatokat, és tedd őket bekapcsolt rétegekre.
-148|Ez a verzió nem tudja használni a számítógép kameráit.
-149|Ennek az eszköznek nincs bekapcsolt kamerája. Adj hozzá egyet az eszköz beállításaiban.
-150|Ez az eszköz nincs a listában: a projekttel érkezett
-151|Ez a helyettesítő eszköz (Dummy): alapértelmezett munkaterület és sebességek.
-152|Idő {} / {}
-153|Túl sok eszköz
-154|Pályák
-155|Kötés feloldása
-156|Mértékegységek
-157|Nézet
-158|Nézetbeállítások…
-159|Várakozás a toll mozgása után
-160|Várakozás a képre…
-161|Ha a kapcsolat magától megszakad, néhány másodpercenként újra próbálkozik, amíg a Szétkapcsolást meg nem nyomja.
-162|Z tengelynél a toll a fenti magasságokba megy; szervónál a G-kód az S értékkel kapcsolja be a főorsó kimenetét (M3 S…).
-163|Dolgozzon projekten gép nélkül: egy Dummy nevű egyszerű eszköz az alapértelmezett munkaterülettel és sebességekkel
-164|Z tengely
-165|pl. Az én plotterem
-166|nincs
-167|a rajz egy része a munkaterületen kívül van
-168|a kitöltésben túl sok a vonal: a távolság túl kicsi, ezért a kitöltés egy része kimaradt
-169|ez a projekt másik géphez készült: {}
-170|A rétegeken lévő {} kép nem rajzolható: előbb alakítsd vonalakká
+78|Fekvő
+79|Rétegek
+80|Vonalak: {} m, mozgások felemelt tollal: {} m, tollemelések: {}, körülbelül {} perc
+81|Gép
+82|Gép nullpontja (0,0)
+83|Mozgások felemelt tollal
+84|Új
+85|Még nincs eszköz. Adj hozzá egyet, vagy dolgozz gép nélkül.
+86|Nincs port
+87|Nem http vagy https cím.
+88|Jegyzetek
+89|Jegyzetek erről a gépről
+90|Nincs kijelölve semmi
+91|Nyiss meg egy rajzot, vagy kezdj üres tervet.
+92|A kapcsolat megnyitása az eszköz beállításaiban megadott vezérlővel
+93|Az előnézeti ablak megnyitása
+94|Megnyitás…
+95|Körvonal
+96|Papír
+97|Toll
+98|Toll lent
+99|Toll fent
+100|Tollszélesség
+101|A munka rajza…
+102|Plotter
+103|Port
+104|Port vagy USB-azonosító
+105|Álló
+106|Előnézet
+107|Előnézet…
+108|Tulajdonságok
+109|A kijelölt alakzatok erre a rétegre
+110|Eszköz beolvasása fájlból
+111|Kész
+112|Újracsatlakozás
+113|Frissítés
+114|Megjegyzi a kiválasztott port USB-azonosítóit: ha a neve megváltozik, ezekkel találja meg újra.
+115|Nézet visszaállítása
+116|Folytatás
+117|STOP
+118|Mentés
+119|G-code mentése
+120|Mentés másként…
+121|Az eszköz mentése fájlba
+122|Az eszköz mentve ide: {}
+123|Mentve: {}
+124|Szervó (M3 S…)
+125|Beállítások
+126|Alakzatok ezen a rétegen
+127|Megjeleníti ennek a gépnek az élő kameraképét
+128|Megjeleníti a pályákat a munkaterületen
+129|A Kamera lapon látható
+130|A munkaterületen látható
+131|Sebesség
+132|A mozgások sebessége felemelt tollal
+133|Indítás
+134|A munka indul: {} sor, ~{}
+135|A munka elküldése a csatlakoztatott gépre
+136|Streamelés
+137|Bekapcsolva
+138|TCP-port
+139|A projekt eszköze
+140|Az eszköz hozzáadva.
+141|Az eszköz mentve.
+142|Előbb a kitöltés, majd rá a körvonal, hogy az él tiszta legyen.
+143|A munka kész.
+144|A munka fut.
+145|A toll követi az alakzatok vonalait. A nyitott vonalak is működnek.
+146|A tollat emeli:
+147|A munkaterület az a lap, amelyet a toll elér. A gép nullpontja az a sarok, ahol a toll indul.
+148|Nincs mit rajzolni: tedd az alakzatokat bekapcsolt rétegekre.
+149|Nincs mit körbejárni: tedd az alakzatokat bekapcsolt rétegekre.
+150|Még nincs mit mutatni: rajzolj alakzatokat, és tedd őket bekapcsolt rétegekre.
+151|Ez a verzió nem tudja használni a számítógép kameráit.
+152|Ennek az eszköznek nincs bekapcsolt kamerája. Adj hozzá egyet az eszköz beállításaiban.
+153|Ez az eszköz nincs a listában: a projekttel érkezett
+154|Ez a helyettesítő eszköz (Dummy): alapértelmezett munkaterület és sebességek.
+155|Idő {} / {}
+156|Túl sok eszköz
+157|Pályák
+158|Kötés feloldása
+159|Mértékegységek
+160|Nézet
+161|Nézetbeállítások…
+162|Várakozás a toll mozgása után
+163|Várakozás a képre…
+164|Ha a kapcsolat magától megszakad, néhány másodpercenként újra próbálkozik, amíg a Szétkapcsolást meg nem nyomja.
+165|Z tengelynél a toll a fenti magasságokba megy; szervónál a G-kód az S értékkel kapcsolja be a főorsó kimenetét (M3 S…).
+166|Dolgozzon projekten gép nélkül: egy Dummy nevű egyszerű eszköz az alapértelmezett munkaterülettel és sebességekkel
+167|Z tengely
+168|pl. Az én plotterem
+169|nincs
+170|a rajz egy része a munkaterületen kívül van
+171|a kitöltésben túl sok a vonal: a távolság túl kicsi, ezért a kitöltés egy része kimaradt
+172|ez a projekt másik géphez készült: {}
+173|A rétegeken lévő {} kép nem rajzolható: előbb alakítsd vonalakká

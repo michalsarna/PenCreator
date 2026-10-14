@@ -76,96 +76,99 @@
 75|Importer un projet LightBurn…
 76|Appareil {} importé
 77|Importer…
-78|Calques
-79|Lignes : {} m, déplacements stylo levé : {} m, levées du stylo : {}, environ {} min
-80|Machine
-81|Zéro machine (0,0)
-82|Déplacements stylo levé
-83|Nouveau
-84|Pas encore d'appareil. Ajoutez-en un, ou travaillez sans machine.
-85|Aucun port
-86|Ce n'est pas une adresse http ou https.
-87|Notes
-88|Notes sur cette machine
-89|Aucune sélection
-90|Ouvrez un dessin ou commencez une conception vide.
-91|Ouvrir la liaison avec le contrôleur indiqué dans les réglages de l'appareil
-92|Ouvrir la fenêtre d'aperçu
-93|Ouvrir…
-94|Contour
-95|Stylo
-96|Stylo baissé
-97|Stylo levé
-98|Largeur du stylo
-99|Tracé du travail…
-100|Traceur
-101|Port
-102|Port ou id USB
-103|Aperçu
-104|Aperçu…
-105|Propriétés
-106|Mettre les formes sélectionnées sur ce calque
-107|Lire un appareil depuis un fichier
-108|Prêt
-109|Reconnexion
-110|Actualiser
-111|Retient les id USB du port choisi : si son nom change, le port est retrouvé grâce à eux.
-112|Réinitialiser la vue
-113|Reprendre
-114|ARRÊT
-115|Enregistrer
-116|Enregistrer le G-code
-117|Enregistrer sous…
-118|Enregistrer cet appareil dans un fichier
-119|Appareil enregistré dans {}
-120|{} enregistré
-121|Servo (M3 S…)
-122|Paramètres
-123|Formes sur ce calque
-124|Affiche l'image en direct de la caméra de cette machine
-125|Affiche les trajectoires sur la zone de travail
-126|Affichée dans l'onglet Caméra
-127|Affiché dans la zone de travail
-128|Vitesse
-129|Vitesse des déplacements stylo levé
-130|Démarrer
-131|Démarrage du travail : {} lignes, ~{}
-132|Envoyer le travail à la machine connectée
-133|Flux
-134|Activée
-135|Port TCP
-136|L'appareil de ce projet
-137|L'appareil a été ajouté.
-138|L'appareil a été enregistré.
-139|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
-140|Le travail est terminé.
-141|Le travail est en cours.
-142|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
-143|Le stylo est levé par
-144|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
-145|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
-146|Rien à cadrer : mettez des formes sur des calques activés.
-147|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
-148|Cette version ne peut pas utiliser les caméras de l'ordinateur.
-149|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
-150|Cet appareil n'est pas dans la liste : il est venu avec le projet
-151|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
-152|Temps {} / {}
-153|Trop d'appareils
-154|Trajectoires
-155|Délier
-156|Unités
-157|Affichage
-158|Options d'affichage…
-159|Attente après le mouvement du stylo
-160|En attente de l'image…
-161|Quand la liaison tombe d'elle-même, réessayer toutes les quelques secondes jusqu'à ce que vous appuyiez sur Déconnecter.
-162|Avec l'axe Z, le stylo va aux hauteurs ci-dessus ; avec un servo, le G-code active la sortie broche avec la valeur S (M3 S…).
-163|Travaillez sur un projet sans machine : un appareil simple nommé Dummy, avec la zone de travail et les vitesses par défaut
-164|Axe Z
-165|p. ex. Mon traceur
-166|aucun
-167|une partie du dessin est en dehors de la zone de travail
-168|le remplissage a trop de lignes : l'écart est trop petit, donc une partie du remplissage a été omise
-169|ce projet a été fait pour une autre machine : {}
-170|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord
+78|Paysage
+79|Calques
+80|Lignes : {} m, déplacements stylo levé : {} m, levées du stylo : {}, environ {} min
+81|Machine
+82|Zéro machine (0,0)
+83|Déplacements stylo levé
+84|Nouveau
+85|Pas encore d'appareil. Ajoutez-en un, ou travaillez sans machine.
+86|Aucun port
+87|Ce n'est pas une adresse http ou https.
+88|Notes
+89|Notes sur cette machine
+90|Aucune sélection
+91|Ouvrez un dessin ou commencez une conception vide.
+92|Ouvrir la liaison avec le contrôleur indiqué dans les réglages de l'appareil
+93|Ouvrir la fenêtre d'aperçu
+94|Ouvrir…
+95|Contour
+96|Papier
+97|Stylo
+98|Stylo baissé
+99|Stylo levé
+100|Largeur du stylo
+101|Tracé du travail…
+102|Traceur
+103|Port
+104|Port ou id USB
+105|Portrait
+106|Aperçu
+107|Aperçu…
+108|Propriétés
+109|Mettre les formes sélectionnées sur ce calque
+110|Lire un appareil depuis un fichier
+111|Prêt
+112|Reconnexion
+113|Actualiser
+114|Retient les id USB du port choisi : si son nom change, le port est retrouvé grâce à eux.
+115|Réinitialiser la vue
+116|Reprendre
+117|ARRÊT
+118|Enregistrer
+119|Enregistrer le G-code
+120|Enregistrer sous…
+121|Enregistrer cet appareil dans un fichier
+122|Appareil enregistré dans {}
+123|{} enregistré
+124|Servo (M3 S…)
+125|Paramètres
+126|Formes sur ce calque
+127|Affiche l'image en direct de la caméra de cette machine
+128|Affiche les trajectoires sur la zone de travail
+129|Affichée dans l'onglet Caméra
+130|Affiché dans la zone de travail
+131|Vitesse
+132|Vitesse des déplacements stylo levé
+133|Démarrer
+134|Démarrage du travail : {} lignes, ~{}
+135|Envoyer le travail à la machine connectée
+136|Flux
+137|Activée
+138|Port TCP
+139|L'appareil de ce projet
+140|L'appareil a été ajouté.
+141|L'appareil a été enregistré.
+142|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
+143|Le travail est terminé.
+144|Le travail est en cours.
+145|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
+146|Le stylo est levé par
+147|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
+148|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
+149|Rien à cadrer : mettez des formes sur des calques activés.
+150|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
+151|Cette version ne peut pas utiliser les caméras de l'ordinateur.
+152|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
+153|Cet appareil n'est pas dans la liste : il est venu avec le projet
+154|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
+155|Temps {} / {}
+156|Trop d'appareils
+157|Trajectoires
+158|Délier
+159|Unités
+160|Affichage
+161|Options d'affichage…
+162|Attente après le mouvement du stylo
+163|En attente de l'image…
+164|Quand la liaison tombe d'elle-même, réessayer toutes les quelques secondes jusqu'à ce que vous appuyiez sur Déconnecter.
+165|Avec l'axe Z, le stylo va aux hauteurs ci-dessus ; avec un servo, le G-code active la sortie broche avec la valeur S (M3 S…).
+166|Travaillez sur un projet sans machine : un appareil simple nommé Dummy, avec la zone de travail et les vitesses par défaut
+167|Axe Z
+168|p. ex. Mon traceur
+169|aucun
+170|une partie du dessin est en dehors de la zone de travail
+171|le remplissage a trop de lignes : l'écart est trop petit, donc une partie du remplissage a été omise
+172|ce projet a été fait pour une autre machine : {}
+173|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord

@@ -76,96 +76,99 @@
 75|Importar proyecto de LightBurn…
 76|Dispositivo {} importado
 77|Importar…
-78|Capas
-79|Líneas: {} m, movimientos con el bolígrafo levantado: {} m, levantamientos: {}, unos {} min
-80|Máquina
-81|Cero de la máquina (0,0)
-82|Movimientos con el bolígrafo levantado
-83|Nuevo
-84|Aún no hay dispositivo. Añade uno o trabaja sin máquina.
-85|Sin puerto
-86|No es una dirección http o https.
-87|Notas
-88|Notas sobre esta máquina
-89|Nada seleccionado
-90|Abre un dibujo o empieza un diseño vacío.
-91|Abre el enlace con el controlador indicado en los ajustes del dispositivo
-92|Abrir la ventana de vista previa
-93|Abrir…
-94|Contorno
-95|Bolígrafo
-96|Bolígrafo bajado
-97|Bolígrafo levantado
-98|Anchura del bolígrafo
-99|Trazado del trabajo…
-100|Plóter
-101|Puerto
-102|Puerto o id USB
-103|Vista previa
-104|Vista previa…
-105|Propiedades
-106|Poner las formas seleccionadas en esta capa
-107|Leer un dispositivo desde un archivo
-108|Listo
-109|Reconexión
-110|Actualizar
-111|Recuerda los id USB del puerto elegido: si su nombre cambia, el puerto se encuentra de nuevo por ellos.
-112|Restablecer la vista
-113|Reanudar
-114|PARAR
-115|Guardar
-116|Guardar G-code
-117|Guardar como…
-118|Guardar este dispositivo en un archivo
-119|Dispositivo guardado en {}
-120|{} guardado
-121|Servo (M3 S…)
-122|Ajustes
-123|Formas en esta capa
-124|Muestra la imagen en vivo de la cámara de esta máquina
-125|Muestra las trayectorias en el área de trabajo
-126|Se muestra en la pestaña Cámara
-127|Se muestra en el área de trabajo
-128|Velocidad
-129|Velocidad de los movimientos con el bolígrafo levantado
-130|Iniciar
-131|Iniciando el trabajo: {} líneas, ~{}
-132|Enviar el trabajo a la máquina conectada
-133|Transmisión
-134|Activada
-135|Puerto TCP
-136|El dispositivo de este proyecto
-137|Se añadió el dispositivo.
-138|Se guardó el dispositivo.
-139|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
-140|El trabajo ha terminado.
-141|El trabajo está en marcha.
-142|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
-143|El bolígrafo se levanta con
-144|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
-145|No hay nada que dibujar: pon formas en capas activadas.
-146|No hay nada que enmarcar: pon formas en capas activadas.
-147|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
-148|Esta versión no puede usar las cámaras del ordenador.
-149|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
-150|Este dispositivo no está en la lista: vino con el proyecto
-151|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
-152|Tiempo {} / {}
-153|Demasiados dispositivos
-154|Trayectorias
-155|Desvincular
-156|Unidades
-157|Ver
-158|Opciones de vista…
-159|Espera tras mover el bolígrafo
-160|Esperando la imagen…
-161|Cuando la conexión se cae sola, reintenta cada pocos segundos hasta que pulse Desconectar.
-162|Con el eje Z el bolígrafo va a las alturas indicadas; con un servo el G-code enciende la salida del husillo con el valor S (M3 S…).
-163|Trabaja en un proyecto sin máquina: un dispositivo sencillo llamado Dummy, con el área de trabajo y las velocidades predeterminadas
-164|Eje Z
-165|p. ej. Mi plóter
-166|ninguno
-167|parte del dibujo queda fuera del área de trabajo
-168|el relleno tiene demasiadas líneas: la separación es demasiado pequeña, así que se omitió parte del relleno
-169|este proyecto se hizo para otra máquina: {}
-170|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero
+78|Horizontal
+79|Capas
+80|Líneas: {} m, movimientos con el bolígrafo levantado: {} m, levantamientos: {}, unos {} min
+81|Máquina
+82|Cero de la máquina (0,0)
+83|Movimientos con el bolígrafo levantado
+84|Nuevo
+85|Aún no hay dispositivo. Añade uno o trabaja sin máquina.
+86|Sin puerto
+87|No es una dirección http o https.
+88|Notas
+89|Notas sobre esta máquina
+90|Nada seleccionado
+91|Abre un dibujo o empieza un diseño vacío.
+92|Abre el enlace con el controlador indicado en los ajustes del dispositivo
+93|Abrir la ventana de vista previa
+94|Abrir…
+95|Contorno
+96|Papel
+97|Bolígrafo
+98|Bolígrafo bajado
+99|Bolígrafo levantado
+100|Anchura del bolígrafo
+101|Trazado del trabajo…
+102|Plóter
+103|Puerto
+104|Puerto o id USB
+105|Vertical
+106|Vista previa
+107|Vista previa…
+108|Propiedades
+109|Poner las formas seleccionadas en esta capa
+110|Leer un dispositivo desde un archivo
+111|Listo
+112|Reconexión
+113|Actualizar
+114|Recuerda los id USB del puerto elegido: si su nombre cambia, el puerto se encuentra de nuevo por ellos.
+115|Restablecer la vista
+116|Reanudar
+117|PARAR
+118|Guardar
+119|Guardar G-code
+120|Guardar como…
+121|Guardar este dispositivo en un archivo
+122|Dispositivo guardado en {}
+123|{} guardado
+124|Servo (M3 S…)
+125|Ajustes
+126|Formas en esta capa
+127|Muestra la imagen en vivo de la cámara de esta máquina
+128|Muestra las trayectorias en el área de trabajo
+129|Se muestra en la pestaña Cámara
+130|Se muestra en el área de trabajo
+131|Velocidad
+132|Velocidad de los movimientos con el bolígrafo levantado
+133|Iniciar
+134|Iniciando el trabajo: {} líneas, ~{}
+135|Enviar el trabajo a la máquina conectada
+136|Transmisión
+137|Activada
+138|Puerto TCP
+139|El dispositivo de este proyecto
+140|Se añadió el dispositivo.
+141|Se guardó el dispositivo.
+142|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
+143|El trabajo ha terminado.
+144|El trabajo está en marcha.
+145|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
+146|El bolígrafo se levanta con
+147|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
+148|No hay nada que dibujar: pon formas en capas activadas.
+149|No hay nada que enmarcar: pon formas en capas activadas.
+150|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
+151|Esta versión no puede usar las cámaras del ordenador.
+152|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
+153|Este dispositivo no está en la lista: vino con el proyecto
+154|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
+155|Tiempo {} / {}
+156|Demasiados dispositivos
+157|Trayectorias
+158|Desvincular
+159|Unidades
+160|Ver
+161|Opciones de vista…
+162|Espera tras mover el bolígrafo
+163|Esperando la imagen…
+164|Cuando la conexión se cae sola, reintenta cada pocos segundos hasta que pulse Desconectar.
+165|Con el eje Z el bolígrafo va a las alturas indicadas; con un servo el G-code enciende la salida del husillo con el valor S (M3 S…).
+166|Trabaja en un proyecto sin máquina: un dispositivo sencillo llamado Dummy, con el área de trabajo y las velocidades predeterminadas
+167|Eje Z
+168|p. ej. Mi plóter
+169|ninguno
+170|parte del dibujo queda fuera del área de trabajo
+171|el relleno tiene demasiadas líneas: la separación es demasiado pequeña, así que se omitió parte del relleno
+172|este proyecto se hizo para otra máquina: {}
+173|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero

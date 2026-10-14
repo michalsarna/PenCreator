@@ -76,96 +76,99 @@
 75|Importă proiect LightBurn…
 76|Dispozitivul {} a fost importat
 77|Importă…
-78|Straturi
-79|Linii: {} m, mișcări cu stiloul ridicat: {} m, ridicări ale stiloului: {}, aproximativ {} min
-80|Mașină
-81|Zero mașină (0,0)
-82|Mișcări cu stiloul ridicat
-83|Nou
-84|Încă nu există niciun dispozitiv. Adaugă unul sau lucrează fără mașină.
-85|Fără port
-86|Nu este o adresă http sau https.
-87|Note
-88|Note despre această mașină
-89|Nimic selectat
-90|Deschide un desen sau începe un design gol.
-91|Deschide legătura cu controlerul din setările dispozitivului
-92|Deschide fereastra de previzualizare
-93|Deschide…
-94|Contur
-95|Stilou
-96|Stilou coborât
-97|Stilou ridicat
-98|Lățimea stiloului
-99|Graficul lucrării…
-100|Plotter
-101|Port
-102|Port sau id USB
-103|Previzualizare
-104|Previzualizare…
-105|Proprietăți
-106|Pune formele selectate pe acest strat
-107|Citește un dispozitiv dintr-un fișier
-108|Gata
-109|Reconectare
-110|Reîmprospătează
-111|Reține id-urile USB ale portului ales: când numele se schimbă, portul este regăsit prin ele.
-112|Resetează vizualizarea
-113|Reia
-114|STOP
-115|Salvează
-116|Salvează G-code
-117|Salvează ca…
-118|Salvează acest dispozitiv într-un fișier
-119|Dispozitiv salvat în {}
-120|{} salvat
-121|Servo (M3 S…)
-122|Setări
-123|Forme pe acest strat
-124|Arată imaginea live de la camera acestei mașini
-125|Arată traseele pe zona de lucru
-126|Afișată în fila Cameră
-127|Afișat în zona de lucru
-128|Viteză
-129|Viteza mișcărilor cu stiloul ridicat
-130|Start
-131|Se pornește lucrarea: {} linii, ~{}
-132|Trimite lucrarea la mașina conectată
-133|Transmisie
-134|Pornit
-135|Port TCP
-136|Dispozitivul acestui proiect
-137|Dispozitivul a fost adăugat.
-138|Dispozitivul a fost salvat.
-139|Mai întâi umplerea, apoi conturul peste ea, ca marginea să fie curată.
-140|Lucrarea s-a terminat.
-141|Lucrarea rulează.
-142|Stiloul urmărește liniile formelor. Liniile deschise funcționează și ele.
-143|Stiloul este ridicat prin
-144|Zona de lucru este foaia pe care o atinge stiloul. Zeroul mașinii este colțul de unde începe stiloul.
-145|Nu e nimic de desenat: pune forme pe straturi pornite.
-146|Nu e nimic de încadrat: pune forme pe straturi pornite.
-147|Încă nu e nimic de arătat: desenează forme și pune-le pe straturi pornite.
-148|Această versiune nu poate folosi camerele computerului.
-149|Acest dispozitiv nu are nicio cameră pornită. Adaugă una în setările dispozitivului.
-150|Acest dispozitiv nu este în listă: a venit cu proiectul
-151|Acesta este dispozitivul înlocuitor (Dummy): zonă de lucru și viteze implicite.
-152|Timp {} / {}
-153|Prea multe dispozitive
-154|Trasee
-155|Dezleagă
-156|Unități
-157|Vizualizare
-158|Opțiuni de vizualizare…
-159|Așteptare după mișcarea stiloului
-160|Se așteaptă imaginea…
-161|Când legătura cade singură, încearcă din nou la câteva secunde până apăsați Deconectează.
-162|Cu axa Z stiloul merge la înălțimile de mai sus; cu un servo G-code-ul pornește ieșirea axului cu valoarea S (M3 S…).
-163|Lucrează la un proiect fără mașină: un dispozitiv simplu numit Dummy, cu zona de lucru și vitezele implicite
-164|Axa Z
-165|ex. Plotterul meu
-166|niciunul
-167|o parte din desen se află în afara zonei de lucru
-168|umplerea are prea multe linii: distanța este prea mică, deci o parte din umplere a fost omisă
-169|acest proiect a fost făcut pentru altă mașină: {}
-170|{} imagine/imagini de pe straturi nu pot fi desenate: vectorizează-le mai întâi
+78|Peisaj
+79|Straturi
+80|Linii: {} m, mișcări cu stiloul ridicat: {} m, ridicări ale stiloului: {}, aproximativ {} min
+81|Mașină
+82|Zero mașină (0,0)
+83|Mișcări cu stiloul ridicat
+84|Nou
+85|Încă nu există niciun dispozitiv. Adaugă unul sau lucrează fără mașină.
+86|Fără port
+87|Nu este o adresă http sau https.
+88|Note
+89|Note despre această mașină
+90|Nimic selectat
+91|Deschide un desen sau începe un design gol.
+92|Deschide legătura cu controlerul din setările dispozitivului
+93|Deschide fereastra de previzualizare
+94|Deschide…
+95|Contur
+96|Hârtie
+97|Stilou
+98|Stilou coborât
+99|Stilou ridicat
+100|Lățimea stiloului
+101|Graficul lucrării…
+102|Plotter
+103|Port
+104|Port sau id USB
+105|Portret
+106|Previzualizare
+107|Previzualizare…
+108|Proprietăți
+109|Pune formele selectate pe acest strat
+110|Citește un dispozitiv dintr-un fișier
+111|Gata
+112|Reconectare
+113|Reîmprospătează
+114|Reține id-urile USB ale portului ales: când numele se schimbă, portul este regăsit prin ele.
+115|Resetează vizualizarea
+116|Reia
+117|STOP
+118|Salvează
+119|Salvează G-code
+120|Salvează ca…
+121|Salvează acest dispozitiv într-un fișier
+122|Dispozitiv salvat în {}
+123|{} salvat
+124|Servo (M3 S…)
+125|Setări
+126|Forme pe acest strat
+127|Arată imaginea live de la camera acestei mașini
+128|Arată traseele pe zona de lucru
+129|Afișată în fila Cameră
+130|Afișat în zona de lucru
+131|Viteză
+132|Viteza mișcărilor cu stiloul ridicat
+133|Start
+134|Se pornește lucrarea: {} linii, ~{}
+135|Trimite lucrarea la mașina conectată
+136|Transmisie
+137|Pornit
+138|Port TCP
+139|Dispozitivul acestui proiect
+140|Dispozitivul a fost adăugat.
+141|Dispozitivul a fost salvat.
+142|Mai întâi umplerea, apoi conturul peste ea, ca marginea să fie curată.
+143|Lucrarea s-a terminat.
+144|Lucrarea rulează.
+145|Stiloul urmărește liniile formelor. Liniile deschise funcționează și ele.
+146|Stiloul este ridicat prin
+147|Zona de lucru este foaia pe care o atinge stiloul. Zeroul mașinii este colțul de unde începe stiloul.
+148|Nu e nimic de desenat: pune forme pe straturi pornite.
+149|Nu e nimic de încadrat: pune forme pe straturi pornite.
+150|Încă nu e nimic de arătat: desenează forme și pune-le pe straturi pornite.
+151|Această versiune nu poate folosi camerele computerului.
+152|Acest dispozitiv nu are nicio cameră pornită. Adaugă una în setările dispozitivului.
+153|Acest dispozitiv nu este în listă: a venit cu proiectul
+154|Acesta este dispozitivul înlocuitor (Dummy): zonă de lucru și viteze implicite.
+155|Timp {} / {}
+156|Prea multe dispozitive
+157|Trasee
+158|Dezleagă
+159|Unități
+160|Vizualizare
+161|Opțiuni de vizualizare…
+162|Așteptare după mișcarea stiloului
+163|Se așteaptă imaginea…
+164|Când legătura cade singură, încearcă din nou la câteva secunde până apăsați Deconectează.
+165|Cu axa Z stiloul merge la înălțimile de mai sus; cu un servo G-code-ul pornește ieșirea axului cu valoarea S (M3 S…).
+166|Lucrează la un proiect fără mașină: un dispozitiv simplu numit Dummy, cu zona de lucru și vitezele implicite
+167|Axa Z
+168|ex. Plotterul meu
+169|niciunul
+170|o parte din desen se află în afara zonei de lucru
+171|umplerea are prea multe linii: distanța este prea mică, deci o parte din umplere a fost omisă
+172|acest proiect a fost făcut pentru altă mașină: {}
+173|{} imagine/imagini de pe straturi nu pot fi desenate: vectorizează-le mai întâi

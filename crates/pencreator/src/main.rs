@@ -901,15 +901,15 @@ impl eframe::App for App {
 }
 
 /// Where this program keeps its data: the settings in its own folder, the gallery shared with the other programs
-/// (see `base_core::paths`). The first call moves the data of an older version in.
+/// (see `base_core::paths`).
 pub fn data_paths() -> &'static base_core::paths::DataPaths {
     static PATHS: std::sync::OnceLock<base_core::paths::DataPaths> = std::sync::OnceLock::new();
     PATHS.get_or_init(|| {
         if cfg!(test) {
             // Tests never touch the real folders.
-            return base_core::paths::prepare_in(&std::env::temp_dir().join(format!("pencreator-test-data-{}", std::process::id())), "pencreator", None);
+            return base_core::paths::prepare_in(&std::env::temp_dir().join(format!("pencreator-test-data-{}", std::process::id())), "pencreator");
         }
-        base_core::paths::prepare("pencreator", eframe::storage_dir("pencreator").as_deref())
+        base_core::paths::prepare("pencreator")
     })
 }
 

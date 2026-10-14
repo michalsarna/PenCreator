@@ -76,96 +76,99 @@
 75|Iompórtáil tionscadal LightBurn…
 76|Iompórtáladh an gléas {}
 77|Iompórtáil…
-78|Ciseail
-79|Línte: {} m, gluaiseachtaí le peann in airde: {} m, ardaithe peann: {}, thart ar {} nóim.
-80|Meaisín
-81|Nialas an mheaisín (0,0)
-82|Gluaiseachtaí le peann in airde
-83|Nua
-84|Níl aon ghléas ann fós. Cuir ceann leis nó oibrigh gan meaisín.
-85|Gan port
-86|Ní seoladh http ná https é.
-87|Nótaí
-88|Nótaí faoin meaisín seo
-89|Níl aon rud roghnaithe
-90|Oscail líníocht nó tosaigh le dearadh folamh.
-91|Oscail an nasc leis an rialaitheoir atá socraithe i socruithe an ghléis
-92|Oscail an fhuinneog réamhamhairc
-93|Oscail…
-94|Imlíne
-95|Peann
-96|Peann síos
-97|Peann suas
-98|Leithead an phinn
-99|Plota na hoibre…
-100|Plótálaí
-101|Port
-102|Port nó aitheantas USB
-103|Réamhamharc
-104|Réamhamharc…
-105|Airíonna
-106|Cuir na cruthanna roghnaithe ar an gciseal seo
-107|Léigh gléas ó chomhad
-108|Réidh
-109|Athcheangal
-110|Athnuaigh
-111|Cuimhnigh ar aitheantais USB an phoirt roghnaithe: aimsítear an port arís leo nuair a athraíonn a ainm.
-112|Athshocraigh an t-amharc
-113|Lean ar aghaidh
-114|STOP
-115|Sábháil
-116|Sábháil G-code
-117|Sábháil mar…
-118|Sábháil an gléas seo i gcomhad
-119|Sábháladh an gléas i {}
-120|Sábháilte: {}
-121|Servo (M3 S…)
-122|Socruithe
-123|Cruthanna ar an gciseal seo
-124|Taispeánann íomhá bheo ó cheamara an mheaisín seo
-125|Taispeánann na cosáin ar an limistéar oibre
-126|Taispeántar é sa chluaisín Ceamara
-127|Taispeántar é sa limistéar oibre
-128|Luas
-129|Luas na ngluaiseachtaí le peann in airde
-130|Tosaigh
-131|Ag tosú na hoibre: {} líne, ~{}
-132|Seol an obair chuig an meaisín ceangailte
-133|Sruthú
-134|Casta air
-135|Port TCP
-136|Gléas an tionscadail seo
-137|Cuireadh an gléas leis.
-138|Sábháladh an gléas.
-139|An líonadh ar dtús, ansin an imlíne air, ionas go mbeidh an t-imeall glan.
-140|Tá an obair críochnaithe.
-141|Tá an obair ar siúl.
-142|Leanann an peann línte na gcruthanna. Oibríonn línte oscailte freisin.
-143|Ardaítear an peann le
-144|Is é an limistéar oibre an leathán a shroicheann an peann. Is é nialas an mheaisín an choirnéal ónar tosaíonn an peann.
-145|Níl aon rud le tarraingt: cuir cruthanna ar chisil atá casta air.
-146|Níl aon rud le frámú: cuir cruthanna ar chisil atá casta air.
-147|Níl aon rud le taispeáint fós: tarraing cruthanna agus cuir ar chisil atá casta air iad.
-148|Ní féidir leis an leagan seo ceamaraí an ríomhaire a úsáid.
-149|Níl aon cheamara casta air ag an ngléas seo. Cuir ceann leis i socruithe an ghléis.
-150|Níl an gléas seo ar an liosta: tháinig sé leis an tionscadal
-151|Seo é an gléas ionaid (Dummy): limistéar oibre agus luasanna réamhshocraithe.
-152|Am {} / {}
-153|An iomarca gléasanna
-154|Cosáin
-155|Dícheangail
-156|Aonaid
-157|Amharc
-158|Roghanna amhairc…
-159|Fan tar éis gluaiseacht an phinn
-160|Ag fanacht leis an íomhá…
-161|Nuair a thiteann an nasc as féin, triail arís gach cúpla soicind go dtí go mbrúnn tú Dícheangail.
-162|Leis an ais Z téann an peann go dtí na hairde thuas; le servo casann an G-code an aschur fearsaide air leis an luach S (M3 S…).
-163|Oibrigh ar thionscadal gan meaisín: gnáthfheiste darb ainm Dummy, leis an limistéar oibre agus na luasanna réamhshocraithe
-164|Ais Z
-165|m.sh. Mo phlótálaí
-166|gan aon cheann
-167|tá cuid den líníocht lasmuigh den limistéar oibre
-168|tá an iomarca línte sa líonadh: tá an spás ró-bheag, mar sin fágadh cuid den líonadh ar lár
-169|rinneadh an tionscadal seo do mheaisín eile: {}
-170|Ní féidir {} pictiúr ar na cisil a tharraingt: lorg ina línte iad ar dtús
+78|Tírdhreach
+79|Ciseail
+80|Línte: {} m, gluaiseachtaí le peann in airde: {} m, ardaithe peann: {}, thart ar {} nóim.
+81|Meaisín
+82|Nialas an mheaisín (0,0)
+83|Gluaiseachtaí le peann in airde
+84|Nua
+85|Níl aon ghléas ann fós. Cuir ceann leis nó oibrigh gan meaisín.
+86|Gan port
+87|Ní seoladh http ná https é.
+88|Nótaí
+89|Nótaí faoin meaisín seo
+90|Níl aon rud roghnaithe
+91|Oscail líníocht nó tosaigh le dearadh folamh.
+92|Oscail an nasc leis an rialaitheoir atá socraithe i socruithe an ghléis
+93|Oscail an fhuinneog réamhamhairc
+94|Oscail…
+95|Imlíne
+96|Páipéar
+97|Peann
+98|Peann síos
+99|Peann suas
+100|Leithead an phinn
+101|Plota na hoibre…
+102|Plótálaí
+103|Port
+104|Port nó aitheantas USB
+105|Portráid
+106|Réamhamharc
+107|Réamhamharc…
+108|Airíonna
+109|Cuir na cruthanna roghnaithe ar an gciseal seo
+110|Léigh gléas ó chomhad
+111|Réidh
+112|Athcheangal
+113|Athnuaigh
+114|Cuimhnigh ar aitheantais USB an phoirt roghnaithe: aimsítear an port arís leo nuair a athraíonn a ainm.
+115|Athshocraigh an t-amharc
+116|Lean ar aghaidh
+117|STOP
+118|Sábháil
+119|Sábháil G-code
+120|Sábháil mar…
+121|Sábháil an gléas seo i gcomhad
+122|Sábháladh an gléas i {}
+123|Sábháilte: {}
+124|Servo (M3 S…)
+125|Socruithe
+126|Cruthanna ar an gciseal seo
+127|Taispeánann íomhá bheo ó cheamara an mheaisín seo
+128|Taispeánann na cosáin ar an limistéar oibre
+129|Taispeántar é sa chluaisín Ceamara
+130|Taispeántar é sa limistéar oibre
+131|Luas
+132|Luas na ngluaiseachtaí le peann in airde
+133|Tosaigh
+134|Ag tosú na hoibre: {} líne, ~{}
+135|Seol an obair chuig an meaisín ceangailte
+136|Sruthú
+137|Casta air
+138|Port TCP
+139|Gléas an tionscadail seo
+140|Cuireadh an gléas leis.
+141|Sábháladh an gléas.
+142|An líonadh ar dtús, ansin an imlíne air, ionas go mbeidh an t-imeall glan.
+143|Tá an obair críochnaithe.
+144|Tá an obair ar siúl.
+145|Leanann an peann línte na gcruthanna. Oibríonn línte oscailte freisin.
+146|Ardaítear an peann le
+147|Is é an limistéar oibre an leathán a shroicheann an peann. Is é nialas an mheaisín an choirnéal ónar tosaíonn an peann.
+148|Níl aon rud le tarraingt: cuir cruthanna ar chisil atá casta air.
+149|Níl aon rud le frámú: cuir cruthanna ar chisil atá casta air.
+150|Níl aon rud le taispeáint fós: tarraing cruthanna agus cuir ar chisil atá casta air iad.
+151|Ní féidir leis an leagan seo ceamaraí an ríomhaire a úsáid.
+152|Níl aon cheamara casta air ag an ngléas seo. Cuir ceann leis i socruithe an ghléis.
+153|Níl an gléas seo ar an liosta: tháinig sé leis an tionscadal
+154|Seo é an gléas ionaid (Dummy): limistéar oibre agus luasanna réamhshocraithe.
+155|Am {} / {}
+156|An iomarca gléasanna
+157|Cosáin
+158|Dícheangail
+159|Aonaid
+160|Amharc
+161|Roghanna amhairc…
+162|Fan tar éis gluaiseacht an phinn
+163|Ag fanacht leis an íomhá…
+164|Nuair a thiteann an nasc as féin, triail arís gach cúpla soicind go dtí go mbrúnn tú Dícheangail.
+165|Leis an ais Z téann an peann go dtí na hairde thuas; le servo casann an G-code an aschur fearsaide air leis an luach S (M3 S…).
+166|Oibrigh ar thionscadal gan meaisín: gnáthfheiste darb ainm Dummy, leis an limistéar oibre agus na luasanna réamhshocraithe
+167|Ais Z
+168|m.sh. Mo phlótálaí
+169|gan aon cheann
+170|tá cuid den líníocht lasmuigh den limistéar oibre
+171|tá an iomarca línte sa líonadh: tá an spás ró-bheag, mar sin fágadh cuid den líonadh ar lár
+172|rinneadh an tionscadal seo do mheaisín eile: {}
+173|Ní féidir {} pictiúr ar na cisil a tharraingt: lorg ina línte iad ar dtús

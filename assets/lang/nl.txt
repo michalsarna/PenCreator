@@ -76,96 +76,99 @@
 75|LightBurn-project importeren…
 76|Apparaat {} geïmporteerd
 77|Importeren…
-78|Lagen
-79|Lijnen: {} m, bewegingen met opgeheven pen: {} m, penlichtingen: {}, ongeveer {} min
-80|Machine
-81|Machinenul (0,0)
-82|Bewegingen met opgeheven pen
-83|Nieuw
-84|Nog geen apparaat. Voeg er een toe of werk zonder machine.
-85|Geen poort
-86|Geen http- of https-adres.
-87|Notities
-88|Notities over deze machine
-89|Niets geselecteerd
-90|Open een tekening of begin met een leeg ontwerp.
-91|De verbinding met de controller uit de apparaatinstellingen openen
-92|Het voorbeeldvenster openen
-93|Openen…
-94|Contour
-95|Pen
-96|Pen omlaag
-97|Pen omhoog
-98|Penbreedte
-99|Plot van de opdracht…
-100|Plotter
-101|Poort
-102|Poort of USB-id
-103|Voorbeeld
-104|Voorbeeld…
-105|Eigenschappen
-106|De geselecteerde vormen op deze laag plaatsen
-107|Een apparaat uit een bestand lezen
-108|Gereed
-109|Opnieuw verbinden
-110|Vernieuwen
-111|Onthoud de USB-id's van de gekozen poort: bij een andere naam wordt de poort daarmee teruggevonden.
-112|Weergave herstellen
-113|Hervatten
-114|STOP
-115|Opslaan
-116|G-code opslaan
-117|Opslaan als…
-118|Dit apparaat in een bestand opslaan
-119|Apparaat opgeslagen in {}
-120|{} opgeslagen
-121|Servo (M3 S…)
-122|Instellingen
-123|Vormen op deze laag
-124|Toont het live camerabeeld van deze machine
-125|Toont de paden op het werkgebied
-126|Getoond in het tabblad Camera
-127|Getoond in het werkgebied
-128|Snelheid
-129|Snelheid van de bewegingen met opgeheven pen
-130|Start
-131|Taak starten: {} regels, ~{}
-132|De opdracht naar de verbonden machine sturen
-133|Streamen
-134|Ingeschakeld
-135|TCP-poort
-136|Het apparaat van dit project
-137|Het apparaat is toegevoegd.
-138|Het apparaat is opgeslagen.
-139|Eerst de vulling, dan de contour erover, zodat de rand netjes is.
-140|De opdracht is klaar.
-141|De opdracht loopt.
-142|De pen volgt de lijnen van de vormen. Open lijnen werken ook.
-143|De pen wordt opgetild door
-144|Het werkgebied is het vel dat de pen bereikt. De machinenul is de hoek waar de pen begint.
-145|Er is niets te tekenen: zet vormen op ingeschakelde lagen.
-146|Niets om te kaderen: zet vormen op ingeschakelde lagen.
-147|Er is nog niets te tonen: teken vormen en zet ze op ingeschakelde lagen.
-148|Deze versie kan de camera's van de computer niet gebruiken.
-149|Dit apparaat heeft geen ingeschakelde camera. Voeg er een toe in de apparaatinstellingen.
-150|Dit apparaat staat niet in de lijst: het kwam met het project mee
-151|Dit is het vervangende apparaat (Dummy): standaard werkgebied en snelheden.
-152|Tijd {} / {}
-153|Te veel apparaten
-154|Paden
-155|Binding opheffen
-156|Eenheden
-157|Weergave
-158|Weergaveopties…
-159|Wachttijd na de penbeweging
-160|Wachten op het beeld…
-161|Als de verbinding vanzelf wegvalt, om de paar seconden opnieuw proberen tot je op Verbinding verbreken drukt.
-162|Bij de Z-as gaat de pen naar de bovenstaande hoogten; bij een servo schakelt de G-code de spindeluitgang in met de S-waarde (M3 S…).
-163|Werk aan een project zonder machine: een gewoon apparaat genaamd Dummy, met het standaardwerkgebied en de standaardsnelheden
-164|Z-as
-165|bijv. Mijn plotter
-166|geen
-167|een deel van de tekening ligt buiten het werkgebied
-168|de vulling heeft te veel lijnen: de afstand is te klein, dus een deel van de vulling is weggelaten
-169|dit project is gemaakt voor een andere machine: {}
-170|{} afbeelding(en) op de lagen kunnen niet worden getekend: traceer ze eerst naar lijnen
+78|Liggend
+79|Lagen
+80|Lijnen: {} m, bewegingen met opgeheven pen: {} m, penlichtingen: {}, ongeveer {} min
+81|Machine
+82|Machinenul (0,0)
+83|Bewegingen met opgeheven pen
+84|Nieuw
+85|Nog geen apparaat. Voeg er een toe of werk zonder machine.
+86|Geen poort
+87|Geen http- of https-adres.
+88|Notities
+89|Notities over deze machine
+90|Niets geselecteerd
+91|Open een tekening of begin met een leeg ontwerp.
+92|De verbinding met de controller uit de apparaatinstellingen openen
+93|Het voorbeeldvenster openen
+94|Openen…
+95|Contour
+96|Papier
+97|Pen
+98|Pen omlaag
+99|Pen omhoog
+100|Penbreedte
+101|Plot van de opdracht…
+102|Plotter
+103|Poort
+104|Poort of USB-id
+105|Staand
+106|Voorbeeld
+107|Voorbeeld…
+108|Eigenschappen
+109|De geselecteerde vormen op deze laag plaatsen
+110|Een apparaat uit een bestand lezen
+111|Gereed
+112|Opnieuw verbinden
+113|Vernieuwen
+114|Onthoud de USB-id's van de gekozen poort: bij een andere naam wordt de poort daarmee teruggevonden.
+115|Weergave herstellen
+116|Hervatten
+117|STOP
+118|Opslaan
+119|G-code opslaan
+120|Opslaan als…
+121|Dit apparaat in een bestand opslaan
+122|Apparaat opgeslagen in {}
+123|{} opgeslagen
+124|Servo (M3 S…)
+125|Instellingen
+126|Vormen op deze laag
+127|Toont het live camerabeeld van deze machine
+128|Toont de paden op het werkgebied
+129|Getoond in het tabblad Camera
+130|Getoond in het werkgebied
+131|Snelheid
+132|Snelheid van de bewegingen met opgeheven pen
+133|Start
+134|Taak starten: {} regels, ~{}
+135|De opdracht naar de verbonden machine sturen
+136|Streamen
+137|Ingeschakeld
+138|TCP-poort
+139|Het apparaat van dit project
+140|Het apparaat is toegevoegd.
+141|Het apparaat is opgeslagen.
+142|Eerst de vulling, dan de contour erover, zodat de rand netjes is.
+143|De opdracht is klaar.
+144|De opdracht loopt.
+145|De pen volgt de lijnen van de vormen. Open lijnen werken ook.
+146|De pen wordt opgetild door
+147|Het werkgebied is het vel dat de pen bereikt. De machinenul is de hoek waar de pen begint.
+148|Er is niets te tekenen: zet vormen op ingeschakelde lagen.
+149|Niets om te kaderen: zet vormen op ingeschakelde lagen.
+150|Er is nog niets te tonen: teken vormen en zet ze op ingeschakelde lagen.
+151|Deze versie kan de camera's van de computer niet gebruiken.
+152|Dit apparaat heeft geen ingeschakelde camera. Voeg er een toe in de apparaatinstellingen.
+153|Dit apparaat staat niet in de lijst: het kwam met het project mee
+154|Dit is het vervangende apparaat (Dummy): standaard werkgebied en snelheden.
+155|Tijd {} / {}
+156|Te veel apparaten
+157|Paden
+158|Binding opheffen
+159|Eenheden
+160|Weergave
+161|Weergaveopties…
+162|Wachttijd na de penbeweging
+163|Wachten op het beeld…
+164|Als de verbinding vanzelf wegvalt, om de paar seconden opnieuw proberen tot je op Verbinding verbreken drukt.
+165|Bij de Z-as gaat de pen naar de bovenstaande hoogten; bij een servo schakelt de G-code de spindeluitgang in met de S-waarde (M3 S…).
+166|Werk aan een project zonder machine: een gewoon apparaat genaamd Dummy, met het standaardwerkgebied en de standaardsnelheden
+167|Z-as
+168|bijv. Mijn plotter
+169|geen
+170|een deel van de tekening ligt buiten het werkgebied
+171|de vulling heeft te veel lijnen: de afstand is te klein, dus een deel van de vulling is weggelaten
+172|dit project is gemaakt voor een andere machine: {}
+173|{} afbeelding(en) op de lagen kunnen niet worden getekend: traceer ze eerst naar lijnen
