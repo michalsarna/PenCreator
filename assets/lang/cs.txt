@@ -1,174 +1,186 @@
 0|Vrstva je pero: když má další vrstva jiné pero, G-kód se zastaví, abyste je mohli vyměnit.
 1|Název portu, nebo USB identifikátor výrobce a produktu (VID:PID, hexadecimálně): použije se port s těmito identifikátory.
 2|Druhá sada výplňových čar napříč první
-3|Přerušit probíhající úlohu
-4|O programu
-5|Přidat kameru
-6|Přidat zařízení
+3|Obvyklá velikost papíru…
+4|Přerušit probíhající úlohu
+5|O programu
+6|Přidat kameru
 7|Přidat zařízení
-8|Přidat zařízení…
-9|Adresa
-10|Po připojení
-11|Uspořádat
-12|Vzadu vlevo
-13|Vzadu vpravo
-14|Zpět na první pohled. Dvojklik na obrázek dělá totéž.
-15|Přenosová rychlost
-16|Svázat s tímto portem
-17|Svázané zařízení USB
-18|Kamera
-19|Název kamery
-20|Číslo kamery
-21|Kamera tohoto počítače
-22|Otočení kamery
-23|Pohled z kamery
-24|Kamery
-25|Soubor nelze použít: {}
-26|Nejprve vyberte port nebo hostitele v nastavení zařízení.
-27|Vyberte stroj, se kterým budete pracovat.
-28|Zrušit alarm
-29|Smazat alarm ($X)
-30|Zrušení alarmu přeskočí referenci: použijte jen tehdy, když víte, že hlava stojí na bezpečném místě.
-31|Uzavřené tvary se vyplní rovnoběžnými čarami; díry zůstanou prázdné.
-32|Potvrdit smazání
-33|Připojit
-34|Znovu se připojit automaticky
-35|Nejprve se připojte ke stroji (karta Zařízení)
-36|Připojeno
-37|Připojení
-38|Typ připojení
-39|Konzole
-40|Řadič
-41|Zkopírováno do {}
-42|Nepodařilo se uložit: {}
-43|Počítání plní vyrovnávací paměť řídicí jednotky a je rychlé. Jednoduchý režim pošle jeden řádek a čeká na jeho ok: pomalý, ale pro firmware, který odpovídá špatně.
-44|Křížové čáry
-45|Smazat tuto kameru
-46|Zařízení
-47|Nastavení zařízení
-48|Nastavení zařízení…
-49|Odpojit
-50|Kreslení
-51|Kolikrát kreslit
-52|Kreslí se: zahrnuto do vykreslení a G-kódu
-53|Úpravy
-54|Upravit…
-55|Exportovat G-code…
-56|Exportovat…
-57|Pozastavit posuv
-58|Soubor
-59|Výplň a obrys
-60|Úhel výplňových čar
-61|Rozteč výplňových čar
-62|Vyplnit čarami
-63|Rámeček
-64|Rámování pracovní plochy
-65|Vpředu vlevo
-66|Vpředu vpravo
-67|Obecné
-68|Obejít rámeček, kde se bude pracovat
-69|Nápověda
-70|Domů
-71|Referencovat stroj
-72|Hostitel
-73|Kolikrát se každá čára nakreslí: pro příliš světlé pero
-74|Nemám zařízení
-75|Importovat projekt LightBurn…
-76|Zařízení {} bylo importováno
-77|Importovat…
-78|Na šířku
-79|Vrstvy
-80|Čáry: {} m, pohyby se zvednutým perem: {} m, zvednutí pera: {}, asi {} min
-81|Stroj
-82|Nula stroje (0,0)
-83|Pohyby se zvednutým perem
-84|Nový
-85|Zatím žádné zařízení. Přidejte jedno, nebo pracujte bez stroje.
-86|Žádný port
-87|Není to adresa http ani https.
-88|Poznámky
-89|Poznámky k tomuto stroji
-90|Nic není vybráno
-91|Otevřete kresbu, nebo začněte prázdný návrh.
-92|Otevřít spojení s ovladačem nastaveným v nastavení zařízení
-93|Otevřít okno náhledu
-94|Otevřít…
-95|Obrys
-96|Papír
-97|Pero
-98|Pero dole
-99|Pero nahoře
-100|Šířka pera
-101|Vykreslení úlohy…
-102|Plotr
-103|Port
-104|Port nebo USB id
-105|Na výšku
-106|Náhled
-107|Náhled…
-108|Vlastnosti
-109|Dát vybrané tvary na tuto vrstvu
-110|Načíst zařízení ze souboru
-111|Připraveno
-112|Opětovné připojení
-113|Obnovit
-114|Zapamatovat USB identifikátory zvoleného portu: při změně jeho názvu se port podle nich znovu najde.
-115|Obnovit pohled
-116|Pokračovat
-117|STOP
-118|Uložit
-119|Uložit G-code
-120|Uložit jako…
-121|Uložit toto zařízení do souboru
-122|Zařízení uloženo do {}
-123|Uloženo: {}
-124|Servo (M3 S…)
-125|Nastavení
-126|Tvary na této vrstvě
-127|Zobrazí živý obraz z kamery tohoto stroje
-128|Zobrazí dráhy na pracovní ploše
-129|Zobrazeno na kartě Kamera
-130|Zobrazeno v pracovní ploše
-131|Rychlost
-132|Rychlost pohybů se zvednutým perem
-133|Start
-134|Spouští se úloha: {} řádků, ~{}
-135|Odeslat úlohu do připojeného stroje
-136|Streamování
-137|Zapnuto
-138|Port TCP
-139|Zařízení tohoto projektu
-140|Zařízení bylo přidáno.
-141|Zařízení bylo uloženo.
-142|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
-143|Úloha je hotová.
-144|Úloha běží.
-145|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
-146|Pero se zvedá pomocí
-147|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
-148|Není co kreslit: dejte tvary na zapnuté vrstvy.
-149|Není co orámovat: dejte tvary na zapnuté vrstvy.
-150|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
-151|Tato verze nemůže používat kamery počítače.
-152|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
-153|Toto zařízení není v seznamu: přišlo s projektem
-154|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
-155|Čas {} / {}
-156|Příliš mnoho zařízení
-157|Dráhy
-158|Zrušit vazbu
-159|Jednotky
-160|Zobrazení
-161|Možnosti zobrazení…
-162|Čekání po pohybu pera
-163|Čekání na obraz…
-164|Když spojení samo spadne, zkoušet to každých pár sekund, dokud nestisknete Odpojit.
-165|U osy Z jede pero do výše uvedených výšek; u serva G-kód zapne výstup vřetene hodnotou S (M3 S…).
-166|Práce na projektu bez stroje: obyčejné zařízení jménem Dummy s výchozí pracovní plochou a rychlostmi
-167|Osa Z
-168|např. Můj plotr
-169|žádné
-170|část kresby leží mimo pracovní plochu
-171|výplň má příliš mnoho čar: rozteč je příliš malá, proto byla část výplně vynechána
-172|tento projekt byl vytvořen pro jiný stroj: {}
-173|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry
+8|Přidat zařízení
+9|Přidat zařízení…
+10|Adresa
+11|Po připojení
+12|Alarm {}
+13|Uspořádat
+14|Vzadu vlevo
+15|Vzadu vpravo
+16|Zpět na první pohled. Dvojklik na obrázek dělá totéž.
+17|Přenosová rychlost
+18|Svázat s tímto portem
+19|Svázané zařízení USB
+20|Kamera
+21|Název kamery
+22|Číslo kamery
+23|Kamera tohoto počítače
+24|Otočení kamery
+25|Pohled z kamery
+26|Kamery
+27|Zkontrolovat program
+28|Nejdřív se kontroluje program…
+29|Kontroluje se program…
+30|Nejprve vyberte port nebo hostitele v nastavení zařízení.
+31|Vyberte stroj, se kterým budete pracovat.
+32|Zrušit alarm
+33|Zrušení alarmu přeskočí referenci: použijte jen tehdy, když víte, že hlava stojí na bezpečném místě.
+34|Uzavřené tvary se vyplní rovnoběžnými čarami; díry zůstanou prázdné.
+35|Potvrdit smazání
+36|Připojit
+37|Znovu se připojit automaticky
+38|Připojeno
+39|Připojení
+40|Typ připojení
+41|Konzole
+42|Ovládání
+43|Zkopírováno do {}
+44|Nepodařilo se uložit: {}
+45|Počítání plní vyrovnávací paměť řídicí jednotky a je rychlé. Jednoduchý režim pošle jeden řádek a čeká na jeho ok: pomalý, ale pro firmware, který odpovídá špatně.
+46|Křížové čáry
+47|Smazat tuto kameru
+48|Zařízení
+49|Nastavení zařízení
+50|Nastavení zařízení…
+51|Diagnostika a statistiky…
+52|Odpojit
+53|Kreslení
+54|Kolikrát kreslit
+55|Kreslí se: zahrnuto do vykreslení a G-kódu
+56|Úpravy
+57|Upravit…
+58|Chyba {} na řádku {}: {}
+59|Chyba {}: {}
+60|Exportovat G-code…
+61|Exportovat…
+62|Výplň a obrys
+63|Úhel výplňových čar
+64|Rozteč výplňových čar
+65|Vyplnit čarami
+66|Nastavení firmwaru ($$)…
+67|Rámeček
+68|Rámování pracovní plochy
+69|Od řádku…
+70|Vpředu vlevo
+71|Vpředu vpravo
+72|Obecné
+73|Obejít rámeček, kde se bude pracovat
+74|Nápověda
+75|Domů
+76|Referencovat stroj
+77|Hostitel
+78|Kolikrát se každá čára nakreslí: pro příliš světlé pero
+79|Nemám zařízení
+80|Importovat projekt LightBurn…
+81|Zařízení {} bylo importováno
+82|Importovat…
+83|Na šířku
+84|Vrstvy
+85|Čáry: {} m, pohyby se zvednutým perem: {} m, zvednutí pera: {}, asi {} min
+86|Nula stroje (0,0)
+87|Pohyby se zvednutým perem
+88|Nový
+89|Zatím žádné zařízení. Přidejte jedno, nebo pracujte bez stroje.
+90|Žádný port
+91|Není to adresa http ani https.
+92|Poznámky
+93|Poznámky k tomuto stroji
+94|Nic není vybráno
+95|Otevřete kresbu, nebo začněte prázdný návrh.
+96|Otevřít spojení s ovladačem nastaveným v nastavení zařízení
+97|Otevřít okno náhledu
+98|Otevřít…
+99|Obrys
+100|Papír
+101|Pero
+102|Pero dole
+103|Pero nahoře
+104|Šířka pera
+105|Vykreslení úlohy…
+106|Plotr
+107|Port
+108|Port nebo USB id
+109|Na výšku
+110|Náhled
+111|Náhled…
+112|Vlastnosti
+113|Dát vybrané tvary na tuto vrstvu
+114|Načíst zařízení ze souboru
+115|Připraveno
+116|Opětovné připojení
+117|Obnovit
+118|Zapamatovat USB identifikátory zvoleného portu: při změně jeho názvu se port podle nich znovu najde.
+119|Obnovit pohled
+120|Pokračovat
+121|STOP
+122|Uložit
+123|Uložit G-code
+124|Uložit jako…
+125|Uložit toto zařízení do souboru
+126|Zařízení uloženo do {}
+127|Uloženo: {}
+128|Servo (M3 S…)
+129|Nastavení
+130|Tvary na této vrstvě
+131|Zobrazí živý obraz z kamery tohoto stroje
+132|Zobrazí dráhy na pracovní ploše
+133|Zobrazeno na kartě Kamera
+134|Zobrazeno v pracovní ploše
+135|Rychlost
+136|Rychlost pohybů se zvednutým perem
+137|Start
+138|Začít od
+139|Začít úlohu od řádku programu
+140|Spouští se úloha: {} řádků, ~{}
+141|Odeslat úlohu do připojeného stroje
+142|Streamování
+143|Zapnuto
+144|Port TCP
+145|G-code kolem úlohy: {}
+146|Kontrola nenašla nic špatného.
+147|Kontrola nic nenašla. Úloha běží.
+148|Kontrola našla {} problémů, první na řádku {}. Úloha nebyla spuštěna.
+149|Zařízení tohoto projektu
+150|Zařízení bylo přidáno.
+151|Zařízení bylo uloženo.
+152|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
+153|Úloha je hotová, s {} problémy (viz Konzole).
+154|Úloha je hotová.
+155|Úloha je pozastavena: {}
+156|Úloha běží.
+157|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
+158|Pero se zvedá pomocí
+159|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
+160|Není co kreslit: dejte tvary na zapnuté vrstvy.
+161|Není co orámovat: dejte tvary na zapnuté vrstvy.
+162|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
+163|Tato verze nemůže používat kamery počítače.
+164|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
+165|Toto zařízení není v seznamu: přišlo s projektem
+166|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
+167|Čas {} / {}
+168|Příliš mnoho zařízení
+169|Dráhy
+170|Zrušit vazbu
+171|Jednotky
+172|Zobrazení
+173|Možnosti zobrazení…
+174|Čekání po pohybu pera
+175|Čekání na obraz…
+176|Když spojení samo spadne, zkoušet to každých pár sekund, dokud nestisknete Odpojit.
+177|U osy Z jede pero do výše uvedených výšek; u serva G-kód zapne výstup vřetene hodnotou S (M3 S…).
+178|Práce na projektu bez stroje: obyčejné zařízení jménem Dummy s výchozí pracovní plochou a rychlostmi
+179|Osa Z
+180|např. Můj plotr
+181|žádné
+182|část kresby leží mimo pracovní plochu
+183|výplň má příliš mnoho čar: rozteč je příliš malá, proto byla část výplně vynechána
+184|tento projekt byl vytvořen pro jiný stroj: {}
+185|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry

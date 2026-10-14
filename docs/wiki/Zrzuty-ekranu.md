@@ -47,3 +47,15 @@ Wszystkie obrazy są generowane bez okna z prawdziwego interfejsu (`cargo test -
 ### Karta Console: wymiana ze sterownikiem i linia do wysłania polecenia
 
 ![Karta Console: wymiana ze sterownikiem i linia do wysłania polecenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/11-console.png)
+
+### Karta Control: pozycja, zerowanie, przesuw, makra
+
+![Karta Control: pozycja, zerowanie, przesuw, makra](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/12-control-tab.png)
+
+### Ustawienia kontrolera ($$)
+
+![Ustawienia kontrolera ($$)](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/13-firmware.png)
+
+### Zadanie czeka na zmianę pisaka
+
+![Zadanie czeka na zmianę pisaka](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/14-job-paused.png)

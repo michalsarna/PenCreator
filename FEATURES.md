@@ -11,13 +11,14 @@
 * Reading SVG, PDF and Illustrator (PDF-compatible) files and LightBurn projects (`.lbrn2`: shapes, text outlines, bitmaps) into a scene of shapes.
 * The editor of baseCreator: drawing tools, selection, node editing, undo and redo, copy and paste, group, align, flip, rotate, order, grid and snapping.
 * Menus (with the native macOS menu bar and recent files), icons, tool palette, arrange bar, View options and the About window of baseCreator.
+* **Machine control:** the **Control** tab (work and machine position, zero of X, Y, Z and G54 … G59, jogging by steps or by holding a button, keyboard jogging, go to X0 Y0, macros with variables and G-code before and after every job); the job stops at a change of the pen (a window, continue / stop); **Start from line…**; the program can be checked in the controller's check mode first; the settings of the controller (`$$`) with search, a filter for what differs from typical, writes after a question, an automatic backup before the first change, backup to and restore from a file, factory reset behind a typed word; calibration of steps per millimetre and of the squareness of the axes; diagnostics (input pins, firmware, jobs, running time, alarms, errors, a zip with report, settings, console and program) and maintenance reminders; alarms and errors of GRBL explained in 30 languages; a device can be read from the controller (travel, speed) and started from a usual sheet size; **copies of the settings of the controller** are kept with the device (made at the first connection and whenever the settings differ from the newest copy, with a message listing what changed; by hand, restore and delete from the firmware window; part of the backup of the program). None of it has been tried on a real plotter.
 * **Backup:** Help → Download backup… saves a zip with the settings of PenCreator and the shared clipart gallery; Help → Restore from backup… reads it back (settings replaced after a confirmation, pictures added to the gallery, a backup of another program refused). The same entries as in LightCreator.
 
 ## Planned
 
 Nothing below exists yet; the list is a plan, not a promise.
 
-* Jogging and probing.
+* Probing.
 * HPGL output.
 * Text in single-line fonts.
 * Pen pressure and a second pen holder; hatching that follows the shape.

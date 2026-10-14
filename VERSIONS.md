@@ -2,6 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.2.6
+
+* **Machine control:** the **Control** tab (work and machine position, zero and G54 … G59, jogging by steps or by holding a button, keyboard jogging, macros with variables, G-code before and after every job) and the **Machine** menu (settings of the controller `$$` with search, backup before the first change, restore, factory reset; calibration; diagnostics with statistics, maintenance reminders and a zip; **Start from line…**; **Check the program**). A job stops at a change of the pen.
+* **Copies of the settings of the controller** are kept with the device (made at the first connection and whenever the settings differ from the newest copy, with a message saying what changed); they are part of the backup of the program.
+* Alarms and errors of GRBL are explained in the console and the status bar, in 30 languages. A device can be read from the controller and started from a usual sheet size.
+* baseCreator v0.9.6.
+
 ## v0.2.5
 
 * The Dummy device: choose **Landscape** or **Portrait** for its A4 sheet, under the device list on the start screen and on the Device tab (new texts in 30 languages).

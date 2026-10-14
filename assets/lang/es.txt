@@ -1,174 +1,186 @@
 0|Una capa es un bolígrafo: cuando la siguiente capa tiene otro bolígrafo, el G-code se detiene para que lo cambies.
 1|Un nombre de puerto, o el id USB de fabricante y producto (VID:PID, hexadecimal): se usa el puerto que tenga estos id.
 2|Un segundo conjunto de líneas de relleno cruzado con el primero
-3|Interrumpir el trabajo en curso
-4|Acerca de
-5|Añadir una cámara
-6|Añadir un dispositivo
-7|Añadir dispositivo
-8|Añadir dispositivo…
-9|Dirección
-10|Tras conectar
-11|Organizar
-12|Atrás izquierda
-13|Atrás derecha
-14|Vuelve a la primera vista. Hacer doble clic en la imagen hace lo mismo.
-15|Velocidad en baudios
-16|Vincular a este puerto
-17|Dispositivo USB vinculado
-18|Cámara
-19|Nombre de la cámara
-20|Número de cámara
-21|Cámara de este ordenador
-22|Rotación de la cámara
-23|Vista de cámara
-24|Cámaras
-25|No se puede usar el archivo: {}
-26|Elige primero un puerto o un host en los ajustes del dispositivo.
-27|Elige la máquina con la que vas a trabajar.
-28|Borrar una alarma
-29|Borrar la alarma ($X)
-30|Borrar la alarma omite el homing: úselo solo cuando se sepa que el cabezal está en un lugar seguro.
-31|Las formas cerradas se rellenan con líneas paralelas; los agujeros quedan vacíos.
-32|Confirmar eliminación
-33|Conectar
-34|Volver a conectar automáticamente
-35|Conéctate primero a la máquina (pestaña Dispositivo)
-36|Conectado
-37|Conexión
-38|Tipo de conexión
-39|Consola
-40|Controlador
-41|Copiado a {}
-42|No se pudo guardar: {}
-43|El recuento llena el búfer del controlador y es rápido. El simple envía una línea y espera su ok: lento, pero para firmware que responde mal.
-44|Líneas cruzadas
-45|Eliminar esta cámara
-46|Dispositivo
-47|Ajustes del dispositivo
-48|Ajustes del dispositivo…
-49|Desconectar
-50|Dibujo
-51|Veces que se dibuja
-52|Se dibuja: se incluye en el trazado y en el G-code
-53|Edición
-54|Editar…
-55|Exportar G-code…
-56|Exportar…
-57|Retención de avance
-58|Archivo
-59|Relleno y contorno
-60|Ángulo de las líneas de relleno
-61|Separación de las líneas de relleno
-62|Rellenar con líneas
-63|Marco
-64|Marco del área de trabajo
-65|Delante izquierda
-66|Delante derecha
-67|General
-68|Recorre el recuadro donde se hará el trabajo
-69|Ayuda
-70|Inicio
-71|Hacer homing de la máquina
-72|Host
-73|Cuántas veces se dibuja cada línea: para un bolígrafo demasiado claro
-74|No tengo dispositivo
-75|Importar proyecto de LightBurn…
-76|Dispositivo {} importado
-77|Importar…
-78|Horizontal
-79|Capas
-80|Líneas: {} m, movimientos con el bolígrafo levantado: {} m, levantamientos: {}, unos {} min
-81|Máquina
-82|Cero de la máquina (0,0)
-83|Movimientos con el bolígrafo levantado
-84|Nuevo
-85|Aún no hay dispositivo. Añade uno o trabaja sin máquina.
-86|Sin puerto
-87|No es una dirección http o https.
-88|Notas
-89|Notas sobre esta máquina
-90|Nada seleccionado
-91|Abre un dibujo o empieza un diseño vacío.
-92|Abre el enlace con el controlador indicado en los ajustes del dispositivo
-93|Abrir la ventana de vista previa
-94|Abrir…
-95|Contorno
-96|Papel
-97|Bolígrafo
-98|Bolígrafo bajado
-99|Bolígrafo levantado
-100|Anchura del bolígrafo
-101|Trazado del trabajo…
-102|Plóter
-103|Puerto
-104|Puerto o id USB
-105|Vertical
-106|Vista previa
-107|Vista previa…
-108|Propiedades
-109|Poner las formas seleccionadas en esta capa
-110|Leer un dispositivo desde un archivo
-111|Listo
-112|Reconexión
-113|Actualizar
-114|Recuerda los id USB del puerto elegido: si su nombre cambia, el puerto se encuentra de nuevo por ellos.
-115|Restablecer la vista
-116|Reanudar
-117|PARAR
-118|Guardar
-119|Guardar G-code
-120|Guardar como…
-121|Guardar este dispositivo en un archivo
-122|Dispositivo guardado en {}
-123|{} guardado
-124|Servo (M3 S…)
-125|Ajustes
-126|Formas en esta capa
-127|Muestra la imagen en vivo de la cámara de esta máquina
-128|Muestra las trayectorias en el área de trabajo
-129|Se muestra en la pestaña Cámara
-130|Se muestra en el área de trabajo
-131|Velocidad
-132|Velocidad de los movimientos con el bolígrafo levantado
-133|Iniciar
-134|Iniciando el trabajo: {} líneas, ~{}
-135|Enviar el trabajo a la máquina conectada
-136|Transmisión
-137|Activada
-138|Puerto TCP
-139|El dispositivo de este proyecto
-140|Se añadió el dispositivo.
-141|Se guardó el dispositivo.
-142|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
-143|El trabajo ha terminado.
-144|El trabajo está en marcha.
-145|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
-146|El bolígrafo se levanta con
-147|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
-148|No hay nada que dibujar: pon formas en capas activadas.
-149|No hay nada que enmarcar: pon formas en capas activadas.
-150|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
-151|Esta versión no puede usar las cámaras del ordenador.
-152|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
-153|Este dispositivo no está en la lista: vino con el proyecto
-154|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
-155|Tiempo {} / {}
-156|Demasiados dispositivos
-157|Trayectorias
-158|Desvincular
-159|Unidades
-160|Ver
-161|Opciones de vista…
-162|Espera tras mover el bolígrafo
-163|Esperando la imagen…
-164|Cuando la conexión se cae sola, reintenta cada pocos segundos hasta que pulse Desconectar.
-165|Con el eje Z el bolígrafo va a las alturas indicadas; con un servo el G-code enciende la salida del husillo con el valor S (M3 S…).
-166|Trabaja en un proyecto sin máquina: un dispositivo sencillo llamado Dummy, con el área de trabajo y las velocidades predeterminadas
-167|Eje Z
-168|p. ej. Mi plóter
-169|ninguno
-170|parte del dibujo queda fuera del área de trabajo
-171|el relleno tiene demasiadas líneas: la separación es demasiado pequeña, así que se omitió parte del relleno
-172|este proyecto se hizo para otra máquina: {}
-173|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero
+3|Un tamaño de hoja habitual…
+4|Interrumpir el trabajo en curso
+5|Acerca de
+6|Añadir una cámara
+7|Añadir un dispositivo
+8|Añadir dispositivo
+9|Añadir dispositivo…
+10|Dirección
+11|Tras conectar
+12|Alarma {}
+13|Organizar
+14|Atrás izquierda
+15|Atrás derecha
+16|Vuelve a la primera vista. Hacer doble clic en la imagen hace lo mismo.
+17|Velocidad en baudios
+18|Vincular a este puerto
+19|Dispositivo USB vinculado
+20|Cámara
+21|Nombre de la cámara
+22|Número de cámara
+23|Cámara de este ordenador
+24|Rotación de la cámara
+25|Vista de cámara
+26|Cámaras
+27|Comprobar el programa
+28|Primero se comprueba el programa…
+29|Comprobando el programa…
+30|Elige primero un puerto o un host en los ajustes del dispositivo.
+31|Elige la máquina con la que vas a trabajar.
+32|Borrar una alarma
+33|Borrar la alarma omite el homing: úselo solo cuando se sepa que el cabezal está en un lugar seguro.
+34|Las formas cerradas se rellenan con líneas paralelas; los agujeros quedan vacíos.
+35|Confirmar eliminación
+36|Conectar
+37|Volver a conectar automáticamente
+38|Conectado
+39|Conexión
+40|Tipo de conexión
+41|Consola
+42|Control
+43|Copiado a {}
+44|No se pudo guardar: {}
+45|El recuento llena el búfer del controlador y es rápido. El simple envía una línea y espera su ok: lento, pero para firmware que responde mal.
+46|Líneas cruzadas
+47|Eliminar esta cámara
+48|Dispositivo
+49|Ajustes del dispositivo
+50|Ajustes del dispositivo…
+51|Diagnóstico y estadísticas…
+52|Desconectar
+53|Dibujo
+54|Veces que se dibuja
+55|Se dibuja: se incluye en el trazado y en el G-code
+56|Edición
+57|Editar…
+58|Error {} en la línea {}: {}
+59|Error {}: {}
+60|Exportar G-code…
+61|Exportar…
+62|Relleno y contorno
+63|Ángulo de las líneas de relleno
+64|Separación de las líneas de relleno
+65|Rellenar con líneas
+66|Ajustes del firmware ($$)…
+67|Marco
+68|Marco del área de trabajo
+69|Desde la línea…
+70|Delante izquierda
+71|Delante derecha
+72|General
+73|Recorre el recuadro donde se hará el trabajo
+74|Ayuda
+75|Inicio
+76|Hacer homing de la máquina
+77|Host
+78|Cuántas veces se dibuja cada línea: para un bolígrafo demasiado claro
+79|No tengo dispositivo
+80|Importar proyecto de LightBurn…
+81|Dispositivo {} importado
+82|Importar…
+83|Horizontal
+84|Capas
+85|Líneas: {} m, movimientos con el bolígrafo levantado: {} m, levantamientos: {}, unos {} min
+86|Cero de la máquina (0,0)
+87|Movimientos con el bolígrafo levantado
+88|Nuevo
+89|Aún no hay dispositivo. Añade uno o trabaja sin máquina.
+90|Sin puerto
+91|No es una dirección http o https.
+92|Notas
+93|Notas sobre esta máquina
+94|Nada seleccionado
+95|Abre un dibujo o empieza un diseño vacío.
+96|Abre el enlace con el controlador indicado en los ajustes del dispositivo
+97|Abrir la ventana de vista previa
+98|Abrir…
+99|Contorno
+100|Papel
+101|Bolígrafo
+102|Bolígrafo bajado
+103|Bolígrafo levantado
+104|Anchura del bolígrafo
+105|Trazado del trabajo…
+106|Plóter
+107|Puerto
+108|Puerto o id USB
+109|Vertical
+110|Vista previa
+111|Vista previa…
+112|Propiedades
+113|Poner las formas seleccionadas en esta capa
+114|Leer un dispositivo desde un archivo
+115|Listo
+116|Reconexión
+117|Actualizar
+118|Recuerda los id USB del puerto elegido: si su nombre cambia, el puerto se encuentra de nuevo por ellos.
+119|Restablecer la vista
+120|Reanudar
+121|PARAR
+122|Guardar
+123|Guardar G-code
+124|Guardar como…
+125|Guardar este dispositivo en un archivo
+126|Dispositivo guardado en {}
+127|{} guardado
+128|Servo (M3 S…)
+129|Ajustes
+130|Formas en esta capa
+131|Muestra la imagen en vivo de la cámara de esta máquina
+132|Muestra las trayectorias en el área de trabajo
+133|Se muestra en la pestaña Cámara
+134|Se muestra en el área de trabajo
+135|Velocidad
+136|Velocidad de los movimientos con el bolígrafo levantado
+137|Iniciar
+138|Empezar desde
+139|Empezar el trabajo en una línea del programa
+140|Iniciando el trabajo: {} líneas, ~{}
+141|Enviar el trabajo a la máquina conectada
+142|Transmisión
+143|Activada
+144|Puerto TCP
+145|El G-code alrededor del trabajo: {}
+146|La comprobación no encontró nada malo.
+147|La comprobación no encontró nada. El trabajo está en marcha.
+148|La comprobación encontró {} problemas, el primero en la línea {}. El trabajo no se inició.
+149|El dispositivo de este proyecto
+150|Se añadió el dispositivo.
+151|Se guardó el dispositivo.
+152|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
+153|El trabajo ha terminado, con {} problemas (mira la Consola).
+154|El trabajo ha terminado.
+155|El trabajo está en pausa: {}
+156|El trabajo está en marcha.
+157|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
+158|El bolígrafo se levanta con
+159|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
+160|No hay nada que dibujar: pon formas en capas activadas.
+161|No hay nada que enmarcar: pon formas en capas activadas.
+162|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
+163|Esta versión no puede usar las cámaras del ordenador.
+164|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
+165|Este dispositivo no está en la lista: vino con el proyecto
+166|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
+167|Tiempo {} / {}
+168|Demasiados dispositivos
+169|Trayectorias
+170|Desvincular
+171|Unidades
+172|Ver
+173|Opciones de vista…
+174|Espera tras mover el bolígrafo
+175|Esperando la imagen…
+176|Cuando la conexión se cae sola, reintenta cada pocos segundos hasta que pulse Desconectar.
+177|Con el eje Z el bolígrafo va a las alturas indicadas; con un servo el G-code enciende la salida del husillo con el valor S (M3 S…).
+178|Trabaja en un proyecto sin máquina: un dispositivo sencillo llamado Dummy, con el área de trabajo y las velocidades predeterminadas
+179|Eje Z
+180|p. ej. Mi plóter
+181|ninguno
+182|parte del dibujo queda fuera del área de trabajo
+183|el relleno tiene demasiadas líneas: la separación es demasiado pequeña, así que se omitió parte del relleno
+184|este proyecto se hizo para otra máquina: {}
+185|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero

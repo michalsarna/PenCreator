@@ -1,174 +1,186 @@
 0|Sloj je olovka: kad sljedeći sloj ima drugu olovku, G-kod se zaustavlja da je možete zamijeniti.
 1|Naziv porta ili USB identifikator proizvođača i proizvoda (VID:PID, heksadecimalno): koristi se port s tim identifikatorima.
 2|Drugi skup linija ispune preko prvog
-3|Prekini posao u tijeku
-4|O programu
-5|Dodaj kameru
-6|Dodaj uređaj
+3|Uobičajena veličina papira…
+4|Prekini posao u tijeku
+5|O programu
+6|Dodaj kameru
 7|Dodaj uređaj
-8|Dodaj uređaj…
-9|Adresa
-10|Nakon spajanja
-11|Razmjesti
-12|Straga lijevo
-13|Straga desno
-14|Natrag na prvi prikaz. Dvostruki klik na sliku radi isto.
-15|Brzina u baudovima
-16|Veži uz ovaj port
-17|Vezani USB uređaj
-18|Kamera
-19|Naziv kamere
-20|Broj kamere
-21|Kamera ovog računala
-22|Rotacija kamere
-23|Prikaz kamere
-24|Kamere
-25|Datoteka se ne može koristiti: {}
-26|Prvo odaberite port ili host u postavkama uređaja.
-27|Odaberite stroj s kojim ćete raditi.
-28|Obriši alarm
-29|Obriši alarm ($X)
-30|Brisanje alarma preskače referenciranje: koristite samo kad je poznato da glava stoji na sigurnom mjestu.
-31|Zatvoreni oblici ispunjavaju se paralelnim linijama; rupe ostaju prazne.
-32|Potvrdi brisanje
-33|Spoji
-34|Automatski se ponovno spoji
-35|Prvo se spojite sa strojem (kartica Uređaj)
-36|Spojeno
-37|Veza
-38|Vrsta veze
-39|Konzola
-40|Kontroler
-41|Kopirano u {}
-42|Spremanje nije uspjelo: {}
-43|Brojanje puni međuspremnik upravljača i brzo je. Jednostavno šalje jedan redak i čeka njegov ok: sporo, ali za firmware koji odgovara pogrešno.
-44|Križne linije
-45|Izbriši ovu kameru
-46|Uređaj
-47|Postavke uređaja
-48|Postavke uređaja…
-49|Odspoji
-50|Crtanje
-51|Koliko se puta crta
-52|Crta se: uključeno u iscrtavanje i G-kod
-53|Uredi
-54|Uredi…
-55|Izvezi G-code…
-56|Izvezi…
-57|Zaustavi posmak
-58|Datoteka
-59|Ispuna i obris
-60|Kut linija ispune
-61|Razmak linija ispune
-62|Ispuni linijama
-63|Okvir
-64|Okvir radnog područja
-65|Naprijed lijevo
-66|Naprijed desno
-67|Općenito
-68|Obiđi okvir u kojem će se raditi
-69|Pomoć
-70|Početak
-71|Referenciraj stroj
-72|Poslužitelj
-73|Koliko se puta svaka linija crta: za presvijetlu olovku
-74|Nemam uređaj
-75|Uvezi LightBurn projekt…
-76|Uređaj {} je uvezen
-77|Uvezi…
-78|Vodoravno
-79|Slojevi
-80|Linije: {} m, pomaci s podignutom olovkom: {} m, podizanja olovke: {}, oko {} min
-81|Stroj
-82|Nula stroja (0,0)
-83|Pomaci s podignutom olovkom
-84|Novo
-85|Još nema uređaja. Dodajte jedan ili radite bez stroja.
-86|Nema priključka
-87|Nije http ni https adresa.
-88|Bilješke
-89|Bilješke o ovom stroju
-90|Ništa nije odabrano
-91|Otvorite crtež ili započnite prazan nacrt.
-92|Otvori vezu s kontrolerom postavljenim u postavkama uređaja
-93|Otvori prozor pregleda
-94|Otvori…
-95|Obris
-96|Papir
-97|Olovka
-98|Olovka spuštena
-99|Olovka podignuta
-100|Širina olovke
-101|Iscrtavanje posla…
-102|Ploter
-103|Priključak
-104|Port ili USB id
-105|Okomito
-106|Pregled
-107|Pregled…
-108|Svojstva
-109|Stavi odabrane oblike na ovaj sloj
-110|Pročitaj uređaj iz datoteke
-111|Spremno
-112|Ponovno spajanje
-113|Osvježi
-114|Zapamti USB identifikatore odabranog porta: kad mu se promijeni naziv, port se pronalazi po njima.
-115|Poništi prikaz
-116|Nastavi
-117|STOP
-118|Spremi
-119|Spremi G-code
-120|Spremi kao…
-121|Spremi ovaj uređaj u datoteku
-122|Uređaj je spremljen u {}
-123|Spremljeno: {}
-124|Servo (M3 S…)
-125|Postavke
-126|Oblici na ovom sloju
-127|Prikazuje sliku uživo s kamere ovog stroja
-128|Prikazuje putanje na radnom području
-129|Prikazano na kartici Kamera
-130|Prikazano u radnom području
-131|Brzina
-132|Brzina pomaka s podignutom olovkom
-133|Start
-134|Pokretanje posla: {} redaka, ~{}
-135|Pošalji posao na spojeni stroj
-136|Strujanje
-137|Uključeno
-138|TCP priključak
-139|Uređaj ovog projekta
-140|Uređaj je dodan.
-141|Uređaj je spremljen.
-142|Prvo ispuna, zatim obris preko nje, da rub bude čist.
-143|Posao je gotov.
-144|Posao traje.
-145|Olovka prati linije oblika. Otvorene linije također rade.
-146|Olovka se podiže pomoću
-147|Radno područje je list do kojeg olovka dosiže. Nula stroja je kut u kojem olovka počinje.
-148|Nema što crtati: stavite oblike na uključene slojeve.
-149|Nema što uokviriti: stavite oblike na uključene slojeve.
-150|Još nema što prikazati: nacrtajte oblike i stavite ih na uključene slojeve.
-151|Ova verzija ne može koristiti kamere računala.
-152|Ovaj uređaj nema uključenu kameru. Dodajte je u postavkama uređaja.
-153|Ovog uređaja nema na popisu: došao je s projektom
-154|Ovo je zamjenski uređaj (Dummy): zadano radno područje i brzine.
-155|Vrijeme {} / {}
-156|Previše uređaja
-157|Putanje
-158|Odvezi
-159|Jedinice
-160|Prikaz
-161|Mogućnosti prikaza…
-162|Čekanje nakon pomaka olovke
-163|Čekanje slike…
-164|Kad veza sama pukne, pokušavaj svakih nekoliko sekundi dok ne pritisnete Odspoji.
-165|S osi Z olovka ide na gornje visine; sa servom G-kod uključuje izlaz vretena vrijednošću S (M3 S…).
-166|Radite na projektu bez stroja: običan uređaj naziva Dummy s zadanim radnim područjem i brzinama
-167|Os Z
-168|npr. Moj ploter
-169|nema
-170|dio crteža leži izvan radnog područja
-171|ispuna ima previše linija: razmak je premalen pa je dio ispune izostavljen
-172|ovaj projekt napravljen je za drugi stroj: {}
-173|{} slika na slojevima ne može se crtati: prvo ih pretvorite u linije
+8|Dodaj uređaj
+9|Dodaj uređaj…
+10|Adresa
+11|Nakon spajanja
+12|Alarm {}
+13|Razmjesti
+14|Straga lijevo
+15|Straga desno
+16|Natrag na prvi prikaz. Dvostruki klik na sliku radi isto.
+17|Brzina u baudovima
+18|Veži uz ovaj port
+19|Vezani USB uređaj
+20|Kamera
+21|Naziv kamere
+22|Broj kamere
+23|Kamera ovog računala
+24|Rotacija kamere
+25|Prikaz kamere
+26|Kamere
+27|Provjeri program
+28|Prvo se provjerava program…
+29|Provjerava se program…
+30|Prvo odaberite port ili host u postavkama uređaja.
+31|Odaberite stroj s kojim ćete raditi.
+32|Obriši alarm
+33|Brisanje alarma preskače referenciranje: koristite samo kad je poznato da glava stoji na sigurnom mjestu.
+34|Zatvoreni oblici ispunjavaju se paralelnim linijama; rupe ostaju prazne.
+35|Potvrdi brisanje
+36|Spoji
+37|Automatski se ponovno spoji
+38|Spojeno
+39|Veza
+40|Vrsta veze
+41|Konzola
+42|Upravljanje
+43|Kopirano u {}
+44|Spremanje nije uspjelo: {}
+45|Brojanje puni međuspremnik upravljača i brzo je. Jednostavno šalje jedan redak i čeka njegov ok: sporo, ali za firmware koji odgovara pogrešno.
+46|Križne linije
+47|Izbriši ovu kameru
+48|Uređaj
+49|Postavke uređaja
+50|Postavke uređaja…
+51|Dijagnostika i statistika…
+52|Odspoji
+53|Crtanje
+54|Koliko se puta crta
+55|Crta se: uključeno u iscrtavanje i G-kod
+56|Uredi
+57|Uredi…
+58|Pogreška {} u retku {}: {}
+59|Pogreška {}: {}
+60|Izvezi G-code…
+61|Izvezi…
+62|Ispuna i obris
+63|Kut linija ispune
+64|Razmak linija ispune
+65|Ispuni linijama
+66|Postavke firmwarea ($$)…
+67|Okvir
+68|Okvir radnog područja
+69|Od retka…
+70|Naprijed lijevo
+71|Naprijed desno
+72|Općenito
+73|Obiđi okvir u kojem će se raditi
+74|Pomoć
+75|Početak
+76|Referenciraj stroj
+77|Poslužitelj
+78|Koliko se puta svaka linija crta: za presvijetlu olovku
+79|Nemam uređaj
+80|Uvezi LightBurn projekt…
+81|Uređaj {} je uvezen
+82|Uvezi…
+83|Vodoravno
+84|Slojevi
+85|Linije: {} m, pomaci s podignutom olovkom: {} m, podizanja olovke: {}, oko {} min
+86|Nula stroja (0,0)
+87|Pomaci s podignutom olovkom
+88|Novo
+89|Još nema uređaja. Dodajte jedan ili radite bez stroja.
+90|Nema priključka
+91|Nije http ni https adresa.
+92|Bilješke
+93|Bilješke o ovom stroju
+94|Ništa nije odabrano
+95|Otvorite crtež ili započnite prazan nacrt.
+96|Otvori vezu s kontrolerom postavljenim u postavkama uređaja
+97|Otvori prozor pregleda
+98|Otvori…
+99|Obris
+100|Papir
+101|Olovka
+102|Olovka spuštena
+103|Olovka podignuta
+104|Širina olovke
+105|Iscrtavanje posla…
+106|Ploter
+107|Priključak
+108|Port ili USB id
+109|Okomito
+110|Pregled
+111|Pregled…
+112|Svojstva
+113|Stavi odabrane oblike na ovaj sloj
+114|Pročitaj uređaj iz datoteke
+115|Spremno
+116|Ponovno spajanje
+117|Osvježi
+118|Zapamti USB identifikatore odabranog porta: kad mu se promijeni naziv, port se pronalazi po njima.
+119|Poništi prikaz
+120|Nastavi
+121|STOP
+122|Spremi
+123|Spremi G-code
+124|Spremi kao…
+125|Spremi ovaj uređaj u datoteku
+126|Uređaj je spremljen u {}
+127|Spremljeno: {}
+128|Servo (M3 S…)
+129|Postavke
+130|Oblici na ovom sloju
+131|Prikazuje sliku uživo s kamere ovog stroja
+132|Prikazuje putanje na radnom području
+133|Prikazano na kartici Kamera
+134|Prikazano u radnom području
+135|Brzina
+136|Brzina pomaka s podignutom olovkom
+137|Start
+138|Početak od
+139|Pokreni zadatak od retka programa
+140|Pokretanje posla: {} redaka, ~{}
+141|Pošalji posao na spojeni stroj
+142|Strujanje
+143|Uključeno
+144|TCP priključak
+145|G-code oko zadatka: {}
+146|Provjera nije našla ništa loše.
+147|Provjera nije našla ništa. Zadatak se izvršava.
+148|Provjera je našla {} problema, prvi u retku {}. Zadatak nije pokrenut.
+149|Uređaj ovog projekta
+150|Uređaj je dodan.
+151|Uređaj je spremljen.
+152|Prvo ispuna, zatim obris preko nje, da rub bude čist.
+153|Zadatak je završen, s {} problema (vidi Konzolu).
+154|Posao je gotov.
+155|Zadatak je pauziran: {}
+156|Posao traje.
+157|Olovka prati linije oblika. Otvorene linije također rade.
+158|Olovka se podiže pomoću
+159|Radno područje je list do kojeg olovka dosiže. Nula stroja je kut u kojem olovka počinje.
+160|Nema što crtati: stavite oblike na uključene slojeve.
+161|Nema što uokviriti: stavite oblike na uključene slojeve.
+162|Još nema što prikazati: nacrtajte oblike i stavite ih na uključene slojeve.
+163|Ova verzija ne može koristiti kamere računala.
+164|Ovaj uređaj nema uključenu kameru. Dodajte je u postavkama uređaja.
+165|Ovog uređaja nema na popisu: došao je s projektom
+166|Ovo je zamjenski uređaj (Dummy): zadano radno područje i brzine.
+167|Vrijeme {} / {}
+168|Previše uređaja
+169|Putanje
+170|Odvezi
+171|Jedinice
+172|Prikaz
+173|Mogućnosti prikaza…
+174|Čekanje nakon pomaka olovke
+175|Čekanje slike…
+176|Kad veza sama pukne, pokušavaj svakih nekoliko sekundi dok ne pritisnete Odspoji.
+177|S osi Z olovka ide na gornje visine; sa servom G-kod uključuje izlaz vretena vrijednošću S (M3 S…).
+178|Radite na projektu bez stroja: običan uređaj naziva Dummy s zadanim radnim područjem i brzinama
+179|Os Z
+180|npr. Moj ploter
+181|nema
+182|dio crteža leži izvan radnog područja
+183|ispuna ima previše linija: razmak je premalen pa je dio ispune izostavljen
+184|ovaj projekt napravljen je za drugi stroj: {}
+185|{} slika na slojevima ne može se crtati: prvo ih pretvorite u linije

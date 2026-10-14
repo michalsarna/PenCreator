@@ -1,174 +1,186 @@
 0|Et lag er en penn: når neste lag har en annen penn, stopper G-koden slik at du kan bytte.
 1|Et portnavn, eller USB-leverandør- og produkt-ID (VID:PID, heksadesimalt): porten med disse ID-ene brukes.
 2|Et andre sett fyllinjer på tvers av det første
-3|Avbryt jobben som kjører
-4|Om
-5|Legg til et kamera
-6|Legg til en enhet
-7|Legg til enhet
-8|Legg til enhet…
-9|Adresse
-10|Etter tilkobling
-11|Ordne
-12|Bak til venstre
-13|Bak til høyre
-14|Tilbake til den første visningen. Dobbeltklikk på bildet gjør det samme.
-15|Baudrate
-16|Bind til denne porten
-17|Bundet USB-enhet
-18|Kamera
-19|Kameranavn
-20|Kameranummer
-21|Kamera på denne datamaskinen
-22|Kameraets rotasjon
-23|Kameravisning
-24|Kameraer
-25|Filen kan ikke brukes: {}
-26|Velg først en port eller vert i enhetsinnstillingene.
-27|Velg maskinen du skal arbeide med.
-28|Fjern et alarm
-29|Fjern alarmen ($X)
-30|Å fjerne alarmen hopper over homing: bruk det bare når hodet er kjent for å stå på et trygt sted.
-31|Lukkede former fylles med parallelle linjer; hull blir tomme.
-32|Bekreft sletting
-33|Koble til
-34|Koble til igjen automatisk
-35|Koble først til maskinen (fanen Enhet)
-36|Tilkoblet
-37|Tilkobling
-38|Tilkoblingstype
-39|Konsoll
-40|Kontroller
-41|Kopiert til {}
-42|Kunne ikke lagre: {}
-43|Telling fyller kontrollerens buffer og er rask. Enkel sender én linje og venter på dens ok: treg, men for fastvare som svarer feil.
-44|Kryssende linjer
-45|Slett dette kameraet
-46|Enhet
-47|Enhetsinnstillinger
-48|Enhetsinnstillinger…
-49|Koble fra
-50|Tegning
-51|Antall ganger det tegnes
-52|Tegnes: tas med i plottet og G-koden
-53|Rediger
-54|Rediger…
-55|Eksporter G-code…
-56|Eksporter…
-57|Stans matingen
-58|Fil
-59|Fyll og kontur
-60|Vinkel på fyllinjene
-61|Avstand mellom fyllinjer
-62|Fyll med linjer
-63|Ramme
-64|Ramme rundt arbeidsområdet
-65|Foran til venstre
-66|Foran til høyre
-67|Generelt
-68|Gå rundt boksen der arbeidet skal gjøres
-69|Hjelp
-70|Hjem
-71|Home maskinen
-72|Vert
-73|Hvor mange ganger hver linje tegnes: for en penn som er for blek
-74|Jeg har ingen enhet
-75|Importer LightBurn-prosjekt…
-76|Enheten {} ble importert
-77|Importer…
-78|Liggende
-79|Lag
-80|Linjer: {} m, bevegelser med pennen oppe: {} m, pennløft: {}, omtrent {} min
-81|Maskin
-82|Maskinens nullpunkt (0,0)
-83|Bevegelser med pennen oppe
-84|Ny
-85|Ingen enhet ennå. Legg til en, eller arbeid uten maskin.
-86|Ingen port
-87|Ikke en http- eller https-adresse.
-88|Notater
-89|Notater om denne maskinen
-90|Ingenting merket
-91|Åpne en tegning, eller begynn et tomt design.
-92|Åpne forbindelsen til styringen i enhetsinnstillingene
-93|Åpne forhåndsvisningsvinduet
-94|Åpne…
-95|Kontur
-96|Papir
-97|Penn
-98|Penn ned
-99|Penn opp
-100|Pennbredde
-101|Plott av jobben…
-102|Plotter
-103|Port
-104|Port eller USB-ID
-105|Stående
-106|Forhåndsvisning
-107|Forhåndsvisning…
-108|Egenskaper
-109|Legg de valgte formene på dette laget
-110|Les en enhet fra en fil
-111|Klar
-112|Gjentilkobling
-113|Oppdater
-114|Husk USB-ID-ene til den valgte porten: porten finnes igjen med dem når navnet endres.
-115|Tilbakestill visningen
-116|Fortsett
-117|STOPP
-118|Lagre
-119|Lagre G-code
-120|Lagre som…
-121|Lagre denne enheten i en fil
-122|Enheten ble lagret i {}
-123|{} lagret
-124|Servo (M3 S…)
-125|Innstillinger
-126|Former på dette laget
-127|Viser direktebildet fra kameraet på denne maskinen
-128|Viser banene på arbeidsområdet
-129|Vises i fanen Kamera
-130|Vises i arbeidsområdet
-131|Hastighet
-132|Hastighet for bevegelser med pennen oppe
-133|Start
-134|Starter jobb: {} linjer, ~{}
-135|Send jobben til den tilkoblede maskinen
-136|Strømming
-137|Slått på
-138|TCP-port
-139|Enheten til dette prosjektet
-140|Enheten ble lagt til.
-141|Enheten ble lagret.
-142|Først fyllet, så konturen oppå, slik at kanten blir ren.
-143|Jobben er ferdig.
-144|Jobben pågår.
-145|Pennen følger linjene i formene. Åpne linjer fungerer også.
-146|Pennen løftes med
-147|Arbeidsområdet er arket pennen kan nå. Maskinens nullpunkt er hjørnet der pennen starter.
-148|Det er ingenting å tegne: legg former på lag som er slått på.
-149|Ingenting å ramme inn: legg former på lag som er slått på.
-150|Det er ingenting å vise ennå: tegn former og legg dem på lag som er slått på.
-151|Denne versjonen kan ikke bruke maskinens kameraer.
-152|Denne enheten har ikke noe kamera som er slått på. Legg til ett i enhetsinnstillingene.
-153|Denne enheten er ikke i listen: den fulgte med prosjektet
-154|Dette er erstatningsenheten (Dummy): standard arbeidsområde og hastigheter.
-155|Tid {} / {}
-156|For mange enheter
-157|Baner
-158|Fjern binding
-159|Enheter
-160|Vis
-161|Visningsvalg…
-162|Ventetid etter pennens bevegelse
-163|Venter på bildet…
-164|Når forbindelsen faller av seg selv, prøv igjen hvert par sekunder til du trykker Koble fra.
-165|Med Z-aksen går pennen til høydene over; med en servo slår G-koden på spindelutgangen med S-verdien (M3 S…).
-166|Jobb med et prosjekt uten maskin: en vanlig enhet kalt Dummy med standard arbeidsområde og hastigheter
-167|Z-akse
-168|f.eks. Min plotter
-169|ingen
-170|en del av tegningen ligger utenfor arbeidsområdet
-171|fyllet har for mange linjer: avstanden er for liten, så en del av fyllet ble utelatt
-172|dette prosjektet ble laget for en annen maskin: {}
-173|{} bilde(r) på lagene kan ikke tegnes: spor dem til linjer først
+3|En vanlig arkstørrelse…
+4|Avbryt jobben som kjører
+5|Om
+6|Legg til et kamera
+7|Legg til en enhet
+8|Legg til enhet
+9|Legg til enhet…
+10|Adresse
+11|Etter tilkobling
+12|Alarm {}
+13|Ordne
+14|Bak til venstre
+15|Bak til høyre
+16|Tilbake til den første visningen. Dobbeltklikk på bildet gjør det samme.
+17|Baudrate
+18|Bind til denne porten
+19|Bundet USB-enhet
+20|Kamera
+21|Kameranavn
+22|Kameranummer
+23|Kamera på denne datamaskinen
+24|Kameraets rotasjon
+25|Kameravisning
+26|Kameraer
+27|Sjekk programmet
+28|Sjekker programmet først…
+29|Sjekker programmet…
+30|Velg først en port eller vert i enhetsinnstillingene.
+31|Velg maskinen du skal arbeide med.
+32|Fjern et alarm
+33|Å fjerne alarmen hopper over homing: bruk det bare når hodet er kjent for å stå på et trygt sted.
+34|Lukkede former fylles med parallelle linjer; hull blir tomme.
+35|Bekreft sletting
+36|Koble til
+37|Koble til igjen automatisk
+38|Tilkoblet
+39|Tilkobling
+40|Tilkoblingstype
+41|Konsoll
+42|Styring
+43|Kopiert til {}
+44|Kunne ikke lagre: {}
+45|Telling fyller kontrollerens buffer og er rask. Enkel sender én linje og venter på dens ok: treg, men for fastvare som svarer feil.
+46|Kryssende linjer
+47|Slett dette kameraet
+48|Enhet
+49|Enhetsinnstillinger
+50|Enhetsinnstillinger…
+51|Diagnostikk og statistikk…
+52|Koble fra
+53|Tegning
+54|Antall ganger det tegnes
+55|Tegnes: tas med i plottet og G-koden
+56|Rediger
+57|Rediger…
+58|Feil {} i linje {}: {}
+59|Feil {}: {}
+60|Eksporter G-code…
+61|Eksporter…
+62|Fyll og kontur
+63|Vinkel på fyllinjene
+64|Avstand mellom fyllinjer
+65|Fyll med linjer
+66|Fastvareinnstillinger ($$)…
+67|Ramme
+68|Ramme rundt arbeidsområdet
+69|Fra linje…
+70|Foran til venstre
+71|Foran til høyre
+72|Generelt
+73|Gå rundt boksen der arbeidet skal gjøres
+74|Hjelp
+75|Hjem
+76|Home maskinen
+77|Vert
+78|Hvor mange ganger hver linje tegnes: for en penn som er for blek
+79|Jeg har ingen enhet
+80|Importer LightBurn-prosjekt…
+81|Enheten {} ble importert
+82|Importer…
+83|Liggende
+84|Lag
+85|Linjer: {} m, bevegelser med pennen oppe: {} m, pennløft: {}, omtrent {} min
+86|Maskinens nullpunkt (0,0)
+87|Bevegelser med pennen oppe
+88|Ny
+89|Ingen enhet ennå. Legg til en, eller arbeid uten maskin.
+90|Ingen port
+91|Ikke en http- eller https-adresse.
+92|Notater
+93|Notater om denne maskinen
+94|Ingenting merket
+95|Åpne en tegning, eller begynn et tomt design.
+96|Åpne forbindelsen til styringen i enhetsinnstillingene
+97|Åpne forhåndsvisningsvinduet
+98|Åpne…
+99|Kontur
+100|Papir
+101|Penn
+102|Penn ned
+103|Penn opp
+104|Pennbredde
+105|Plott av jobben…
+106|Plotter
+107|Port
+108|Port eller USB-ID
+109|Stående
+110|Forhåndsvisning
+111|Forhåndsvisning…
+112|Egenskaper
+113|Legg de valgte formene på dette laget
+114|Les en enhet fra en fil
+115|Klar
+116|Gjentilkobling
+117|Oppdater
+118|Husk USB-ID-ene til den valgte porten: porten finnes igjen med dem når navnet endres.
+119|Tilbakestill visningen
+120|Fortsett
+121|STOPP
+122|Lagre
+123|Lagre G-code
+124|Lagre som…
+125|Lagre denne enheten i en fil
+126|Enheten ble lagret i {}
+127|{} lagret
+128|Servo (M3 S…)
+129|Innstillinger
+130|Former på dette laget
+131|Viser direktebildet fra kameraet på denne maskinen
+132|Viser banene på arbeidsområdet
+133|Vises i fanen Kamera
+134|Vises i arbeidsområdet
+135|Hastighet
+136|Hastighet for bevegelser med pennen oppe
+137|Start
+138|Start fra
+139|Start jobben ved en linje i programmet
+140|Starter jobb: {} linjer, ~{}
+141|Send jobben til den tilkoblede maskinen
+142|Strømming
+143|Slått på
+144|TCP-port
+145|G-code rundt jobben: {}
+146|Kontrollen fant ingenting galt.
+147|Kontrollen fant ingenting. Jobben kjører.
+148|Kontrollen fant {} problemer, det første i linje {}. Jobben ble ikke startet.
+149|Enheten til dette prosjektet
+150|Enheten ble lagt til.
+151|Enheten ble lagret.
+152|Først fyllet, så konturen oppå, slik at kanten blir ren.
+153|Jobben er ferdig, med {} problemer (se Konsollen).
+154|Jobben er ferdig.
+155|Jobben er satt på pause: {}
+156|Jobben pågår.
+157|Pennen følger linjene i formene. Åpne linjer fungerer også.
+158|Pennen løftes med
+159|Arbeidsområdet er arket pennen kan nå. Maskinens nullpunkt er hjørnet der pennen starter.
+160|Det er ingenting å tegne: legg former på lag som er slått på.
+161|Ingenting å ramme inn: legg former på lag som er slått på.
+162|Det er ingenting å vise ennå: tegn former og legg dem på lag som er slått på.
+163|Denne versjonen kan ikke bruke maskinens kameraer.
+164|Denne enheten har ikke noe kamera som er slått på. Legg til ett i enhetsinnstillingene.
+165|Denne enheten er ikke i listen: den fulgte med prosjektet
+166|Dette er erstatningsenheten (Dummy): standard arbeidsområde og hastigheter.
+167|Tid {} / {}
+168|For mange enheter
+169|Baner
+170|Fjern binding
+171|Enheter
+172|Vis
+173|Visningsvalg…
+174|Ventetid etter pennens bevegelse
+175|Venter på bildet…
+176|Når forbindelsen faller av seg selv, prøv igjen hvert par sekunder til du trykker Koble fra.
+177|Med Z-aksen går pennen til høydene over; med en servo slår G-koden på spindelutgangen med S-verdien (M3 S…).
+178|Jobb med et prosjekt uten maskin: en vanlig enhet kalt Dummy med standard arbeidsområde og hastigheter
+179|Z-akse
+180|f.eks. Min plotter
+181|ingen
+182|en del av tegningen ligger utenfor arbeidsområdet
+183|fyllet har for mange linjer: avstanden er for liten, så en del av fyllet ble utelatt
+184|dette prosjektet ble laget for en annen maskin: {}
+185|{} bilde(r) på lagene kan ikke tegnes: spor dem til linjer først

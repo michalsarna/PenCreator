@@ -1,6 +1,7 @@
 //! A device: the pen plotter a project is made for. It holds the size of the work area, how the pen is lifted, the speed
 //! of the moves with the pen up and the cameras. The devices are kept in one file; a device can be exported to a file and imported.
 use base_core::camimg::{CameraKind, CameraSource};
+use base_core::control::Control;
 use base_core::machine::{Connection, LinkKind};
 use base_core::units::Units;
 use serde::{Deserialize, Serialize};
@@ -89,6 +90,9 @@ pub struct Device {
     /// How the program reaches the machine (a GRBL controller on a serial port or a network socket).
     #[serde(default)]
     pub connection: Connection,
+    /// Jogging, macros, statistics and maintenance of the machine.
+    #[serde(default)]
+    pub control: Control,
 }
 
 impl Default for Device {
@@ -105,6 +109,7 @@ impl Default for Device {
             active_camera: 0,
             notes: String::new(),
             connection: Connection::default(),
+            control: Control::default(),
         }
     }
 }
@@ -157,6 +162,7 @@ impl Device {
         if c.baud < 300 || c.baud > 4_000_000 || c.host.len() > 253 || c.port.len() > 200 || c.usb_id.len() > 9 || (!c.usb_id.is_empty() && base_core::machine::parse_usb_id(&c.usb_id).is_none()) {
             return Err("the connection settings are out of range".into());
         }
+        self.control.check()?;
         Ok(())
     }
 

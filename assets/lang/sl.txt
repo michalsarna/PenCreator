@@ -1,174 +1,186 @@
 0|Sloj je pisalo: ko ima naslednji sloj drugo pisalo, se G-koda ustavi, da ga lahko zamenjate.
 1|Ime vrat ali USB ID proizvajalca in izdelka (VID:PID, šestnajstiško): uporabljena so vrata s temi ID-ji.
 2|Drugi niz polnilnih črt počez prvega
-3|Prekini delo v teku
-4|O programu
-5|Dodaj kamero
-6|Dodaj napravo
+3|Običajna velikost papirja…
+4|Prekini delo v teku
+5|O programu
+6|Dodaj kamero
 7|Dodaj napravo
-8|Dodaj napravo…
-9|Naslov
-10|Po povezavi
-11|Razporedi
-12|Zadaj levo
-13|Zadaj desno
-14|Nazaj na prvi pogled. Dvoklik na sliko naredi isto.
-15|Hitrost v bodih
-16|Veži na ta vrata
-17|Vezana naprava USB
-18|Kamera
-19|Ime kamere
-20|Številka kamere
-21|Kamera tega računalnika
-22|Vrtenje kamere
-23|Pogled kamere
-24|Kamere
-25|Datoteke ni mogoče uporabiti: {}
-26|Najprej izberite vrata ali gostitelja v nastavitvah naprave.
-27|Izberite stroj, s katerim boste delali.
-28|Počisti alarm
-29|Počisti alarm ($X)
-30|Čiščenje alarma preskoči iskanje izhodišča: uporabite le, če je znano, da glava stoji na varnem mestu.
-31|Zaprte oblike se zapolnijo z vzporednimi črtami; luknje ostanejo prazne.
-32|Potrdi brisanje
-33|Poveži
-34|Samodejno znova poveži
-35|Najprej se povežite s strojem (zavihek Naprava)
-36|Povezano
-37|Povezava
-38|Vrsta povezave
-39|Konzola
-40|Krmilnik
-41|Kopirano v {}
-42|Shranjevanje ni uspelo: {}
-43|Štetje napolni medpomnilnik krmilnika in je hitro. Preprosti pošlje eno vrstico in počaka na njen ok: počasno, a za strojno programsko opremo, ki odgovarja napačno.
-44|Križne črte
-45|Izbriši to kamero
-46|Naprava
-47|Nastavitve naprave
-48|Nastavitve naprave…
-49|Prekini povezavo
-50|Risanje
-51|Kolikokrat se nariše
-52|Nariše se: vključeno v izris in G-kodo
-53|Urejanje
-54|Uredi…
-55|Izvozi G-code…
-56|Izvozi…
-57|Zadrži podajanje
-58|Datoteka
-59|Polnilo in obris
-60|Kot polnilnih črt
-61|Razmik polnilnih črt
-62|Zapolni s črtami
-63|Okvir
-64|Okvir delovnega območja
-65|Spredaj levo
-66|Spredaj desno
-67|Splošno
-68|Obhodi okvir, kjer bo delo opravljeno
-69|Pomoč
-70|Domov
-71|Poišči izhodišče stroja
-72|Gostitelj
-73|Kolikokrat se vsaka črta nariše: za preveč bledo pisalo
-74|Nimam naprave
-75|Uvozi projekt LightBurn…
-76|Naprava {} je uvožena
-77|Uvozi…
-78|Ležeče
-79|Sloji
-80|Črte: {} m, premiki z dvignjenim pisalom: {} m, dvigi pisala: {}, približno {} min
-81|Stroj
-82|Ničla stroja (0,0)
-83|Premiki z dvignjenim pisalom
-84|Novo
-85|Še ni naprave. Dodajte jo ali delajte brez stroja.
-86|Ni vrat
-87|Ni naslov http ali https.
-88|Opombe
-89|Opombe o tem stroju
-90|Nič ni izbrano
-91|Odprite risbo ali začnite prazen osnutek.
-92|Odpri povezavo do krmilnika, nastavljenega v nastavitvah naprave
-93|Odpri okno predogleda
-94|Odpri…
-95|Obris
-96|Papir
-97|Pisalo
-98|Pisalo spuščeno
-99|Pisalo dvignjeno
-100|Širina pisala
-101|Izris opravila…
-102|Risalnik
-103|Vrata
-104|Vrata ali USB ID
-105|Pokončno
-106|Predogled
-107|Predogled…
-108|Lastnosti
-109|Postavi izbrane oblike na ta sloj
-110|Preberi napravo iz datoteke
-111|Pripravljeno
-112|Ponovna povezava
-113|Osveži
-114|Zapomni si USB ID-je izbranih vrat: ko se ime spremeni, se vrata po njih spet najdejo.
-115|Ponastavi pogled
-116|Nadaljuj
-117|STOP
-118|Shrani
-119|Shrani G-code
-120|Shrani kot…
-121|Shrani to napravo v datoteko
-122|Naprava shranjena v {}
-123|Shranjeno: {}
-124|Servo (M3 S…)
-125|Nastavitve
-126|Oblike na tem sloju
-127|Pokaže sliko v živo s kamere tega stroja
-128|Pokaže poti na delovnem območju
-129|Prikazano na zavihku Kamera
-130|Prikazano v delovnem območju
-131|Hitrost
-132|Hitrost premikov z dvignjenim pisalom
-133|Začni
-134|Začetek dela: {} vrstic, ~{}
-135|Pošlji opravilo na povezani stroj
-136|Pretakanje
-137|Vklopljeno
-138|Vrata TCP
-139|Naprava tega projekta
-140|Naprava je bila dodana.
-141|Naprava je bila shranjena.
-142|Najprej polnilo, nato obris čez, da je rob čist.
-143|Opravilo je končano.
-144|Opravilo teče.
-145|Pisalo sledi črtam oblik. Odprte črte delujejo tudi.
-146|Pisalo se dvigne z
-147|Delovno območje je list, do katerega seže pisalo. Ničla stroja je kot, kjer pisalo začne.
-148|Ni kaj risati: postavite oblike na vklopljene sloje.
-149|Ni česa uokviriti: postavite oblike na vklopljene sloje.
-150|Še ni kaj prikazati: narišite oblike in jih postavite na vklopljene sloje.
-151|Ta različica ne more uporabljati kamer računalnika.
-152|Ta naprava nima vklopljene kamere. Dodajte jo v nastavitvah naprave.
-153|Te naprave ni na seznamu: prišla je s projektom
-154|To je nadomestna naprava (Dummy): privzeto delovno območje in hitrosti.
-155|Čas {} / {}
-156|Preveč naprav
-157|Poti
-158|Razveži
-159|Enote
-160|Pogled
-161|Možnosti pogleda…
-162|Čakanje po gibu pisala
-163|Čakanje na sliko…
-164|Ko povezava sama pade, poskušaj vsakih nekaj sekund, dokler ne pritisnete Prekini.
-165|Pri osi Z gre pisalo na zgornje višine; pri servu G-koda vklopi izhod vretena z vrednostjo S (M3 S…).
-166|Delo na projektu brez stroja: preprosta naprava z imenom Dummy s privzetim delovnim območjem in hitrostmi
-167|Os Z
-168|npr. Moj risalnik
-169|brez
-170|del risbe leži zunaj delovnega območja
-171|polnilo ima preveč črt: razmik je premajhen, zato je bil del polnila izpuščen
-172|ta projekt je bil narejen za drug stroj: {}
-173|{} slik na slojih ni mogoče risati: najprej jih pretvorite v črte
+8|Dodaj napravo
+9|Dodaj napravo…
+10|Naslov
+11|Po povezavi
+12|Alarm {}
+13|Razporedi
+14|Zadaj levo
+15|Zadaj desno
+16|Nazaj na prvi pogled. Dvoklik na sliko naredi isto.
+17|Hitrost v bodih
+18|Veži na ta vrata
+19|Vezana naprava USB
+20|Kamera
+21|Ime kamere
+22|Številka kamere
+23|Kamera tega računalnika
+24|Vrtenje kamere
+25|Pogled kamere
+26|Kamere
+27|Preveri program
+28|Najprej se preverja program…
+29|Preverja se program…
+30|Najprej izberite vrata ali gostitelja v nastavitvah naprave.
+31|Izberite stroj, s katerim boste delali.
+32|Počisti alarm
+33|Čiščenje alarma preskoči iskanje izhodišča: uporabite le, če je znano, da glava stoji na varnem mestu.
+34|Zaprte oblike se zapolnijo z vzporednimi črtami; luknje ostanejo prazne.
+35|Potrdi brisanje
+36|Poveži
+37|Samodejno znova poveži
+38|Povezano
+39|Povezava
+40|Vrsta povezave
+41|Konzola
+42|Upravljanje
+43|Kopirano v {}
+44|Shranjevanje ni uspelo: {}
+45|Štetje napolni medpomnilnik krmilnika in je hitro. Preprosti pošlje eno vrstico in počaka na njen ok: počasno, a za strojno programsko opremo, ki odgovarja napačno.
+46|Križne črte
+47|Izbriši to kamero
+48|Naprava
+49|Nastavitve naprave
+50|Nastavitve naprave…
+51|Diagnostika in statistika…
+52|Prekini povezavo
+53|Risanje
+54|Kolikokrat se nariše
+55|Nariše se: vključeno v izris in G-kodo
+56|Urejanje
+57|Uredi…
+58|Napaka {} v vrstici {}: {}
+59|Napaka {}: {}
+60|Izvozi G-code…
+61|Izvozi…
+62|Polnilo in obris
+63|Kot polnilnih črt
+64|Razmik polnilnih črt
+65|Zapolni s črtami
+66|Nastavitve strojne programske opreme ($$)…
+67|Okvir
+68|Okvir delovnega območja
+69|Od vrstice…
+70|Spredaj levo
+71|Spredaj desno
+72|Splošno
+73|Obhodi okvir, kjer bo delo opravljeno
+74|Pomoč
+75|Domov
+76|Poišči izhodišče stroja
+77|Gostitelj
+78|Kolikokrat se vsaka črta nariše: za preveč bledo pisalo
+79|Nimam naprave
+80|Uvozi projekt LightBurn…
+81|Naprava {} je uvožena
+82|Uvozi…
+83|Ležeče
+84|Sloji
+85|Črte: {} m, premiki z dvignjenim pisalom: {} m, dvigi pisala: {}, približno {} min
+86|Ničla stroja (0,0)
+87|Premiki z dvignjenim pisalom
+88|Novo
+89|Še ni naprave. Dodajte jo ali delajte brez stroja.
+90|Ni vrat
+91|Ni naslov http ali https.
+92|Opombe
+93|Opombe o tem stroju
+94|Nič ni izbrano
+95|Odprite risbo ali začnite prazen osnutek.
+96|Odpri povezavo do krmilnika, nastavljenega v nastavitvah naprave
+97|Odpri okno predogleda
+98|Odpri…
+99|Obris
+100|Papir
+101|Pisalo
+102|Pisalo spuščeno
+103|Pisalo dvignjeno
+104|Širina pisala
+105|Izris opravila…
+106|Risalnik
+107|Vrata
+108|Vrata ali USB ID
+109|Pokončno
+110|Predogled
+111|Predogled…
+112|Lastnosti
+113|Postavi izbrane oblike na ta sloj
+114|Preberi napravo iz datoteke
+115|Pripravljeno
+116|Ponovna povezava
+117|Osveži
+118|Zapomni si USB ID-je izbranih vrat: ko se ime spremeni, se vrata po njih spet najdejo.
+119|Ponastavi pogled
+120|Nadaljuj
+121|STOP
+122|Shrani
+123|Shrani G-code
+124|Shrani kot…
+125|Shrani to napravo v datoteko
+126|Naprava shranjena v {}
+127|Shranjeno: {}
+128|Servo (M3 S…)
+129|Nastavitve
+130|Oblike na tem sloju
+131|Pokaže sliko v živo s kamere tega stroja
+132|Pokaže poti na delovnem območju
+133|Prikazano na zavihku Kamera
+134|Prikazano v delovnem območju
+135|Hitrost
+136|Hitrost premikov z dvignjenim pisalom
+137|Začni
+138|Začni od
+139|Začni opravilo pri vrstici programa
+140|Začetek dela: {} vrstic, ~{}
+141|Pošlji opravilo na povezani stroj
+142|Pretakanje
+143|Vklopljeno
+144|Vrata TCP
+145|G-code okoli opravila: {}
+146|Preverjanje ni našlo nič narobe.
+147|Preverjanje ni našlo nič. Opravilo teče.
+148|Preverjanje je našlo {} težav, prvo v vrstici {}. Opravilo ni bilo zagnano.
+149|Naprava tega projekta
+150|Naprava je bila dodana.
+151|Naprava je bila shranjena.
+152|Najprej polnilo, nato obris čez, da je rob čist.
+153|Opravilo je končano, s {} težavami (glej Konzolo).
+154|Opravilo je končano.
+155|Opravilo je začasno ustavljeno: {}
+156|Opravilo teče.
+157|Pisalo sledi črtam oblik. Odprte črte delujejo tudi.
+158|Pisalo se dvigne z
+159|Delovno območje je list, do katerega seže pisalo. Ničla stroja je kot, kjer pisalo začne.
+160|Ni kaj risati: postavite oblike na vklopljene sloje.
+161|Ni česa uokviriti: postavite oblike na vklopljene sloje.
+162|Še ni kaj prikazati: narišite oblike in jih postavite na vklopljene sloje.
+163|Ta različica ne more uporabljati kamer računalnika.
+164|Ta naprava nima vklopljene kamere. Dodajte jo v nastavitvah naprave.
+165|Te naprave ni na seznamu: prišla je s projektom
+166|To je nadomestna naprava (Dummy): privzeto delovno območje in hitrosti.
+167|Čas {} / {}
+168|Preveč naprav
+169|Poti
+170|Razveži
+171|Enote
+172|Pogled
+173|Možnosti pogleda…
+174|Čakanje po gibu pisala
+175|Čakanje na sliko…
+176|Ko povezava sama pade, poskušaj vsakih nekaj sekund, dokler ne pritisnete Prekini.
+177|Pri osi Z gre pisalo na zgornje višine; pri servu G-koda vklopi izhod vretena z vrednostjo S (M3 S…).
+178|Delo na projektu brez stroja: preprosta naprava z imenom Dummy s privzetim delovnim območjem in hitrostmi
+179|Os Z
+180|npr. Moj risalnik
+181|brez
+182|del risbe leži zunaj delovnega območja
+183|polnilo ima preveč črt: razmik je premajhen, zato je bil del polnila izpuščen
+184|ta projekt je bil narejen za drug stroj: {}
+185|{} slik na slojih ni mogoče risati: najprej jih pretvorite v črte
