@@ -23,7 +23,10 @@ use base_core::project::{self, Project};
 use base_core::scene::{Kind, Scene};
 use base_core::units::Units;
 use base_ui::clipart_ui::{self, ClipGallery, ClipHost, ClipState};
+use base_ui::control_ui::{self, ControlCtx, ControlUi};
 use base_ui::dialogs::AboutInfo;
+use base_ui::job_ui::StartFrom;
+use base_ui::tools_ui::{CalUi, DiagUi};
 use base_ui::editor::{EditorCanvas, EditorCommands, EditorHost, EditorState, Tool};
 use base_ui::i18n::{self, tr, Lang};
 use base_ui::menu::{MenuHost, Menus};
@@ -95,6 +98,11 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::Save | Act::SaveAs => Some("save"),
         Act::ImportLightburn => Some("file-input"),
         Act::Preview => Some("eye"),
+        Act::Firmware => Some("settings"),
+        Act::Calibration => Some("sliders-horizontal"),
+        Act::Diagnostics => Some("zap"),
+        Act::StartFrom => Some("play"),
+        Act::CheckProgram => Some("check"),
         Act::ExportGcode => Some("file-code"),
         Act::OpenRecent(_) | Act::ClearRecent => None,
         Act::Quit => Some("x"),
@@ -113,6 +121,7 @@ enum SideTab {
     Properties,
     Layers,
     Device,
+    Control,
     Console,
     Clipart,
     Description,
@@ -159,6 +168,15 @@ struct App {
     prog_rev: u64,
     cam: Option<CamState>,
     machine: MachineLink,
+    control_ui: ControlUi,
+    fw_open: bool,
+    cal: CalUi,
+    diag: DiagUi,
+    diag_gcode: Option<String>,
+    start_from: StartFrom,
+    start_lines: Vec<String>,
+    /// A job that waits for the check run to find nothing wrong.
+    after_check: Option<machine_ui::AfterCheck>,
     /// The toolpaths are drawn over the work area.
     toolpaths_on: bool,
     show_camera: bool,
@@ -220,7 +238,19 @@ impl App {
             rev: 0,
             prog_rev: 0,
             cam: None,
-            machine: MachineLink::new(ctx),
+            machine: {
+                let mut m = MachineLink::new(ctx);
+                m.fw.backup_dir = data_paths().settings.parent().map(|p| p.join("firmware-backups"));
+                m
+            },
+            control_ui: ControlUi::default(),
+            fw_open: false,
+            cal: CalUi::default(),
+            diag: DiagUi::default(),
+            diag_gcode: None,
+            start_from: StartFrom::default(),
+            start_lines: vec![],
+            after_check: None,
             toolpaths_on: false,
             show_camera: false,
             show_options: false,
@@ -548,6 +578,10 @@ impl App {
                         self.start_job();
                     }
                 }
+                if ui.add_enabled(self.can_start(), egui::Button::new(tr("From line…"))).on_hover_text(tr("Start the job at a line of the program")).clicked() {
+                    let ctx = ui.ctx().clone();
+                    self.run_act(&ctx, Act::StartFrom);
+                }
                 let tip = if self.machine.connected { tr("Go round the box where the work will be done") } else { tr("Connect to the machine first (Device tab)") };
                 if ui.add_enabled(self.machine.connected && !running, egui::Button::new(tr("Frame"))).on_hover_text(tip).clicked() {
                     self.frame_job();
@@ -581,7 +615,7 @@ impl App {
 
     /// The tabs of the right panel.
     fn side_panel(&mut self, ui: &mut egui::Ui) {
-        let mut tabs = vec![(SideTab::Properties, tr("Properties")), (SideTab::Layers, tr("Layers")), (SideTab::Device, tr("Device")), (SideTab::Console, tr("Console")), (SideTab::Clipart, clipart_ui::tab_label()), (SideTab::Description, base_ui::description_ui::tab_label())];
+        let mut tabs = vec![(SideTab::Properties, tr("Properties")), (SideTab::Layers, tr("Layers")), (SideTab::Device, tr("Device")), (SideTab::Control, tr("Control")), (SideTab::Console, tr("Console")), (SideTab::Clipart, clipart_ui::tab_label()), (SideTab::Description, base_ui::description_ui::tab_label())];
         if self.device.camera().is_some() {
             tabs.push((SideTab::Camera, tr("Camera")));
         }
@@ -610,6 +644,17 @@ impl App {
                     self.device_tab(ui);
                     ui.separator();
                     self.machine_section(ui);
+                });
+            }
+            SideTab::Control => {
+                let job_box = self.job_box();
+                let travel = [self.device.area.x, self.device.area.y, 0.0];
+                let safe_z = self.safe_z();
+                egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
+                    let c = ControlCtx { control: &self.device.control, safe_z, tool_diameter: 0.0, job_box, probe: false, travel };
+                    if let Some(s) = control_ui::panel(ui, &mut self.machine, &mut self.control_ui, &c) {
+                        self.status = s;
+                    }
                 });
             }
             SideTab::Console => {
@@ -689,6 +734,7 @@ impl App {
         self.clip_dialogs(ctx);
         self.online_clipart_window(ctx);
         self.device_window(ctx);
+        self.machine_windows(ctx);
         self.preview_window(ctx);
         self.camera_window(ctx);
         self.show_options = show;
@@ -706,6 +752,9 @@ impl App {
     fn draw(&mut self, ui: &mut egui::Ui) {
         let ctx = ui.ctx().clone();
         self.poll_machine();
+        if self.machine.wants_repaint() {
+            ctx.request_repaint_after(std::time::Duration::from_millis(250));
+        }
         #[cfg(target_os = "macos")]
         self.native_menu_frame(&ctx);
         self.title_bar(ui);
@@ -858,6 +907,19 @@ impl MenuHost for App {
             Act::SaveAs => self.save(true),
             Act::ImportLightburn => self.import_lightburn_dialog(),
             Act::Preview => self.open_preview(),
+            Act::Firmware => self.fw_open = true,
+            Act::Calibration => self.cal.open = true,
+            Act::Diagnostics => {
+                self.diag_gcode = self.job_lines().map(|(l, _)| l.join("\n"));
+                self.diag.open = true;
+            }
+            Act::StartFrom => {
+                if let Some((lines, _)) = self.job_lines() {
+                    self.start_lines = lines;
+                    self.start_from.open = true;
+                }
+            }
+            Act::CheckProgram => self.check_program(),
             Act::ExportGcode => self.export_gcode(),
             Act::OpenRecent(i) => {
                 if let Some(p) = self.recent.get(i as usize).cloned() {

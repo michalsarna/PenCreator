@@ -1,174 +1,186 @@
 0|Sluoksnis yra rašiklis: kai kitas sluoksnis turi kitą rašiklį, G-kodas sustoja, kad galėtumėte jį pakeisti.
 1|Prievado pavadinimas arba USB gamintojo ir gaminio ID (VID:PID, šešioliktainis): naudojamas prievadas su šiais ID.
 2|Antras užpildymo linijų rinkinys skersai pirmojo
-3|Nutraukti vykdomą darbą
-4|Apie
-5|Pridėti kamerą
-6|Pridėti įrenginį
+3|Įprastas lapo dydis…
+4|Nutraukti vykdomą darbą
+5|Apie
+6|Pridėti kamerą
 7|Pridėti įrenginį
-8|Pridėti įrenginį…
-9|Adresas
-10|Prisijungus
-11|Išdėstyti
-12|Gale kairėje
-13|Gale dešinėje
-14|Atgal į pirmąjį vaizdą. Dukart spustelėjus paveikslėlį daroma tas pats.
-15|Perdavimo sparta (baud)
-16|Susieti su šiuo prievadu
-17|Susietas USB įrenginys
-18|Kamera
-19|Kameros pavadinimas
-20|Kameros numeris
-21|Šio kompiuterio kamera
-22|Kameros pasukimas
-23|Kameros vaizdas
-24|Kameros
-25|Failo naudoti negalima: {}
-26|Pirmiausia įrenginio nustatymuose pasirinkite prievadą arba šeimininką.
-27|Pasirinkite staklių modelį, su kuriuo dirbsite.
-28|Panaikinti aliarmą
-29|Išvalyti aliarmą ($X)
-30|Aliarmo panaikinimas praleidžia bazavimą: naudokite tik tada, kai žinoma, kad galvutė yra saugioje vietoje.
-31|Uždaros formos užpildomos lygiagrečiomis linijomis; skylės lieka tuščios.
-32|Patvirtinti naikinimą
-33|Prisijungti
-34|Automatiškai prisijungti iš naujo
-35|Pirmiausia prisijunkite prie staklių (skirtukas Įrenginys)
-36|Prisijungta
-37|Ryšys
-38|Ryšio tipas
-39|Konsolė
-40|Valdiklis
-41|Nukopijuota į {}
-42|Nepavyko išsaugoti: {}
-43|Skaičiavimas užpildo valdiklio buferį ir yra greitas. Paprastas siunčia vieną eilutę ir laukia jos ok: lėtas, bet skirtas programinei įrangai, kuri atsako klaidingai.
-44|Susikertančios linijos
-45|Ištrinti šią kamerą
-46|Įrenginys
-47|Įrenginio nustatymai
-48|Įrenginio nustatymai…
-49|Atsijungti
-50|Piešimas
-51|Kiek kartų piešti
-52|Piešiama: įtraukta į brėžinį ir G-kodą
-53|Redaguoti
-54|Redaguoti…
-55|Eksportuoti G-code…
-56|Eksportuoti…
-57|Pastūmos sustabdymas
-58|Failas
-59|Užpildymas ir kontūras
-60|Užpildymo linijų kampas
-61|Atstumas tarp užpildymo linijų
-62|Užpildyti linijomis
-63|Rėmelis
-64|Darbo srities rėmelis
-65|Priekyje kairėje
-66|Priekyje dešinėje
-67|Bendra
-68|Apeiti rėmelį, kur bus dirbama
-69|Žinynas
-70|Pradžia
-71|Bazuoti staklės
-72|Pagrindinis kompiuteris
-73|Kiek kartų piešiama kiekviena linija: per šviesiam rašikliui
-74|Neturiu įrenginio
-75|Importuoti „LightBurn“ projektą…
-76|Įrenginys {} importuotas
-77|Importuoti…
-78|Gulsčias
-79|Sluoksniai
-80|Linijos: {} m, judesiai pakeltu rašikliu: {} m, rašiklio pakėlimai: {}, apie {} min.
-81|Staklės
-82|Staklių nulis (0,0)
-83|Judesiai pakeltu rašikliu
-84|Naujas
-85|Dar nėra įrenginio. Pridėkite vieną arba dirbkite be staklių.
-86|Nėra prievado
-87|Tai nėra http ar https adresas.
-88|Pastabos
-89|Pastabos apie šias stakles
-90|Nieko nepažymėta
-91|Atidarykite brėžinį arba pradėkite tuščią dizainą.
-92|Atidaryti ryšį su valdikliu, nustatytu įrenginio nustatymuose
-93|Atverti peržiūros langą
-94|Atverti…
-95|Kontūras
-96|Popierius
-97|Rašiklis
-98|Rašiklis nuleistas
-99|Rašiklis pakeltas
-100|Rašiklio plotis
-101|Darbo brėžinys…
-102|Braižytuvas
-103|Prievadas
-104|Prievadas arba USB ID
-105|Stačias
-106|Peržiūra
-107|Peržiūra…
-108|Ypatybės
-109|Padėti pasirinktas formas ant šio sluoksnio
-110|Nuskaityti įrenginį iš failo
-111|Paruošta
-112|Pakartotinis prisijungimas
-113|Atnaujinti
-114|Įsiminti pasirinkto prievado USB ID: pasikeitus pavadinimui prievadas randamas pagal juos.
-115|Atstatyti vaizdą
-116|Tęsti
-117|STOP
-118|Įrašyti
-119|Įrašyti G-code
-120|Įrašyti kaip…
-121|Išsaugoti šį įrenginį faile
-122|Įrenginys išsaugotas: {}
-123|Įrašyta: {}
-124|Servo (M3 S…)
-125|Nustatymai
-126|Formos šiame sluoksnyje
-127|Rodo šių staklių kameros tiesioginį vaizdą
-128|Rodo trajektorijas darbo srityje
-129|Rodoma skirtuke Kamera
-130|Rodoma darbo srityje
-131|Greitis
-132|Judesių greitis pakeltu rašikliu
-133|Pradėti
-134|Pradedamas darbas: {} eilučių, ~{}
-135|Siųsti darbą į prijungtas stakles
-136|Srautinis siuntimas
-137|Įjungta
-138|TCP prievadas
-139|Šio projekto įrenginys
-140|Įrenginys pridėtas.
-141|Įrenginys išsaugotas.
-142|Pirmiausia užpildymas, tada kontūras ant viršaus, kad kraštas būtų švarus.
-143|Darbas baigtas.
-144|Darbas vyksta.
-145|Rašiklis seka formų linijas. Atviros linijos taip pat veikia.
-146|Rašiklis pakeliamas per
-147|Darbo sritis yra lapas, kurį pasiekia rašiklis. Staklių nulis yra kampas, nuo kurio rašiklis pradeda.
-148|Nėra ko piešti: padėkite formas ant įjungtų sluoksnių.
-149|Nėra ko apibrėžti: padėkite formas ant įjungtų sluoksnių.
-150|Dar nėra ką rodyti: nupieškite formas ir padėkite jas ant įjungtų sluoksnių.
-151|Ši versija negali naudoti kompiuterio kamerų.
-152|Šis įrenginys neturi įjungtos kameros. Pridėkite ją įrenginio nustatymuose.
-153|Šio įrenginio sąraše nėra: jis atkeliavo su projektu
-154|Tai pakaitinis įrenginys (Dummy): numatytoji darbo sritis ir greičiai.
-155|Laikas {} / {}
-156|Per daug įrenginių
-157|Trajektorijos
-158|Atsieti
-159|Vienetai
-160|Rodinys
-161|Rodinio parinktys…
-162|Laukimas po rašiklio judesio
-163|Laukiama vaizdo…
-164|Kai ryšys nutrūksta pats, bandyti kas kelias sekundes, kol paspausite Atsijungti.
-165|Su Z ašimi rašiklis eina į aukščiau nurodytus aukščius; su servo G-kodas įjungia verpstės išvestį su S reikšme (M3 S…).
-166|Dirbkite su projektu be staklių: paprastas įrenginys pavadinimu Dummy su numatytuoju darbo plotu ir greičiais
-167|Z ašis
-168|pvz., Mano braižytuvas
-169|nėra
-170|dalis brėžinio yra už darbo srities ribų
-171|užpildyme per daug linijų: atstumas per mažas, todėl dalis užpildymo praleista
-172|šis projektas sukurtas kitoms staklėms: {}
-173|{} paveikslėlių sluoksniuose negalima piešti: pirmiausia paverskite juos linijomis
+8|Pridėti įrenginį
+9|Pridėti įrenginį…
+10|Adresas
+11|Prisijungus
+12|Aliarmas {}
+13|Išdėstyti
+14|Gale kairėje
+15|Gale dešinėje
+16|Atgal į pirmąjį vaizdą. Dukart spustelėjus paveikslėlį daroma tas pats.
+17|Perdavimo sparta (baud)
+18|Susieti su šiuo prievadu
+19|Susietas USB įrenginys
+20|Kamera
+21|Kameros pavadinimas
+22|Kameros numeris
+23|Šio kompiuterio kamera
+24|Kameros pasukimas
+25|Kameros vaizdas
+26|Kameros
+27|Tikrinti programą
+28|Pirmiausia tikrinama programa…
+29|Tikrinama programa…
+30|Pirmiausia įrenginio nustatymuose pasirinkite prievadą arba šeimininką.
+31|Pasirinkite staklių modelį, su kuriuo dirbsite.
+32|Panaikinti aliarmą
+33|Aliarmo panaikinimas praleidžia bazavimą: naudokite tik tada, kai žinoma, kad galvutė yra saugioje vietoje.
+34|Uždaros formos užpildomos lygiagrečiomis linijomis; skylės lieka tuščios.
+35|Patvirtinti naikinimą
+36|Prisijungti
+37|Automatiškai prisijungti iš naujo
+38|Prisijungta
+39|Ryšys
+40|Ryšio tipas
+41|Konsolė
+42|Valdymas
+43|Nukopijuota į {}
+44|Nepavyko išsaugoti: {}
+45|Skaičiavimas užpildo valdiklio buferį ir yra greitas. Paprastas siunčia vieną eilutę ir laukia jos ok: lėtas, bet skirtas programinei įrangai, kuri atsako klaidingai.
+46|Susikertančios linijos
+47|Ištrinti šią kamerą
+48|Įrenginys
+49|Įrenginio nustatymai
+50|Įrenginio nustatymai…
+51|Diagnostika ir statistika…
+52|Atsijungti
+53|Piešimas
+54|Kiek kartų piešti
+55|Piešiama: įtraukta į brėžinį ir G-kodą
+56|Redaguoti
+57|Redaguoti…
+58|Klaida {} eilutėje {}: {}
+59|Klaida {}: {}
+60|Eksportuoti G-code…
+61|Eksportuoti…
+62|Užpildymas ir kontūras
+63|Užpildymo linijų kampas
+64|Atstumas tarp užpildymo linijų
+65|Užpildyti linijomis
+66|Programinės įrangos nustatymai ($$)…
+67|Rėmelis
+68|Darbo srities rėmelis
+69|Nuo eilutės…
+70|Priekyje kairėje
+71|Priekyje dešinėje
+72|Bendra
+73|Apeiti rėmelį, kur bus dirbama
+74|Žinynas
+75|Pradžia
+76|Bazuoti staklės
+77|Pagrindinis kompiuteris
+78|Kiek kartų piešiama kiekviena linija: per šviesiam rašikliui
+79|Neturiu įrenginio
+80|Importuoti „LightBurn“ projektą…
+81|Įrenginys {} importuotas
+82|Importuoti…
+83|Gulsčias
+84|Sluoksniai
+85|Linijos: {} m, judesiai pakeltu rašikliu: {} m, rašiklio pakėlimai: {}, apie {} min.
+86|Staklių nulis (0,0)
+87|Judesiai pakeltu rašikliu
+88|Naujas
+89|Dar nėra įrenginio. Pridėkite vieną arba dirbkite be staklių.
+90|Nėra prievado
+91|Tai nėra http ar https adresas.
+92|Pastabos
+93|Pastabos apie šias stakles
+94|Nieko nepažymėta
+95|Atidarykite brėžinį arba pradėkite tuščią dizainą.
+96|Atidaryti ryšį su valdikliu, nustatytu įrenginio nustatymuose
+97|Atverti peržiūros langą
+98|Atverti…
+99|Kontūras
+100|Popierius
+101|Rašiklis
+102|Rašiklis nuleistas
+103|Rašiklis pakeltas
+104|Rašiklio plotis
+105|Darbo brėžinys…
+106|Braižytuvas
+107|Prievadas
+108|Prievadas arba USB ID
+109|Stačias
+110|Peržiūra
+111|Peržiūra…
+112|Ypatybės
+113|Padėti pasirinktas formas ant šio sluoksnio
+114|Nuskaityti įrenginį iš failo
+115|Paruošta
+116|Pakartotinis prisijungimas
+117|Atnaujinti
+118|Įsiminti pasirinkto prievado USB ID: pasikeitus pavadinimui prievadas randamas pagal juos.
+119|Atstatyti vaizdą
+120|Tęsti
+121|STOP
+122|Įrašyti
+123|Įrašyti G-code
+124|Įrašyti kaip…
+125|Išsaugoti šį įrenginį faile
+126|Įrenginys išsaugotas: {}
+127|Įrašyta: {}
+128|Servo (M3 S…)
+129|Nustatymai
+130|Formos šiame sluoksnyje
+131|Rodo šių staklių kameros tiesioginį vaizdą
+132|Rodo trajektorijas darbo srityje
+133|Rodoma skirtuke Kamera
+134|Rodoma darbo srityje
+135|Greitis
+136|Judesių greitis pakeltu rašikliu
+137|Pradėti
+138|Pradėti nuo
+139|Pradėti darbą nuo programos eilutės
+140|Pradedamas darbas: {} eilučių, ~{}
+141|Siųsti darbą į prijungtas stakles
+142|Srautinis siuntimas
+143|Įjungta
+144|TCP prievadas
+145|G-kodas aplink darbą: {}
+146|Patikra nieko blogo nerado.
+147|Patikra nieko nerado. Darbas vyksta.
+148|Patikra rado {} problemų, pirmą eilutėje {}. Darbas nepradėtas.
+149|Šio projekto įrenginys
+150|Įrenginys pridėtas.
+151|Įrenginys išsaugotas.
+152|Pirmiausia užpildymas, tada kontūras ant viršaus, kad kraštas būtų švarus.
+153|Darbas baigtas su {} problemomis (žr. Konsolę).
+154|Darbas baigtas.
+155|Darbas pristabdytas: {}
+156|Darbas vyksta.
+157|Rašiklis seka formų linijas. Atviros linijos taip pat veikia.
+158|Rašiklis pakeliamas per
+159|Darbo sritis yra lapas, kurį pasiekia rašiklis. Staklių nulis yra kampas, nuo kurio rašiklis pradeda.
+160|Nėra ko piešti: padėkite formas ant įjungtų sluoksnių.
+161|Nėra ko apibrėžti: padėkite formas ant įjungtų sluoksnių.
+162|Dar nėra ką rodyti: nupieškite formas ir padėkite jas ant įjungtų sluoksnių.
+163|Ši versija negali naudoti kompiuterio kamerų.
+164|Šis įrenginys neturi įjungtos kameros. Pridėkite ją įrenginio nustatymuose.
+165|Šio įrenginio sąraše nėra: jis atkeliavo su projektu
+166|Tai pakaitinis įrenginys (Dummy): numatytoji darbo sritis ir greičiai.
+167|Laikas {} / {}
+168|Per daug įrenginių
+169|Trajektorijos
+170|Atsieti
+171|Vienetai
+172|Rodinys
+173|Rodinio parinktys…
+174|Laukimas po rašiklio judesio
+175|Laukiama vaizdo…
+176|Kai ryšys nutrūksta pats, bandyti kas kelias sekundes, kol paspausite Atsijungti.
+177|Su Z ašimi rašiklis eina į aukščiau nurodytus aukščius; su servo G-kodas įjungia verpstės išvestį su S reikšme (M3 S…).
+178|Dirbkite su projektu be staklių: paprastas įrenginys pavadinimu Dummy su numatytuoju darbo plotu ir greičiais
+179|Z ašis
+180|pvz., Mano braižytuvas
+181|nėra
+182|dalis brėžinio yra už darbo srities ribų
+183|užpildyme per daug linijų: atstumas per mažas, todėl dalis užpildymo praleista
+184|šis projektas sukurtas kitoms staklėms: {}
+185|{} paveikslėlių sluoksniuose negalima piešti: pirmiausia paverskite juos linijomis

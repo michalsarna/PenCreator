@@ -19,7 +19,7 @@ fn save(h: &mut Shot, name: &str) {
 }
 
 /// A small badge: a frame in black, a blue circle, a red star and a filled black star.
-fn demo_job(a: &mut App) {
+pub(crate) fn demo_job(a: &mut App) {
     use base_core::bezier::Contour;
     use base_core::geom::Xf;
     use base_core::scene::Kind;
@@ -119,4 +119,28 @@ fn render_screenshots() {
         a.side_tab = crate::SideTab::Console;
     }
     save(&mut h, "11-console.png");
+    {
+        let a = app(&mut h);
+        a.machine.connected = true;
+        a.machine.state = "Idle".into();
+        a.machine.mpos = [-80.5, -12.25, 0.0];
+        a.machine.wpos = [19.5, 37.75, 0.0];
+        a.machine.pos = a.machine.wpos;
+        a.machine.fw.info = base_core::firmware::FirmwareInfo { name: "Grbl".into(), version: "1.1h".into(), options: "V".into(), raw: vec!["[VER:1.1h.20190825:]".into(), "[OPT:V,15,128]".into()] };
+        a.device.control.macros = vec![base_core::control::Macro { name: "Pen up".into(), code: "G0 Z[safez]".into() }, base_core::control::Macro { name: "Park".into(), code: "G0 Z[safez]\nG0 X0 Y0".into() }];
+        a.side_tab = crate::SideTab::Control;
+    }
+    save(&mut h, "12-control-tab.png");
+    {
+        let a = app(&mut h);
+        a.machine.fw.values = [(100, "80.000"), (101, "80.000"), (102, "80.000"), (110, "6000.000"), (111, "6000.000"), (112, "1000.000"), (130, "297.000"), (131, "210.000"), (132, "20.000")].into_iter().map(|(k, v)| (k, v.to_string())).collect();
+        a.fw_open = true;
+    }
+    save(&mut h, "13-firmware.png");
+    {
+        let a = app(&mut h);
+        a.fw_open = false;
+        a.machine.barrier = Some(base_ui::machine_ctl::Barrier { text: "M0 (Change the pen to: Red pen, 0.4 mm)".into(), line: 40 });
+    }
+    save(&mut h, "14-job-paused.png");
 }

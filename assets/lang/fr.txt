@@ -1,174 +1,186 @@
 0|Un calque est un stylo : quand le calque suivant a un autre stylo, le G-code s'arrête pour que vous le changiez.
 1|Un nom de port, ou l'identifiant USB du fabricant et du produit (VID:PID, hexadécimal) : le port qui porte ces identifiants est utilisé.
 2|Un second jeu de lignes de remplissage en travers du premier
-3|Interrompre le travail en cours
-4|À propos
-5|Ajouter une caméra
-6|Ajouter un appareil
-7|Ajouter l'appareil
-8|Ajouter un appareil…
-9|Adresse
-10|Après la connexion
-11|Disposition
-12|Arrière gauche
-13|Arrière droit
-14|Retour à la première vue. Un double-clic sur l'image fait la même chose.
-15|Débit en bauds
-16|Lier à ce port
-17|Périphérique USB lié
-18|Caméra
-19|Nom de la caméra
-20|Numéro de la caméra
-21|Caméra de cet ordinateur
-22|Rotation de la caméra
-23|Vue caméra
-24|Caméras
-25|Impossible d'utiliser le fichier : {}
-26|Choisissez d'abord un port ou un hôte dans les réglages de l'appareil.
-27|Choisissez la machine avec laquelle vous allez travailler.
-28|Effacer une alarme
-29|Effacer l'alarme ($X)
-30|Effacer l'alarme saute la prise d'origine : à n'utiliser que si la tête est sûrement en lieu sûr.
-31|Les formes fermées sont remplies de lignes parallèles ; les trous restent vides.
-32|Confirmer la suppression
-33|Connecter
-34|Se reconnecter automatiquement
-35|Connectez-vous d'abord à la machine (onglet Appareil)
-36|Connecté
-37|Connexion
-38|Type de connexion
-39|Console
-40|Contrôleur
-41|Copié vers {}
-42|Enregistrement impossible : {}
-43|Le comptage remplit le tampon du contrôleur et est rapide. Le simple envoie une ligne et attend son ok : lent, mais pour un micrologiciel qui répond mal.
-44|Lignes croisées
-45|Supprimer cette caméra
-46|Appareil
-47|Paramètres de l'appareil
-48|Paramètres de l'appareil…
-49|Déconnecter
-50|Dessin
-51|Nombre de tracés
-52|Dessiné : pris en compte dans le tracé et le G-code
-53|Édition
-54|Modifier…
-55|Exporter en G-code…
-56|Exporter…
-57|Arrêt de l'avance
-58|Fichier
-59|Remplissage et contour
-60|Angle des lignes de remplissage
-61|Écart des lignes de remplissage
-62|Remplir de lignes
-63|Cadre
-64|Cadrage de la zone de travail
-65|Avant gauche
-66|Avant droit
-67|Général
-68|Faire le tour du cadre où le travail sera fait
-69|Aide
-70|Origine
-71|Référencer la machine
-72|Hôte
-73|Combien de fois chaque ligne est tracée : pour un stylo trop pâle
-74|Je n'ai pas d'appareil
-75|Importer un projet LightBurn…
-76|Appareil {} importé
-77|Importer…
-78|Paysage
-79|Calques
-80|Lignes : {} m, déplacements stylo levé : {} m, levées du stylo : {}, environ {} min
-81|Machine
-82|Zéro machine (0,0)
-83|Déplacements stylo levé
-84|Nouveau
-85|Pas encore d'appareil. Ajoutez-en un, ou travaillez sans machine.
-86|Aucun port
-87|Ce n'est pas une adresse http ou https.
-88|Notes
-89|Notes sur cette machine
-90|Aucune sélection
-91|Ouvrez un dessin ou commencez une conception vide.
-92|Ouvrir la liaison avec le contrôleur indiqué dans les réglages de l'appareil
-93|Ouvrir la fenêtre d'aperçu
-94|Ouvrir…
-95|Contour
-96|Papier
-97|Stylo
-98|Stylo baissé
-99|Stylo levé
-100|Largeur du stylo
-101|Tracé du travail…
-102|Traceur
-103|Port
-104|Port ou id USB
-105|Portrait
-106|Aperçu
-107|Aperçu…
-108|Propriétés
-109|Mettre les formes sélectionnées sur ce calque
-110|Lire un appareil depuis un fichier
-111|Prêt
-112|Reconnexion
-113|Actualiser
-114|Retient les id USB du port choisi : si son nom change, le port est retrouvé grâce à eux.
-115|Réinitialiser la vue
-116|Reprendre
-117|ARRÊT
-118|Enregistrer
-119|Enregistrer le G-code
-120|Enregistrer sous…
-121|Enregistrer cet appareil dans un fichier
-122|Appareil enregistré dans {}
-123|{} enregistré
-124|Servo (M3 S…)
-125|Paramètres
-126|Formes sur ce calque
-127|Affiche l'image en direct de la caméra de cette machine
-128|Affiche les trajectoires sur la zone de travail
-129|Affichée dans l'onglet Caméra
-130|Affiché dans la zone de travail
-131|Vitesse
-132|Vitesse des déplacements stylo levé
-133|Démarrer
-134|Démarrage du travail : {} lignes, ~{}
-135|Envoyer le travail à la machine connectée
-136|Flux
-137|Activée
-138|Port TCP
-139|L'appareil de ce projet
-140|L'appareil a été ajouté.
-141|L'appareil a été enregistré.
-142|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
-143|Le travail est terminé.
-144|Le travail est en cours.
-145|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
-146|Le stylo est levé par
-147|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
-148|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
-149|Rien à cadrer : mettez des formes sur des calques activés.
-150|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
-151|Cette version ne peut pas utiliser les caméras de l'ordinateur.
-152|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
-153|Cet appareil n'est pas dans la liste : il est venu avec le projet
-154|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
-155|Temps {} / {}
-156|Trop d'appareils
-157|Trajectoires
-158|Délier
-159|Unités
-160|Affichage
-161|Options d'affichage…
-162|Attente après le mouvement du stylo
-163|En attente de l'image…
-164|Quand la liaison tombe d'elle-même, réessayer toutes les quelques secondes jusqu'à ce que vous appuyiez sur Déconnecter.
-165|Avec l'axe Z, le stylo va aux hauteurs ci-dessus ; avec un servo, le G-code active la sortie broche avec la valeur S (M3 S…).
-166|Travaillez sur un projet sans machine : un appareil simple nommé Dummy, avec la zone de travail et les vitesses par défaut
-167|Axe Z
-168|p. ex. Mon traceur
-169|aucun
-170|une partie du dessin est en dehors de la zone de travail
-171|le remplissage a trop de lignes : l'écart est trop petit, donc une partie du remplissage a été omise
-172|ce projet a été fait pour une autre machine : {}
-173|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord
+3|Une taille de feuille courante…
+4|Interrompre le travail en cours
+5|À propos
+6|Ajouter une caméra
+7|Ajouter un appareil
+8|Ajouter l'appareil
+9|Ajouter un appareil…
+10|Adresse
+11|Après la connexion
+12|Alarme {}
+13|Disposition
+14|Arrière gauche
+15|Arrière droit
+16|Retour à la première vue. Un double-clic sur l'image fait la même chose.
+17|Débit en bauds
+18|Lier à ce port
+19|Périphérique USB lié
+20|Caméra
+21|Nom de la caméra
+22|Numéro de la caméra
+23|Caméra de cet ordinateur
+24|Rotation de la caméra
+25|Vue caméra
+26|Caméras
+27|Vérifier le programme
+28|Vérification du programme d'abord…
+29|Vérification du programme…
+30|Choisissez d'abord un port ou un hôte dans les réglages de l'appareil.
+31|Choisissez la machine avec laquelle vous allez travailler.
+32|Effacer une alarme
+33|Effacer l'alarme saute la prise d'origine : à n'utiliser que si la tête est sûrement en lieu sûr.
+34|Les formes fermées sont remplies de lignes parallèles ; les trous restent vides.
+35|Confirmer la suppression
+36|Connecter
+37|Se reconnecter automatiquement
+38|Connecté
+39|Connexion
+40|Type de connexion
+41|Console
+42|Contrôle
+43|Copié vers {}
+44|Enregistrement impossible : {}
+45|Le comptage remplit le tampon du contrôleur et est rapide. Le simple envoie une ligne et attend son ok : lent, mais pour un micrologiciel qui répond mal.
+46|Lignes croisées
+47|Supprimer cette caméra
+48|Appareil
+49|Paramètres de l'appareil
+50|Paramètres de l'appareil…
+51|Diagnostic et statistiques…
+52|Déconnecter
+53|Dessin
+54|Nombre de tracés
+55|Dessiné : pris en compte dans le tracé et le G-code
+56|Édition
+57|Modifier…
+58|Erreur {} à la ligne {} : {}
+59|Erreur {} : {}
+60|Exporter en G-code…
+61|Exporter…
+62|Remplissage et contour
+63|Angle des lignes de remplissage
+64|Écart des lignes de remplissage
+65|Remplir de lignes
+66|Réglages du firmware ($$)…
+67|Cadre
+68|Cadrage de la zone de travail
+69|À partir de la ligne…
+70|Avant gauche
+71|Avant droit
+72|Général
+73|Faire le tour du cadre où le travail sera fait
+74|Aide
+75|Origine
+76|Référencer la machine
+77|Hôte
+78|Combien de fois chaque ligne est tracée : pour un stylo trop pâle
+79|Je n'ai pas d'appareil
+80|Importer un projet LightBurn…
+81|Appareil {} importé
+82|Importer…
+83|Paysage
+84|Calques
+85|Lignes : {} m, déplacements stylo levé : {} m, levées du stylo : {}, environ {} min
+86|Zéro machine (0,0)
+87|Déplacements stylo levé
+88|Nouveau
+89|Pas encore d'appareil. Ajoutez-en un, ou travaillez sans machine.
+90|Aucun port
+91|Ce n'est pas une adresse http ou https.
+92|Notes
+93|Notes sur cette machine
+94|Aucune sélection
+95|Ouvrez un dessin ou commencez une conception vide.
+96|Ouvrir la liaison avec le contrôleur indiqué dans les réglages de l'appareil
+97|Ouvrir la fenêtre d'aperçu
+98|Ouvrir…
+99|Contour
+100|Papier
+101|Stylo
+102|Stylo baissé
+103|Stylo levé
+104|Largeur du stylo
+105|Tracé du travail…
+106|Traceur
+107|Port
+108|Port ou id USB
+109|Portrait
+110|Aperçu
+111|Aperçu…
+112|Propriétés
+113|Mettre les formes sélectionnées sur ce calque
+114|Lire un appareil depuis un fichier
+115|Prêt
+116|Reconnexion
+117|Actualiser
+118|Retient les id USB du port choisi : si son nom change, le port est retrouvé grâce à eux.
+119|Réinitialiser la vue
+120|Reprendre
+121|ARRÊT
+122|Enregistrer
+123|Enregistrer le G-code
+124|Enregistrer sous…
+125|Enregistrer cet appareil dans un fichier
+126|Appareil enregistré dans {}
+127|{} enregistré
+128|Servo (M3 S…)
+129|Paramètres
+130|Formes sur ce calque
+131|Affiche l'image en direct de la caméra de cette machine
+132|Affiche les trajectoires sur la zone de travail
+133|Affichée dans l'onglet Caméra
+134|Affiché dans la zone de travail
+135|Vitesse
+136|Vitesse des déplacements stylo levé
+137|Démarrer
+138|Partir de
+139|Démarrer le travail à une ligne du programme
+140|Démarrage du travail : {} lignes, ~{}
+141|Envoyer le travail à la machine connectée
+142|Flux
+143|Activée
+144|Port TCP
+145|Le G-code autour du travail : {}
+146|La vérification n'a rien trouvé d'anormal.
+147|La vérification n'a rien trouvé. Le travail est en cours.
+148|La vérification a trouvé {} problèmes, le premier à la ligne {}. Le travail n'a pas été démarré.
+149|L'appareil de ce projet
+150|L'appareil a été ajouté.
+151|L'appareil a été enregistré.
+152|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
+153|Le travail est terminé, avec {} problèmes (voir la Console).
+154|Le travail est terminé.
+155|Le travail est en pause : {}
+156|Le travail est en cours.
+157|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
+158|Le stylo est levé par
+159|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
+160|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
+161|Rien à cadrer : mettez des formes sur des calques activés.
+162|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
+163|Cette version ne peut pas utiliser les caméras de l'ordinateur.
+164|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
+165|Cet appareil n'est pas dans la liste : il est venu avec le projet
+166|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
+167|Temps {} / {}
+168|Trop d'appareils
+169|Trajectoires
+170|Délier
+171|Unités
+172|Affichage
+173|Options d'affichage…
+174|Attente après le mouvement du stylo
+175|En attente de l'image…
+176|Quand la liaison tombe d'elle-même, réessayer toutes les quelques secondes jusqu'à ce que vous appuyiez sur Déconnecter.
+177|Avec l'axe Z, le stylo va aux hauteurs ci-dessus ; avec un servo, le G-code active la sortie broche avec la valeur S (M3 S…).
+178|Travaillez sur un projet sans machine : un appareil simple nommé Dummy, avec la zone de travail et les vitesses par défaut
+179|Axe Z
+180|p. ex. Mon traceur
+181|aucun
+182|une partie du dessin est en dehors de la zone de travail
+183|le remplissage a trop de lignes : l'écart est trop petit, donc une partie du remplissage a été omise
+184|ce projet a été fait pour une autre machine : {}
+185|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord

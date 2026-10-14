@@ -99,4 +99,25 @@ mod tests {
         assert!(base_core::backup::restore(&zip, "LightCreator", b.clip.lib.dir()).is_err());
         let _ = std::fs::remove_dir_all(&dir);
     }
+
+    #[test]
+    fn the_copies_of_the_controller_settings_are_in_the_backup() {
+        let ctx = egui::Context::default();
+        let dir = std::env::temp_dir().join(format!("pen-backup-copies-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut a = App::build(&ctx, None, false);
+        a.clip = base_ui::clipart_ui::ClipState::new(base_core::clipart::Library::open(dir.join("gallery")));
+        let mut d = crate::device::Device::dummy();
+        d.control.fw_copies.make(1_700_000_000, "Grbl 1.1h", &[(110u32, "6000.000".to_string())].into_iter().collect());
+        a.devices = vec![d];
+        let zip = dir.join("b.zip");
+        base_core::backup::write(&zip, "PenCreator", "test", &a.settings_pairs(), a.clip.lib.dir()).unwrap();
+        let mut b = App::build(&ctx, None, false);
+        b.clip = base_ui::clipart_ui::ClipState::new(base_core::clipart::Library::open(dir.join("gallery2")));
+        let r = base_core::backup::restore(&zip, "PenCreator", b.clip.lib.dir()).unwrap();
+        b.apply_settings(&ctx, &r.settings);
+        assert_eq!(b.devices[0].control.fw_copies.0.len(), 1);
+        let _ = std::fs::remove_dir_all(&dir);
+    }
 }

@@ -1,174 +1,186 @@
 0|Ett lager är en penna: när nästa lager har en annan penna stannar G-koden så att du kan byta.
 1|Ett portnamn, eller USB-tillverkar- och produkt-id (VID:PID, hexadecimalt): porten med dessa id används.
 2|En andra uppsättning fyllnadslinjer över den första
-3|Avbryt det pågående jobbet
-4|Om
-5|Lägg till en kamera
-6|Lägg till en enhet
-7|Lägg till enhet
-8|Lägg till enhet…
-9|Adress
-10|Efter anslutning
-11|Ordna
-12|Bak vänster
-13|Bak höger
-14|Tillbaka till den första vyn. Dubbelklick på bilden gör samma sak.
-15|Baudhastighet
-16|Bind till denna port
-17|Bunden USB-enhet
-18|Kamera
-19|Kameranamn
-20|Kameranummer
-21|Kameran på den här datorn
-22|Kamerarotation
-23|Kameravy
-24|Kameror
-25|Filen kan inte användas: {}
-26|Välj först en port eller värd i enhetens inställningar.
-27|Välj den maskin du ska arbeta med.
-28|Rensa ett larm
-29|Rensa larmet ($X)
-30|Att rensa larmet hoppar över homing: använd det bara när huvudet är känt för att stå på en säker plats.
-31|Slutna former fylls med parallella linjer; hål förblir tomma.
-32|Bekräfta borttagning
-33|Anslut
-34|Anslut igen automatiskt
-35|Anslut först till maskinen (fliken Enhet)
-36|Ansluten
-37|Anslutning
-38|Anslutningstyp
-39|Konsol
-40|Styrenhet
-41|Kopierad till {}
-42|Kunde inte spara: {}
-43|Räkning fyller styrenhetens buffert och är snabb. Enkel skickar en rad och väntar på dess ok: långsam, men för firmware som svarar fel.
-44|Korslinjer
-45|Ta bort den här kameran
-46|Enhet
-47|Enhetsinställningar
-48|Enhetsinställningar…
-49|Koppla från
-50|Ritning
-51|Antal gånger som ritas
-52|Ritas: tas med i plotten och G-koden
-53|Redigera
-54|Redigera…
-55|Exportera G-code…
-56|Exportera…
-57|Matningsstopp
-58|Arkiv
-59|Fyllning och kontur
-60|Fyllnadslinjernas vinkel
-61|Avstånd mellan fyllnadslinjer
-62|Fyll med linjer
-63|Ram
-64|Ram för arbetsytan
-65|Fram vänster
-66|Fram höger
-67|Allmänt
-68|Gå runt rutan där arbetet ska göras
-69|Hjälp
-70|Hem
-71|Home maskinen
-72|Värd
-73|Hur många gånger varje linje ritas: för en penna som är för blek
-74|Jag har ingen enhet
-75|Importera LightBurn-projekt…
-76|Enheten {} importerades
-77|Importera…
-78|Liggande
-79|Lager
-80|Linjer: {} m, förflyttningar med pennan uppe: {} m, pennlyft: {}, cirka {} min
-81|Maskin
-82|Maskinens nollpunkt (0,0)
-83|Förflyttningar med pennan uppe
-84|Ny
-85|Ingen enhet än. Lägg till en eller arbeta utan maskin.
-86|Ingen port
-87|Inte en http- eller https-adress.
-88|Anteckningar
-89|Anteckningar om den här maskinen
-90|Inget markerat
-91|Öppna en ritning eller börja med en tom design.
-92|Öppna länken till styrenheten i enhetens inställningar
-93|Öppna förhandsgranskningsfönstret
-94|Öppna…
-95|Kontur
-96|Papper
-97|Penna
-98|Penna nere
-99|Penna uppe
-100|Pennbredd
-101|Plott av jobbet…
-102|Plotter
-103|Port
-104|Port eller USB-id
-105|Stående
-106|Förhandsgranska
-107|Förhandsgranska…
-108|Egenskaper
-109|Lägg de markerade formerna på det här lagret
-110|Läs en enhet från en fil
-111|Klar
-112|Återanslutning
-113|Uppdatera
-114|Kom ihåg USB-id:na för den valda porten: porten hittas igen med dem när namnet ändras.
-115|Återställ vyn
-116|Fortsätt
-117|STOPP
-118|Spara
-119|Spara G-code
-120|Spara som…
-121|Spara den här enheten i en fil
-122|Enheten sparades i {}
-123|{} sparad
-124|Servo (M3 S…)
-125|Inställningar
-126|Former på det här lagret
-127|Visar liveöverföringen från den här maskinens kamera
-128|Visar banorna på arbetsytan
-129|Visas på fliken Kamera
-130|Visas i arbetsytan
-131|Hastighet
-132|Hastighet för förflyttningar med pennan uppe
-133|Start
-134|Startar jobb: {} rader, ~{}
-135|Skicka jobbet till den anslutna maskinen
-136|Strömning
-137|Påslagen
-138|TCP-port
-139|Enheten för det här projektet
-140|Enheten lades till.
-141|Enheten sparades.
-142|Först fyllningen, sedan konturen ovanpå, så att kanten blir ren.
-143|Jobbet är klart.
-144|Jobbet pågår.
-145|Pennan följer formernas linjer. Öppna linjer fungerar också.
-146|Pennan lyfts med
-147|Arbetsytan är pappret som pennan når. Maskinens nollpunkt är hörnet där pennan startar.
-148|Det finns inget att rita: lägg former på påslagna lager.
-149|Inget att ramma in: lägg former på påslagna lager.
-150|Det finns inget att visa än: rita former och lägg dem på påslagna lager.
-151|Den här versionen kan inte använda datorns kameror.
-152|Den här enheten har ingen påslagen kamera. Lägg till en i enhetens inställningar.
-153|Den här enheten finns inte i listan: den kom med projektet
-154|Det här är ersättningsenheten (Dummy): standardarbetsyta och standardhastigheter.
-155|Tid {} / {}
-156|För många enheter
-157|Banor
-158|Ta bort bindning
-159|Enheter
-160|Visa
-161|Visningsalternativ…
-162|Väntan efter pennans rörelse
-163|Väntar på bilden…
-164|När förbindelsen faller av sig själv, försök igen med några sekunders mellanrum tills du trycker på Koppla från.
-165|Med Z-axeln går pennan till höjderna ovan; med en servo slår G-koden på spindelutgången med S-värdet (M3 S…).
-166|Arbeta med ett projekt utan maskin: en enkel enhet som heter Dummy med standardarbetsyta och standardhastigheter
-167|Z-axel
-168|t.ex. Min plotter
-169|ingen
-170|en del av ritningen ligger utanför arbetsytan
-171|fyllningen har för många linjer: avståndet är för litet, så en del av fyllningen utelämnades
-172|det här projektet gjordes för en annan maskin: {}
-173|{} bild(er) på lagren kan inte ritas: spåra dem till linjer först
+3|En vanlig arkstorlek…
+4|Avbryt det pågående jobbet
+5|Om
+6|Lägg till en kamera
+7|Lägg till en enhet
+8|Lägg till enhet
+9|Lägg till enhet…
+10|Adress
+11|Efter anslutning
+12|Larm {}
+13|Ordna
+14|Bak vänster
+15|Bak höger
+16|Tillbaka till den första vyn. Dubbelklick på bilden gör samma sak.
+17|Baudhastighet
+18|Bind till denna port
+19|Bunden USB-enhet
+20|Kamera
+21|Kameranamn
+22|Kameranummer
+23|Kameran på den här datorn
+24|Kamerarotation
+25|Kameravy
+26|Kameror
+27|Kontrollera programmet
+28|Kontrollerar programmet först…
+29|Kontrollerar programmet…
+30|Välj först en port eller värd i enhetens inställningar.
+31|Välj den maskin du ska arbeta med.
+32|Rensa ett larm
+33|Att rensa larmet hoppar över homing: använd det bara när huvudet är känt för att stå på en säker plats.
+34|Slutna former fylls med parallella linjer; hål förblir tomma.
+35|Bekräfta borttagning
+36|Anslut
+37|Anslut igen automatiskt
+38|Ansluten
+39|Anslutning
+40|Anslutningstyp
+41|Konsol
+42|Styrning
+43|Kopierad till {}
+44|Kunde inte spara: {}
+45|Räkning fyller styrenhetens buffert och är snabb. Enkel skickar en rad och väntar på dess ok: långsam, men för firmware som svarar fel.
+46|Korslinjer
+47|Ta bort den här kameran
+48|Enhet
+49|Enhetsinställningar
+50|Enhetsinställningar…
+51|Diagnostik och statistik…
+52|Koppla från
+53|Ritning
+54|Antal gånger som ritas
+55|Ritas: tas med i plotten och G-koden
+56|Redigera
+57|Redigera…
+58|Fel {} på rad {}: {}
+59|Fel {}: {}
+60|Exportera G-code…
+61|Exportera…
+62|Fyllning och kontur
+63|Fyllnadslinjernas vinkel
+64|Avstånd mellan fyllnadslinjer
+65|Fyll med linjer
+66|Inställningar för firmware ($$)…
+67|Ram
+68|Ram för arbetsytan
+69|Från rad…
+70|Fram vänster
+71|Fram höger
+72|Allmänt
+73|Gå runt rutan där arbetet ska göras
+74|Hjälp
+75|Hem
+76|Home maskinen
+77|Värd
+78|Hur många gånger varje linje ritas: för en penna som är för blek
+79|Jag har ingen enhet
+80|Importera LightBurn-projekt…
+81|Enheten {} importerades
+82|Importera…
+83|Liggande
+84|Lager
+85|Linjer: {} m, förflyttningar med pennan uppe: {} m, pennlyft: {}, cirka {} min
+86|Maskinens nollpunkt (0,0)
+87|Förflyttningar med pennan uppe
+88|Ny
+89|Ingen enhet än. Lägg till en eller arbeta utan maskin.
+90|Ingen port
+91|Inte en http- eller https-adress.
+92|Anteckningar
+93|Anteckningar om den här maskinen
+94|Inget markerat
+95|Öppna en ritning eller börja med en tom design.
+96|Öppna länken till styrenheten i enhetens inställningar
+97|Öppna förhandsgranskningsfönstret
+98|Öppna…
+99|Kontur
+100|Papper
+101|Penna
+102|Penna nere
+103|Penna uppe
+104|Pennbredd
+105|Plott av jobbet…
+106|Plotter
+107|Port
+108|Port eller USB-id
+109|Stående
+110|Förhandsgranska
+111|Förhandsgranska…
+112|Egenskaper
+113|Lägg de markerade formerna på det här lagret
+114|Läs en enhet från en fil
+115|Klar
+116|Återanslutning
+117|Uppdatera
+118|Kom ihåg USB-id:na för den valda porten: porten hittas igen med dem när namnet ändras.
+119|Återställ vyn
+120|Fortsätt
+121|STOPP
+122|Spara
+123|Spara G-code
+124|Spara som…
+125|Spara den här enheten i en fil
+126|Enheten sparades i {}
+127|{} sparad
+128|Servo (M3 S…)
+129|Inställningar
+130|Former på det här lagret
+131|Visar liveöverföringen från den här maskinens kamera
+132|Visar banorna på arbetsytan
+133|Visas på fliken Kamera
+134|Visas i arbetsytan
+135|Hastighet
+136|Hastighet för förflyttningar med pennan uppe
+137|Start
+138|Starta från
+139|Starta jobbet vid en rad i programmet
+140|Startar jobb: {} rader, ~{}
+141|Skicka jobbet till den anslutna maskinen
+142|Strömning
+143|Påslagen
+144|TCP-port
+145|G-code runt jobbet: {}
+146|Kontrollen hittade inget fel.
+147|Kontrollen hittade inget. Jobbet körs.
+148|Kontrollen hittade {} problem, det första på rad {}. Jobbet startades inte.
+149|Enheten för det här projektet
+150|Enheten lades till.
+151|Enheten sparades.
+152|Först fyllningen, sedan konturen ovanpå, så att kanten blir ren.
+153|Jobbet är klart, med {} problem (se Konsolen).
+154|Jobbet är klart.
+155|Jobbet är pausat: {}
+156|Jobbet pågår.
+157|Pennan följer formernas linjer. Öppna linjer fungerar också.
+158|Pennan lyfts med
+159|Arbetsytan är pappret som pennan når. Maskinens nollpunkt är hörnet där pennan startar.
+160|Det finns inget att rita: lägg former på påslagna lager.
+161|Inget att ramma in: lägg former på påslagna lager.
+162|Det finns inget att visa än: rita former och lägg dem på påslagna lager.
+163|Den här versionen kan inte använda datorns kameror.
+164|Den här enheten har ingen påslagen kamera. Lägg till en i enhetens inställningar.
+165|Den här enheten finns inte i listan: den kom med projektet
+166|Det här är ersättningsenheten (Dummy): standardarbetsyta och standardhastigheter.
+167|Tid {} / {}
+168|För många enheter
+169|Banor
+170|Ta bort bindning
+171|Enheter
+172|Visa
+173|Visningsalternativ…
+174|Väntan efter pennans rörelse
+175|Väntar på bilden…
+176|När förbindelsen faller av sig själv, försök igen med några sekunders mellanrum tills du trycker på Koppla från.
+177|Med Z-axeln går pennan till höjderna ovan; med en servo slår G-koden på spindelutgången med S-värdet (M3 S…).
+178|Arbeta med ett projekt utan maskin: en enkel enhet som heter Dummy med standardarbetsyta och standardhastigheter
+179|Z-axel
+180|t.ex. Min plotter
+181|ingen
+182|en del av ritningen ligger utanför arbetsytan
+183|fyllningen har för många linjer: avståndet är för litet, så en del av fyllningen utelämnades
+184|det här projektet gjordes för en annan maskin: {}
+185|{} bild(er) på lagren kan inte ritas: spåra dem till linjer först

@@ -1,174 +1,186 @@
 0|Saff huwa pinna: meta s-saff li jmiss ikollu pinna oħra, il-G-code jieqaf biex tkun tista' tbiddilha.
 1|Isem ta' port, jew l-ID USB tal-manifattur u tal-prodott (VID:PID, eżadeċimali): jintuża l-port li għandu dawn l-ID.
 2|It-tieni sett ta' linji tal-mili bil-għarrieda fuq l-ewwel wieħed
-3|Waqqaf ix-xogħol li għaddej
-4|Dwar
-5|Żid kamera
-6|Żid apparat
+3|Daqs komuni ta' folja…
+4|Waqqaf ix-xogħol li għaddej
+5|Dwar
+6|Żid kamera
 7|Żid apparat
-8|Żid tagħmir…
-9|Indirizz
-10|Wara l-konnessjoni
-11|Irranġa
-12|Wara fuq ix-xellug
-13|Wara fuq il-lemin
-14|Lura għall-ewwel veduta. Double click fuq l-istampa jagħmel l-istess.
-15|Veloċità baud
-16|Qabbad ma' dan il-port
-17|Apparat USB marbut
-18|Kamera
-19|Isem tal-kamera
-20|Numru tal-kamera
-21|Kamera ta' dan il-kompjuter
-22|Rotazzjoni tal-kamera
-23|Vista tal-kamera
-24|Kameras
-25|Il-fajl ma jistax jintuża: {}
-26|Agħżel l-ewwel port jew host fl-issettjar tal-apparat.
-27|Agħżel il-magna li se taħdem biha.
-28|Neħħi allarm
-29|Naddaf l-allarm ($X)
-30|It-tneħħija tal-allarm tbiddel il-homing: uża biss meta r-ras tkun taf li qiegħda f'post sigur.
-31|Il-forom magħluqin jimtlew b'linji paralleli; it-toqob jibqgħu vojta.
-32|Ikkonferma t-tħassir
-33|Qabbad
-34|Qabbad mill-ġdid awtomatikament
-35|Qabbad l-ewwel mal-magna (tab Apparat)
-36|Mqabbad
-37|Konnessjoni
-38|Tip ta' konnessjoni
-39|Konsola
-40|Kontrollur
-41|Ikkupjat fi {}
-42|Ma setax jinħażen: {}
-43|Il-għadd jimla l-buffer tal-kontrollur u huwa ċkejken. Is-sempliċi jibgħat linja waħda u jistenna l-ok tagħha: bil-mod, imma għal firmware li jwieġeb ħażin.
-44|Linji maqsuma
-45|Neħħi din il-kamera
-46|Tagħmir
-47|Issettjar tat-tagħmir
-48|Issettjar tat-tagħmir…
-49|Skonnettja
-50|Tpinġija
-51|Kemm-il darba tittpinġa
-52|Tittpinġa: inkluża fil-plott u l-G-code
-53|Editja
-54|Editja…
-55|Esporta G-code…
-56|Esporta…
-57|Żomm l-avanz
-58|Fajl
-59|Mili u kontorn
-60|Angolu tal-linji tal-mili
-61|Distanza bejn il-linji tal-mili
-62|Imla bil-linji
-63|Qafas
-64|Qafas taż-żona tax-xogħol
-65|Quddiem fuq ix-xellug
-66|Quddiem fuq il-lemin
-67|Ġenerali
-68|Dur mal-kaxxa fejn se jsir ix-xogħol
-69|Għajnuna
-70|Dar
-71|Agħmel homing tal-magna
-72|Host
-73|Kemm-il darba tittpinġa kull linja: għal pinna ċara wisq
-74|M'għandi l-ebda apparat
-75|Importa proġett ta' LightBurn…
-76|L-apparat {} ġie impurtat
-77|Importa…
-78|Orizzontali
-79|Saffi
-80|Linji: {} m, movimenti bil-pinna mgħollija: {} m, għoli tal-pinna: {}, madwar {} min
-81|Magna
-82|Żero tal-magna (0,0)
-83|Movimenti bil-pinna mgħollija
-84|Ġdid
-85|M'hemm l-ebda apparat għadu. Żid wieħed jew aħdem mingħajr magna.
-86|L-ebda port
-87|Mhuwiex indirizz http jew https.
-88|Noti
-89|Noti dwar din il-magna
-90|Xejn magħżul
-91|Iftaħ disinn jew ibda disinn vojt.
-92|Iftaħ il-link mal-kontrollur stabbilit fl-issettjar tal-apparat
-93|Iftaħ it-tieqa tal-previżjoni
-94|Iftaħ…
-95|Kontorn
-96|Karta
-97|Pinna
-98|Pinna 'l isfel
-99|Pinna 'l fuq
-100|Wisa' tal-pinna
-101|Plott tax-xogħol…
-102|Plotter
-103|Port
-104|Port jew ID USB
-105|Vertikali
-106|Previżjoni
-107|Previżjoni…
-108|Proprjetajiet
-109|Poġġi l-forom magħżula fuq dan is-saff
-110|Aqra apparat minn fajl
-111|Lest
-112|Rikonnessjoni
-113|Aġġorna
-114|Ftakar l-ID USB tal-port magħżul: meta ismu jinbidel, il-port jinstab mill-ġdid bihom.
-115|Irrisettja l-veduta
-116|Kompli
-117|WAQQAF
-118|Salva
-119|Salva l-G-code
-120|Salva bħala…
-121|Aħżen dan l-apparat f'fajl
-122|L-apparat inħażen f'{}
-123|Salvat: {}
-124|Servo (M3 S…)
-125|Issettjar
-126|Forom fuq dan is-saff
-127|Juri l-istampa ħajja mill-kamera ta' din il-magna
-128|Juri l-passaġġi fiż-żona tax-xogħol
-129|Murija fit-tab Kamera
-130|Murija fiż-żona tax-xogħol
-131|Veloċità
-132|Veloċità tal-movimenti bil-pinna mgħollija
-133|Ibda
-134|Qed jinbeda x-xogħol: {} linji, ~{}
-135|Ibgħat ix-xogħol lill-magna mqabbda
-136|Streaming
-137|Mixgħul
-138|Port TCP
-139|L-apparat ta' dan il-proġett
-140|L-apparat ġie miżjud.
-141|L-apparat inħażen.
-142|L-ewwel il-mili, imbagħad il-kontorn fuqu, biex it-tarf ikun nadif.
-143|Ix-xogħol spiċċa.
-144|Ix-xogħol għaddej.
-145|Il-pinna tsegwi l-linji tal-forom. Il-linji miftuħin jaħdmu wkoll.
-146|Il-pinna titgħolla bi
-147|Iż-żona tax-xogħol hija l-folja li tilħaq il-pinna. Iż-żero tal-magna huwa r-rokna fejn tibda l-pinna.
-148|M'hemm xejn x'tpinġi: poġġi forom fuq saffi mixgħulin.
-149|M'hemm xejn x'tqafles: poġġi forom fuq saffi mixgħulin.
-150|M'hemm xejn x'turi għadu: ipinġi forom u poġġihom fuq saffi mixgħulin.
-151|Din il-verżjoni ma tistax tuża l-kameras tal-kompjuter.
-152|Dan l-apparat m'għandu l-ebda kamera mixgħula. Żid waħda fl-issettjar tal-apparat.
-153|Dan l-apparat mhuwiex fil-lista: ġie mal-proġett
-154|Dan huwa l-apparat sostitut (Dummy): żona tax-xogħol u veloċitajiet awtomatiċi.
-155|Ħin {} / {}
-156|Apparati wisq
-157|Passaġġi
-158|Ħoll ir-rabta
-159|Unitajiet
-160|Dehra
-161|Għażliet tad-dehra…
-162|Stenna wara l-moviment tal-pinna
-163|Qed tistenna l-istampa…
-164|Meta r-rabta tinqata' waħedha, erġa' pprova kull ftit sekondi sakemm tagħfas Skonnettja.
-165|Bl-assi Z il-pinna tmur fl-għoli ta' hawn fuq; b'servo l-G-code jixgħel l-output tal-ispindil bil-valur S (M3 S…).
-166|Aħdem fuq proġett mingħajr magna: apparat sempliċi jisimu Dummy, bl-erja tax-xogħol u s-veloċitajiet awtomatiċi
-167|Assi Z
-168|eż. Il-plotter tiegħi
-169|xejn
-170|parti mid-disinn tinsab barra ż-żona tax-xogħol
-171|il-mili għandu wisq linji: id-distanza hija żgħira wisq, għalhekk parti mill-mili ġiet maħlufa
-172|dan il-proġett sar għal magna oħra: {}
-173|{} stampa/i fuq is-saffi ma jistgħux jitpinġu: ittraċċjahom f'linji l-ewwel
+8|Żid apparat
+9|Żid tagħmir…
+10|Indirizz
+11|Wara l-konnessjoni
+12|Allarm {}
+13|Irranġa
+14|Wara fuq ix-xellug
+15|Wara fuq il-lemin
+16|Lura għall-ewwel veduta. Double click fuq l-istampa jagħmel l-istess.
+17|Veloċità baud
+18|Qabbad ma' dan il-port
+19|Apparat USB marbut
+20|Kamera
+21|Isem tal-kamera
+22|Numru tal-kamera
+23|Kamera ta' dan il-kompjuter
+24|Rotazzjoni tal-kamera
+25|Vista tal-kamera
+26|Kameras
+27|Iċċekkja l-programm
+28|L-ewwel qed jiġi ċċekkjat il-programm…
+29|Qed jiġi ċċekkjat il-programm…
+30|Agħżel l-ewwel port jew host fl-issettjar tal-apparat.
+31|Agħżel il-magna li se taħdem biha.
+32|Neħħi allarm
+33|It-tneħħija tal-allarm tbiddel il-homing: uża biss meta r-ras tkun taf li qiegħda f'post sigur.
+34|Il-forom magħluqin jimtlew b'linji paralleli; it-toqob jibqgħu vojta.
+35|Ikkonferma t-tħassir
+36|Qabbad
+37|Qabbad mill-ġdid awtomatikament
+38|Mqabbad
+39|Konnessjoni
+40|Tip ta' konnessjoni
+41|Konsola
+42|Kontroll
+43|Ikkupjat fi {}
+44|Ma setax jinħażen: {}
+45|Il-għadd jimla l-buffer tal-kontrollur u huwa ċkejken. Is-sempliċi jibgħat linja waħda u jistenna l-ok tagħha: bil-mod, imma għal firmware li jwieġeb ħażin.
+46|Linji maqsuma
+47|Neħħi din il-kamera
+48|Tagħmir
+49|Issettjar tat-tagħmir
+50|Issettjar tat-tagħmir…
+51|Dijanjostika u statistika…
+52|Skonnettja
+53|Tpinġija
+54|Kemm-il darba tittpinġa
+55|Tittpinġa: inkluża fil-plott u l-G-code
+56|Editja
+57|Editja…
+58|Żball {} fir-riga {}: {}
+59|Żball {}: {}
+60|Esporta G-code…
+61|Esporta…
+62|Mili u kontorn
+63|Angolu tal-linji tal-mili
+64|Distanza bejn il-linji tal-mili
+65|Imla bil-linji
+66|Settings tal-firmware ($$)…
+67|Qafas
+68|Qafas taż-żona tax-xogħol
+69|Minn linja…
+70|Quddiem fuq ix-xellug
+71|Quddiem fuq il-lemin
+72|Ġenerali
+73|Dur mal-kaxxa fejn se jsir ix-xogħol
+74|Għajnuna
+75|Dar
+76|Agħmel homing tal-magna
+77|Host
+78|Kemm-il darba tittpinġa kull linja: għal pinna ċara wisq
+79|M'għandi l-ebda apparat
+80|Importa proġett ta' LightBurn…
+81|L-apparat {} ġie impurtat
+82|Importa…
+83|Orizzontali
+84|Saffi
+85|Linji: {} m, movimenti bil-pinna mgħollija: {} m, għoli tal-pinna: {}, madwar {} min
+86|Żero tal-magna (0,0)
+87|Movimenti bil-pinna mgħollija
+88|Ġdid
+89|M'hemm l-ebda apparat għadu. Żid wieħed jew aħdem mingħajr magna.
+90|L-ebda port
+91|Mhuwiex indirizz http jew https.
+92|Noti
+93|Noti dwar din il-magna
+94|Xejn magħżul
+95|Iftaħ disinn jew ibda disinn vojt.
+96|Iftaħ il-link mal-kontrollur stabbilit fl-issettjar tal-apparat
+97|Iftaħ it-tieqa tal-previżjoni
+98|Iftaħ…
+99|Kontorn
+100|Karta
+101|Pinna
+102|Pinna 'l isfel
+103|Pinna 'l fuq
+104|Wisa' tal-pinna
+105|Plott tax-xogħol…
+106|Plotter
+107|Port
+108|Port jew ID USB
+109|Vertikali
+110|Previżjoni
+111|Previżjoni…
+112|Proprjetajiet
+113|Poġġi l-forom magħżula fuq dan is-saff
+114|Aqra apparat minn fajl
+115|Lest
+116|Rikonnessjoni
+117|Aġġorna
+118|Ftakar l-ID USB tal-port magħżul: meta ismu jinbidel, il-port jinstab mill-ġdid bihom.
+119|Irrisettja l-veduta
+120|Kompli
+121|WAQQAF
+122|Salva
+123|Salva l-G-code
+124|Salva bħala…
+125|Aħżen dan l-apparat f'fajl
+126|L-apparat inħażen f'{}
+127|Salvat: {}
+128|Servo (M3 S…)
+129|Issettjar
+130|Forom fuq dan is-saff
+131|Juri l-istampa ħajja mill-kamera ta' din il-magna
+132|Juri l-passaġġi fiż-żona tax-xogħol
+133|Murija fit-tab Kamera
+134|Murija fiż-żona tax-xogħol
+135|Veloċità
+136|Veloċità tal-movimenti bil-pinna mgħollija
+137|Ibda
+138|Ibda minn
+139|Ibda x-xogħol minn linja tal-programm
+140|Qed jinbeda x-xogħol: {} linji, ~{}
+141|Ibgħat ix-xogħol lill-magna mqabbda
+142|Streaming
+143|Mixgħul
+144|Port TCP
+145|Il-G-code madwar ix-xogħol: {}
+146|Iċ-ċekk ma sab xejn ħażin.
+147|Iċ-ċekk ma sab xejn. Ix-xogħol qed jaħdem.
+148|Iċ-ċekk sab {} problemi, l-ewwel fir-riga {}. Ix-xogħol ma nbediex.
+149|L-apparat ta' dan il-proġett
+150|L-apparat ġie miżjud.
+151|L-apparat inħażen.
+152|L-ewwel il-mili, imbagħad il-kontorn fuqu, biex it-tarf ikun nadif.
+153|Ix-xogħol spiċċa, b'{} problemi (ara l-Console).
+154|Ix-xogħol spiċċa.
+155|Ix-xogħol hu fuq pawża: {}
+156|Ix-xogħol għaddej.
+157|Il-pinna tsegwi l-linji tal-forom. Il-linji miftuħin jaħdmu wkoll.
+158|Il-pinna titgħolla bi
+159|Iż-żona tax-xogħol hija l-folja li tilħaq il-pinna. Iż-żero tal-magna huwa r-rokna fejn tibda l-pinna.
+160|M'hemm xejn x'tpinġi: poġġi forom fuq saffi mixgħulin.
+161|M'hemm xejn x'tqafles: poġġi forom fuq saffi mixgħulin.
+162|M'hemm xejn x'turi għadu: ipinġi forom u poġġihom fuq saffi mixgħulin.
+163|Din il-verżjoni ma tistax tuża l-kameras tal-kompjuter.
+164|Dan l-apparat m'għandu l-ebda kamera mixgħula. Żid waħda fl-issettjar tal-apparat.
+165|Dan l-apparat mhuwiex fil-lista: ġie mal-proġett
+166|Dan huwa l-apparat sostitut (Dummy): żona tax-xogħol u veloċitajiet awtomatiċi.
+167|Ħin {} / {}
+168|Apparati wisq
+169|Passaġġi
+170|Ħoll ir-rabta
+171|Unitajiet
+172|Dehra
+173|Għażliet tad-dehra…
+174|Stenna wara l-moviment tal-pinna
+175|Qed tistenna l-istampa…
+176|Meta r-rabta tinqata' waħedha, erġa' pprova kull ftit sekondi sakemm tagħfas Skonnettja.
+177|Bl-assi Z il-pinna tmur fl-għoli ta' hawn fuq; b'servo l-G-code jixgħel l-output tal-ispindil bil-valur S (M3 S…).
+178|Aħdem fuq proġett mingħajr magna: apparat sempliċi jisimu Dummy, bl-erja tax-xogħol u s-veloċitajiet awtomatiċi
+179|Assi Z
+180|eż. Il-plotter tiegħi
+181|xejn
+182|parti mid-disinn tinsab barra ż-żona tax-xogħol
+183|il-mili għandu wisq linji: id-distanza hija żgħira wisq, għalhekk parti mill-mili ġiet maħlufa
+184|dan il-proġett sar għal magna oħra: {}
+185|{} stampa/i fuq is-saffi ma jistgħux jitpinġu: ittraċċjahom f'linji l-ewwel

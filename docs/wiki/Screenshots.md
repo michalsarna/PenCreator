@@ -47,3 +47,15 @@ All pictures are rendered headlessly from the real interface (`cargo test -p pen
 ### Console tab: the traffic with the controller and a line to send a command
 
 ![Console tab: the traffic with the controller and a line to send a command](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/11-console.png)
+
+### Control tab: position, zero, jogging, macros
+
+![Control tab: position, zero, jogging, macros](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/12-control-tab.png)
+
+### Settings of the controller ($$)
+
+![Settings of the controller ($$)](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/13-firmware.png)
+
+### The job waits for the pen to be changed
+
+![The job waits for the pen to be changed](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/14-job-paused.png)
