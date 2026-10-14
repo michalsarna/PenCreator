@@ -184,3 +184,4 @@
 183|fyllningen har för många linjer: avståndet är för litet, så en del av fyllningen utelämnades
 184|det här projektet gjordes för en annan maskin: {}
 185|{} bild(er) på lagren kan inte ritas: spåra dem till linjer först
+186|Importera UGS-design…

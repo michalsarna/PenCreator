@@ -184,3 +184,4 @@
 183|le remplissage a trop de lignes : l'écart est trop petit, donc une partie du remplissage a été omise
 184|ce projet a été fait pour une autre machine : {}
 185|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord
+186|Importer un design UGS…

@@ -184,3 +184,4 @@
 183|de vulling heeft te veel lijnen: de afstand is te klein, dus een deel van de vulling is weggelaten
 184|dit project is gemaakt voor een andere machine: {}
 185|{} afbeelding(en) op de lagen kunnen niet worden getekend: traceer ze eerst naar lijnen
+186|UGS-ontwerp importeren…

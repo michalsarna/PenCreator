@@ -184,3 +184,4 @@
 183	the fill has too many lines: the gap between them is too small, so part of the fill was left out
 184	this project was made for a different machine: {}
 185	{} picture(s) on the layers cannot be drawn: trace them to lines first
+186	Import UGS design…

@@ -184,3 +184,4 @@
 183|výplň má příliš mnoho čar: rozteč je příliš malá, proto byla část výplně vynechána
 184|tento projekt byl vytvořen pro jiný stroj: {}
 185|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry
+186|Importovat návrh UGS…

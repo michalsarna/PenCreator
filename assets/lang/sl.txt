@@ -184,3 +184,4 @@
 183|polnilo ima preveč črt: razmik je premajhen, zato je bil del polnila izpuščen
 184|ta projekt je bil narejen za drug stroj: {}
 185|{} slik na slojih ni mogoče risati: najprej jih pretvorite v črte
+186|Uvozi načrt UGS…

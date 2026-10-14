@@ -184,3 +184,4 @@
 183|ispuna ima previše linija: razmak je premalen pa je dio ispune izostavljen
 184|ovaj projekt napravljen je za drugi stroj: {}
 185|{} slika na slojevima ne može se crtati: prvo ih pretvorite u linije
+186|Uvezi UGS dizajn…

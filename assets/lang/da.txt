@@ -184,3 +184,4 @@
 183|fyldet har for mange linjer: afstanden er for lille, så en del af fyldet blev udeladt
 184|dette projekt er lavet til en anden maskine: {}
 185|{} billede(r) på lagene kan ikke tegnes: spor dem til linjer først
+186|Importér UGS-design…

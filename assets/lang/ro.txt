@@ -184,3 +184,4 @@
 183|umplerea are prea multe linii: distanța este prea mică, deci o parte din umplere a fost omisă
 184|acest proiect a fost făcut pentru altă mașină: {}
 185|{} imagine/imagini de pe straturi nu pot fi desenate: vectorizează-le mai întâi
+186|Importă designul UGS…
