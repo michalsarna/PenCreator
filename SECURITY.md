@@ -20,12 +20,11 @@ as a new version.
 
 ## What counts
 
-PenCreator opens files from other people (SVG, PDF / Illustrator) and will write files for plotters.
+PenCreator opens files from other people (SVG, PDF / Illustrator, `.cre`, device files) and writes G-code files for plotters.
 Reports about crashes, hangs or memory use when opening a crafted file, and about anything that could send unintended
 commands to a machine, are in scope. Problems in the shared code are handled in
 [baseCreator](https://github.com/michalsarna/baseCreator/security/advisories/new).
 
 ## Safety reminder
 
-A plotter is a machine with moving parts. PenCreator is an early skeleton without plotting features yet; when they arrive,
-test new jobs with the pen lifted first and never leave a running machine unattended.
+A plotter is a machine with moving parts. PenCreator writes G-code but does not connect to a machine, and its G-code has not been tried on a real plotter: set the pen up and down values of the device with care, test new jobs with the pen lifted first and never leave a running machine unattended.

@@ -1,0 +1,119 @@
+0|Sloj je pisalo: ko ima naslednji sloj drugo pisalo, se G-koda ustavi, da ga lahko zamenjate.
+1|Drugi niz polnilnih črt počez prvega
+2|O programu
+3|Dodaj kamero
+4|Dodaj napravo
+5|Dodaj napravo
+6|Dodaj napravo…
+7|Naslov
+8|Razporedi
+9|Zadaj levo
+10|Zadaj desno
+11|Nazaj na prvi pogled. Dvoklik na sliko naredi isto.
+12|Kamera
+13|Ime kamere
+14|Številka kamere
+15|Kamera tega računalnika
+16|Vrtenje kamere
+17|Kamere
+18|Datoteke ni mogoče uporabiti: {}
+19|Izberite stroj, s katerim boste delali.
+20|Zaprte oblike se zapolnijo z vzporednimi črtami; luknje ostanejo prazne.
+21|Potrdi brisanje
+22|Krmilnik
+23|Kopirano v {}
+24|Shranjevanje ni uspelo: {}
+25|Križne črte
+26|Izbriši to kamero
+27|Naprava
+28|Nastavitve naprave
+29|Nastavitve naprave…
+30|Risanje
+31|Kolikokrat se nariše
+32|Nariše se: vključeno v izris in G-kodo
+33|Urejanje
+34|Uredi…
+35|Izvozi G-code…
+36|Izvozi…
+37|Datoteka
+38|Polnilo in obris
+39|Kot polnilnih črt
+40|Razmik polnilnih črt
+41|Zapolni s črtami
+42|Spredaj levo
+43|Spredaj desno
+44|Splošno
+45|Pomoč
+46|Kolikokrat se vsaka črta nariše: za preveč bledo pisalo
+47|Nimam naprave
+48|Uvozi projekt LightBurn…
+49|Naprava {} je uvožena
+50|Uvozi…
+51|Sloji
+52|Črte: {} m, premiki z dvignjenim pisalom: {} m, dvigi pisala: {}, približno {} min
+53|Stroj
+54|Ničla stroja (0,0)
+55|Premiki z dvignjenim pisalom
+56|Novo
+57|Še ni naprave. Dodajte jo ali delajte brez stroja.
+58|Ni naslov http ali https.
+59|Opombe
+60|Opombe o tem stroju
+61|Nič ni izbrano
+62|Odprite risbo ali začnite prazen osnutek.
+63|Odpri…
+64|Obris
+65|Pisalo
+66|Pisalo spuščeno
+67|Pisalo dvignjeno
+68|Širina pisala
+69|Izris opravila
+70|Izris opravila…
+71|Risalnik
+72|Napredek
+73|Lastnosti
+74|Postavi izbrane oblike na ta sloj
+75|Preberi napravo iz datoteke
+76|Pripravljeno
+77|Ponastavi pogled
+78|Shrani
+79|Shrani kot…
+80|Shrani to napravo v datoteko
+81|Naprava shranjena v {}
+82|Shranjeno: {}
+83|Servo (M3 S…)
+84|Nastavitve
+85|Oblike na tem sloju
+86|Prikazano na zavihku Kamera
+87|Prikazano v delovnem območju
+88|Hitrost
+89|Hitrost premikov z dvignjenim pisalom
+90|Začni
+91|Vklopljeno
+92|Naprava tega projekta
+93|Naprava je bila dodana.
+94|Naprava je bila shranjena.
+95|Najprej polnilo, nato obris čez, da je rob čist.
+96|Pisalo sledi črtam oblik. Odprte črte delujejo tudi.
+97|Pisalo se dvigne z
+98|Delovno območje je list, do katerega seže pisalo. Ničla stroja je kot, kjer pisalo začne.
+99|Ni kaj risati: postavite oblike na vklopljene sloje.
+100|Še ni kaj prikazati: narišite oblike in jih postavite na vklopljene sloje.
+101|Ta različica ne more uporabljati kamer računalnika.
+102|Ta naprava nima vklopljene kamere. Dodajte jo v nastavitvah naprave.
+103|Te naprave ni na seznamu: prišla je s projektom
+104|To je nadomestna naprava (Dummy): privzeto delovno območje in hitrosti.
+105|Preveč naprav
+106|Enote
+107|Pogled
+108|Možnosti pogleda…
+109|Čakanje po gibu pisala
+110|Čakanje na sliko…
+111|Pri osi Z gre pisalo na zgornje višine; pri servu G-koda vklopi izhod vretena z vrednostjo S (M3 S…).
+112|Delo na projektu brez stroja: preprosta naprava z imenom Dummy s privzetim delovnim območjem in hitrostmi
+113|Os Z
+114|npr. Moj risalnik
+115|del risbe leži zunaj delovnega območja
+116|polnilo ima preveč črt: razmik je premajhen, zato je bil del polnila izpuščen
+117|ta projekt je bil narejen za drug stroj: {}
+118|{} slik na slojih ni mogoče risati: najprej jih pretvorite v črte

@@ -1,0 +1,119 @@
+0|Una capa es un bolígrafo: cuando la siguiente capa tiene otro bolígrafo, el G-code se detiene para que lo cambies.
+1|Un segundo conjunto de líneas de relleno cruzado con el primero
+2|Acerca de
+3|Añadir una cámara
+4|Añadir un dispositivo
+5|Añadir dispositivo
+6|Añadir dispositivo…
+7|Dirección
+8|Organizar
+9|Atrás izquierda
+10|Atrás derecha
+11|Vuelve a la primera vista. Hacer doble clic en la imagen hace lo mismo.
+12|Cámara
+13|Nombre de la cámara
+14|Número de cámara
+15|Cámara de este ordenador
+16|Rotación de la cámara
+17|Cámaras
+18|No se puede usar el archivo: {}
+19|Elige la máquina con la que vas a trabajar.
+20|Las formas cerradas se rellenan con líneas paralelas; los agujeros quedan vacíos.
+21|Confirmar eliminación
+22|Controlador
+23|Copiado a {}
+24|No se pudo guardar: {}
+25|Líneas cruzadas
+26|Eliminar esta cámara
+27|Dispositivo
+28|Ajustes del dispositivo
+29|Ajustes del dispositivo…
+30|Dibujo
+31|Veces que se dibuja
+32|Se dibuja: se incluye en el trazado y en el G-code
+33|Edición
+34|Editar…
+35|Exportar G-code…
+36|Exportar…
+37|Archivo
+38|Relleno y contorno
+39|Ángulo de las líneas de relleno
+40|Separación de las líneas de relleno
+41|Rellenar con líneas
+42|Delante izquierda
+43|Delante derecha
+44|General
+45|Ayuda
+46|Cuántas veces se dibuja cada línea: para un bolígrafo demasiado claro
+47|No tengo dispositivo
+48|Importar proyecto de LightBurn…
+49|Dispositivo {} importado
+50|Importar…
+51|Capas
+52|Líneas: {} m, movimientos con el bolígrafo levantado: {} m, levantamientos: {}, unos {} min
+53|Máquina
+54|Cero de la máquina (0,0)
+55|Movimientos con el bolígrafo levantado
+56|Nuevo
+57|Aún no hay dispositivo. Añade uno o trabaja sin máquina.
+58|No es una dirección http o https.
+59|Notas
+60|Notas sobre esta máquina
+61|Nada seleccionado
+62|Abre un dibujo o empieza un diseño vacío.
+63|Abrir…
+64|Contorno
+65|Bolígrafo
+66|Bolígrafo bajado
+67|Bolígrafo levantado
+68|Anchura del bolígrafo
+69|Trazado del trabajo
+70|Trazado del trabajo…
+71|Plóter
+72|Progreso
+73|Propiedades
+74|Poner las formas seleccionadas en esta capa
+75|Leer un dispositivo desde un archivo
+76|Listo
+77|Restablecer la vista
+78|Guardar
+79|Guardar como…
+80|Guardar este dispositivo en un archivo
+81|Dispositivo guardado en {}
+82|{} guardado
+83|Servo (M3 S…)
+84|Ajustes
+85|Formas en esta capa
+86|Se muestra en la pestaña Cámara
+87|Se muestra en el área de trabajo
+88|Velocidad
+89|Velocidad de los movimientos con el bolígrafo levantado
+90|Iniciar
+91|Activada
+92|El dispositivo de este proyecto
+93|Se añadió el dispositivo.
+94|Se guardó el dispositivo.
+95|Primero el relleno, luego el contorno encima, para que el borde quede limpio.
+96|El bolígrafo sigue las líneas de las formas. Las líneas abiertas también funcionan.
+97|El bolígrafo se levanta con
+98|El área de trabajo es la hoja que alcanza el bolígrafo. El cero de la máquina es la esquina donde empieza el bolígrafo.
+99|No hay nada que dibujar: pon formas en capas activadas.
+100|Aún no hay nada que mostrar: dibuja formas y ponlas en capas activadas.
+101|Esta versión no puede usar las cámaras del ordenador.
+102|Este dispositivo no tiene ninguna cámara activada. Añade una en los ajustes del dispositivo.
+103|Este dispositivo no está en la lista: vino con el proyecto
+104|Este es el dispositivo sustituto (Dummy): área de trabajo y velocidades predeterminadas.
+105|Demasiados dispositivos
+106|Unidades
+107|Ver
+108|Opciones de vista…
+109|Espera tras mover el bolígrafo
+110|Esperando la imagen…
+111|Con el eje Z el bolígrafo va a las alturas indicadas; con un servo el G-code enciende la salida del husillo con el valor S (M3 S…).
+112|Trabaja en un proyecto sin máquina: un dispositivo sencillo llamado Dummy, con el área de trabajo y las velocidades predeterminadas
+113|Eje Z
+114|p. ej. Mi plóter
+115|parte del dibujo queda fuera del área de trabajo
+116|el relleno tiene demasiadas líneas: la separación es demasiado pequeña, así que se omitió parte del relleno
+117|este proyecto se hizo para otra máquina: {}
+118|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero

@@ -1,0 +1,119 @@
+0|Un calque est un stylo : quand le calque suivant a un autre stylo, le G-code s'arrête pour que vous le changiez.
+1|Un second jeu de lignes de remplissage en travers du premier
+2|À propos
+3|Ajouter une caméra
+4|Ajouter un appareil
+5|Ajouter l'appareil
+6|Ajouter un appareil…
+7|Adresse
+8|Disposition
+9|Arrière gauche
+10|Arrière droit
+11|Retour à la première vue. Un double-clic sur l'image fait la même chose.
+12|Caméra
+13|Nom de la caméra
+14|Numéro de la caméra
+15|Caméra de cet ordinateur
+16|Rotation de la caméra
+17|Caméras
+18|Impossible d'utiliser le fichier : {}
+19|Choisissez la machine avec laquelle vous allez travailler.
+20|Les formes fermées sont remplies de lignes parallèles ; les trous restent vides.
+21|Confirmer la suppression
+22|Contrôleur
+23|Copié vers {}
+24|Enregistrement impossible : {}
+25|Lignes croisées
+26|Supprimer cette caméra
+27|Appareil
+28|Paramètres de l'appareil
+29|Paramètres de l'appareil…
+30|Dessin
+31|Nombre de tracés
+32|Dessiné : pris en compte dans le tracé et le G-code
+33|Édition
+34|Modifier…
+35|Exporter en G-code…
+36|Exporter…
+37|Fichier
+38|Remplissage et contour
+39|Angle des lignes de remplissage
+40|Écart des lignes de remplissage
+41|Remplir de lignes
+42|Avant gauche
+43|Avant droit
+44|Général
+45|Aide
+46|Combien de fois chaque ligne est tracée : pour un stylo trop pâle
+47|Je n'ai pas d'appareil
+48|Importer un projet LightBurn…
+49|Appareil {} importé
+50|Importer…
+51|Calques
+52|Lignes : {} m, déplacements stylo levé : {} m, levées du stylo : {}, environ {} min
+53|Machine
+54|Zéro machine (0,0)
+55|Déplacements stylo levé
+56|Nouveau
+57|Pas encore d'appareil. Ajoutez-en un, ou travaillez sans machine.
+58|Ce n'est pas une adresse http ou https.
+59|Notes
+60|Notes sur cette machine
+61|Aucune sélection
+62|Ouvrez un dessin ou commencez une conception vide.
+63|Ouvrir…
+64|Contour
+65|Stylo
+66|Stylo baissé
+67|Stylo levé
+68|Largeur du stylo
+69|Tracé du travail
+70|Tracé du travail…
+71|Traceur
+72|Progression
+73|Propriétés
+74|Mettre les formes sélectionnées sur ce calque
+75|Lire un appareil depuis un fichier
+76|Prêt
+77|Réinitialiser la vue
+78|Enregistrer
+79|Enregistrer sous…
+80|Enregistrer cet appareil dans un fichier
+81|Appareil enregistré dans {}
+82|{} enregistré
+83|Servo (M3 S…)
+84|Paramètres
+85|Formes sur ce calque
+86|Affichée dans l'onglet Caméra
+87|Affiché dans la zone de travail
+88|Vitesse
+89|Vitesse des déplacements stylo levé
+90|Démarrer
+91|Activée
+92|L'appareil de ce projet
+93|L'appareil a été ajouté.
+94|L'appareil a été enregistré.
+95|D'abord le remplissage, puis le contour par-dessus, pour un bord net.
+96|Le stylo suit les lignes des formes. Les lignes ouvertes fonctionnent aussi.
+97|Le stylo est levé par
+98|La zone de travail est la feuille que le stylo atteint. Le zéro machine est le coin où le stylo démarre.
+99|Il n'y a rien à dessiner : mettez des formes sur des calques activés.
+100|Rien à montrer pour l'instant : dessinez des formes et mettez-les sur des calques activés.
+101|Cette version ne peut pas utiliser les caméras de l'ordinateur.
+102|Cet appareil n'a pas de caméra activée. Ajoutez-en une dans les réglages de l'appareil.
+103|Cet appareil n'est pas dans la liste : il est venu avec le projet
+104|Ceci est l'appareil de remplacement (Dummy) : zone de travail et vitesses par défaut.
+105|Trop d'appareils
+106|Unités
+107|Affichage
+108|Options d'affichage…
+109|Attente après le mouvement du stylo
+110|En attente de l'image…
+111|Avec l'axe Z, le stylo va aux hauteurs ci-dessus ; avec un servo, le G-code active la sortie broche avec la valeur S (M3 S…).
+112|Travaillez sur un projet sans machine : un appareil simple nommé Dummy, avec la zone de travail et les vitesses par défaut
+113|Axe Z
+114|p. ex. Mon traceur
+115|une partie du dessin est en dehors de la zone de travail
+116|le remplissage a trop de lignes : l'écart est trop petit, donc une partie du remplissage a été omise
+117|ce projet a été fait pour une autre machine : {}
+118|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord

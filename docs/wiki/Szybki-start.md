@@ -2,10 +2,11 @@
 
 # Szybki start
 
-1. **New** na ekranie startowym zaczyna pusty projekt na polu roboczym A4 (297 × 210 mm). **Open…** wczytuje plik SVG, PDF, Illustratora lub `.cre`; **File → Import → Import LightBurn project…** wczytuje projekt LightBurna. Upuszczenie pliku na okno otwiera go.
-2. **Rysuj** narzędziami po lewej (zaznaczanie, edycja węzłów, prostokąt, elipsa, trójkąt, gwiazda, wielokąt, serce, spirala, linia, pióro, tekst, przesuwanie, zoom) albo wstaw obrazek z karty **Clipart**.
-3. **Zmieniaj** kształty uchwytami i kartą **Properties** (położenie, rozmiar, obrót, odbicie, wyrównanie); pasek ułożenia po prawej wyrównuje, porządkuje, grupuje i odbija.
-4. Karta **Description** zawiera notatkę o projekcie.
-5. **Zapisz** jako `.cre` ([Plik projektu](Plik-projektu)).
+1. **Wybierz urządzenie.** Ekran startowy pokazuje Twoje plotery. **Dodaj urządzenie…** tworzy nowe (rozmiar arkusza, sposób podnoszenia pisaka, kamery); **Nie mam urządzenia** tworzy zwykłe urządzenie Dummy (arkusz A4). Jeśli klikniesz **Nowy** albo **Otwórz…** bez wyboru, użyte będzie Dummy.
+2. **Nowy** zaczyna pusty projekt na arkuszu urządzenia. **Otwórz…** wczytuje plik SVG, PDF, Illustratora lub `.cre`; **Plik → Import → Importuj projekt LightBurn…** wczytuje projekt LightBurna. Upuszczenie pliku na okno otwiera go.
+3. **Rysuj** narzędziami po lewej (zaznaczanie, edycja węzłów, prostokąt, elipsa, trójkąt, gwiazda, wielokąt, serce, spirala, linia, pióro, tekst, przesuwanie, zoom) albo wstaw obrazek z karty **Clipart**.
+4. **Pisaki.** W karcie **Warstwy** każda warstwa to pisak: ustaw kolor, grubość i prędkość oraz czy kształty są rysowane konturem, wypełniane liniami, czy jedno i drugie. Zaznacz kształty i kliknij **Umieść zaznaczone kształty na tej warstwie**.
+5. **Ploter → Wykres zadania…** (Ctrl+Shift+P) pokazuje, co zrobi pisak; linie przerywane to ruchy z podniesionym pisakiem. **Eksportuj G-code…** (Ctrl+Shift+G) zapisuje plik dla GRBL.
+6. **Zapisz** jako `.cre` ([Plik projektu](Plik-projektu)). Karta **Opis** zawiera notatkę o projekcie.
 
-> Plotowania jeszcze nie ma: program nie potrafi przygotować wydruku ani sterować maszyną. Zobacz [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia).
+> Program zapisuje G-code, ale nie łączy się z ploterem: plik wyślij swoim zwykłym programem. Zobacz [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia).

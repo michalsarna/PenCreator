@@ -8,10 +8,38 @@ Wszystkie obrazy są generowane bez okna z prawdziwego interfejsu (`cargo test -
 
 ![Ekran startowy](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/01-start.png)
 
-### Plik SVG w edytorze, karta Properties
+### Dodawanie urządzenia
 
-![Plik SVG w edytorze, karta Properties](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-editor-properties.png)
+![Dodawanie urządzenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-add-device.png)
+
+### Strona pisaka w urządzeniu
+
+![Strona pisaka w urządzeniu](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/03-device-pen.png)
+
+### Plakietka w edytorze, karta Properties
+
+![Plakietka w edytorze, karta Properties](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/04-editor-properties.png)
+
+### Karta Warstwy: pisak to warstwa
+
+![Karta Warstwy: pisak to warstwa](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
+
+### Karta Urządzenie
+
+![Karta Urządzenie](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/06-device-tab.png)
 
 ### Galeria clipartów
 
-![Galeria clipartów](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/03-clipart.png)
+![Galeria clipartów](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/07-clipart.png)
+
+### Karta Opis
+
+![Karta Opis](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/08-description.png)
+
+### Wykres zadania
+
+![Wykres zadania](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/09-plot.png)
+
+### Wykres w połowie
+
+![Wykres w połowie](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/10-plot-progress.png)

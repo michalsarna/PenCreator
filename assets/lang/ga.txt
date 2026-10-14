@@ -1,0 +1,119 @@
+0|Is peann é ciseal: nuair a bhíonn peann eile ag an gciseal seo chugainn, stopann an G-code ionas gur féidir leat é a athrú.
+1|Dara tacar de línte líonta trasna ar an gcéad cheann
+2|Maidir leis
+3|Cuir ceamara leis
+4|Cuir gléas leis
+5|Cuir gléas leis
+6|Cuir gléas leis…
+7|Seoladh
+8|Socraigh
+9|Cúl ar chlé
+10|Cúl ar dheis
+11|Ar ais chuig an gcéad amharc. Déanann cliceáil dhúbailte ar an bpictiúr an rud céanna.
+12|Ceamara
+13|Ainm an cheamara
+14|Uimhir an cheamara
+15|Ceamara an ríomhaire seo
+16|Rothlú an cheamara
+17|Ceamaraí
+18|Ní féidir an comhad a úsáid: {}
+19|Roghnaigh an meaisín a bhfuil tú chun oibriú leis.
+20|Líontar cruthanna dúnta le línte comhthreomhara; fanann poill folamh.
+21|Deimhnigh an scriosadh
+22|Rialaitheoir
+23|Cóipeáilte chuig {}
+24|Níorbh fhéidir a shábháil: {}
+25|Línte trasnacha
+26|Scrios an ceamara seo
+27|Gléas
+28|Socruithe an ghléis
+29|Socruithe an ghléis…
+30|Líníocht
+31|Cé mhéad uair a dhéantar líníocht
+32|Déantar líníocht: san áireamh sa phlota agus sa G-code
+33|Eagar
+34|Cuir in eagar…
+35|Easpórtáil G-code…
+36|Onnmhairigh…
+37|Comhad
+38|Líonadh agus imlíne
+39|Uillinn na línte líonta
+40|Spás idir línte líonta
+41|Líon le línte
+42|Tosaigh ar chlé
+43|Tosaigh ar dheis
+44|Ginearálta
+45|Cabhair
+46|Cé mhéad uair a dhéantar gach líne a tharraingt: do pheann atá ró-éadrom
+47|Níl feiste agam
+48|Iompórtáil tionscadal LightBurn…
+49|Iompórtáladh an gléas {}
+50|Iompórtáil…
+51|Ciseail
+52|Línte: {} m, gluaiseachtaí le peann in airde: {} m, ardaithe peann: {}, thart ar {} nóim.
+53|Meaisín
+54|Nialas an mheaisín (0,0)
+55|Gluaiseachtaí le peann in airde
+56|Nua
+57|Níl aon ghléas ann fós. Cuir ceann leis nó oibrigh gan meaisín.
+58|Ní seoladh http ná https é.
+59|Nótaí
+60|Nótaí faoin meaisín seo
+61|Níl aon rud roghnaithe
+62|Oscail líníocht nó tosaigh le dearadh folamh.
+63|Oscail…
+64|Imlíne
+65|Peann
+66|Peann síos
+67|Peann suas
+68|Leithead an phinn
+69|Plota na hoibre
+70|Plota na hoibre…
+71|Plótálaí
+72|Dul chun cinn
+73|Airíonna
+74|Cuir na cruthanna roghnaithe ar an gciseal seo
+75|Léigh gléas ó chomhad
+76|Réidh
+77|Athshocraigh an t-amharc
+78|Sábháil
+79|Sábháil mar…
+80|Sábháil an gléas seo i gcomhad
+81|Sábháladh an gléas i {}
+82|Sábháilte: {}
+83|Servo (M3 S…)
+84|Socruithe
+85|Cruthanna ar an gciseal seo
+86|Taispeántar é sa chluaisín Ceamara
+87|Taispeántar é sa limistéar oibre
+88|Luas
+89|Luas na ngluaiseachtaí le peann in airde
+90|Tosaigh
+91|Casta air
+92|Gléas an tionscadail seo
+93|Cuireadh an gléas leis.
+94|Sábháladh an gléas.
+95|An líonadh ar dtús, ansin an imlíne air, ionas go mbeidh an t-imeall glan.
+96|Leanann an peann línte na gcruthanna. Oibríonn línte oscailte freisin.
+97|Ardaítear an peann le
+98|Is é an limistéar oibre an leathán a shroicheann an peann. Is é nialas an mheaisín an choirnéal ónar tosaíonn an peann.
+99|Níl aon rud le tarraingt: cuir cruthanna ar chisil atá casta air.
+100|Níl aon rud le taispeáint fós: tarraing cruthanna agus cuir ar chisil atá casta air iad.
+101|Ní féidir leis an leagan seo ceamaraí an ríomhaire a úsáid.
+102|Níl aon cheamara casta air ag an ngléas seo. Cuir ceann leis i socruithe an ghléis.
+103|Níl an gléas seo ar an liosta: tháinig sé leis an tionscadal
+104|Seo é an gléas ionaid (Dummy): limistéar oibre agus luasanna réamhshocraithe.
+105|An iomarca gléasanna
+106|Aonaid
+107|Amharc
+108|Roghanna amhairc…
+109|Fan tar éis gluaiseacht an phinn
+110|Ag fanacht leis an íomhá…
+111|Leis an ais Z téann an peann go dtí na hairde thuas; le servo casann an G-code an aschur fearsaide air leis an luach S (M3 S…).
+112|Oibrigh ar thionscadal gan meaisín: gnáthfheiste darb ainm Dummy, leis an limistéar oibre agus na luasanna réamhshocraithe
+113|Ais Z
+114|m.sh. Mo phlótálaí
+115|tá cuid den líníocht lasmuigh den limistéar oibre
+116|tá an iomarca línte sa líonadh: tá an spás ró-bheag, mar sin fágadh cuid den líonadh ar lár
+117|rinneadh an tionscadal seo do mheaisín eile: {}
+118|Ní féidir {} pictiúr ar na cisil a tharraingt: lorg ina línte iad ar dtús

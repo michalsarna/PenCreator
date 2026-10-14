@@ -2763,8 +2763,10 @@ dependencies = [
  "base-core",
  "base-ui",
  "eframe",
+ "egui",
  "egui_kittest",
  "rfd",
+ "serde",
  "serde_json",
  "winresource",
 ]

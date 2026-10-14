@@ -4,9 +4,9 @@
 
 # PenCreator
 
-Otwartoźródłowy program dla ploterów piszących, napisany w Rust. **Wczesny szkielet**: jest okno, edytor, galeria clipartów i wspólny plik projektu; plotowanie jest planowane. To rodzeństwo [LightCreatora](https://github.com/michalsarna/LightCreator) (laser) i [MillCreatora](https://github.com/michalsarna/MillCreator) (frezarka CNC): to samo okno, ten sam edytor i te same pliki dzięki [baseCreatorowi](https://github.com/michalsarna/baseCreator).
+Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzenia, pisaki jako warstwy, wypełnianie liniami, podgląd wykresu i G-code dla GRBL; zapisuje G-code, ale nie steruje jeszcze maszyną. To rodzeństwo [LightCreatora](https://github.com/michalsarna/LightCreator) (laser) i [MillCreatora](https://github.com/michalsarna/MillCreator) (frezarka CNC): to samo okno, ten sam edytor i te same pliki dzięki [baseCreatorowi](https://github.com/michalsarna/baseCreator).
 
-![Edytor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-editor-properties.png)
+![Edytor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
 
 ## Od czego zacząć
 
@@ -25,7 +25,8 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. **Wczesny 
 * **Edytor** z baseCreatora: kształty, edycja węzłów, tekst, grupowanie, wyrównanie, cofanie, siatka i przyciąganie, na polu roboczym A4.
 * **Import:** SVG, PDF / Illustrator, projekty LightBurna (`.lbrn2`); 310 clipartów z wyszukiwaniem w sieci.
 * **Plik projektu:** `.cre`, wspólny z LightCreatorem i MillCreatorem; sekcje innych programów są zachowywane przy zapisie.
-* **Interfejs:** 30 języków dla wspólnych tekstów i 14 schematów kolorów.
-* **Planowane:** urządzenia, warstwy piór, ścieżki plotowania z ruchami z podniesionym piórem, G-code i HPGL.
+* **Interfejs:** 30 języków (także własne teksty PenCreatora) i 14 schematów kolorów.
+* **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 16 warstw, które są pisakami (kolor, grubość, prędkość, kontur lub wypełnienie liniami), wykres zadania i G-code dla GRBL.
+* **Planowane:** sterowanie maszyną, HPGL, czcionki jednoliniowe.
 
-Najnowsza wersja: **v0.1.0** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
+Najnowsza wersja: **v0.1.0** (urządzenia, pisaki i G-code są w następnej) · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru

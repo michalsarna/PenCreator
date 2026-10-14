@@ -4,9 +4,9 @@
 
 # PenCreator
 
-Open-source software for pen plotters, written in Rust. **Early skeleton**: the window, the editor, the clipart gallery and the shared project file are there; plotting is planned. It is the sibling of [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) and uses the same window, editor and files through [baseCreator](https://github.com/michalsarna/baseCreator).
+Open-source software for pen plotters, written in Rust. Devices, pens as layers, fill lines, a plot preview and G-code for GRBL; it writes G-code but does not control a machine yet. It is the sibling of [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) and uses the same window, editor and files through [baseCreator](https://github.com/michalsarna/baseCreator).
 
-![Editor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-editor-properties.png)
+![Editor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
 
 ## Where to start
 
@@ -25,7 +25,8 @@ Open-source software for pen plotters, written in Rust. **Early skeleton**: the 
 * **Editor** of baseCreator: shapes, node editing, text, grouping, alignment, undo, grid and snapping, on an A4 work area.
 * **Import:** SVG, PDF / Illustrator, LightBurn projects (`.lbrn2`); 310 clipart pictures with online search.
 * **Project file:** `.cre`, shared with LightCreator and MillCreator; the sections of other programs are kept when you save.
-* **Interface:** 30 languages for the shared texts and 14 colour schemes.
-* **Planned:** devices, pen layers, plotting paths with the pen-up moves, G-code and HPGL.
+* **Interface:** 30 languages (including PenCreator's own texts) and 14 colour schemes.
+* **Devices and pens:** a list of plotters on the start screen (**I have no device** makes the Dummy), 16 layers that are pens (colour, width, speed, outline or fill with lines), a plot of the job and G-code for GRBL.
+* **Planned:** machine control, HPGL, single-line fonts.
 
-Latest release: **v0.1.0** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option
+Latest release: **v0.1.0** (devices, pens and G-code are in the next one) · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option

@@ -1,0 +1,119 @@
+0|A réteg egy toll: ha a következő rétegnek más tolla van, a G-kód megáll, hogy kicserélhesd.
+1|A kitöltővonalak második csoportja az elsőre merőlegesen
+2|Névjegy
+3|Kamera hozzáadása
+4|Eszköz hozzáadása
+5|Eszköz hozzáadása
+6|Eszköz hozzáadása…
+7|Cím
+8|Elrendezés
+9|Hátul balra
+10|Hátul jobbra
+11|Vissza az első nézethez. A képre duplán kattintva ugyanez történik.
+12|Kamera
+13|Kamera neve
+14|Kamera száma
+15|Ennek a számítógépnek a kamerája
+16|Kamera elforgatása
+17|Kamerák
+18|A fájl nem használható: {}
+19|Válaszd ki a gépet, amellyel dolgozni fogsz.
+20|A zárt alakzatok párhuzamos vonalakkal töltődnek ki; a lyukak üresek maradnak.
+21|Törlés megerősítése
+22|Vezérlő
+23|Átmásolva ide: {}
+24|Nem sikerült menteni: {}
+25|Keresztezett vonalak
+26|Kamera törlése
+27|Eszköz
+28|Eszközbeállítások
+29|Eszközbeállítások…
+30|Rajzolás
+31|Hányszor rajzoljon
+32|Rajzolva: bekerül a rajzba és a G-kódba
+33|Szerkesztés
+34|Szerkesztés…
+35|G-code exportálása…
+36|Exportálás…
+37|Fájl
+38|Kitöltés és körvonal
+39|A kitöltővonalak szöge
+40|A kitöltővonalak távolsága
+41|Kitöltés vonalakkal
+42|Elöl balra
+43|Elöl jobbra
+44|Általános
+45|Súgó
+46|Hányszor rajzolja meg a vonalakat: túl halvány tollhoz
+47|Nincs eszközöm
+48|LightBurn-projekt importálása…
+49|A(z) {} eszköz importálva
+50|Importálás…
+51|Rétegek
+52|Vonalak: {} m, mozgások felemelt tollal: {} m, tollemelések: {}, körülbelül {} perc
+53|Gép
+54|Gép nullpontja (0,0)
+55|Mozgások felemelt tollal
+56|Új
+57|Még nincs eszköz. Adj hozzá egyet, vagy dolgozz gép nélkül.
+58|Nem http vagy https cím.
+59|Jegyzetek
+60|Jegyzetek erről a gépről
+61|Nincs kijelölve semmi
+62|Nyiss meg egy rajzot, vagy kezdj üres tervet.
+63|Megnyitás…
+64|Körvonal
+65|Toll
+66|Toll lent
+67|Toll fent
+68|Tollszélesség
+69|A munka rajza
+70|A munka rajza…
+71|Plotter
+72|Haladás
+73|Tulajdonságok
+74|A kijelölt alakzatok erre a rétegre
+75|Eszköz beolvasása fájlból
+76|Kész
+77|Nézet visszaállítása
+78|Mentés
+79|Mentés másként…
+80|Az eszköz mentése fájlba
+81|Az eszköz mentve ide: {}
+82|Mentve: {}
+83|Szervó (M3 S…)
+84|Beállítások
+85|Alakzatok ezen a rétegen
+86|A Kamera lapon látható
+87|A munkaterületen látható
+88|Sebesség
+89|A mozgások sebessége felemelt tollal
+90|Indítás
+91|Bekapcsolva
+92|A projekt eszköze
+93|Az eszköz hozzáadva.
+94|Az eszköz mentve.
+95|Előbb a kitöltés, majd rá a körvonal, hogy az él tiszta legyen.
+96|A toll követi az alakzatok vonalait. A nyitott vonalak is működnek.
+97|A tollat emeli:
+98|A munkaterület az a lap, amelyet a toll elér. A gép nullpontja az a sarok, ahol a toll indul.
+99|Nincs mit rajzolni: tedd az alakzatokat bekapcsolt rétegekre.
+100|Még nincs mit mutatni: rajzolj alakzatokat, és tedd őket bekapcsolt rétegekre.
+101|Ez a verzió nem tudja használni a számítógép kameráit.
+102|Ennek az eszköznek nincs bekapcsolt kamerája. Adj hozzá egyet az eszköz beállításaiban.
+103|Ez az eszköz nincs a listában: a projekttel érkezett
+104|Ez a helyettesítő eszköz (Dummy): alapértelmezett munkaterület és sebességek.
+105|Túl sok eszköz
+106|Mértékegységek
+107|Nézet
+108|Nézetbeállítások…
+109|Várakozás a toll mozgása után
+110|Várakozás a képre…
+111|Z tengelynél a toll a fenti magasságokba megy; szervónál a G-kód az S értékkel kapcsolja be a főorsó kimenetét (M3 S…).
+112|Dolgozzon projekten gép nélkül: egy Dummy nevű egyszerű eszköz az alapértelmezett munkaterülettel és sebességekkel
+113|Z tengely
+114|pl. Az én plotterem
+115|a rajz egy része a munkaterületen kívül van
+116|a kitöltésben túl sok a vonal: a távolság túl kicsi, ezért a kitöltés egy része kimaradt
+117|ez a projekt másik géphez készült: {}
+118|A rétegeken lévő {} kép nem rajzolható: előbb alakítsd vonalakká

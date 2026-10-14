@@ -13,6 +13,8 @@ pub enum Act {
     Save,
     SaveAs,
     ImportLightburn,
+    Preview,
+    ExportGcode,
     OpenRecent(u8),
     ClearRecent,
     Quit,
@@ -53,6 +55,7 @@ pub fn menus() -> Menus<Act> {
             [std(std_entries::align()), vec![Sep], std(std_entries::place()), vec![Sep], std(std_entries::group()), vec![Sep], std(std_entries::order()), vec![Sep], std(std_entries::nodes())].concat(),
         ),
         ("View", [std(std_entries::grid()), std(std_entries::zoom())].concat()),
+        ("Plotter", vec![Item(Act::Preview, "Plot of the job…", key("CmdOrCtrl+Shift+P", "Ctrl+Shift+P")), Item(Act::ExportGcode, "Export G-code…", key("CmdOrCtrl+Shift+G", "Ctrl+Shift+G"))]),
         (
             "Settings",
             vec![

@@ -1,0 +1,119 @@
+0|Sluoksnis yra rašiklis: kai kitas sluoksnis turi kitą rašiklį, G-kodas sustoja, kad galėtumėte jį pakeisti.
+1|Antras užpildymo linijų rinkinys skersai pirmojo
+2|Apie
+3|Pridėti kamerą
+4|Pridėti įrenginį
+5|Pridėti įrenginį
+6|Pridėti įrenginį…
+7|Adresas
+8|Išdėstyti
+9|Gale kairėje
+10|Gale dešinėje
+11|Atgal į pirmąjį vaizdą. Dukart spustelėjus paveikslėlį daroma tas pats.
+12|Kamera
+13|Kameros pavadinimas
+14|Kameros numeris
+15|Šio kompiuterio kamera
+16|Kameros pasukimas
+17|Kameros
+18|Failo naudoti negalima: {}
+19|Pasirinkite staklių modelį, su kuriuo dirbsite.
+20|Uždaros formos užpildomos lygiagrečiomis linijomis; skylės lieka tuščios.
+21|Patvirtinti naikinimą
+22|Valdiklis
+23|Nukopijuota į {}
+24|Nepavyko išsaugoti: {}
+25|Susikertančios linijos
+26|Ištrinti šią kamerą
+27|Įrenginys
+28|Įrenginio nustatymai
+29|Įrenginio nustatymai…
+30|Piešimas
+31|Kiek kartų piešti
+32|Piešiama: įtraukta į brėžinį ir G-kodą
+33|Redaguoti
+34|Redaguoti…
+35|Eksportuoti G-code…
+36|Eksportuoti…
+37|Failas
+38|Užpildymas ir kontūras
+39|Užpildymo linijų kampas
+40|Atstumas tarp užpildymo linijų
+41|Užpildyti linijomis
+42|Priekyje kairėje
+43|Priekyje dešinėje
+44|Bendra
+45|Žinynas
+46|Kiek kartų piešiama kiekviena linija: per šviesiam rašikliui
+47|Neturiu įrenginio
+48|Importuoti „LightBurn“ projektą…
+49|Įrenginys {} importuotas
+50|Importuoti…
+51|Sluoksniai
+52|Linijos: {} m, judesiai pakeltu rašikliu: {} m, rašiklio pakėlimai: {}, apie {} min.
+53|Staklės
+54|Staklių nulis (0,0)
+55|Judesiai pakeltu rašikliu
+56|Naujas
+57|Dar nėra įrenginio. Pridėkite vieną arba dirbkite be staklių.
+58|Tai nėra http ar https adresas.
+59|Pastabos
+60|Pastabos apie šias stakles
+61|Nieko nepažymėta
+62|Atidarykite brėžinį arba pradėkite tuščią dizainą.
+63|Atverti…
+64|Kontūras
+65|Rašiklis
+66|Rašiklis nuleistas
+67|Rašiklis pakeltas
+68|Rašiklio plotis
+69|Darbo brėžinys
+70|Darbo brėžinys…
+71|Braižytuvas
+72|Eiga
+73|Ypatybės
+74|Padėti pasirinktas formas ant šio sluoksnio
+75|Nuskaityti įrenginį iš failo
+76|Paruošta
+77|Atstatyti vaizdą
+78|Įrašyti
+79|Įrašyti kaip…
+80|Išsaugoti šį įrenginį faile
+81|Įrenginys išsaugotas: {}
+82|Įrašyta: {}
+83|Servo (M3 S…)
+84|Nustatymai
+85|Formos šiame sluoksnyje
+86|Rodoma skirtuke Kamera
+87|Rodoma darbo srityje
+88|Greitis
+89|Judesių greitis pakeltu rašikliu
+90|Pradėti
+91|Įjungta
+92|Šio projekto įrenginys
+93|Įrenginys pridėtas.
+94|Įrenginys išsaugotas.
+95|Pirmiausia užpildymas, tada kontūras ant viršaus, kad kraštas būtų švarus.
+96|Rašiklis seka formų linijas. Atviros linijos taip pat veikia.
+97|Rašiklis pakeliamas per
+98|Darbo sritis yra lapas, kurį pasiekia rašiklis. Staklių nulis yra kampas, nuo kurio rašiklis pradeda.
+99|Nėra ko piešti: padėkite formas ant įjungtų sluoksnių.
+100|Dar nėra ką rodyti: nupieškite formas ir padėkite jas ant įjungtų sluoksnių.
+101|Ši versija negali naudoti kompiuterio kamerų.
+102|Šis įrenginys neturi įjungtos kameros. Pridėkite ją įrenginio nustatymuose.
+103|Šio įrenginio sąraše nėra: jis atkeliavo su projektu
+104|Tai pakaitinis įrenginys (Dummy): numatytoji darbo sritis ir greičiai.
+105|Per daug įrenginių
+106|Vienetai
+107|Rodinys
+108|Rodinio parinktys…
+109|Laukimas po rašiklio judesio
+110|Laukiama vaizdo…
+111|Su Z ašimi rašiklis eina į aukščiau nurodytus aukščius; su servo G-kodas įjungia verpstės išvestį su S reikšme (M3 S…).
+112|Dirbkite su projektu be staklių: paprastas įrenginys pavadinimu Dummy su numatytuoju darbo plotu ir greičiais
+113|Z ašis
+114|pvz., Mano braižytuvas
+115|dalis brėžinio yra už darbo srities ribų
+116|užpildyme per daug linijų: atstumas per mažas, todėl dalis užpildymo praleista
+117|šis projektas sukurtas kitoms staklėms: {}
+118|{} paveikslėlių sluoksniuose negalima piešti: pirmiausia paverskite juos linijomis
