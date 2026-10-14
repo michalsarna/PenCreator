@@ -1,0 +1,119 @@
+0|Una capa és un bolígraf: quan la capa següent té un altre bolígraf, el G-code s'atura perquè el canviïs.
+1|Un segon conjunt de línies de farciment creuat amb el primer
+2|Quant a
+3|Afegeix una càmera
+4|Afegeix un dispositiu
+5|Afegeix un dispositiu
+6|Afegeix un dispositiu…
+7|Adreça
+8|Organitza
+9|Darrere a l'esquerra
+10|Darrere a la dreta
+11|Torna a la primera vista. Fer doble clic a la imatge fa el mateix.
+12|Càmera
+13|Nom de la càmera
+14|Número de la càmera
+15|Càmera d'aquest ordinador
+16|Rotació de la càmera
+17|Càmeres
+18|No es pot fer servir el fitxer: {}
+19|Tria la màquina amb què treballaràs.
+20|Les formes tancades s'omplen amb línies paral·leles; els forats queden buits.
+21|Confirma la supressió
+22|Controlador
+23|Copiat a {}
+24|No s'ha pogut desar: {}
+25|Línies creuades
+26|Elimina aquesta càmera
+27|Dispositiu
+28|Configuració del dispositiu
+29|Configuració del dispositiu…
+30|Dibuix
+31|Vegades que es dibuixa
+32|Es dibuixa: inclosa al traçat i al G-code
+33|Edita
+34|Edita…
+35|Exporta G-code…
+36|Exporta…
+37|Fitxer
+38|Farciment i contorn
+39|Angle de les línies de farciment
+40|Separació de les línies de farciment
+41|Omple amb línies
+42|Davant a l'esquerra
+43|Davant a la dreta
+44|General
+45|Ajuda
+46|Quantes vegades es dibuixa cada línia: per a un bolígraf massa clar
+47|No tinc cap dispositiu
+48|Importa un projecte de LightBurn…
+49|Dispositiu {} importat
+50|Importa…
+51|Capes
+52|Línies: {} m, moviments amb el bolígraf aixecat: {} m, aixecaments: {}, uns {} min
+53|Màquina
+54|Zero de la màquina (0,0)
+55|Moviments amb el bolígraf aixecat
+56|Nou
+57|Encara no hi ha cap dispositiu. Afegeix-ne un o treballa sense màquina.
+58|No és una adreça http o https.
+59|Notes
+60|Notes sobre aquesta màquina
+61|No hi ha res seleccionat
+62|Obre un dibuix o comença un disseny buit.
+63|Obre…
+64|Contorn
+65|Bolígraf
+66|Bolígraf baixat
+67|Bolígraf aixecat
+68|Amplada del bolígraf
+69|Traçat de la feina
+70|Traçat de la feina…
+71|Traçador
+72|Progrés
+73|Propietats
+74|Posa les formes seleccionades en aquesta capa
+75|Llegeix un dispositiu d'un fitxer
+76|A punt
+77|Restableix la vista
+78|Desa
+79|Desa com a…
+80|Desa aquest dispositiu en un fitxer
+81|Dispositiu desat a {}
+82|{} desat
+83|Servo (M3 S…)
+84|Configuració
+85|Formes d'aquesta capa
+86|Es mostra a la pestanya Càmera
+87|Es mostra a l'àrea de treball
+88|Velocitat
+89|Velocitat dels moviments amb el bolígraf aixecat
+90|Inicia
+91|Activada
+92|El dispositiu d'aquest projecte
+93|S'ha afegit el dispositiu.
+94|S'ha desat el dispositiu.
+95|Primer el farciment, després el contorn a sobre, perquè la vora quedi neta.
+96|El bolígraf segueix les línies de les formes. Les línies obertes també funcionen.
+97|El bolígraf s'aixeca amb
+98|L'àrea de treball és el full que arriba el bolígraf. El zero de la màquina és la cantonada on comença el bolígraf.
+99|No hi ha res per dibuixar: posa formes en capes activades.
+100|Encara no hi ha res per mostrar: dibuixa formes i posa-les en capes activades.
+101|Aquesta versió no pot fer servir les càmeres de l'ordinador.
+102|Aquest dispositiu no té cap càmera activada. Afegeix-ne una als paràmetres del dispositiu.
+103|Aquest dispositiu no és a la llista: ha vingut amb el projecte
+104|Aquest és el dispositiu substitut (Dummy): àrea de treball i velocitats per defecte.
+105|Massa dispositius
+106|Unitats
+107|Visualitza
+108|Opcions de visualització…
+109|Espera després de moure el bolígraf
+110|S'espera la imatge…
+111|Amb l'eix Z el bolígraf va a les alçades de dalt; amb un servo el G-code activa la sortida de l'eix amb el valor S (M3 S…).
+112|Treballa en un projecte sense màquina: un dispositiu simple anomenat Dummy, amb l'àrea de treball i les velocitats per defecte
+113|Eix Z
+114|p. ex. El meu traçador
+115|part del dibuix queda fora de l'àrea de treball
+116|el farciment té massa línies: la separació és massa petita, així que s'ha omès part del farciment
+117|aquest projecte es va fer per a una altra màquina: {}
+118|{} imatge(s) de les capes no es poden dibuixar: vectoritza-les primer

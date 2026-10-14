@@ -1,0 +1,119 @@
+0|Saff huwa pinna: meta s-saff li jmiss ikollu pinna oħra, il-G-code jieqaf biex tkun tista' tbiddilha.
+1|It-tieni sett ta' linji tal-mili bil-għarrieda fuq l-ewwel wieħed
+2|Dwar
+3|Żid kamera
+4|Żid apparat
+5|Żid apparat
+6|Żid tagħmir…
+7|Indirizz
+8|Irranġa
+9|Wara fuq ix-xellug
+10|Wara fuq il-lemin
+11|Lura għall-ewwel veduta. Double click fuq l-istampa jagħmel l-istess.
+12|Kamera
+13|Isem tal-kamera
+14|Numru tal-kamera
+15|Kamera ta' dan il-kompjuter
+16|Rotazzjoni tal-kamera
+17|Kameras
+18|Il-fajl ma jistax jintuża: {}
+19|Agħżel il-magna li se taħdem biha.
+20|Il-forom magħluqin jimtlew b'linji paralleli; it-toqob jibqgħu vojta.
+21|Ikkonferma t-tħassir
+22|Kontrollur
+23|Ikkupjat fi {}
+24|Ma setax jinħażen: {}
+25|Linji maqsuma
+26|Neħħi din il-kamera
+27|Tagħmir
+28|Issettjar tat-tagħmir
+29|Issettjar tat-tagħmir…
+30|Tpinġija
+31|Kemm-il darba tittpinġa
+32|Tittpinġa: inkluża fil-plott u l-G-code
+33|Editja
+34|Editja…
+35|Esporta G-code…
+36|Esporta…
+37|Fajl
+38|Mili u kontorn
+39|Angolu tal-linji tal-mili
+40|Distanza bejn il-linji tal-mili
+41|Imla bil-linji
+42|Quddiem fuq ix-xellug
+43|Quddiem fuq il-lemin
+44|Ġenerali
+45|Għajnuna
+46|Kemm-il darba tittpinġa kull linja: għal pinna ċara wisq
+47|M'għandi l-ebda apparat
+48|Importa proġett ta' LightBurn…
+49|L-apparat {} ġie impurtat
+50|Importa…
+51|Saffi
+52|Linji: {} m, movimenti bil-pinna mgħollija: {} m, għoli tal-pinna: {}, madwar {} min
+53|Magna
+54|Żero tal-magna (0,0)
+55|Movimenti bil-pinna mgħollija
+56|Ġdid
+57|M'hemm l-ebda apparat għadu. Żid wieħed jew aħdem mingħajr magna.
+58|Mhuwiex indirizz http jew https.
+59|Noti
+60|Noti dwar din il-magna
+61|Xejn magħżul
+62|Iftaħ disinn jew ibda disinn vojt.
+63|Iftaħ…
+64|Kontorn
+65|Pinna
+66|Pinna 'l isfel
+67|Pinna 'l fuq
+68|Wisa' tal-pinna
+69|Plott tax-xogħol
+70|Plott tax-xogħol…
+71|Plotter
+72|Progress
+73|Proprjetajiet
+74|Poġġi l-forom magħżula fuq dan is-saff
+75|Aqra apparat minn fajl
+76|Lest
+77|Irrisettja l-veduta
+78|Salva
+79|Salva bħala…
+80|Aħżen dan l-apparat f'fajl
+81|L-apparat inħażen f'{}
+82|Salvat: {}
+83|Servo (M3 S…)
+84|Issettjar
+85|Forom fuq dan is-saff
+86|Murija fit-tab Kamera
+87|Murija fiż-żona tax-xogħol
+88|Veloċità
+89|Veloċità tal-movimenti bil-pinna mgħollija
+90|Ibda
+91|Mixgħul
+92|L-apparat ta' dan il-proġett
+93|L-apparat ġie miżjud.
+94|L-apparat inħażen.
+95|L-ewwel il-mili, imbagħad il-kontorn fuqu, biex it-tarf ikun nadif.
+96|Il-pinna tsegwi l-linji tal-forom. Il-linji miftuħin jaħdmu wkoll.
+97|Il-pinna titgħolla bi
+98|Iż-żona tax-xogħol hija l-folja li tilħaq il-pinna. Iż-żero tal-magna huwa r-rokna fejn tibda l-pinna.
+99|M'hemm xejn x'tpinġi: poġġi forom fuq saffi mixgħulin.
+100|M'hemm xejn x'turi għadu: ipinġi forom u poġġihom fuq saffi mixgħulin.
+101|Din il-verżjoni ma tistax tuża l-kameras tal-kompjuter.
+102|Dan l-apparat m'għandu l-ebda kamera mixgħula. Żid waħda fl-issettjar tal-apparat.
+103|Dan l-apparat mhuwiex fil-lista: ġie mal-proġett
+104|Dan huwa l-apparat sostitut (Dummy): żona tax-xogħol u veloċitajiet awtomatiċi.
+105|Apparati wisq
+106|Unitajiet
+107|Dehra
+108|Għażliet tad-dehra…
+109|Stenna wara l-moviment tal-pinna
+110|Qed tistenna l-istampa…
+111|Bl-assi Z il-pinna tmur fl-għoli ta' hawn fuq; b'servo l-G-code jixgħel l-output tal-ispindil bil-valur S (M3 S…).
+112|Aħdem fuq proġett mingħajr magna: apparat sempliċi jisimu Dummy, bl-erja tax-xogħol u s-veloċitajiet awtomatiċi
+113|Assi Z
+114|eż. Il-plotter tiegħi
+115|parti mid-disinn tinsab barra ż-żona tax-xogħol
+116|il-mili għandu wisq linji: id-distanza hija żgħira wisq, għalhekk parti mill-mili ġiet maħlufa
+117|dan il-proġett sar għal magna oħra: {}
+118|{} stampa/i fuq is-saffi ma jistgħux jitpinġu: ittraċċjahom f'linji l-ewwel

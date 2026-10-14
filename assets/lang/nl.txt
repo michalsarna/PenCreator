@@ -1,0 +1,119 @@
+0|Een laag is een pen: heeft de volgende laag een andere pen, dan stopt de G-code zodat je hem kunt wisselen.
+1|Een tweede set vullijnen dwars op de eerste
+2|Over
+3|Camera toevoegen
+4|Apparaat toevoegen
+5|Apparaat toevoegen
+6|Apparaat toevoegen…
+7|Adres
+8|Rangschikken
+9|Achter links
+10|Achter rechts
+11|Terug naar de eerste weergave. Dubbelklikken op de afbeelding doet hetzelfde.
+12|Camera
+13|Cameranaam
+14|Cameranummer
+15|Camera van deze computer
+16|Camerarotatie
+17|Camera's
+18|Het bestand kan niet worden gebruikt: {}
+19|Kies de machine waarmee je gaat werken.
+20|Gesloten vormen worden gevuld met evenwijdige lijnen; gaten blijven leeg.
+21|Verwijderen bevestigen
+22|Controller
+23|Gekopieerd naar {}
+24|Kon niet opslaan: {}
+25|Kruislijnen
+26|Deze camera verwijderen
+27|Apparaat
+28|Apparaatinstellingen
+29|Apparaatinstellingen…
+30|Tekenen
+31|Aantal keer tekenen
+32|Getekend: wordt opgenomen in de plot en de G-code
+33|Bewerken
+34|Bewerken…
+35|G-code exporteren…
+36|Exporteren…
+37|Bestand
+38|Vulling en contour
+39|Hoek van de vullijnen
+40|Afstand tussen de vullijnen
+41|Vullen met lijnen
+42|Voor links
+43|Voor rechts
+44|Algemeen
+45|Help
+46|Hoe vaak elke lijn wordt getekend: voor een te lichte pen
+47|Ik heb geen apparaat
+48|LightBurn-project importeren…
+49|Apparaat {} geïmporteerd
+50|Importeren…
+51|Lagen
+52|Lijnen: {} m, bewegingen met opgeheven pen: {} m, penlichtingen: {}, ongeveer {} min
+53|Machine
+54|Machinenul (0,0)
+55|Bewegingen met opgeheven pen
+56|Nieuw
+57|Nog geen apparaat. Voeg er een toe of werk zonder machine.
+58|Geen http- of https-adres.
+59|Notities
+60|Notities over deze machine
+61|Niets geselecteerd
+62|Open een tekening of begin met een leeg ontwerp.
+63|Openen…
+64|Contour
+65|Pen
+66|Pen omlaag
+67|Pen omhoog
+68|Penbreedte
+69|Plot van de opdracht
+70|Plot van de opdracht…
+71|Plotter
+72|Voortgang
+73|Eigenschappen
+74|De geselecteerde vormen op deze laag plaatsen
+75|Een apparaat uit een bestand lezen
+76|Gereed
+77|Weergave herstellen
+78|Opslaan
+79|Opslaan als…
+80|Dit apparaat in een bestand opslaan
+81|Apparaat opgeslagen in {}
+82|{} opgeslagen
+83|Servo (M3 S…)
+84|Instellingen
+85|Vormen op deze laag
+86|Getoond in het tabblad Camera
+87|Getoond in het werkgebied
+88|Snelheid
+89|Snelheid van de bewegingen met opgeheven pen
+90|Start
+91|Ingeschakeld
+92|Het apparaat van dit project
+93|Het apparaat is toegevoegd.
+94|Het apparaat is opgeslagen.
+95|Eerst de vulling, dan de contour erover, zodat de rand netjes is.
+96|De pen volgt de lijnen van de vormen. Open lijnen werken ook.
+97|De pen wordt opgetild door
+98|Het werkgebied is het vel dat de pen bereikt. De machinenul is de hoek waar de pen begint.
+99|Er is niets te tekenen: zet vormen op ingeschakelde lagen.
+100|Er is nog niets te tonen: teken vormen en zet ze op ingeschakelde lagen.
+101|Deze versie kan de camera's van de computer niet gebruiken.
+102|Dit apparaat heeft geen ingeschakelde camera. Voeg er een toe in de apparaatinstellingen.
+103|Dit apparaat staat niet in de lijst: het kwam met het project mee
+104|Dit is het vervangende apparaat (Dummy): standaard werkgebied en snelheden.
+105|Te veel apparaten
+106|Eenheden
+107|Weergave
+108|Weergaveopties…
+109|Wachttijd na de penbeweging
+110|Wachten op het beeld…
+111|Bij de Z-as gaat de pen naar de bovenstaande hoogten; bij een servo schakelt de G-code de spindeluitgang in met de S-waarde (M3 S…).
+112|Werk aan een project zonder machine: een gewoon apparaat genaamd Dummy, met het standaardwerkgebied en de standaardsnelheden
+113|Z-as
+114|bijv. Mijn plotter
+115|een deel van de tekening ligt buiten het werkgebied
+116|de vulling heeft te veel lijnen: de afstand is te klein, dus een deel van de vulling is weggelaten
+117|dit project is gemaakt voor een andere machine: {}
+118|{} afbeelding(en) op de lagen kunnen niet worden getekend: traceer ze eerst naar lijnen

@@ -1,0 +1,119 @@
+0|Vrstva je pero: když má další vrstva jiné pero, G-kód se zastaví, abyste je mohli vyměnit.
+1|Druhá sada výplňových čar napříč první
+2|O programu
+3|Přidat kameru
+4|Přidat zařízení
+5|Přidat zařízení
+6|Přidat zařízení…
+7|Adresa
+8|Uspořádat
+9|Vzadu vlevo
+10|Vzadu vpravo
+11|Zpět na první pohled. Dvojklik na obrázek dělá totéž.
+12|Kamera
+13|Název kamery
+14|Číslo kamery
+15|Kamera tohoto počítače
+16|Otočení kamery
+17|Kamery
+18|Soubor nelze použít: {}
+19|Vyberte stroj, se kterým budete pracovat.
+20|Uzavřené tvary se vyplní rovnoběžnými čarami; díry zůstanou prázdné.
+21|Potvrdit smazání
+22|Řadič
+23|Zkopírováno do {}
+24|Nepodařilo se uložit: {}
+25|Křížové čáry
+26|Smazat tuto kameru
+27|Zařízení
+28|Nastavení zařízení
+29|Nastavení zařízení…
+30|Kreslení
+31|Kolikrát kreslit
+32|Kreslí se: zahrnuto do vykreslení a G-kódu
+33|Úpravy
+34|Upravit…
+35|Exportovat G-code…
+36|Exportovat…
+37|Soubor
+38|Výplň a obrys
+39|Úhel výplňových čar
+40|Rozteč výplňových čar
+41|Vyplnit čarami
+42|Vpředu vlevo
+43|Vpředu vpravo
+44|Obecné
+45|Nápověda
+46|Kolikrát se každá čára nakreslí: pro příliš světlé pero
+47|Nemám zařízení
+48|Importovat projekt LightBurn…
+49|Zařízení {} bylo importováno
+50|Importovat…
+51|Vrstvy
+52|Čáry: {} m, pohyby se zvednutým perem: {} m, zvednutí pera: {}, asi {} min
+53|Stroj
+54|Nula stroje (0,0)
+55|Pohyby se zvednutým perem
+56|Nový
+57|Zatím žádné zařízení. Přidejte jedno, nebo pracujte bez stroje.
+58|Není to adresa http ani https.
+59|Poznámky
+60|Poznámky k tomuto stroji
+61|Nic není vybráno
+62|Otevřete kresbu, nebo začněte prázdný návrh.
+63|Otevřít…
+64|Obrys
+65|Pero
+66|Pero dole
+67|Pero nahoře
+68|Šířka pera
+69|Vykreslení úlohy
+70|Vykreslení úlohy…
+71|Plotr
+72|Průběh
+73|Vlastnosti
+74|Dát vybrané tvary na tuto vrstvu
+75|Načíst zařízení ze souboru
+76|Připraveno
+77|Obnovit pohled
+78|Uložit
+79|Uložit jako…
+80|Uložit toto zařízení do souboru
+81|Zařízení uloženo do {}
+82|Uloženo: {}
+83|Servo (M3 S…)
+84|Nastavení
+85|Tvary na této vrstvě
+86|Zobrazeno na kartě Kamera
+87|Zobrazeno v pracovní ploše
+88|Rychlost
+89|Rychlost pohybů se zvednutým perem
+90|Start
+91|Zapnuto
+92|Zařízení tohoto projektu
+93|Zařízení bylo přidáno.
+94|Zařízení bylo uloženo.
+95|Nejprve výplň, potom obrys přes ni, aby byl okraj čistý.
+96|Pero sleduje čáry tvarů. Otevřené čáry fungují také.
+97|Pero se zvedá pomocí
+98|Pracovní plocha je arch, kam pero dosáhne. Nulový bod stroje je roh, kde pero začíná.
+99|Není co kreslit: dejte tvary na zapnuté vrstvy.
+100|Zatím není co zobrazit: nakreslete tvary a dejte je na zapnuté vrstvy.
+101|Tato verze nemůže používat kamery počítače.
+102|Toto zařízení nemá zapnutou kameru. Přidejte ji v nastavení zařízení.
+103|Toto zařízení není v seznamu: přišlo s projektem
+104|Toto je náhradní zařízení (Dummy): výchozí pracovní plocha a rychlosti.
+105|Příliš mnoho zařízení
+106|Jednotky
+107|Zobrazení
+108|Možnosti zobrazení…
+109|Čekání po pohybu pera
+110|Čekání na obraz…
+111|U osy Z jede pero do výše uvedených výšek; u serva G-kód zapne výstup vřetene hodnotou S (M3 S…).
+112|Práce na projektu bez stroje: obyčejné zařízení jménem Dummy s výchozí pracovní plochou a rychlostmi
+113|Osa Z
+114|např. Můj plotr
+115|část kresby leží mimo pracovní plochu
+116|výplň má příliš mnoho čar: rozteč je příliš malá, proto byla část výplně vynechána
+117|tento projekt byl vytvořen pro jiný stroj: {}
+118|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry

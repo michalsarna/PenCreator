@@ -1,0 +1,119 @@
+0|Lag er penni: þegar næsta lag er með annan penna stöðvast G-kóðinn svo þú getir skipt um hann.
+1|Annað sett af fyllilínum þvert á hið fyrsta
+2|Um forritið
+3|Bæta við myndavél
+4|Bæta við tæki
+5|Bæta við tæki
+6|Bæta við tæki…
+7|Heimilisfang
+8|Raða
+9|Aftan til vinstri
+10|Aftan til hægri
+11|Aftur í fyrstu sýn. Tvísmellur á myndina gerir það sama.
+12|Myndavél
+13|Nafn myndavélar
+14|Númer myndavélar
+15|Myndavél þessarar tölvu
+16|Snúningur myndavélar
+17|Myndavélar
+18|Ekki er hægt að nota skrána: {}
+19|Veldu vélina sem þú ætlar að vinna með.
+20|Lokuð form eru fyllt með samsíða línum; göt verða auð.
+21|Staðfesta eyðingu
+22|Stýring
+23|Afritað í {}
+24|Ekki tókst að vista: {}
+25|Krosslínur
+26|Eyða þessari myndavél
+27|Tæki
+28|Stillingar tækis
+29|Stillingar tækis…
+30|Teikning
+31|Hve oft er teiknað
+32|Er teiknað: tekið með í teikninguna og G-kóðann
+33|Breyta
+34|Breyta…
+35|Flytja út G-code…
+36|Flytja út…
+37|Skrá
+38|Fylling og útlína
+39|Horn fyllilína
+40|Bil milli fyllilína
+41|Fylla með línum
+42|Fremst til vinstri
+43|Fremst til hægri
+44|Almennt
+45|Hjálp
+46|Hve oft hver lína er teiknuð: fyrir of ljósan penna
+47|Ég á ekkert tæki
+48|Flytja inn LightBurn-verkefni…
+49|Tækið {} var flutt inn
+50|Flytja inn…
+51|Lög
+52|Línur: {} m, hreyfingar með pennann uppi: {} m, pennalyftur: {}, um það bil {} mín.
+53|Vél
+54|Núllpunktur vélar (0,0)
+55|Hreyfingar með pennann uppi
+56|Ný
+57|Ekkert tæki enn. Bættu við einu eða vinndu án vélar.
+58|Ekki http- eða https-heimilisfang.
+59|Athugasemdir
+60|Athugasemdir um þessa vél
+61|Ekkert valið
+62|Opnaðu teikningu eða byrjaðu á tómri hönnun.
+63|Opna…
+64|Útlína
+65|Penni
+66|Penni niðri
+67|Penni uppi
+68|Breidd penna
+69|Teikning verksins
+70|Teikning verksins…
+71|Teiknivél
+72|Framvinda
+73|Eiginleikar
+74|Setja valin form á þetta lag
+75|Lesa tæki úr skrá
+76|Tilbúið
+77|Endurstilla sýn
+78|Vista
+79|Vista sem…
+80|Vista þetta tæki í skrá
+81|Tækið var vistað í {}
+82|Vistað: {}
+83|Servó (M3 S…)
+84|Stillingar
+85|Form á þessu lagi
+86|Sýnd á flipanum Myndavél
+87|Sýnt á vinnusvæðinu
+88|Hraði
+89|Hraði hreyfinga með pennann uppi
+90|Byrja
+91|Kveikt
+92|Tæki þessa verkefnis
+93|Tækinu var bætt við.
+94|Tækið var vistað.
+95|Fyrst fyllingin, svo útlínan yfir, svo brúnin verði hrein.
+96|Penninn fylgir línum formanna. Opnar línur virka líka.
+97|Pennanum er lyft með
+98|Vinnusvæðið er blaðið sem penninn nær til. Núllpunktur vélarinnar er hornið þar sem penninn byrjar.
+99|Ekkert að teikna: settu form á lög sem er kveikt á.
+100|Ekkert að sýna ennþá: teiknaðu form og settu þau á lög sem er kveikt á.
+101|Þessi útgáfa getur ekki notað myndavélar tölvunnar.
+102|Þetta tæki er ekki með kveikt á myndavél. Bættu einni við í stillingum tækisins.
+103|Þetta tæki er ekki á listanum: það kom með verkefninu
+104|Þetta er staðgengilstækið (Dummy): sjálfgefið vinnusvæði og hraði.
+105|Of mörg tæki
+106|Einingar
+107|Skoða
+108|Skoðunarvalkostir…
+109|Bið eftir hreyfingu penna
+110|Bíð eftir myndinni…
+111|Með Z-ásnum fer penninn í hæðirnar hér að ofan; með servó kveikir G-kóðinn á úttaki snældunnar með S-gildi (M3 S…).
+112|Vinndu í verkefni án vélar: einfalt tæki sem heitir Dummy með sjálfgefnu vinnusvæði og hraða
+113|Z-ás
+114|t.d. Teiknivélin mín
+115|hluti teikningarinnar er utan vinnusvæðisins
+116|fyllingin hefur of margar línur: bilið er of lítið svo hluta fyllingarinnar var sleppt
+117|þetta verkefni var gert fyrir aðra vél: {}
+118|{} mynd(ir) á lögunum er ekki hægt að teikna: rekjaðu þær fyrst í línur

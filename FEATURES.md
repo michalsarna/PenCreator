@@ -2,8 +2,11 @@
 
 ## Available now
 
-* The window of LightCreator's look: own frame and title bar, start screen, control bar, status bar, a Properties tab (position and size, rotation, mirror, alignment), the clipart gallery (310 included pictures, your own, online search), a Description tab (a note saved in the project file), the colour schemes, fonts and the 30 languages of baseCreator.
-* Project files (`.cre`, shared with LightCreator and MillCreator): the drawing and description are saved, and the sections of other programs are kept as they were. PenCreator has no section of its own yet (pens and plotting come with the plotting features).
+* **Devices (plotters):** a list on the start screen (add, edit, duplicate, export and import as files, delete), kept between runs. Sheet size (work area), machine zero (any corner), the speed of the moves with the pen up, how the pen is lifted (Z axis or a servo with `M3 S…`) with the up and down values and a wait, notes, and up to 8 cameras (an address or a camera of the computer) with a live Camera tab. **I have no device** makes the Dummy; **New** and **Open…** without a device use it.
+* **Pens as layers:** 16 layers with a colour, a pen width, a speed, outline / fill with lines / both, the angle and gap of the fill lines, crossed lines, and how many times every line is drawn. Layers can be switched off (not drawn) and hidden (not shown).
+* **Plot and G-code:** strokes in the order that shortens the moves with the pen up, fill lines that zigzag and leave holes empty, a plot window (zoom, pan, progress, length, pen lifts, time) and G-code for GRBL (`M0` to change the pen between layers, the machine zero by corner). Pictures cannot be drawn and are reported.
+* **Project file:** `.cre`, shared with LightCreator and MillCreator: the drawing, the description, the `pen` section (layers and the plotter it was made for, with a warning when it is opened for another sheet size) and the sections of other programs, which are kept as they were.
+* The window of LightCreator's look: own frame and title bar, start screen, control bar, status bar, a Properties tab, the clipart gallery (310 included pictures, your own, online search), a Description tab, the colour schemes, fonts and 30 languages (PenCreator's own texts too).
 * Reading SVG, PDF and Illustrator (PDF-compatible) files and LightBurn projects (`.lbrn2`: shapes, text outlines, bitmaps) into a scene of shapes.
 * The editor of baseCreator: drawing tools, selection, node editing, undo and redo, copy and paste, group, align, flip, rotate, order, grid and snapping.
 * Menus (with the native macOS menu bar and recent files), icons, tool palette, arrange bar, View options and the About window of baseCreator.
@@ -12,10 +15,7 @@
 
 Nothing below exists yet; the list is a plan, not a promise.
 
-* Devices (plotters) with their paper size and cameras, as in LightCreator and MillCreator.
-* Pen layers: a colour, a pen and a line width for each layer, fills with hatching, ordering of the strokes to shorten the travel.
-* Plotting paths: preview with the pen-up moves, time estimate.
-* Output: G-code and HPGL, with settings for pen up and down.
 * Machine control: connection, jogging, homing, streaming.
+* HPGL output.
 * Text in single-line fonts.
-* Translations of PenCreator's own texts (the shared ones are translated in baseCreator).
+* Pen pressure and a second pen holder; hatching that follows the shape.

@@ -1,0 +1,119 @@
+0	A layer is a pen: when the next layer has another pen, the G-code stops so that you can change it.
+1	A second set of fill lines across the first
+2	About
+3	Add a camera
+4	Add a device
+5	Add device
+6	Add device…
+7	Address
+8	Arrange
+9	Back left
+10	Back right
+11	Back to the first view. Double click on the picture does the same.
+12	Camera
+13	Camera name
+14	Camera number
+15	Camera of this computer
+16	Camera rotation
+17	Cameras
+18	Cannot use the file: {}
+19	Choose the machine you will work with.
+20	Closed shapes are filled with parallel lines; holes stay empty.
+21	Confirm delete
+22	Controller
+23	Copied to {}
+24	Could not save: {}
+25	Crossed lines
+26	Delete this camera
+27	Device
+28	Device settings
+29	Device settings…
+30	Drawing
+31	Drawn times
+32	Drawn: taken into the plot and the G-code
+33	Edit
+34	Edit…
+35	Export G-code…
+36	Export…
+37	File
+38	Fill and outline
+39	Fill line angle
+40	Fill line gap
+41	Fill with lines
+42	Front left
+43	Front right
+44	General
+45	Help
+46	How many times every line is drawn: for a pen that is too light
+47	I have no device
+48	Import LightBurn project…
+49	Imported the device {}
+50	Import…
+51	Layers
+52	Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min
+53	Machine
+54	Machine zero (0,0)
+55	Moves with the pen up
+56	New
+57	No device yet. Add one, or work without a machine.
+58	Not an http or https address.
+59	Notes
+60	Notes about this machine
+61	Nothing selected
+62	Open a drawing or start an empty design.
+63	Open…
+64	Outline
+65	Pen
+66	Pen down
+67	Pen up
+68	Pen width
+69	Plot of the job
+70	Plot of the job…
+71	Plotter
+72	Progress
+73	Properties
+74	Put the selected shapes on this layer
+75	Read a device from a file
+76	Ready
+77	Reset view
+78	Save
+79	Save as…
+80	Save this device to a file
+81	Saved the device to {}
+82	Saved {}
+83	Servo (M3 S…)
+84	Settings
+85	Shapes on this layer
+86	Shown in the Camera tab
+87	Shown in the work area
+88	Speed
+89	Speed of moves with the pen up
+90	Start
+91	Switched on
+92	The device of this project
+93	The device was added.
+94	The device was saved.
+95	The fill first, then the outline over it, so the edge is clean.
+96	The pen follows the lines of the shapes. Open lines work too.
+97	The pen is lifted by
+98	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
+99	There is nothing to draw: put shapes on layers that are switched on.
+100	There is nothing to show yet: draw shapes and put them on layers that are switched on.
+101	This build cannot use the cameras of the computer.
+102	This device has no camera that is switched on. Add one in the device settings.
+103	This device is not in the list: it came with the project
+104	This is the stand-in device (Dummy): the default work area and speeds.
+105	Too many devices
+106	Units
+107	View
+108	View options…
+109	Wait after the pen moves
+110	Waiting for the picture…
+111	With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).
+112	Work on a project without a machine: a plain device called Dummy, with the default work area and speeds
+113	Z axis
+114	e.g. My pen plotter
+115	part of the drawing lies outside the work area
+116	the fill has too many lines: the gap between them is too small, so part of the fill was left out
+117	this project was made for a different machine: {}
+118	{} picture(s) on the layers cannot be drawn: trace them to lines first
