@@ -3,6 +3,7 @@
 use crate::device::{self, Device, Lift, Origin, DUMMY_NAME, MAX_DEVICES};
 use crate::App;
 use base_core::camimg::{CameraKind, CameraSource};
+use base_core::machine::{LinkKind, Streaming};
 use base_core::units::Units;
 use base_ui::camera::{self, rotate_rgb};
 use base_ui::camera_stream::{self, Msg};
@@ -19,17 +20,19 @@ pub enum Page {
     General,
     Machine,
     Pen,
+    Connection,
     Camera,
     Notes,
 }
 
 impl Page {
-    const ALL: [Page; 5] = [Page::General, Page::Machine, Page::Pen, Page::Camera, Page::Notes];
+    const ALL: [Page; 6] = [Page::General, Page::Machine, Page::Pen, Page::Connection, Page::Camera, Page::Notes];
     fn label(self) -> &'static str {
         match self {
             Page::General => "General",
             Page::Machine => "Machine",
             Page::Pen => "Pen",
+            Page::Connection => "Connection",
             Page::Camera => "Camera",
             Page::Notes => "Notes",
         }
@@ -198,6 +201,8 @@ impl App {
         let mut ask_delete = false;
         let mut delete = false;
         let confirm = self.confirm_delete;
+        let ports = self.machine.ports.clone();
+        let mut refresh_ports = false;
         let new = edit.idx.is_none();
         let title = if new { tr("Add a device") } else { tr("Device settings") };
         popup(ctx, "device_window", &title, [620.0, 540.0], &mut open, |ui| {
@@ -278,6 +283,83 @@ impl App {
                         ui.add_space(4.0);
                         ui.label(RichText::new(tr("With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).")).color(theme::text_dim()));
                     }
+                    Page::Connection => {
+                        egui::Grid::new("dev_link").num_columns(2).min_col_width(150.0).spacing([12.0, 6.0]).show(ui, |ui| {
+                            ui.label(tr("Connection type"));
+                            egui::ComboBox::from_id_salt("link_kind").width(230.0).selected_text(tr(d.connection.link.label())).show_ui(ui, |ui| {
+                                for k in LinkKind::ALL {
+                                    ui.selectable_value(&mut d.connection.link, k, tr(k.label()));
+                                }
+                            });
+                            ui.end_row();
+                            if d.connection.link == LinkKind::Serial {
+                                ui.label(tr("Port"));
+                                ui.horizontal_wrapped(|ui| {
+                                    egui::ComboBox::from_id_salt("cfg_port").width(220.0).selected_text(if d.connection.port.is_empty() { tr("No port") } else { d.connection.port.as_str() }).show_ui(ui, |ui| {
+                                        for p in &ports {
+                                            ui.selectable_value(&mut d.connection.port, p.name.clone(), p.label());
+                                        }
+                                    });
+                                    if ui.button(tr("Refresh")).clicked() {
+                                        refresh_ports = true;
+                                    }
+                                });
+                                ui.end_row();
+                                ui.label(tr("Port or USB id"));
+                                ui.add(egui::TextEdit::singleline(&mut d.connection.port).hint_text("/dev/ttyUSB0  or  0403:6001").desired_width(220.0)).on_hover_text(tr("A port name, or the USB vendor and product id (VID:PID, hexadecimal): the port that has these ids is used."));
+                                ui.end_row();
+                                ui.label(tr("Bound USB device"));
+                                ui.horizontal(|ui| {
+                                    let ids = ports.iter().find(|p| p.name == d.connection.port).and_then(|p| p.usb);
+                                    if d.connection.usb_id.is_empty() {
+                                        ui.label(RichText::new(tr("none")).color(theme::text_dim()));
+                                    } else {
+                                        ui.label(RichText::new(&d.connection.usb_id).monospace());
+                                    }
+                                    if ui.add_enabled(ids.is_some(), egui::Button::new(tr("Bind to this port"))).on_hover_text(tr("Remember the USB ids of the chosen port: the port is found again by them when its name changes.")).clicked() {
+                                        if let Some((v, p)) = ids {
+                                            d.connection.usb_id = format!("{v:04x}:{p:04x}");
+                                        }
+                                    }
+                                    if ui.add_enabled(!d.connection.usb_id.is_empty(), egui::Button::new(tr("Unbind"))).clicked() {
+                                        d.connection.usb_id.clear();
+                                    }
+                                });
+                                ui.end_row();
+                                ui.label(tr("Baud rate"));
+                                ui.add(egui::DragValue::new(&mut d.connection.baud).range(1200..=1_000_000));
+                                ui.end_row();
+                            } else {
+                                ui.label(tr("Host"));
+                                ui.add(egui::TextEdit::singleline(&mut d.connection.host).hint_text("raspberrypi.local").desired_width(200.0));
+                                ui.end_row();
+                                ui.label(tr("TCP port"));
+                                ui.add(egui::DragValue::new(&mut d.connection.tcp_port).range(1..=65535));
+                                ui.end_row();
+                            }
+                            ui.label(tr("Reconnect"));
+                            ui.checkbox(&mut d.connection.auto_reconnect, tr("Connect again automatically")).on_hover_text(tr("When the link drops by itself, try again every few seconds until you press Disconnect."));
+                            ui.end_row();
+                            ui.label(tr("After connecting"));
+                            ui.vertical(|ui| {
+                                ui.checkbox(&mut d.connection.home_on_connect, tr("Home the machine"));
+                                ui.checkbox(&mut d.connection.unlock_on_connect, tr("Clear an alarm"));
+                                if d.connection.unlock_on_connect {
+                                    ui.label(RichText::new(tr("Clearing the alarm skips homing: use it only when the head is known to stand in a safe place.")).color(Color32::from_rgb(0xe8, 0x8a, 0x1f)));
+                                }
+                            });
+                            ui.end_row();
+                            ui.label(tr("Streaming"));
+                            egui::ComboBox::from_id_salt("streaming").selected_text(tr(d.connection.streaming.label())).show_ui(ui, |ui| {
+                                for m in Streaming::ALL {
+                                    ui.selectable_value(&mut d.connection.streaming, m, tr(m.label()));
+                                }
+                            })
+                            .response
+                            .on_hover_text(tr("Counting fills the controller's buffer and is fast. Simple sends one line and waits for its ok: slow, but for firmware that answers wrongly."));
+                            ui.end_row();
+                        });
+                    }
                     Page::Camera => camera_page(ui, d),
                     Page::Notes => {
                         ui.add(egui::TextEdit::multiline(&mut d.notes).desired_rows(10).desired_width(f32::INFINITY).hint_text(tr("Notes about this machine")));
@@ -312,6 +394,9 @@ impl App {
                 }
             });
         });
+        if refresh_ports {
+            self.machine.refresh_ports();
+        }
         if let Some(i) = edit.idx {
             if export {
                 self.export_device_dialog(i);

@@ -49,6 +49,18 @@ impl Program {
         !self.moves.iter().any(|m| m.kind == MoveKind::Draw)
     }
 
+    /// The box of the lines (min x, min y, max x, max y), if anything is drawn.
+    pub fn bounds(&self) -> Option<[f64; 4]> {
+        let mut b: Option<[f64; 4]> = None;
+        for m in self.moves.iter().filter(|m| m.kind == MoveKind::Draw) {
+            for p in [m.from, m.to] {
+                let r = b.get_or_insert([p[0], p[1], p[0], p[1]]);
+                *r = [r[0].min(p[0]), r[1].min(p[1]), r[2].max(p[0]), r[3].max(p[1])];
+            }
+        }
+        b
+    }
+
     /// The length of the line the pen draws, in mm.
     pub fn draw_length(&self) -> f64 {
         self.moves.iter().filter(|m| m.kind == MoveKind::Draw).map(|m| m.length()).sum()
@@ -285,6 +297,27 @@ fn num(v: f64) -> String {
     }
 }
 
+/// G-code that takes the pen once round the box `b` (min x, min y, max x, max y, in the coordinates of the work area),
+/// lifted, so that the sheet can be checked before the job.
+pub fn frame_gcode(b: [f64; 4], dev: &Device) -> String {
+    let feed = dev.rapid.clamp(100.0, 6000.0);
+    let (x0, y0) = machine_xy(dev, b[0], b[1]);
+    let (x1, y1) = machine_xy(dev, b[2], b[3]);
+    let mut g = String::from("G21 G90\n");
+    match dev.pen.lift {
+        Lift::Z => g.push_str(&format!("G0 Z{}\n", num(dev.pen.up))),
+        Lift::Servo => g.push_str(&format!("M3 S{}\n", num(dev.pen.up))),
+    }
+    g.push_str(&format!("G0 X{} Y{}\n", num(x0), num(y0)));
+    for (x, y) in [(x1, y0), (x1, y1), (x0, y1), (x0, y0)] {
+        g.push_str(&format!("G1 X{} Y{} F{}\n", num(x), num(y), num(feed)));
+    }
+    if dev.pen.lift == Lift::Servo {
+        g.push_str("M5\n");
+    }
+    g
+}
+
 /// The G-code (GRBL) for the program. The pen goes up and down with the Z axis or with a servo on the spindle output;
 /// when the next layer needs another pen the program stops with M0 so that it can be changed.
 pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], program_name: &str) -> String {
@@ -505,6 +538,19 @@ mod tests {
         assert!(g.contains("M3 S800") && g.contains("M3 S300") && g.contains("M5"));
         // Back left: Y counts from the back, so the points are negative.
         assert!(g.lines().any(|l| l.starts_with("G1 X") && l.contains(" Y-")), "{g}");
+    }
+
+    #[test]
+    fn the_frame_goes_round_the_drawing_with_the_pen_up() {
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 30.0);
+        let dev = Device::dummy();
+        let p = generate(&scene, &default_layers(), &dev);
+        let b = p.bounds().unwrap();
+        assert_eq!(b[2] - b[0], 30.0);
+        let g = frame_gcode(b, &dev);
+        assert!(g.contains("G0 Z3") && !g.contains("Z0") && g.matches("G1 X").count() == 4, "{g}");
+        assert!(Program::default().bounds().is_none());
     }
 
     #[test]

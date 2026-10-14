@@ -2,7 +2,7 @@
 
 # PenCreator
 
-Open-source pen plotter design and preparation software, written in Rust: devices, pens as layers, fill lines, a plot preview and G-code. **It writes G-code; it does not control a machine yet.**
+Open-source pen plotter design and preparation software, written in Rust: devices, pens as layers, fill lines, a plot preview and G-code. **It writes G-code and can stream it to a GRBL plotter, but that has not been tried on a real machine.**
 
 It shares its core and its interface code with [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and
 [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) through [baseCreator](https://github.com/michalsarna/baseCreator),
@@ -20,6 +20,7 @@ It looks like its siblings, because the window and its parts come from baseCreat
 
 * **Devices.** The start screen lists your plotters (add, edit, duplicate, export, import, delete); the choice is kept between runs. A device has the size of the sheet it reaches, the machine zero, the speed of the moves with the pen up, how the pen is lifted (the Z axis, or a servo with `M3 S…`, with the heights or values for up and down and a wait) and up to 8 cameras with a live Camera tab. **I have no device** makes a plain device called Dummy, and **New** or **Open…** without a device take the Dummy.
 * **Pens as layers.** 16 layers, each one a pen: a colour, a pen width, a speed, outline, fill with lines (any angle and gap, crossed lines) or both, and how many times every line is drawn. When the next layer has another pen, the G-code stops with `M0` so that you can change it.
+* **The plotter.** The device has a Connection page (serial port or network socket, baud rate, streaming); the Device tab connects, homes, pauses and shows a console, and the control bar has **Frame** (the pen goes round the box of the drawing, lifted), **Start** / **Stop**, **Save G-code**, **Toolpaths** (the paths over the work area), **Preview…** and **Camera view**.
 * **Plot.** The Plotter menu opens a plot of the job (paper, the lines in the colours of the pens, the moves with the pen up dashed, an animation (play, pause, speed, repeat) with a progress slider, zoom and pan, the length, the number of pen lifts and the time) and exports **G-code** for GRBL. The strokes are ordered to shorten the moves with the pen up; fill lines zigzag and leave holes empty.
 * The window has its own flat frame and title bar, a start screen (device, new design, open a file, recent files, language and colour scheme), a menu bar (the native menu bar on macOS), a control bar, a tool palette, an arrange bar and the Properties, Layers, Device, Clipart, Description and Camera tabs, and a status bar.
 * The clipart gallery of baseCreator: 310 included pictures in 9 categories, search, your own pictures, and online search of open icon collections; a picture is placed as ordinary shapes.
@@ -27,7 +28,7 @@ It looks like its siblings, because the window and its parts come from baseCreat
 * Opens an SVG, PDF or Illustrator (PDF-compatible) file, or a `.cre` project (File menu, drag and drop, or the path on the command line), imports a LightBurn project (File → Import: `.lbrn2` shapes, text outlines and bitmaps), and saves projects as `.cre`. The project file is shared with LightCreator, MillCreator and other programs on baseCreator: it holds the drawing, the description and one section per program; PenCreator's is `pen` (layers and a note of the plotter). PenCreator keeps the sections of other programs untouched when it saves.
 * Draws and edits shapes with the editor of baseCreator: select, node edit, rectangle, ellipse, triangle, star, polygon, heart, spiral, line, pen, pan and zoom; selection handles to move, resize, turn and slant; the usual commands (undo and redo, select all, copy, paste, duplicate, delete, group, ungroup); grid and snapping (View menu and View options…). Keyboard: tool letters as in LightCreator (V, N, R, E, ...), Ctrl+Z / Y, Ctrl+A / C / V / D / G, Delete, Ctrl+Shift+P (plot), Ctrl+Shift+G (G-code).
 
-There is no machine control (connection, jogging, streaming), no HPGL and no single-line fonts yet, and the G-code has not been tried on a real plotter; see [FEATURES.md](FEATURES.md) and the safety notes in the wiki.
+There is no jogging, no HPGL and no single-line fonts yet, and neither the G-code nor the connection has been tried on a real plotter; see [FEATURES.md](FEATURES.md) and the safety notes in the wiki.
 
 ## Install
 

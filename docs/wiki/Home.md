@@ -4,7 +4,7 @@
 
 # PenCreator
 
-Open-source software for pen plotters, written in Rust. Devices, pens as layers, fill lines, a plot preview and G-code for GRBL; it writes G-code but does not control a machine yet. It is the sibling of [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) and uses the same window, editor and files through [baseCreator](https://github.com/michalsarna/baseCreator).
+Open-source software for pen plotters, written in Rust. Devices, pens as layers, fill lines, a plot preview and G-code for GRBL; it writes G-code and can stream it to a GRBL plotter. It is the sibling of [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) and uses the same window, editor and files through [baseCreator](https://github.com/michalsarna/baseCreator).
 
 ![Editor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
 
@@ -27,6 +27,6 @@ Open-source software for pen plotters, written in Rust. Devices, pens as layers,
 * **Project file:** `.cre`, shared with LightCreator and MillCreator; the sections of other programs are kept when you save.
 * **Interface:** 30 languages (including PenCreator's own texts) and 14 colour schemes.
 * **Devices and pens:** a list of plotters on the start screen (**I have no device** makes the Dummy), 16 layers that are pens (colour, width, speed, outline or fill with lines), a plot of the job and G-code for GRBL.
-* **Planned:** machine control, HPGL, single-line fonts.
+* **Planned:** jogging, HPGL, single-line fonts.
 
-Latest release: **v0.2.1** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option
+Latest release: **v0.2.2** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option
