@@ -29,4 +29,4 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzeni
 * **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 16 warstw, które są pisakami (kolor, grubość, prędkość, kontur lub wypełnienie liniami), wykres zadania i G-code dla GRBL.
 * **Planowane:** sterowanie maszyną, HPGL, czcionki jednoliniowe.
 
-Najnowsza wersja: **v0.1.0** (urządzenia, pisaki i G-code są w następnej) · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
+Najnowsza wersja: **v0.2.0** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
