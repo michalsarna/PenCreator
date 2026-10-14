@@ -57,6 +57,22 @@ pub struct CamState {
     pub error: String,
 }
 
+/// "Paper: Landscape | Portrait" for the Dummy; returns the new choice when it was clicked.
+fn orientation_row(ui: &mut egui::Ui, landscape: bool, id: &str) -> Option<bool> {
+    let mut chosen = None;
+    centered_row(ui, id, |ui| {
+        ui.label(RichText::new(tr("Paper")).color(theme::text_dim()));
+        ui.label("A4");
+        if ui.add(egui::Button::selectable(landscape, tr("Landscape"))).clicked() && !landscape {
+            chosen = Some(true);
+        }
+        if ui.add(egui::Button::selectable(!landscape, tr("Portrait"))).clicked() && landscape {
+            chosen = Some(false);
+        }
+    });
+    chosen
+}
+
 impl App {
     /// The list of devices that is kept between runs, as JSON text.
     pub(crate) fn devices_text(&self) -> String {
@@ -75,6 +91,22 @@ impl App {
         self.start_sel = idx;
         self.dev_edit = None;
         idx
+    }
+
+    /// Turn the A4 sheet of the Dummy: `landscape` puts the longer side along X. `idx` is its place in the list; the
+    /// device of the project follows when it is the Dummy.
+    pub(crate) fn set_dummy_landscape(&mut self, idx: Option<usize>, landscape: bool) {
+        let turn = |d: &mut Device| {
+            let (long, short) = (d.area.x.max(d.area.y), d.area.x.min(d.area.y));
+            (d.area.x, d.area.y) = if landscape { (long, short) } else { (short, long) };
+        };
+        if let Some(d) = idx.and_then(|i| self.devices.get_mut(i)).filter(|d| d.is_dummy()) {
+            turn(d);
+        }
+        if self.device.is_dummy() && (self.screen != crate::Screen::Start || idx == self.active) {
+            turn(&mut self.device);
+            self.touch();
+        }
     }
 
     /// The device that is selected on the start screen becomes the device of the project; without any device it is the
@@ -169,6 +201,12 @@ impl App {
             }
         });
         ui.add_space(6.0);
+        if self.devices.get(self.start_sel).is_some_and(Device::is_dummy) {
+            if let Some(landscape) = orientation_row(ui, self.devices[self.start_sel].area.x >= self.devices[self.start_sel].area.y, "dummy_paper_start") {
+                self.set_dummy_landscape(Some(self.start_sel), landscape);
+            }
+            ui.add_space(6.0);
+        }
         let has = !self.devices.is_empty();
         centered_row(ui, "device_buttons_1", |ui| {
             if ui.button(tr("Add device…")).clicked() {
@@ -495,6 +533,9 @@ impl App {
         if d.is_dummy() {
             ui.add_space(6.0);
             ui.label(RichText::new(tr("This is the stand-in device (Dummy): the default work area and speeds.")).color(theme::text_dim()));
+            if let Some(landscape) = orientation_row(ui, d.area.x >= d.area.y, "dummy_paper_tab") {
+                self.set_dummy_landscape(self.active, landscape);
+            }
         }
         if !d.notes.trim().is_empty() {
             ui.add_space(8.0);
@@ -662,6 +703,29 @@ mod tests {
         a.take_selected_device();
         assert!(a.device.is_dummy() && a.active == Some(0));
         assert_eq!(a.work_size_mm(), (297.0, 210.0));
+    }
+
+    #[test]
+    fn the_dummy_sheet_can_be_turned_on_the_start_screen_and_in_the_editor() {
+        let mut a = app();
+        a.devices = vec![Device::default(), Device::dummy()];
+        a.devices[0].name = "Plotter".into();
+        let i = a.use_dummy_device();
+        a.set_dummy_landscape(Some(i), false);
+        assert_eq!((a.devices[i].area.x, a.devices[i].area.y), (210.0, 297.0));
+        assert_eq!((a.devices[0].area.x, a.devices[0].area.y), (297.0, 210.0), "other devices stay as they are");
+        a.take_selected_device();
+        assert_eq!(a.work_size_mm(), (210.0, 297.0));
+        // In the editor the project's device and its entry in the list turn together, and back.
+        a.screen = crate::Screen::Editor;
+        a.set_dummy_landscape(a.active, true);
+        assert_eq!(a.work_size_mm(), (297.0, 210.0));
+        assert_eq!((a.devices[i].area.x, a.devices[i].area.y), (297.0, 210.0));
+        // Turning it the way it already lies changes nothing; a real device is never turned.
+        a.set_dummy_landscape(a.active, true);
+        assert_eq!(a.work_size_mm(), (297.0, 210.0));
+        a.set_dummy_landscape(Some(0), false);
+        assert_eq!((a.devices[0].area.x, a.devices[0].area.y), (297.0, 210.0));
     }
 
     #[test]

@@ -76,96 +76,99 @@
 75|Importér LightBurn-projekt…
 76|Enheden {} blev importeret
 77|Importér…
-78|Lag
-79|Linjer: {} m, bevægelser med pennen oppe: {} m, penløft: {}, ca. {} min
-80|Maskine
-81|Maskinens nulpunkt (0,0)
-82|Bevægelser med pennen oppe
-83|Ny
-84|Ingen enhed endnu. Tilføj en, eller arbejd uden maskine.
-85|Ingen port
-86|Ikke en http- eller https-adresse.
-87|Noter
-88|Noter om denne maskine
-89|Intet markeret
-90|Åbn en tegning, eller begynd et tomt design.
-91|Åbn forbindelsen til styringen i enhedens indstillinger
-92|Åbn forhåndsvisningsvinduet
-93|Åbn…
-94|Kontur
-95|Pen
-96|Pen nede
-97|Pen oppe
-98|Penbredde
-99|Plot af jobbet…
-100|Plotter
-101|Port
-102|Port eller USB-id
-103|Forhåndsvisning
-104|Forhåndsvisning…
-105|Egenskaber
-106|Læg de valgte former på dette lag
-107|Læs en enhed fra en fil
-108|Klar
-109|Gentilslut
-110|Opdater
-111|Husk USB-id'erne for den valgte port: porten findes igen med dem, når navnet ændres.
-112|Nulstil visning
-113|Genoptag
-114|STOP
-115|Gem
-116|Gem G-code
-117|Gem som…
-118|Gem denne enhed i en fil
-119|Enheden blev gemt i {}
-120|{} gemt
-121|Servo (M3 S…)
-122|Indstillinger
-123|Former på dette lag
-124|Viser livebilledet fra denne maskines kamera
-125|Viser stierne på arbejdsområdet
-126|Vises på fanen Kamera
-127|Vises i arbejdsområdet
-128|Hastighed
-129|Hastighed for bevægelser med pennen oppe
-130|Start
-131|Starter job: {} linjer, ~{}
-132|Send jobbet til den tilsluttede maskine
-133|Streaming
-134|Tændt
-135|TCP-port
-136|Enheden til dette projekt
-137|Enheden blev tilføjet.
-138|Enheden blev gemt.
-139|Først fyldet, så konturen oven på, så kanten bliver ren.
-140|Jobbet er færdigt.
-141|Jobbet kører.
-142|Pennen følger formernes linjer. Åbne linjer virker også.
-143|Pennen løftes af
-144|Arbejdsområdet er arket, som pennen kan nå. Maskinens nulpunkt er hjørnet, hvor pennen starter.
-145|Der er intet at tegne: læg former på tændte lag.
-146|Intet at indramme: læg former på tændte lag.
-147|Der er intet at vise endnu: tegn former og læg dem på tændte lag.
-148|Denne version kan ikke bruge computerens kameraer.
-149|Denne enhed har intet tændt kamera. Tilføj et i enhedsindstillingerne.
-150|Denne enhed er ikke på listen: den kom med projektet
-151|Dette er erstatningsenheden (Dummy): standardarbejdsområde og -hastigheder.
-152|Tid {} / {}
-153|For mange enheder
-154|Stier
-155|Fjern binding
-156|Enheder
-157|Vis
-158|Visningsindstillinger…
-159|Ventetid efter penbevægelsen
-160|Venter på billedet…
-161|Når forbindelsen falder af sig selv, prøv igen hvert par sekunder, til du trykker Afbryd.
-162|Med Z-aksen går pennen til højderne ovenfor; med en servo tænder G-koden spindeludgangen med S-værdien (M3 S…).
-163|Arbejd på et projekt uden maskine: en almindelig enhed kaldet Dummy med standardarbejdsområde og -hastigheder
-164|Z-akse
-165|f.eks. Min plotter
-166|ingen
-167|en del af tegningen ligger uden for arbejdsområdet
-168|fyldet har for mange linjer: afstanden er for lille, så en del af fyldet blev udeladt
-169|dette projekt er lavet til en anden maskine: {}
-170|{} billede(r) på lagene kan ikke tegnes: spor dem til linjer først
+78|Liggende
+79|Lag
+80|Linjer: {} m, bevægelser med pennen oppe: {} m, penløft: {}, ca. {} min
+81|Maskine
+82|Maskinens nulpunkt (0,0)
+83|Bevægelser med pennen oppe
+84|Ny
+85|Ingen enhed endnu. Tilføj en, eller arbejd uden maskine.
+86|Ingen port
+87|Ikke en http- eller https-adresse.
+88|Noter
+89|Noter om denne maskine
+90|Intet markeret
+91|Åbn en tegning, eller begynd et tomt design.
+92|Åbn forbindelsen til styringen i enhedens indstillinger
+93|Åbn forhåndsvisningsvinduet
+94|Åbn…
+95|Kontur
+96|Papir
+97|Pen
+98|Pen nede
+99|Pen oppe
+100|Penbredde
+101|Plot af jobbet…
+102|Plotter
+103|Port
+104|Port eller USB-id
+105|Stående
+106|Forhåndsvisning
+107|Forhåndsvisning…
+108|Egenskaber
+109|Læg de valgte former på dette lag
+110|Læs en enhed fra en fil
+111|Klar
+112|Gentilslut
+113|Opdater
+114|Husk USB-id'erne for den valgte port: porten findes igen med dem, når navnet ændres.
+115|Nulstil visning
+116|Genoptag
+117|STOP
+118|Gem
+119|Gem G-code
+120|Gem som…
+121|Gem denne enhed i en fil
+122|Enheden blev gemt i {}
+123|{} gemt
+124|Servo (M3 S…)
+125|Indstillinger
+126|Former på dette lag
+127|Viser livebilledet fra denne maskines kamera
+128|Viser stierne på arbejdsområdet
+129|Vises på fanen Kamera
+130|Vises i arbejdsområdet
+131|Hastighed
+132|Hastighed for bevægelser med pennen oppe
+133|Start
+134|Starter job: {} linjer, ~{}
+135|Send jobbet til den tilsluttede maskine
+136|Streaming
+137|Tændt
+138|TCP-port
+139|Enheden til dette projekt
+140|Enheden blev tilføjet.
+141|Enheden blev gemt.
+142|Først fyldet, så konturen oven på, så kanten bliver ren.
+143|Jobbet er færdigt.
+144|Jobbet kører.
+145|Pennen følger formernes linjer. Åbne linjer virker også.
+146|Pennen løftes af
+147|Arbejdsområdet er arket, som pennen kan nå. Maskinens nulpunkt er hjørnet, hvor pennen starter.
+148|Der er intet at tegne: læg former på tændte lag.
+149|Intet at indramme: læg former på tændte lag.
+150|Der er intet at vise endnu: tegn former og læg dem på tændte lag.
+151|Denne version kan ikke bruge computerens kameraer.
+152|Denne enhed har intet tændt kamera. Tilføj et i enhedsindstillingerne.
+153|Denne enhed er ikke på listen: den kom med projektet
+154|Dette er erstatningsenheden (Dummy): standardarbejdsområde og -hastigheder.
+155|Tid {} / {}
+156|For mange enheder
+157|Stier
+158|Fjern binding
+159|Enheder
+160|Vis
+161|Visningsindstillinger…
+162|Ventetid efter penbevægelsen
+163|Venter på billedet…
+164|Når forbindelsen falder af sig selv, prøv igen hvert par sekunder, til du trykker Afbryd.
+165|Med Z-aksen går pennen til højderne ovenfor; med en servo tænder G-koden spindeludgangen med S-værdien (M3 S…).
+166|Arbejd på et projekt uden maskine: en almindelig enhed kaldet Dummy med standardarbejdsområde og -hastigheder
+167|Z-akse
+168|f.eks. Min plotter
+169|ingen
+170|en del af tegningen ligger uden for arbejdsområdet
+171|fyldet har for mange linjer: afstanden er for lille, så en del af fyldet blev udeladt
+172|dette projekt er lavet til en anden maskine: {}
+173|{} billede(r) på lagene kan ikke tegnes: spor dem til linjer først

@@ -2,6 +2,11 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.2.5
+
+* The Dummy device: choose **Landscape** or **Portrait** for its A4 sheet, under the device list on the start screen and on the Device tab (new texts in 30 languages).
+* No more moving of settings from the old per-program folders (v0.2.4 did it once); the shared folder is simply used. baseCreator v0.9.5.
+
 ## v0.2.4
 
 * One data folder for all programs: `baseCreator` (macOS `~/Library/Application Support/baseCreator`). The clipart gallery is now **shared** by LightCreator, MillCreator and PenCreator; settings, device profiles, materials and tools stay separate per program in `apps/<program>/app.ron`.

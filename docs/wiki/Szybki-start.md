@@ -2,7 +2,7 @@
 
 # Szybki start
 
-1. **Wybierz urządzenie.** Ekran startowy pokazuje Twoje plotery. **Dodaj urządzenie…** tworzy nowe (rozmiar arkusza, sposób podnoszenia pisaka, kamery); **Nie mam urządzenia** tworzy zwykłe urządzenie Dummy (arkusz A4). Jeśli klikniesz **Nowy** albo **Otwórz…** bez wyboru, użyte będzie Dummy.
+1. **Wybierz urządzenie.** Ekran startowy pokazuje Twoje plotery. **Dodaj urządzenie…** tworzy nowe (rozmiar arkusza, sposób podnoszenia pisaka, kamery); **Nie mam urządzenia** tworzy zwykłe urządzenie Dummy (arkusz A4, **Poziomo** albo **Pionowo** (Landscape / Portrait): wybierasz pod listą urządzeń, a później na karcie z urządzeniem). Jeśli klikniesz **Nowy** albo **Otwórz…** bez wyboru, użyte będzie Dummy.
 2. **Nowy** zaczyna pusty projekt na arkuszu urządzenia. **Otwórz…** wczytuje plik SVG, PDF, Illustratora lub `.cre`; **Plik → Import → Importuj projekt LightBurn…** wczytuje projekt LightBurna. Upuszczenie pliku na okno otwiera go.
 3. **Rysuj** narzędziami po lewej (zaznaczanie, edycja węzłów, prostokąt, elipsa, trójkąt, gwiazda, wielokąt, serce, spirala, linia, pióro, tekst, przesuwanie, zoom) albo wstaw obrazek z karty **Clipart**.
 4. **Pisaki.** W karcie **Warstwy** każda warstwa to pisak: ustaw kolor, grubość i prędkość oraz czy kształty są rysowane konturem, wypełniane liniami, czy jedno i drugie. Zaznacz kształty i kliknij **Umieść zaznaczone kształty na tej warstwie**.

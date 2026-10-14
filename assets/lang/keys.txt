@@ -76,96 +76,99 @@
 75	Import LightBurn project…
 76	Imported the device {}
 77	Import…
-78	Layers
-79	Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min
-80	Machine
-81	Machine zero (0,0)
-82	Moves with the pen up
-83	New
-84	No device yet. Add one, or work without a machine.
-85	No port
-86	Not an http or https address.
-87	Notes
-88	Notes about this machine
-89	Nothing selected
-90	Open a drawing or start an empty design.
-91	Open the link to the controller set in the device settings
-92	Open the preview window
-93	Open…
-94	Outline
-95	Pen
-96	Pen down
-97	Pen up
-98	Pen width
-99	Plot of the job…
-100	Plotter
-101	Port
-102	Port or USB id
-103	Preview
-104	Preview…
-105	Properties
-106	Put the selected shapes on this layer
-107	Read a device from a file
-108	Ready
-109	Reconnect
-110	Refresh
-111	Remember the USB ids of the chosen port: the port is found again by them when its name changes.
-112	Reset view
-113	Resume
-114	STOP
-115	Save
-116	Save G-code
-117	Save as…
-118	Save this device to a file
-119	Saved the device to {}
-120	Saved {}
-121	Servo (M3 S…)
-122	Settings
-123	Shapes on this layer
-124	Show the live camera picture of this machine
-125	Show the toolpaths on the work area
-126	Shown in the Camera tab
-127	Shown in the work area
-128	Speed
-129	Speed of moves with the pen up
-130	Start
-131	Starting job: {} lines, ~{}
-132	Stream the job to the connected machine
-133	Streaming
-134	Switched on
-135	TCP port
-136	The device of this project
-137	The device was added.
-138	The device was saved.
-139	The fill first, then the outline over it, so the edge is clean.
-140	The job is finished.
-141	The job is running.
-142	The pen follows the lines of the shapes. Open lines work too.
-143	The pen is lifted by
-144	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
-145	There is nothing to draw: put shapes on layers that are switched on.
-146	There is nothing to frame: put shapes on layers that are switched on.
-147	There is nothing to show yet: draw shapes and put them on layers that are switched on.
-148	This build cannot use the cameras of the computer.
-149	This device has no camera that is switched on. Add one in the device settings.
-150	This device is not in the list: it came with the project
-151	This is the stand-in device (Dummy): the default work area and speeds.
-152	Time {} / {}
-153	Too many devices
-154	Toolpaths
-155	Unbind
-156	Units
-157	View
-158	View options…
-159	Wait after the pen moves
-160	Waiting for the picture…
-161	When the link drops by itself, try again every few seconds until you press Disconnect.
-162	With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).
-163	Work on a project without a machine: a plain device called Dummy, with the default work area and speeds
-164	Z axis
-165	e.g. My pen plotter
-166	none
-167	part of the drawing lies outside the work area
-168	the fill has too many lines: the gap between them is too small, so part of the fill was left out
-169	this project was made for a different machine: {}
-170	{} picture(s) on the layers cannot be drawn: trace them to lines first
+78	Landscape
+79	Layers
+80	Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min
+81	Machine
+82	Machine zero (0,0)
+83	Moves with the pen up
+84	New
+85	No device yet. Add one, or work without a machine.
+86	No port
+87	Not an http or https address.
+88	Notes
+89	Notes about this machine
+90	Nothing selected
+91	Open a drawing or start an empty design.
+92	Open the link to the controller set in the device settings
+93	Open the preview window
+94	Open…
+95	Outline
+96	Paper
+97	Pen
+98	Pen down
+99	Pen up
+100	Pen width
+101	Plot of the job…
+102	Plotter
+103	Port
+104	Port or USB id
+105	Portrait
+106	Preview
+107	Preview…
+108	Properties
+109	Put the selected shapes on this layer
+110	Read a device from a file
+111	Ready
+112	Reconnect
+113	Refresh
+114	Remember the USB ids of the chosen port: the port is found again by them when its name changes.
+115	Reset view
+116	Resume
+117	STOP
+118	Save
+119	Save G-code
+120	Save as…
+121	Save this device to a file
+122	Saved the device to {}
+123	Saved {}
+124	Servo (M3 S…)
+125	Settings
+126	Shapes on this layer
+127	Show the live camera picture of this machine
+128	Show the toolpaths on the work area
+129	Shown in the Camera tab
+130	Shown in the work area
+131	Speed
+132	Speed of moves with the pen up
+133	Start
+134	Starting job: {} lines, ~{}
+135	Stream the job to the connected machine
+136	Streaming
+137	Switched on
+138	TCP port
+139	The device of this project
+140	The device was added.
+141	The device was saved.
+142	The fill first, then the outline over it, so the edge is clean.
+143	The job is finished.
+144	The job is running.
+145	The pen follows the lines of the shapes. Open lines work too.
+146	The pen is lifted by
+147	The work area is the sheet the pen can reach. Machine zero is the corner where the pen starts.
+148	There is nothing to draw: put shapes on layers that are switched on.
+149	There is nothing to frame: put shapes on layers that are switched on.
+150	There is nothing to show yet: draw shapes and put them on layers that are switched on.
+151	This build cannot use the cameras of the computer.
+152	This device has no camera that is switched on. Add one in the device settings.
+153	This device is not in the list: it came with the project
+154	This is the stand-in device (Dummy): the default work area and speeds.
+155	Time {} / {}
+156	Too many devices
+157	Toolpaths
+158	Unbind
+159	Units
+160	View
+161	View options…
+162	Wait after the pen moves
+163	Waiting for the picture…
+164	When the link drops by itself, try again every few seconds until you press Disconnect.
+165	With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).
+166	Work on a project without a machine: a plain device called Dummy, with the default work area and speeds
+167	Z axis
+168	e.g. My pen plotter
+169	none
+170	part of the drawing lies outside the work area
+171	the fill has too many lines: the gap between them is too small, so part of the fill was left out
+172	this project was made for a different machine: {}
+173	{} picture(s) on the layers cannot be drawn: trace them to lines first

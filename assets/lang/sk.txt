@@ -76,96 +76,99 @@
 75|Importovať projekt LightBurn…
 76|Zariadenie {} bolo importované
 77|Importovať…
-78|Vrstvy
-79|Čiary: {} m, pohyby so zdvihnutým perom: {} m, zdvihnutia pera: {}, asi {} min
-80|Stroj
-81|Nula stroja (0,0)
-82|Pohyby so zdvihnutým perom
-83|Nový
-84|Zatiaľ žiadne zariadenie. Pridajte jedno, alebo pracujte bez stroja.
-85|Žiadny port
-86|Nie je to adresa http ani https.
-87|Poznámky
-88|Poznámky k tomuto stroju
-89|Nič nie je vybrané
-90|Otvorte kresbu, alebo začnite prázdny návrh.
-91|Otvoriť spojenie s ovládačom nastaveným v nastaveniach zariadenia
-92|Otvoriť okno náhľadu
-93|Otvoriť…
-94|Obrys
-95|Pero
-96|Pero dole
-97|Pero hore
-98|Šírka pera
-99|Vykreslenie úlohy…
-100|Plotter
-101|Port
-102|Port alebo USB id
-103|Náhľad
-104|Náhľad…
-105|Vlastnosti
-106|Dať vybrané tvary na túto vrstvu
-107|Načítať zariadenie zo súboru
-108|Pripravené
-109|Opätovné pripojenie
-110|Obnoviť
-111|Zapamätať USB identifikátory zvoleného portu: pri zmene jeho názvu sa port podľa nich znova nájde.
-112|Obnoviť pohľad
-113|Pokračovať
-114|STOP
-115|Uložiť
-116|Uložiť G-code
-117|Uložiť ako…
-118|Uložiť toto zariadenie do súboru
-119|Zariadenie uložené do {}
-120|Uložené: {}
-121|Servo (M3 S…)
-122|Nastavenia
-123|Tvary na tejto vrstve
-124|Zobrazí živý obraz z kamery tohto stroja
-125|Zobrazí dráhy na pracovnej ploche
-126|Zobrazené na karte Kamera
-127|Zobrazené v pracovnej ploche
-128|Rýchlosť
-129|Rýchlosť pohybov so zdvihnutým perom
-130|Štart
-131|Spúšťa sa úloha: {} riadkov, ~{}
-132|Odoslať úlohu do pripojeného stroja
-133|Streamovanie
-134|Zapnuté
-135|Port TCP
-136|Zariadenie tohto projektu
-137|Zariadenie bolo pridané.
-138|Zariadenie bolo uložené.
-139|Najprv výplň, potom obrys cez ňu, aby bol okraj čistý.
-140|Úloha je hotová.
-141|Úloha beží.
-142|Pero sleduje čiary tvarov. Otvorené čiary fungujú tiež.
-143|Pero sa dvíha pomocou
-144|Pracovná plocha je hárok, kam pero dosiahne. Nulový bod stroja je roh, kde pero začína.
-145|Nie je čo kresliť: dajte tvary na zapnuté vrstvy.
-146|Nie je čo orámovať: dajte tvary na zapnuté vrstvy.
-147|Zatiaľ nie je čo zobraziť: nakreslite tvary a dajte ich na zapnuté vrstvy.
-148|Táto verzia nemôže používať kamery počítača.
-149|Toto zariadenie nemá zapnutú kameru. Pridajte ju v nastaveniach zariadenia.
-150|Toto zariadenie nie je v zozname: prišlo s projektom
-151|Toto je náhradné zariadenie (Dummy): predvolená pracovná plocha a rýchlosti.
-152|Čas {} / {}
-153|Príliš veľa zariadení
-154|Dráhy
-155|Zrušiť väzbu
-156|Jednotky
-157|Zobrazenie
-158|Možnosti zobrazenia…
-159|Čakanie po pohybe pera
-160|Čaká sa na obraz…
-161|Keď spojenie samo spadne, skúšať to každých pár sekúnd, kým nestlačíte Odpojiť.
-162|Pri osi Z ide pero do vyššie uvedených výšok; pri serve G-kód zapne výstup vretena hodnotou S (M3 S…).
-163|Práca na projekte bez stroja: obyčajné zariadenie s názvom Dummy s predvolenou pracovnou plochou a rýchlosťami
-164|Os Z
-165|napr. Môj plotter
-166|žiadne
-167|časť kresby leží mimo pracovnej plochy
-168|výplň má príliš veľa čiar: rozstup je príliš malý, preto bola časť výplne vynechaná
-169|tento projekt bol vytvorený pre iný stroj: {}
-170|{} obrázkov na vrstvách sa nedá kresliť: najprv ich preveďte na čiary
+78|Na šírku
+79|Vrstvy
+80|Čiary: {} m, pohyby so zdvihnutým perom: {} m, zdvihnutia pera: {}, asi {} min
+81|Stroj
+82|Nula stroja (0,0)
+83|Pohyby so zdvihnutým perom
+84|Nový
+85|Zatiaľ žiadne zariadenie. Pridajte jedno, alebo pracujte bez stroja.
+86|Žiadny port
+87|Nie je to adresa http ani https.
+88|Poznámky
+89|Poznámky k tomuto stroju
+90|Nič nie je vybrané
+91|Otvorte kresbu, alebo začnite prázdny návrh.
+92|Otvoriť spojenie s ovládačom nastaveným v nastaveniach zariadenia
+93|Otvoriť okno náhľadu
+94|Otvoriť…
+95|Obrys
+96|Papier
+97|Pero
+98|Pero dole
+99|Pero hore
+100|Šírka pera
+101|Vykreslenie úlohy…
+102|Plotter
+103|Port
+104|Port alebo USB id
+105|Na výšku
+106|Náhľad
+107|Náhľad…
+108|Vlastnosti
+109|Dať vybrané tvary na túto vrstvu
+110|Načítať zariadenie zo súboru
+111|Pripravené
+112|Opätovné pripojenie
+113|Obnoviť
+114|Zapamätať USB identifikátory zvoleného portu: pri zmene jeho názvu sa port podľa nich znova nájde.
+115|Obnoviť pohľad
+116|Pokračovať
+117|STOP
+118|Uložiť
+119|Uložiť G-code
+120|Uložiť ako…
+121|Uložiť toto zariadenie do súboru
+122|Zariadenie uložené do {}
+123|Uložené: {}
+124|Servo (M3 S…)
+125|Nastavenia
+126|Tvary na tejto vrstve
+127|Zobrazí živý obraz z kamery tohto stroja
+128|Zobrazí dráhy na pracovnej ploche
+129|Zobrazené na karte Kamera
+130|Zobrazené v pracovnej ploche
+131|Rýchlosť
+132|Rýchlosť pohybov so zdvihnutým perom
+133|Štart
+134|Spúšťa sa úloha: {} riadkov, ~{}
+135|Odoslať úlohu do pripojeného stroja
+136|Streamovanie
+137|Zapnuté
+138|Port TCP
+139|Zariadenie tohto projektu
+140|Zariadenie bolo pridané.
+141|Zariadenie bolo uložené.
+142|Najprv výplň, potom obrys cez ňu, aby bol okraj čistý.
+143|Úloha je hotová.
+144|Úloha beží.
+145|Pero sleduje čiary tvarov. Otvorené čiary fungujú tiež.
+146|Pero sa dvíha pomocou
+147|Pracovná plocha je hárok, kam pero dosiahne. Nulový bod stroja je roh, kde pero začína.
+148|Nie je čo kresliť: dajte tvary na zapnuté vrstvy.
+149|Nie je čo orámovať: dajte tvary na zapnuté vrstvy.
+150|Zatiaľ nie je čo zobraziť: nakreslite tvary a dajte ich na zapnuté vrstvy.
+151|Táto verzia nemôže používať kamery počítača.
+152|Toto zariadenie nemá zapnutú kameru. Pridajte ju v nastaveniach zariadenia.
+153|Toto zariadenie nie je v zozname: prišlo s projektom
+154|Toto je náhradné zariadenie (Dummy): predvolená pracovná plocha a rýchlosti.
+155|Čas {} / {}
+156|Príliš veľa zariadení
+157|Dráhy
+158|Zrušiť väzbu
+159|Jednotky
+160|Zobrazenie
+161|Možnosti zobrazenia…
+162|Čakanie po pohybe pera
+163|Čaká sa na obraz…
+164|Keď spojenie samo spadne, skúšať to každých pár sekúnd, kým nestlačíte Odpojiť.
+165|Pri osi Z ide pero do vyššie uvedených výšok; pri serve G-kód zapne výstup vretena hodnotou S (M3 S…).
+166|Práca na projekte bez stroja: obyčajné zariadenie s názvom Dummy s predvolenou pracovnou plochou a rýchlosťami
+167|Os Z
+168|napr. Môj plotter
+169|žiadne
+170|časť kresby leží mimo pracovnej plochy
+171|výplň má príliš veľa čiar: rozstup je príliš malý, preto bola časť výplne vynechaná
+172|tento projekt bol vytvorený pre iný stroj: {}
+173|{} obrázkov na vrstvách sa nedá kresliť: najprv ich preveďte na čiary
