@@ -9,6 +9,7 @@ mod layers_ui;
 mod machine_ui;
 mod menu;
 mod plot;
+mod plugins_glue;
 mod preview_ui;
 mod section;
 mod texts;
@@ -97,7 +98,9 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::New => Some("file-plus"),
         Act::Open => Some("folder-open"),
         Act::Save | Act::SaveAs => Some("save"),
-        Act::ImportLightburn | Act::ImportUgsd => Some("file-input"),
+        Act::ImportLightburn | Act::ImportUgsd | Act::ImportPlugin => Some("file-input"),
+        Act::Plugins => Some("package-open"),
+        Act::GenerateShape => Some("shapes"),
         Act::Preview => Some("eye"),
         Act::Firmware => Some("settings"),
         Act::Calibration => Some("sliders-horizontal"),
@@ -174,6 +177,9 @@ struct App {
     cal: CalUi,
     diag: DiagUi,
     diag_gcode: Option<String>,
+    plugins: base_ui::plugins_ui::PluginsUi,
+    /// What the postprocessor of the last export said, for the status bar.
+    post_note: Option<String>,
     start_from: StartFrom,
     start_lines: Vec<String>,
     /// A job that waits for the check run to find nothing wrong.
@@ -215,7 +221,7 @@ impl App {
         #[cfg(not(target_os = "macos"))]
         let _ = native_menu;
         let devices = saved("devices").map(|t| device::load_all(&t)).unwrap_or_default();
-        App {
+        let mut app = App {
             scene: Scene::default(),
             ed,
             history: History::default(),
@@ -254,6 +260,8 @@ impl App {
             cal: CalUi::default(),
             diag: DiagUi::default(),
             diag_gcode: None,
+            plugins: base_ui::plugins_ui::PluginsUi::new("pencreator", &data_paths().base),
+            post_note: None,
             start_from: StartFrom::default(),
             start_lines: vec![],
             after_check: None,
@@ -263,7 +271,9 @@ impl App {
             show_about: false,
             #[cfg(target_os = "macos")]
             native_menu: native_menu.then(|| native_menu::install(ctx)),
-        }
+        };
+        app.after_plugins_changed();
+        app
     }
 
     /// What is kept between runs.
@@ -310,6 +320,9 @@ impl App {
         // A LightBurn project or a UGS design is imported into the drawing, not opened.
         if is_import(&path) {
             return self.import_file(path);
+        }
+        if self.try_plugin_import(&path) {
+            return;
         }
         if self.screen == Screen::Start {
             self.take_selected_device();
@@ -780,6 +793,7 @@ impl App {
         base_ui::editor::view_options_window(self, ctx, &mut show);
         self.clip_dialogs(ctx);
         self.online_clipart_window(ctx);
+        self.plugin_windows(ctx);
         self.device_window(ctx);
         self.machine_windows(ctx);
         self.preview_window(ctx);
@@ -954,6 +968,9 @@ impl MenuHost for App {
             Act::SaveAs => self.save(true),
             Act::ImportLightburn => self.import_lightburn_dialog(),
             Act::ImportUgsd => self.import_ugsd_dialog(),
+            Act::ImportPlugin => self.import_with_plugin_dialog(),
+            Act::Plugins => self.plugins.open = true,
+            Act::GenerateShape => self.plugins.gen_open = true,
             Act::Preview => self.open_preview(),
             Act::Firmware => self.fw_open = true,
             Act::Calibration => self.cal.open = true,
@@ -1130,6 +1147,40 @@ mod tests {
         a.scene = a.history.back(&now).unwrap();
         assert_eq!(a.scene.shapes.len(), before);
         std::fs::remove_dir_all(dir).ok();
+    }
+
+    /// A folder of plugins with a small importer and a postprocessor.
+    fn scratch_plugins(name: &str) -> PathBuf {
+        let base = std::env::temp_dir().join(format!("pc-plugins-{name}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&base);
+        let p = base.join("plugins/my-tools");
+        std::fs::create_dir_all(&p).unwrap();
+        std::fs::write(p.join("plugin.json"), r#"{"id":"my-tools","name":"My tools","importers":[{"id":"xy","name":"XY","extensions":["xy"],"script":"read.rhai"}],"postprocessors":[{"id":"n","name":"Numbers","script":"post.rhai"}]}"#).unwrap();
+        std::fs::write(p.join("read.rhai"), "fn read(text, ctx) { [rect(5, 5, 10, 20), circle(30, 30, 4)] }").unwrap();
+        std::fs::write(p.join("post.rhai"), r#"fn post(lines, ctx) { let out = []; let n = 1; for l in lines { out.push("N" + n + " " + l); n += 1; } out }"#).unwrap();
+        base
+    }
+
+    #[test]
+    fn a_plugin_reads_its_files_and_postprocesses_the_gcode() {
+        let base = scratch_plugins("all");
+        let mut a = app();
+        a.plugins = base_ui::plugins_ui::PluginsUi::new("pencreator", &base);
+        let file = base.join("shapes.xy");
+        std::fs::write(&file, "anything").unwrap();
+        a.scene = read_scene(SVG).unwrap();
+        let before = a.scene.shapes.len();
+        let recent = a.recent.clone();
+        a.open(file);
+        assert_eq!(a.scene.shapes.len(), before + 2, "{}", a.status);
+        assert_eq!(a.recent, recent);
+        a.plugins.post = Some("my-tools/n".into());
+        assert_eq!(a.postprocessed("G21\nM5\n".into()).unwrap(), "N1 G21\nN2 M5\n");
+        std::fs::write(base.join("plugins/my-tools/post.rhai"), r#"fn post(lines, ctx) { ["$RST=*"] }"#).unwrap();
+        a.plugins.reload();
+        assert!(a.postprocessed("G21\n".into()).is_none());
+        assert!(a.status.contains("nothing was saved"), "{}", a.status);
+        std::fs::remove_dir_all(base).ok();
     }
 
     #[test]
