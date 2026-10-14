@@ -6,9 +6,9 @@ Język, schemat kolorów, opcje widoku, ostatnie pliki i **Twoje urządzenia** (
 
 | System | Położenie |
 |---|---|
-| macOS | `~/Library/Application Support/pencreator/app.ron` |
-| Windows | `%APPDATA%\pencreator\data\app.ron` |
-| Linux | `$XDG_DATA_HOME/pencreator/app.ron`, domyślnie `~/.local/share/pencreator/app.ron` |
+| macOS | `~/Library/Application Support/baseCreator/apps/pencreator/app.ron` |
+| Windows | `%APPDATA%\baseCreator\apps\pencreator\app.ron` |
+| Linux | `$XDG_DATA_HOME/baseCreator/apps/pencreator/app.ron`, domyślnie `~/.local/share/baseCreator/apps/pencreator/app.ron` |
 
 * Twoje cliparty leżą obok, w folderze `clipart`.
 * Urządzenie można też zapisać do pliku (**Eksportuj…**) i wczytać ponownie (**Importuj…**) na ekranie startowym.

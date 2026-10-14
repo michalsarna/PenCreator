@@ -6,11 +6,11 @@ Language, colour scheme, view options, recent files and **your devices** (key `d
 
 | System | Location |
 |---|---|
-| macOS | `~/Library/Application Support/pencreator/app.ron` |
-| Windows | `%APPDATA%\pencreator\data\app.ron` |
-| Linux | `$XDG_DATA_HOME/pencreator/app.ron`, by default `~/.local/share/pencreator/app.ron` |
+| macOS | `~/Library/Application Support/baseCreator/apps/pencreator/app.ron` |
+| Windows | `%APPDATA%\baseCreator\apps\pencreator\app.ron` |
+| Linux | `$XDG_DATA_HOME/baseCreator/apps/pencreator/app.ron`, by default `~/.local/share/baseCreator/apps/pencreator/app.ron` |
 
-* Your clipart sits in the `clipart` folder next to it.
+* **Shared folder.** LightCreator, MillCreator and PenCreator keep their data in one folder, `baseCreator` (the table shows the program's own settings inside it). The **clipart gallery is shared**: a picture saved or downloaded in one program shows up in the others (the `clipart` folder next to `apps`, with an `index.json` recording name, category, source, licence and author). Each program keeps its own settings, device profiles, materials and tools in `apps/<program>/app.ron`. Set the environment variable `BASECREATOR_DIR` to use another folder. A program started for the first time after the update moves its old settings and pictures in (the old folder is left untouched, identical pictures are not duplicated).
 * A device can also be saved to a file (**Export…**) and read again (**Import…**) on the start screen.
 * The file is written when the program closes. **Delete it to reset everything.**
 * Projects (`.cre`) and SVG are saved wherever you choose.
