@@ -1,6 +1,7 @@
 //! PenCreator: design and prepare drawings for pen plotters. It looks like LightCreator (the window frame, the menus, the
 //! control and status bars, the tool palette, the Properties tab, the colour schemes and the languages come from
 //! baseCreator). It adds devices (with cameras), layers that are pens, fill lines, a plot preview and G-code.
+mod backup_ui;
 mod device;
 mod device_ui;
 mod layers;
@@ -98,6 +99,8 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::OpenRecent(_) | Act::ClearRecent => None,
         Act::Quit => Some("x"),
         Act::ViewOptions => Some("sliders-horizontal"),
+        Act::DownloadBackup => Some("package"),
+        Act::RestoreBackup => Some("package-open"),
         Act::OpenGithub => Some("github"),
         Act::About => Some("info"),
         Act::SetLang(_) | Act::SetScheme(_) => None,
@@ -877,6 +880,8 @@ impl MenuHost for App {
                 self.scheme = s;
                 theme::apply(ctx, s);
             }
+            Act::DownloadBackup => self.download_backup(),
+            Act::RestoreBackup => self.restore_backup_dialog(ctx),
             Act::OpenGithub => ctx.open_url(egui::OpenUrl::new_tab("https://github.com/michalsarna/PenCreator")),
             Act::About => self.show_about = true,
         }

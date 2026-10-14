@@ -11,6 +11,7 @@
 * Reading SVG, PDF and Illustrator (PDF-compatible) files and LightBurn projects (`.lbrn2`: shapes, text outlines, bitmaps) into a scene of shapes.
 * The editor of baseCreator: drawing tools, selection, node editing, undo and redo, copy and paste, group, align, flip, rotate, order, grid and snapping.
 * Menus (with the native macOS menu bar and recent files), icons, tool palette, arrange bar, View options and the About window of baseCreator.
+* **Backup:** Help → Download backup… saves a zip with the settings of PenCreator and the shared clipart gallery; Help → Restore from backup… reads it back (settings replaced after a confirmation, pictures added to the gallery, a backup of another program refused). The same entries as in LightCreator.
 
 ## Planned
 
