@@ -43,3 +43,7 @@ Wszystkie obrazy są generowane bez okna z prawdziwego interfejsu (`cargo test -
 ### Wykres w połowie
 
 ![Wykres w połowie](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/10-plot-progress.png)
+
+### Karta Console: wymiana ze sterownikiem i linia do wysłania polecenia
+
+![Karta Console: wymiana ze sterownikiem i linia do wysłania polecenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/11-console.png)

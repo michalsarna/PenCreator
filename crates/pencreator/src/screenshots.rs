@@ -104,4 +104,19 @@ fn render_screenshots() {
         a.view.progress = 0.45;
     }
     save(&mut h, "10-plot-progress.png");
+    {
+        use base_ui::link::{ConsoleLine, Dir};
+        let a = app(&mut h);
+        let line = |dir, text: &str| ConsoleLine { dir, text: text.into(), poll: false };
+        a.machine.console.clear();
+        a.machine.console.push(ConsoleLine::info("Connected to /dev/ttyUSB0 @ 115200"));
+        a.machine.console.push(line(Dir::Rx, "Grbl 1.1h ['$' for help]"));
+        for (t, r) in [("$H", "ok"), ("G21 G90", "ok"), ("G0 Z5", "ok"), ("G0 X10 Y10", "ok")] {
+            a.machine.console.push(line(Dir::Tx, t));
+            a.machine.console.push(line(Dir::Rx, r));
+        }
+        a.show_plot = false;
+        a.side_tab = crate::SideTab::Console;
+    }
+    save(&mut h, "11-console.png");
 }

@@ -43,3 +43,7 @@ All pictures are rendered headlessly from the real interface (`cargo test -p pen
 ### The plot, part way through
 
 ![The plot, part way through](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/10-plot-progress.png)
+
+### Console tab: the traffic with the controller and a line to send a command
+
+![Console tab: the traffic with the controller and a line to send a command](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/11-console.png)
