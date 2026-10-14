@@ -285,8 +285,8 @@ impl App {
                             if new {
                                 ui.label(tr("Start from"));
                                 egui::ComboBox::from_id_salt("dev_preset").selected_text(tr("A usual sheet size…")).show_ui(ui, |ui| {
-                                    for p in base_core::presets::PEN {
-                                        if ui.selectable_label(false, p.name).clicked() {
+                                    for p in base_core::presets::with_plugins(base_core::presets::PEN, &self.plugins.registry, "pencreator", base_core::plugins::PresetClass::Pen) {
+                                        if ui.selectable_label(false, &p.name).clicked() {
                                             d.area.x = p.area[0];
                                             d.area.y = p.area[1];
                                             d.rapid = p.rapid;
