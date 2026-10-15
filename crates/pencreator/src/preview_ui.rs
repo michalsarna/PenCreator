@@ -153,7 +153,7 @@ impl App {
 
 /// The paper and the lines on it, with the pen at the end of what is shown.
 fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], w: f64, h: f64) {
-    let size = ui.available_size().max(egui::vec2(200.0, 200.0));
+    let size = base_ui::window::fill_size(ui).max(egui::vec2(200.0, 200.0));
     let (rect, resp) = ui.allocate_exact_size(size, egui::Sense::click_and_drag());
     if resp.double_clicked() {
         view.reset();

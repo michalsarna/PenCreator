@@ -214,7 +214,11 @@ pub fn generate(scene: &Scene, layers: &[PenLayer], dev: &Device) -> Program {
     let mut outside = false;
     let mut too_many = false;
     let mut budget = MAX_HATCH_LINES;
-    for (li, l) in layers.iter().enumerate().filter(|(_, l)| l.enabled) {
+    for li in crate::layers::layer_order(layers) {
+        let l = &layers[li];
+        if !l.enabled {
+            continue;
+        }
         let outlines = layer_outlines(scene, li, dev.area.y, &mut images);
         if outlines.is_empty() {
             continue;
@@ -410,6 +414,19 @@ mod tests {
 
     fn drawn(prog: &Program) -> f64 {
         prog.draw_length()
+    }
+
+    #[test]
+    fn layers_are_drawn_in_the_order_they_were_moved_to() {
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 30.0);
+        square(&mut scene, 2, 100.0, 20.0, 30.0);
+        let mut layers = default_layers();
+        let first_drawn = |prog: &Program| prog.moves.iter().find(|m| m.kind != MoveKind::Travel).map(|m| m.layer);
+        assert_eq!(first_drawn(&generate(&scene, &layers, &Device::dummy())), Some(0));
+        crate::layers::move_layer(&mut layers, 2, true);
+        crate::layers::move_layer(&mut layers, 2, true);
+        assert_eq!(first_drawn(&generate(&scene, &layers, &Device::dummy())), Some(2), "the blue pen goes first now");
     }
 
     #[test]

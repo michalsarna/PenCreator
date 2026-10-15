@@ -10,9 +10,9 @@ Połącz się na karcie **Device**. Program odczytuje kontroler (`$I` – firmwa
 
 ## Karta Sterowanie
 
-* **Pozycja:** pozycja robocza i maszynowa X, Y i Z. **X0 Y0 Z0** robią z miejsca, gdzie jest narzędzie, zero pracy (`G10 L20`); kliknij liczbę, aby wpisać pozycję. **Współrzędne** wybierają G54 … G59.
-* **Przesuw:** przyciski kroków (ich wielkości ustawisz w urządzeniu, na stronie **Jogging**), strzałki i **Z▲ Z▼**; kwadrat pośrodku zatrzymuje ruch. Z opcją **Przytrzymaj, aby jechać** narzędzie jedzie, dopóki przycisk jest wciśnięty, i staje po puszczeniu. **Klawiatura** (domyślnie wyłączona, bo strzałki przesuwają też kształty) używa strzałek i Page Up / Page Down.
-* **Jedź do X0 Y0** najpierw podnosi na bezpieczną wysokość; **Z na bezpieczną wysokość**.
+* **Pozycja:** pozycja robocza i maszynowa X, Y i Z, dużymi cyframi. **X0 Y0 Z0** (po lewej każdej osi) robią z miejsca, gdzie jest narzędzie, zero pracy (`G10 L20`); kliknij liczbę, aby wpisać pozycję. Pod nimi: **Zero all**, **Zero X and Y**, **Jedź do X0 Y0** (najpierw podnosi na bezpieczną wysokość) i **Z na bezpieczną wysokość**. **Współrzędne** wybierają G54 … G59.
+* **Przesuw:** odległość jednego kliknięcia dla XY i dla Z to pole, w którym można pisać; przyciski obok wstawiają tam wartość (XY 0,1 … 100, Z 0,1 … 20; wartości ustawia się w urządzeniu, strona **Jogging**). **Prędkość** to prędkości XY i Z urządzenia (zmiana tutaj trwa do zmiany w urządzeniu).
+* **Przyciski ruchu** (duże, pośrodku): strzałki, **Z▲ Z▼**; kwadrat zatrzymuje ruch. Jedno kliknięcie to jeden ruch. Z opcją **Przytrzymaj, aby jechać** narzędzie jedzie, dopóki przycisk jest wciśnięty, i staje po puszczeniu. **Klawiatura** (domyślnie wyłączona, bo strzałki przesuwają też kształty) używa strzałek i Page Up / Page Down o wybrany krok.
 * **Makra:** przyciski wysyłające napisany przez Ciebie G-code (strona **Macros** ustawień urządzenia). Zmienne w nawiasach kwadratowych są podmieniane przy wysyłaniu: `[posx] [posy] [posz]` (pozycja robocza), `[mposx]` …, `[xmin] [xmax] [ymin] [ymax]` (obrys zadania), `[safez]`, `[prbx] [prby] [prbz]` (ostatnie sondowanie). `$RST` jest w makrze zabronione. Ta sama strona ma G-code uruchamiany **przed** i **po** każdym zadaniu (także po zatrzymaniu).
 
 ## Uruchamianie zadania
@@ -37,3 +37,7 @@ Każde urządzenie przechowuje kopie ustawień swojego kontrolera (`$$`). Pierws
 Gdy GRBL powie `ALARM:n` albo `error:n`, konsola dostaje pod spodem wiersz z wyjaśnieniem, a pasek stanu je pokazuje. Wyjaśnienia są w 30 językach programu.
 
 > ⚠️ Sondowanie, przesuw i pauzy wysyłają prawdziwe ruchy. Miej zatrzymanie w zasięgu ręki.
+
+## Gdy maszyna się zatrzyma
+
+Alarm, błąd w zadaniu albo sterownik, który nie odpowiada, otwiera **okno pośrodku ekranu**: co się stało oraz dwa duże przyciski, **STOP** (czerwony: zatrzymuje zadanie i wrzeciono) i **UNLOCK** (pomarańczowy: kasuje alarm, `$X`). Zobacz, dlaczego się zatrzymało, zanim odblokujesz: narzędzie może tkwić w materiale.

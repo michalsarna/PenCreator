@@ -10,9 +10,9 @@ Connect on the **Device** tab. The program reads the controller (`$I` for its fi
 
 ## The Control tab
 
-* **Position:** the work position and the machine position of X, Y and Z. **X0 Y0 Z0** make the place where the tool is the zero of the work (`G10 L20`); click a number to type the position. **Coordinates** picks G54 … G59.
-* **Move:** step buttons (their sizes are set in the device settings, page **Jogging**), the arrows and **Z▲ Z▼**; the square in the middle stops the move. With **Hold to move** the tool moves while the button is held down and stops when it is let go. **Keyboard** (off by default, because the arrows also move shapes) uses the arrow keys and Page Up / Page Down.
-* **Go to X0 Y0** lifts to the safe height first; **Z to safe height**.
+* **Position:** the work position and the machine position of X, Y and Z, in big figures. **X0 Y0 Z0** (on the left of each axis) make the place where the tool is the zero of the work (`G10 L20`); click a number to type the position. Under them: **Zero all**, **Zero X and Y**, **Go to X0 Y0** (lifts to the safe height first) and **Z to safe height**. **Coordinates** picks G54 … G59.
+* **Move:** the distance of one click for XY and for Z is a field you can type in; the buttons next to it put a value there (XY 0.1 … 100, Z 0.1 … 20; the values are set in the device settings, page **Jogging**). **Speed** has the XY and Z speeds of the device (a change here lasts until the device's own change).
+* **Jog buttons** (big, in the middle): the arrows, **Z▲ Z▼**; the square stops the move. One click is one move. With **Hold to move** the tool moves while the button is held down and stops when it is let go. **Keyboard** (off by default, because the arrows also move shapes) uses the arrow keys and Page Up / Page Down by the chosen step.
 * **Macros:** buttons that send G-code you wrote (page **Macros** of the device settings). Variables in brackets are replaced when the macro is sent: `[posx] [posy] [posz]` (work position), `[mposx]` …, `[xmin] [xmax] [ymin] [ymax]` (the box of the job), `[safez]`, `[prbx] [prby] [prbz]` (the last probe). `$RST` is not allowed in a macro. The same page has G-code that runs **before** and **after** every job (also after Stop).
 
 ## Running a job
@@ -37,3 +37,7 @@ Every device keeps copies of the settings of its controller (`$$`). One is made 
 When GRBL says `ALARM:n` or `error:n`, the console gets a line under it that explains it, and the status bar shows it. The explanations are in the 30 languages of the program.
 
 > ⚠️ Probing, jogging and the pauses send real moves. Keep the stop within reach.
+
+## When the machine stops
+
+An alarm, an error in a job or a controller that does not answer opens a **window in the middle of the screen**: what happened, and two big buttons, **STOP** (red: stops the job and the spindle) and **UNLOCK** (orange: clears the alarm, `$X`). Look at why it stopped before you unlock: the tool may be in the material.
