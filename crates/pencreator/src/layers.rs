@@ -64,7 +64,10 @@ pub struct PenLayer {
     /// A second set of fill lines across the first.
     pub cross_hatch: bool,
     /// How many times every line is drawn (a pen that is too light).
-    pub passes: u8,
+    pub passes: u8,    /// Where the layer is in the order the layers are done in (the lower first; equal numbers go by layer). Moving layers
+    /// in the list renumbers them all.
+    #[serde(default)]
+    pub rank: u32,
 }
 
 
@@ -85,6 +88,26 @@ impl PenLayer {
             return Err("a layer name is too long".into());
         }
         Ok(())
+    }
+}
+
+/// The layers in the order they are done in: by their rank, then by their number.
+pub fn layer_order(layers: &[PenLayer]) -> Vec<usize> {
+    let mut o: Vec<usize> = (0..layers.len()).collect();
+    o.sort_by_key(|&i| (layers[i].rank, i));
+    o
+}
+
+/// Move a layer one place earlier (`up`) or later in the order the layers are done in; all the layers get a new rank.
+pub fn move_layer(layers: &mut [PenLayer], layer: usize, up: bool) {
+    let mut o = layer_order(layers);
+    let Some(at) = o.iter().position(|&i| i == layer) else { return };
+    let to = if up { at.checked_sub(1) } else { (at + 1 < o.len()).then_some(at + 1) };
+    if let Some(to) = to {
+        o.swap(at, to);
+    }
+    for (rank, &i) in o.iter().enumerate() {
+        layers[i].rank = rank as u32;
     }
 }
 
@@ -112,6 +135,7 @@ pub fn default_layers() -> Vec<PenLayer> {
                 hatch_gap: 0.4,
                 cross_hatch: false,
                 passes: 1,
+                rank: 0,
             }
         })
         .collect()
@@ -142,5 +166,23 @@ mod tests {
         l.pen_width = 0.4;
         l.hatch_gap = 0.0;
         assert!(l.check().is_err());
+    }
+
+    #[test]
+    fn layers_can_be_moved_in_the_order_they_are_done_in() {
+        
+        let mut l = default_layers();
+        assert_eq!(&layer_order(&l)[..3], &[0, 1, 2]);
+        move_layer(&mut l, 2, true);
+        assert_eq!(&layer_order(&l)[..3], &[0, 2, 1]);
+        move_layer(&mut l, 0, false);
+        assert_eq!(&layer_order(&l)[..3], &[2, 0, 1]);
+        move_layer(&mut l, 2, true);
+        assert_eq!(layer_order(&l)[0], 2, "the first cannot go earlier");
+        let last = layer_order(&l)[l.len() - 1];
+        move_layer(&mut l, last, false);
+        assert_eq!(layer_order(&l)[l.len() - 1], last, "the last cannot go later");
+        // Older projects have no ranks: the order is the numbers.
+        assert_eq!(layer_order(&default_layers()), (0..l.len()).collect::<Vec<_>>());
     }
 }

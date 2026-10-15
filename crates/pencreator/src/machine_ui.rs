@@ -89,6 +89,7 @@ impl App {
                         Some(t) => trf("Alarm {}: {}", &[&code, &tr(t)]),
                         None => trf("Alarm {}", &[&code]),
                     };
+                    base_ui::alert_ui::raise_alarm(&mut self.machine, code, &base_core::grbl_codes::alarm(code).map(tr).unwrap_or(""));
                 }
                 Notice::Error { code, line } => {
                     // The errors a check run finds are the program's, not the machine's.
@@ -101,9 +102,14 @@ impl App {
                         Some(n) => trf("Error {} in line {}: {}", &[&code, &(n + 1), &text]),
                         None => trf("Error {}: {}", &[&code, &text]),
                     };
+                    // An error in the middle of a job stops it: the person must see that.
+                    if line.is_some() && !self.machine.checking() {
+                        base_ui::alert_ui::raise_job_stopped(&mut self.machine, &self.status.clone());
+                    }
                 }
                 Notice::Stalled { secs, state } => {
                     self.status = trf("No answer from the controller for {} s while a job is running (state: {}).", &[&secs, &state]);
+                    base_ui::alert_ui::raise_no_answer(&mut self.machine, &self.status.clone());
                 }
                 Notice::Read => {
                     // Something changed in the controller since the copy kept with the device? Say so, and make a new copy.
