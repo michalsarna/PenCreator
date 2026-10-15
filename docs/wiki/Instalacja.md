@@ -7,8 +7,8 @@ Każde wydanie na [stronie Releases](https://github.com/michalsarna/PenCreator/r
 | System | Instalator / pakiet | Archiwum |
 |---|---|---|
 | Windows 10/11 (64-bit) | `pencreator-vX.Y.Z-windows-x86_64-setup.exe` | `pencreator-vX.Y.Z-windows-x86_64.zip` |
-| macOS, Apple silicon (M1 i nowsze) | `pencreator-vX.Y.Z-macos-arm64.dmg` | `pencreator-vX.Y.Z-macos-arm64.tar.gz` |
-| macOS, Intel | `pencreator-vX.Y.Z-macos-x86_64.dmg` | `pencreator-vX.Y.Z-macos-x86_64.tar.gz` |
+| macOS, Apple silicon (M1 i nowsze) | `pencreator-vX.Y.Z-macos-arm64.dmg` | – |
+| macOS, Intel | `pencreator-vX.Y.Z-macos-x86_64.dmg` | – |
 | Debian / Ubuntu i pochodne, x86_64 | `pencreator-vX.Y.Z-linux-amd64.deb` | `pencreator-vX.Y.Z-linux-x86_64.tar.gz` |
 | Debian / Ubuntu i pochodne, ARM64 | `pencreator-vX.Y.Z-linux-arm64.deb` | `pencreator-vX.Y.Z-linux-arm64.tar.gz` |
 | Inny Linux | – | `.tar.gz` powyżej |
