@@ -2,6 +2,16 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.3.1
+
+* **Control tab redesigned:** big position readout with X0/Y0/Z0 next to it, Zero all / Zero X and Y, Go to X0 Y0 / Z to safe height, a separate Move section (XY and Z lines, a text field for any step), speeds in their own section (loaded from the device each time), bigger centred jog buttons and a slimmer Probe section.
+* **One move per click:** a jog click used to be sent again on every frame while the mouse button was down; now it moves once (unless Hold to move is on).
+* **Alert window:** when the machine alarms, stops or stops answering during a job, a big window explains what happened, with red **STOP** and orange **UNLOCK** buttons.
+* **Layer bar:** the selected layer's outline is no longer clipped, and the bar ends exactly at the work panel.
+* **Layer order:** layers can be moved earlier/later in the job (chevrons in the Layers panel); the plot follows that order.
+* **Update check:** Help → Check for updates, and an option to look for a newer version at start (Settings → Program options).
+* Windows (preview, …) keep their size; double Esc selects the Select tool.
+
 ## v0.3.0
 
 * **Layer bar** under the editor, the same in all programs: one row of **64 layer colours** (arrows or the wheel scroll it; a dot marks layers with shapes). A click puts the selected shapes on that layer (or, with nothing selected, makes it the layer to draw on); a double click opens its options. One palette in all programs. Projects with fewer layers open with the rest added.
