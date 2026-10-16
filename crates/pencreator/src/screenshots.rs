@@ -196,6 +196,58 @@ mod context_menu_tests {
 }
 
 #[cfg(test)]
+mod trace_tests {
+    use super::*;
+    use base_ui::editor::{EditorHost, EditorImages};
+    use base_ui::menu::StdAct;
+    use egui_kittest::kittest::Queryable;
+
+    /// The way a person does it: a picture is imported with the dialog, then traced into outlines with the Trace dialog.
+    #[test]
+    fn a_picture_is_imported_and_traced_into_outlines_through_the_dialogs() {
+        let mut h: Shot = Harness::builder().with_size([1280.0, 800.0]).build_ui_state(
+            |ui, state: &mut Option<App>| {
+                let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
+                a.draw(ui);
+            },
+            None,
+        );
+        h.run_steps(2);
+        {
+            let a = app(&mut h);
+            a.use_dummy_device();
+            a.screen = crate::Screen::Editor;
+            a.new_design();
+            // 40 x 40 pixels: a black square on white.
+            let mut gray = vec![255u8; 40 * 40];
+            for y in 10..30 {
+                for x in 10..30 {
+                    gray[y * 40 + x] = 0;
+                }
+            }
+            let im = base_core::image::ImageData { name: "square".into(), px_w: 40, px_h: 40, gray, w: 40.0, h: 40.0, invert: false };
+            a.open_import_dialog_with(im);
+        }
+        h.run_steps(4);
+        h.get_by_label("Import").click();
+        h.run_steps(4);
+        assert_eq!(app(&mut h).scene.shapes.len(), 1, "the picture is on the page");
+        assert!(app(&mut h).ed.sel.len() == 1, "and selected");
+        // Trace image… from the menu command.
+        assert!(StdAct::TraceImage.enabled(app(&mut h)));
+        StdAct::TraceImage.run(app(&mut h));
+        h.run_steps(4);
+        assert!(app(&mut h).ed.trace_dlg.is_some(), "the trace dialog opens");
+        h.get_by_label("Trace").click();
+        h.run_steps(4);
+        let a = app(&mut h);
+        assert!(a.ed.trace_dlg.is_none(), "the dialog closes");
+        assert!(a.scene.shapes.len() >= 2, "outlines were added: {} shapes", a.scene.shapes.len());
+        assert!(a.scene.shapes.iter().any(|s| matches!(s.kind, base_core::scene::Kind::Bezier(_))), "as curves");
+    }
+}
+
+#[cfg(test)]
 mod window_size_tests {
     use super::*;
 
