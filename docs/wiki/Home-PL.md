@@ -15,6 +15,7 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzeni
 | Zainstalować program | [Instalacja](Instalacja) |
 | Rysować i importować | [Szybki start](Szybki-start) |
 | Dzielić projekt z LightCreatorem i MillCreatorem | [Plik projektu](Plik-projektu) |
+| Edytować kształty, importować obrazy, panel boczny | [Narzędzia projektowe](Narzedzia-projektowe) |
 | Steruj maszyną: przesuw, zerowanie, sondowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |
 | Zobaczyć, jak to wygląda | [Zrzuty ekranu](Zrzuty-ekranu) |
 | Znaleźć plik ustawień | [Ustawienia i pliki](Ustawienia-i-pliki) |
@@ -31,4 +32,4 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzeni
 * **Sterowanie maszyną:** przesuw, zerowanie, makra, ustawienia firmware, kalibracja, statystyki (zobacz [Sterowanie maszyną](Sterowanie-maszyna)).
 * **Planowane:** HPGL, czcionki jednoliniowe.
 
-Najnowsza wersja: **v0.3.2** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
+Najnowsza wersja: **v0.3.3** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
