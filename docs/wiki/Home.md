@@ -15,6 +15,7 @@ Open-source software for pen plotters, written in Rust. Devices, pens as layers,
 | Install the program | [Installation](Installation) |
 | Draw and import | [Quick Start](Quick-Start) |
 | Share a project with LightCreator and MillCreator | [Project File](Project-File) |
+| Edit shapes, import pictures, the side panel | [Design Tools](Design-Tools) |
 | Drive the machine: jog, zero, firmware, calibration | [Machine Control](Machine-Control) |
 | See what it looks like | [Screenshots](Screenshots) |
 | Find the settings file | [Settings and Files](Settings-and-Files) |
