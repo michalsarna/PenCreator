@@ -15,6 +15,7 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzeni
 | Zainstalować program | [Instalacja](Instalacja) |
 | Rysować i importować | [Szybki start](Szybki-start) |
 | Dzielić projekt z LightCreatorem i MillCreatorem | [Plik projektu](Plik-projektu) |
+| Edytować kształty, importować obrazy, panel boczny | [Narzędzia projektowe](Narzedzia-projektowe) |
 | Steruj maszyną: przesuw, zerowanie, sondowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |
 | Zobaczyć, jak to wygląda | [Zrzuty ekranu](Zrzuty-ekranu) |
 | Znaleźć plik ustawień | [Ustawienia i pliki](Ustawienia-i-pliki) |

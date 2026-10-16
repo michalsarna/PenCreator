@@ -26,3 +26,4 @@ Nothing below exists yet; the list is a plan, not a promise.
 * HPGL output.
 * Text in single-line fonts.
 * Pen pressure and a second pen holder; hatching that follows the shape.
+* **Right-click menu:** on a shape (copy, paste, duplicate, delete, group, lock, flip, turn, arrange, adjust and trace a picture), the same in all programs.
