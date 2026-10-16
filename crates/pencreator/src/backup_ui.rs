@@ -60,6 +60,7 @@ impl App {
             self.dev_edit = None;
             self.confirm_delete = false;
         }
+        self.tabs.restore(get("tab_order").unwrap_or(""), get("side_collapsed").is_some_and(|v| v == "1"));
         if let Some(r) = get("recent_files") {
             self.recent = r.lines().map(PathBuf::from).take(crate::MAX_RECENT).collect();
         }
@@ -119,5 +120,19 @@ mod tests {
         b.apply_settings(&ctx, &r.settings);
         assert_eq!(b.devices[0].control.fw_copies.0.len(), 1);
         let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn the_order_of_the_tabs_and_the_collapsed_panel_are_in_the_backup() {
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        let mut order = a.tabs.order().to_vec();
+        order.swap(0, 3);
+        a.tabs.restore(&order.join(","), true);
+        let pairs: std::collections::BTreeMap<String, String> = a.settings_pairs().into_iter().map(|(k, v)| (k.to_string(), v)).collect();
+        let mut b = App::build(&ctx, None, false);
+        b.apply_settings(&ctx, &pairs);
+        assert_eq!(b.tabs.order(), a.tabs.order());
+        assert!(b.tabs.collapsed);
     }
 }

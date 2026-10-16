@@ -2,6 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.3.2
+
+* **Pictures:** File → Import → Import image… (or drop a PNG, JPG, BMP, GIF or WebP file) with the same import dialog as LightCreator; Arrange → Adjust image… and **Trace image…** turn a picture into outlines to plot.
+* **Side panel:** the tabs can be dragged into another order (remembered, also in backups), and a button collapses the panel to a narrow strip with the tab names written vertically; a click on a name opens the panel on that tab.
+* **Layer bar:** more room between the colours and at both ends, so the outline of the first one is not pressed against the arrow.
+* baseCreator v1.2.0.
+
 ## v0.3.1
 
 * **Control tab redesigned:** big position readout with X0/Y0/Z0 next to it, Zero all / Zero X and Y, Go to X0 Y0 / Z to safe height, a separate Move section (XY and Z lines, a text field for any step), speeds in their own section (loaded from the device each time), bigger centred jog buttons and a slimmer Probe section.
