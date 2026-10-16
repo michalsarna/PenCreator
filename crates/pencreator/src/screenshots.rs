@@ -233,9 +233,9 @@ mod trace_tests {
         h.run_steps(4);
         assert_eq!(app(&mut h).scene.shapes.len(), 1, "the picture is on the page");
         assert!(app(&mut h).ed.sel.len() == 1, "and selected");
-        // Trace image… from the menu command.
+        // Trace image…: the button of the Properties tab (the menu command does the same).
         assert!(StdAct::TraceImage.enabled(app(&mut h)));
-        StdAct::TraceImage.run(app(&mut h));
+        h.get_by_label("Trace image…").click();
         h.run_steps(4);
         assert!(app(&mut h).ed.trace_dlg.is_some(), "the trace dialog opens");
         h.get_by_label("Trace").click();
