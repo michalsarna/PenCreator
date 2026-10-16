@@ -2,6 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.3.3
+
+* **Links open again:** the download page from the update window, Help → Project page on GitHub and the list of plugins did nothing, because the program was built without the link-opening feature of its GUI library. A test keeps it.
+* **Right-click menu** on a shape (copy, paste, duplicate, delete, group, lock, flip, turn, arrange, adjust and trace a picture), shared with the other programs.
+* Documentation: design tools, pictures, the side panel and the layer bar.
+* baseCreator v1.3.0.
+
 ## v0.3.2
 
 * **Pictures:** File → Import → Import image… (or drop a PNG, JPG, BMP, GIF or WebP file) with the same import dialog as LightCreator; Arrange → Adjust image… and **Trace image…** turn a picture into outlines to plot.
