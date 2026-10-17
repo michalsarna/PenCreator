@@ -95,7 +95,7 @@ impl App {
         }
         let name = self.path.as_ref().and_then(|p| p.file_stem()).map(|s| s.to_string_lossy().into_owned()).unwrap_or_else(|| "untitled".into());
         let Some(p) = rfd::FileDialog::new().add_filter("G-code", &["nc", "gcode", "ngc"]).set_file_name(format!("{name}.nc")).save_file() else { return };
-        let text = plot::to_gcode(&prog, &self.device, &self.layers, &name);
+        let text = plot::to_gcode(&prog, &self.device, &self.layers, &self.pens, &name);
         let Some(text) = self.postprocessed(text) else { return };
         self.status = match std::fs::write(&p, text) {
             Ok(()) => trf("Saved {}", &[&p.display()]),
@@ -141,7 +141,7 @@ impl App {
                 ui.add_space(30.0);
                 ui.label(RichText::new(tr("There is nothing to show yet: draw shapes and put them on layers that are switched on.")).color(theme::text_dim()));
             } else {
-                show_plot(ui, &mut self.view, prog, &self.layers, self.device.area.x, self.device.area.y);
+                show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, self.device.area.x, self.device.area.y);
             }
         });
         self.show_plot = open;
@@ -152,7 +152,7 @@ impl App {
 }
 
 /// The paper and the lines on it, with the pen at the end of what is shown.
-fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], w: f64, h: f64) {
+fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], pens: &crate::pens::PenLibrary, w: f64, h: f64) {
     let size = base_ui::window::fill_size(ui).max(egui::vec2(200.0, 200.0));
     let (rect, resp) = ui.allocate_exact_size(size, egui::Sense::click_and_drag());
     if resp.double_clicked() {
@@ -180,6 +180,8 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     let shown = total * view.progress as f64;
     let mut done = 0.0;
     let mut pen_at = None;
+    let marks: Vec<crate::pens::Pen> = layers.iter().map(|l| crate::pens_ui::pen_of_layer(l, pens)).collect();
+    let mut shapes = vec![];
     for m in &prog.moves {
         let len = m.length();
         if done >= shown {
@@ -191,10 +193,12 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
         pen_at = Some(to);
         match m.kind {
             MoveKind::Draw => {
-                let l = layers.get(m.layer);
-                let width = l.map_or(0.4, |l| l.pen_width) as f32 * scale;
-                let color = l.map_or(Color32::BLACK, |l| l.color32());
-                painter.line_segment([at(m.from), at(to)], Stroke::new(width.max(1.0), color));
+                if let Some(pen) = marks.get(m.layer) {
+                    let dir = (m.to[1] - m.from[1]).atan2(m.to[0] - m.from[0]);
+                    crate::pens_ui::mark_shapes(at(m.from), at(to), dir, pen, scale, &mut shapes);
+                } else {
+                    painter.line_segment([at(m.from), at(to)], Stroke::new(1.0, Color32::BLACK));
+                }
             }
             MoveKind::Travel if view.show_travel => {
                 painter.extend(egui::Shape::dashed_line(&[at(m.from), at(to)], Stroke::new(1.0, Color32::from_rgb(0x60, 0x90, 0xd0)), 5.0, 4.0));
@@ -202,6 +206,7 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
             MoveKind::Travel => {}
         }
     }
+    painter.extend(shapes);
     if let Some(p) = pen_at {
         painter.circle_stroke(at(p), 5.0, Stroke::new(1.5, Color32::from_rgb(0xd0, 0x30, 0x30)));
     }

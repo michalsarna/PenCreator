@@ -195,3 +195,37 @@
 194|Ristkiiruvus: mida tumedam pilt, seda rohkem joonesuundi.
 195|Pildi joonistamise viis
 196|Rastreerimine
+197|Pliiatsite kogu
+198|Pliiatsite kogu…
+199|Valmis pliiatsid
+200|Minu pliiatsid
+201|Siin pole veel midagi
+202|Uus pliiats
+203|Koopia sinu enda pliiatsite hulka
+204|Loe pliiatsid failist
+205|Fail on liiga suur
+206|pliiatsit lisatud
+207|Vahele jäetud
+208|Faili ei saa kasutada
+209|Salvesta oma pliiatsid faili
+210|Salvestatud
+211|Salvestamine ebaõnnestus
+212|Ekspordi see pliiats…
+213|Vali pliiats
+214|Valmis pliiatsit ei saa muuta. Tee sellest koopia, et seda muuta.
+215|Liik
+216|Jälje laius
+217|Jälje kõrgus
+218|Otsa pööre
+219|Joone otsad
+220|Ümarad otsad
+221|Siledad otsad
+222|Tindi värv
+223|Läbipaistmatus
+224|Pliiatsit pole valitud
+225|Pliiats
+226|Täitesulg (ots)
+227|Peenjoonepliiats
+228|Vildikas
+229|Markeerija
+230|Pintslipliiats

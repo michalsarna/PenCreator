@@ -195,3 +195,37 @@
 194|Krížové šrafovanie: čím tmavší obrázok, tým viac smerov čiar.
 195|Spôsob kreslenia obrázka
 196|Rastrovanie
+197|Knižnica pier
+198|Knižnica pier…
+199|Hotové perá
+200|Moje perá
+201|Zatiaľ tu nič nie je
+202|Nové pero
+203|Kópia medzi vašimi perami
+204|Načítať perá zo súboru
+205|Súbor je príliš veľký
+206|pridaných pier
+207|Vynechané
+208|Súbor sa nedá použiť
+209|Uložiť vaše perá do súboru
+210|Uložené
+211|Uloženie zlyhalo
+212|Exportovať toto pero…
+213|Vyberte pero
+214|Hotové pero sa nedá meniť. Vytvorte kópiu a upravte ju.
+215|Druh
+216|Šírka stopy
+217|Výška stopy
+218|Natočenie hrotu
+219|Konce čiary
+220|Zaoblené konce
+221|Rovné konce
+222|Farba atramentu
+223|Krytie
+224|Pero nie je vybrané
+225|Ceruzka
+226|Plniace pero (hrot)
+227|Linery
+228|Fixka
+229|Zvýrazňovač
+230|Štetcové pero

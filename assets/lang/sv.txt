@@ -195,3 +195,37 @@
 194|Korsskraffering: ju mörkare bild, desto fler linjeriktningar.
 195|Bildmetod
 196|Rastrering
+197|Pennbibliotek
+198|Pennbibliotek…
+199|Färdiga pennor
+200|Mina pennor
+201|Inget här ännu
+202|Ny penna
+203|En kopia bland dina egna pennor
+204|Läs pennor från en fil
+205|Filen är för stor
+206|pennor tillagda
+207|Utelämnade
+208|Filen kan inte användas
+209|Spara dina pennor i en fil
+210|Sparat
+211|Kunde inte spara
+212|Exportera den här pennan…
+213|Välj en penna
+214|En färdig penna kan inte ändras. Gör en kopia för att ändra den.
+215|Typ
+216|Märkets bredd
+217|Märkets höjd
+218|Spetsens vridning
+219|Linjens ändar
+220|Runda ändar
+221|Platta ändar
+222|Bläckets färg
+223|Täckning
+224|Ingen penna vald
+225|Blyertspenna
+226|Reservoarpenna (spets)
+227|Fineliner
+228|Filtpenna
+229|Överstrykningspenna
+230|Penselpenna

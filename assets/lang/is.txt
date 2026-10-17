@@ -195,3 +195,37 @@
 194|Krosskrafsun: því dekkri sem myndin er, því fleiri stefnur lína.
 195|Aðferð myndar
 196|Röstun
+197|Pennasafn
+198|Pennasafn…
+199|Tilbúnir pennar
+200|Mínir pennar
+201|Ekkert hér ennþá
+202|Nýr penni
+203|Afrit meðal þinna eigin penna
+204|Lesa penna úr skrá
+205|Skráin er of stór
+206|pennar bætt við
+207|Sleppt
+208|Ekki er hægt að nota skrána
+209|Vista pennana þína í skrá
+210|Vistað
+211|Ekki tókst að vista
+212|Flytja út þennan penna…
+213|Veldu penna
+214|Ekki er hægt að breyta tilbúnum penna. Gerðu afrit til að breyta honum.
+215|Gerð
+216|Breidd strikins
+217|Hæð strikins
+218|Snúningur oddsins
+219|Endar línu
+220|Ávalir endar
+221|Flatir endar
+222|Litur bleks
+223|Ógegnsæi
+224|Enginn penni valinn
+225|Blýantur
+226|Lindarpenni (oddur)
+227|Fínlínupenni
+228|Tússpenni
+229|Yfirstrikunarpenni
+230|Penslapenni

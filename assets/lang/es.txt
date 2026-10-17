@@ -195,3 +195,37 @@
 194|Rayado cruzado: cuanto más oscura es la imagen, más direcciones de líneas.
 195|Método de la imagen
 196|Tramado
+197|Biblioteca de bolígrafos
+198|Biblioteca de bolígrafos…
+199|Bolígrafos predefinidos
+200|Mis bolígrafos
+201|Aún no hay nada aquí
+202|Nuevo bolígrafo
+203|Una copia entre tus bolígrafos
+204|Leer bolígrafos de un archivo
+205|El archivo es demasiado grande
+206|bolígrafos añadidos
+207|Omitidos
+208|No se puede usar el archivo
+209|Guardar tus bolígrafos en un archivo
+210|Guardado
+211|No se pudo guardar
+212|Exportar este bolígrafo…
+213|Elige un bolígrafo
+214|Un bolígrafo predefinido no se puede cambiar. Haz una copia para cambiarlo.
+215|Tipo
+216|Ancho de la marca
+217|Alto de la marca
+218|Giro de la punta
+219|Extremos de la línea
+220|Extremos redondeados
+221|Extremos planos
+222|Color de la tinta
+223|Opacidad
+224|Ningún bolígrafo elegido
+225|Lápiz
+226|Pluma estilográfica (plumín)
+227|Rotulador de punta fina
+228|Rotulador
+229|Resaltador
+230|Rotulador de pincel

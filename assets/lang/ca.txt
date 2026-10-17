@@ -195,3 +195,37 @@
 194|Ratllat creuat: com més fosca és la imatge, més adreces de línies.
 195|Mètode de la imatge
 196|Tramat
+197|Biblioteca de retoladors
+198|Biblioteca de retoladors…
+199|Retoladors predefinits
+200|Els meus retoladors
+201|Encara no hi ha res
+202|Nou retolador
+203|Una còpia entre els teus retoladors
+204|Llegeix retoladors d'un fitxer
+205|El fitxer és massa gran
+206|retoladors afegits
+207|Omesos
+208|No es pot fer servir el fitxer
+209|Desa els teus retoladors en un fitxer
+210|Desat
+211|No s'ha pogut desar
+212|Exporta aquest retolador…
+213|Tria un retolador
+214|Un retolador predefinit no es pot canviar. Fes-ne una còpia per canviar-lo.
+215|Tipus
+216|Amplada de la marca
+217|Alçada de la marca
+218|Gir de la punta
+219|Extrems de la línia
+220|Extrems arrodonits
+221|Extrems plans
+222|Color de la tinta
+223|Opacitat
+224|Cap retolador triat
+225|Llapis
+226|Ploma estilogràfica (plomí)
+227|Retolador de punta fina
+228|Retolador de feltre
+229|Marcador fluorescent
+230|Retolador de pinzell

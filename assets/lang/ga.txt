@@ -195,3 +195,37 @@
 194|Crosscheansú: dá dorcha an pictiúr, is mó treo línte.
 195|Modh an phictiúir
 196|Tráthú
+197|Leabharlann pinn
+198|Leabharlann pinn…
+199|Pinn réamhdhéanta
+200|Mo phinn
+201|Níl aon rud anseo go fóill
+202|Peann nua
+203|Cóip i measc do chuid pinn féin
+204|Léigh pinn as comhad
+205|Tá an comhad rómhór
+206|pinn curtha leis
+207|Fágtha ar lár
+208|Ní féidir an comhad a úsáid
+209|Sábháil do chuid pinn i gcomhad
+210|Sábháilte
+211|Níorbh fhéidir a shábháil
+212|Easpórtáil an peann seo…
+213|Roghnaigh peann
+214|Ní féidir peann réamhdhéanta a athrú. Déan cóip chun é a athrú.
+215|Cineál
+216|Leithead an mharc
+217|Airde an mharc
+218|Rothlú an bhiorán
+219|Foircinn líne
+220|Foircinn chruinne
+221|Foircinn chothroma
+222|Dath an dúigh
+223|Teimhneacht
+224|Níor roghnaíodh peann
+225|Peann luaidhe
+226|Peann tobair (gob)
+227|Peann mínlíne
+228|Peann braite
+229|Aibhsitheoir
+230|Peann scuaibe

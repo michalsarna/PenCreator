@@ -60,6 +60,9 @@ impl App {
             self.dev_edit = None;
             self.confirm_delete = false;
         }
+        if let Some(t) = get("pens") {
+            self.pens.load_text(t);
+        }
         self.tabs.restore(get("tab_order").unwrap_or(""), get("side_collapsed").is_some_and(|v| v == "1"));
         if let Some(r) = get("recent_files") {
             self.recent = r.lines().map(PathBuf::from).take(crate::MAX_RECENT).collect();

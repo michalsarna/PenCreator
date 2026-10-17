@@ -195,3 +195,37 @@
 194|Krusteniska svītrošana: jo tumšāks attēls, jo vairāk līniju virzienu.
 195|Attēla zīmēšanas veids
 196|Rastrēšana
+197|Pildspalvu bibliotēka
+198|Pildspalvu bibliotēka…
+199|Gatavās pildspalvas
+200|Manas pildspalvas
+201|Šeit vēl nekā nav
+202|Jauna pildspalva
+203|Kopija starp jūsu pildspalvām
+204|Nolasīt pildspalvas no faila
+205|Fails ir pārāk liels
+206|pildspalvas pievienotas
+207|Izlaists
+208|Failu nevar izmantot
+209|Saglabāt savas pildspalvas failā
+210|Saglabāts
+211|Saglabāt neizdevās
+212|Eksportēt šo pildspalvu…
+213|Izvēlieties pildspalvu
+214|Gatavo pildspalvu nevar mainīt. Izveidojiet kopiju, lai to mainītu.
+215|Veids
+216|Pēdas platums
+217|Pēdas augstums
+218|Uzgaļa pagrieziens
+219|Līnijas gali
+220|Noapaļoti gali
+221|Plakani gali
+222|Tintes krāsa
+223|Necaurredzamība
+224|Pildspalva nav izvēlēta
+225|Zīmulis
+226|Pildspalva ar spalvu (uzgalis)
+227|Smalkā pildspalva
+228|Flomāsters
+229|Marķieris
+230|Otas pildspalva

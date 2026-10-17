@@ -195,3 +195,37 @@
 194|Keresztsraffozás: minél sötétebb a kép, annál több vonalirány.
 195|A kép módszere
 196|Raszterezés
+197|Tollkönyvtár
+198|Tollkönyvtár…
+199|Kész tollak
+200|Saját tollaim
+201|Itt még nincs semmi
+202|Új toll
+203|Másolat a saját tollaid között
+204|Tollak beolvasása fájlból
+205|A fájl túl nagy
+206|toll hozzáadva
+207|Kihagyva
+208|A fájl nem használható
+209|A tollaid mentése fájlba
+210|Mentve
+211|A mentés nem sikerült
+212|Ennek a tollnak az exportálása…
+213|Válassz tollat
+214|Kész tollat nem lehet módosítani. Készíts másolatot a módosításhoz.
+215|Fajta
+216|A nyom szélessége
+217|A nyom magassága
+218|A hegy elfordítása
+219|A vonal végei
+220|Kerek végek
+221|Lapos végek
+222|Tinta színe
+223|Átlátszatlanság
+224|Nincs toll kiválasztva
+225|Ceruza
+226|Töltőtoll (hegy)
+227|Tűfilc
+228|Filctoll
+229|Szövegkiemelő
+230|Ecsetfilc

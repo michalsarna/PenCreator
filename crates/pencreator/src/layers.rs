@@ -110,6 +110,10 @@ pub struct PenLayer {
     pub cross_hatch: bool,
     /// How many times every line is drawn (a pen that is too light).
     pub passes: u8,
+    /// The pen of the library the layer draws with (its width is `pen_width`); `None` for a layer that only has a width and a
+    /// colour, as in older projects.
+    #[serde(default)]
+    pub pen: Option<String>,
     /// A picture on the layer (`Draw::Picture`): how it is drawn, and with which dithering. The gap and the angle of the lines
     /// are the ones of the fill.
     #[serde(default)]
@@ -126,6 +130,12 @@ pub struct PenLayer {
 pub const MAX_PASSES: u8 = 5;
 
 impl PenLayer {
+    /// Draw with this pen: its width is the width of the line, and the gap of the fill and the pen are not changed.
+    pub fn use_pen(&mut self, p: &crate::pens::Pen) {
+        self.pen = Some(p.id.clone());
+        self.pen_width = p.thickest().clamp(0.01, 20.0);
+    }
+
     pub fn color32(&self) -> egui::Color32 {
         egui::Color32::from_rgb(self.color[0], self.color[1], self.color[2])
     }
@@ -187,6 +197,7 @@ pub fn default_layers() -> Vec<PenLayer> {
                 hatch_gap: 0.4,
                 cross_hatch: false,
                 passes: 1,
+                pen: None,
                 picture: PictureMethod::default(),
                 dither: base_core::raster::Dither::default(),
                 rank: 0,

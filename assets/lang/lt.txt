@@ -195,3 +195,37 @@
 194|Kryžminis brūkšniavimas: kuo tamsesnis paveikslėlis, tuo daugiau linijų krypčių.
 195|Paveikslėlio metodas
 196|Rastravimas
+197|Rašiklių biblioteka
+198|Rašiklių biblioteka…
+199|Paruošti rašikliai
+200|Mano rašikliai
+201|Čia dar nieko nėra
+202|Naujas rašiklis
+203|Kopija tarp jūsų rašiklių
+204|Nuskaityti rašiklius iš failo
+205|Failas per didelis
+206|rašiklių pridėta
+207|Praleista
+208|Failo naudoti negalima
+209|Įrašyti savo rašiklius į failą
+210|Įrašyta
+211|Nepavyko įrašyti
+212|Eksportuoti šį rašiklį…
+213|Pasirinkite rašiklį
+214|Paruošto rašiklio keisti negalima. Padarykite kopiją, kad pakeistumėte.
+215|Rūšis
+216|Brūkšnio plotis
+217|Brūkšnio aukštis
+218|Galiuko pasukimas
+219|Linijos galai
+220|Apvalūs galai
+221|Plokšti galai
+222|Rašalo spalva
+223|Skaidrumas
+224|Rašiklis nepasirinktas
+225|Pieštukas
+226|Plunksnakotis (galiukas)
+227|Plonasis rašiklis
+228|Flomasteris
+229|Žymeklis
+230|Teptukinis rašiklis

@@ -195,3 +195,37 @@
 194|Tratteġġ inkroċjat: iktar ma l-istampa hija skura, iktar direzzjonijiet ta' linji.
 195|Il-metodu tal-istampa
 196|Rastrar
+197|Librerija tal-pinnen
+198|Librerija tal-pinnen…
+199|Pinnen lesti
+200|Il-pinnen tiegħi
+201|Għad m'hemm xejn hawn
+202|Pinna ġdida
+203|Kopja fost il-pinnen tiegħek
+204|Aqra l-pinnen minn fajl
+205|Il-fajl huwa kbir wisq
+206|pinnen miżjuda
+207|Maħluqa barra
+208|Ma tistax tintuża l-fajl
+209|Issejvja l-pinnen tiegħek f'fajl
+210|Issejvjat
+211|Ma setax jiġi ssejvjat
+212|Esporta din il-pinna…
+213|Agħżel pinna
+214|Pinna lesta ma tistax tinbidel. Agħmel kopja biex tibdilha.
+215|Tip
+216|Wisa' tas-sinjal
+217|Għoli tas-sinjal
+218|Rotazzjoni tat-ponta
+219|Truf tal-linja
+220|Truf tondi
+221|Truf ċatti
+222|Kulur tal-linka
+223|Opakità
+224|Ma ntgħażlet l-ebda pinna
+225|Lapes
+226|Pinna tal-linka (ponta)
+227|Fineliner
+228|Pinna tal-felt
+229|Highlighter
+230|Pinna bħal pinzell

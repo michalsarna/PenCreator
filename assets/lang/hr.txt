@@ -195,3 +195,37 @@
 194|Križno šrafiranje: što je slika tamnija, to je više smjerova linija.
 195|Način crtanja slike
 196|Rasteriranje
+197|Knjižnica olovaka
+198|Knjižnica olovaka…
+199|Gotove olovke
+200|Moje olovke
+201|Ovdje još nema ničega
+202|Nova olovka
+203|Kopija među vašim olovkama
+204|Učitaj olovke iz datoteke
+205|Datoteka je prevelika
+206|dodanih olovaka
+207|Izostavljeno
+208|Datoteka se ne može koristiti
+209|Spremi svoje olovke u datoteku
+210|Spremljeno
+211|Spremanje nije uspjelo
+212|Izvezi ovu olovku…
+213|Odaberi olovku
+214|Gotova olovka se ne može mijenjati. Napravite kopiju da biste je promijenili.
+215|Vrsta
+216|Širina traga
+217|Visina traga
+218|Zakret vrha
+219|Krajevi linije
+220|Zaobljeni krajevi
+221|Ravni krajevi
+222|Boja tinte
+223|Neprozirnost
+224|Olovka nije odabrana
+225|Olovka
+226|Nalivpero (šiljak)
+227|Tanki flomaster
+228|Flomaster
+229|Označivač
+230|Olovka s kistom
