@@ -185,3 +185,13 @@
 184|det här projektet gjordes för en annan maskin: {}
 185|{} bild(er) på lagren kan inte ritas: spåra dem till linjer först
 186|Importera UGS-design…
+187|Bild
+188|En bild på lagret ritas med linjer: rastrerade rader, punkter eller korsskrafferingar efter ton.
+189|Rastrerade rader
+190|Punkter
+191|Skraffering efter ton
+192|Varje rad ritas med linjer där den rastrerade bilden är mörk. Rastreringsmetoden väljs nedan.
+193|En punkt för varje mörk cell i den rastrerade bilden.
+194|Korsskraffering: ju mörkare bild, desto fler linjeriktningar.
+195|Bildmetod
+196|Rastrering

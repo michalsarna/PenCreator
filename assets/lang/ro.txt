@@ -185,3 +185,13 @@
 184|acest proiect a fost făcut pentru altă mașină: {}
 185|{} imagine/imagini de pe straturi nu pot fi desenate: vectorizează-le mai întâi
 186|Importă designul UGS…
+187|Imagine
+188|O imagine de pe strat este desenhată cu linii: rânduri tramate, puncte sau hașură încrucișată după ton.
+189|Rânduri tramate
+190|Puncte
+191|Hașurare după ton
+192|Fiecare rând este desenat cu linii acolo unde imaginea tramată este închisă la culoare. Metoda de tramare se alege mai jos.
+193|Un punct pentru fiecare celulă închisă la culoare a imaginii tramate.
+194|Hașură încrucișată: cu cât imaginea este mai închisă, cu atât mai multe direcții de linii.
+195|Metoda imaginii
+196|Tramare

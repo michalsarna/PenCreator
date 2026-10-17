@@ -185,3 +185,13 @@
 184|dette projekt er lavet til en anden maskine: {}
 185|{} billede(r) på lagene kan ikke tegnes: spor dem til linjer først
 186|Importér UGS-design…
+187|Billede
+188|Et billede på laget tegnes med linjer: rastrerede rækker, prikker eller krydsskravering efter tone.
+189|Rastrerede rækker
+190|Prikker
+191|Skravering efter tone
+192|Hver række tegnes med linjer, hvor det rastrerede billede er mørkt. Rastreringsmetoden vælges nedenfor.
+193|En prik for hver mørk celle i det rastrerede billede.
+194|Krydsskravering: jo mørkere billede, jo flere retninger af linjer.
+195|Billedmetode
+196|Rastrering

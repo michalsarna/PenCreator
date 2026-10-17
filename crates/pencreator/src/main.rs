@@ -210,6 +210,9 @@ struct App {
     prog: Option<Program>,
     /// Counts the changes of the project; the program is made again when it differs from `prog_rev`.
     rev: u64,
+    /// The layers that hold pictures and were switched to the Picture drawing already (so that a person who changes the
+    /// drawing of such a layer is not overruled).
+    picture_layers: std::collections::HashSet<usize>,
     /// The list of layers shows all of them (not only those with shapes).
     show_all_layers: bool,
     autosave: base_core::autosave::Timer,
@@ -305,6 +308,7 @@ impl App {
             show_plot: false,
             prog: None,
             rev: 0,
+            picture_layers: Default::default(),
             show_all_layers: false,
             autosave: Default::default(),
             recovery: base_core::autosave::find(&data_paths().base, "pencreator"),
@@ -376,6 +380,7 @@ impl App {
         self.kept = Project::default();
         self.layers = layers::default_layers();
         self.touch_rev();
+        self.reset_picture_layers();
         self.autosave_in_sync();
         self.ed.sel.clear();
         self.ed.node_sel.clear();
@@ -437,6 +442,7 @@ impl App {
                     self.status.push_str(&format!(" — {}", tr("this project was made for a different machine: {}").replace("{}", &m)));
                 }
                 self.scene = scene;
+                self.reset_picture_layers();
                 self.history = History::default();
                 self.ed.sel.clear();
                 self.ed.node_sel.clear();
@@ -918,6 +924,7 @@ impl App {
     fn draw(&mut self, ui: &mut egui::Ui) {
         let ctx = ui.ctx().clone();
         self.autosave_tick(&ctx, false);
+        self.sync_picture_layers();
         self.poll_machine();
         if self.machine.wants_repaint() {
             ctx.request_repaint_after(std::time::Duration::from_millis(250));
@@ -1382,6 +1389,33 @@ mod tests {
         std::fs::write(p.join("read.rhai"), "fn read(text, ctx) { [rect(5, 5, 10, 20), circle(30, 30, 4)] }").unwrap();
         std::fs::write(p.join("post.rhai"), r#"fn post(lines, ctx) { let out = []; let n = 1; for l in lines { out.push("N" + n + " " + l); n += 1; } out }"#).unwrap();
         base
+    }
+
+    #[test]
+    fn a_picture_put_on_a_layer_switches_the_layer_to_the_picture_drawing_once() {
+        let mut a = app();
+        a.layers[2].draw = layers::Draw::Outline;
+        a.reset_picture_layers();
+        let im = base_core::image::ImageData { name: "t".into(), px_w: 2, px_h: 2, gray: vec![0; 4], w: 10.0, h: 10.0, invert: false };
+        let id = a.scene.add(2, base_core::scene::Kind::Image(im), base_core::geom::Xf::IDENTITY);
+        a.sync_picture_layers();
+        assert_eq!(a.layers[2].draw, layers::Draw::Picture, "the layer switched");
+        // The person chooses another drawing: it stays so while the picture stays.
+        a.layers[2].draw = layers::Draw::Outline;
+        a.sync_picture_layers();
+        assert_eq!(a.layers[2].draw, layers::Draw::Outline);
+        // Without the picture, and then with it again, the layer switches again.
+        a.scene.shapes.retain(|s| s.id != id);
+        a.sync_picture_layers();
+        let im = base_core::image::ImageData { name: "t".into(), px_w: 2, px_h: 2, gray: vec![0; 4], w: 10.0, h: 10.0, invert: false };
+        a.scene.add(2, base_core::scene::Kind::Image(im), base_core::geom::Xf::IDENTITY);
+        a.sync_picture_layers();
+        assert_eq!(a.layers[2].draw, layers::Draw::Picture);
+        // A drawing that is opened keeps what its layers say: a layer with a picture is not switched.
+        a.layers[2].draw = layers::Draw::Fill;
+        a.reset_picture_layers();
+        a.sync_picture_layers();
+        assert_eq!(a.layers[2].draw, layers::Draw::Fill);
     }
 
     #[test]

@@ -185,3 +185,13 @@
 184|šis projekts izveidots citai iekārtai: {}
 185|{} attēlus uz slāņiem nevar zīmēt: vispirms pārveidojiet tos līnijās
 186|Importēt UGS dizainu…
+187|Attēls
+188|Attēls uz slāņa tiek zīmēts ar līnijām: rastrētas rindas, punkti vai krusteniska svītrošana pēc toņa.
+189|Rastrētas rindas
+190|Punkti
+191|Svītrošana pēc toņa
+192|Katra rinda tiek zīmēta ar līnijām tur, kur rastrētais attēls ir tumšs. Rastrēšanas metodi izvēlas zemāk.
+193|Punkts katrai rastrētā attēla tumšajai šūnai.
+194|Krusteniska svītrošana: jo tumšāks attēls, jo vairāk līniju virzienu.
+195|Attēla zīmēšanas veids
+196|Rastrēšana

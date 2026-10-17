@@ -185,3 +185,13 @@
 184	this project was made for a different machine: {}
 185	{} picture(s) on the layers cannot be drawn: trace them to lines first
 186	Import UGS design…
+187	Picture
+188	A picture on the layer is drawn with lines: dithered rows, dots, or crossed hatching by tone.
+189	Dithered rows
+190	Dots
+191	Hatching by tone
+192	Each row is drawn as lines where the dithered picture is dark. The dithering method is chosen below.
+193	A dot for every dark cell of the dithered picture.
+194	Crossed hatching: the darker the picture, the more directions of lines.
+195	Picture method
+196	Dithering

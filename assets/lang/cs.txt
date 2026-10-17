@@ -185,3 +185,13 @@
 184|tento projekt byl vytvořen pro jiný stroj: {}
 185|{} obrázků na vrstvách nelze kreslit: nejprve je převeďte na čáry
 186|Importovat návrh UGS…
+187|Obrázek
+188|Obrázek na vrstvě se kreslí čarami: rastrované řádky, tečky nebo křížové šrafování podle tónu.
+189|Rastrované řádky
+190|Tečky
+191|Šrafování podle tónu
+192|Každý řádek se kreslí čarami tam, kde je rastrovaný obrázek tmavý. Způsob rastrování zvolíte níže.
+193|Tečka pro každou tmavou buňku rastrovaného obrázku.
+194|Křížové šrafování: čím tmavší obrázek, tím více směrů čar.
+195|Způsob kreslení obrázku
+196|Rastrování
