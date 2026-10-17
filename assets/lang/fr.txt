@@ -229,3 +229,7 @@
 228|Feutre
 229|Surligneur
 230|Stylo pinceau
+231|Ajuster à la zone de travail
+232|Ajuster aux éléments
+233|Zoomer pour voir toute la feuille
+234|Zoomer pour que toutes les lignes remplissent la fenêtre

@@ -229,3 +229,7 @@
 228|Flomāsters
 229|Marķieris
 230|Otas pildspalva
+231|Pielāgot darba zonai
+232|Pielāgot elementiem
+233|Tuvināt tā, lai būtu redzama visa lapa
+234|Tuvināt tā, lai visas līnijas aizpilda logu

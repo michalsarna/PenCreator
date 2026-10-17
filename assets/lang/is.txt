@@ -229,3 +229,7 @@
 228|Tússpenni
 229|Yfirstrikunarpenni
 230|Penslapenni
+231|Laga að vinnusvæðinu
+232|Laga að hlutunum
+233|Súmma svo allt blaðið sjáist
+234|Súmma svo allar línur fylli gluggann

@@ -14,11 +14,22 @@ pub struct PlotView {
     /// From 0 to 1: how much of the program is shown.
     pub progress: f32,
     pub show_travel: bool,
+    /// Asked for by a button, done by the next picture (which knows the size of its window).
+    pub fit: Option<Fit>,
+}
+
+/// What the view is fitted to.
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum Fit {
+    /// The whole sheet.
+    Area,
+    /// The lines that are drawn.
+    Elements,
 }
 
 impl Default for PlotView {
     fn default() -> PlotView {
-        PlotView { zoom: 1.0, pan: egui::Vec2::ZERO, progress: 1.0, show_travel: true }
+        PlotView { zoom: 1.0, pan: egui::Vec2::ZERO, progress: 1.0, show_travel: true, fit: None }
     }
 }
 
@@ -124,6 +135,12 @@ impl App {
                 if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {
                     self.view.reset();
                 }
+                if ui.button(tr("Fit to the work area")).on_hover_text(tr("Zoom so that the whole sheet is seen")).clicked() {
+                    self.view.fit = Some(Fit::Area);
+                }
+                if ui.button(tr("Fit to the elements")).on_hover_text(tr("Zoom so that all the lines fill the window")).clicked() {
+                    self.view.fit = Some(Fit::Elements);
+                }
                 ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
             });
             ui.horizontal(|ui| {
@@ -170,6 +187,22 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     let painter = ui.painter_at(rect);
     painter.rect_filled(rect, 0.0, theme::panel());
     let fit = ((rect.width() - 40.0) / w as f32).min((rect.height() - 40.0) / h as f32).max(0.01);
+    match view.fit.take() {
+        Some(Fit::Area) => view.reset(),
+        Some(Fit::Elements) => {
+            if let Some([x0, y0, x1, y1]) = prog.bounds() {
+                // The lines (and half the width of the thickest pen) fill the window; the middle of the box goes to the middle.
+                let pad = layers.iter().map(|l| l.pen_width).fold(0.0, f64::max) / 2.0;
+                let (bw, bh) = ((x1 - x0 + 2.0 * pad).max(0.5), (y1 - y0 + 2.0 * pad).max(0.5));
+                let scale = ((rect.width() - 40.0) / bw as f32).min((rect.height() - 40.0) / bh as f32).max(0.01);
+                view.zoom = (scale / fit).clamp(0.2, 50.0);
+                let scale = fit * view.zoom;
+                let (cx, cy) = ((x0 + x1) / 2.0, (y0 + y1) / 2.0);
+                view.pan = egui::vec2(-((cx - w / 2.0) as f32) * scale, ((cy - h / 2.0) as f32) * scale);
+            }
+        }
+        None => {}
+    }
     let scale = fit * view.zoom;
     let origin = rect.center() + view.pan - egui::vec2(w as f32 * scale / 2.0, -(h as f32) * scale / 2.0);
     let at = |p: [f64; 2]| Pos2::new(origin.x + p[0] as f32 * scale, origin.y - p[1] as f32 * scale);
@@ -235,5 +268,15 @@ mod tests {
         a.view.progress = 0.4;
         let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
         out.textures_delta.clear();
+        // The two fits: the whole sheet is the first view; the lines of a small shape zoom in.
+        let mut zoom_of = |fit| {
+            a.view.fit = Some(fit);
+            let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+            out.textures_delta.clear();
+            assert!(a.view.fit.is_none(), "the request is done by the picture");
+            a.view.zoom
+        };
+        assert_eq!(zoom_of(super::Fit::Area), 1.0);
+        assert!(zoom_of(super::Fit::Elements) > 1.5);
     }
 }

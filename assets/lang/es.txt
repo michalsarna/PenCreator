@@ -229,3 +229,7 @@
 228|Rotulador
 229|Resaltador
 230|Rotulador de pincel
+231|Ajustar al área de trabajo
+232|Ajustar a los elementos
+233|Ampliar para ver toda la hoja
+234|Ampliar para que todas las líneas llenen la ventana

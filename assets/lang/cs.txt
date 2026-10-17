@@ -229,3 +229,7 @@
 228|Fix
 229|Zvýrazňovač
 230|Štětcové pero
+231|Přizpůsobit pracovní ploše
+232|Přizpůsobit prvkům
+233|Přiblížit tak, aby byl vidět celý arch
+234|Přiblížit tak, aby všechny čáry vyplnily okno

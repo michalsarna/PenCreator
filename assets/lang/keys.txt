@@ -229,3 +229,7 @@
 228	Felt-tip marker
 229	Highlighter
 230	Brush pen
+231	Fit to the work area
+232	Fit to the elements
+233	Zoom so that the whole sheet is seen
+234	Zoom so that all the lines fill the window

@@ -229,3 +229,7 @@
 228|Filctoll
 229|Szövegkiemelő
 230|Ecsetfilc
+231|Illesztés a munkaterülethez
+232|Illesztés az elemekhez
+233|Nagyítás úgy, hogy a teljes lap látszódjon
+234|Nagyítás úgy, hogy az összes vonal kitöltse az ablakot

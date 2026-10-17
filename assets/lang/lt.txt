@@ -229,3 +229,7 @@
 228|Flomasteris
 229|Žymeklis
 230|Teptukinis rašiklis
+231|Priderinti prie darbo srities
+232|Priderinti prie elementų
+233|Padidinti taip, kad matytųsi visas lapas
+234|Padidinti taip, kad visos linijos užpildytų langą

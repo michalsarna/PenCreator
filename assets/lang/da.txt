@@ -229,3 +229,7 @@
 228|Filtpen
 229|Overstregningspen
 230|Penselpen
+231|Tilpas arbejdsområdet
+232|Tilpas elementerne
+233|Zoom, så hele arket ses
+234|Zoom, så alle linjer fylder vinduet

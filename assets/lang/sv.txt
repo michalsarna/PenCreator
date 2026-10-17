@@ -229,3 +229,7 @@
 228|Filtpenna
 229|Överstrykningspenna
 230|Penselpenna
+231|Anpassa till arbetsytan
+232|Anpassa till elementen
+233|Zooma så att hela arket syns
+234|Zooma så att alla linjer fyller fönstret

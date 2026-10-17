@@ -229,3 +229,7 @@
 228|Marcador de feltro
 229|Marcador
 230|Caneta de pincel
+231|Ajustar à área de trabalho
+232|Ajustar aos elementos
+233|Ampliar para ver toda a folha
+234|Ampliar para que todas as linhas preencham a janela
