@@ -229,3 +229,7 @@
 228|Pinna tal-felt
 229|Highlighter
 230|Pinna bħal pinzell
+231|Adatta għall-qasam tax-xogħol
+232|Adatta għall-elementi
+233|Zoom biex tidher il-folja kollha
+234|Zoom biex il-linji kollha jimlew it-tieqa

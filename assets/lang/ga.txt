@@ -229,3 +229,7 @@
 228|Peann braite
 229|Aibhsitheoir
 230|Peann scuaibe
+231|Oiriúnaigh don limistéar oibre
+232|Oiriúnaigh do na heilimintí
+233|Zúmáil ionas go bhfeicfear an leathán ar fad
+234|Zúmáil ionas go líonfaidh gach líne an fhuinneog

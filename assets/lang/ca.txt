@@ -229,3 +229,7 @@
 228|Retolador de feltre
 229|Marcador fluorescent
 230|Retolador de pinzell
+231|Ajusta a l'àrea de treball
+232|Ajusta als elements
+233|Amplia perquè es vegi tot el full
+234|Amplia perquè totes les línies omplin la finestra

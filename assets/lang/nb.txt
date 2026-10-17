@@ -229,3 +229,7 @@
 228|Tusjpenn
 229|Merkepenn
 230|Penselpenn
+231|Tilpass arbeidsområdet
+232|Tilpass elementene
+233|Zoom slik at hele arket vises
+234|Zoom slik at alle linjene fyller vinduet

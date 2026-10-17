@@ -229,3 +229,7 @@
 228|Marker cu pâslă
 229|Textmarker
 230|Pix cu pensulă
+231|Potrivește la zona de lucru
+232|Potrivește la elemente
+233|Mărește astfel încât să se vadă toată foaia
+234|Mărește astfel încât toate liniile să umple fereastra

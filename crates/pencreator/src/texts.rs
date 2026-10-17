@@ -274,6 +274,10 @@ const TABLE: &[[&str; 7]] = &[
     ["Felt-tip marker", "Mazak", "Filzstift", "Pennarello", "Huopakynä", "马克笔", "फ़ेल्ट-टिप मार्कर"],
     ["Highlighter", "Zakreślacz", "Textmarker", "Evidenziatore", "Korostuskynä", "荧光笔", "हाइलाइटर"],
     ["Brush pen", "Pisak pędzelkowy", "Pinselstift", "Pennarello a pennello", "Sivellinkynä", "毛笔", "ब्रश पेन"],
+    ["Fit to the work area", "Dopasuj do obszaru roboczego", "An den Arbeitsbereich anpassen", "Adatta all'area di lavoro", "Sovita työalueeseen", "适应工作区域", "कार्य क्षेत्र में फ़िट करें"],
+    ["Fit to the elements", "Dopasuj do elementów", "An die Elemente anpassen", "Adatta agli elementi", "Sovita elementteihin", "适应元素", "तत्वों में फ़िट करें"],
+    ["Zoom so that the whole sheet is seen", "Powiększ tak, by widać było cały arkusz", "So zoomen, dass das ganze Blatt zu sehen ist", "Ingrandisci in modo da vedere tutto il foglio", "Zoomaa niin, että koko arkki näkyy", "缩放到能看到整张纸", "इस तरह ज़ूम करें कि पूरी शीट दिखे"],
+    ["Zoom so that all the lines fill the window", "Powiększ tak, by wszystkie linie wypełniły okno", "So zoomen, dass alle Linien das Fenster füllen", "Ingrandisci in modo che tutte le linee riempiano la finestra", "Zoomaa niin, että kaikki viivat täyttävät ikkunan", "缩放到所有线条填满窗口", "इस तरह ज़ूम करें कि सभी रेखाएँ विंडो भर दें"],
 ];
 
 #[cfg(test)]

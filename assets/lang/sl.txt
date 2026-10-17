@@ -229,3 +229,7 @@
 228|Flomaster
 229|Označevalnik
 230|Čopičasto pero
+231|Prilagodi delovnemu območju
+232|Prilagodi elementom
+233|Povečaj tako, da se vidi cel list
+234|Povečaj tako, da vse črte zapolnijo okno

@@ -229,3 +229,7 @@
 228|Vildikas
 229|Markeerija
 230|Pintslipliiats
+231|Sobita tööalale
+232|Sobita elementidele
+233|Suumi nii, et kogu leht oleks näha
+234|Suumi nii, et kõik jooned täidaksid akna
