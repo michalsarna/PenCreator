@@ -185,3 +185,13 @@
 184|aquest projecte es va fer per a una altra màquina: {}
 185|{} imatge(s) de les capes no es poden dibuixar: vectoritza-les primer
 186|Importa el disseny d'UGS…
+187|Imatge
+188|Una imatge a la capa es dibuixa amb línies: files tramades, punts o ratllat creuat segons el to.
+189|Files tramades
+190|Punts
+191|Ratllat segons el to
+192|Cada fila es dibuixa amb línies allà on la imatge tramada és fosca. El mètode de tramat es tria a sota.
+193|Un punt per a cada cel·la fosca de la imatge tramada.
+194|Ratllat creuat: com més fosca és la imatge, més adreces de línies.
+195|Mètode de la imatge
+196|Tramat

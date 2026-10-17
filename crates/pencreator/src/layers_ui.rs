@@ -1,5 +1,5 @@
 //! The Layers tab: one pen per layer.
-use crate::layers::{Draw, MAX_PASSES};
+use crate::layers::{Draw, PictureMethod, MAX_PASSES};
 use crate::App;
 use base_ui::editor::EditorHost;
 use base_ui::i18n::{tr, trf};
@@ -17,6 +17,28 @@ impl App {
             }
         }
         n
+    }
+
+    /// The layers that hold pictures, from a drawing that was just opened or started: they were set up by the person who made it.
+    pub(crate) fn reset_picture_layers(&mut self) {
+        self.picture_layers = self.picture_layer_set();
+    }
+
+    fn picture_layer_set(&self) -> std::collections::HashSet<usize> {
+        self.scene.shapes.iter().filter(|s| matches!(s.kind, base_core::scene::Kind::Image(_))).map(|s| s.layer).collect()
+    }
+
+    /// A picture put on a layer switches the layer to the Picture drawing (once: afterwards the person decides).
+    pub(crate) fn sync_picture_layers(&mut self) {
+        let now = self.picture_layer_set();
+        for &l in &now {
+            if self.picture_layers.insert(l) {
+                if let Some(layer) = self.layers.get_mut(l) {
+                    layer.draw = Draw::Picture;
+                }
+            }
+        }
+        self.picture_layers.retain(|l| now.contains(l));
     }
 
     /// Put the selected shapes on a layer.
@@ -108,16 +130,36 @@ impl App {
                     ui.label(tr("Speed"));
                     changed |= ui.add(egui::DragValue::new(&mut l.speed).range(1.0..=100000.0).suffix(" mm/min")).changed();
                     ui.end_row();
-                    if l.draw.fills() {
+                    if l.draw.is_picture() {
+                        ui.label(tr("Picture method"));
+                        egui::ComboBox::from_id_salt("layer_picture").selected_text(tr(l.picture.label())).width(200.0).show_ui(ui, |ui| {
+                            for m in PictureMethod::ALL {
+                                changed |= ui.selectable_value(&mut l.picture, m, tr(m.label())).on_hover_text(tr(m.hint())).changed();
+                            }
+                        });
+                        ui.end_row();
+                        if l.picture.dithers() {
+                            ui.label(tr("Dithering"));
+                            egui::ComboBox::from_id_salt("layer_dither").selected_text(tr(l.dither.label())).width(200.0).show_ui(ui, |ui| {
+                                for d in base_core::raster::Dither::ALL {
+                                    changed |= ui.selectable_value(&mut l.dither, d, tr(d.label())).on_hover_text(tr(d.hint())).changed();
+                                }
+                            });
+                            ui.end_row();
+                        }
+                    }
+                    if l.draw.fills() || l.draw.is_picture() {
                         ui.label(tr("Fill line gap"));
                         changed |= drag_len(ui, units, &mut l.hatch_gap, 0.05, Some((0.02, 100.0))).changed();
                         ui.end_row();
                         ui.label(tr("Fill line angle"));
                         changed |= ui.add(egui::DragValue::new(&mut l.hatch_angle).range(-360.0..=360.0).suffix(" °")).changed();
                         ui.end_row();
-                        ui.label(tr("Crossed lines"));
-                        changed |= ui.checkbox(&mut l.cross_hatch, "").on_hover_text(tr("A second set of fill lines across the first")).changed();
-                        ui.end_row();
+                        if l.draw.fills() {
+                            ui.label(tr("Crossed lines"));
+                            changed |= ui.checkbox(&mut l.cross_hatch, "").on_hover_text(tr("A second set of fill lines across the first")).changed();
+                            ui.end_row();
+                        }
                     }
                     ui.label(tr("Drawn times"));
                     changed |= ui.add(egui::DragValue::new(&mut l.passes).range(1..=MAX_PASSES)).on_hover_text(tr("How many times every line is drawn: for a pen that is too light")).changed();

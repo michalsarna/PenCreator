@@ -185,3 +185,13 @@
 184|þetta verkefni var gert fyrir aðra vél: {}
 185|{} mynd(ir) á lögunum er ekki hægt að teikna: rekjaðu þær fyrst í línur
 186|Flytja inn UGS-hönnun…
+187|Mynd
+188|Mynd á laginu er teiknuð með línum: rastaðar raðir, punktar eða krosskrafsun eftir tón.
+189|Rastaðar raðir
+190|Punktar
+191|Skygging eftir tón
+192|Hver röð er teiknuð með línum þar sem rastaða myndin er dökk. Rösturnaraðferðina velur þú hér fyrir neðan.
+193|Punktur fyrir hvern dökkan reit rastaðrar myndar.
+194|Krosskrafsun: því dekkri sem myndin er, því fleiri stefnur lína.
+195|Aðferð myndar
+196|Röstun

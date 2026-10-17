@@ -185,3 +185,13 @@
 184|ez a projekt másik géphez készült: {}
 185|A rétegeken lévő {} kép nem rajzolható: előbb alakítsd vonalakká
 186|UGS-terv importálása…
+187|Kép
+188|A rétegen lévő képet vonalakkal rajzolja: raszterezett sorok, pontok vagy tónus szerinti keresztsraffozás.
+189|Raszterezett sorok
+190|Pontok
+191|Sraffozás tónus szerint
+192|Minden sort vonalakkal rajzol, ahol a raszterezett kép sötét. A raszterezési módszert lent választhatja.
+193|Egy pont a raszterezett kép minden sötét cellájához.
+194|Keresztsraffozás: minél sötétebb a kép, annál több vonalirány.
+195|A kép módszere
+196|Raszterezés

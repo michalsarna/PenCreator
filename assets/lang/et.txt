@@ -185,3 +185,13 @@
 184|see projekt tehti teisele masinale: {}
 185|{} pilti kihtidel ei saa joonistada: jälgi need esmalt joonteks
 186|Impordi UGS-i kujundus…
+187|Pilt
+188|Kihi pilt joonistatakse joontega: rastreeritud read, punktid või ristkiiruvus tooni järgi.
+189|Rastreeritud read
+190|Punktid
+191|Kiiruvus tooni järgi
+192|Iga rida joonistatakse joontega seal, kus rastreeritud pilt on tume. Rastreerimise meetod valitakse allpool.
+193|Punkt iga rastreeritud pildi tumeda lahtri jaoks.
+194|Ristkiiruvus: mida tumedam pilt, seda rohkem joonesuundi.
+195|Pildi joonistamise viis
+196|Rastreerimine

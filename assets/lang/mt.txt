@@ -185,3 +185,13 @@
 184|dan il-proġett sar għal magna oħra: {}
 185|{} stampa/i fuq is-saffi ma jistgħux jitpinġu: ittraċċjahom f'linji l-ewwel
 186|Importa disinn UGS…
+187|Stampa
+188|Stampa fuq is-saff titpinġa b'linji: ringieli rastrati, tikek jew tratteġġ inkroċjat skont it-ton.
+189|Ringieli rastrati
+190|Tikek
+191|Tratteġġ skont it-ton
+192|Kull ringiela titpinġa b'linji fejn l-istampa rastrata hija skura. Il-metodu tar-rastrar jintgħażel hawn taħt.
+193|Tikka għal kull ċellola skura tal-istampa rastrata.
+194|Tratteġġ inkroċjat: iktar ma l-istampa hija skura, iktar direzzjonijiet ta' linji.
+195|Il-metodu tal-istampa
+196|Rastrar

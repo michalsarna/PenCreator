@@ -185,3 +185,13 @@
 184|tento projekt bol vytvorený pre iný stroj: {}
 185|{} obrázkov na vrstvách sa nedá kresliť: najprv ich preveďte na čiary
 186|Importovať návrh UGS…
+187|Obrázok
+188|Obrázok na vrstve sa kreslí čiarami: rastrované riadky, bodky alebo krížové šrafovanie podľa tónu.
+189|Rastrované riadky
+190|Bodky
+191|Šrafovanie podľa tónu
+192|Každý riadok sa kreslí čiarami tam, kde je rastrovaný obrázok tmavý. Spôsob rastrovania zvolíte nižšie.
+193|Bodka pre každú tmavú bunku rastrovaného obrázka.
+194|Krížové šrafovanie: čím tmavší obrázok, tým viac smerov čiar.
+195|Spôsob kreslenia obrázka
+196|Rastrovanie

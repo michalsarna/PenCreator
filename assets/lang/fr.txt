@@ -185,3 +185,13 @@
 184|ce projet a été fait pour une autre machine : {}
 185|{} image(s) sur les calques ne peuvent pas être dessinées : vectorisez-les d'abord
 186|Importer un design UGS…
+187|Image
+188|Une image sur le calque est dessinée avec des lignes : rangées tramées, points ou hachures croisées selon le ton.
+189|Rangées tramées
+190|Points
+191|Hachures selon le ton
+192|Chaque rangée est dessinée avec des lignes là où l'image tramée est sombre. La méthode de tramage se choisit ci-dessous.
+193|Un point pour chaque cellule sombre de l'image tramée.
+194|Hachures croisées : plus l'image est sombre, plus il y a de directions de lignes.
+195|Méthode de l'image
+196|Tramage

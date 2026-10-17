@@ -14,16 +14,19 @@ pub enum Draw {
     Fill,
     /// The fill first, then the outline over it.
     OutlineAndFill,
+    /// A picture on the layer is drawn with lines (see `PictureMethod`).
+    Picture,
 }
 
 impl Draw {
-    pub const ALL: [Draw; 3] = [Draw::Outline, Draw::Fill, Draw::OutlineAndFill];
+    pub const ALL: [Draw; 4] = [Draw::Outline, Draw::Fill, Draw::OutlineAndFill, Draw::Picture];
 
     pub fn label(self) -> &'static str {
         match self {
             Draw::Outline => "Outline",
             Draw::Fill => "Fill with lines",
             Draw::OutlineAndFill => "Fill and outline",
+            Draw::Picture => "Picture",
         }
     }
 
@@ -32,15 +35,57 @@ impl Draw {
             Draw::Outline => "The pen follows the lines of the shapes. Open lines work too.",
             Draw::Fill => "Closed shapes are filled with parallel lines; holes stay empty.",
             Draw::OutlineAndFill => "The fill first, then the outline over it, so the edge is clean.",
+            Draw::Picture => "A picture on the layer is drawn with lines: dithered rows, dots, or crossed hatching by tone.",
         }
     }
 
     pub fn fills(self) -> bool {
-        self != Draw::Outline
+        matches!(self, Draw::Fill | Draw::OutlineAndFill)
     }
 
     pub fn outlines(self) -> bool {
-        self != Draw::Fill
+        matches!(self, Draw::Outline | Draw::OutlineAndFill)
+    }
+
+    pub fn is_picture(self) -> bool {
+        self == Draw::Picture
+    }
+}
+
+/// How a picture is drawn with lines.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
+pub enum PictureMethod {
+    /// The picture is dithered; every row is drawn where the picture is dark.
+    #[default]
+    Rows,
+    /// The picture is dithered; every dark cell is a dot.
+    Dots,
+    /// Crossed hatching: the darker the picture, the more directions of lines.
+    Tones,
+}
+
+impl PictureMethod {
+    pub const ALL: [PictureMethod; 3] = [PictureMethod::Rows, PictureMethod::Dots, PictureMethod::Tones];
+
+    pub fn label(self) -> &'static str {
+        match self {
+            PictureMethod::Rows => "Dithered rows",
+            PictureMethod::Dots => "Dots",
+            PictureMethod::Tones => "Hatching by tone",
+        }
+    }
+
+    pub fn hint(self) -> &'static str {
+        match self {
+            PictureMethod::Rows => "Each row is drawn as lines where the dithered picture is dark. The dithering method is chosen below.",
+            PictureMethod::Dots => "A dot for every dark cell of the dithered picture.",
+            PictureMethod::Tones => "Crossed hatching: the darker the picture, the more directions of lines.",
+        }
+    }
+
+    /// Does the method dither the picture?
+    pub fn dithers(self) -> bool {
+        self != PictureMethod::Tones
     }
 }
 
@@ -64,7 +109,14 @@ pub struct PenLayer {
     /// A second set of fill lines across the first.
     pub cross_hatch: bool,
     /// How many times every line is drawn (a pen that is too light).
-    pub passes: u8,    /// Where the layer is in the order the layers are done in (the lower first; equal numbers go by layer). Moving layers
+    pub passes: u8,
+    /// A picture on the layer (`Draw::Picture`): how it is drawn, and with which dithering. The gap and the angle of the lines
+    /// are the ones of the fill.
+    #[serde(default)]
+    pub picture: PictureMethod,
+    #[serde(default)]
+    pub dither: base_core::raster::Dither,
+    /// Where the layer is in the order the layers are done in (the lower first; equal numbers go by layer). Moving layers
     /// in the list renumbers them all.
     #[serde(default)]
     pub rank: u32,
@@ -135,6 +187,8 @@ pub fn default_layers() -> Vec<PenLayer> {
                 hatch_gap: 0.4,
                 cross_hatch: false,
                 passes: 1,
+                picture: PictureMethod::default(),
+                dither: base_core::raster::Dither::default(),
                 rank: 0,
             }
         })

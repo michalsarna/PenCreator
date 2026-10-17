@@ -185,3 +185,13 @@
 184|šis projektas sukurtas kitoms staklėms: {}
 185|{} paveikslėlių sluoksniuose negalima piešti: pirmiausia paverskite juos linijomis
 186|Importuoti UGS dizainą…
+187|Paveikslėlis
+188|Sluoksnio paveikslėlis braižomas linijomis: rastruotos eilutės, taškai arba kryžminis brūkšniavimas pagal toną.
+189|Rastruotos eilutės
+190|Taškai
+191|Brūkšniavimas pagal toną
+192|Kiekviena eilutė braižoma linijomis ten, kur rastruotas paveikslėlis tamsus. Rastravimo metodą pasirenkate žemiau.
+193|Taškas kiekvienam tamsiam rastruoto paveikslėlio langeliui.
+194|Kryžminis brūkšniavimas: kuo tamsesnis paveikslėlis, tuo daugiau linijų krypčių.
+195|Paveikslėlio metodas
+196|Rastravimas

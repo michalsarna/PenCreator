@@ -185,3 +185,13 @@
 184|ta projekt je bil narejen za drug stroj: {}
 185|{} slik na slojih ni mogoče risati: najprej jih pretvorite v črte
 186|Uvozi načrt UGS…
+187|Slika
+188|Slika na sloju se riše s črtami: rastrske vrstice, pike ali križno šrafiranje po tonu.
+189|Rastrske vrstice
+190|Pike
+191|Šrafiranje po tonu
+192|Vsaka vrstica se riše s črtami tam, kjer je rastrirana slika temna. Metodo rastriranja izberete spodaj.
+193|Pika za vsako temno celico rastrirane slike.
+194|Križno šrafiranje: temnejša ko je slika, več je smeri črt.
+195|Način slike
+196|Rastriranje

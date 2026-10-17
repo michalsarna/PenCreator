@@ -185,3 +185,13 @@
 184|dit project is gemaakt voor een andere machine: {}
 185|{} afbeelding(en) op de lagen kunnen niet worden getekend: traceer ze eerst naar lijnen
 186|UGS-ontwerp importeren…
+187|Afbeelding
+188|Een afbeelding op de laag wordt met lijnen getekend: gerasterde rijen, stippen of kruisarcering naar toon.
+189|Gerasterde rijen
+190|Stippen
+191|Arcering naar toon
+192|Elke rij wordt met lijnen getekend waar de gerasterde afbeelding donker is. De rastermethode kies je hieronder.
+193|Een stip voor elke donkere cel van de gerasterde afbeelding.
+194|Kruisarcering: hoe donkerder de afbeelding, hoe meer lijnrichtingen.
+195|Methode voor de afbeelding
+196|Rasteren

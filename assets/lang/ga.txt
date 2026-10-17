@@ -185,3 +185,13 @@
 184|rinneadh an tionscadal seo do mheaisín eile: {}
 185|Ní féidir {} pictiúr ar na cisil a tharraingt: lorg ina línte iad ar dtús
 186|Iompórtáil dearadh UGS…
+187|Pictiúr
+188|Tarraingítear pictiúr ar an gciseal le línte: sraitheanna tráthaithe, poncanna nó crosscheansú de réir tona.
+189|Sraitheanna tráthaithe
+190|Poncanna
+191|Crosscheansú de réir tona
+192|Tarraingítear gach sraith le línte san áit a bhfuil an pictiúr tráthaithe dorcha. Roghnaítear modh an tráthaithe thíos.
+193|Ponc do gach cill dhorcha den phictiúr thráthaithe.
+194|Crosscheansú: dá dorcha an pictiúr, is mó treo línte.
+195|Modh an phictiúir
+196|Tráthú

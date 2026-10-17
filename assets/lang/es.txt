@@ -185,3 +185,13 @@
 184|este proyecto se hizo para otra máquina: {}
 185|{} imagen(es) de las capas no se pueden dibujar: vectorízalas primero
 186|Importar diseño de UGS…
+187|Imagen
+188|Una imagen en la capa se dibuja con líneas: filas tramadas, puntos o rayado cruzado según el tono.
+189|Filas tramadas
+190|Puntos
+191|Rayado según el tono
+192|Cada fila se dibuja con líneas donde la imagen tramada es oscura. El método de tramado se elige abajo.
+193|Un punto por cada celda oscura de la imagen tramada.
+194|Rayado cruzado: cuanto más oscura es la imagen, más direcciones de líneas.
+195|Método de la imagen
+196|Tramado

@@ -3,10 +3,12 @@
 //! The moves are in the coordinates of the work area: X to the right, Y away from you (the drawing is turned over, as
 //! the scene counts Y downwards).
 use crate::device::{Device, Lift, Origin};
-use crate::layers::PenLayer;
+use crate::layers::{PenLayer, PictureMethod};
 use crate::warn::Warn;
 use base_core::geom::{Polyline, Pt};
-use base_core::scene::{Kind, Scene};
+use base_core::image::ImageData;
+use base_core::raster;
+use base_core::scene::{Kind, Scene, Shape};
 
 pub type P2 = [f64; 2];
 
@@ -100,12 +102,15 @@ struct Stroke {
     closed: bool,
 }
 
-/// The outlines of the shapes of a layer in the coordinates of the work area. Images cannot be drawn: they are counted.
-fn layer_outlines(scene: &Scene, layer: usize, area_y: f64, images: &mut usize) -> Vec<Polyline> {
+/// The outlines of the shapes of a layer in the coordinates of the work area. Pictures are not outlines: they are counted
+/// (`count_pictures`: a picture layer draws them itself, so it does not ask for them to be counted as lost).
+fn layer_outlines(scene: &Scene, layer: usize, area_y: f64, images: &mut usize, count_pictures: bool) -> Vec<Polyline> {
     let mut out = vec![];
     for s in scene.shapes.iter().filter(|s| s.layer == layer) {
         if matches!(s.kind, Kind::Image(_)) {
-            *images += 1;
+            if count_pictures {
+                *images += 1;
+            }
             continue;
         }
         for p in s.polys() {
@@ -170,6 +175,137 @@ fn hatch(rings: &[Polyline], angle: f64, gap: f64, budget: &mut usize) -> Vec<St
     out
 }
 
+/// The pictures on a layer.
+fn layer_pictures(scene: &Scene, layer: usize) -> Vec<(&Shape, &ImageData)> {
+    scene.shapes.iter().filter(|s| s.layer == layer).filter_map(|s| if let Kind::Image(im) = &s.kind { Some((s, im)) } else { None }).collect()
+}
+
+/// A picture drawn with lines, by the method of the layer: the strokes in the coordinates of the work area.
+fn picture_strokes(shape: &Shape, im: &ImageData, l: &PenLayer, area_y: f64, budget: &mut usize) -> Vec<Stroke> {
+    let to_area = |p: Pt| -> P2 { [p.x, area_y - p.y] };
+    let mut out: Vec<Stroke> = vec![];
+    match l.picture {
+        PictureMethod::Rows | PictureMethod::Dots => {
+            let Some(g) = raster::sample(shape, im, l.hatch_gap, l.hatch_angle, l.dither) else { return out };
+            let dark = |c: usize, r: usize| g.at(c, r) >= 0.5;
+            let mut k = 0usize;
+            for r in 0..g.rows {
+                let mut row: Vec<Stroke> = vec![];
+                let mut c = 0;
+                while c < g.cols {
+                    if !dark(c, r) {
+                        c += 1;
+                        continue;
+                    }
+                    let start = c;
+                    while c < g.cols && dark(c, r) {
+                        c += 1;
+                    }
+                    if l.picture == PictureMethod::Rows {
+                        let y = g.min.y + (r as f64 + 0.5) * g.step;
+                        let (a, b) = (Pt::new(g.min.x + start as f64 * g.step, y), Pt::new(g.min.x + c as f64 * g.step, y));
+                        row.push(Stroke { pts: vec![to_area(g.rot.apply(a)), to_area(g.rot.apply(b))], closed: false });
+                    } else {
+                        for cc in start..c {
+                            let p = g.centre(cc, r);
+                            // A dot is a line so short that it is only a mark.
+                            row.push(Stroke { pts: vec![to_area(g.rot.apply(p)), to_area(g.rot.apply(Pt::new(p.x + 0.02, p.y)))], closed: false });
+                        }
+                    }
+                }
+                if row.is_empty() {
+                    continue;
+                }
+                // The pen zigzags: every second row is drawn the other way round.
+                if k % 2 == 1 {
+                    row.reverse();
+                    for st in &mut row {
+                        st.pts.reverse();
+                    }
+                }
+                k += 1;
+                if *budget < row.len() {
+                    *budget = 0;
+                    break;
+                }
+                *budget -= row.len();
+                out.extend(row);
+            }
+        }
+        PictureMethod::Tones => {
+            let Some(inv) = shape.xf.inverse() else { return out };
+            let Some(b) = shape.bounds() else { return out };
+            let gap = l.hatch_gap.max(0.05);
+            let step = (gap / 2.0).max(0.05);
+            // Four sets of lines, each starting at a darker tone: the first at the angle of the layer, the next across it, then
+            // the two diagonals.
+            let sets = [(0.0, 0.18), (90.0, 0.38), (45.0, 0.58), (135.0, 0.78)];
+            let corners = [b.min, Pt::new(b.max.x, b.min.y), b.max, Pt::new(b.min.x, b.max.y)];
+            for (turn, tone) in sets {
+                let (sn, cs) = (l.hatch_angle + turn).to_radians().sin_cos();
+                let fwd = |p: Pt| (p.x * cs + p.y * sn, -p.x * sn + p.y * cs);
+                let back = |x: f64, y: f64| Pt::new(x * cs - y * sn, x * sn + y * cs);
+                let (mut x0, mut x1, mut y0, mut y1) = (f64::INFINITY, f64::NEG_INFINITY, f64::INFINITY, f64::NEG_INFINITY);
+                for c in corners {
+                    let (x, y) = fwd(c);
+                    x0 = x0.min(x);
+                    x1 = x1.max(x);
+                    y0 = y0.min(y);
+                    y1 = y1.max(y);
+                }
+                let mut y = y0 + gap / 2.0;
+                let mut k = 0usize;
+                while y < y1 {
+                    let mut row: Vec<Stroke> = vec![];
+                    let mut run: Option<(f64, f64)> = None;
+                    let mut x = x0;
+                    while x <= x1 + step {
+                        let at_sample = x.min(x1);
+                        let p = back(at_sample, y);
+                        let local = inv.apply(p);
+                        let inside = p.x >= b.min.x - 1e-9 && p.x <= b.max.x + 1e-9 && p.y >= b.min.y - 1e-9 && p.y <= b.max.y + 1e-9;
+                        let on = inside && im.darkness_at(local.x, local.y) >= tone;
+                        match (on, run) {
+                            (true, None) => run = Some((at_sample, at_sample)),
+                            (true, Some((s, _))) => run = Some((s, at_sample)),
+                            (false, Some((s, e))) => {
+                                if e - s > 1e-6 {
+                                    row.push(Stroke { pts: vec![to_area(back(s, y)), to_area(back(e, y))], closed: false });
+                                }
+                                run = None;
+                            }
+                            _ => {}
+                        }
+                        x += step;
+                    }
+                    if let Some((s, e)) = run {
+                        if e - s > 1e-6 {
+                            row.push(Stroke { pts: vec![to_area(back(s, y)), to_area(back(e, y))], closed: false });
+                        }
+                    }
+                    if !row.is_empty() {
+                        if k % 2 == 1 {
+                            row.reverse();
+                            for st in &mut row {
+                                st.pts.reverse();
+                            }
+                        }
+                        k += 1;
+                        if *budget < row.len() {
+                            *budget = 0;
+                            return out;
+                        }
+                        *budget -= row.len();
+                        out.extend(row);
+                    }
+                    y += gap;
+                }
+            }
+        }
+    }
+    out
+}
+
 /// A better order for the strokes: always the one that starts nearest to where the pen is (open lines may be drawn
 /// from either end).
 fn order(strokes: Vec<Stroke>, start: P2) -> Vec<Stroke> {
@@ -219,12 +355,17 @@ pub fn generate(scene: &Scene, layers: &[PenLayer], dev: &Device) -> Program {
         if !l.enabled {
             continue;
         }
-        let outlines = layer_outlines(scene, li, dev.area.y, &mut images);
-        if outlines.is_empty() {
+        let pictures = if l.draw.is_picture() { layer_pictures(scene, li) } else { vec![] };
+        let outlines = layer_outlines(scene, li, dev.area.y, &mut images, !l.draw.is_picture());
+        if outlines.is_empty() && pictures.is_empty() {
             continue;
         }
         let mut fill: Vec<Stroke> = vec![];
         let mut line: Vec<Stroke> = vec![];
+        for (shape, im) in pictures {
+            fill.extend(picture_strokes(shape, im, l, dev.area.y, &mut budget));
+            too_many |= budget == 0;
+        }
         if l.draw.fills() {
             fill.extend(hatch(&outlines, l.hatch_angle, l.hatch_gap, &mut budget));
             if l.cross_hatch {
@@ -232,7 +373,8 @@ pub fn generate(scene: &Scene, layers: &[PenLayer], dev: &Device) -> Program {
             }
             too_many |= budget == 0;
         }
-        if l.draw.outlines() {
+        // On a picture layer the shapes that are not pictures are drawn as outlines.
+        if l.draw.outlines() || l.draw.is_picture() {
             for o in &outlines {
                 let mut pts: Vec<P2> = o.pts.iter().map(|p| [p.x, p.y]).collect();
                 if o.closed {
@@ -580,5 +722,67 @@ mod tests {
         let t = p.estimate_seconds(&dev, &layers);
         let lines = 120.0 / layers[0].speed * 60.0;
         assert!(t > lines && t < lines + 30.0, "{t}");
+    }
+
+    /// A picture of `w` x `h` mm at (x, y): black everywhere, or a gradient from black (left) to white (right).
+    fn picture(scene: &mut Scene, layer: usize, x: f64, y: f64, w: f64, h: f64, gradient: bool) {
+        let gray: Vec<u8> = (0..64).map(|i| if gradient { ((i % 8) * 255 / 7) as u8 } else { 0 }).collect();
+        let im = base_core::image::ImageData { name: "t".into(), px_w: 8, px_h: 8, gray, w, h, invert: false };
+        scene.add(layer, Kind::Image(im), Xf::translate(x, y));
+    }
+
+    fn picture_layers(method: PictureMethod) -> Vec<PenLayer> {
+        let mut layers = default_layers();
+        layers[0].draw = Draw::Picture;
+        layers[0].picture = method;
+        layers[0].hatch_gap = 1.0;
+        layers[0].hatch_angle = 0.0;
+        layers[0].dither = base_core::raster::Dither::Threshold;
+        layers
+    }
+
+    #[test]
+    fn a_picture_is_drawn_with_rows_of_lines_dots_or_hatching_by_tone() {
+        let mut scene = Scene::default();
+        picture(&mut scene, 0, 20.0, 20.0, 20.0, 10.0, false);
+        // Rows: a black picture of 20 x 10 mm with a gap of 1 mm is ten rows, each one line 20 mm long.
+        let rows = generate(&scene, &picture_layers(PictureMethod::Rows), &Device::dummy());
+        assert!(rows.warnings.is_empty(), "{:?}", rows.warnings);
+        assert!((drawn(&rows) - 200.0).abs() < 1e-6, "{}", drawn(&rows));
+        let b = rows.bounds().unwrap();
+        assert!((b[2] - b[0] - 20.0).abs() < 1e-6, "{b:?}");
+        // The work area counts Y upwards: the picture 20..30 mm from the top of a 210 mm area is 180..190 (the rows are 0.5 in).
+        assert!((b[1] - 180.5).abs() < 1e-6 && (b[3] - 189.5).abs() < 1e-6, "{b:?}");
+        // Dots: a dot (a mark of 0.02 mm) for each of the 200 cells.
+        let dots = generate(&scene, &picture_layers(PictureMethod::Dots), &Device::dummy());
+        assert_eq!(dots.moves.iter().filter(|m| m.kind == MoveKind::Draw).count(), 200);
+        assert!(drawn(&dots) < 6.0);
+        // Hatching by tone: black has all four sets of lines.
+        let tones = generate(&scene, &picture_layers(PictureMethod::Tones), &Device::dummy());
+        assert!(drawn(&tones) > 3.0 * drawn(&rows) * 0.5, "{} against {}", drawn(&tones), drawn(&rows));
+        // A white picture draws nothing, a gradient draws less than black, and darker means more.
+        let mut white = Scene::default();
+        picture(&mut white, 0, 20.0, 20.0, 20.0, 10.0, true);
+        let half = generate(&white, &picture_layers(PictureMethod::Rows), &Device::dummy());
+        assert!(drawn(&half) > 0.0 && drawn(&half) < drawn(&rows), "{} / {}", drawn(&half), drawn(&rows));
+        let tone_half = generate(&white, &picture_layers(PictureMethod::Tones), &Device::dummy());
+        assert!(drawn(&tone_half) > 0.0 && drawn(&tone_half) < drawn(&tones));
+    }
+
+    #[test]
+    fn a_picture_on_another_kind_of_layer_is_reported_and_the_dithering_changes_the_result() {
+        let mut scene = Scene::default();
+        picture(&mut scene, 0, 20.0, 20.0, 20.0, 10.0, true);
+        let plain = generate(&scene, &default_layers(), &Device::dummy());
+        assert!(plain.is_empty() && plain.warnings.iter().any(|w| w.to_string().contains("picture")), "{:?}", plain.warnings);
+        let mut a = picture_layers(PictureMethod::Dots);
+        let threshold = generate(&scene, &a, &Device::dummy()).moves.len();
+        a[0].dither = base_core::raster::Dither::FloydSteinberg;
+        let diffused = generate(&scene, &a, &Device::dummy()).moves.len();
+        assert_ne!(threshold, diffused, "the method of dithering is used");
+        // A picture and an outline on one layer: both are drawn.
+        square(&mut scene, 0, 100.0, 20.0, 10.0);
+        let both = generate(&scene, &picture_layers(PictureMethod::Rows), &Device::dummy());
+        assert!(both.bounds().unwrap()[2] > 100.0, "the square is drawn too");
     }
 }

@@ -185,3 +185,13 @@
 184|ovaj projekt napravljen je za drugi stroj: {}
 185|{} slika na slojevima ne može se crtati: prvo ih pretvorite u linije
 186|Uvezi UGS dizajn…
+187|Slika
+188|Slika na sloju crta se linijama: rasterirani redovi, točke ili križno šrafiranje prema tonu.
+189|Rasterirani redovi
+190|Točke
+191|Šrafiranje prema tonu
+192|Svaki se red crta linijama gdje je rasterirana slika tamna. Metoda rasteriranja bira se ispod.
+193|Točka za svaku tamnu ćeliju rasterirane slike.
+194|Križno šrafiranje: što je slika tamnija, to je više smjerova linija.
+195|Način crtanja slike
+196|Rasteriranje

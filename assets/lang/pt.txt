@@ -185,3 +185,13 @@
 184|este projeto foi feito para outra máquina: {}
 185|{} imagem(ns) nas camadas não podem ser desenhadas: vetorize-as primeiro
 186|Importar design UGS…
+187|Imagem
+188|Uma imagem na camada é desenhada com linhas: filas tramadas, pontos ou hachuras cruzadas conforme o tom.
+189|Filas tramadas
+190|Pontos
+191|Hachuras conforme o tom
+192|Cada fila é desenhada com linhas onde a imagem tramada é escura. O método de tramagem escolhe-se abaixo.
+193|Um ponto para cada célula escura da imagem tramada.
+194|Hachuras cruzadas: quanto mais escura a imagem, mais direções de linhas.
+195|Método da imagem
+196|Tramagem
