@@ -195,3 +195,37 @@
 194|Križno šrafiranje: temnejša ko je slika, več je smeri črt.
 195|Način slike
 196|Rastriranje
+197|Knjižnica peres
+198|Knjižnica peres…
+199|Pripravljena peresa
+200|Moja peresa
+201|Tu še ni ničesar
+202|Novo pero
+203|Kopija med vašimi peresi
+204|Preberi peresa iz datoteke
+205|Datoteka je prevelika
+206|dodanih peres
+207|Izpuščeno
+208|Datoteke ni mogoče uporabiti
+209|Shrani svoja peresa v datoteko
+210|Shranjeno
+211|Shranjevanje ni uspelo
+212|Izvozi to pero…
+213|Izberi pero
+214|Pripravljenega peresa ni mogoče spreminjati. Naredite kopijo, da ga spremenite.
+215|Vrsta
+216|Širina sledi
+217|Višina sledi
+218|Zasuk konice
+219|Konca črte
+220|Zaobljena konca
+221|Ravni konci
+222|Barva črnila
+223|Neprosojnost
+224|Pero ni izbrano
+225|Svinčnik
+226|Nalivno pero (konica)
+227|Tanki flomaster
+228|Flomaster
+229|Označevalnik
+230|Čopičasto pero

@@ -195,3 +195,37 @@
 194|Kruisarcering: hoe donkerder de afbeelding, hoe meer lijnrichtingen.
 195|Methode voor de afbeelding
 196|Rasteren
+197|Penbibliotheek
+198|Penbibliotheek…
+199|Kant-en-klare pennen
+200|Mijn pennen
+201|Hier staat nog niets
+202|Nieuwe pen
+203|Een kopie tussen je eigen pennen
+204|Pennen uit een bestand lezen
+205|Het bestand is te groot
+206|pennen toegevoegd
+207|Overgeslagen
+208|Het bestand kan niet worden gebruikt
+209|Sla je pennen op in een bestand
+210|Opgeslagen
+211|Opslaan is mislukt
+212|Deze pen exporteren…
+213|Kies een pen
+214|Een kant-en-klare pen kan niet worden gewijzigd. Maak een kopie om hem te wijzigen.
+215|Soort
+216|Breedte van de streek
+217|Hoogte van de streek
+218|Draaiing van de punt
+219|Uiteinden van een lijn
+220|Ronde uiteinden
+221|Platte uiteinden
+222|Inktkleur
+223|Dekking
+224|Geen pen gekozen
+225|Potlood
+226|Vulpen (punt)
+227|Fineliner
+228|Viltstift
+229|Markeerstift
+230|Penseelstift

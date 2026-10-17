@@ -195,3 +195,37 @@
 194	Crossed hatching: the darker the picture, the more directions of lines.
 195	Picture method
 196	Dithering
+197	Pen library
+198	Pen library…
+199	Ready-made pens
+200	My pens
+201	Nothing here yet
+202	New pen
+203	A copy among your own pens
+204	Read pens from a file
+205	The file is too large
+206	pens added
+207	Left out
+208	Cannot use the file
+209	Save your pens to a file
+210	Saved
+211	Could not save
+212	Export this pen…
+213	Choose a pen
+214	A ready-made pen cannot be changed. Make a copy to change it.
+215	Type
+216	Width of the mark
+217	Height of the mark
+218	Turn of the tip
+219	Ends of a line
+220	Round ends
+221	Flat ends
+222	Ink colour
+223	Opacity
+224	No pen chosen
+225	Pencil
+226	Fountain pen (nib)
+227	Fineliner
+228	Felt-tip marker
+229	Highlighter
+230	Brush pen

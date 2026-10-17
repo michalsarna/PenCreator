@@ -175,7 +175,7 @@ impl App {
             return None;
         }
         let name = self.path.as_ref().and_then(|p| p.file_stem()).map(|s| s.to_string_lossy().into_owned()).unwrap_or_else(|| "untitled".into());
-        let lines = link::clean_gcode(&plot::to_gcode(&prog, &self.device, &self.layers, &name));
+        let lines = link::clean_gcode(&plot::to_gcode(&prog, &self.device, &self.layers, &self.pens, &name));
         Some((lines, prog.estimate_seconds(&self.device, &self.layers)))
     }
 

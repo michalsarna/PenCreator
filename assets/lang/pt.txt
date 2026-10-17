@@ -195,3 +195,37 @@
 194|Hachuras cruzadas: quanto mais escura a imagem, mais direções de linhas.
 195|Método da imagem
 196|Tramagem
+197|Biblioteca de canetas
+198|Biblioteca de canetas…
+199|Canetas prontas
+200|Minhas canetas
+201|Nada aqui ainda
+202|Nova caneta
+203|Uma cópia entre as suas canetas
+204|Ler canetas de um ficheiro
+205|O ficheiro é demasiado grande
+206|canetas adicionadas
+207|Omitidas
+208|Não é possível usar o ficheiro
+209|Guardar as suas canetas num ficheiro
+210|Guardado
+211|Não foi possível guardar
+212|Exportar esta caneta…
+213|Escolha uma caneta
+214|Uma caneta pronta não pode ser alterada. Faça uma cópia para a alterar.
+215|Tipo
+216|Largura do traço
+217|Altura do traço
+218|Rotação da ponta
+219|Extremidades da linha
+220|Extremidades redondas
+221|Extremidades retas
+222|Cor da tinta
+223|Opacidade
+224|Nenhuma caneta escolhida
+225|Lápis
+226|Caneta-tinteiro (aparo)
+227|Caneta de ponta fina
+228|Marcador de feltro
+229|Marcador
+230|Caneta de pincel

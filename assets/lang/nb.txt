@@ -195,3 +195,37 @@
 194|Krysskravering: jo mørkere bilde, desto flere retninger av linjer.
 195|Bildemetode
 196|Rastrering
+197|Pennbibliotek
+198|Pennbibliotek…
+199|Ferdige penner
+200|Mine penner
+201|Ingenting her ennå
+202|Ny penn
+203|En kopi blant dine egne penner
+204|Les penner fra en fil
+205|Filen er for stor
+206|penner lagt til
+207|Utelatt
+208|Kan ikke bruke filen
+209|Lagre pennene dine i en fil
+210|Lagret
+211|Kunne ikke lagre
+212|Eksporter denne pennen…
+213|Velg en penn
+214|En ferdig penn kan ikke endres. Lag en kopi for å endre den.
+215|Type
+216|Merkets bredde
+217|Merkets høyde
+218|Spissens dreining
+219|Linjens ender
+220|Runde ender
+221|Flate ender
+222|Blekkfarge
+223|Dekkevne
+224|Ingen penn valgt
+225|Blyant
+226|Fyllepenn (spiss)
+227|Fineliner
+228|Tusjpenn
+229|Merkepenn
+230|Penselpenn

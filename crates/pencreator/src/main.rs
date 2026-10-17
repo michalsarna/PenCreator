@@ -9,6 +9,8 @@ mod layers;
 mod layers_ui;
 mod machine_ui;
 mod menu;
+mod pens;
+mod pens_ui;
 mod plot;
 mod plugins_glue;
 mod preview_ui;
@@ -102,6 +104,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::Save | Act::SaveAs => Some("save"),
         Act::ImportLightburn | Act::ImportUgsd | Act::ImportPlugin => Some("file-input"),
         Act::Plugins => Some("package-open"),
+        Act::Pens => Some("pencil"),
         Act::GenerateShape => Some("shapes"),
         Act::Preview => Some("eye"),
         Act::Firmware => Some("settings"),
@@ -213,6 +216,9 @@ struct App {
     /// The layers that hold pictures and were switched to the Picture drawing already (so that a person who changes the
     /// drawing of such a layer is not overruled).
     picture_layers: std::collections::HashSet<usize>,
+    /// The pens (ready-made and the person's) and the window that edits them.
+    pens: pens::PenLibrary,
+    pens_win: pens_ui::PensWindow,
     /// The list of layers shows all of them (not only those with shapes).
     show_all_layers: bool,
     autosave: base_core::autosave::Timer,
@@ -309,6 +315,14 @@ impl App {
             prog: None,
             rev: 0,
             picture_layers: Default::default(),
+            pens: {
+                let mut lib = pens::PenLibrary::new();
+                if let Some(t) = saved("pens") {
+                    lib.load_text(&t);
+                }
+                lib
+            },
+            pens_win: Default::default(),
             show_all_layers: false,
             autosave: Default::default(),
             recovery: base_core::autosave::find(&data_paths().base, "pencreator"),
@@ -355,6 +369,7 @@ impl App {
             ("snap_objects", flag(self.ed.snap_objects)),
             ("devices", self.devices_text()),
             ("check_updates", flag(self.check_updates)),
+            ("pens", self.pens.save_text()),
             ("tab_order", self.tabs.order_string()),
             ("side_collapsed", flag(self.tabs.collapsed)),
             ("recent_files", self.recent.iter().map(|p| p.to_string_lossy().into_owned()).collect::<Vec<_>>().join("\n")),
@@ -432,6 +447,7 @@ impl App {
                     }
                 };
                 self.layers = loaded.layers;
+                self.pens.adopt(loaded.pens);
                 self.touch_rev();
                 // Sections of other programs wait here until the next save; a drawing from SVG or PDF has none.
                 self.description = file.as_ref().map(|p| p.description.clone()).unwrap_or_default();
@@ -507,7 +523,7 @@ impl App {
     fn to_project(&self) -> Project {
         let mut p = Project::new(self.scene.clone());
         p.description = self.description.clone();
-        p.set_section(section::SECTION, &section::PenSection::new(&self.layers, &self.device));
+        p.set_section(section::SECTION, &section::PenSection::new(&self.layers, &self.device, &self.pens));
         p.restore_sections(&self.kept.other_sections(section::SECTION));
         p.restore_extra(self.kept.extra());
         p
@@ -897,6 +913,7 @@ impl App {
 
     fn dialogs(&mut self, ctx: &egui::Context) {
         self.image_dialogs(ctx);
+        pens_ui::pens_window(ctx, &mut self.pens_win, &mut self.pens);
         let mut show = self.show_options;
         base_ui::editor::view_options_window(self, ctx, &mut show);
         self.clip_dialogs(ctx);
@@ -1095,6 +1112,7 @@ impl MenuHost for App {
             Act::ImportUgsd => self.import_ugsd_dialog(),
             Act::ImportPlugin => self.import_with_plugin_dialog(),
             Act::Plugins => self.plugins.open = true,
+            Act::Pens => self.pens_win.open = true,
             Act::GenerateShape => self.plugins.gen_open = true,
             Act::Preview => self.open_preview(),
             Act::Firmware => self.fw_open = true,

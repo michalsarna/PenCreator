@@ -2,6 +2,7 @@
 //! programs keep it untouched, and PenCreator keeps theirs.
 use crate::device::Device;
 use crate::layers::{default_layers, PenLayer, LAYER_COUNT};
+use crate::pens::{Pen, PenLibrary};
 use serde::{Deserialize, Serialize};
 
 pub const SECTION: &str = "pen";
@@ -37,11 +38,15 @@ pub struct PenSection {
     pub format: u32,
     pub layers: Vec<PenLayer>,
     pub machine: Machine,
+    /// The pens of the person that the layers use: a project made on another computer brings them along.
+    #[serde(default)]
+    pub pens: Vec<Pen>,
 }
 
 impl PenSection {
-    pub fn new(layers: &[PenLayer], device: &Device) -> PenSection {
-        PenSection { format: SECTION_FORMAT, layers: layers.to_vec(), machine: Machine::of(device) }
+    pub fn new(layers: &[PenLayer], device: &Device, library: &PenLibrary) -> PenSection {
+        let used: Vec<Pen> = library.user.iter().filter(|p| layers.iter().any(|l| l.pen.as_deref() == Some(p.id.as_str()))).cloned().collect();
+        PenSection { format: SECTION_FORMAT, layers: layers.to_vec(), machine: Machine::of(device), pens: used }
     }
 }
 
@@ -49,13 +54,14 @@ impl PenSection {
 pub struct Loaded {
     pub layers: Vec<PenLayer>,
     pub machine: Option<Machine>,
+    pub pens: Vec<Pen>,
 }
 
 /// Read the section of a project. A project without one (a drawing, or a project of another program) gets the default
 /// layers; a layer with wrong numbers is replaced by the default one.
 pub fn load(p: &base_core::project::Project) -> Result<Loaded, String> {
     let Some(s) = p.section::<PenSection>(SECTION)? else {
-        return Ok(Loaded { layers: default_layers(), machine: None });
+        return Ok(Loaded { layers: default_layers(), machine: None, pens: vec![] });
     };
     if s.format > SECTION_FORMAT {
         return Err(format!("the plotting part of the project has format {}, this program reads up to {SECTION_FORMAT}; update the program", s.format));
@@ -70,7 +76,7 @@ pub fn load(p: &base_core::project::Project) -> Result<Loaded, String> {
     while layers.len() < LAYER_COUNT {
         layers.push(defaults[layers.len()].clone());
     }
-    Ok(Loaded { layers, machine: Some(s.machine) })
+    Ok(Loaded { layers, machine: Some(s.machine), pens: s.pens })
 }
 
 #[cfg(test)]
@@ -85,7 +91,7 @@ mod tests {
         layers[1].pen_width = 0.8;
         layers[1].name = "Red marker".into();
         let mut p = Project::new(Scene::default());
-        p.set_section(SECTION, &PenSection::new(&layers, &Device::dummy()));
+        p.set_section(SECTION, &PenSection::new(&layers, &Device::dummy(), &PenLibrary::new()));
         let back = load(&Project::from_json(&p.to_json()).unwrap()).unwrap();
         assert_eq!((back.layers[1].pen_width, back.layers[1].name.as_str()), (0.8, "Red marker"));
         assert_eq!(back.machine.unwrap().name, "Dummy");
@@ -107,7 +113,7 @@ mod tests {
         layers.truncate(3);
         layers[1].passes = 0;
         let mut p = Project::new(Scene::default());
-        p.set_section(SECTION, &PenSection::new(&layers, &Device::dummy()));
+        p.set_section(SECTION, &PenSection::new(&layers, &Device::dummy(), &PenLibrary::new()));
         let l = load(&Project::from_json(&p.to_json()).unwrap()).unwrap();
         assert_eq!(l.layers.len(), LAYER_COUNT);
         assert!(l.layers.iter().all(|x| x.check().is_ok()));
@@ -124,7 +130,7 @@ mod tests {
         p.set_section("laser", &serde_json::json!({ "format": 1 }));
         let kept = p.other_sections(SECTION);
         let mut out = Project::new(Scene::default());
-        out.set_section(SECTION, &PenSection::new(&default_layers(), &Device::dummy()));
+        out.set_section(SECTION, &PenSection::new(&default_layers(), &Device::dummy(), &PenLibrary::new()));
         out.restore_sections(&kept);
         let mut names = out.section_names();
         names.sort();

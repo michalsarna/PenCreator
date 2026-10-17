@@ -195,3 +195,37 @@
 194|Hașură încrucișată: cu cât imaginea este mai închisă, cu atât mai multe direcții de linii.
 195|Metoda imaginii
 196|Tramare
+197|Bibliotecă de pixuri
+198|Bibliotecă de pixuri…
+199|Pixuri gata făcute
+200|Pixurile mele
+201|Încă nu este nimic aici
+202|Pix nou
+203|O copie printre pixurile tale
+204|Citește pixuri dintr-un fișier
+205|Fișierul este prea mare
+206|pixuri adăugate
+207|Omise
+208|Fișierul nu poate fi folosit
+209|Salvează pixurile tale într-un fișier
+210|Salvat
+211|Nu s-a putut salva
+212|Exportă acest pix…
+213|Alege un pix
+214|Un pix gata făcut nu poate fi modificat. Fă o copie pentru a-l modifica.
+215|Tip
+216|Lățimea urmei
+217|Înălțimea urmei
+218|Rotirea vârfului
+219|Capetele liniei
+220|Capete rotunde
+221|Capete drepte
+222|Culoarea cernelii
+223|Opacitate
+224|Niciun pix ales
+225|Creion
+226|Stilou (peniță)
+227|Liner
+228|Marker cu pâslă
+229|Textmarker
+230|Pix cu pensulă

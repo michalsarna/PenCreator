@@ -107,6 +107,7 @@ impl App {
         let li = self.ed.active_layer.min(self.layers.len().saturating_sub(1));
         let units = self.device.units;
         let mut assign = false;
+        let mut open_pens = false;
         {
             let l = &mut self.layers[li];
             egui::ScrollArea::vertical().id_salt("layer_edit").auto_shrink([false, false]).show(ui, |ui| {
@@ -123,6 +124,9 @@ impl App {
                             changed |= ui.selectable_value(&mut l.draw, d, tr(d.label())).on_hover_text(tr(d.hint())).changed();
                         }
                     });
+                    ui.end_row();
+                    ui.label(tr("Pen"));
+                    changed |= crate::pens_ui::layer_pen_row(ui, l, &self.pens, &mut open_pens);
                     ui.end_row();
                     ui.label(tr("Pen width"));
                     changed |= drag_len(ui, units, &mut l.pen_width, 0.05, Some((0.01, 20.0))).changed();
@@ -173,6 +177,9 @@ impl App {
                 }
                 ui.label(RichText::new(tr("A layer is a pen: when the next layer has another pen, the G-code stops so that you can change it.")).color(theme::text_dim()));
             });
+        }
+        if open_pens {
+            self.pens_win.open = true;
         }
         if assign {
             self.assign_selection_to_layer(li);

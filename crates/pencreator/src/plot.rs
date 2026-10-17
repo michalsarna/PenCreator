@@ -4,6 +4,7 @@
 //! the scene counts Y downwards).
 use crate::device::{Device, Lift, Origin};
 use crate::layers::{PenLayer, PictureMethod};
+use crate::pens::PenLibrary;
 use crate::warn::Warn;
 use base_core::geom::{Polyline, Pt};
 use base_core::image::ImageData;
@@ -466,7 +467,7 @@ pub fn frame_gcode(b: [f64; 4], dev: &Device) -> String {
 
 /// The G-code (GRBL) for the program. The pen goes up and down with the Z axis or with a servo on the spindle output;
 /// when the next layer needs another pen the program stops with M0 so that it can be changed.
-pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], program_name: &str) -> String {
+pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLibrary, program_name: &str) -> String {
     let mut g = String::new();
     let clean = |s: &str| s.chars().filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_' || *c == '.').collect::<String>();
     g.push_str(&format!("(PenCreator: {})\n(Device: {})\n", clean(program_name), clean(&dev.name)));
@@ -490,7 +491,7 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], program_name:
     let mut pen_down = false;
     let mut layer = usize::MAX;
     let mut feed = f64::NAN;
-    let mut current: Option<([u8; 3], u64)> = None;
+    let mut current: Option<([u8; 3], u64, Option<String>)> = None;
     for m in &prog.moves {
         if m.layer != layer {
             layer = m.layer;
@@ -500,9 +501,13 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], program_name:
                     pen_down = false;
                 }
                 g.push_str(&format!("(Layer: {})\n", clean(&l.name)));
-                let pen = (l.color, l.pen_width.to_bits());
-                if current != Some(pen) {
-                    let what = format!("{}, {} mm", clean(&l.name), num(l.pen_width));
+                let pen = (l.color, l.pen_width.to_bits(), l.pen.clone());
+                if current.as_ref() != Some(&pen) {
+                    // A pen of the library is named; a layer without one by its name and width.
+                    let what = match l.pen.as_deref().and_then(|id| pens.get(id)) {
+                        Some(p) => format!("{}, {}", clean(&p.name), clean(&l.name)),
+                        None => format!("{}, {} mm", clean(&l.name), num(l.pen_width)),
+                    };
                     if current.is_some() {
                         g.push_str(&format!("M0 (Change the pen to: {what})\n"));
                     } else {
@@ -664,7 +669,7 @@ mod tests {
         square(&mut scene, 1, 60.0, 20.0, 10.0);
         let dev = Device::dummy();
         let layers = default_layers();
-        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, "test");
+        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "test");
         assert!(g.starts_with("(PenCreator: test)"));
         assert!(g.contains("M0 (Change the pen to: Red pen, 0.4 mm)"), "{g}");
         assert!(!g.contains("M0 (Change the pen to: Black"), "no stop before the first pen");
@@ -693,7 +698,7 @@ mod tests {
         dev.pen.down = 300.0;
         dev.origin = Origin::BackLeft;
         let layers = default_layers();
-        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, "t");
+        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
         assert!(g.contains("M3 S800") && g.contains("M3 S300") && g.contains("M5"));
         // Back left: Y counts from the back, so the points are negative.
         assert!(g.lines().any(|l| l.starts_with("G1 X") && l.contains(" Y-")), "{g}");

@@ -195,3 +195,37 @@
 194|Hachures croisées : plus l'image est sombre, plus il y a de directions de lignes.
 195|Méthode de l'image
 196|Tramage
+197|Bibliothèque de stylos
+198|Bibliothèque de stylos…
+199|Stylos prédéfinis
+200|Mes stylos
+201|Rien ici pour l'instant
+202|Nouveau stylo
+203|Une copie parmi vos stylos
+204|Lire des stylos depuis un fichier
+205|Le fichier est trop volumineux
+206|stylos ajoutés
+207|Ignorés
+208|Impossible d'utiliser le fichier
+209|Enregistrer vos stylos dans un fichier
+210|Enregistré
+211|Échec de l'enregistrement
+212|Exporter ce stylo…
+213|Choisissez un stylo
+214|Un stylo prédéfini ne peut pas être modifié. Faites-en une copie pour le modifier.
+215|Type
+216|Largeur de la trace
+217|Hauteur de la trace
+218|Rotation de la pointe
+219|Extrémités de la ligne
+220|Extrémités arrondies
+221|Extrémités plates
+222|Couleur de l'encre
+223|Opacité
+224|Aucun stylo choisi
+225|Crayon
+226|Stylo plume (plume)
+227|Feutre fin
+228|Feutre
+229|Surligneur
+230|Stylo pinceau

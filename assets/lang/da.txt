@@ -195,3 +195,37 @@
 194|Krydsskravering: jo mørkere billede, jo flere retninger af linjer.
 195|Billedmetode
 196|Rastrering
+197|Penbibliotek
+198|Penbibliotek…
+199|Færdige penne
+200|Mine penne
+201|Her er endnu intet
+202|Ny pen
+203|En kopi blandt dine egne penne
+204|Læs penne fra en fil
+205|Filen er for stor
+206|penne tilføjet
+207|Udeladt
+208|Filen kan ikke bruges
+209|Gem dine penne i en fil
+210|Gemt
+211|Kunne ikke gemme
+212|Eksportér denne pen…
+213|Vælg en pen
+214|En færdig pen kan ikke ændres. Lav en kopi for at ændre den.
+215|Type
+216|Mærkets bredde
+217|Mærkets højde
+218|Spidsens drejning
+219|Linjens ender
+220|Runde ender
+221|Flade ender
+222|Blækkets farve
+223|Dækkevne
+224|Ingen pen valgt
+225|Blyant
+226|Fyldepen (spids)
+227|Fineliner
+228|Filtpen
+229|Overstregningspen
+230|Penselpen
