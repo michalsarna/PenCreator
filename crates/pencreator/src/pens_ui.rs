@@ -315,7 +315,7 @@ mod tests {
         let mut l = crate::layers::default_layers().remove(0);
         let mut open = false;
         let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
-            egui::CentralPanel::default().show_inside(ui, |ui| {
+            egui::CentralPanel::default().show(ui, |ui| {
                 layer_pen_row(ui, &mut l, &lib, &mut open);
             });
         });
