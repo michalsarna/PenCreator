@@ -42,7 +42,7 @@ fn app(h: &mut Shot) -> &mut App {
 #[test]
 #[ignore = "writes docs/screenshots; run explicitly"]
 fn render_screenshots() {
-    let mut h: Shot = Harness::builder().with_size([1280.0, 800.0]).build_ui_state(
+    let mut h: Shot = Harness::builder().with_accessibility_check(false).with_size([1280.0, 800.0]).build_ui_state(
         |ui, state: &mut Option<App>| {
             let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
             a.draw(ui);
@@ -154,7 +154,7 @@ mod context_menu_tests {
 
     #[test]
     fn a_right_click_on_a_shape_opens_the_menu_and_its_commands_work() {
-        let mut h: Shot = Harness::builder().with_size([1280.0, 800.0]).build_ui_state(
+        let mut h: Shot = Harness::builder().with_accessibility_check(false).with_size([1280.0, 800.0]).build_ui_state(
             |ui, state: &mut Option<App>| {
                 let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
                 a.draw(ui);
@@ -198,14 +198,14 @@ mod context_menu_tests {
 #[cfg(test)]
 mod trace_tests {
     use super::*;
-    use base_ui::editor::{EditorHost, EditorImages};
+    use base_ui::editor::{EditorImages};
     use base_ui::menu::StdAct;
     use egui_kittest::kittest::Queryable;
 
     /// The way a person does it: a picture is imported with the dialog, then traced into outlines with the Trace dialog.
     #[test]
     fn a_picture_is_imported_and_traced_into_outlines_through_the_dialogs() {
-        let mut h: Shot = Harness::builder().with_size([1280.0, 800.0]).build_ui_state(
+        let mut h: Shot = Harness::builder().with_accessibility_check(false).with_size([1280.0, 800.0]).build_ui_state(
             |ui, state: &mut Option<App>| {
                 let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
                 a.draw(ui);
@@ -253,7 +253,7 @@ mod window_size_tests {
 
     #[test]
     fn the_preview_keeps_its_size_and_does_not_grow_to_the_screen() {
-        let mut h: Shot = Harness::builder().with_size([1600.0, 1000.0]).build_ui_state(
+        let mut h: Shot = Harness::builder().with_accessibility_check(false).with_size([1600.0, 1000.0]).build_ui_state(
             |ui, state: &mut Option<App>| {
                 let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
                 a.draw(ui);
@@ -271,7 +271,7 @@ mod window_size_tests {
         let mut seen = vec![];
         for _ in 0..14 {
             h.run_steps(1);
-            seen.push(h.ctx.memory(|m| m.area_rect(egui::Id::new(Some("preview_plot")))).map(|r| (r.width(), r.height())));
+            seen.push(h.ctx.memory(|m| m.area_rect(egui::Id::unique(Some("preview_plot")))).map(|r| (r.width(), r.height())));
         }
         let (first, last) = (seen[2], *seen.last().unwrap());
         assert!(last.is_some(), "the window is shown");
@@ -296,7 +296,7 @@ mod plugin_import_window_tests {
         std::fs::write(p.join("read.rhai"), "fn read(text, ctx) { rect(0.0, 0.0, ctx.p.w, 5.0) }").unwrap();
         let file = base.join("a.frm");
         std::fs::write(&file, "x").unwrap();
-        let mut h: Shot = Harness::builder().with_size([1280.0, 800.0]).build_ui_state(
+        let mut h: Shot = Harness::builder().with_accessibility_check(false).with_size([1280.0, 800.0]).build_ui_state(
             |ui, state: &mut Option<App>| {
                 let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
                 a.draw(ui);
