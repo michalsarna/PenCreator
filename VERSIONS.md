@@ -2,6 +2,15 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.3.6
+
+* **Pens as tools:** a library of ready-made and own pens (width and height of the mark, tip turn, ink colour, opacity, ends), a pen choice on the layer, and the preview draws the lines the way the pen makes them.
+* **Pictures are drawn:** the *Picture* drawing of a layer (dithered rows, dots, hatching by tone) with the dithering methods of baseCreator; a picture put on a layer switches it.
+* **Preview:** *Fit to the work area* and *Fit to the elements*, as icons in the title line (like in LightCreator).
+* **Plugins:** the import window has a form, a preview and a 3D view (for example the STL projection plugin); the generator window has a preview and pictures (for example the box nets to cut out of card); PDF / Illustrator import can use the layers of the file. Plugins can import a KiCad board, Gerber, EAGLE and EasyEDA boards (to plot the traces) from the official list.
+* The Device tab uses the shared XY jog pad; the About window shows the baseCreator version.
+* egui / eframe 0.37; baseCreator v1.15.0.
+
 ## v0.3.5
 
 * **Properties tab:** when one picture is selected, an *Image* section has the buttons **Adjust image…** and **Trace image…** (shared by all programs), so tracing a picture into outlines does not have to be looked for in the menu.
