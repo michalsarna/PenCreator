@@ -1,0 +1,1773 @@
+{
+  "format": 1,
+  "description": "Badge, A4 paper, four pens.\nBlack frame first, then blue, red and the black fill.",
+  "scene": {
+    "shapes": [
+      {
+        "id": 1,
+        "layer": 0,
+        "kind": {
+          "Rect": {
+            "w": 150.0,
+            "h": 100.0
+          }
+        },
+        "xf": {
+          "a": 1.0,
+          "b": 0.0,
+          "c": 0.0,
+          "d": 1.0,
+          "e": 70.0,
+          "f": 55.0
+        },
+        "group": null,
+        "locked": false
+      },
+      {
+        "id": 2,
+        "layer": 2,
+        "kind": {
+          "Ellipse": {
+            "w": 46.0,
+            "h": 46.0
+          }
+        },
+        "xf": {
+          "a": 1.0,
+          "b": 0.0,
+          "c": 0.0,
+          "d": 1.0,
+          "e": 85.0,
+          "f": 70.0
+        },
+        "group": null,
+        "locked": false
+      },
+      {
+        "id": 3,
+        "layer": 1,
+        "kind": {
+          "Bezier": [
+            {
+              "nodes": [
+                {
+                  "p": {
+                    "x": 20.0,
+                    "y": 0.0
+                  },
+                  "hin": {
+                    "x": 20.0,
+                    "y": 0.0
+                  },
+                  "hout": {
+                    "x": 20.0,
+                    "y": 0.0
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 25.290067270632257,
+                    "y": 12.718847050625474
+                  },
+                  "hin": {
+                    "x": 25.290067270632257,
+                    "y": 12.718847050625474
+                  },
+                  "hout": {
+                    "x": 25.290067270632257,
+                    "y": 12.718847050625474
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 39.02113032590307,
+                    "y": 13.819660112501051
+                  },
+                  "hin": {
+                    "x": 39.02113032590307,
+                    "y": 13.819660112501051
+                  },
+                  "hout": {
+                    "x": 39.02113032590307,
+                    "y": 13.819660112501051
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 28.559508646656383,
+                    "y": 22.781152949374526
+                  },
+                  "hin": {
+                    "x": 28.559508646656383,
+                    "y": 22.781152949374526
+                  },
+                  "hout": {
+                    "x": 28.559508646656383,
+                    "y": 22.781152949374526
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 31.755705045849464,
+                    "y": 36.180339887498945
+                  },
+                  "hin": {
+                    "x": 31.755705045849464,
+                    "y": 36.180339887498945
+                  },
+                  "hout": {
+                    "x": 31.755705045849464,
+                    "y": 36.180339887498945
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 20.0,
+                    "y": 29.0
+                  },
+                  "hin": {
+                    "x": 20.0,
+                    "y": 29.0
+                  },
+                  "hout": {
+                    "x": 20.0,
+                    "y": 29.0
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 8.24429495415054,
+                    "y": 36.180339887498945
+                  },
+                  "hin": {
+                    "x": 8.24429495415054,
+                    "y": 36.180339887498945
+                  },
+                  "hout": {
+                    "x": 8.24429495415054,
+                    "y": 36.180339887498945
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 11.440491353343619,
+                    "y": 22.781152949374526
+                  },
+                  "hin": {
+                    "x": 11.440491353343619,
+                    "y": 22.781152949374526
+                  },
+                  "hout": {
+                    "x": 11.440491353343619,
+                    "y": 22.781152949374526
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 0.9788696740969272,
+                    "y": 13.819660112501055
+                  },
+                  "hin": {
+                    "x": 0.9788696740969272,
+                    "y": 13.819660112501055
+                  },
+                  "hout": {
+                    "x": 0.9788696740969272,
+                    "y": 13.819660112501055
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 14.70993272936774,
+                    "y": 12.718847050625474
+                  },
+                  "hin": {
+                    "x": 14.70993272936774,
+                    "y": 12.718847050625474
+                  },
+                  "hout": {
+                    "x": 14.70993272936774,
+                    "y": 12.718847050625474
+                  },
+                  "smooth": false
+                }
+              ],
+              "closed": true
+            }
+          ]
+        },
+        "xf": {
+          "a": 1.0,
+          "b": 0.0,
+          "c": 0.0,
+          "d": 1.0,
+          "e": 145.0,
+          "f": 68.0
+        },
+        "group": null,
+        "locked": false
+      },
+      {
+        "id": 4,
+        "layer": 4,
+        "kind": {
+          "Bezier": [
+            {
+              "nodes": [
+                {
+                  "p": {
+                    "x": 15.000000000000002,
+                    "y": 0.0
+                  },
+                  "hin": {
+                    "x": 15.000000000000002,
+                    "y": 0.0
+                  },
+                  "hout": {
+                    "x": 15.000000000000002,
+                    "y": 0.0
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 18.967550452974194,
+                    "y": 9.539135287969104
+                  },
+                  "hin": {
+                    "x": 18.967550452974194,
+                    "y": 9.539135287969104
+                  },
+                  "hout": {
+                    "x": 18.967550452974194,
+                    "y": 9.539135287969104
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 29.265847744427305,
+                    "y": 10.36474508437579
+                  },
+                  "hin": {
+                    "x": 29.265847744427305,
+                    "y": 10.36474508437579
+                  },
+                  "hout": {
+                    "x": 29.265847744427305,
+                    "y": 10.36474508437579
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 21.419631484992287,
+                    "y": 17.085864712030894
+                  },
+                  "hin": {
+                    "x": 21.419631484992287,
+                    "y": 17.085864712030894
+                  },
+                  "hout": {
+                    "x": 21.419631484992287,
+                    "y": 17.085864712030894
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 23.816778784387097,
+                    "y": 27.135254915624213
+                  },
+                  "hin": {
+                    "x": 23.816778784387097,
+                    "y": 27.135254915624213
+                  },
+                  "hout": {
+                    "x": 23.816778784387097,
+                    "y": 27.135254915624213
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 15.0,
+                    "y": 21.75
+                  },
+                  "hin": {
+                    "x": 15.0,
+                    "y": 21.75
+                  },
+                  "hout": {
+                    "x": 15.0,
+                    "y": 21.75
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 6.183221215612905,
+                    "y": 27.135254915624213
+                  },
+                  "hin": {
+                    "x": 6.183221215612905,
+                    "y": 27.135254915624213
+                  },
+                  "hout": {
+                    "x": 6.183221215612905,
+                    "y": 27.135254915624213
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 8.580368515007713,
+                    "y": 17.085864712030897
+                  },
+                  "hin": {
+                    "x": 8.580368515007713,
+                    "y": 17.085864712030897
+                  },
+                  "hout": {
+                    "x": 8.580368515007713,
+                    "y": 17.085864712030897
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 0.7341522555726954,
+                    "y": 10.364745084375791
+                  },
+                  "hin": {
+                    "x": 0.7341522555726954,
+                    "y": 10.364745084375791
+                  },
+                  "hout": {
+                    "x": 0.7341522555726954,
+                    "y": 10.364745084375791
+                  },
+                  "smooth": false
+                },
+                {
+                  "p": {
+                    "x": 11.032449547025806,
+                    "y": 9.539135287969106
+                  },
+                  "hin": {
+                    "x": 11.032449547025806,
+                    "y": 9.539135287969106
+                  },
+                  "hout": {
+                    "x": 11.032449547025806,
+                    "y": 9.539135287969106
+                  },
+                  "smooth": false
+                }
+              ],
+              "closed": true
+            }
+          ]
+        },
+        "xf": {
+          "a": 1.0,
+          "b": 0.0,
+          "c": 0.0,
+          "d": 1.0,
+          "e": 100.0,
+          "f": 118.0
+        },
+        "group": null,
+        "locked": false
+      },
+      {
+        "id": 5,
+        "layer": 4,
+        "kind": {
+          "Rect": {
+            "w": 70.0,
+            "h": 14.0
+          }
+        },
+        "xf": {
+          "a": 1.0,
+          "b": 0.0,
+          "c": 0.0,
+          "d": 1.0,
+          "e": 140.0,
+          "f": 122.0
+        },
+        "group": null,
+        "locked": false
+      }
+    ],
+    "next_id": 6,
+    "next_group": 1
+  },
+  "sections": {
+    "pen": {
+      "format": 1,
+      "layers": [
+        {
+          "color": [
+            32,
+            32,
+            48
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Frame",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            214,
+            39,
+            40
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Red pen",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            31,
+            119,
+            180
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Blue pen",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            44,
+            160,
+            44
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Green pen",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            32,
+            32,
+            48
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Fill",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.8,
+          "name": "Black fill",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            148,
+            103,
+            189
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 6",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            140,
+            86,
+            75
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 7",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            227,
+            119,
+            194
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 8",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            23,
+            190,
+            207
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 9",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            188,
+            189,
+            34
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 10",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            127,
+            127,
+            127
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 11",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            0,
+            0,
+            139
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 12",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            139,
+            0,
+            0
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 13",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            0,
+            100,
+            0
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 14",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            184,
+            134,
+            11
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 15",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            75,
+            0,
+            130
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 16",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            132,
+            132,
+            141
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 17",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            232,
+            136,
+            137
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 18",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            132,
+            180,
+            214
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 19",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            139,
+            203,
+            139
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 20",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            255,
+            185,
+            122
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 21",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            196,
+            171,
+            219
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 22",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            192,
+            162,
+            156
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 23",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            240,
+            180,
+            221
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 24",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            127,
+            219,
+            229
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 25",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            218,
+            219,
+            133
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 26",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            185,
+            185,
+            185
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 27",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            115,
+            115,
+            191
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 28",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            191,
+            115,
+            115
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 29",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            115,
+            170,
+            115
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 30",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            216,
+            188,
+            121
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 31",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            156,
+            115,
+            186
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 32",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            193,
+            193,
+            197
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 33",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            244,
+            195,
+            195
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 34",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            192,
+            217,
+            234
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 35",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            196,
+            228,
+            196
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 36",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            255,
+            219,
+            188
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 37",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            225,
+            212,
+            237
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 38",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            223,
+            208,
+            205
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 39",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            247,
+            217,
+            238
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 40",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            190,
+            237,
+            242
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 41",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            236,
+            237,
+            193
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 42",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            219,
+            219,
+            219
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 43",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            184,
+            184,
+            223
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 44",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            223,
+            184,
+            184
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 45",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            184,
+            212,
+            184
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 46",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            235,
+            221,
+            187
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 47",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            205,
+            184,
+            220
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 48",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            20,
+            20,
+            30
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 49",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            133,
+            24,
+            25
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 50",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            19,
+            74,
+            112
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 51",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            27,
+            99,
+            27
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 52",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            158,
+            79,
+            9
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 53",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            92,
+            64,
+            117
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 54",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            87,
+            53,
+            46
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 55",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            141,
+            74,
+            120
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 56",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            14,
+            118,
+            128
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 57",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            117,
+            117,
+            21
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 58",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            79,
+            79,
+            79
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 59",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            0,
+            0,
+            86
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 60",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            86,
+            0,
+            0
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 61",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            0,
+            62,
+            0
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 62",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            114,
+            83,
+            7
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 63",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        },
+        {
+          "color": [
+            46,
+            0,
+            81
+          ],
+          "cross_hatch": false,
+          "dither": "FloydSteinberg",
+          "draw": "Outline",
+          "enabled": true,
+          "hatch_angle": 45.0,
+          "hatch_gap": 0.4,
+          "name": "Layer 64",
+          "passes": 1,
+          "pen": null,
+          "pen_width": 0.4,
+          "picture": "Rows",
+          "rank": 0,
+          "speed": 3000.0,
+          "visible": true
+        }
+      ],
+      "machine": {
+        "name": "A4 plotter",
+        "x": 297.0,
+        "y": 210.0
+      },
+      "pens": []
+    }
+  }
+}
