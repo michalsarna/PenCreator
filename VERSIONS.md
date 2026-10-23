@@ -2,6 +2,14 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.3.7
+
+* **G-code viewer:** *File → View G-code file…*, a dropped `.nc` / `.gcode` / `.tap` file, or the **View G-code file…** button on the start screen (no project is started; closing the viewer returns to the start screen) shows the toolpath: flat, or in 3D when Z changes, with zoom, pan, rotation, **Reset view**, hidden rapid moves, colour by height, size, cutting length and a time estimate.
+* **Navigation cube** (like in FreeCAD) in the 3D views, i.e. in the G-code viewer and in the 3D view of a plugin's import window: click a face, an edge or a corner to look from there, the arrows turn the view by 15°, drag the cube to rotate.
+* The edge of the side panel no longer lights up and takes the drag while the pointer is over a window; the list in the Plugins window is not taller than its window.
+* `examples/`: a badge with four pens as a project (`.cre`) and its G-code.
+* baseCreator v1.17.0.
+
 ## v0.3.6
 
 * **Pens as tools:** a library of ready-made and own pens (width and height of the mark, tip turn, ink colour, opacity, ends), a pen choice on the layer, and the preview draws the lines the way the pen makes them.
