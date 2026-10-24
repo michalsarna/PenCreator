@@ -18,3 +18,5 @@ All pictures are rendered headlessly from the real UI (`cargo test -p pencreator
 | Console tab: the traffic with the controller and a line to send a command | Control tab: position, zero, jogging, macros |
 | ![Settings of the controller ($$)](screenshots/13-firmware.png) | ![The job waits for the pen to be changed](screenshots/14-job-paused.png) |
 | Settings of the controller ($$) | The job waits for the pen to be changed |
+| ![Tabs of open drawings](screenshots/15-tabs.png) | |
+| Tabs: File → New and Open make a tab (up to 10); a dot marks a drawing with unsaved work, closing the program asks about each of them | |
