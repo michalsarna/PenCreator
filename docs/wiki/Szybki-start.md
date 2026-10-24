@@ -9,4 +9,4 @@
 5. **Ploter → Wykres zadania…** (Ctrl+Shift+P) pokazuje, co zrobi pisak; linie przerywane to ruchy z podniesionym pisakiem. **Eksportuj G-code…** (Ctrl+Shift+G) zapisuje plik dla GRBL.
 6. **Zapisz** jako `.cre` ([Plik projektu](Plik-projektu)). Karta **Opis** zawiera notatkę o projekcie.
 
-> Program zapisuje G-code i może przesłać go do podłączonego plotera GRBL (karta Device: Connect; pasek: Frame, Start, Stop), ale nie było to sprawdzone na prawdziwym ploterze. Zobacz [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia).
+> Program zapisuje G-code i może przesłać go do podłączonego plotera GRBL (karta Device: Connect; karta Control: Start, Stop, Frame, From line…), ale nie było to sprawdzone na prawdziwym ploterze. Zobacz [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia).
