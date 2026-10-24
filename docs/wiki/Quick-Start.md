@@ -9,4 +9,4 @@
 5. **Plotter → Plot of the job…** (Ctrl+Shift+P) shows what the pen will do; the dashed lines are the moves with the pen up. **Export G-code…** (Ctrl+Shift+G) writes the file for GRBL.
 6. **Save** as `.cre` ([Project File](Project-File)). The **Description** tab holds a note about the project.
 
-> The program writes G-code and can stream it to a connected GRBL plotter (Device tab: Connect; control bar: Frame, Start, Stop), but that has not been tried on a real plotter. See [Safety and Limitations](Safety-and-Limitations).
+> The program writes G-code and can stream it to a connected GRBL plotter (Device tab: Connect; Control tab: Start, Stop, Frame, From line…), but that has not been tried on a real plotter. See [Safety and Limitations](Safety-and-Limitations).
