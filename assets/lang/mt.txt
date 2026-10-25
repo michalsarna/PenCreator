@@ -233,3 +233,5 @@
 232|Adatta għall-elementi
 233|Zoom biex tidher il-folja kollha
 234|Zoom biex il-linji kollha jimlew it-tieqa
+235|Għolli l-pinna
+236|Niżżel il-pinna

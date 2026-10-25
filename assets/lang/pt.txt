@@ -233,3 +233,5 @@
 232|Ajustar aos elementos
 233|Ampliar para ver toda a folha
 234|Ampliar para que todas as linhas preencham a janela
+235|Levantar a caneta
+236|Baixar a caneta

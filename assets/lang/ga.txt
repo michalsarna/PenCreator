@@ -233,3 +233,5 @@
 232|Oiriúnaigh do na heilimintí
 233|Zúmáil ionas go bhfeicfear an leathán ar fad
 234|Zúmáil ionas go líonfaidh gach líne an fhuinneog
+235|Ardaigh an peann
+236|Ísligh an peann

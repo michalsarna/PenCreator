@@ -233,3 +233,5 @@
 232|Prilagodi elementima
 233|Zumiraj tako da se vidi cijeli list
 234|Zumiraj tako da sve linije ispune prozor
+235|Podigni pisaljku
+236|Spusti pisaljku

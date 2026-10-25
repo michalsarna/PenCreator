@@ -233,3 +233,5 @@
 232|Tilpass elementene
 233|Zoom slik at hele arket vises
 234|Zoom slik at alle linjene fyller vinduet
+235|Løft pennen
+236|Senk pennen

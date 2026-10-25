@@ -233,3 +233,5 @@
 232|Přizpůsobit prvkům
 233|Přiblížit tak, aby byl vidět celý arch
 234|Přiblížit tak, aby všechny čáry vyplnily okno
+235|Zvednout pero
+236|Spustit pero

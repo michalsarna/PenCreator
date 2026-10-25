@@ -233,3 +233,5 @@
 232|Laga að hlutunum
 233|Súmma svo allt blaðið sjáist
 234|Súmma svo allar línur fylli gluggann
+235|Lyfta pennanum
+236|Lækka pennann

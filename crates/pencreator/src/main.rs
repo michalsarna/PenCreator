@@ -847,6 +847,8 @@ impl App {
                 egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
                     self.quick_row(ui);
                     ui.add_space(4.0);
+                    self.pen_buttons(ui);
+                    ui.add_space(4.0);
                     self.start_button(ui);
                     ui.add_space(4.0);
                     // STOP is live only while the machine works (a job, a jog, homing, a held move).

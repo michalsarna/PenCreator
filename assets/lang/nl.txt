@@ -233,3 +233,5 @@
 232|Aanpassen aan elementen
 233|Zoom zo dat het hele vel zichtbaar is
 234|Zoom zo dat alle lijnen het venster vullen
+235|Pen omhoog
+236|Pen omlaag

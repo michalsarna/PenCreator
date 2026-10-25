@@ -233,3 +233,5 @@
 232|Illesztés az elemekhez
 233|Nagyítás úgy, hogy a teljes lap látszódjon
 234|Nagyítás úgy, hogy az összes vonal kitöltse az ablakot
+235|Toll felemelése
+236|Toll leengedése
