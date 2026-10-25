@@ -233,3 +233,5 @@
 232	Fit to the elements
 233	Zoom so that the whole sheet is seen
 234	Zoom so that all the lines fill the window
+235	Raise the pen
+236	Lower the pen

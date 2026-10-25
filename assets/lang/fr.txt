@@ -233,3 +233,5 @@
 232|Ajuster aux éléments
 233|Zoomer pour voir toute la feuille
 234|Zoomer pour que toutes les lignes remplissent la fenêtre
+235|Lever le stylo
+236|Baisser le stylo

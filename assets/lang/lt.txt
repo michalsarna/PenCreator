@@ -233,3 +233,5 @@
 232|Priderinti prie elementų
 233|Padidinti taip, kad matytųsi visas lapas
 234|Padidinti taip, kad visos linijos užpildytų langą
+235|Pakelti rašiklį
+236|Nuleisti rašiklį

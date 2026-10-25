@@ -233,3 +233,5 @@
 232|Pielāgot elementiem
 233|Tuvināt tā, lai būtu redzama visa lapa
 234|Tuvināt tā, lai visas līnijas aizpilda logu
+235|Pacelt pildspalvu
+236|Nolaist pildspalvu

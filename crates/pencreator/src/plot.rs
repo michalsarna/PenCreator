@@ -444,6 +444,21 @@ fn num(v: f64) -> String {
     }
 }
 
+/// G-code that lifts the pen (`down` false) or lowers it onto the paper, where it stands, for the buttons of the Control tab.
+/// A servo keeps its position as long as the spindle output is on, so there is no `M5` here.
+pub fn pen_gcode(dev: &Device, down: bool) -> String {
+    let at = if down { dev.pen.down } else { dev.pen.up };
+    let mut g = String::from("G21 G90\n");
+    match dev.pen.lift {
+        Lift::Z => g.push_str(&format!("G0 Z{}\n", num(at))),
+        Lift::Servo => g.push_str(&format!("M3 S{}\n", num(at))),
+    }
+    if dev.pen.delay_ms > 0.0 {
+        g.push_str(&format!("G4 P{}\n", num(dev.pen.delay_ms / 1000.0)));
+    }
+    g
+}
+
 /// G-code that takes the pen once round the box `b` (min x, min y, max x, max y, in the coordinates of the work area),
 /// lifted, so that the sheet can be checked before the job.
 pub fn frame_gcode(b: [f64; 4], dev: &Device) -> String {
@@ -702,6 +717,17 @@ mod tests {
         assert!(g.contains("M3 S800") && g.contains("M3 S300") && g.contains("M5"));
         // Back left: Y counts from the back, so the points are negative.
         assert!(g.lines().any(|l| l.starts_with("G1 X") && l.contains(" Y-")), "{g}");
+    }
+
+    #[test]
+    fn the_pen_buttons_send_the_up_and_down_positions_of_the_device() {
+        let mut dev = Device::default();
+        dev.pen = crate::device::PenLift { lift: Lift::Z, up: 3.0, down: -0.5, delay_ms: 200.0 };
+        assert_eq!(pen_gcode(&dev, false), "G21 G90\nG0 Z3\nG4 P0.2\n");
+        assert_eq!(pen_gcode(&dev, true), "G21 G90\nG0 Z-0.5\nG4 P0.2\n");
+        dev.pen = crate::device::PenLift { lift: Lift::Servo, up: 600.0, down: 300.0, delay_ms: 0.0 };
+        assert_eq!(pen_gcode(&dev, false), "G21 G90\nM3 S600\n");
+        assert_eq!(pen_gcode(&dev, true), "G21 G90\nM3 S300\n");
     }
 
     #[test]

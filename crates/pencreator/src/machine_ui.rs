@@ -350,6 +350,30 @@ impl App {
         }
     }
 
+    /// Raise the pen and Lower the pen, side by side: the pen goes where it stands, by the Z axis or the servo of the device.
+    pub(crate) fn pen_buttons(&mut self, ui: &mut egui::Ui) {
+        let on = self.machine.connected && !self.machine.job_running();
+        let tip = tr("Connect to the machine first (Device tab)");
+        let half = ((ui.available_width() - ui.spacing().item_spacing.x) / 2.0).max(60.0);
+        let ink = if on { theme::text() } else { theme::text_dim() };
+        let mut go = None;
+        egui::Grid::new("pen_buttons").num_columns(2).show(ui, |ui| {
+            for (down, icon, text) in [(false, "arrow-up", tr("Raise the pen")), (true, "arrow-down", tr("Lower the pen"))] {
+                let b = egui::Button::image_and_text(base_ui::icons::slot(Some(icon), ink), RichText::new(text).size(15.0)).min_size(egui::vec2(half, 32.0));
+                let r = ui.add_enabled(on, b);
+                if !self.machine.connected {
+                    r.on_disabled_hover_text(tip);
+                } else if r.clicked() {
+                    go = Some(down);
+                }
+            }
+            ui.end_row();
+        });
+        if let Some(down) = go {
+            self.machine.lines([crate::plot::pen_gcode(&self.device, down)]);
+        }
+    }
+
     /// The Connection part of the Device tab: connect, the state, the positions and the buttons that need the link.
     pub(crate) fn machine_section(&mut self, ui: &mut egui::Ui) {
         ui.label(RichText::new(tr("Machine")).strong());

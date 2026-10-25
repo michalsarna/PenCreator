@@ -233,3 +233,5 @@
 232|Anpassa till elementen
 233|Zooma så att hela arket syns
 234|Zooma så att alla linjer fyller fönstret
+235|Lyft pennan
+236|Sänk pennan

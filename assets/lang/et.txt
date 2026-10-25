@@ -233,3 +233,5 @@
 232|Sobita elementidele
 233|Suumi nii, et kogu leht oleks näha
 234|Suumi nii, et kõik jooned täidaksid akna
+235|Tõsta pastakas
+236|Langeta pastakas

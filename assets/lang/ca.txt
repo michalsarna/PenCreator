@@ -233,3 +233,5 @@
 232|Ajusta als elements
 233|Amplia perquè es vegi tot el full
 234|Amplia perquè totes les línies omplin la finestra
+235|Aixeca el bolígraf
+236|Baixa el bolígraf

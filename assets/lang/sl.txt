@@ -233,3 +233,5 @@
 232|Prilagodi elementom
 233|Povečaj tako, da se vidi cel list
 234|Povečaj tako, da vse črte zapolnijo okno
+235|Dvigni pisalo
+236|Spusti pisalo
