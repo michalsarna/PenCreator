@@ -255,6 +255,8 @@ struct App {
     recovery: Vec<base_core::autosave::Found>,
     prog_rev: u64,
     cam: Option<CamState>,
+    /// The camera window shrinks to the picture.
+    cam_fit: base_ui::window::FitWindow,
     machine: MachineLink,
     control_ui: ControlUi,
     fw_open: bool,
@@ -366,6 +368,7 @@ impl App {
             recovery: base_core::autosave::find_all(&data_paths().base, "pencreator"),
             prog_rev: 0,
             cam: None,
+            cam_fit: Default::default(),
             machine: {
                 let mut m = MachineLink::new(ctx);
                 m.fw.backup_dir = data_paths().settings.parent().map(|p| p.join("firmware-backups"));
