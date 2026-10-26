@@ -1244,14 +1244,23 @@ impl eframe::App for App {
 /// Where this program keeps its data: the settings in its own folder, the gallery shared with the other programs
 /// (see `base_core::paths`).
 pub fn data_paths() -> &'static base_core::paths::DataPaths {
-    static PATHS: std::sync::OnceLock<base_core::paths::DataPaths> = std::sync::OnceLock::new();
-    PATHS.get_or_init(|| {
-        if cfg!(test) {
-            // Tests never touch the real folders.
-            return base_core::paths::prepare_in(&std::env::temp_dir().join(format!("pencreator-test-data-{}", std::process::id())), "pencreator");
+    #[cfg(test)]
+    {
+        // Tests never touch the real folders, and each test (a thread of its own) has a folder of its own, so that the
+        // recovery files of one are not seen or deleted by another that runs at the same time.
+        thread_local! {
+            static PATHS: &'static base_core::paths::DataPaths = Box::leak(Box::new(base_core::paths::prepare_in(
+                &std::env::temp_dir().join(format!("pencreator-test-data-{}-{:?}", std::process::id(), std::thread::current().id())),
+                "pencreator",
+            )));
         }
-        base_core::paths::prepare("pencreator")
-    })
+        PATHS.with(|p| *p)
+    }
+    #[cfg(not(test))]
+    {
+        static PATHS: std::sync::OnceLock<base_core::paths::DataPaths> = std::sync::OnceLock::new();
+        PATHS.get_or_init(|| base_core::paths::prepare("pencreator"))
+    }
 }
 
 fn main() -> eframe::Result {
