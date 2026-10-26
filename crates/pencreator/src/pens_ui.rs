@@ -102,11 +102,14 @@ pub fn pens_window(ctx: &egui::Context, win: &mut PensWindow, lib: &mut PenLibra
                 win.select(lib, &id);
             }
         }
-        egui::ScrollArea::vertical().id_salt("pen_window").max_height(base_ui::window::fill_size(ui).y).auto_shrink([false, true]).show(ui, |ui| {
+        let total = base_ui::window::fill_size(ui).y;
+        egui::ScrollArea::vertical().id_salt("pen_window").max_height(total).auto_shrink([false, true]).show(ui, |ui| {
             ui.horizontal_top(|ui| {
                 ui.vertical(|ui| {
                     ui.set_width(240.0);
-                    egui::ScrollArea::vertical().id_salt("pen_list").max_height(380.0).auto_shrink([false, false]).show(ui, |ui| {
+                    // The list fills the window; the buttons under it stay at its foot.
+                    let list_h = base_ui::window::height_above(ui, "pen_left", total);
+                    egui::ScrollArea::vertical().id_salt("pen_list").max_height(list_h).min_scrolled_height(list_h).auto_shrink([false, false]).show(ui, |ui| {
                         let mut pick = None;
                         for (title, user) in [(tr("Ready-made pens"), false), (tr("My pens"), true)] {
                             ui.label(egui::RichText::new(title).strong().color(theme::text_dim()));
@@ -126,72 +129,74 @@ pub fn pens_window(ctx: &egui::Context, win: &mut PensWindow, lib: &mut PenLibra
                             win.select(lib, &id);
                         }
                     });
-                    ui.add_space(4.0);
-                    ui.horizontal_wrapped(|ui| {
-                        if ui.button(tr("New pen")).clicked() {
-                            let p = Pen { id: String::new(), name: lib.free_name(&tr("New pen")), kind: PenKind::Fineliner, width: 0.4, height: 0.4, angle: 0.0, color: [0x10, 0x10, 0x10], opacity: 1.0, cap: Cap::Round, notes: String::new(), builtin: false };
-                            if let Ok(id) = lib.add(p) {
-                                win.changed = true;
-                                win.select(lib, &id);
-                            }
-                        }
-                        if ui.add_enabled(win.selected.is_some(), egui::Button::new(tr("Copy"))).on_hover_text(tr("A copy among your own pens")).clicked() {
-                            if let Some(mut c) = win.selected.as_deref().and_then(|id| lib.get(id)).cloned() {
-                                c.name = lib.free_name(&c.name);
-                                if let Ok(id) = lib.add(c) {
+                    base_ui::window::bottom(ui, "pen_left", |ui| {
+                        ui.add_space(4.0);
+                        ui.horizontal_wrapped(|ui| {
+                            if ui.button(tr("New pen")).clicked() {
+                                let p = Pen { id: String::new(), name: lib.free_name(&tr("New pen")), kind: PenKind::Fineliner, width: 0.4, height: 0.4, angle: 0.0, color: [0x10, 0x10, 0x10], opacity: 1.0, cap: Cap::Round, notes: String::new(), builtin: false };
+                                if let Ok(id) = lib.add(p) {
                                     win.changed = true;
                                     win.select(lib, &id);
                                 }
                             }
-                        }
-                        let mine = win.selected.as_deref().is_some_and(|id| lib.user.iter().any(|p| p.id == id));
-                        if ui.add_enabled(mine, egui::Button::new(tr("Delete"))).clicked() {
-                            if let Some(id) = win.selected.take() {
-                                lib.delete(&id);
-                                win.draft = None;
-                                win.changed = true;
+                            if ui.add_enabled(win.selected.is_some(), egui::Button::new(tr("Copy"))).on_hover_text(tr("A copy among your own pens")).clicked() {
+                                if let Some(mut c) = win.selected.as_deref().and_then(|id| lib.get(id)).cloned() {
+                                    c.name = lib.free_name(&c.name);
+                                    if let Ok(id) = lib.add(c) {
+                                        win.changed = true;
+                                        win.select(lib, &id);
+                                    }
+                                }
                             }
-                        }
-                    });
-                    ui.horizontal_wrapped(|ui| {
-                        if ui.button(tr("Import…")).on_hover_text(tr("Read pens from a file")).clicked() {
-                            if let Some(p) = rfd::FileDialog::new().add_filter("PenCreator pens", &["json"]).pick_file() {
-                                win.message = match std::fs::metadata(&p) {
-                                    Ok(m) if m.len() > crate::pens::MAX_FILE => tr("The file is too large").to_string(),
-                                    _ => match std::fs::read_to_string(&p).map_err(|e| e.to_string()).and_then(|t| lib.import(&t)) {
-                                        Ok((n, problems)) => {
-                                            win.changed |= n > 0;
-                                            let mut m = format!("{} {}", n, tr("pens added"));
-                                            if !problems.is_empty() {
-                                                m.push_str(&format!(". {}: {}", tr("Left out"), problems.join("; ")));
+                            let mine = win.selected.as_deref().is_some_and(|id| lib.user.iter().any(|p| p.id == id));
+                            if ui.add_enabled(mine, egui::Button::new(tr("Delete"))).clicked() {
+                                if let Some(id) = win.selected.take() {
+                                    lib.delete(&id);
+                                    win.draft = None;
+                                    win.changed = true;
+                                }
+                            }
+                        });
+                        ui.horizontal_wrapped(|ui| {
+                            if ui.button(tr("Import…")).on_hover_text(tr("Read pens from a file")).clicked() {
+                                if let Some(p) = rfd::FileDialog::new().add_filter("PenCreator pens", &["json"]).pick_file() {
+                                    win.message = match std::fs::metadata(&p) {
+                                        Ok(m) if m.len() > crate::pens::MAX_FILE => tr("The file is too large").to_string(),
+                                        _ => match std::fs::read_to_string(&p).map_err(|e| e.to_string()).and_then(|t| lib.import(&t)) {
+                                            Ok((n, problems)) => {
+                                                win.changed |= n > 0;
+                                                let mut m = format!("{} {}", n, tr("pens added"));
+                                                if !problems.is_empty() {
+                                                    m.push_str(&format!(". {}: {}", tr("Left out"), problems.join("; ")));
+                                                }
+                                                m
                                             }
-                                            m
-                                        }
-                                        Err(e) => format!("{}: {e}", tr("Cannot use the file")),
-                                    },
-                                };
+                                            Err(e) => format!("{}: {e}", tr("Cannot use the file")),
+                                        },
+                                    };
+                                }
                             }
-                        }
-                        if ui.add_enabled(!lib.user.is_empty(), egui::Button::new(tr("Export…"))).on_hover_text(tr("Save your pens to a file")).clicked() {
-                            if let Some(p) = rfd::FileDialog::new().add_filter("PenCreator pens", &["json"]).set_file_name("pens.json").save_file() {
-                                win.message = match std::fs::write(&p, lib.export(None)) {
-                                    Ok(()) => format!("{} {}", tr("Saved"), p.display()),
-                                    Err(e) => format!("{}: {e}", tr("Could not save")),
-                                };
+                            if ui.add_enabled(!lib.user.is_empty(), egui::Button::new(tr("Export…"))).on_hover_text(tr("Save your pens to a file")).clicked() {
+                                if let Some(p) = rfd::FileDialog::new().add_filter("PenCreator pens", &["json"]).set_file_name("pens.json").save_file() {
+                                    win.message = match std::fs::write(&p, lib.export(None)) {
+                                        Ok(()) => format!("{} {}", tr("Saved"), p.display()),
+                                        Err(e) => format!("{}: {e}", tr("Could not save")),
+                                    };
+                                }
                             }
-                        }
-                        if ui.add_enabled(win.selected.is_some(), egui::Button::new(tr("Export this pen…"))).clicked() {
-                            if let (Some(id), Some(p)) = (win.selected.clone(), rfd::FileDialog::new().add_filter("PenCreator pens", &["json"]).set_file_name("pen.json").save_file()) {
-                                win.message = match std::fs::write(&p, lib.export(Some(&[id]))) {
-                                    Ok(()) => format!("{} {}", tr("Saved"), p.display()),
-                                    Err(e) => format!("{}: {e}", tr("Could not save")),
-                                };
+                            if ui.add_enabled(win.selected.is_some(), egui::Button::new(tr("Export this pen…"))).clicked() {
+                                if let (Some(id), Some(p)) = (win.selected.clone(), rfd::FileDialog::new().add_filter("PenCreator pens", &["json"]).set_file_name("pen.json").save_file()) {
+                                    win.message = match std::fs::write(&p, lib.export(Some(&[id]))) {
+                                        Ok(()) => format!("{} {}", tr("Saved"), p.display()),
+                                        Err(e) => format!("{}: {e}", tr("Could not save")),
+                                    };
+                                }
                             }
+                        });
+                        if !win.message.is_empty() {
+                            ui.label(egui::RichText::new(&win.message).color(theme::text_dim()));
                         }
                     });
-                    if !win.message.is_empty() {
-                        ui.label(egui::RichText::new(&win.message).color(theme::text_dim()));
-                    }
                 });
                 ui.separator();
                 ui.vertical(|ui| {
