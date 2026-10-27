@@ -124,6 +124,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::Pens => Some("pencil"),
         Act::GenerateShape => Some("shapes"),
         Act::Preview => Some("eye"),
+        Act::DeviceSettings => Some("settings"),
         Act::Firmware => Some("settings"),
         Act::Calibration => Some("sliders-horizontal"),
         Act::Diagnostics => Some("zap"),
@@ -1179,6 +1180,7 @@ impl MenuHost for App {
             Act::Pens => self.pens_win.open = true,
             Act::GenerateShape => self.plugins.gen_open = true,
             Act::Preview => self.open_preview(),
+            Act::DeviceSettings => self.open_device_settings(),
             Act::Firmware => self.fw_open = true,
             Act::Calibration => self.cal.open = true,
             Act::Diagnostics => {
