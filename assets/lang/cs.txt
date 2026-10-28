@@ -235,3 +235,13 @@
 234|Přiblížit tak, aby všechny čáry vyplnily okno
 235|Zvednout pero
 236|Spustit pero
+237|Prvek po prvku
+238|Každý prvek (skupina nebo tvar bez skupiny) se nakreslí celý, se všemi vrstvami a průchody, než přijde další; nejbližší jde první. Vypnuto: vrstva po vrstvě, průchod po průchodu.
+239|Jen výběr
+240|Kreslí se jen tvary vybrané na pracovní ploše v okamžiku uložení G-kódu nebo spuštění úlohy.
+241|Není co kreslit: nic není vybráno
+242|Výměna pera na pevném místě
+243|Když další vrstva potřebuje jiné pero, pero se zvedne, plotr odjede na toto místo (v souřadnicích pracovní plochy, může ležet i mimo ni), provede G-kód níže a zastaví tam (M0), aby se pero dalo vyměnit ručně nebo mechanismem. Vypnuto: úloha se zastaví tam, kde je.
+244|Zastavit tam (M0)
+245|G-kód na místě
+246|Řádky odeslané po příjezdu plotru, před zastavením: pro mechanismus, který pero vymění sám. Při vypnutém zastavení úloha pokračuje hned po nich.

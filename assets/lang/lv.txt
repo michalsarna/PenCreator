@@ -235,3 +235,13 @@
 234|Tuvināt tā, lai visas līnijas aizpilda logu
 235|Pacelt pildspalvu
 236|Nolaist pildspalvu
+237|Pa vienam elementam
+238|Katrs elements (grupa vai forma bez grupas) tiek uzzīmēts pilnībā, ar visiem slāņiem un gājieniem, pirms nākamā; tuvākais pirmais. Izslēgts: slānis pa slānim, gājiens pa gājienam.
+239|Tikai atlase
+240|Tiek zīmētas tikai tās formas, kas darba laukā ir atlasītas brīdī, kad tiek saglabāts G-kods vai sākts darbs.
+241|Nav ko zīmēt: nekas nav atlasīts
+242|Pildspalvas maiņa noteiktā vietā
+243|Kad nākamajam slānim vajadzīga cita pildspalva, pildspalva tiek pacelta, plotters brauc uz šo vietu (darba lauka koordinātās, tā var atrasties ārpus tā), izpilda zemāk esošo G-kodu un tur apstājas (M0), lai pildspalvu varētu nomainīt ar roku vai mehānismu. Izslēgts: darbs apstājas tur, kur ir.
+244|Apstāties tur (M0)
+245|G-kods vietā
+246|Rindas, kas tiek nosūtītas, kad plotters ir ieradies, pirms apstāšanās: mehānismam, kas pildspalvu maina pats. Ar izslēgtu apstāšanos darbs turpinās uzreiz pēc tām.

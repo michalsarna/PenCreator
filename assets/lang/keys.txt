@@ -235,3 +235,13 @@
 234	Zoom so that all the lines fill the window
 235	Raise the pen
 236	Lower the pen
+237	One element at a time
+238	Each element (a group, or a shape that is in none) is drawn completely, all its layers and all their passes, before the next one; the nearest element goes first. Off: layer after layer, pass after pass.
+239	Selection only
+240	Only the shapes that are selected on the work area when the G-code is saved or the job is started are drawn.
+241	There is nothing to draw: nothing is selected
+242	Change the pen at a fixed place
+243	When the next layer needs another pen, the pen goes up, the plotter drives to this place (in the coordinates of the work area, which it may lie outside of), runs the G-code below and stops there (M0) so that the pen can be changed, by hand or by a mechanism. Off: the job stops where it is.
+244	Stop there (M0)
+245	G-code at the place
+246	Lines sent when the plotter has arrived, before the stop: for a mechanism that changes the pen by itself. With the stop switched off the job goes on right after them.

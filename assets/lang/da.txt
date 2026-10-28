@@ -235,3 +235,13 @@
 234|Zoom, så alle linjer fylder vinduet
 235|Løft pennen
 236|Sænk pennen
+237|Ét element ad gangen
+238|Hvert element (en gruppe eller en form uden gruppe) tegnes helt, med alle lag og gennemløb, før det næste; det nærmeste kommer først. Fra: lag for lag, gennemløb for gennemløb.
+239|Kun markering
+240|Kun de former, der er markeret på arbejdsområdet, når G-koden gemmes eller jobbet startes, tegnes.
+241|Intet at tegne: intet er markeret
+242|Skift pennen på et fast sted
+243|Når det næste lag kræver en anden pen, løftes pennen, plotteren kører til dette sted (i arbejdsområdets koordinater, det kan ligge uden for det), kører G-koden nedenfor og stopper der (M0), så pennen kan skiftes, i hånden eller af en mekanisme. Fra: jobbet stopper, hvor det er.
+244|Stop der (M0)
+245|G-kode på stedet
+246|Linjer sendt når plotteren er nået frem, før stoppet: til en mekanisme, der skifter pennen selv. Med stoppet slået fra fortsætter jobbet lige efter dem.

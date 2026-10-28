@@ -343,36 +343,124 @@ fn order(strokes: Vec<Stroke>, start: P2) -> Vec<Stroke> {
     out
 }
 
+/// What the program asks of a job beyond the project (an option of the Control tab, never saved).
+#[derive(Clone, Copy, Debug, Default)]
+pub struct JobOptions {
+    /// Draw the elements one after the other: all the layers (and their passes) of an element, a group or a single shape that
+    /// is in none, before the next one, the nearest element first. Off: a layer after a layer. The layers of an element are
+    /// meant to use the same pen; with different pens the pen is changed at every switch.
+    pub one_by_one: bool,
+}
+
+/// The pen of a layer: what tells that the pen has to be changed.
+type PenKey = ([u8; 3], u64, Option<String>);
+
+pub fn pen_key(l: &PenLayer) -> PenKey {
+    (l.color, l.pen_width.to_bits(), l.pen.clone())
+}
+
+/// What the moves are made with: the program so far, where the pen is, what the layers made of it and the pen it is drawing with.
+struct Gen {
+    prog: Program,
+    at: P2,
+    images: usize,
+    outside: bool,
+    too_many: bool,
+    budget: usize,
+    pen: Option<PenKey>,
+    last_layer: usize,
+}
+
 /// The moves of the pen for the project.
+#[cfg(test)]
 pub fn generate(scene: &Scene, layers: &[PenLayer], dev: &Device) -> Program {
-    let mut prog = Program::default();
-    let mut at: P2 = [0.0, 0.0];
-    let mut images = 0usize;
-    let mut outside = false;
-    let mut too_many = false;
-    let mut budget = MAX_HATCH_LINES;
+    generate_with(scene, layers, dev, JobOptions::default())
+}
+
+/// The elements of the scene in the order they are drawn one by one: groups (even over several layers) and single shapes, each
+/// next one the nearest to where the pen was left (it starts at the corner of the work area where the moves start). Each element
+/// is a scene of its own shapes.
+fn elements_by_distance(scene: &Scene, dev: &Device) -> Vec<Scene> {
+    let mut elements: Vec<(Option<u64>, Vec<Shape>)> = vec![];
+    for s in &scene.shapes {
+        match s.group.and_then(|g| elements.iter().position(|(k, _)| *k == Some(g))) {
+            Some(i) => elements[i].1.push(s.clone()),
+            None => elements.push((s.group, vec![s.clone()])),
+        }
+    }
+    let (next_id, next_group) = scene.counters();
+    let center = |e: &[Shape]| -> Pt {
+        match e.iter().filter_map(|s| s.bounds()).reduce(base_core::geom::Rect::union) {
+            Some(b) => Pt::new((b.min.x + b.max.x) / 2.0, (b.min.y + b.max.y) / 2.0),
+            None => Pt::new(0.0, 0.0),
+        }
+    };
+    let mut left: Vec<(Pt, Vec<Shape>)> = elements.into_iter().map(|(_, e)| (center(&e), e)).collect();
+    // The moves start at the bottom left of the work area; the scene counts from the top.
+    let (mut at, mut out) = (Pt::new(0.0, dev.area.y), vec![]);
+    while !left.is_empty() {
+        let next = (0..left.len()).min_by(|&a, &b| {
+            let d = |i: usize| (left[i].0.x - at.x).powi(2) + (left[i].0.y - at.y).powi(2);
+            d(a).total_cmp(&d(b))
+        });
+        let (c, e) = left.remove(next.unwrap_or(0));
+        at = c;
+        out.push(Scene::from_parts(e, next_id, next_group));
+    }
+    out
+}
+
+/// The moves as `generate` makes them, with what the program asks of the job (`JobOptions`).
+pub fn generate_with(scene: &Scene, layers: &[PenLayer], dev: &Device, opts: JobOptions) -> Program {
+    let mut g = Gen { prog: Program::default(), at: [0.0, 0.0], images: 0, outside: false, too_many: false, budget: MAX_HATCH_LINES, pen: None, last_layer: 0 };
+    if opts.one_by_one {
+        for element in elements_by_distance(scene, dev) {
+            run_layers(&mut g, &element, layers, dev);
+        }
+        // Every element repeats the warnings of its layers: say each one once.
+        let mut seen = std::collections::HashSet::new();
+        g.prog.warnings.retain(|w| seen.insert(w.to_string()));
+    } else {
+        run_layers(&mut g, scene, layers, dev);
+    }
+    let Gen { mut prog, images, outside, too_many, .. } = g;
+    if images > 0 {
+        prog.warnings.push(Warn::new("{} picture(s) on the layers cannot be drawn: trace them to lines first", &[&images]));
+    }
+    if outside {
+        prog.warnings.push(Warn::new("part of the drawing lies outside the work area", &[]));
+    }
+    if too_many {
+        prog.warnings.push(Warn::new("the fill has too many lines: the gap between them is too small, so part of the fill was left out", &[]));
+    }
+    prog
+}
+
+
+/// The layers of `scene` one after the other, in the order of their rank, into `g`.
+fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
     for li in crate::layers::layer_order(layers) {
         let l = &layers[li];
         if !l.enabled {
             continue;
         }
         let pictures = if l.draw.is_picture() { layer_pictures(scene, li) } else { vec![] };
-        let outlines = layer_outlines(scene, li, dev.area.y, &mut images, !l.draw.is_picture());
+        let outlines = layer_outlines(scene, li, dev.area.y, &mut g.images, !l.draw.is_picture());
         if outlines.is_empty() && pictures.is_empty() {
             continue;
         }
         let mut fill: Vec<Stroke> = vec![];
         let mut line: Vec<Stroke> = vec![];
         for (shape, im) in pictures {
-            fill.extend(picture_strokes(shape, im, l, dev.area.y, &mut budget));
-            too_many |= budget == 0;
+            fill.extend(picture_strokes(shape, im, l, dev.area.y, &mut g.budget));
+            g.too_many |= g.budget == 0;
         }
         if l.draw.fills() {
-            fill.extend(hatch(&outlines, l.hatch_angle, l.hatch_gap, &mut budget));
+            fill.extend(hatch(&outlines, l.hatch_angle, l.hatch_gap, &mut g.budget));
             if l.cross_hatch {
-                fill.extend(hatch(&outlines, l.hatch_angle + 90.0, l.hatch_gap, &mut budget));
+                fill.extend(hatch(&outlines, l.hatch_angle + 90.0, l.hatch_gap, &mut g.budget));
             }
-            too_many |= budget == 0;
+            g.too_many |= g.budget == 0;
         }
         // On a picture layer the shapes that are not pictures are drawn as outlines.
         if l.draw.outlines() || l.draw.is_picture() {
@@ -384,44 +472,49 @@ pub fn generate(scene: &Scene, layers: &[PenLayer], dev: &Device) -> Program {
                 line.push(Stroke { pts, closed: o.closed });
             }
         }
+        if fill.is_empty() && line.is_empty() {
+            continue;
+        }
+        // Another pen than the last layer's: at a place of the machine, if the device has one, the plotter drives there (the
+        // stop for the change comes with the first move of this layer, see `to_gcode`).
+        let key = pen_key(l);
+        if g.pen.as_ref().is_some_and(|p| *p != key) && dev.pen_change.enabled && !g.prog.moves.is_empty() {
+            let at = [dev.pen_change.x, dev.pen_change.y];
+            if at != g.at {
+                g.prog.moves.push(Move { kind: MoveKind::Travel, from: g.at, to: at, layer: g.last_layer });
+                g.at = at;
+            }
+        }
+        g.pen = Some(key);
+        g.last_layer = li;
         // The fill is drawn before the outline, each in its own best order.
         for group in [fill, line] {
-            for s in order(group, at) {
+            for s in order(group, g.at) {
                 if s.pts.iter().any(|p| p[0] < -0.01 || p[1] < -0.01 || p[0] > dev.area.x + 0.01 || p[1] > dev.area.y + 0.01) {
-                    outside = true;
+                    g.outside = true;
                 }
                 let first = s.pts[0];
-                if first != at {
-                    prog.moves.push(Move { kind: MoveKind::Travel, from: at, to: first, layer: li });
-                    at = first;
+                if first != g.at {
+                    g.prog.moves.push(Move { kind: MoveKind::Travel, from: g.at, to: first, layer: li });
+                    g.at = first;
                 }
                 for pass in 0..l.passes.max(1) {
                     let pts: Vec<P2> = if pass % 2 == 1 && !s.closed { s.pts.iter().rev().copied().collect() } else { s.pts.clone() };
-                    if pts[0] != at {
+                    if pts[0] != g.at {
                         // Back to the other end with the pen down would draw a line: lift it instead.
-                        prog.moves.push(Move { kind: MoveKind::Travel, from: at, to: pts[0], layer: li });
-                        at = pts[0];
+                        g.prog.moves.push(Move { kind: MoveKind::Travel, from: g.at, to: pts[0], layer: li });
+                        g.at = pts[0];
                     }
                     for q in pts.iter().skip(1) {
-                        if *q != at {
-                            prog.moves.push(Move { kind: MoveKind::Draw, from: at, to: *q, layer: li });
-                            at = *q;
+                        if *q != g.at {
+                            g.prog.moves.push(Move { kind: MoveKind::Draw, from: g.at, to: *q, layer: li });
+                            g.at = *q;
                         }
                     }
                 }
             }
         }
     }
-    if images > 0 {
-        prog.warnings.push(Warn::new("{} picture(s) on the layers cannot be drawn: trace them to lines first", &[&images]));
-    }
-    if outside {
-        prog.warnings.push(Warn::new("part of the drawing lies outside the work area", &[]));
-    }
-    if too_many {
-        prog.warnings.push(Warn::new("the fill has too many lines: the gap between them is too small, so part of the fill was left out", &[]));
-    }
-    prog
 }
 
 /// The machine zero of the device: the coordinates of a point of the work area as the machine counts them.
@@ -516,7 +609,7 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLib
                     pen_down = false;
                 }
                 g.push_str(&format!("(Layer: {})\n", clean(&l.name)));
-                let pen = (l.color, l.pen_width.to_bits(), l.pen.clone());
+                let pen = pen_key(l);
                 if current.as_ref() != Some(&pen) {
                     // A pen of the library is named; a layer without one by its name and width.
                     let what = match l.pen.as_deref().and_then(|id| pens.get(id)) {
@@ -524,7 +617,19 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLib
                         None => format!("{}, {} mm", clean(&l.name), num(l.pen_width)),
                     };
                     if current.is_some() {
-                        g.push_str(&format!("M0 (Change the pen to: {what})\n"));
+                        // At the place of the change (the plotter has driven there) the G-code of the mechanism, then the stop.
+                        let change = &dev.pen_change;
+                        if change.enabled {
+                            for line in change.lines() {
+                                g.push_str(line);
+                                g.push('\n');
+                            }
+                        }
+                        if !change.enabled || change.pause {
+                            g.push_str(&format!("M0 (Change the pen to: {what})\n"));
+                        } else {
+                            g.push_str(&format!("(Change the pen to: {what})\n"));
+                        }
                     } else {
                         g.push_str(&format!("(Pen: {what})\n"));
                     }
@@ -675,6 +780,91 @@ mod tests {
         layers[1].enabled = false;
         let p = generate(&scene, &layers, &Device::dummy());
         assert!(p.warnings.is_empty(), "a switched off layer is not drawn");
+    }
+
+    /// The drawn moves as a list of (square, layer): the squares are 30 wide and 200 apart (x = 0, 200 ...), one entry for each stretch
+    /// of drawing on the same square and layer.
+    fn draw_order(prog: &Program) -> Vec<(usize, usize)> {
+        let mut out: Vec<(usize, usize)> = vec![];
+        for m in prog.moves.iter().filter(|m| m.kind == MoveKind::Draw) {
+            let at = ((m.from[0] + m.to[0]) / 2.0 / 200.0).round() as usize * 2;
+            if out.last() != Some(&(at, m.layer)) {
+                out.push((at, m.layer));
+            }
+        }
+        out
+    }
+
+    #[test]
+    fn one_by_one_draws_all_layers_of_an_element_before_the_next_and_the_nearest_element_first() {
+        // Two groups, each a square on layer 0 and a smaller one on layer 1 (the same pen colour would be the usual case; here
+        // the layers differ, which only changes the pen between the layers); the far group is drawn first.
+        let mut scene = Scene::default();
+        for x in [200.0, 0.0] {
+            let outer = scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(x, 20.0));
+            let inner = scene.add(1, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(x + 10.0, 30.0));
+            let g = scene.new_group_id();
+            for sh in scene.shapes.iter_mut().filter(|sh| sh.id == outer || sh.id == inner) {
+                sh.group = Some(g);
+            }
+        }
+        let layers = default_layers();
+        let dev = Device::dummy();
+        let by_layer = draw_order(&generate(&scene, &layers, &dev));
+        assert_eq!(by_layer.iter().map(|c| c.1).collect::<Vec<_>>(), vec![0, 0, 1, 1], "{by_layer:?}");
+        let one = generate_with(&scene, &layers, &dev, JobOptions { one_by_one: true });
+        assert_eq!(draw_order(&one), vec![(0, 0), (0, 1), (2, 0), (2, 1)]);
+        assert_eq!(one.moves.iter().filter(|m| m.kind == MoveKind::Draw).count(), generate(&scene, &layers, &dev).moves.iter().filter(|m| m.kind == MoveKind::Draw).count());
+    }
+
+    #[test]
+    fn single_shapes_that_are_in_no_group_are_elements_of_their_own() {
+        let mut scene = Scene::default();
+        for x in [400.0, 0.0, 200.0] {
+            square(&mut scene, 0, x, 20.0, 30.0);
+        }
+        let one = generate_with(&scene, &default_layers(), &Device::dummy(), JobOptions { one_by_one: true });
+        assert_eq!(draw_order(&one).iter().map(|c| c.0).collect::<Vec<_>>(), vec![0, 2, 4], "nearest first, not as they were drawn");
+    }
+
+    fn two_pens() -> (Scene, Vec<PenLayer>) {
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 10.0);
+        square(&mut scene, 1, 60.0, 20.0, 10.0);
+        (scene, default_layers())
+    }
+
+    #[test]
+    fn the_pen_is_changed_at_the_place_of_the_device_when_it_has_one() {
+        let (scene, layers) = two_pens();
+        let mut dev = Device::dummy();
+        // Without a place the job stops where it is, as before.
+        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
+        assert!(g.contains("M0 (Change the pen to: Red pen, 0.4 mm)") && !g.contains("X-30"), "{g}");
+        // With one: up, to the place, the G-code of the mechanism, the stop, then on to the drawing.
+        dev.pen_change = crate::device::PenChange { enabled: true, x: -30.0, y: 100.0, pause: true, gcode: "M8\n\n G4 P1 ".into() };
+        let prog = generate(&scene, &layers, &dev);
+        assert!(prog.moves.iter().any(|m| m.kind == MoveKind::Travel && m.to == [-30.0, 100.0]), "the preview shows the way to the place");
+        let g = to_gcode(&prog, &dev, &layers, &PenLibrary::new(), "t");
+        let at = g.find("G0 X-30 Y100").expect(&g);
+        let m0 = g.find("M0 (Change the pen to: Red pen, 0.4 mm)").expect(&g);
+        let (m8, g4) = (g.find("M8\n").expect(&g), g.rfind("G4 P1\n").expect(&g));
+        assert!(at < m8 && m8 < g4 && g4 < m0, "{g}");
+        assert!(g[..at].rfind("G0 Z3").is_some(), "the pen is up before it drives there: {g}");
+        assert!(g.find("G0 X60 Y").unwrap() > m0, "the drawing goes on after the stop");
+        // The pen of the first layer is not changed.
+        assert_eq!(g.matches("G0 X-30 Y100").count(), 1);
+        // A mechanism that needs no stop: the lines are sent and the job goes on.
+        dev.pen_change.pause = false;
+        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
+        assert!(!g.contains("M0") && g.contains("M8\n") && g.contains("(Change the pen to: Red pen"), "{g}");
+        // Two layers with the same pen need no change at all.
+        let mut same = layers.clone();
+        same[1].color = same[0].color;
+        same[1].pen_width = same[0].pen_width;
+        same[1].pen = same[0].pen.clone();
+        let g = to_gcode(&generate(&scene, &same, &dev), &dev, &same, &PenLibrary::new(), "t");
+        assert!(!g.contains("G0 X-30") && !g.contains("M8"), "{g}");
     }
 
     #[test]

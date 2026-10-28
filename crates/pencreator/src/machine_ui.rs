@@ -172,7 +172,7 @@ impl App {
     pub(crate) fn job_lines(&mut self) -> Option<(Vec<String>, f64)> {
         let prog = self.make_program();
         if prog.is_empty() {
-            self.status = tr("There is nothing to draw: put shapes on layers that are switched on.").to_string();
+            self.status = self.nothing_to_draw();
             return None;
         }
         let name = self.path.as_ref().and_then(|p| p.file_stem()).map(|s| s.to_string_lossy().into_owned()).unwrap_or_else(|| "untitled".into());
@@ -310,6 +310,11 @@ impl App {
                 base_ui::menu::MenuHost::run_act(self, &ctx, crate::menu::Act::StartFrom);
             }
             ui.end_row();
+        });
+        // The options of the job, under the buttons that start things: this session only, they change the G-code.
+        ui.add_enabled_ui(!running, |ui| {
+            ui.checkbox(&mut self.one_by_one, tr("One element at a time")).on_hover_text(tr("Each element (a group, or a shape that is in none) is drawn completely, all its layers and all their passes, before the next one; the nearest element goes first. Off: layer after layer, pass after pass."));
+            ui.checkbox(&mut self.selection_only, tr("Selection only")).on_hover_text(tr("Only the shapes that are selected on the work area when the G-code is saved or the job is started are drawn."));
         });
         ui.add_space(4.0);
         ui.separator();

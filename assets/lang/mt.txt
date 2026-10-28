@@ -235,3 +235,13 @@
 234|Zoom biex il-linji kollha jimlew it-tieqa
 235|Għolli l-pinna
 236|Niżżel il-pinna
+237|Element wieħed kull darba
+238|Kull element (grupp jew forma mingħajr grupp) jitpinġa kollu, bis-saffi u l-passi kollha tiegħu, qabel li jmiss; l-eqreb jmur l-ewwel. Mitfi: saff wara saff, pass wara pass.
+239|Is-għażla biss
+240|Jitpinġu biss il-forom magħżula fl-erja tax-xogħol meta jinħażen il-G-code jew jibda x-xogħol.
+241|Xejn x'tpinġi: xejn mhu magħżul
+242|Biddel il-pinna f'post fiss
+243|Meta s-saff li jmiss jeħtieġ pinna oħra, il-pinna titla', il-plotter imur f'dan il-post (fil-koordinati tal-erja tax-xogħol, jista' jkun barra minnha), iħaddem il-G-code t'hawn taħt u jieqaf hemmhekk (M0) biex tinbidel il-pinna, bl-id jew b'mekkaniżmu. Mitfi: ix-xogħol jieqaf fejn jinsab.
+244|Waqqaf hemmhekk (M0)
+245|G-code fil-post
+246|Linji mibgħuta meta l-plotter jasal, qabel il-waqfa: għal mekkaniżmu li jbiddel il-pinna waħdu. Bil-waqfa mitfija x-xogħol ikompli eżatt warajhom.

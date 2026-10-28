@@ -372,6 +372,26 @@ impl App {
                         });
                         ui.add_space(4.0);
                         ui.label(RichText::new(tr("With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).")).color(theme::text_dim()));
+                        ui.add_space(8.0);
+                        ui.separator();
+                        ui.add_space(4.0);
+                        ui.checkbox(&mut d.pen_change.enabled, tr("Change the pen at a fixed place")).on_hover_text(tr("When the next layer needs another pen, the pen goes up, the plotter drives to this place (in the coordinates of the work area, which it may lie outside of), runs the G-code below and stops there (M0) so that the pen can be changed, by hand or by a mechanism. Off: the job stops where it is."));
+                        ui.add_enabled_ui(d.pen_change.enabled, |ui| {
+                            egui::Grid::new("dev_pen_change").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
+                                ui.label("X");
+                                ui.add(egui::DragValue::new(&mut d.pen_change.x).range(-10000.0..=10000.0).speed(0.5).suffix(" mm"));
+                                ui.end_row();
+                                ui.label("Y");
+                                ui.add(egui::DragValue::new(&mut d.pen_change.y).range(-10000.0..=10000.0).speed(0.5).suffix(" mm"));
+                                ui.end_row();
+                                ui.label("");
+                                ui.checkbox(&mut d.pen_change.pause, tr("Stop there (M0)"));
+                                ui.end_row();
+                                ui.label(tr("G-code at the place"));
+                                ui.add(egui::TextEdit::multiline(&mut d.pen_change.gcode).font(egui::TextStyle::Monospace).desired_rows(3).desired_width(280.0)).on_hover_text(tr("Lines sent when the plotter has arrived, before the stop: for a mechanism that changes the pen by itself. With the stop switched off the job goes on right after them."));
+                                ui.end_row();
+                            });
+                        });
                     }
                     Page::Connection => {
                         egui::Grid::new("dev_link").num_columns(2).min_col_width(150.0).spacing([12.0, 6.0]).show(ui, |ui| {
@@ -851,6 +871,25 @@ mod tests {
         a.open_device_settings();
         assert_eq!(a.dev_edit.as_ref().and_then(|e| e.idx), Some(0));
         assert!(crate::menu::menus().iter().any(|(m, items)| *m == "Machine" && items.iter().any(|i| matches!(i, base_ui::menu::Entry::Item(crate::menu::Act::DeviceSettings, ..)))));
+    }
+
+    #[test]
+    fn the_pen_page_has_the_place_of_the_pen_change() {
+        use egui_kittest::kittest::Queryable;
+        let mut a = app();
+        a.open_device_settings();
+        a.dev_edit.as_mut().unwrap().page = Page::Pen;
+        let mut h = egui_kittest::Harness::builder().with_accessibility_check(false).with_context_setup(|ctx| {
+            base_ui::fonts::install(ctx);
+            base_ui::icons::install(ctx);
+        }).with_size([900.0, 800.0]).build_ui_state(|ui, a: &mut App| a.device_window(ui.ctx()), a);
+        h.run_steps(3);
+        assert!(h.query_by_label("Change the pen at a fixed place").is_some());
+        assert!(h.query_by_label("G-code at the place").is_some());
+        // What is typed there is kept in the device.
+        h.state_mut().dev_edit.as_mut().unwrap().draft.pen_change.enabled = true;
+        h.run_steps(2);
+        assert!(h.state().dev_edit.as_ref().unwrap().draft.pen_change.enabled);
     }
 
     #[test]

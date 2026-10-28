@@ -235,3 +235,13 @@
 234|Nagyítás úgy, hogy az összes vonal kitöltse az ablakot
 235|Toll felemelése
 236|Toll leengedése
+237|Egy elem egyszerre
+238|Minden elem (csoport vagy csoport nélküli alakzat) teljes egészében megrajzolásra kerül, az összes rétegével és áthaladásával, mielőtt a következő jönne; a legközelebbi az első. Kikapcsolva: réteg rétegre, áthaladás áthaladásra.
+239|Csak a kijelölés
+240|Csak azok az alakzatok kerülnek megrajzolásra, amelyek a G-kód mentésekor vagy a munka indításakor ki vannak jelölve a munkaterületen.
+241|Nincs mit rajzolni: semmi sincs kijelölve
+242|Tollcsere rögzített helyen
+243|Amikor a következő réteg másik tollat kér, a toll felemelkedik, a plotter erre a helyre megy (a munkaterület koordinátáiban, a hely a területen kívül is lehet), lefuttatja az alábbi G-kódot, és itt megáll (M0), hogy a tollat kézzel vagy szerkezettel ki lehessen cserélni. Kikapcsolva: a munka ott áll meg, ahol van.
+244|Megállás ott (M0)
+245|G-kód a helyen
+246|A plotter megérkezése után, a megállás előtt elküldött sorok: a tollat magától cserélő szerkezethez. Kikapcsolt megállásnál a munka közvetlenül utánuk folytatódik.

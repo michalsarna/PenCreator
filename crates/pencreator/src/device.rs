@@ -51,6 +51,39 @@ pub struct PenLift {
     pub delay_ms: f64,
 }
 
+/// Where the pen is changed when the next layer needs another one: the plotter takes the pen up, drives to this place, runs the
+/// G-code of the change (for a mechanism that changes the pen by itself) and stops there (M0) so that the pen can be changed.
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+pub struct PenChange {
+    pub enabled: bool,
+    /// The place, in the coordinates of the work area (they may lie outside of it), in mm.
+    pub x: f64,
+    pub y: f64,
+    /// Stop there with M0 and wait for the person (or the mechanism that answers); off for a mechanism that needs no waiting.
+    #[serde(default = "yes")]
+    pub pause: bool,
+    /// Lines of G-code sent at the place before the stop (at most 20 lines of 100 characters).
+    #[serde(default)]
+    pub gcode: String,
+}
+
+fn yes() -> bool {
+    true
+}
+
+impl Default for PenChange {
+    fn default() -> PenChange {
+        PenChange { enabled: false, x: 0.0, y: 0.0, pause: true, gcode: String::new() }
+    }
+}
+
+impl PenChange {
+    /// The lines of the G-code of the change, without the empty ones.
+    pub fn lines(&self) -> Vec<&str> {
+        self.gcode.lines().map(str::trim).filter(|l| !l.is_empty()).collect()
+    }
+}
+
 /// The corner of the work area that is the machine zero.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Origin {
@@ -81,6 +114,9 @@ pub struct Device {
     /// The speed of the moves with the pen up (mm/min).
     pub rapid: f64,
     pub pen: PenLift,
+    /// Where the pen is changed, if it is changed at a place of the machine.
+    #[serde(default)]
+    pub pen_change: PenChange,
     #[serde(default)]
     pub cameras: Vec<CameraSource>,
     #[serde(default)]
@@ -105,6 +141,7 @@ impl Default for Device {
             origin: Origin::FrontLeft,
             rapid: 6000.0,
             pen: PenLift { lift: Lift::Z, up: 3.0, down: 0.0, delay_ms: 150.0 },
+            pen_change: PenChange::default(),
             cameras: vec![],
             active_camera: 0,
             notes: String::new(),
@@ -144,6 +181,13 @@ impl Device {
         let (lo, hi) = if p.lift == Lift::Z { (-100.0, 200.0) } else { (0.0, 1000.0) };
         if !ok(p.up, lo, hi) || !ok(p.down, lo, hi) || p.up == p.down || !ok(p.delay_ms, 0.0, 10_000.0) {
             return Err("the pen up and down values are out of range or the same".into());
+        }
+        let c = &self.pen_change;
+        if !ok(c.x, -10_000.0, 10_000.0) || !ok(c.y, -10_000.0, 10_000.0) {
+            return Err("the place of the pen change is out of range".into());
+        }
+        if c.gcode.lines().count() > 20 || c.gcode.lines().any(|l| l.len() > 100 || l.chars().any(char::is_control)) {
+            return Err("the G-code of the pen change has too many lines, lines that are too long or control characters".into());
         }
         if self.cameras.len() > 8 || self.active_camera > 8 || self.notes.len() > 20_000 {
             return Err("too many cameras or too long notes".into());
@@ -235,6 +279,34 @@ mod tests {
         assert!(Device::dummy().check().is_ok());
         assert!(Device::dummy().is_dummy());
         assert!(Device::default().check().is_err(), "a device needs a name");
+    }
+
+    #[test]
+    fn the_place_of_the_pen_change_is_checked_and_an_older_device_has_none() {
+        let mut d = Device::dummy();
+        assert!(!d.pen_change.enabled && d.pen_change.pause);
+        let json = serde_json::to_string(&d).unwrap();
+        let old: String = {
+            let mut v: serde_json::Value = serde_json::from_str(&json).unwrap();
+            v.as_object_mut().unwrap().remove("pen_change");
+            v.to_string()
+        };
+        let back: Device = serde_json::from_str(&old).unwrap();
+        assert_eq!(back.pen_change, PenChange::default());
+        d.pen_change = PenChange { enabled: true, x: -20.0, y: 50.0, pause: false, gcode: "M8\nG4 P1".into() };
+        assert!(d.check().is_ok());
+        assert_eq!(d.pen_change.lines(), vec!["M8", "G4 P1"]);
+        let again: Device = serde_json::from_str(&serde_json::to_string(&d).unwrap()).unwrap();
+        assert_eq!(again.pen_change, d.pen_change);
+        d.pen_change.x = f64::NAN;
+        assert!(d.check().is_err());
+        d.pen_change.x = 0.0;
+        d.pen_change.gcode = "x".repeat(101);
+        assert!(d.check().is_err(), "a line that is too long");
+        d.pen_change.gcode = (0..21).map(|i| format!("G4 P{i}")).collect::<Vec<_>>().join("\n");
+        assert!(d.check().is_err(), "too many lines");
+        d.pen_change.gcode = "M8\u{7}".into();
+        assert!(d.check().is_err(), "a control character");
     }
 
     #[test]

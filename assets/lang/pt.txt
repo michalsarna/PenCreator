@@ -235,3 +235,13 @@
 234|Ampliar para que todas as linhas preencham a janela
 235|Levantar a caneta
 236|Baixar a caneta
+237|Um elemento de cada vez
+238|Cada elemento (um grupo ou uma forma sem grupo) é desenhado por inteiro, com todas as camadas e passagens, antes do seguinte; o mais próximo vai primeiro. Desligado: camada após camada, passagem após passagem.
+239|Apenas a seleção
+240|Só são desenhadas as formas selecionadas na área de trabalho no momento em que o G-code é guardado ou o trabalho é iniciado.
+241|Nada para desenhar: nada está selecionado
+242|Trocar a caneta num local fixo
+243|Quando a camada seguinte precisa de outra caneta, a caneta sobe, o plotter vai a este local (nas coordenadas da área de trabalho, pode ficar fora dela), executa o G-code abaixo e para aí (M0) para que a caneta possa ser trocada, à mão ou por um mecanismo. Desligado: o trabalho para onde está.
+244|Parar aí (M0)
+245|G-code no local
+246|Linhas enviadas quando o plotter chegou, antes da paragem: para um mecanismo que troca a caneta sozinho. Com a paragem desligada o trabalho continua logo a seguir.

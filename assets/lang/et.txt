@@ -235,3 +235,13 @@
 234|Suumi nii, et kõik jooned täidaksid akna
 235|Tõsta pastakas
 236|Langeta pastakas
+237|Üks element korraga
+238|Iga element (rühm või rühmata kuju) joonistatakse tervikuna, kõigi kihtide ja läbimistega, enne järgmist; lähim on esimene. Väljas: kiht kihi haaval, läbimine läbimise haaval.
+239|Ainult valik
+240|Joonistatakse ainult need kujud, mis on tööalal valitud G-koodi salvestamise või töö alustamise hetkel.
+241|Pole midagi joonistada: midagi pole valitud
+242|Pliiatsi vahetus kindlas kohas
+243|Kui järgmine kiht vajab teist pliiatsit, tõstetakse pliiats üles, plotter sõidab sellesse kohta (tööala koordinaatides, see võib olla tööalast väljas), täidab allpool oleva G-koodi ja peatub seal (M0), et pliiatsit saaks vahetada käsitsi või mehhanismiga. Väljas: töö peatub seal, kus ta on.
+244|Peatu seal (M0)
+245|G-kood kohas
+246|Read, mis saadetakse, kui plotter on kohale jõudnud, enne peatumist: mehhanismile, mis vahetab pliiatsi ise. Väljalülitatud peatumisega jätkub töö kohe pärast neid.

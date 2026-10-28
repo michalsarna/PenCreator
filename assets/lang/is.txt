@@ -235,3 +235,13 @@
 234|Súmma svo allar línur fylli gluggann
 235|Lyfta pennanum
 236|Lækka pennann
+237|Einn hlutur í einu
+238|Hver hlutur (hópur eða form án hóps) er teiknaður í heild, með öllum lögum og ferðum, áður en sá næsti kemur; sá næsti í nágrenninu fyrst. Slökkt: lag fyrir lag, ferð fyrir ferð.
+239|Aðeins valið
+240|Aðeins formin sem eru valin á vinnusvæðinu þegar G-kóðinn er vistaður eða verkið ræst eru teiknuð.
+241|Ekkert að teikna: ekkert er valið
+242|Skipta um penna á föstum stað
+243|Þegar næsta lag þarf annan penna lyftist penninn, teiknarinn fer á þennan stað (í hnitum vinnusvæðisins, hann má vera utan þess), keyrir G-kóðann hér að neðan og stoppar þar (M0) svo hægt sé að skipta um penna, í höndunum eða með búnaði. Slökkt: verkið stoppar þar sem það er.
+244|Stoppa þar (M0)
+245|G-kóði á staðnum
+246|Línur sendar þegar teiknarinn er kominn, fyrir stoppið: fyrir búnað sem skiptir sjálfur um penna. Með stoppið slökkt heldur verkið áfram strax á eftir.

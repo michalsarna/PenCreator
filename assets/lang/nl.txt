@@ -235,3 +235,13 @@
 234|Zoom zo dat alle lijnen het venster vullen
 235|Pen omhoog
 236|Pen omlaag
+237|Element voor element
+238|Elk element (een groep of een vorm zonder groep) wordt helemaal getekend, met al zijn lagen en doorgangen, vóór het volgende; het dichtstbijzijnde eerst. Uit: laag na laag, doorgang na doorgang.
+239|Alleen selectie
+240|Alleen de vormen die op het werkvlak zijn geselecteerd op het moment dat de G-code wordt opgeslagen of de taak start, worden getekend.
+241|Niets te tekenen: niets is geselecteerd
+242|Pen wisselen op een vaste plek
+243|Als de volgende laag een andere pen nodig heeft, gaat de pen omhoog, rijdt de plotter naar deze plek (in de coördinaten van het werkvlak, de plek mag er buiten liggen), voert de G-code hieronder uit en stopt daar (M0) zodat de pen kan worden gewisseld, met de hand of door een mechanisme. Uit: de taak stopt waar hij is.
+244|Daar stoppen (M0)
+245|G-code op de plek
+246|Regels die worden verstuurd als de plotter is aangekomen, vóór de stop: voor een mechanisme dat de pen zelf wisselt. Met de stop uit gaat de taak er direct na verder.
