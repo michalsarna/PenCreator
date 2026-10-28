@@ -235,3 +235,13 @@
 234|Amplia perquè totes les línies omplin la finestra
 235|Aixeca el bolígraf
 236|Baixa el bolígraf
+237|Un element cada vegada
+238|Cada element (un grup o una forma sense grup) es dibuixa sencer, amb totes les capes i passades, abans del següent; el més proper va primer. Desactivat: capa rere capa, passada rere passada.
+239|Només la selecció
+240|Només es dibuixen les formes seleccionades a l'àrea de treball en desar el G-code o en iniciar la tasca.
+241|No hi ha res a dibuixar: no hi ha res seleccionat
+242|Canvia el retolador en un lloc fix
+243|Quan la capa següent necessita un altre retolador, aquest s'aixeca, el plòter va a aquest lloc (en les coordenades de l'àrea de treball, pot quedar fora), executa el G-code de sota i s'atura allà (M0) perquè es pugui canviar el retolador, a mà o amb un mecanisme. Desactivat: la tasca s'atura on és.
+244|Atura't allà (M0)
+245|G-code al lloc
+246|Línies enviades quan el plòter ha arribat, abans de l'aturada: per a un mecanisme que canvia el retolador sol. Amb l'aturada desactivada la tasca continua just després.

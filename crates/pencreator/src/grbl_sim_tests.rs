@@ -12,7 +12,7 @@
 use crate::device::{Device, Lift};
 use crate::layers::default_layers;
 use crate::pens::PenLibrary;
-use crate::plot::{generate, to_gcode};
+use crate::plot::{generate_with, to_gcode, JobOptions};
 use base_core::geom::Xf;
 use base_core::scene::{Kind, Scene};
 use base_ui::link::{clean_gcode, Cmd};
@@ -24,8 +24,13 @@ fn square(scene: &mut Scene, layer: usize, x: f64, y: f64, s: f64) {
 
 /// The G-code the program sends for `scene` with the device `dev`.
 fn job_of(scene: &Scene, dev: &Device) -> Vec<String> {
+    job_with(scene, dev, JobOptions::default())
+}
+
+/// The same with the options of the Control tab.
+fn job_with(scene: &Scene, dev: &Device, opts: JobOptions) -> Vec<String> {
     let layers = default_layers();
-    let prog = generate(scene, &layers, dev);
+    let prog = generate_with(scene, &layers, dev, opts);
     clean_gcode(&to_gcode(&prog, dev, &layers, &PenLibrary::new(), "sim"))
 }
 
@@ -89,6 +94,57 @@ fn grbl_sim_the_pen_change_stops_the_job_and_it_goes_on_when_told() {
     assert!(s.seen.progress.0 < n, "{:?}", s.seen.progress);
     s.link.send(Cmd::Continue);
     s.wait("job finished", 120.0, |v| v.progress == (n, n));
+    s.wait_idle_at(0.0, 0.0, 60.0);
+    assert!(s.errors().is_empty(), "GRBL rejected lines: {:?}", s.errors_described());
+}
+
+#[test]
+#[ignore = "needs grbl-sim: tools/grbl-sim/build.sh of baseCreator"]
+fn grbl_sim_the_pen_change_goes_to_the_place_of_the_device_and_stops_there() {
+    let mut s = Session::connect();
+    s.wait_banner();
+    s.fast_machine(&[]);
+    s.link.send(Cmd::Barriers(true));
+    let mut scene = Scene::default();
+    square(&mut scene, 0, 20.0, 20.0, 10.0);
+    square(&mut scene, 1, 60.0, 20.0, 10.0);
+    let mut dev = Device::dummy();
+    // A mechanism at (120, 150): the lines of the change are sent there, then the stop.
+    dev.pen_change = crate::device::PenChange { enabled: true, x: 120.0, y: 150.0, pause: true, gcode: "G4 P0.1".into() };
+    let job = job_of(&scene, &dev);
+    assert!(job.iter().any(|l| l == "G0 X120 Y150"), "{job:?}");
+    let n = job.len();
+    s.link.send(Cmd::Job(job));
+    s.wait("the pen change", 120.0, |v| !v.barriers.is_empty());
+    assert!(s.seen.barriers[0].0.contains("Change the pen to: Red pen"), "{:?}", s.seen.barriers);
+    // The plotter stands at the place of the change with everything before the stop done.
+    s.wait_idle_at(120.0, 150.0, 60.0);
+    assert!(s.seen.progress.0 < n, "{:?}", s.seen.progress);
+    s.link.send(Cmd::Continue);
+    s.wait("job finished", 120.0, |v| v.progress == (n, n));
+    s.wait_idle_at(0.0, 0.0, 60.0);
+    assert!(s.errors().is_empty(), "GRBL rejected lines: {:?}", s.errors_described());
+}
+
+#[test]
+#[ignore = "needs grbl-sim: tools/grbl-sim/build.sh of baseCreator"]
+fn grbl_sim_one_element_at_a_time_runs_with_the_same_pen() {
+    let mut s = Session::connect();
+    s.wait_banner();
+    s.fast_machine(&[]);
+    // Two groups, each a square and a smaller one inside it, on layers with the same pen (the layers are the same colour).
+    let mut scene = Scene::default();
+    for x in [20.0, 100.0] {
+        let outer = scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(x, 20.0));
+        let inner = scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(x + 10.0, 30.0));
+        let g = scene.new_group_id();
+        for sh in scene.shapes.iter_mut().filter(|sh| sh.id == outer || sh.id == inner) {
+            sh.group = Some(g);
+        }
+    }
+    let job = job_with(&scene, &Device::dummy(), JobOptions { one_by_one: true });
+    assert!(!job.iter().any(|l| l.starts_with("M0")), "the same pen all through: no stop");
+    s.run_job(job, 120.0);
     s.wait_idle_at(0.0, 0.0, 60.0);
     assert!(s.errors().is_empty(), "GRBL rejected lines: {:?}", s.errors_described());
 }

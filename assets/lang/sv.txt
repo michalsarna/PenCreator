@@ -235,3 +235,13 @@
 234|Zooma så att alla linjer fyller fönstret
 235|Lyft pennan
 236|Sänk pennan
+237|Ett element i taget
+238|Varje element (en grupp eller en form utan grupp) ritas helt, med alla lager och passeringar, innan nästa; det närmaste först. Av: lager för lager, passering för passering.
+239|Endast markering
+240|Endast de former som är markerade i arbetsytan när G-koden sparas eller jobbet startas ritas.
+241|Inget att rita: inget är markerat
+242|Byt penna på en fast plats
+243|När nästa lager behöver en annan penna lyfts pennan, plottern kör till den här platsen (i arbetsytans koordinater, den kan ligga utanför), kör G-koden nedan och stannar där (M0) så att pennan kan bytas, för hand eller av en mekanism. Av: jobbet stannar där det är.
+244|Stanna där (M0)
+245|G-kod på platsen
+246|Rader som skickas när plottern har kommit fram, före stoppet: för en mekanism som byter penna själv. Med stoppet av fortsätter jobbet direkt efter dem.

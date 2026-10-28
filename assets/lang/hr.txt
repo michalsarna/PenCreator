@@ -235,3 +235,13 @@
 234|Zumiraj tako da sve linije ispune prozor
 235|Podigni pisaljku
 236|Spusti pisaljku
+237|Element po element
+238|Svaki element (grupa ili oblik bez grupe) crta se u cijelosti, sa svim slojevima i prolazima, prije sljedećeg; najbliži ide prvi. Isključeno: sloj po sloj, prolaz po prolaz.
+239|Samo odabir
+240|Crtaju se samo oblici koji su odabrani na radnoj površini pri spremanju G-koda ili pokretanju posla.
+241|Nema što crtati: ništa nije odabrano
+242|Promjena olovke na fiksnom mjestu
+243|Kad sljedeći sloj treba drugu olovku, olovka se podiže, ploter odlazi na ovo mjesto (u koordinatama radne površine, može biti i izvan nje), izvodi G-kod ispod i tu staje (M0) da se olovka može promijeniti, ručno ili mehanizmom. Isključeno: posao staje gdje jest.
+244|Stani tamo (M0)
+245|G-kod na mjestu
+246|Retci poslani kad ploter stigne, prije zaustavljanja: za mehanizam koji sam mijenja olovku. S isključenim zaustavljanjem posao nastavlja odmah nakon njih.

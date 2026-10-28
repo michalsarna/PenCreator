@@ -235,3 +235,13 @@
 234|Mărește astfel încât toate liniile să umple fereastra
 235|Ridică pixul
 236|Coboară pixul
+237|Câte un element
+238|Fiecare element (un grup sau o formă fără grup) este desenat complet, cu toate straturile și trecerile, înainte de următorul; cel mai apropiat merge primul. Oprit: strat după strat, trecere după trecere.
+239|Doar selecția
+240|Se desenează doar formele selectate în zona de lucru în momentul salvării G-code sau al pornirii lucrării.
+241|Nimic de desenat: nimic nu este selectat
+242|Schimbarea pixului într-un loc fix
+243|Când stratul următor are nevoie de alt pix, pixul se ridică, plotterul merge în acest loc (în coordonatele zonei de lucru, poate fi și în afara ei), execută G-code-ul de mai jos și se oprește acolo (M0) pentru ca pixul să poată fi schimbat, manual sau de un mecanism. Oprit: lucrarea se oprește unde se află.
+244|Oprește-te acolo (M0)
+245|G-code la locul respectiv
+246|Linii trimise când plotterul a ajuns, înainte de oprire: pentru un mecanism care schimbă singur pixul. Cu oprirea dezactivată lucrarea continuă imediat după ele.

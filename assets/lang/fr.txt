@@ -235,3 +235,13 @@
 234|Zoomer pour que toutes les lignes remplissent la fenêtre
 235|Lever le stylo
 236|Baisser le stylo
+237|Un élément à la fois
+238|Chaque élément (un groupe, ou une forme sans groupe) est dessiné en entier, avec tous ses calques et toutes leurs passes, avant le suivant ; le plus proche passe en premier. Désactivé : calque après calque, passe après passe.
+239|Sélection seulement
+240|Seules les formes sélectionnées dans la zone de travail au moment de l'enregistrement du G-code ou du démarrage du travail sont dessinées.
+241|Rien à dessiner : rien n'est sélectionné
+242|Changer le stylo à un endroit fixe
+243|Quand le calque suivant demande un autre stylo, le stylo se lève, la table traçante va à cet endroit (dans les coordonnées de la zone de travail, il peut être en dehors), exécute le G-code ci-dessous et s'y arrête (M0) pour que le stylo soit changé, à la main ou par un mécanisme. Désactivé : le travail s'arrête là où il est.
+244|S'y arrêter (M0)
+245|G-code à l'endroit
+246|Lignes envoyées quand la table traçante est arrivée, avant l'arrêt : pour un mécanisme qui change le stylo tout seul. Sans l'arrêt, le travail continue juste après elles.

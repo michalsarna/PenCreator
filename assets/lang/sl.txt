@@ -235,3 +235,13 @@
 234|Povečaj tako, da vse črte zapolnijo okno
 235|Dvigni pisalo
 236|Spusti pisalo
+237|En element naenkrat
+238|Vsak element (skupina ali oblika brez skupine) se nariše v celoti, z vsemi plastmi in prehodi, preden pride naslednji; najbližji je prvi. Izklopljeno: plast za plastjo, prehod za prehodom.
+239|Samo izbira
+240|Narišejo se samo oblike, ki so izbrane na delovnem območju ob shranjevanju G-kode ali zagonu opravila.
+241|Ni kaj risati: nič ni izbrano
+242|Zamenjava peresa na stalnem mestu
+243|Ko naslednja plast potrebuje drugo pero, se pero dvigne, plotter odpelje na to mesto (v koordinatah delovnega območja, lahko je tudi zunaj njega), izvede spodnjo G-kodo in se tam ustavi (M0), da se pero lahko zamenja, ročno ali z mehanizmom. Izklopljeno: opravilo se ustavi tam, kjer je.
+244|Ustavi se tam (M0)
+245|G-koda na mestu
+246|Vrstice, poslane ko plotter prispe, pred ustavitvijo: za mehanizem, ki pero zamenja sam. Z izklopljeno ustavitvijo se opravilo nadaljuje takoj za njimi.

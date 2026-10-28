@@ -235,3 +235,13 @@
 234|Ampliar para que todas las líneas llenen la ventana
 235|Subir el bolígrafo
 236|Bajar el bolígrafo
+237|Un elemento cada vez
+238|Cada elemento (un grupo, o una forma sin grupo) se dibuja entero, con todas sus capas y pasadas, antes del siguiente; el más cercano va primero. Desactivado: capa tras capa, pasada tras pasada.
+239|Solo la selección
+240|Solo se dibujan las formas seleccionadas en el área de trabajo en el momento de guardar el G-code o iniciar el trabajo.
+241|Nada que dibujar: no hay nada seleccionado
+242|Cambiar el rotulador en un lugar fijo
+243|Cuando la capa siguiente necesita otro rotulador, este sube, el plóter va a este lugar (en las coordenadas del área de trabajo, puede estar fuera de ella), ejecuta el G-code de abajo y se detiene allí (M0) para que se pueda cambiar el rotulador, a mano o con un mecanismo. Desactivado: el trabajo se detiene donde está.
+244|Detenerse allí (M0)
+245|G-code en el lugar
+246|Líneas enviadas cuando el plóter ha llegado, antes de la parada: para un mecanismo que cambia el rotulador solo. Con la parada desactivada el trabajo continúa justo después.

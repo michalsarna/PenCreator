@@ -235,3 +235,13 @@
 234|Padidinti taip, kad visos linijos užpildytų langą
 235|Pakelti rašiklį
 236|Nuleisti rašiklį
+237|Po vieną elementą
+238|Kiekvienas elementas (grupė arba forma be grupės) nupiešiamas visas, su visais sluoksniais ir praėjimais, prieš kitą; artimiausias pirmas. Išjungta: sluoksnis po sluoksnio, praėjimas po praėjimo.
+239|Tik pažymėta
+240|Piešiamos tik tos formos, kurios darbo srityje pažymėtos G kodo išsaugojimo ar užduoties pradžios metu.
+241|Nėra ką piešti: nieko nepažymėta
+242|Rašiklio keitimas nustatytoje vietoje
+243|Kai kitam sluoksniui reikia kito rašiklio, rašiklis pakeliamas, braižytuvas nuvažiuoja į šią vietą (darbo srities koordinatėmis, ji gali būti ir už jos ribų), įvykdo žemiau esantį G kodą ir ten sustoja (M0), kad rašiklį būtų galima pakeisti ranka ar mechanizmu. Išjungta: užduotis sustoja ten, kur yra.
+244|Sustoti ten (M0)
+245|G kodas vietoje
+246|Eilutės, siunčiamos braižytuvui atvykus, prieš sustojimą: mechanizmui, kuris pats keičia rašiklį. Su išjungtu sustojimu užduotis tęsiasi iškart po jų.
