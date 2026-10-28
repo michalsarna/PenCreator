@@ -9,6 +9,8 @@ mod layers;
 mod layers_ui;
 mod machine_ui;
 mod gcode_view_glue;
+#[cfg(test)]
+mod grbl_sim_tests;
 mod menu;
 mod pens;
 mod pens_ui;
