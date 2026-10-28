@@ -1,0 +1,23 @@
+# Maintainer: Michał Sarna <michalsarna at users dot noreply dot github dot com>
+pkgname=pencreator-bin
+pkgver=0.4.0
+pkgrel=1
+pkgdesc="Pen plotter software with pens as layers, plot preview and G-code"
+arch=('x86_64' 'aarch64')
+url="https://github.com/michalsarna/PenCreator"
+license=('MIT OR Apache-2.0')
+depends=('glibc' 'gcc-libs' 'libgl' 'libxkbcommon-x11')
+optdepends=('wayland: native Wayland session support')
+provides=('pencreator')
+conflicts=('pencreator')
+options=('!strip' '!debug')
+source_x86_64=("$url/releases/download/v$pkgver/pencreator-v$pkgver-linux-amd64.deb")
+source_aarch64=("$url/releases/download/v$pkgver/pencreator-v$pkgver-linux-arm64.deb")
+sha256sums_x86_64=('1b9a7ac03cfa4b8f7f657eaaf70239b3dffd27ecf57b50709ef1db404d03534b')
+sha256sums_aarch64=('0d4b41b0555acd84deb5bc4bd9037b4e60d49e4982e332fcdc86e63410d38ec3')
+
+package() {
+  bsdtar -xf data.tar.* -C "$pkgdir"
+  install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+  mv "$pkgdir/usr/share/doc/pencreator/LICENSE" "$pkgdir/usr/share/doc/pencreator/LICENSE-APACHE" "$pkgdir/usr/share/licenses/$pkgname/"
+}
