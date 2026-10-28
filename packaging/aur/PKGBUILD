@@ -1,6 +1,6 @@
 # Maintainer: Michał Sarna <michalsarna at users dot noreply dot github dot com>
 pkgname=pencreator-bin
-pkgver=0.4.0
+pkgver=0.4.1
 pkgrel=1
 pkgdesc="Pen plotter software with pens as layers, plot preview and G-code"
 arch=('x86_64' 'aarch64')

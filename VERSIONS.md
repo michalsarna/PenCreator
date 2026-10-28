@@ -2,6 +2,17 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.4.1
+
+* **Pen change at a fixed place:** the device settings, page *Pen*, have a place for the pen change (X and Y in the coordinates of the work area, it may lie outside of it), optional G-code to send there (up to 20 lines, for a mechanism that changes the pen by itself) and a switch for the stop (`M0`). When the next layer needs another pen, the pen goes up, the plotter drives to that place, runs the lines and stops so that the pen can be changed by hand or by the mechanism; the way there is part of the preview and the estimate. Without a place the job stops where it is, as before. Tried in the simulator only.
+* **Draw one element at a time, or only the selection:** two options in the Control tab, under Frame / From line… (this session only, not saved; they can be used together). **One element at a time** draws each element, a group (even over several layers) or a shape that is in no group, completely, with all its layers and all their passes, before the next one, the nearest element first; it is meant for layers that use the same pen (with different pens the pen is still changed at every switch). **Selection only** draws just the shapes that are selected on the work area when the G-code is saved or the job is started. Both change the G-code, the preview and the estimate, and Frame follows the selection.
+* **Machine menu:** *Device settings…* opens the settings of the device, like the button of the Device tab.
+* **Camera view:** a tab of the work area next to the drawings (there is no floating window); the picture is fitted to the window up as well as down, in steps of 0.01 so that it does not tremble. A stream that is not drawn is stopped.
+* **Windows:** the pop-up windows are moved only by their title line (the pointer is a hand there, a normal one over the icons) and no longer stick to the pointer after a click. The buttons of the device window and of the other dialogs stand at the foot of the window under a line, and the lists of the pen library and the other windows fill their window.
+* **Jogging:** jog, jog cancel, Home, Unlock, Pause and Resume follow the GRBL version of the Connection page; hold to move is only for GRBL 1.1 and newer.
+* The tests run the generated jobs against the real GRBL firmware (a simulator) in CI.
+* baseCreator v1.30.0.
+
 ## v0.4.0
 
 * **Raise the pen / Lower the pen** on the Control tab: the pen goes up or down where it stands, with the Z axis or the servo of the device.

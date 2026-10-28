@@ -34,6 +34,8 @@ The **Control** tab jogs the plotter (steps, hold to move, keyboard), shows the 
 
 Ready-made packages for Windows, macOS and Linux are on the [Releases page](https://github.com/michalsarna/PenCreator/releases); see [INSTALL.md](INSTALL.md). Documentation (English and Polish) is in the [wiki](https://github.com/michalsarna/PenCreator/wiki).
 
+Or with a package manager: `brew install --cask michalsarna/tap/pencreator` (macOS), `scoop bucket add creator https://github.com/michalsarna/scoop-bucket` and `scoop install pencreator` (Windows). See [the wiki](https://github.com/michalsarna/PenCreator/wiki/Installation).
+
 ## Examples
 
 [`examples/`](examples) has a small badge (`badge.svg`) to import, a drawing for four pens as a project (`badge-pens.cre`: a frame, a circle, a star and a hatched fill, a pen for each layer; open it with *File → Open*) and the G-code the program makes from it (`badge-pens.nc`, with a servo pen lift). `cargo test -p pencreator write_examples -- --ignored` writes the last two again.
