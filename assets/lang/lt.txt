@@ -245,3 +245,4 @@
 244|Sustoti ten (M0)
 245|G kodas vietoje
 246|Eilutės, siunčiamos braižytuvui atvykus, prieš sustojimą: mechanizmui, kuris pats keičia rašiklį. Su išjungtu sustojimu užduotis tęsiasi iškart po jų.
+247|Importuoti DXF…

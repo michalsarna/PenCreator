@@ -245,3 +245,4 @@
 244|Stad ansin (M0)
 245|G-code san áit
 246|Línte a sheoltar nuair a shroicheann an plotaer an áit, roimh an stad: do mheicníocht a athraíonn an peann ina haonar. Le stad as leanann an jab ar aghaidh díreach ina ndiaidh.
+247|Iompórtáil DXF…

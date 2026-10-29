@@ -245,3 +245,4 @@
 244|Daar stoppen (M0)
 245|G-code op de plek
 246|Regels die worden verstuurd als de plotter is aangekomen, vóór de stop: voor een mechanisme dat de pen zelf wisselt. Met de stop uit gaat de taak er direct na verder.
+247|DXF importeren…

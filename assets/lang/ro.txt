@@ -245,3 +245,4 @@
 244|Oprește-te acolo (M0)
 245|G-code la locul respectiv
 246|Linii trimise când plotterul a ajuns, înainte de oprire: pentru un mecanism care schimbă singur pixul. Cu oprirea dezactivată lucrarea continuă imediat după ele.
+247|Importă DXF…

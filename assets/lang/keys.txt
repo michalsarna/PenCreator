@@ -245,3 +245,4 @@
 244	Stop there (M0)
 245	G-code at the place
 246	Lines sent when the plotter has arrived, before the stop: for a mechanism that changes the pen by itself. With the stop switched off the job goes on right after them.
+247	Import DXF…

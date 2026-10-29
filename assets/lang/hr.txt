@@ -245,3 +245,4 @@
 244|Stani tamo (M0)
 245|G-kod na mjestu
 246|Retci poslani kad ploter stigne, prije zaustavljanja: za mehanizam koji sam mijenja olovku. S isključenim zaustavljanjem posao nastavlja odmah nakon njih.
+247|Uvezi DXF…

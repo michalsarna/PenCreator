@@ -245,3 +245,4 @@
 244|Stoppa þar (M0)
 245|G-kóði á staðnum
 246|Línur sendar þegar teiknarinn er kominn, fyrir stoppið: fyrir búnað sem skiptir sjálfur um penna. Með stoppið slökkt heldur verkið áfram strax á eftir.
+247|Flytja inn DXF…

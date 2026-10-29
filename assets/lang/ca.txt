@@ -245,3 +245,4 @@
 244|Atura't allà (M0)
 245|G-code al lloc
 246|Línies enviades quan el plòter ha arribat, abans de l'aturada: per a un mecanisme que canvia el retolador sol. Amb l'aturada desactivada la tasca continua just després.
+247|Importa DXF…

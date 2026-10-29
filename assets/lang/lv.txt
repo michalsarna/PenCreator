@@ -245,3 +245,4 @@
 244|Apstāties tur (M0)
 245|G-kods vietā
 246|Rindas, kas tiek nosūtītas, kad plotters ir ieradies, pirms apstāšanās: mehānismam, kas pildspalvu maina pats. Ar izslēgtu apstāšanos darbs turpinās uzreiz pēc tām.
+247|Importēt DXF…
