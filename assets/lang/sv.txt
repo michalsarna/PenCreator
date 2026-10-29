@@ -245,3 +245,4 @@
 244|Stanna där (M0)
 245|G-kod på platsen
 246|Rader som skickas när plottern har kommit fram, före stoppet: för en mekanism som byter penna själv. Med stoppet av fortsätter jobbet direkt efter dem.
+247|Importera DXF…

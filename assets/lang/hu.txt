@@ -245,3 +245,4 @@
 244|Megállás ott (M0)
 245|G-kód a helyen
 246|A plotter megérkezése után, a megállás előtt elküldött sorok: a tollat magától cserélő szerkezethez. Kikapcsolt megállásnál a munka közvetlenül utánuk folytatódik.
+247|DXF importálása…
