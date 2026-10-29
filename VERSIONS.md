@@ -2,6 +2,15 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.4.2
+
+* **Preview as a tab:** the preview window has a button in its title line that pins it as a tab of the work area, next to the drawings and the camera view, and a button in the tab that makes it a window again.
+* **Plugins:** every plugin that has something to set (a G-code postprocessor, for example *G-code tools*) has a tab of its own in the right-hand panel; the postprocessor is no longer chosen in the Plugins window. The official plugins are translated into Polish, German, Italian, Finnish, Chinese and Hindi.
+* **Import / Adjust image:** the dialog follows the size of the window, with the buttons at the bottom, and a new **Levels** column: a histogram of the greys with two sliders for the range.
+* **Trace image:** the dialog follows the size of the window; the preview zooms with the scroll wheel, moves by dragging and shows the whole picture again on a double click.
+* **Tool palette:** when the window is too low for it (Full HD with the taskbar showing), the buttons grow smaller instead of the palette scrolling.
+* Updated dependencies. baseCreator v1.34.1.
+
 ## v0.4.1
 
 * **Pen change at a fixed place:** the device settings, page *Pen*, have a place for the pen change (X and Y in the coordinates of the work area, it may lie outside of it), optional G-code to send there (up to 20 lines, for a mechanism that changes the pen by itself) and a switch for the stop (`M0`). When the next layer needs another pen, the pen goes up, the plotter drives to that place, runs the lines and stops so that the pen can be changed by hand or by the mechanism; the way there is part of the preview and the estimate. Without a place the job stops where it is, as before. Tried in the simulator only.
