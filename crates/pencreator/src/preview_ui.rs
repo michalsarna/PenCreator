@@ -155,55 +155,123 @@ impl App {
 
     pub(crate) fn preview_window(&mut self, ctx: &egui::Context) {
         if !self.show_plot {
+            self.pv_tab_seen = false;
+            self.pv_tab_shown = false;
             return;
         }
+        if self.preview_tab {
+            // Drawn in the work area (`App::preview_work_panel`); it is shown the first time it opens.
+            if !self.pv_tab_seen {
+                self.pv_tab_shown = true;
+                self.cam_ws_shown = false;
+            }
+            self.pv_tab_seen = true;
+            return;
+        }
+        self.pv_tab_seen = false;
+        self.pv_tab_shown = false;
         if self.prog.is_none() || self.prog_rev != self.job_stamp() {
             self.prog = Some(self.make_program());
             self.prog_rev = self.job_stamp();
         }
         let mut open = true;
         let mut fit = None;
+        let mut pin = false;
         let tools = |ui: &mut egui::Ui| {
-            // Icons are added right to left: the work area button is the one on the left.
-            for (what, icon, tip) in [(Fit::Elements, "expand", "Fit all objects"), (Fit::Area, "scan", "Fit work area")] {
-                if base_ui::widgets::icon_button(ui, icon, &tr(tip), true, 22.0) {
-                    fit = Some(what);
-                }
-            }
+            pin = base_ui::doc_tabs::pin_as_tab_button(ui);
+            fit = Self::preview_fit_buttons(ui);
         };
-        popup_with(ctx, "preview_plot", &tr("Preview"), [980.0, 700.0], &mut open, tools, |ui| {
-            let prog = self.prog.as_ref().expect("the program was made above");
-            ui.horizontal_wrapped(|ui| {
-                if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {
-                    self.view.reset();
-                }
-                ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
-            });
-            ui.horizontal(|ui| {
-                self.playback.show(ui, &mut self.view.progress);
-            });
-            let secs = prog.estimate_seconds(&self.device, &self.layers);
-            ui.label(RichText::new(trf("Time {} / {}", &[&base_ui::widgets::fmt_time(secs * self.view.progress as f64), &base_ui::widgets::fmt_time(secs)])).strong());
-            ui.label(
-                RichText::new(trf("Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min", &[&format!("{:.2}", prog.draw_length() / 1000.0), &format!("{:.2}", prog.travel_length() / 1000.0), &prog.lifts(), &format!("{:.1}", secs / 60.0)])).color(theme::text_dim()),
-            );
-            for w in &prog.warnings {
-                ui.label(RichText::new(format!("• {}", w.text())).color(Color32::from_rgb(0xd0, 0x70, 0x20)));
-            }
-            if prog.is_empty() {
-                ui.add_space(30.0);
-                ui.label(RichText::new(tr("There is nothing to show yet: draw shapes and put them on layers that are switched on.")).color(theme::text_dim()));
-            } else {
-                show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, self.device.area.x, self.device.area.y);
-            }
-        });
+        popup_with(ctx, "preview_plot", &tr("Preview"), [980.0, 700.0], &mut open, tools, |ui| self.preview_body(ui));
         if fit.is_some() {
             self.view.fit = fit;
         }
         self.show_plot = open;
+        if pin {
+            self.preview_pin(true);
+        }
         if !open {
             self.playback.playing = false;
         }
+    }
+
+    /// The options, totals and the picture (the same in the window and in the tab).
+    fn preview_body(&mut self, ui: &mut egui::Ui) {
+        let prog = self.prog.as_ref().expect("the program was made above");
+        ui.horizontal_wrapped(|ui| {
+            if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {
+                self.view.reset();
+            }
+            ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
+        });
+        ui.horizontal(|ui| {
+            self.playback.show(ui, &mut self.view.progress);
+        });
+        let secs = prog.estimate_seconds(&self.device, &self.layers);
+        ui.label(RichText::new(trf("Time {} / {}", &[&base_ui::widgets::fmt_time(secs * self.view.progress as f64), &base_ui::widgets::fmt_time(secs)])).strong());
+        ui.label(
+            RichText::new(trf("Lines: {} m, moves with the pen up: {} m, pen lifts: {}, about {} min", &[&format!("{:.2}", prog.draw_length() / 1000.0), &format!("{:.2}", prog.travel_length() / 1000.0), &prog.lifts(), &format!("{:.1}", secs / 60.0)])).color(theme::text_dim()),
+        );
+        for w in &prog.warnings {
+            ui.label(RichText::new(format!("• {}", w.text())).color(Color32::from_rgb(0xd0, 0x70, 0x20)));
+        }
+        if prog.is_empty() {
+            ui.add_space(30.0);
+            ui.label(RichText::new(tr("There is nothing to show yet: draw shapes and put them on layers that are switched on.")).color(theme::text_dim()));
+        } else {
+            show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, self.device.area.x, self.device.area.y);
+        }
+    }
+
+    /// The two buttons that fit the picture. Icons are added right to left: the work area button is the one on the left.
+    fn preview_fit_buttons(ui: &mut egui::Ui) -> Option<Fit> {
+        let mut fit = None;
+        for (what, icon, tip) in [(Fit::Elements, "expand", "Fit all objects"), (Fit::Area, "scan", "Fit work area")] {
+            if base_ui::widgets::icon_button(ui, icon, &tr(tip), true, 22.0) {
+                fit = Some(what);
+            }
+        }
+        fit
+    }
+
+    /// The preview as a tab of the work area, in place of the drawing.
+    pub(crate) fn preview_work_panel(&mut self, ui: &mut egui::Ui) {
+        self.refresh_program();
+        let mut fit = None;
+        ui.horizontal(|ui| {
+            ui.spacing_mut().item_spacing.x = 4.0;
+            ui.label(RichText::new(tr("Preview")).strong());
+            ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                if base_ui::doc_tabs::back_to_window_button(ui) {
+                    self.preview_pin(false);
+                }
+                fit = Self::preview_fit_buttons(ui);
+            });
+        });
+        if fit.is_some() {
+            self.view.fit = fit;
+        }
+        egui::Frame::new().inner_margin(egui::Margin { left: 8, right: 8, top: 0, bottom: 3 }).show(ui, |ui| self.preview_body(ui));
+    }
+
+    /// Is the preview a tab of the work area (so that the bar of the tabs has one for it)?
+    pub(crate) fn preview_work_tab(&self) -> bool {
+        self.show_plot && self.preview_tab
+    }
+
+    /// Pin the preview as a tab of the work area (or make it a window again).
+    pub(crate) fn preview_pin(&mut self, tab: bool) {
+        self.preview_tab = tab;
+        self.pv_tab_shown = tab;
+        if tab {
+            self.cam_ws_shown = false;
+        }
+    }
+
+    /// The tab was closed with its cross.
+    pub(crate) fn preview_close(&mut self) {
+        self.show_plot = false;
+        self.pv_tab_shown = false;
+        self.playback.playing = false;
     }
 }
 
@@ -317,5 +385,42 @@ mod tests {
         };
         assert_eq!(zoom_of(super::Fit::Area), 1.0);
         assert!(zoom_of(super::Fit::Elements) > 1.5);
+    }
+
+    #[test]
+    fn the_preview_is_pinned_as_a_tab_of_the_work_area_and_unpinned_again() {
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        a.open_preview();
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        out.textures_delta.clear();
+        assert!(!a.preview_work_tab(), "a window to begin with");
+        a.preview_pin(true);
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
+        out.textures_delta.clear();
+        assert!(a.preview_work_tab() && a.pv_tab_shown);
+        a.preview_pin(false);
+        assert!(!a.preview_work_tab() && !a.pv_tab_shown && a.show_plot);
+    }
+
+    #[test]
+    fn the_tab_opens_shown_again_after_it_was_closed_and_the_camera_tab_gives_way() {
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        a.open_preview();
+        a.preview_pin(true);
+        a.cam_ws_shown = true;
+        a.preview_close();
+        assert!(!a.show_plot && !a.pv_tab_shown);
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        out.textures_delta.clear();
+        // Opened again: it is still a tab, and the shown one.
+        a.open_preview();
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        out.textures_delta.clear();
+        assert!(a.preview_work_tab() && a.pv_tab_shown && !a.cam_ws_shown);
     }
 }
