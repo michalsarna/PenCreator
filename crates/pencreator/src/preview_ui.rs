@@ -175,16 +175,11 @@ impl App {
             self.prog_rev = self.job_stamp();
         }
         let mut open = true;
-        let mut fit = None;
         let mut pin = false;
         let tools = |ui: &mut egui::Ui| {
             pin = base_ui::doc_tabs::pin_as_tab_button(ui);
-            fit = Self::preview_fit_buttons(ui);
         };
         popup_with(ctx, "preview_plot", &tr("Preview"), [980.0, 700.0], &mut open, tools, |ui| self.preview_body(ui));
-        if fit.is_some() {
-            self.view.fit = fit;
-        }
         self.show_plot = open;
         if pin {
             self.preview_pin(true);
@@ -200,6 +195,10 @@ impl App {
         ui.horizontal_wrapped(|ui| {
             if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {
                 self.view.reset();
+            }
+            // The two buttons that fit the picture: the work area, and all the objects.
+            if let Some(f) = Self::preview_fit_buttons(ui) {
+                self.view.fit = Some(f);
             }
             ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
         });
@@ -222,10 +221,10 @@ impl App {
         }
     }
 
-    /// The two buttons that fit the picture. Icons are added right to left: the work area button is the one on the left.
+    /// The two buttons that fit the picture, the work area on the left.
     fn preview_fit_buttons(ui: &mut egui::Ui) -> Option<Fit> {
         let mut fit = None;
-        for (what, icon, tip) in [(Fit::Elements, "expand", "Fit all objects"), (Fit::Area, "scan", "Fit work area")] {
+        for (what, icon, tip) in [(Fit::Area, "scan", "Fit work area"), (Fit::Elements, "expand", "Fit all objects")] {
             if base_ui::widgets::icon_button(ui, icon, &tr(tip), true, 22.0) {
                 fit = Some(what);
             }
@@ -236,7 +235,6 @@ impl App {
     /// The preview as a tab of the work area, in place of the drawing.
     pub(crate) fn preview_work_panel(&mut self, ui: &mut egui::Ui) {
         self.refresh_program();
-        let mut fit = None;
         ui.horizontal(|ui| {
             ui.spacing_mut().item_spacing.x = 4.0;
             ui.label(RichText::new(tr("Preview")).strong());
@@ -244,12 +242,8 @@ impl App {
                 if base_ui::doc_tabs::back_to_window_button(ui) {
                     self.preview_pin(false);
                 }
-                fit = Self::preview_fit_buttons(ui);
             });
         });
-        if fit.is_some() {
-            self.view.fit = fit;
-        }
         egui::Frame::new().inner_margin(egui::Margin { left: 8, right: 8, top: 0, bottom: 3 }).show(ui, |ui| self.preview_body(ui));
     }
 
