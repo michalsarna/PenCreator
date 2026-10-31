@@ -268,6 +268,10 @@ struct App {
     cam: Option<CamState>,
     /// Was the camera picture drawn in the last frame? A stream nobody looks at is stopped (its frames would pile up).
     cam_drawn: bool,
+    /// Photos, video and time-lapse of the camera (the folder and the interval are remembered).
+    cam_rec: base_ui::camera_rec::Recorder,
+    /// Where the layers of the job being sent end, for a picture after each layer.
+    layer_watch: base_ui::camera_rec::LayerWatch,
     /// The camera window shrinks to the picture.
     cam_fit: base_ui::window::FitWindow,
     machine: MachineLink,
@@ -412,6 +416,8 @@ impl App {
             selection_only: false,
             cam: None,
             cam_drawn: false,
+            cam_rec: base_ui::camera_rec::Recorder::default(),
+            layer_watch: base_ui::camera_rec::LayerWatch::default(),
             cam_fit: Default::default(),
             machine: {
                 let mut m = MachineLink::new(ctx);
@@ -1085,8 +1091,13 @@ impl App {
     }
 
     fn draw(&mut self, ui: &mut egui::Ui) {
-        self.drop_idle_camera();
+        let drawn_last = self.drop_idle_camera();
         let ctx = ui.ctx().clone();
+        // A recording goes on when no view shows the camera.
+        if !drawn_last && self.cam_rec.active() {
+            self.camera_pump(&ctx);
+            ctx.request_repaint_after(std::time::Duration::from_millis(100));
+        }
         self.autosave_tick(&ctx, false);
         self.sync_picture_layers();
         self.poll_machine();

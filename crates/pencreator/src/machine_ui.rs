@@ -78,6 +78,9 @@ impl App {
                     if checked {
                         self.finish_check(issues);
                     } else {
+                        for _ in 0..self.layer_watch.finished() {
+                            self.cam_rec.layer_done(std::time::Instant::now());
+                        }
                         self.device.control.stats.job_done(seconds);
                         self.keep_control();
                         self.status = if issues == 0 { tr("The job is finished.").to_string() } else { trf("The job is finished, with {} problems (see the Console).", &[&issues]) };
@@ -122,6 +125,10 @@ impl App {
                 // The tool length sensor is for milling machines.
                 Notice::Probed { .. } | Notice::TlsReference { .. } | Notice::TlsTool { .. } | Notice::TlsTest { .. } | Notice::TlsFailed | Notice::CenterFound { .. } | Notice::CenterFailed => {}
             }
+        }
+        // The layers of the job that are done by now: a picture each, for the time-lapse of the camera.
+        for _ in 0..self.layer_watch.progress(self.machine.progress.0) {
+            self.cam_rec.layer_done(std::time::Instant::now());
         }
     }
 
@@ -231,6 +238,8 @@ impl App {
             self.status = tr("Checking the program first…").to_string();
             return;
         }
+        // A picture after each layer of the time-lapse of the camera, when it is on.
+        self.layer_watch.start(link::layer_marks(&lines));
         self.machine.start_job(lines, before, after, false);
         self.status = tr("The job is running.").to_string();
     }
@@ -253,6 +262,7 @@ impl App {
         if issues == 0 {
             match pending {
                 Some(job) => {
+                    self.layer_watch.start(link::layer_marks(&job.lines));
                     self.machine.start_job(job.lines, job.before, job.after, false);
                     self.status = tr("The check found nothing. The job is running.").to_string();
                 }
@@ -266,6 +276,7 @@ impl App {
 
     pub(crate) fn abort_job(&mut self) {
         self.after_check = None;
+        self.layer_watch.stop();
         self.machine.stop_job();
     }
 
