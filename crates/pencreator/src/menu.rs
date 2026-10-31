@@ -69,7 +69,7 @@ pub fn menus() -> Menus<Act> {
         ("Edit", std(std_entries::edit())),
         (
             "Arrange",
-            [std(std_entries::align()), vec![Sep], std(std_entries::place()), vec![Sep], std(std_entries::group()), vec![Sep], std(std_entries::order()), vec![Sep], std(std_entries::nodes()), vec![Sep], std(std_entries::shape_ops()), vec![Sep], std(std_entries::image_tools())].concat(),
+            [std(std_entries::align()), vec![Sep], std(std_entries::place()), vec![Sep], std(std_entries::group()), vec![Sep], std(std_entries::order()), vec![Sep], std(std_entries::nodes()), vec![Sep], std(std_entries::shape_ops()), vec![Sep], std(std_entries::design_tools()), vec![Sep], std(std_entries::image_tools())].concat(),
         ),
         ("View", [std(std_entries::grid()), std(std_entries::zoom())].concat()),
         ("Machine", vec![Item(Act::DeviceSettings, "Device settings…", None), Item(Act::Firmware, "Firmware settings ($$)…", None), Item(Act::Calibration, "Calibration…", None), Item(Act::Diagnostics, "Diagnostics and statistics…", None), Sep, Item(Act::StartFrom, "Start from line…", None), Item(Act::CheckProgram, "Check the program", None)]),
