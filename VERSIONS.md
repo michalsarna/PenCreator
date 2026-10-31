@@ -2,6 +2,14 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.5.1 (not released yet)
+
+* **Colours:** the background and the work-area colours of the view options work (they did nothing here) and are saved, also in a backup.
+* **Preview:** the fit buttons are next to *Reset view*; the title bar has only the pin button.
+* **Background picture:** *View → Background picture…* puts a photo, a plan or a scan under the drawing, with four corners to drag and an opacity.
+* **Plugins:** any number of postprocessors can be on at once (they run in the order they were ticked); the new plugin **Barcodes** makes Code 39, Code 128 and EAN-13.
+* **Trace image:** zoom in, zoom out and reset-view buttons; the *Trace* button is green. baseCreator v1.40.0.
+
 ## v0.5.0
 
 * **DXF import:** File → Import → Import DXF… (also Open and drag and drop): lines, polylines with bulges, arcs, circles, ellipses, splines and blocks, in millimetres by the unit of the file, with the layers of the DXF on the free layers of the project; lines that meet become paths. **Auto-join paths…**, **Close path with tolerance…** and **Export selection as SVG / DXF…**.
