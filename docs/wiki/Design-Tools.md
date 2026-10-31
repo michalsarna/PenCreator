@@ -11,7 +11,7 @@ PenCreator edits shapes with the same tools as LightCreator and MillCreator (bas
 
 ## Arranging, copying and generating
 
-The **Insert** menu has the tools of the left palette that insert objects (rectangle, ellipse, triangle, star, polygon, heart, spiral, line, polyline / pen and text; the tool in use is ticked), then the generators of plugins.
+The **Insert** menu has the tools of the left palette that insert objects (rectangle, ellipse, triangle, star, polygon, heart, spiral, line, polyline / pen and text; the tool in use is ticked), then the generators of plugins and the online clipart.
 
 Commands of the *Arrange* menu, after *Dogbone / T-bone corners…* (the same in LightCreator, MillCreator and PenCreator):
 

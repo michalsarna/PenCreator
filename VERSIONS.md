@@ -2,6 +2,10 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.5.3 (not released yet)
+
+* **Insert menu:** also has *Online clipart…*.
+
 ## v0.5.2
 
 * **Insert menu:** the tools of the left palette that insert objects (and the generators of plugins) as menu commands.
