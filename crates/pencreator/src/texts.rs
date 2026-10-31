@@ -291,6 +291,7 @@ const TABLE: &[[&str; 7]] = &[
     ["G-code at the place", "G-code w tym miejscu", "G-Code an der Stelle", "G-code nel punto", "G-koodi paikassa", "此位置的 G 代码", "उस स्थान पर G-कोड"],
     ["Lines sent when the plotter has arrived, before the stop: for a mechanism that changes the pen by itself. With the stop switched off the job goes on right after them.", "Linie wysyłane, gdy ploter dojedzie, przed zatrzymaniem: dla mechanizmu, który sam zmienia pisak. Przy wyłączonym zatrzymaniu zadanie idzie dalej zaraz po nich.", "Zeilen, die gesendet werden, wenn der Plotter angekommen ist, vor dem Anhalten: für einen Mechanismus, der den Stift selbst wechselt. Bei ausgeschaltetem Anhalten geht der Auftrag direkt danach weiter.", "Righe inviate quando il plotter è arrivato, prima dell'arresto: per un meccanismo che cambia la penna da solo. Con l'arresto disattivato il lavoro prosegue subito dopo.", "Rivit, jotka lähetetään piirturin saavuttua perille ennen pysähdystä: mekanismille, joka vaihtaa kynän itse. Kun pysähdys on pois, työ jatkuu heti niiden jälkeen.", "绘图仪到达后、停止前发送的行：用于自行更换笔的机构。关闭停止时，任务紧接着继续。", "प्लॉटर के पहुँचने पर, रुकने से पहले भेजी जाने वाली पंक्तियाँ: उस तंत्र के लिए जो पेन खुद बदलता है। रुकना बंद होने पर कार्य उनके तुरंत बाद आगे बढ़ता है।"],
     ["Import DXF…", "Importuj DXF…", "DXF importieren…", "Importa DXF…", "Tuo DXF…", "导入 DXF…", "DXF आयात करें…"],
+    ["Insert", "Wstawianie", "Einfügen", "Inserisci", "Lisää", "插入", "सम्मिलित करें"],
 ];
 
 #[cfg(test)]

@@ -246,3 +246,4 @@
 245|G-code à l'endroit
 246|Lignes envoyées quand la table traçante est arrivée, avant l'arrêt : pour un mécanisme qui change le stylo tout seul. Sans l'arrêt, le travail continue juste après elles.
 247|Importer un DXF…
+248|Insérer

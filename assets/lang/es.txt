@@ -246,3 +246,4 @@
 245|G-code en el lugar
 246|Líneas enviadas cuando el plóter ha llegado, antes de la parada: para un mecanismo que cambia el rotulador solo. Con la parada desactivada el trabajo continúa justo después.
 247|Importar DXF…
+248|Insertar

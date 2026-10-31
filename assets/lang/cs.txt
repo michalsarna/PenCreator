@@ -246,3 +246,4 @@
 245|G-kód na místě
 246|Řádky odeslané po příjezdu plotru, před zastavením: pro mechanismus, který pero vymění sám. Při vypnutém zastavení úloha pokračuje hned po nich.
 247|Importovat DXF…
+248|Vložit

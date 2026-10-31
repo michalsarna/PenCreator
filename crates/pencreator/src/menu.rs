@@ -67,6 +67,8 @@ pub fn menus() -> Menus<Act> {
     vec![
         ("File", file),
         ("Edit", std(std_entries::edit())),
+        // The tools of the left palette that insert objects, and the generators of plugins.
+        ("Insert", [std(std_entries::insert_tools()), vec![Sep, Item(Act::GenerateShape, base_ui::plugins_ui::MENU_GENERATE, None)]].concat()),
         (
             "Arrange",
             [std(std_entries::align()), vec![Sep], std(std_entries::place()), vec![Sep], std(std_entries::group()), vec![Sep], std(std_entries::order()), vec![Sep], std(std_entries::nodes()), vec![Sep], std(std_entries::shape_ops()), vec![Sep], std(std_entries::design_tools()), vec![Sep], std(std_entries::image_tools())].concat(),

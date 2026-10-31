@@ -246,3 +246,4 @@
 245|G-koda na mestu
 246|Vrstice, poslane ko plotter prispe, pred ustavitvijo: za mehanizem, ki pero zamenja sam. Z izklopljeno ustavitvijo se opravilo nadaljuje takoj za njimi.
 247|Uvozi DXF…
+248|Vstavi
