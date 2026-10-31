@@ -11,7 +11,7 @@ PenCreator edytuje kształty tymi samymi narzędziami co LightCreator i MillCrea
 
 ## Układanie, kopiowanie i generowanie
 
-Menu **Insert** (Wstawianie) zawiera narzędzia lewej palety, które wstawiają obiekty (prostokąt, elipsa, trójkąt, gwiazda, wielokąt, serce, spirala, linia, linia łamana / pióro i tekst; używane narzędzie jest zaznaczone), a potem generatory wtyczek.
+Menu **Insert** (Wstawianie) zawiera narzędzia lewej palety, które wstawiają obiekty (prostokąt, elipsa, trójkąt, gwiazda, wielokąt, serce, spirala, linia, linia łamana / pióro i tekst; używane narzędzie jest zaznaczone), a potem generatory wtyczek i clipart z internetu.
 
 Polecenia menu *Arrange* po *Dogbone / T-bone corners…* (takie same w LightCreatorze, MillCreatorze i PenCreatorze):
 
