@@ -246,3 +246,4 @@
 245|G-code fil-post
 246|Linji mibgħuta meta l-plotter jasal, qabel il-waqfa: għal mekkaniżmu li jbiddel il-pinna waħdu. Bil-waqfa mitfija x-xogħol ikompli eżatt warajhom.
 247|Importa DXF…
+248|Daħħal

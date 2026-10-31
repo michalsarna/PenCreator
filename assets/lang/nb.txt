@@ -246,3 +246,4 @@
 245|G-kode på stedet
 246|Linjer som sendes når plotteren er framme, før stoppet: for en mekanisme som bytter penn selv. Med stoppet av fortsetter jobben rett etter dem.
 247|Importer DXF…
+248|Sett inn

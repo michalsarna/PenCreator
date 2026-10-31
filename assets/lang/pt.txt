@@ -246,3 +246,4 @@
 245|G-code no local
 246|Linhas enviadas quando o plotter chegou, antes da paragem: para um mecanismo que troca a caneta sozinho. Com a paragem desligada o trabalho continua logo a seguir.
 247|Importar DXF…
+248|Inserir

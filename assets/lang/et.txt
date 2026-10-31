@@ -246,3 +246,4 @@
 245|G-kood kohas
 246|Read, mis saadetakse, kui plotter on kohale jõudnud, enne peatumist: mehhanismile, mis vahetab pliiatsi ise. Väljalülitatud peatumisega jätkub töö kohe pärast neid.
 247|Impordi DXF…
+248|Lisa
