@@ -4,6 +4,7 @@ Each release gets the next version number. Newest first.
 
 ## v0.5.3 (not released yet)
 
+* **About window:** thanks to Jakub (CNC KpK) for the ideas and suggestions for improvements, with a link to the channel. baseCreator v1.45.0.
 * **Insert menu:** also has *Online clipart…*.
 
 ## v0.5.2
