@@ -1681,7 +1681,7 @@ mod tests {
         a.open(file);
         assert_eq!(a.scene.shapes.len(), before + 2, "{}", a.status);
         assert_eq!(a.recent, recent);
-        a.plugins.post = Some("my-tools/n".into());
+        a.plugins.posts = vec!["my-tools/n".into()];
         assert_eq!(a.postprocessed("G21\nM5\n".into()).unwrap(), "N1 G21\nN2 M5\n");
         std::fs::write(base.join("plugins/my-tools/post.rhai"), r#"fn post(lines, ctx) { ["$RST=*"] }"#).unwrap();
         a.plugins.reload();
