@@ -2,9 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
-## v0.4.3 (not released yet)
+## v0.5.0
 
 * **DXF import:** File → Import → Import DXF… (also Open and drag and drop): lines, polylines with bulges, arcs, circles, ellipses, splines and blocks, in millimetres by the unit of the file, with the layers of the DXF on the free layers of the project; lines that meet become paths. **Auto-join paths…**, **Close path with tolerance…** and **Export selection as SVG / DXF…**.
+* **Shape commands and design tools:** **Dogbone / T-bone corners…**, **Export selection as SVG / DXF…**, and in the Arrange menu a **circular array**, **copy along a path**, **text on a path**, **trim by shape**, **remove duplicates**, **break apart**, **simplify**, **serial text**, **barcode / QR code**, **nesting** and a **Measure…** window.
+* **Control tab:** **overrides** of the feed (GRBL 1.1 and newer) and **saved positions** to jog back to (X and Y only: there is no Z axis).
+* **Device settings:** **Smoothieware** is a firmware choice of the Connection page.
+* Updated dependencies. baseCreator v1.39.2.
 
 ## v0.4.2
 
