@@ -47,3 +47,7 @@ Gdy GRBL powie `ALARM:n` albo `error:n`, konsola dostaje pod spodem wiersz z wyj
 ## Gdy maszyna się zatrzyma
 
 Alarm, błąd w zadaniu albo sterownik, który nie odpowiada, otwiera **okno pośrodku ekranu**: co się stało oraz dwa duże przyciski, **STOP** (czerwony: zatrzymuje zadanie i wrzeciono) i **UNLOCK** (pomarańczowy: kasuje alarm, `$X`). Zobacz, dlaczego się zatrzymało, zanim odblokujesz: narzędzie może tkwić w materiale.
+
+## Korekty i zapisane pozycje
+
+Przy kontrolerze GRBL 1.1 lub nowszym, który je raportuje, karta Control ma **Overrides**: posuw można zmieniać co 10 % i 1 % podczas zadania, a ruchy szybkie zwolnić do 50 % lub 25 %. **Saved positions** zapamiętuje, gdzie jest narzędzie (pozycja maszynowa, z nazwą) i wraca tam, najpierw podnosząc pisak; nie ma osi Z, więc ruszają się tylko X i Y. Lista leży w `saved_positions.json` we wspólnym folderze danych. **Smoothieware** to wybór firmware'u na stronie Connection; jest strumieniowany jak GRBL i nie był próbowany na prawdziwej płytce.

@@ -25,7 +25,7 @@ Open-source software for pen plotters, written in Rust. Devices, pens as layers,
 ## At a glance
 
 * **Editor** of baseCreator: shapes, node editing, text, grouping, alignment, undo, grid and snapping, on an A4 work area.
-* **Import:** SVG, PDF / Illustrator, LightBurn projects (`.lbrn2`), UGS Designer files (`.ugsd`); 310 clipart pictures with online search.
+* **Import:** SVG, PDF / Illustrator, DXF, LightBurn projects (`.lbrn2`), UGS Designer files (`.ugsd`); 310 clipart pictures with online search.
 * **Project file:** `.cre`, shared with LightCreator and MillCreator; the sections of other programs are kept when you save.
 * **Interface:** 30 languages (including PenCreator's own texts) and 14 colour schemes.
 * **Devices and pens:** a list of plotters on the start screen (**I have no device** makes the Dummy), 64 layers that are pens (colour, width, speed, outline or fill with lines), a plot of the job and G-code for GRBL.

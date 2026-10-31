@@ -47,3 +47,7 @@ When GRBL says `ALARM:n` or `error:n`, the console gets a line under it that exp
 ## When the machine stops
 
 An alarm, an error in a job or a controller that does not answer opens a **window in the middle of the screen**: what happened, and two big buttons, **STOP** (red: stops the job and the spindle) and **UNLOCK** (orange: clears the alarm, `$X`). Look at why it stopped before you unlock: the tool may be in the material.
+
+## Overrides and saved positions
+
+With a GRBL 1.1 or newer controller that reports them, the Control tab has **Overrides**: the feed can be changed in steps of 10 % and 1 % while a job runs, and the rapids slowed to 50 % or 25 %. **Saved positions** remembers where the tool is (machine position, with a name) and goes back there with the pen up first; there is no Z axis, so only X and Y move. The list is kept in `saved_positions.json` in the shared data folder. **Smoothieware** is a firmware choice of the Connection page; it is streamed like GRBL and untried on a real board.
