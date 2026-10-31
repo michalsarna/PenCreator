@@ -2,7 +2,7 @@
 
 Each release gets the next version number. Newest first.
 
-## v0.5.1 (not released yet)
+## v0.5.1
 
 * **Colours:** the background and the work-area colours of the view options work (they did nothing here) and are saved, also in a backup.
 * **Preview:** the fit buttons are next to *Reset view*; the title bar has only the pin button.
