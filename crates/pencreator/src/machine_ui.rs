@@ -120,7 +120,7 @@ impl App {
                     self.keep_control();
                 }
                 // The tool length sensor is for milling machines.
-                Notice::Probed { .. } | Notice::TlsReference { .. } | Notice::TlsTool { .. } | Notice::TlsTest { .. } | Notice::TlsFailed => {}
+                Notice::Probed { .. } | Notice::TlsReference { .. } | Notice::TlsTool { .. } | Notice::TlsTest { .. } | Notice::TlsFailed | Notice::CenterFound { .. } | Notice::CenterFailed => {}
             }
         }
     }
