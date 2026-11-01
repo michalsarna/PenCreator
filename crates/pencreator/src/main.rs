@@ -5,6 +5,7 @@ mod autosave_glue;
 mod backup_ui;
 mod device;
 mod device_ui;
+mod layer_presets;
 mod layers;
 mod layers_ui;
 mod machine_ui;
@@ -254,6 +255,9 @@ struct App {
     saved_rev: u64,
     /// The tabs of open drawings (the shown one is the live fields above), and the number of the recovery file of the shown one.
     tabs_state: workspaces::Tabs,
+    /// The layer presets (read from the file when the window is first opened) and the state of their window.
+    presets: Option<base_ui::layer_presets_ui::Library<layers::PenLayer>>,
+    presets_ui: base_ui::layer_presets_ui::PresetsUi,
     /// The central area in panes (one pane unless the person split the view).
     panes: base_ui::work_panes::Panes,
     slot: usize,
@@ -411,6 +415,8 @@ impl App {
             autosave: Default::default(),
             saved_rev: 0,
             tabs_state: Default::default(),
+            presets: None,
+            presets_ui: Default::default(),
             panes: base_ui::work_panes::Panes::from_json(&saved("panes").unwrap_or_default()),
             slot: 0,
             quitting: false,
@@ -1078,6 +1084,7 @@ impl App {
         self.close_dialogs(ctx);
         self.image_dialogs(ctx);
         pens_ui::pens_window(ctx, &mut self.pens_win, &mut self.pens);
+        self.layer_presets_window(ctx);
         let mut show = self.show_options;
         base_ui::editor::view_options_window(self, ctx, &mut show);
         self.clip_dialogs(ctx);

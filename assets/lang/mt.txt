@@ -257,3 +257,5 @@
 256|G-code proprju tal-apparat: {}
 257|Fil-G-code tal-bidla tal-pinna wkoll:
 258|G-code tiegħek stess jiżdied ma' kull programm, kmand wieħed f'kull linja (massimu 20 linja).
+259|Tella' l-preset
+260|Il-pinna tal-preset mhix fil-librerija: is-saff m'għandux pinna

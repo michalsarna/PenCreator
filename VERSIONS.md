@@ -4,6 +4,8 @@ Each release gets the next version number. Newest first.
 
 ## v0.5.3 (not released yet)
 
+* **Layer presets** (the pen settings of a layer, saved under a name) in the shared window of baseCreator: search, rename, delete, export and import of a file. baseCreator v1.50.0.
+* **Show variable names** (*View options*, off by default): the name of the variable beside the label of a field that has one (device, layer); a click copies `{name}`. baseCreator v1.49.0.
 * **G-code of the file:** a new device page *G-code* with *Very start of the file*, *Very end of the file* and **Own file format** for controllers (decimal point after whole numbers, `%` lines, the dwell word, line numbers, no comments), and `{variables}` in the G-code of the pen change; all off by default, the file is the same as before. baseCreator v1.48.0.
 * **Layer names** beside the colours (*View options*, off by default), **Preview G-code** next to *Save G-code* (shows the program without saving it) and *Preview G-code after saving* (off by default). baseCreator v1.47.0.
 * **Split view:** the work area in up to three panes (the active drawing, another open drawing to look at, the preview, the G-code analysis, the camera), side by side or stacked, with *Show beside* in the tab menu, and a pane can go to a window of its own on another monitor. The layout is remembered. baseCreator v1.46.0.

@@ -257,3 +257,5 @@
 256|Enhetens egen G-kod: {}
 257|I G-koden för pennbyte även:
 258|Egen G-kod läggs till i varje program, ett kommando per rad (högst 20 rader).
+259|Läs in förinställning
+260|Pennan från förinställningen finns inte i biblioteket: lagret har ingen penna
