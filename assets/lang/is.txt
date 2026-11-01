@@ -259,3 +259,4 @@
 258|Eigin G-kóði er bætt við hvert forrit, ein skipun í línu (í mesta lagi 20 línur).
 259|Hlaða forstillingu
 260|Penninn úr forstillingunni er ekki í safninu: lagið er án penna
+261|Aðdráttur

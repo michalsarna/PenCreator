@@ -259,3 +259,4 @@
 258	Own G-code is added to every program, one command per line (at most 20 lines).
 259	Load preset
 260	The pen of the preset is not in the library: the layer has no pen
+261	Zoom

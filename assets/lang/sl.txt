@@ -259,3 +259,4 @@
 258|Lastna G-koda se doda vsakemu programu, en ukaz na vrstico (največ 20 vrstic).
 259|Naloži prednastavitev
 260|Pero iz prednastavitve ni v knjižnici: plast je brez peresa
+261|Povečava

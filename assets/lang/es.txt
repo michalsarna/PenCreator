@@ -259,3 +259,4 @@
 258|El G-code propio se añade a cada programa, un comando por línea (como máximo 20 líneas).
 259|Cargar preajuste
 260|La pluma del preajuste no está en la biblioteca: la capa no tiene pluma
+261|Ampliación

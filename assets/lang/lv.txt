@@ -259,3 +259,4 @@
 258|Jūsu G kods tiek pievienots katrai programmai, viena komanda rindā (ne vairāk kā 20 rindu).
 259|Ielādēt sagatavi
 260|Sagataves pildspalvas nav bibliotēkā: slānim nav pildspalvas
+261|Tālummaiņa

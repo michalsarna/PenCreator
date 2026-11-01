@@ -259,3 +259,4 @@
 258|O G-code próprio é adicionado a cada programa, um comando por linha (no máximo 20 linhas).
 259|Carregar predefinição
 260|A caneta da predefinição não está na biblioteca: a camada fica sem caneta
+261|Ampliação

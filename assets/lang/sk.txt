@@ -259,3 +259,4 @@
 258|Vlastný G-kód sa pridáva ku každému programu, jeden príkaz na riadok (najviac 20 riadkov).
 259|Načítať predvoľbu
 260|Pero z predvoľby nie je v knižnici: vrstva je bez pera
+261|Priblíženie

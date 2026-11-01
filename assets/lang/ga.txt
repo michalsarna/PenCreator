@@ -259,3 +259,4 @@
 258|Cuirtear do G-code féin le gach clár, ordú amháin in aghaidh na líne (20 líne ar a mhéad).
 259|Luchtaigh réamhshocrú
 260|Níl peann an réamhshocraithe sa leabharlann: níl peann ag an sraith
+261|Zúmáil

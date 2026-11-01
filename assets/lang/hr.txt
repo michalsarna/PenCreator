@@ -259,3 +259,4 @@
 258|Vlastiti G-kod dodaje se svakom programu, jedna naredba po retku (najviše 20 redaka).
 259|Učitaj predložak
 260|Olovka iz predloška nije u biblioteci: sloj nema olovku
+261|Povećanje

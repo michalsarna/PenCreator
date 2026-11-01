@@ -132,7 +132,7 @@ impl App {
 
     /// The G-code of the drawing as text (with the postprocessors), and the program it was made from. `None` (the reason is in the
     /// status line) when there is nothing to draw or a postprocessor failed.
-    fn gcode_text(&mut self, name: &str) -> Option<(String, crate::plot::Program)> {
+    pub(crate) fn gcode_text(&mut self, name: &str) -> Option<(String, crate::plot::Program)> {
         if !self.gcode_variables_ok() {
             return None;
         }
@@ -164,7 +164,7 @@ impl App {
         }
     }
 
-    fn gcode_name(&self) -> String {
+    pub(crate) fn gcode_name(&self) -> String {
         self.path.as_ref().and_then(|p| p.file_stem()).map(|s| s.to_string_lossy().into_owned()).unwrap_or_else(|| "untitled".into())
     }
 
@@ -190,16 +190,23 @@ impl App {
         }
     }
 
-    /// The G-code as it would be written, shown in the analysis of G-code; nothing is written to the disk.
+    /// The G-code of the project as text in a tab of its own (coloured, open to edits); nothing is written to the disk. A project has
+    /// one such tab: when it is open already it is shown (and made again when nothing was changed by hand).
     pub(crate) fn preview_gcode(&mut self) {
-        let name = self.gcode_name();
+        let name = format!("{}.nc", self.gcode_name());
+        let slot = self.slot;
         let Some((text, prog)) = self.gcode_text(&name) else { return };
-        match base_ui::gcode_view_ui::open_text(&mut self.gcode_view, &format!("{name}.nc ({})", tr("preview")), &text) {
-            Ok(()) => {
-                self.status = if prog.warnings.is_empty() { tr("The G-code is shown, nothing is saved").to_string() } else { format!("{} ({})", tr("The G-code is shown, nothing is saved"), prog.warnings.iter().map(|w| w.text()).collect::<Vec<_>>().join("; ")) }
+        match self.gcode_texts.iter_mut().find(|g| g.slot == slot) {
+            Some(g) => {
+                if !g.dirty() {
+                    g.replace(text);
+                }
+                g.name = name;
+                self.panes.select(base_ui::work_panes::Content::GcodeText(slot));
             }
-            Err(e) => self.status = e,
+            None => self.gcode_texts.push(base_ui::gcode_text_ui::GcodeText::new(slot, &name, text)),
         }
+        self.status = if prog.warnings.is_empty() { tr("The G-code is shown, nothing is saved").to_string() } else { format!("{} ({})", tr("The G-code is shown, nothing is saved"), prog.warnings.iter().map(|w| w.text()).collect::<Vec<_>>().join("; ")) };
     }
 
     pub(crate) fn preview_window(&mut self, ctx: &egui::Context) {
@@ -287,18 +294,14 @@ impl App {
         ui.horizontal(|ui| {
             ui.spacing_mut().item_spacing.x = 4.0;
             ui.label(RichText::new(tr("Preview")).strong());
-            ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                if base_ui::doc_tabs::back_to_window_button(ui) {
-                    self.preview_pin(false);
-                }
-            });
         });
         egui::Frame::new().inner_margin(egui::Margin { left: 8, right: 8, top: 0, bottom: 3 }).show(ui, |ui| self.preview_body(ui));
     }
 
     /// Is the preview a tab of the work area (so that the bar of the tabs has one for it)?
     pub(crate) fn preview_work_tab(&self) -> bool {
-        self.show_plot && self.preview_tab
+        // The preview is a tab (or a window of its own that the person took the tab out into); it is not a floating window of the program.
+        self.show_plot
     }
 
     /// Pin the preview as a tab of the work area (or make it a window again).
@@ -393,6 +396,12 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     if let Some(p) = pen_at {
         painter.circle_stroke(at(p), 5.0, Stroke::new(1.5, Color32::from_rgb(0xd0, 0x30, 0x30)));
     }
+    // The slider of the zoom at the right edge: the same as the wheel, for a mouse without one.
+    let track = egui::Rect::from_min_max(Pos2::new(rect.right() - 28.0, rect.top() + 24.0), Pos2::new(rect.right() - 8.0, (rect.bottom() - 24.0).max(rect.top() + 80.0)));
+    let mut z = view.zoom.max(0.2).ln();
+    if ui.put(track, egui::Slider::new(&mut z, 0.2f32.ln()..=50.0f32.ln()).vertical().show_value(false)).on_hover_text(tr("Zoom")).changed() {
+        view.zoom = z.exp().clamp(0.2, 50.0);
+    }
 }
 
 #[cfg(test)]
@@ -431,22 +440,19 @@ mod tests {
     }
 
     #[test]
-    fn the_preview_is_pinned_as_a_tab_of_the_work_area_and_unpinned_again() {
+    fn the_preview_is_always_a_tab_of_the_work_area_and_draws_there() {
         let ctx = egui::Context::default();
         let mut a = App::build(&ctx, None, false);
+        assert!(!a.preview_work_tab(), "closed to begin with");
         a.open_preview();
-        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
-        out.textures_delta.clear();
-        assert!(!a.preview_work_tab(), "a window to begin with");
-        a.preview_pin(true);
+        assert!(a.preview_work_tab(), "a tab, not a floating window");
         let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
             a.preview_window(ui.ctx());
             egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
         });
         out.textures_delta.clear();
-        assert!(a.preview_work_tab() && a.pv_tab_shown);
-        a.preview_pin(false);
-        assert!(!a.preview_work_tab() && !a.pv_tab_shown && a.show_plot);
+        a.preview_close();
+        assert!(!a.preview_work_tab() && !a.show_plot);
     }
 
     #[test]

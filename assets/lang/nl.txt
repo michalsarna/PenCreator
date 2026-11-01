@@ -259,3 +259,4 @@
 258|Eigen G-code wordt aan elk programma toegevoegd, één opdracht per regel (maximaal 20 regels).
 259|Voorinstelling laden
 260|De pen van de voorinstelling staat niet in de bibliotheek: de laag heeft geen pen
+261|Zoom
