@@ -130,11 +130,16 @@ pub struct Device {
     #[serde(default)]
     pub control: Control,
     /// The very start and the very end of the file.
-    #[serde(default)]
+    #[serde(default, skip_serializing_if = "is_unset")]
     pub frame: base_core::gcode_out::Frame,
     /// The last pass over the finished program, for controllers that read G-code in their own way (all off by default).
-    #[serde(default)]
+    #[serde(default, skip_serializing_if = "is_unset")]
     pub flavour: base_core::gcode_out::Flavour,
+}
+
+/// A setting that was never changed is not written: files made before the setting existed stay the same.
+fn is_unset<T: Default + PartialEq>(v: &T) -> bool {
+    *v == T::default()
 }
 
 /// The variables of the own G-code that do not depend on the place in the program.
