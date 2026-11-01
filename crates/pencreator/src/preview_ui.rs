@@ -4,7 +4,6 @@ use crate::App;
 use base_ui::i18n::{tr, trf};
 use base_ui::editor::EditorHost;
 use base_ui::theme;
-use base_ui::window::popup_with;
 use eframe::egui::{self, Color32, Pos2, RichText, Stroke};
 
 /// How the plot is looked at: the zoom and the shift on top of "fit to the window", and how much of it is drawn.
@@ -149,7 +148,7 @@ impl App {
     /// What the variables of the own G-code are made of: the project, the machine and the moment (the box and the layer are filled
     /// in when the program is written).
     pub(crate) fn gcode_info(&self, name: &str) -> base_core::gcode_out::Info {
-        base_core::gcode_out::Info { project_name: name.to_string(), project_path: self.path.as_ref().map(|p| p.display().to_string()).unwrap_or_default(), ..base_core::gcode_out::Info::now() }
+        base_core::gcode_out::Info { project_name: name.to_string(), project_path: self.path.as_ref().map(|p| p.display().to_string()).unwrap_or_default(), notes: self.description.clone(), ..base_core::gcode_out::Info::now() }
     }
 
     /// Are the variables in the own G-code of the device all known? When not, the reason goes to the status line and the file is
@@ -209,40 +208,19 @@ impl App {
         self.status = if prog.warnings.is_empty() { tr("The G-code is shown, nothing is saved").to_string() } else { format!("{} ({})", tr("The G-code is shown, nothing is saved"), prog.warnings.iter().map(|w| w.text()).collect::<Vec<_>>().join("; ")) };
     }
 
-    pub(crate) fn preview_window(&mut self, ctx: &egui::Context) {
+    pub(crate) fn preview_window(&mut self, _ctx: &egui::Context) {
         if !self.show_plot {
             self.pv_tab_seen = false;
             self.pv_tab_shown = false;
             return;
         }
-        if self.preview_tab {
-            // Drawn in the work area (`App::preview_work_panel`); it is shown the first time it opens.
-            if !self.pv_tab_seen {
-                self.pv_tab_shown = true;
-                self.cam_ws_shown = false;
-            }
-            self.pv_tab_seen = true;
-            return;
+        // The preview is a tab of the work area (drawn by `preview_work_panel`); it is shown the first time it opens. A window of its
+        // own is the tab that the person took out (`work_panes`), never a second copy.
+        if !self.pv_tab_seen {
+            self.pv_tab_shown = true;
+            self.cam_ws_shown = false;
         }
-        self.pv_tab_seen = false;
-        self.pv_tab_shown = false;
-        if self.prog.is_none() || self.prog_rev != self.job_stamp() {
-            self.prog = Some(self.make_program());
-            self.prog_rev = self.job_stamp();
-        }
-        let mut open = true;
-        let mut pin = false;
-        let tools = |ui: &mut egui::Ui| {
-            pin = base_ui::doc_tabs::pin_as_tab_button(ui);
-        };
-        popup_with(ctx, "preview_plot", &tr("Preview"), [980.0, 700.0], &mut open, tools, |ui| self.preview_body(ui));
-        self.show_plot = open;
-        if pin {
-            self.preview_pin(true);
-        }
-        if !open {
-            self.playback.playing = false;
-        }
+        self.pv_tab_seen = true;
     }
 
     /// The options, totals and the picture (the same in the window and in the tab).
@@ -302,15 +280,6 @@ impl App {
     pub(crate) fn preview_work_tab(&self) -> bool {
         // The preview is a tab (or a window of its own that the person took the tab out into); it is not a floating window of the program.
         self.show_plot
-    }
-
-    /// Pin the preview as a tab of the work area (or make it a window again).
-    pub(crate) fn preview_pin(&mut self, tab: bool) {
-        self.preview_tab = tab;
-        self.pv_tab_shown = tab;
-        if tab {
-            self.cam_ws_shown = false;
-        }
     }
 
     /// The tab was closed with its cross.
@@ -416,21 +385,33 @@ mod tests {
         let mut a = App::build(&ctx, None, false);
         a.open_preview();
         assert!(a.show_plot && a.prog.as_ref().unwrap().is_empty());
-        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
         out.textures_delta.clear();
         a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(20.0, 20.0));
         a.touch_rev();
-        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
         out.textures_delta.clear();
         assert!(!a.prog.as_ref().unwrap().is_empty(), "the new shape is drawn");
         assert_eq!(a.prog_rev, a.job_stamp());
         a.view.progress = 0.4;
-        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
         out.textures_delta.clear();
         // The two fits: the whole sheet is the first view; the lines of a small shape zoom in.
         let mut zoom_of = |fit| {
             a.view.fit = Some(fit);
-            let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+            let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
             out.textures_delta.clear();
             assert!(a.view.fit.is_none(), "the request is done by the picture");
             a.view.zoom
@@ -460,15 +441,20 @@ mod tests {
         let ctx = egui::Context::default();
         let mut a = App::build(&ctx, None, false);
         a.open_preview();
-        a.preview_pin(true);
         a.cam_ws_shown = true;
         a.preview_close();
         assert!(!a.show_plot && !a.pv_tab_shown);
-        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
         out.textures_delta.clear();
         // Opened again: it is still a tab, and the shown one.
         a.open_preview();
-        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| a.preview_window(ui.ctx()));
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            a.preview_window(ui.ctx());
+            egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+        });
         out.textures_delta.clear();
         assert!(a.preview_work_tab() && a.pv_tab_shown && !a.cam_ws_shown);
     }
