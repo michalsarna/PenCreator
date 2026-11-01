@@ -4,6 +4,7 @@ Each release gets the next version number. Newest first.
 
 ## v0.5.3 (not released yet)
 
+* **Panes made of tabs:** every pane has a bar of tabs (no list to choose from); tabs are dragged between panes or moved from the right-click menu; the last tab closed closes the pane; nothing is opened twice (a project that is open is shown by its tab). **Preview G-code** is a tab with the G-code as coloured text that can be edited (it asks to save the edits when closed). The preview has a zoom slider; the preview, the G-code text and the camera can go to a window of their own. The About window has the home page and a list of the credits. baseCreator v1.51.0.
 * **Layer presets** (the pen settings of a layer, saved under a name) in the shared window of baseCreator: search, rename, delete, export and import of a file. baseCreator v1.50.0.
 * **Show variable names** (*View options*, off by default): the name of the variable beside the label of a field that has one (device, layer); a click copies `{name}`. baseCreator v1.49.0.
 * **G-code of the file:** a new device page *G-code* with *Very start of the file*, *Very end of the file* and **Own file format** for controllers (decimal point after whole numbers, `%` lines, the dwell word, line numbers, no comments), and `{variables}` in the G-code of the pen change; all off by default, the file is the same as before. baseCreator v1.48.0.

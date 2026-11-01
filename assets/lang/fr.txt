@@ -259,3 +259,4 @@
 258|Votre propre G-code est ajouté à chaque programme, une commande par ligne (20 lignes au plus).
 259|Charger le préréglage
 260|Le stylo du préréglage n'est pas dans la bibliothèque : le calque n'a pas de stylo
+261|Zoom

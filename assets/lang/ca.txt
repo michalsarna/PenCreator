@@ -259,3 +259,4 @@
 258|El G-code propi s'afegeix a cada programa, una ordre per línia (com a màxim 20 línies).
 259|Carrega el predefinit
 260|La ploma del predefinit no és a la biblioteca: la capa no té ploma
+261|Ampliació

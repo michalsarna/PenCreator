@@ -259,3 +259,4 @@
 258|G-code tiegħek stess jiżdied ma' kull programm, kmand wieħed f'kull linja (massimu 20 linja).
 259|Tella' l-preset
 260|Il-pinna tal-preset mhix fil-librerija: is-saff m'għandux pinna
+261|Zoom

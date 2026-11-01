@@ -259,3 +259,4 @@
 258|Oma G-kood lisatakse igale programmile, üks käsk rea kohta (kuni 20 rida).
 259|Laadi eelseade
 260|Eelseade pliiats pole teegis: kihil pole pliiatsit
+261|Suum

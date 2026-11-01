@@ -259,3 +259,4 @@
 258|A saját G-kód minden programhoz hozzáadódik, soronként egy parancs (legfeljebb 20 sor).
 259|Beállítás betöltése
 260|A beállítás tolla nincs a könyvtárban: a rétegnek nincs tolla
+261|Nagyítás
