@@ -247,3 +247,6 @@
 246|Rindas, kas tiek nosūtītas, kad plotters ir ieradies, pirms apstāšanās: mehānismam, kas pildspalvu maina pats. Ar izslēgtu apstāšanos darbs turpinās uzreiz pēc tām.
 247|Importēt DXF…
 248|Ievietot
+249|Skatam ir ne vairāk kā trīs rūtis
+250|Rādīt priekšskatījumu šeit
+251|Nav atvērts neviens G-koda fails: File, View G-code file…

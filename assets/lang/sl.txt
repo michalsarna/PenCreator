@@ -247,3 +247,6 @@
 246|Vrstice, poslane ko plotter prispe, pred ustavitvijo: za mehanizem, ki pero zamenja sam. Z izklopljeno ustavitvijo se opravilo nadaljuje takoj za njimi.
 247|Uvozi DXF…
 248|Vstavi
+249|Pogled ima največ tri podokna
+250|Pokaži predogled tukaj
+251|Nobena datoteka G-kode ni odprta: File, View G-code file…

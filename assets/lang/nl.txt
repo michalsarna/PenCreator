@@ -247,3 +247,6 @@
 246|Regels die worden verstuurd als de plotter is aangekomen, vóór de stop: voor een mechanisme dat de pen zelf wisselt. Met de stop uit gaat de taak er direct na verder.
 247|DXF importeren…
 248|Invoegen
+249|De weergave heeft maximaal drie deelvensters
+250|Voorbeeld hier tonen
+251|Geen G-code-bestand geopend: File, View G-code file…

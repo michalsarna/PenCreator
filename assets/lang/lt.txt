@@ -247,3 +247,6 @@
 246|Eilutės, siunčiamos braižytuvui atvykus, prieš sustojimą: mechanizmui, kuris pats keičia rašiklį. Su išjungtu sustojimu užduotis tęsiasi iškart po jų.
 247|Importuoti DXF…
 248|Įterpti
+249|Rodinys turi ne daugiau kaip tris skydelius
+250|Rodyti peržiūrą čia
+251|Neatidarytas joks G kodo failas: File, View G-code file…

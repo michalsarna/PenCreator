@@ -247,3 +247,6 @@
 246|Linjer som sendes når plotteren er framme, før stoppet: for en mekanisme som bytter penn selv. Med stoppet av fortsetter jobben rett etter dem.
 247|Importer DXF…
 248|Sett inn
+249|Visningen har høyst tre paneler
+250|Vis forhåndsvisningen her
+251|Ingen G-kodefil er åpen: File, View G-code file…

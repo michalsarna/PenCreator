@@ -247,3 +247,6 @@
 246|A plotter megérkezése után, a megállás előtt elküldött sorok: a tollat magától cserélő szerkezethez. Kikapcsolt megállásnál a munka közvetlenül utánuk folytatódik.
 247|DXF importálása…
 248|Beszúrás
+249|A nézetnek legfeljebb három panelje lehet
+250|Előnézet megjelenítése itt
+251|Nincs megnyitva G-kód fájl: File, View G-code file…

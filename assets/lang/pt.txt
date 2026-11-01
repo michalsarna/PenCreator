@@ -247,3 +247,6 @@
 246|Linhas enviadas quando o plotter chegou, antes da paragem: para um mecanismo que troca a caneta sozinho. Com a paragem desligada o trabalho continua logo a seguir.
 247|Importar DXF…
 248|Inserir
+249|A vista tem no máximo três painéis
+250|Mostrar aqui a pré-visualização
+251|Nenhum ficheiro G-code aberto: File, View G-code file…
