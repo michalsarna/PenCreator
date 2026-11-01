@@ -247,3 +247,6 @@
 246|Retci poslani kad ploter stigne, prije zaustavljanja: za mehanizam koji sam mijenja olovku. S isključenim zaustavljanjem posao nastavlja odmah nakon njih.
 247|Uvezi DXF…
 248|Umetni
+249|Prikaz ima najviše tri okna
+250|Prikaži pregled ovdje
+251|Nijedna G-kod datoteka nije otvorena: File → View G-code file…

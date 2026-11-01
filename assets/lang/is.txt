@@ -247,3 +247,6 @@
 246|Línur sendar þegar teiknarinn er kominn, fyrir stoppið: fyrir búnað sem skiptir sjálfur um penna. Með stoppið slökkt heldur verkið áfram strax á eftir.
 247|Flytja inn DXF…
 248|Setja inn
+249|Sýnin hefur í mesta lagi þrjá glugga
+250|Sýna forskoðun hér
+251|Engin G-kóðaskrá er opin: File → View G-code file…

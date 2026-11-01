@@ -190,7 +190,7 @@ impl App {
     }
 
     /// The options, totals and the picture (the same in the window and in the tab).
-    fn preview_body(&mut self, ui: &mut egui::Ui) {
+    pub(crate) fn preview_body(&mut self, ui: &mut egui::Ui) {
         let prog = self.prog.as_ref().expect("the program was made above");
         ui.horizontal_wrapped(|ui| {
             if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {

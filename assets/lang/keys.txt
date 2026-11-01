@@ -247,3 +247,6 @@
 246	Lines sent when the plotter has arrived, before the stop: for a mechanism that changes the pen by itself. With the stop switched off the job goes on right after them.
 247	Import DXF…
 248	Insert
+249	The view has three panes at most
+250	Show the preview here
+251	No G-code file is open: File → View G-code file…

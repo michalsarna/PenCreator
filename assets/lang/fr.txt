@@ -247,3 +247,6 @@
 246|Lignes envoyées quand la table traçante est arrivée, avant l'arrêt : pour un mécanisme qui change le stylo tout seul. Sans l'arrêt, le travail continue juste après elles.
 247|Importer un DXF…
 248|Insérer
+249|La vue compte trois panneaux au maximum
+250|Afficher l'aperçu ici
+251|Aucun fichier G-code ouvert : File → View G-code file…

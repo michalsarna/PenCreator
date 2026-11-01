@@ -247,3 +247,6 @@
 246|Rader som skickas när plottern har kommit fram, före stoppet: för en mekanism som byter penna själv. Med stoppet av fortsätter jobbet direkt efter dem.
 247|Importera DXF…
 248|Infoga
+249|Vyn har högst tre rutor
+250|Visa förhandsgranskningen här
+251|Ingen G-kodfil är öppen: File → View G-code file…

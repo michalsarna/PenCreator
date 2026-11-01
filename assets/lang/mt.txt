@@ -247,3 +247,6 @@
 246|Linji mibgħuta meta l-plotter jasal, qabel il-waqfa: għal mekkaniżmu li jbiddel il-pinna waħdu. Bil-waqfa mitfija x-xogħol ikompli eżatt warajhom.
 247|Importa DXF…
 248|Daħħal
+249|Il-veduta għandha mhux aktar minn tliet pannelli
+250|Uri l-previżjoni hawn
+251|Ebda fajl G-code miftuħ: File → View G-code file…
