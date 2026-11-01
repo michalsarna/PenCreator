@@ -257,3 +257,5 @@
 256|G-code propio del dispositivo: {}
 257|En el G-code del cambio de pluma también:
 258|El G-code propio se añade a cada programa, un comando por línea (como máximo 20 líneas).
+259|Cargar preajuste
+260|La pluma del preajuste no está en la biblioteca: la capa no tiene pluma

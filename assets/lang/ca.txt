@@ -257,3 +257,5 @@
 256|El G-code propi del dispositiu: {}
 257|Al G-code del canvi de ploma també:
 258|El G-code propi s'afegeix a cada programa, una ordre per línia (com a màxim 20 línies).
+259|Carrega el predefinit
+260|La ploma del predefinit no és a la biblioteca: la capa no té ploma

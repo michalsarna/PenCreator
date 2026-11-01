@@ -257,3 +257,5 @@
 256|Įrenginio nuosavas G kodas: {}
 257|Rašiklio keitimo G kode taip pat:
 258|Jūsų G kodas pridedamas prie kiekvienos programos, po vieną komandą eilutėje (daugiausia 20 eilučių).
+259|Įkelti šabloną
+260|Šablono rašiklio bibliotekoje nėra: sluoksnis be rašiklio

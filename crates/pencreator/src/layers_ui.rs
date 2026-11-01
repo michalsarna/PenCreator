@@ -109,6 +109,16 @@ impl App {
         let mut assign = false;
         let mut open_pens = false;
         {
+            let presets_ui = &mut self.presets_ui;
+            ui.horizontal(|ui| {
+                if ui.button(tr("Save preset…")).on_hover_text(tr("Keep the settings of this layer under this name")).clicked() {
+                    presets_ui.show();
+                }
+                if ui.button(tr("Load preset")).on_hover_text(tr("Put these settings on the layer")).clicked() {
+                    presets_ui.show();
+                }
+            });
+            ui.add_space(4.0);
             let l = &mut self.layers[li];
             egui::ScrollArea::vertical().id_salt("layer_edit").auto_shrink([false, false]).show(ui, |ui| {
                 egui::Grid::new("layer_grid").num_columns(2).spacing([10.0, 6.0]).show(ui, |ui| {
@@ -186,6 +196,29 @@ impl App {
         }
         if changed {
             self.touch();
+        }
+    }
+}
+
+impl App {
+    /// The window of the layer presets: the list, search, rename, delete, export and import; a click puts the preset on the active layer.
+    pub(crate) fn layer_presets_window(&mut self, ctx: &egui::Context) {
+        use base_ui::layer_presets_ui::{window, Library, Pick};
+        if !self.presets_ui.open {
+            return;
+        }
+        let lib = self.presets.get_or_insert_with(|| Library::load(crate::layer_presets::FILE, &crate::layer_presets::valid));
+        let li = self.ed.active_layer.min(self.layers.len().saturating_sub(1));
+        let current = crate::layer_presets::of(&self.layers[li]);
+        if let Some(Pick::Apply(i)) = window(ctx, &mut self.presets_ui, lib, &|| current.clone(), &crate::layer_presets::valid) {
+            if let Some(p) = lib.items.get(i).map(|p| p.layer.clone()) {
+                let pens = &self.pens;
+                let had_the_pen = crate::layer_presets::apply(&p, &mut self.layers[li], &|id| pens.get(id).is_some());
+                if !had_the_pen {
+                    self.status = tr("The pen of the preset is not in the library: the layer has no pen").to_string();
+                }
+                self.touch();
+            }
         }
     }
 }
