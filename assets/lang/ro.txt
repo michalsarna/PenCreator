@@ -254,3 +254,8 @@
 253|Afișează G-code fără a-l salva
 254|previzualizare
 255|G-code este afișat, nu se salvează nimic
+256|G-code propriu al dispozitivului: {}
+257|În G-code al schimbării stiloului și:
+258|G-code-ul propriu se adaugă la fiecare program, o comandă pe linie (cel mult 20 de linii).
+259|Încarcă presetarea
+260|Stiloul din presetare nu este în bibliotecă: stratul nu are stilou

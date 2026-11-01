@@ -254,3 +254,8 @@
 253|G-code tonen zonder op te slaan
 254|voorbeeld
 255|De G-code wordt getoond, er wordt niets opgeslagen
+256|Eigen G-code van het apparaat: {}
+257|In de G-code van de penwissel ook:
+258|Eigen G-code wordt aan elk programma toegevoegd, één opdracht per regel (maximaal 20 regels).
+259|Voorinstelling laden
+260|De pen van de voorinstelling staat niet in de bibliotheek: de laag heeft geen pen

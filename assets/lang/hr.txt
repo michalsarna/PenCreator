@@ -254,3 +254,8 @@
 253|Prikaži G-kod bez spremanja
 254|pregled
 255|G-kod je prikazan, ništa nije spremljeno
+256|Vlastiti G-kod uređaja: {}
+257|U G-kodu zamjene olovke još:
+258|Vlastiti G-kod dodaje se svakom programu, jedna naredba po retku (najviše 20 redaka).
+259|Učitaj predložak
+260|Olovka iz predloška nije u biblioteci: sloj nema olovku

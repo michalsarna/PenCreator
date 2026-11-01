@@ -299,6 +299,11 @@ const TABLE: &[[&str; 7]] = &[
     ["Show the G-code without saving it", "Pokaż G-code bez zapisywania", "G-Code anzeigen, ohne zu speichern", "Mostra il G-code senza salvarlo", "Näytä G-koodi tallentamatta", "显示 G-code 但不保存", "G-code को सहेजे बिना दिखाएं"],
     ["preview", "podgląd", "Vorschau", "anteprima", "esikatselu", "预览", "पूर्वावलोकन"],
     ["The G-code is shown, nothing is saved", "G-code jest pokazany, nic nie zostało zapisane", "Der G-Code wird angezeigt, nichts wird gespeichert", "Il G-code è mostrato, nulla viene salvato", "G-koodi näytetään, mitään ei tallenneta", "已显示 G-code，未保存任何内容", "G-code दिखाया गया है, कुछ भी सहेजा नहीं गया"],
+    ["The own G-code of the device: {}", "Własny G-code urządzenia: {}", "Eigener G-Code des Geräts: {}", "G-code personalizzato del dispositivo: {}", "Laitteen oma G-koodi: {}", "设备的自定义 G-code：{}", "डिवाइस का अपना G-code: {}"],
+    ["In the G-code of the pen change also:", "W G-code zmiany pióra także:", "Im G-Code des Stiftwechsels außerdem:", "Nel G-code del cambio penna anche:", "Kynän vaihdon G-koodissa myös:", "在换笔的 G-code 中还可用：", "पेन बदलने के G-code में ये भी:"],
+    ["Own G-code is added to every program, one command per line (at most 20 lines).", "Własny G-code jest dodawany do każdego programu, jedno polecenie w wierszu (najwyżej 20 wierszy).", "Eigener G-Code wird jedem Programm hinzugefügt, ein Befehl pro Zeile (höchstens 20 Zeilen).", "Il G-code personale viene aggiunto a ogni programma, un comando per riga (al massimo 20 righe).", "Oma G-koodi lisätään jokaiseen ohjelmaan, yksi komento riviä kohti (enintään 20 riviä).", "自定义 G 代码会添加到每个程序中，每行一条命令（最多 20 行）。", "अपना G-कोड हर प्रोग्राम में जोड़ा जाता है, एक पंक्ति में एक कमांड (अधिकतम 20 पंक्तियाँ)।"],
+    ["Load preset", "Wczytaj preset", "Vorlage laden", "Carica preset", "Lataa esiasetus", "载入预设", "प्रीसेट लोड करें"],
+    ["The pen of the preset is not in the library: the layer has no pen", "Pisaka z presetu nie ma w bibliotece: warstwa jest bez pisaka", "Der Stift der Vorlage ist nicht in der Bibliothek: die Ebene hat keinen Stift", "La penna del preset non è nella libreria: il livello è senza penna", "Esiasetuksen kynä ei ole kirjastossa: tasolla ei ole kynää", "预设中的笔不在笔库中：该图层没有笔", "प्रीसेट का पेन लाइब्रेरी में नहीं है: परत में कोई पेन नहीं है"],
 ];
 
 #[cfg(test)]
