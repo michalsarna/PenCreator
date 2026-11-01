@@ -112,7 +112,7 @@ impl App {
             let l = &mut self.layers[li];
             egui::ScrollArea::vertical().id_salt("layer_edit").auto_shrink([false, false]).show(ui, |ui| {
                 egui::Grid::new("layer_grid").num_columns(2).spacing([10.0, 6.0]).show(ui, |ui| {
-                    ui.label(tr("Name"));
+                    base_ui::widgets::var_label(ui, tr("Name"), "layer_name");
                     changed |= ui.text_edit_singleline(&mut l.name).changed();
                     ui.end_row();
                     ui.label(tr("Colour"));
