@@ -76,7 +76,7 @@ pub fn menus() -> Menus<Act> {
         ),
         ("View", [std(std_entries::grid()), std(std_entries::zoom()), vec![Sep], std(std_entries::split_view()), vec![Sep], std(std_entries::background())].concat()),
         ("Machine", vec![Item(Act::DeviceSettings, "Device settings…", None), Item(Act::Firmware, "Firmware settings ($$)…", None), Item(Act::Calibration, "Calibration…", None), Item(Act::Diagnostics, "Diagnostics and statistics…", None), Sep, Item(Act::StartFrom, "Start from line…", None), Item(Act::CheckProgram, "Check the program", None)]),
-        ("Plotter", vec![Item(Act::Preview, "Plot of the job…", key("CmdOrCtrl+Shift+P", "Ctrl+Shift+P")), Item(Act::ExportGcode, "Export G-code…", key("CmdOrCtrl+Shift+G", "Ctrl+Shift+G"))]),
+        ("Plotter", vec![Item(Act::Preview, "Plot of the job…", key("CmdOrCtrl+Shift+P", "Ctrl+Shift+P")), Item(Act::ExportGcode, "Export G-code…", key("CmdOrCtrl+E", "Ctrl+E"))]),
         (
             "Settings",
             vec![
@@ -92,4 +92,34 @@ pub fn menus() -> Menus<Act> {
         ),
         ("Help", help),
     ]
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Every key of the menus belongs to one entry only (Ctrl+Shift+G was Ungroup and Export G-code at once).
+    #[test]
+    fn no_two_entries_of_the_menus_share_a_key() {
+        fn keys(entries: &[Entry<Act>], out: &mut Vec<(&'static str, &'static str)>) {
+            for e in entries {
+                match e {
+                    Entry::Item(_, label, Some((accel, _))) => out.push((accel, label)),
+                    Entry::Sub(_, children) => keys(children, out),
+                    _ => {}
+                }
+            }
+        }
+        let mut all = vec![];
+        for (_, entries) in menus() {
+            keys(&entries, &mut all);
+        }
+        for (i, (k, label)) in all.iter().enumerate() {
+            // The same entry twice (Generate shape is in File and in Insert) is the same command, not a clash.
+            if let Some((_, other)) = all[i + 1..].iter().find(|(k2, l2)| k2 == k && l2 != label) {
+                panic!("{k} is the key of {label} and of {other}");
+            }
+        }
+        assert!(all.iter().any(|(k, l)| *k == "CmdOrCtrl+Shift+G" && *l == "Ungroup"));
+    }
 }
