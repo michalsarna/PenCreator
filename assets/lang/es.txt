@@ -260,3 +260,4 @@
 259|Cargar preajuste
 260|La pluma del preajuste no está en la biblioteca: la capa no tiene pluma
 261|Ampliación
+262|No es una dirección de cámara (http, https, rtsp, udp, rtp o rtmp).

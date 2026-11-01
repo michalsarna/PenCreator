@@ -260,3 +260,4 @@
 259|Încarcă presetarea
 260|Stiloul din presetare nu este în bibliotecă: stratul nu are stilou
 261|Mărire
+262|Nu este o adresă de cameră (http, https, rtsp, udp, rtp sau rtmp).

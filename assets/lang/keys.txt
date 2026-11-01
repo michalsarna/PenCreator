@@ -260,3 +260,4 @@
 259	Load preset
 260	The pen of the preset is not in the library: the layer has no pen
 261	Zoom
+262	Not a camera address (http, https, rtsp, udp, rtp or rtmp).

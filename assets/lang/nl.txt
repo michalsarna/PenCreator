@@ -260,3 +260,4 @@
 259|Voorinstelling laden
 260|De pen van de voorinstelling staat niet in de bibliotheek: de laag heeft geen pen
 261|Zoom
+262|Geen cameraadres (http, https, rtsp, udp, rtp of rtmp).
