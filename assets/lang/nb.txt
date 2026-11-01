@@ -257,3 +257,5 @@
 256|Enhetens egen G-kode: {}
 257|I G-koden for pennbytte også:
 258|Egen G-kode legges til hvert program, én kommando per linje (maks. 20 linjer).
+259|Last inn forhåndsinnstilling
+260|Pennen fra forhåndsinnstillingen er ikke i biblioteket: laget har ingen penn
