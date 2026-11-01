@@ -254,3 +254,6 @@
 253|Afficher le G-code sans l'enregistrer
 254|aperçu
 255|Le G-code est affiché, rien n'est enregistré
+256|G-code personnalisé de l'appareil : {}
+257|Dans le G-code du changement de stylo aussi :
+258|Votre propre G-code est ajouté à chaque programme, une commande par ligne (20 lignes au plus).

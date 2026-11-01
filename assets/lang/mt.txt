@@ -254,3 +254,6 @@
 253|Uri l-G-code mingħajr ma tinħażen
 254|previżjoni
 255|Il-G-code qed jintwera, xejn ma nħażen
+256|G-code proprju tal-apparat: {}
+257|Fil-G-code tal-bidla tal-pinna wkoll:
+258|G-code tiegħek stess jiżdied ma' kull programm, kmand wieħed f'kull linja (massimu 20 linja).

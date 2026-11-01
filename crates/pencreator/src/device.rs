@@ -129,6 +129,25 @@ pub struct Device {
     /// Jogging, macros, statistics and maintenance of the machine.
     #[serde(default)]
     pub control: Control,
+    /// The very start and the very end of the file.
+    #[serde(default)]
+    pub frame: base_core::gcode_out::Frame,
+    /// The last pass over the finished program, for controllers that read G-code in their own way (all off by default).
+    #[serde(default)]
+    pub flavour: base_core::gcode_out::Flavour,
+}
+
+/// The variables of the own G-code that do not depend on the place in the program.
+pub const FILE_VARS: &[&str] = base_core::gcode_out::COMMON_VARS;
+/// The variables of the G-code of the pen change: the common ones and the layer.
+pub const CHANGE_VARS: &[&str] = &["project_name", "project_path", "date", "time", "machine_name", "min_x", "max_x", "min_y", "max_y", "min_z", "max_z", "width", "height", "depth", "layer_name", "layer_index", "total_layers"];
+
+impl Device {
+    /// The first unknown variable (or a brace that does not close) in the own G-code, said with the name of the field.
+    pub fn check_variables(&self) -> Result<(), String> {
+        base_core::gcode_out::check_texts(&[("Very start of the file", &self.frame.very_start), ("Very end of the file", &self.frame.very_end)], FILE_VARS)?;
+        base_core::gcode_out::check_texts(&[("G-code of the pen change", &self.pen_change.gcode)], CHANGE_VARS)
+    }
 }
 
 impl Default for Device {
@@ -147,6 +166,8 @@ impl Default for Device {
             notes: String::new(),
             connection: Connection::default(),
             control: Control::default(),
+            frame: Default::default(),
+            flavour: Default::default(),
         }
     }
 }
@@ -188,6 +209,11 @@ impl Device {
         }
         if c.gcode.lines().count() > 20 || c.gcode.lines().any(|l| l.len() > 100 || l.chars().any(char::is_control)) {
             return Err("the G-code of the pen change has too many lines, lines that are too long or control characters".into());
+        }
+        for t in [&self.frame.very_start, &self.frame.very_end] {
+            if t.lines().count() > 20 || t.lines().any(|l| l.len() > 100 || l.chars().any(char::is_control)) {
+                return Err("the very start or the very end of the file has too many lines, lines that are too long or control characters".into());
+            }
         }
         if self.cameras.len() > 8 || self.active_camera > 8 || self.notes.len() > 20_000 {
             return Err("too many cameras or too long notes".into());

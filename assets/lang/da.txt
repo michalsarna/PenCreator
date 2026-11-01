@@ -254,3 +254,6 @@
 253|Vis G-koden uden at gemme den
 254|forhåndsvisning
 255|G-koden vises, intet gemmes
+256|Enhedens egen G-kode: {}
+257|I G-koden til penskift også:
+258|Egen G-kode tilføjes til hvert program, én kommando pr. linje (højst 20 linjer).

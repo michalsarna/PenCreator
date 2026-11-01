@@ -254,3 +254,6 @@
 253	Show the G-code without saving it
 254	preview
 255	The G-code is shown, nothing is saved
+256	The own G-code of the device: {}
+257	In the G-code of the pen change also:
+258	Own G-code is added to every program, one command per line (at most 20 lines).

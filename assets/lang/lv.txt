@@ -254,3 +254,6 @@
 253|Rādīt G-kodu bez saglabāšanas
 254|priekšskatījums
 255|G-kods ir parādīts, nekas netiek saglabāts
+256|Ierīces paša G-kods: {}
+257|Pildspalvas maiņas G-kodā arī:
+258|Jūsu G kods tiek pievienots katrai programmai, viena komanda rindā (ne vairāk kā 20 rindu).

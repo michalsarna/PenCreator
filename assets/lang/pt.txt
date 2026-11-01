@@ -254,3 +254,6 @@
 253|Mostrar o G-code sem o guardar
 254|pré-visualização
 255|O G-code é mostrado, nada é guardado
+256|G-code próprio do dispositivo: {}
+257|No G-code da troca da caneta também:
+258|O G-code próprio é adicionado a cada programa, um comando por linha (no máximo 20 linhas).

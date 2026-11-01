@@ -254,3 +254,6 @@
 253|Zobraziť G-kód bez uloženia
 254|náhľad
 255|G-kód je zobrazený, nič sa neukladá
+256|Vlastný G-kód zariadenia: {}
+257|V G-kóde výmeny pera aj:
+258|Vlastný G-kód sa pridáva ku každému programu, jeden príkaz na riadok (najviac 20 riadkov).
