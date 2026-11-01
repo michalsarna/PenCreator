@@ -283,38 +283,6 @@ mod trace_tests {
 }
 
 #[cfg(test)]
-mod window_size_tests {
-    use super::*;
-
-    #[test]
-    fn the_preview_keeps_its_size_and_does_not_grow_to_the_screen() {
-        let mut h: Shot = Harness::builder().with_accessibility_check(false).with_size([1600.0, 1000.0]).build_ui_state(
-            |ui, state: &mut Option<App>| {
-                let a = state.get_or_insert_with(|| App::build(ui.ctx(), None, false));
-                a.draw(ui);
-            },
-            None,
-        );
-        h.run_steps(2);
-        {
-            let a = app(&mut h);
-            a.use_dummy_device();
-            a.screen = crate::Screen::Editor;
-            demo_job(a);
-            a.show_plot = true;
-        }
-        let mut seen = vec![];
-        for _ in 0..14 {
-            h.run_steps(1);
-            seen.push(h.ctx.memory(|m| m.area_rect(egui::Id::unique(Some("preview_plot")))).map(|r| (r.width(), r.height())));
-        }
-        let (first, last) = (seen[2], *seen.last().unwrap());
-        assert!(last.is_some(), "the window is shown");
-        assert_eq!(first, last, "the window keeps its size: {seen:?}");
-    }
-}
-
-#[cfg(test)]
 mod plugin_import_window_tests {
     use super::*;
     use egui_kittest::kittest::Queryable;

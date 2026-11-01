@@ -621,6 +621,9 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     let mut g = String::new();
     let clean = |s: &str| s.chars().filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_' || *c == '.').collect::<String>();
     g.push_str(&format!("(PenCreator: {})\n(Device: {})\n", clean(program_name), clean(&dev.name)));
+    for l in base_core::gcode_out::note_lines(&info.notes) {
+        g.push_str(&format!("(Note: {l})\n"));
+    }
     g.push_str("G21 G90 G17\n");
     let wait = if dev.pen.delay_ms > 0.0 { format!("G4 P{}\n", num(dev.pen.delay_ms / 1000.0)) } else { String::new() };
     let up = |g: &mut String| {
@@ -743,6 +746,13 @@ mod tests {
         let text = to_gcode_info(&prog, &dev, &layers, &PenLibrary::new(), &info);
         let lines: Vec<&str> = text.lines().collect();
         assert_eq!(&lines[..3], &["%", "Opart", "(PenCreator: part)"]);
+        // The notes of the project come after the name as comments, with nothing in them that could end a comment.
+        let noted = base_core::gcode_out::Info { notes: "Birch (3 mm); first\n\nglue".into(), ..info.clone() };
+        let with_notes = to_gcode_info(&prog, &dev, &layers, &PenLibrary::new(), &noted);
+        let lines: Vec<&str> = with_notes.lines().collect();
+        assert_eq!(&lines[2..5], &["(PenCreator: part)", "(Device: {})".replace("{}", &dev.name).as_str(), "(Note: Birch <3 mm>, first)"][..], "{with_notes}");
+        assert_eq!(lines[5], "(Note: glue)");
+        assert!(!text.contains("(Note"), "no notes, no note lines");
         assert_eq!(lines[lines.len() - 2], "M30");
         assert!(lines.last().unwrap().starts_with("(done ") && !lines.last().unwrap().contains('{'), "{text}");
         assert!(dev.check_variables().is_ok());
