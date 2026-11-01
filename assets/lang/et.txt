@@ -260,3 +260,4 @@
 259|Laadi eelseade
 260|Eelseade pliiats pole teegis: kihil pole pliiatsit
 261|Suum
+262|See pole kaamera aadress (http, https, rtsp, udp, rtp või rtmp).

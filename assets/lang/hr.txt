@@ -260,3 +260,4 @@
 259|Učitaj predložak
 260|Olovka iz predloška nije u biblioteci: sloj nema olovku
 261|Povećanje
+262|Nije adresa kamere (http, https, rtsp, udp, rtp ili rtmp).

@@ -260,3 +260,4 @@
 259|Hlaða forstillingu
 260|Penninn úr forstillingunni er ekki í safninu: lagið er án penna
 261|Aðdráttur
+262|Ekki vistfang myndavélar (http, https, rtsp, udp, rtp eða rtmp).

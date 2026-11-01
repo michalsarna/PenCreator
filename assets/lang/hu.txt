@@ -260,3 +260,4 @@
 259|Beállítás betöltése
 260|A beállítás tolla nincs a könyvtárban: a rétegnek nincs tolla
 261|Nagyítás
+262|Nem kameracím (http, https, rtsp, udp, rtp vagy rtmp).

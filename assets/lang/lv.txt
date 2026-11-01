@@ -260,3 +260,4 @@
 259|Ielādēt sagatavi
 260|Sagataves pildspalvas nav bibliotēkā: slānim nav pildspalvas
 261|Tālummaiņa
+262|Nav kameras adrese (http, https, rtsp, udp, rtp vai rtmp).

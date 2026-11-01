@@ -260,3 +260,4 @@
 259|Tella' l-preset
 260|Il-pinna tal-preset mhix fil-librerija: is-saff m'għandux pinna
 261|Zoom
+262|Mhuwiex indirizz ta' kamera (http, https, rtsp, udp, rtp jew rtmp).

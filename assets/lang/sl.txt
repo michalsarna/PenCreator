@@ -260,3 +260,4 @@
 259|Naloži prednastavitev
 260|Pero iz prednastavitve ni v knjižnici: plast je brez peresa
 261|Povečava
+262|To ni naslov kamere (http, https, rtsp, udp, rtp ali rtmp).

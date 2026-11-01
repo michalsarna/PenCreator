@@ -305,6 +305,7 @@ const TABLE: &[[&str; 7]] = &[
     ["Load preset", "Wczytaj preset", "Vorlage laden", "Carica preset", "Lataa esiasetus", "载入预设", "प्रीसेट लोड करें"],
     ["The pen of the preset is not in the library: the layer has no pen", "Pisaka z presetu nie ma w bibliotece: warstwa jest bez pisaka", "Der Stift der Vorlage ist nicht in der Bibliothek: die Ebene hat keinen Stift", "La penna del preset non è nella libreria: il livello è senza penna", "Esiasetuksen kynä ei ole kirjastossa: tasolla ei ole kynää", "预设中的笔不在笔库中：该图层没有笔", "प्रीसेट का पेन लाइब्रेरी में नहीं है: परत में कोई पेन नहीं है"],
     ["Zoom", "Powiększenie", "Zoom", "Ingrandimento", "Zoomaus", "缩放", "ज़ूम"],
+    ["Not a camera address (http, https, rtsp, udp, rtp or rtmp).", "To nie jest adres kamery (http, https, rtsp, udp, rtp lub rtmp).", "Keine Kameraadresse (http, https, rtsp, udp, rtp oder rtmp).", "Non è un indirizzo di telecamera (http, https, rtsp, udp, rtp o rtmp).", "Ei ole kameran osoite (http, https, rtsp, udp, rtp tai rtmp).", "不是摄像头地址（http、https、rtsp、udp、rtp 或 rtmp）。", "यह कैमरे का पता नहीं है (http, https, rtsp, udp, rtp या rtmp)।"],
 ];
 
 #[cfg(test)]
