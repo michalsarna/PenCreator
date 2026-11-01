@@ -10,6 +10,7 @@ PenCreator edytuje kształty tymi samymi narzędziami co LightCreator i MillCrea
 * **Nazwy warstw:** *Settings → View options → Show layer names* (domyślnie wyłączone) wpisuje nazwę warstwy, na której są kształty, obok jej koloru w rzędzie warstw pod obszarem roboczym (długie nazwy są skracane, pełna jest w podpowiedzi; rząd przewija się poziomo, gdy brakuje miejsca).
 * **Nazwy zmiennych:** *Settings → View options → Show variable names* (domyślnie wyłączone) pokazuje kursywą w nawiasie nazwę zmiennej, np. *(machine_name)*, obok etykiety każdego pola, które ma ją dla własnego G-code; kliknięcie kopiuje `{machine_name}` do schowka, gotowe do wklejenia w pole własnego G-code.
 * **Podgląd G-code:** przycisk obok *Save G-code* robi program w pamięci (z postprocesorami) i pokazuje go w analizie G-code, płasko lub w 3D, bez zapisywania pliku. *Settings → View options → Preview G-code after saving* (domyślnie wyłączone) otwiera zapisany plik w analizie po każdym *Save G-code*.
+* **Nazwy zmiennych:** *Settings → View options → Show variable names* (domyślnie wyłączone) pokazuje kursywą w nawiasie nazwę zmiennej, np. *(machine_name)*, obok etykiety każdego pola, które ma ją dla własnego G-code; kliknięcie kopiuje `{machine_name}` do schowka, gotowe do wklejenia w pole własnego G-code.
 * **Dwa razy Esc** (drugi Esc w ciągu pół sekundy) wraca do narzędzia Select.
 * **Pasek warstw** pod edytorem: jeden rząd 64 kolorów (kropka oznacza warstwy z kształtami); kliknięcie przenosi zaznaczone kształty na tę warstwę, podwójne kliknięcie otwiera jej opcje.
 
