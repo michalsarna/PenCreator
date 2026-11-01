@@ -250,3 +250,7 @@
 249|De weergave heeft maximaal drie deelvensters
 250|Voorbeeld hier tonen
 251|Geen G-code-bestand geopend: File, View G-code file…
+252|G-code bekijken
+253|G-code tonen zonder op te slaan
+254|voorbeeld
+255|De G-code wordt getoond, er wordt niets opgeslagen

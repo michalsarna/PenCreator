@@ -250,3 +250,7 @@
 249|Prikaz ima najviše tri okna
 250|Prikaži pregled ovdje
 251|Nijedna G-kod datoteka nije otvorena: File, View G-code file…
+252|Pregled G-koda
+253|Prikaži G-kod bez spremanja
+254|pregled
+255|G-kod je prikazan, ništa nije spremljeno

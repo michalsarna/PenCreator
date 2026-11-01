@@ -250,3 +250,7 @@
 249|Il-veduta għandha mhux aktar minn tliet pannelli
 250|Uri l-previżjoni hawn
 251|Ebda fajl G-code miftuħ: File, View G-code file…
+252|Previżjoni tal-G-code
+253|Uri l-G-code mingħajr ma tinħażen
+254|previżjoni
+255|Il-G-code qed jintwera, xejn ma nħażen

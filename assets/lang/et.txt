@@ -250,3 +250,7 @@
 249|Vaates on kuni kolm paani
 250|Näita eelvaadet siin
 251|G-koodi faili pole avatud: File, View G-code file…
+252|G-koodi eelvaade
+253|Näita G-koodi salvestamata
+254|eelvaade
+255|G-koodi on näidatud, midagi ei salvestata

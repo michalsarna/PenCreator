@@ -250,3 +250,7 @@
 249|Skatam ir ne vairāk kā trīs rūtis
 250|Rādīt priekšskatījumu šeit
 251|Nav atvērts neviens G-koda fails: File, View G-code file…
+252|G-koda priekšskatījums
+253|Rādīt G-kodu bez saglabāšanas
+254|priekšskatījums
+255|G-kods ir parādīts, nekas netiek saglabāts

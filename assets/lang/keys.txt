@@ -250,3 +250,7 @@
 249	The view has three panes at most
 250	Show the preview here
 251	No G-code file is open: File, View G-code file…
+252	Preview G-code
+253	Show the G-code without saving it
+254	preview
+255	The G-code is shown, nothing is saved

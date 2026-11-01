@@ -250,3 +250,7 @@
 249|Pogled ima največ tri podokna
 250|Pokaži predogled tukaj
 251|Nobena datoteka G-kode ni odprta: File, View G-code file…
+252|Predogled G-kode
+253|Pokaži G-kodo brez shranjevanja
+254|predogled
+255|G-koda je prikazana, nič ni shranjeno

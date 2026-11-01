@@ -250,3 +250,7 @@
 249|La vista tiene como máximo tres paneles
 250|Mostrar aquí la vista previa
 251|Ningún archivo G-code abierto: File, View G-code file…
+252|Vista previa del G-code
+253|Mostrar el G-code sin guardarlo
+254|vista previa
+255|El G-code se muestra, no se guarda nada

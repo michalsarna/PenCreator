@@ -250,3 +250,7 @@
 249|A vista tem no máximo três painéis
 250|Mostrar aqui a pré-visualização
 251|Nenhum ficheiro G-code aberto: File, View G-code file…
+252|Pré-visualizar G-code
+253|Mostrar o G-code sem o guardar
+254|pré-visualização
+255|O G-code é mostrado, nada é guardado

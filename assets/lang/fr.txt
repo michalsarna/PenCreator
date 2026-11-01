@@ -250,3 +250,7 @@
 249|La vue compte trois panneaux au maximum
 250|Afficher l'aperçu ici
 251|Aucun fichier G-code ouvert : File, View G-code file…
+252|Aperçu du G-code
+253|Afficher le G-code sans l'enregistrer
+254|aperçu
+255|Le G-code est affiché, rien n'est enregistré

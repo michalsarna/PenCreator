@@ -250,3 +250,7 @@
 249|A nézetnek legfeljebb három panelje lehet
 250|Előnézet megjelenítése itt
 251|Nincs megnyitva G-kód fájl: File, View G-code file…
+252|G-kód előnézete
+253|G-kód megjelenítése mentés nélkül
+254|előnézet
+255|A G-kód látható, semmi sem lett mentve

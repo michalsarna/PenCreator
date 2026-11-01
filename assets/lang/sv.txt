@@ -250,3 +250,7 @@
 249|Vyn har högst tre rutor
 250|Visa förhandsgranskningen här
 251|Ingen G-kodfil är öppen: File, View G-code file…
+252|Förhandsgranska G-kod
+253|Visa G-koden utan att spara den
+254|förhandsgranskning
+255|G-koden visas, inget sparas

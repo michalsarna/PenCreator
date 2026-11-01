@@ -250,3 +250,7 @@
 249|Rodinys turi ne daugiau kaip tris skydelius
 250|Rodyti peržiūrą čia
 251|Neatidarytas joks G kodo failas: File, View G-code file…
+252|G kodo peržiūra
+253|Rodyti G kodą jo neįrašant
+254|peržiūra
+255|G kodas parodytas, nieko neįrašyta
