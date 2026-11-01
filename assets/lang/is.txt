@@ -250,3 +250,12 @@
 249|Sýnin hefur í mesta lagi þrjá glugga
 250|Sýna forskoðun hér
 251|Engin G-kóðaskrá er opin: File, View G-code file…
+252|Forskoða G-kóða
+253|Sýna G-kóðann án þess að vista hann
+254|forskoðun
+255|G-kóðinn er sýndur, ekkert er vistað
+256|Eigin G-kóði tækisins: {}
+257|Í G-kóða pennaskipta einnig:
+258|Eigin G-kóði er bætt við hvert forrit, ein skipun í línu (í mesta lagi 20 línur).
+259|Hlaða forstillingu
+260|Penninn úr forstillingunni er ekki í safninu: lagið er án penna

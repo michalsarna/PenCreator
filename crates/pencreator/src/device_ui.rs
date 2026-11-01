@@ -18,6 +18,7 @@ pub enum Page {
     General,
     Machine,
     Pen,
+    Gcode,
     Connection,
     Camera,
     Jog,
@@ -27,12 +28,13 @@ pub enum Page {
 }
 
 impl Page {
-    const ALL: [Page; 9] = [Page::General, Page::Machine, Page::Pen, Page::Connection, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Notes];
+    const ALL: [Page; 10] = [Page::General, Page::Machine, Page::Pen, Page::Gcode, Page::Connection, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Notes];
     fn label(self) -> &'static str {
         match self {
             Page::General => "General",
             Page::Machine => "Machine",
             Page::Pen => "Pen",
+            Page::Gcode => "G-code",
             Page::Connection => "Connection",
             Page::Camera => "Camera",
             Page::Jog => "Jogging",
@@ -278,7 +280,7 @@ impl App {
                 match edit.page {
                     Page::General => {
                         egui::Grid::new("dev_general").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
-                            ui.label(tr("Name"));
+                            base_ui::widgets::var_label(ui, tr("Name"), "machine_name");
                             ui.add(egui::TextEdit::singleline(&mut d.name).hint_text(tr("e.g. My pen plotter")));
                             ui.end_row();
                             ui.label(tr("Controller"));
@@ -341,6 +343,17 @@ impl App {
                     Page::Jog => base_ui::device_pages::jog_page(ui, &mut d.control),
                     Page::Macros => base_ui::device_pages::macros_page(ui, &mut d.control),
                     Page::Maintenance => base_ui::device_pages::maintenance_page(ui, &mut d.control),
+                    Page::Gcode => {
+                        ui.label(RichText::new(tr("Own G-code is added to every program, one command per line (at most 20 lines).")).color(theme::text_dim()));
+                        ui.add_space(4.0);
+                        base_ui::gcode_out_ui::frame_ui(ui, &mut d.frame, crate::device::FILE_VARS);
+                        ui.label(RichText::new(format!("{} {}", tr("In the G-code of the pen change also:"), "{layer_name} {layer_index} {total_layers}")).small().color(theme::text_dim()));
+                        if let Err(e) = d.check_variables() {
+                            ui.label(RichText::new(e).small().color(egui::Color32::from_rgb(0xc0, 0x30, 0x30)));
+                        }
+                        ui.add_space(6.0);
+                        base_ui::gcode_out_ui::flavour_ui(ui, &mut d.flavour);
+                    }
                     Page::Pen => {
                         egui::Grid::new("dev_pen").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
                             ui.label(tr("The pen is lifted by"));

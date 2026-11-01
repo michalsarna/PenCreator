@@ -250,3 +250,12 @@
 249|La vue compte trois panneaux au maximum
 250|Afficher l'aperçu ici
 251|Aucun fichier G-code ouvert : File, View G-code file…
+252|Aperçu du G-code
+253|Afficher le G-code sans l'enregistrer
+254|aperçu
+255|Le G-code est affiché, rien n'est enregistré
+256|G-code personnalisé de l'appareil : {}
+257|Dans le G-code du changement de stylo aussi :
+258|Votre propre G-code est ajouté à chaque programme, une commande par ligne (20 lignes au plus).
+259|Charger le préréglage
+260|Le stylo du préréglage n'est pas dans la bibliothèque : le calque n'a pas de stylo

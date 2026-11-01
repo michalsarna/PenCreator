@@ -250,3 +250,12 @@
 249|Il-veduta għandha mhux aktar minn tliet pannelli
 250|Uri l-previżjoni hawn
 251|Ebda fajl G-code miftuħ: File, View G-code file…
+252|Previżjoni tal-G-code
+253|Uri l-G-code mingħajr ma tinħażen
+254|previżjoni
+255|Il-G-code qed jintwera, xejn ma nħażen
+256|G-code proprju tal-apparat: {}
+257|Fil-G-code tal-bidla tal-pinna wkoll:
+258|G-code tiegħek stess jiżdied ma' kull programm, kmand wieħed f'kull linja (massimu 20 linja).
+259|Tella' l-preset
+260|Il-pinna tal-preset mhix fil-librerija: is-saff m'għandux pinna

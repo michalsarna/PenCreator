@@ -575,7 +575,49 @@ pub fn frame_gcode(b: [f64; 4], dev: &Device) -> String {
 
 /// The G-code (GRBL) for the program. The pen goes up and down with the Z axis or with a servo on the spindle output;
 /// when the next layer needs another pen the program stops with M0 so that it can be changed.
+#[cfg(test)]
 pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLibrary, program_name: &str) -> String {
+    let info = base_core::gcode_out::Info { project_name: program_name.to_string(), ..base_core::gcode_out::Info::now() };
+    to_gcode_info(prog, dev, layers, pens, &info)
+}
+
+/// The place in the program that the variables of the own G-code tell about.
+struct Here {
+    layer_name: String,
+    layer_index: usize,
+    total_layers: usize,
+}
+
+/// The value of a variable of the own G-code.
+fn value_of(info: &base_core::gcode_out::Info, here: &Here, name: &str) -> Option<String> {
+    match name {
+        "layer_name" => Some(here.layer_name.clone()),
+        "layer_index" => Some(here.layer_index.to_string()),
+        "total_layers" => Some(here.total_layers.to_string()),
+        _ => info.value(name),
+    }
+}
+
+/// The program as G-code text. `info` tells the variables of the own G-code (the name and the path of the project, the moment);
+/// the box of the drawing, the machine and the layer are filled in here. The very start and end of the file and the flavour of
+/// the device are applied at the end.
+pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLibrary, info: &base_core::gcode_out::Info) -> String {
+    let program_name = info.project_name.as_str();
+    let mut info = info.clone();
+    info.machine_name = dev.name.clone();
+    // The box of what is drawn, in the coordinates of the machine (the pen is at Z 0 down: the depth is the lift).
+    {
+        let (mut lo, mut hi) = ([f64::INFINITY; 2], [f64::NEG_INFINITY; 2]);
+        for m in prog.moves.iter().filter(|m| m.kind == MoveKind::Draw) {
+            let (x, y) = machine_xy(dev, m.to[0], m.to[1]);
+            for (i, v) in [x, y].into_iter().enumerate() {
+                lo[i] = lo[i].min(v);
+                hi[i] = hi[i].max(v);
+            }
+        }
+        info.bounds = lo[0].is_finite().then_some(([lo[0], lo[1], dev.pen.down.min(dev.pen.up)], [hi[0], hi[1], dev.pen.down.max(dev.pen.up)]));
+    }
+    let mut here = Here { layer_name: String::new(), layer_index: 0, total_layers: layers.len() };
     let mut g = String::new();
     let clean = |s: &str| s.chars().filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_' || *c == '.').collect::<String>();
     g.push_str(&format!("(PenCreator: {})\n(Device: {})\n", clean(program_name), clean(&dev.name)));
@@ -609,6 +651,7 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLib
                     pen_down = false;
                 }
                 g.push_str(&format!("(Layer: {})\n", clean(&l.name)));
+                here = Here { layer_name: l.name.clone(), layer_index: layer, total_layers: layers.len() };
                 let pen = pen_key(l);
                 if current.as_ref() != Some(&pen) {
                     // A pen of the library is named; a layer without one by its name and width.
@@ -621,7 +664,7 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLib
                         let change = &dev.pen_change;
                         if change.enabled {
                             for line in change.lines() {
-                                g.push_str(line);
+                                g.push_str(&base_core::gcode_out::substitute(line, &|n| value_of(&info, &here, n)));
                                 g.push('\n');
                             }
                         }
@@ -666,7 +709,8 @@ pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLib
         g.push_str("M5\n");
     }
     g.push_str("M30\n");
-    g
+    let lines = |text: &str| -> Vec<String> { text.lines().map(str::trim).filter(|l| !l.is_empty()).map(|l| base_core::gcode_out::substitute(l, &|n| value_of(&info, &here, n))).collect() };
+    base_core::gcode_out::finish(&g, &lines(&dev.frame.very_start), &lines(&dev.frame.very_end), &dev.flavour)
 }
 
 #[cfg(test)]
@@ -681,6 +725,43 @@ mod tests {
 
     fn drawn(prog: &Program) -> f64 {
         prog.draw_length()
+    }
+
+    #[test]
+    fn the_file_has_a_very_start_and_end_variables_and_a_flavour_and_the_default_changes_nothing() {
+        use base_core::gcode_out::{DwellWord, Flavour};
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 30.0);
+        let layers = default_layers();
+        let mut dev = Device::dummy();
+        let prog = generate(&scene, &layers, &dev);
+        let plain = to_gcode(&prog, &dev, &layers, &PenLibrary::new(), "job");
+        assert!(plain.starts_with("(PenCreator: job)\n(Device: ") && plain.trim_end().ends_with("M30") && !plain.contains('%'));
+        dev.frame.very_start = "%\nO{project_name}".into();
+        dev.frame.very_end = "(done {machine_name} {min_x} {width})".into();
+        let info = base_core::gcode_out::Info { project_name: "part".into(), project_path: "/w/part.cre".into(), date: "2026-11-01".into(), time: "12:00".into(), ..Default::default() };
+        let text = to_gcode_info(&prog, &dev, &layers, &PenLibrary::new(), &info);
+        let lines: Vec<&str> = text.lines().collect();
+        assert_eq!(&lines[..3], &["%", "Opart", "(PenCreator: part)"]);
+        assert_eq!(lines[lines.len() - 2], "M30");
+        assert!(lines.last().unwrap().starts_with("(done ") && !lines.last().unwrap().contains('{'), "{text}");
+        assert!(dev.check_variables().is_ok());
+        dev.frame.very_end = "{nope}".into();
+        assert!(dev.check_variables().unwrap_err().contains("Very end of the file"));
+        dev.frame = Default::default();
+        dev.pen_change.gcode = "(into {layer_name} {layer_index}/{total_layers})".into();
+        assert!(dev.check_variables().is_ok());
+        dev.pen.delay_ms = 2000.0;
+        dev.flavour = Flavour { decimal_point: true, percent: true, dwell: DwellWord::XSeconds, line_numbers: true, number_step: 5, remove_comments: true };
+        let g = to_gcode(&prog, &dev, &layers, &PenLibrary::new(), "job");
+        let l: Vec<&str> = g.lines().collect();
+        assert_eq!((l[0], l[l.len() - 1]), ("%", "%"));
+        assert!(l[1].starts_with("N5 G21 G90 G17"), "{}", l[1]);
+        assert!(l.iter().any(|x| x.contains("G4 X2.")), "{g}");
+        assert!(!g.contains("(PenCreator"));
+        // The old device files read as they were.
+        let old: Device = serde_json::from_str(&serde_json::to_string(&Device::dummy()).unwrap().replace(",\"frame\"", ",\"zzz\"")).unwrap();
+        assert!(old.frame == Default::default() && old.flavour.is_default());
     }
 
     #[test]

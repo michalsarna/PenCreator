@@ -250,3 +250,12 @@
 249|Visningen har høyst tre paneler
 250|Vis forhåndsvisningen her
 251|Ingen G-kodefil er åpen: File, View G-code file…
+252|Forhåndsvis G-kode
+253|Vis G-koden uten å lagre den
+254|forhåndsvisning
+255|G-koden vises, ingenting lagres
+256|Enhetens egen G-kode: {}
+257|I G-koden for pennbytte også:
+258|Egen G-kode legges til hvert program, én kommando per linje (maks. 20 linjer).
+259|Last inn forhåndsinnstilling
+260|Pennen fra forhåndsinnstillingen er ikke i biblioteket: laget har ingen penn

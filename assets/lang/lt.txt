@@ -250,3 +250,12 @@
 249|Rodinys turi ne daugiau kaip tris skydelius
 250|Rodyti peržiūrą čia
 251|Neatidarytas joks G kodo failas: File, View G-code file…
+252|G kodo peržiūra
+253|Rodyti G kodą jo neįrašant
+254|peržiūra
+255|G kodas parodytas, nieko neįrašyta
+256|Įrenginio nuosavas G kodas: {}
+257|Rašiklio keitimo G kode taip pat:
+258|Jūsų G kodas pridedamas prie kiekvienos programos, po vieną komandą eilutėje (daugiausia 20 eilučių).
+259|Įkelti šabloną
+260|Šablono rašiklio bibliotekoje nėra: sluoksnis be rašiklio

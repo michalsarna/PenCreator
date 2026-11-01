@@ -250,3 +250,12 @@
 249|Pogled ima največ tri podokna
 250|Pokaži predogled tukaj
 251|Nobena datoteka G-kode ni odprta: File, View G-code file…
+252|Predogled G-kode
+253|Pokaži G-kodo brez shranjevanja
+254|predogled
+255|G-koda je prikazana, nič ni shranjeno
+256|Lastna G-koda naprave: {}
+257|V G-kodi zamenjave peresa tudi:
+258|Lastna G-koda se doda vsakemu programu, en ukaz na vrstico (največ 20 vrstic).
+259|Naloži prednastavitev
+260|Pero iz prednastavitve ni v knjižnici: plast je brez peresa

@@ -250,3 +250,12 @@
 249|Vyn har högst tre rutor
 250|Visa förhandsgranskningen här
 251|Ingen G-kodfil är öppen: File, View G-code file…
+252|Förhandsgranska G-kod
+253|Visa G-koden utan att spara den
+254|förhandsgranskning
+255|G-koden visas, inget sparas
+256|Enhetens egen G-kod: {}
+257|I G-koden för pennbyte även:
+258|Egen G-kod läggs till i varje program, ett kommando per rad (högst 20 rader).
+259|Läs in förinställning
+260|Pennan från förinställningen finns inte i biblioteket: lagret har ingen penna
