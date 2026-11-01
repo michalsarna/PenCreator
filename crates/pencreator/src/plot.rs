@@ -575,6 +575,7 @@ pub fn frame_gcode(b: [f64; 4], dev: &Device) -> String {
 
 /// The G-code (GRBL) for the program. The pen goes up and down with the Z axis or with a servo on the spindle output;
 /// when the next layer needs another pen the program stops with M0 so that it can be changed.
+#[cfg(test)]
 pub fn to_gcode(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &PenLibrary, program_name: &str) -> String {
     let info = base_core::gcode_out::Info { project_name: program_name.to_string(), ..base_core::gcode_out::Info::now() };
     to_gcode_info(prog, dev, layers, pens, &info)
