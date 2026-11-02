@@ -261,3 +261,4 @@
 260|Šablono rašiklio bibliotekoje nėra: sluoksnis be rašiklio
 261|Mastelis
 262|Tai ne kameros adresas (http, https, rtsp, udp, rtp arba rtmp).
+263|Apie PenCreator
