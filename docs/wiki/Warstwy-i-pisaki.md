@@ -161,3 +161,7 @@ M30
 * Notatki projektu (karta **Opis**) stają się wierszami `(Note: …)` po nazwie: nawiasy są zamieniane na `<` `>`, `;` i `%` na przecinki, puste wiersze są pomijane, długi wiersz jest cięty na kawałki po 100 znaków i zapisywanych jest najwyżej 60 wierszy.
 * Liczby są w milimetrach, we współrzędnych maszyny: narożnik wybrany jako **Zero maszyny (0,0)** urządzenia to X0 Y0.
 * **Sam początek pliku**, **Sam koniec pliku** i **Format pliku dla sterowania** urządzenia (strona **G-code**) oraz postprocesory wtyczek są stosowane na końcu. Zobacz [Sterowanie maszyną](Sterowanie-maszyna#uruchamianie-zadania) i [Wtyczki](Wtyczki).
+
+## Komentarze w G-code
+
+G-code mówi w komentarzach, gdzie co się zaczyna i kończy, żeby plik dało się czytać i znaleźć w nim przerwany rysunek: `(Job: …)` z liczbą warstw, linii i długością rysowania; pod każdym `(Layer: nazwa)` jego część zadania, sposób rysowania, prędkość i przejścia; `(Fill start: 120 lines)` / `(Fill end)`; `(Line 3 of 12 start: closed, 60.0 mm)` / `(Line 3 end)` z `(Pass 2 of 3)` dla każdego przejścia; `(Element 1 of 4 start)` przy **Element po elemencie**; `(End of layer nazwa)` i `(End of the job)`. Komentarz ma najwyżej 70 znaków (program wysyłający, który liczy 128 znaków bufora GRBL, nie wyśle dłuższej linii). **Usuń komentarze** w ustawieniach urządzenia pomija je wszystkie.
