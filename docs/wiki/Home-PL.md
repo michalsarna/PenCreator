@@ -4,7 +4,7 @@
 
 # PenCreator
 
-Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzenia, pisaki jako warstwy, wypełnianie liniami, podgląd wykresu i G-code dla GRBL; zapisuje G-code i może przesłać go do plotera GRBL. To rodzeństwo [LightCreatora](https://github.com/michalsarna/LightCreator) (laser) i [MillCreatora](https://github.com/michalsarna/MillCreator) (frezarka CNC): to samo okno, ten sam edytor i te same pliki dzięki [baseCreatorowi](https://github.com/michalsarna/baseCreator).
+Otwartoźródłowy program dla ploterów piszących, napisany w Rust. **Wczesna wersja:** nie był jeszcze sprawdzony na prawdziwym ploterze. Urządzenia, pisaki jako warstwy, wypełnianie liniami, podgląd wykresu i G-code dla GRBL; zapisuje G-code i może przesłać go do plotera GRBL. To rodzeństwo [LightCreatora](https://github.com/michalsarna/LightCreator) (laser) i [MillCreatora](https://github.com/michalsarna/MillCreator) (frezarka CNC): to samo okno, ten sam edytor i te same pliki dzięki [baseCreatorowi](https://github.com/michalsarna/baseCreator).
 
 ![Edytor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
 
@@ -13,10 +13,13 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzeni
 | Chcę… | Przejdź do |
 |---|---|
 | Zainstalować program | [Instalacja](Instalacja) |
-| Rysować i importować | [Szybki start](Szybki-start) |
+| Zrobić pierwsze zadanie krok po kroku | [Szybki start](Szybki-start) |
+| Ustawić warstwy, wybrać pisaki, zrozumieć zmiany pisaka | [Warstwy i pisaki](Warstwy-i-pisaki) |
+| Znaleźć polecenie w menu | [Menu](Menu) |
+| Poznać klawisze | [Skróty klawiszowe](Skroty-klawiszowe) |
 | Dzielić projekt z LightCreatorem i MillCreatorem | [Plik projektu](Plik-projektu) |
-| Edytować kształty, importować obrazy, panel boczny | [Narzędzia projektowe](Narzedzia-projektowe) |
-| Steruj maszyną: przesuw, zerowanie, sondowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |
+| Edytować kształty, importować obrazy, karty i panele | [Narzędzia projektowe](Narzedzia-projektowe) |
+| Sterować maszyną: przesuw, zerowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |
 | Zobaczyć, jak to wygląda | [Zrzuty ekranu](Zrzuty-ekranu) |
 | Znaleźć plik ustawień | [Ustawienia i pliki](Ustawienia-i-pliki) |
 | Poczytać o kodzie | [Architektura](Architektura) |
@@ -24,11 +27,11 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Urządzeni
 
 ## W skrócie
 
-* **Edytor** z baseCreatora: kształty, edycja węzłów, tekst, grupowanie, wyrównanie, cofanie, siatka i przyciąganie, na polu roboczym A4.
-* **Import:** SVG, PDF / Illustrator, projekty LightBurna (`.lbrn2`), pliki UGS Designera (`.ugsd`); 310 clipartów z wyszukiwaniem w sieci.
+* **Edytor** z baseCreatora: kształty, edycja węzłów, tekst, grupowanie, wyrównanie, cofanie, siatka i przyciąganie, na obszarze roboczym urządzenia (A4 dla Dummy). Rysunki, podgląd, tekst G-code i kamera to karty, w najwyżej trzech panelach.
+* **Import:** SVG, PDF / Illustrator, DXF, projekty LightBurna (`.lbrn2`), pliki UGS Designera (`.ugsd`); 310 clipartów z wyszukiwaniem w sieci.
 * **Plik projektu:** `.cre`, wspólny z LightCreatorem i MillCreatorem; sekcje innych programów są zachowywane przy zapisie.
 * **Interfejs:** 30 języków (także własne teksty PenCreatora) i 14 schematów kolorów.
-* **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 64 warstwy, które są pisakami (kolor, grubość, prędkość, kontur lub wypełnienie liniami), wykres zadania i G-code dla GRBL.
+* **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 64 warstwy, które są pisakami (kolor, szerokość, prędkość, kontur, wypełnienie liniami albo obraz rysowany liniami), biblioteka pisaków (**Ploter → Biblioteka pisaków…**), wykres zadania, G-code jako tekst w karcie i G-code dla GRBL.
 * **Sterowanie maszyną:** przesuw, zerowanie, makra, ustawienia firmware, kalibracja, statystyki (zobacz [Sterowanie maszyną](Sterowanie-maszyna)).
 * **Planowane:** HPGL, czcionki jednoliniowe.
 

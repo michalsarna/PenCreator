@@ -16,9 +16,9 @@ Wszystkie obrazy są generowane bez okna z prawdziwego interfejsu (`cargo test -
 
 ![Strona pisaka w urządzeniu](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/03-device-pen.png)
 
-### Plakietka w edytorze, karta Properties
+### Plakietka w edytorze, karta Właściwości
 
-![Plakietka w edytorze, karta Properties](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/04-editor-properties.png)
+![Plakietka w edytorze, karta Właściwości](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/04-editor-properties.png)
 
 ### Karta Warstwy: pisak to warstwa
 
@@ -44,15 +44,15 @@ Wszystkie obrazy są generowane bez okna z prawdziwego interfejsu (`cargo test -
 
 ![Wykres w połowie](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/10-plot-progress.png)
 
-### Karta Console: wymiana ze sterownikiem i linia do wysłania polecenia
+### Karta Konsola: wymiana ze sterownikiem i linia do wysłania polecenia
 
-![Karta Console: wymiana ze sterownikiem i linia do wysłania polecenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/11-console.png)
+![Karta Konsola: wymiana ze sterownikiem i linia do wysłania polecenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/11-console.png)
 
-### Karta Control: pozycja, zerowanie, przesuw, makra
+### Karta Sterowanie: pozycja, zerowanie, przesuw, makra
 
-![Karta Control: pozycja, zerowanie, przesuw, makra](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/12-control-tab.png)
+![Karta Sterowanie: pozycja, zerowanie, przesuw, makra](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/12-control-tab.png)
 
-### Ustawienia kontrolera ($$)
+### Ustawienia kontrolera: Ustawienia firmware ($$)
 
 ![Ustawienia kontrolera ($$)](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/13-firmware.png)
 
