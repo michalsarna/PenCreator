@@ -5,6 +5,7 @@ Each release gets the next version number. Newest first.
 ## v0.5.5 (not released yet)
 
 * The menu titles **Machine** and **Plotter** have icons like the other titles (baseCreator v1.57.0).
+* **More comments in the G-code:** where every layer, the fill and every line starts and ends, every depth/pass, the elements of *One element at a time*, the settings of every layer, the job and its end; at most 70 characters each. *Remove comments* leaves them out.
 
 ## v0.5.4
 

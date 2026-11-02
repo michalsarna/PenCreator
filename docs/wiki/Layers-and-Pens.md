@@ -159,3 +159,7 @@ M30
 * The notes of the project (the **Description** tab) become `(Note: …)` lines after the name: brackets are turned into `<` `>`, `;` and `%` into commas, empty lines are left out, a long line is cut into pieces of 100 characters, and at most 60 lines are written.
 * The numbers are in millimetres, in the coordinates of the machine: the corner you chose as **Machine zero (0,0)** of the device is X0 Y0.
 * The **Very start of the file**, the **Very end of the file** and the **Own file format** of the device (page **G-code**) and the postprocessors of plugins are applied last. See [Machine Control](Machine-Control#running-a-job) and [Plugins](Plugins).
+
+## Comments in the G-code
+
+The G-code says in comments where everything starts and ends, so the file can be read and a stopped plot found in it: `(Job: …)` with the number of layers, lines and the length drawn; under every `(Layer: name)` its part of the job, the way it is drawn, the speed and the passes; `(Fill start: 120 lines)` / `(Fill end)`; `(Line 3 of 12 start: closed, 60.0 mm)` / `(Line 3 end)` with `(Pass 2 of 3)` for every pass; `(Element 1 of 4 start)` with **One element at a time**; `(End of layer name)` and `(End of the job)`. A comment is at most 70 characters (a sender that counts the 128 characters of the buffer of GRBL never sends a longer line). **Remove comments** in the device settings leaves them all out.

@@ -40,9 +40,21 @@ impl Move {
     }
 }
 
+/// A comment of the G-code, written before the move `at` (or after the last move when `at` is their number).
+#[derive(Clone, Debug, PartialEq)]
+pub struct Note {
+    pub at: usize,
+    pub text: String,
+    /// Written before the comment and the commands of a new layer that begins at the same move (an end of something, or
+    /// the start of an element), not after them.
+    pub before_layer: bool,
+}
+
 #[derive(Clone, Debug, Default)]
 pub struct Program {
     pub moves: Vec<Move>,
+    /// The comments of the G-code: where every element, layer, fill and line starts and ends.
+    pub notes: Vec<Note>,
     /// What could not be done, or looks wrong, in words for the user.
     pub warnings: Vec<Warn>,
 }
@@ -371,6 +383,22 @@ struct Gen {
     last_layer: usize,
 }
 
+impl Gen {
+    /// A comment before the next move: the start of something.
+    fn note(&mut self, text: String) {
+        self.prog.notes.push(Note { at: self.prog.moves.len(), text, before_layer: false });
+    }
+    /// A comment after the last move: the end of something (before the comment of the next layer).
+    fn note_end(&mut self, text: String) {
+        self.prog.notes.push(Note { at: self.prog.moves.len(), text, before_layer: true });
+    }
+}
+
+/// The length of a line the pen draws, in mm.
+fn stroke_length(s: &Stroke) -> f64 {
+    s.pts.windows(2).map(|w| ((w[1][0] - w[0][0]).powi(2) + (w[1][1] - w[0][1]).powi(2)).sqrt()).sum()
+}
+
 /// The moves of the pen for the project.
 #[cfg(test)]
 pub fn generate(scene: &Scene, layers: &[PenLayer], dev: &Device) -> Program {
@@ -414,8 +442,12 @@ fn elements_by_distance(scene: &Scene, dev: &Device) -> Vec<Scene> {
 pub fn generate_with(scene: &Scene, layers: &[PenLayer], dev: &Device, opts: JobOptions) -> Program {
     let mut g = Gen { prog: Program::default(), at: [0.0, 0.0], images: 0, outside: false, too_many: false, budget: MAX_HATCH_LINES, pen: None, last_layer: 0 };
     if opts.one_by_one {
-        for element in elements_by_distance(scene, dev) {
-            run_layers(&mut g, &element, layers, dev);
+        let elements = elements_by_distance(scene, dev);
+        let total = elements.len();
+        for (i, element) in elements.iter().enumerate() {
+            g.prog.notes.push(Note { at: g.prog.moves.len(), text: format!("Element {} of {total} start: {} objects", i + 1, element.shapes.len()), before_layer: true });
+            run_layers(&mut g, element, layers, dev);
+            g.note_end(format!("Element {} end", i + 1));
         }
         // Every element repeats the warnings of its layers: say each one once.
         let mut seen = std::collections::HashSet::new();
@@ -488,8 +520,19 @@ fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
         g.pen = Some(key);
         g.last_layer = li;
         // The fill is drawn before the outline, each in its own best order.
-        for group in [fill, line] {
-            for s in order(group, g.at) {
+        for (filling, group) in [(true, fill), (false, line)] {
+            if group.is_empty() {
+                continue;
+            }
+            let strokes = order(group, g.at);
+            let n = strokes.len();
+            if filling {
+                g.note(format!("Fill start: {n} lines"));
+            }
+            for (k, s) in strokes.into_iter().enumerate() {
+                if !filling {
+                    g.note(format!("Line {} of {n} start: {}, {:.1} mm", k + 1, if s.closed { "closed" } else { "open" }, stroke_length(&s)));
+                }
                 if s.pts.iter().any(|p| p[0] < -0.01 || p[1] < -0.01 || p[0] > dev.area.x + 0.01 || p[1] > dev.area.y + 0.01) {
                     g.outside = true;
                 }
@@ -499,6 +542,9 @@ fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
                     g.at = first;
                 }
                 for pass in 0..l.passes.max(1) {
+                    if l.passes > 1 && !filling {
+                        g.note(format!("Pass {} of {}", pass + 1, l.passes));
+                    }
                     let pts: Vec<P2> = if pass % 2 == 1 && !s.closed { s.pts.iter().rev().copied().collect() } else { s.pts.clone() };
                     if pts[0] != g.at {
                         // Back to the other end with the pen down would draw a line: lift it instead.
@@ -512,8 +558,15 @@ fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
                         }
                     }
                 }
+                if !filling {
+                    g.note_end(format!("Line {} end", k + 1));
+                }
+            }
+            if filling {
+                g.note_end("Fill end".into());
             }
         }
+        g.note_end(format!("End of layer {}", l.name));
     }
 }
 
@@ -640,12 +693,22 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
         }
         g.push_str(&wait);
     };
+    let used: std::collections::BTreeSet<usize> = prog.moves.iter().map(|m| m.layer).collect();
+    let order: Vec<usize> = crate::layers::layer_order(layers).into_iter().filter(|l| used.contains(l)).collect();
+    g.push_str(&format!("(Job: {} layers, {} lines drawn, {} mm)\n", order.len(), prog.lifts() + 1, num(prog.draw_length().round())));
+    // At most 70 characters: a sender that counts the characters in the buffer of GRBL (128) never sends a longer line.
+    let note_text = |t: &str| t.chars().map(|c| if matches!(c, '(' | ')' | ';' | '\n' | '\r') { ' ' } else { c }).take(70).collect::<String>();
+    let mut next_note = 0usize;
     up(&mut g);
     let mut pen_down = false;
     let mut layer = usize::MAX;
     let mut feed = f64::NAN;
     let mut current: Option<([u8; 3], u64, Option<String>)> = None;
-    for m in &prog.moves {
+    for (i, m) in prog.moves.iter().enumerate() {
+        // The ends of what came before (and the start of an element) go before a new layer; the rest after its commands.
+        for n in prog.notes.iter().skip(next_note).take_while(|n| n.at == i).filter(|n| n.before_layer) {
+            g.push_str(&format!("({})\n", note_text(&n.text)));
+        }
         if m.layer != layer {
             layer = m.layer;
             if let Some(l) = layers.get(layer) {
@@ -654,6 +717,9 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
                     pen_down = false;
                 }
                 g.push_str(&format!("(Layer: {})\n", clean(&l.name)));
+                let part = order.iter().position(|&x| x == layer).map_or(0, |p| p + 1);
+                g.push_str(&format!("({})\n", note_text(&format!("Part {part} of {} of the job: {}", order.len(), l.draw.label()))));
+                g.push_str(&format!("({})\n", note_text(&format!("Speed {} mm/min, {} passes", num(l.speed), l.passes.max(1)))));
                 here = Here { layer_name: l.name.clone(), layer_index: layer, total_layers: layers.len() };
                 let pen = pen_key(l);
                 if current.as_ref() != Some(&pen) {
@@ -684,6 +750,13 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
                 feed = f64::NAN;
             }
         }
+        while next_note < prog.notes.len() && prog.notes[next_note].at == i {
+            let n = &prog.notes[next_note];
+            if !n.before_layer {
+                g.push_str(&format!("({})\n", note_text(&n.text)));
+            }
+            next_note += 1;
+        }
         let (x, y) = machine_xy(dev, m.to[0], m.to[1]);
         match m.kind {
             MoveKind::Travel => {
@@ -706,6 +779,10 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
         }
     }
     up(&mut g);
+    for n in &prog.notes[next_note..] {
+        g.push_str(&format!("({})\n", note_text(&n.text)));
+    }
+    g.push_str("(End of the job)\n");
     let (hx, hy) = machine_xy(dev, 0.0, 0.0);
     g.push_str(&format!("G0 X{} Y{}\n", num(hx), num(hy)));
     if dev.pen.lift == Lift::Servo {
@@ -1096,5 +1173,33 @@ mod tests {
         square(&mut scene, 0, 100.0, 20.0, 10.0);
         let both = generate(&scene, &picture_layers(PictureMethod::Rows), &Device::dummy());
         assert!(both.bounds().unwrap()[2] > 100.0, "the square is drawn too");
+    }
+
+    #[test]
+    fn the_gcode_says_where_every_layer_fill_and_line_starts_and_ends_in_short_lines() {
+        let mut layers = default_layers();
+        layers[0].draw = Draw::Fill;
+        layers[1].passes = 2;
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 10.0, 10.0, 20.0);
+        square(&mut scene, 1, 50.0, 10.0, 20.0);
+        let dev = Device::dummy();
+        let prog = generate(&scene, &layers, &dev);
+        let g = to_gcode(&prog, &dev, &layers, &PenLibrary::default(), "comments");
+        for want in ["(Job: 2 layers", "(Part 1 of 2 of the job:", "(Fill start:", "(Fill end)", "(Line 1 of 1 start: closed", "(Pass 2 of 2)", "(Line 1 end)", "(End of layer", "(End of the job)"] {
+            assert!(g.contains(want), "{want} missing in:\n{g}");
+        }
+        for l in g.lines() {
+            assert!(l.len() <= 80, "too long: {l}");
+            if l.starts_with('(') {
+                assert!(l.ends_with(')') && l[1..l.len() - 1].chars().all(|c| c != '(' && c != ')' && c != ';'), "{l}");
+            }
+        }
+        assert_eq!(g.lines().filter(|l| l.starts_with("(Layer:")).count(), 2);
+        // The commands are the same as without the comments.
+        let mut bare = prog.clone();
+        bare.notes.clear();
+        let strip = |t: &str| t.lines().filter(|l| !l.starts_with('(')).map(String::from).collect::<Vec<_>>();
+        assert_eq!(strip(&g), strip(&to_gcode(&bare, &dev, &layers, &PenLibrary::default(), "comments")));
     }
 }
