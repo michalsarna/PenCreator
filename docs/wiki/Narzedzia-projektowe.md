@@ -43,6 +43,8 @@ Polecenia menu **Rozmieść** (takie same w LightCreatorze, MillCreatorze i PenC
 
 ## Karty i panele
 
+Krok po kroku: [Panele i karty](Panele-i-karty).
+
 Każdy otwarty rysunek, **Podgląd**, G-code projektu jako tekst (**Podgląd G-code: nazwa.nc**), **Analiza G-code** pliku i **Widok z kamery** to **karty** nad obszarem roboczym.
 
 * **Widok → Podziel widok: obok siebie** albo **Podziel widok: jeden nad drugim** dzieli obszar roboczy na najwyżej **trzy panele**; **Jeden widok** zbiera wszystkie karty z powrotem razem. Każdy panel ma własny pasek kart, z **+** dla nowego rysunku.
