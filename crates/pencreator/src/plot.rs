@@ -672,7 +672,8 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     }
     let mut here = Here { layer_name: String::new(), layer_index: 0, total_layers: layers.len() };
     let mut g = String::new();
-    let clean = |s: &str| s.chars().filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_' || *c == '.').collect::<String>();
+    // ASCII only: GRBL takes every byte above 127 for a command of its own, even inside a comment.
+    let clean = |s: &str| base_core::gcode_out::ascii(s).chars().filter(|c| c.is_ascii_alphanumeric() || *c == ' ' || *c == '-' || *c == '_' || *c == '.').collect::<String>();
     g.push_str(&format!("(PenCreator: {})\n(Device: {})\n", clean(program_name), clean(&dev.name)));
     for l in base_core::gcode_out::note_lines(&info.notes) {
         g.push_str(&format!("(Note: {l})\n"));
@@ -697,7 +698,7 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     let order: Vec<usize> = crate::layers::layer_order(layers).into_iter().filter(|l| used.contains(l)).collect();
     g.push_str(&format!("(Job: {} layers, {} lines drawn, {} mm)\n", order.len(), prog.lifts() + 1, num(prog.draw_length().round())));
     // At most 70 characters: a sender that counts the characters in the buffer of GRBL (128) never sends a longer line.
-    let note_text = |t: &str| t.chars().map(|c| if matches!(c, '(' | ')' | ';' | '\n' | '\r') { ' ' } else { c }).take(70).collect::<String>();
+    let note_text = |t: &str| base_core::gcode_out::comment_text(t, 70);
     let mut next_note = 0usize;
     up(&mut g);
     let mut pen_down = false;
@@ -705,8 +706,12 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     let mut feed = f64::NAN;
     let mut current: Option<([u8; 3], u64, Option<String>)> = None;
     for (i, m) in prog.moves.iter().enumerate() {
-        // The ends of what came before (and the start of an element) go before a new layer; the rest after its commands.
-        for n in prog.notes.iter().skip(next_note).take_while(|n| n.at == i).filter(|n| n.before_layer) {
+        // The comments at this move in their order: the ends of what came before (and the start of an element) go before a
+        // new layer, from the first one that starts something on everything comes after the commands of the layer.
+        let here_notes: Vec<&Note> = prog.notes[next_note..].iter().take_while(|n| n.at == i).collect();
+        next_note += here_notes.len();
+        let lead = here_notes.iter().take_while(|n| n.before_layer).count();
+        for n in &here_notes[..lead] {
             g.push_str(&format!("({})\n", note_text(&n.text)));
         }
         if m.layer != layer {
@@ -750,12 +755,8 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
                 feed = f64::NAN;
             }
         }
-        while next_note < prog.notes.len() && prog.notes[next_note].at == i {
-            let n = &prog.notes[next_note];
-            if !n.before_layer {
-                g.push_str(&format!("({})\n", note_text(&n.text)));
-            }
-            next_note += 1;
+        for n in &here_notes[lead..] {
+            g.push_str(&format!("({})\n", note_text(&n.text)));
         }
         let (x, y) = machine_xy(dev, m.to[0], m.to[1]);
         match m.kind {
@@ -1180,12 +1181,15 @@ mod tests {
         let mut layers = default_layers();
         layers[0].draw = Draw::Fill;
         layers[1].passes = 2;
+        // GRBL takes every byte above 127 for a command (ń ends in 0x84: the safety door): the file is ASCII.
+        layers[1].name = "Pióro czerwień".into();
         let mut scene = Scene::default();
         square(&mut scene, 0, 10.0, 10.0, 20.0);
         square(&mut scene, 1, 50.0, 10.0, 20.0);
         let dev = Device::dummy();
         let prog = generate(&scene, &layers, &dev);
         let g = to_gcode(&prog, &dev, &layers, &PenLibrary::default(), "comments");
+        assert!(g.is_ascii() && g.contains("(Layer: Pioro czerwien)"), "{g}");
         for want in ["(Job: 2 layers", "(Part 1 of 2 of the job:", "(Fill start:", "(Fill end)", "(Line 1 of 1 start: closed", "(Pass 2 of 2)", "(Line 1 end)", "(End of layer", "(End of the job)"] {
             assert!(g.contains(want), "{want} missing in:\n{g}");
         }
