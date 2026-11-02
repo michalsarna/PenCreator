@@ -84,7 +84,7 @@ Podgląd nadąża za zmianami rysunku. Przycisk **Ścieżki** (zielony, gdy wł�
 * *Zmieniony ręcznie* i kropka na karcie oznaczają zmiany; zamknięcie takiej karty pyta, czy je zapisać.
 * Dopóki nie ma zmian, tekst jest robiony od nowa sam, chwilę po zapisaniu projektu, zmianie notatek (karta **Opis**), zmianie ustawienia urządzenia albo włączeniu lub wyłączeniu postprocesora. Ręczne zmiany nigdy nie są przy tym tracone.
 
-Karty można postawić obok siebie: **Widok → Podziel widok: obok siebie** albo przeciągnij kartę do innego panelu (zobacz [Narzędzia projektowe](Narzedzia-projektowe#karty-i-panele)).
+Karty można postawić obok siebie: **Widok → Podziel widok: obok siebie** albo przeciągnij kartę do innego panelu (zobacz [Panele i karty](Panele-i-karty)).
 
 ## 7. Zapisz projekt
 

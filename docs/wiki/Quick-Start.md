@@ -84,7 +84,7 @@ The preview follows the drawing as you change it. The **Toolpaths** button (gree
 * *Changed by hand* and a dot on the tab mark edits; closing such a tab asks whether to save them.
 * While it has no edits, the text is made again by itself a moment after the project is saved, the notes (**Description** tab) change, a setting of the device changes or a postprocessor is switched on or off. Edits by hand are never thrown away by this.
 
-The tabs can be put side by side: **View → Split view: side by side**, or drag a tab to another pane (see [Design Tools](Design-Tools#tabs-and-panes)).
+The tabs can be put side by side: **View → Split view: side by side**, or drag a tab to another pane (see [Panes and Tabs](Panes-and-Tabs)).
 
 ## 7. Save the project
 

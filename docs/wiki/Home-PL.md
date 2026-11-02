@@ -19,6 +19,7 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. **Wczesna 
 | Poznać klawisze | [Skróty klawiszowe](Skroty-klawiszowe) |
 | Dzielić projekt z LightCreatorem i MillCreatorem | [Plik projektu](Plik-projektu) |
 | Edytować kształty, importować obrazy, karty i panele | [Narzędzia projektowe](Narzedzia-projektowe) |
+| Ułożyć obszar roboczy: panele, karty, okna | [Panele i karty](Panele-i-karty) |
 | Sterować maszyną: przesuw, zerowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |
 | Zobaczyć, jak to wygląda | [Zrzuty ekranu](Zrzuty-ekranu) |
 | Znaleźć plik ustawień | [Ustawienia i pliki](Ustawienia-i-pliki) |

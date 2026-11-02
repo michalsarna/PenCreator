@@ -43,6 +43,8 @@ Commands of the **Arrange** menu (the same in LightCreator, MillCreator and PenC
 
 ## Tabs and panes
 
+Step by step: [Panes and Tabs](Panes-and-Tabs).
+
 Every open drawing, the **Preview**, the G-code of a project as text (**Preview G-code: name.nc**), the **G-code analysis** of a file and the **Camera view** are **tabs** above the work area.
 
 * **View → Split view: side by side** or **Split view: one above the other** divides the work area into up to **three panes**; **Single view** puts all the tabs together again. Every pane has its own bar of tabs, with a **+** for a new drawing.
