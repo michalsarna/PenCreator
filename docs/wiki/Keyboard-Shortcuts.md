@@ -2,7 +2,7 @@
 
 # Keyboard Shortcuts
 
-Ctrl is Cmd on a Mac. The keys work in the editor (not on the start screen), and none of them is taken while a text field has the keyboard: typing in a field, in the **Description** tab or in the G-code text tab types the letters. Read [On macOS](#on-macos) below: there some keys of the menus do not work yet.
+Ctrl is Cmd on a Mac. The keys work in the editor (not on the start screen), and none of them is taken while a text field has the keyboard: typing in a field, in the **Description** tab or in the G-code text tab types the letters. On a Mac the system menu bar does not show every key; see [On macOS](#on-macos).
 
 ## Keys of the menus
 
@@ -90,8 +90,7 @@ With **Keyboard** ticked on the **Control** tab (off by default), the arrow keys
 
 ## On macOS
 
-The menus are in the system menu bar of macOS. In this version:
+The menus are in the system menu bar of macOS. All the keys of this page work there too:
 
-* **Cmd+N**, **Cmd+O**, **Cmd+S**, **Cmd+Shift+S** and **Cmd+Q** (in the app menu **PenCreator**) are keys of that menu bar and work.
-* **Cmd+Z**, **Cmd+Shift+Z**, **Cmd+Y**, **Cmd+C**, **Cmd+V**, **Cmd+D**, **Cmd+A**, **Cmd+G**, **Cmd+Shift+G**, Delete, the tab keys (Cmd+1 … Cmd+0, Cmd+W), the tool letters and Esc work in the window.
-* The other keys of the table above (**Cmd+E**, **Cmd+Shift+P**, **Cmd+L**, **Cmd+Shift+L**, the zoom keys) are not connected to the system menu bar yet and do not run their commands; use the menus (**Plotter → Export G-code…**, **Plotter → Plot of the job…**, **View → Zoom in** …) or the **Save G-code** and **Preview…** buttons.
+* **Cmd+N**, **Cmd+O**, **Cmd+S**, **Cmd+Shift+S** and **Cmd+Q** (in the app menu **PenCreator**) belong to the system menu bar, which shows them next to their entries.
+* The other keys of the menus (**Cmd+E**, **Cmd+Shift+P**, **Cmd+L**, **Cmd+Shift+L**, **Cmd+=** / **Cmd+-**, **Cmd+Shift+0** / **Cmd+Shift+9**, the editing keys) are taken by the program itself in its window. They work the same as on Windows and Linux, but the system menu bar does not show them next to their entries; the table above lists them.

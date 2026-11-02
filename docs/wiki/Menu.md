@@ -7,7 +7,7 @@ Pasek menu ma dziewięć menu, w tej kolejności: **Plik · Edycja · Wstawianie
 * W **Windows i Linuksie** pasek menu jest w oknie, pod paskiem tytułu. Jest widoczny w edytorze, nie na ekranie startowym.
 * W **macOS** menu są na systemowym pasku menu u góry ekranu. Ma on dwa menu więcej: menu aplikacji **PenCreator** (**About PenCreator**, zwykłe pozycje systemu, **Zakończ**) i **Window** (minimalizacja i maksymalizacja). Dlatego na Macu **Zakończ** nie stoi na końcu menu **Plik**, a **O programie** na końcu menu **Pomoc**. (Pozycja **About PenCreator** nie ma tłumaczenia, więc jest po angielsku.)
 * Pozycja, której teraz nie da się użyć, jest szara (np. **Wektoryzacja obrazu…**, gdy nie zaznaczono obrazu, **Zapisz** na ekranie startowym). Przełącznik ma ptaszek, gdy jest włączony.
-* Klawisze są podane obok pozycji; wszystkie są na stronie [Skróty klawiszowe](Skroty-klawiszowe). Przeczytaj tam uwagę o macOS.
+* Klawisze są podane obok pozycji; wszystkie są na stronie [Skróty klawiszowe](Skroty-klawiszowe). Działają w każdym systemie; w macOS systemowy pasek menu pokazuje tylko klawisze pozycji **Nowy**, **Otwórz…**, **Zapisz**, **Zapisz jako…** i **Zakończ**.
 
 ## Plik
 

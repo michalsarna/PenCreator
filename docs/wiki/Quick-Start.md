@@ -76,7 +76,7 @@ The preview follows the drawing as you change it. The **Toolpaths** button (gree
 
 ## 6. Look at the G-code
 
-**Preview G-code** (next to **Save G-code** in the bar) makes the G-code of the project and shows it as text in the tab **Preview G-code: name.nc**; nothing is written to the disk. The words are coloured (G and M words, axes, speeds, comments) and the text can be edited.
+**Preview G-code** (next to **Save G-code** in the bar) makes the G-code of the project and shows it as text in the tab **Preview G-code: name.nc**; nothing is written to the disk. It is the same G-code that **Save G-code** writes (its first line is `(PenCreator: name)`). The words are coloured (G and M words, axes, speeds, comments) and the text can be edited.
 
 * **Save G-code** in the tab writes the text, with your edits, to a file.
 * **Make again** makes it from the project again; when you have edited it, the button asks **Lose the edits?** first and a second click makes it.

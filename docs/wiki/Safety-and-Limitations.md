@@ -10,5 +10,4 @@ PenCreator makes plotting paths and writes **G-code for GRBL**. It can **connect
 * A picture (bitmap) is drawn only on a layer whose **Drawing** is **Picture**; on any other layer it is left out with a warning (trace it to lines first, or switch the layer to **Picture**). Text is drawn as the outlines of the font (each letter round its edge), not with single-line letters.
 * Fill lines are parallel lines at an angle; a very small gap makes a huge number of lines, and after 200 000 fill lines the rest of the fill is left out with a warning.
 * No HPGL and no single-line fonts yet.
-* On macOS some keys of the menus (Cmd+E, Cmd+Shift+P, Cmd+L and others) do not run their commands yet; use the menus. See [Keyboard Shortcuts](Keyboard-Shortcuts#on-macos).
 * What is tested: the editor and the project file (the sections of other programs are kept), the opening of files, devices, layers, the order of the strokes, the fill, the G-code, the menus and their keys, and the translations, by automatic tests on every change; the G-code of jobs also in a simulated GRBL controller. The screens were checked in the headless renderer, not on a real machine.

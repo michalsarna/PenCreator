@@ -76,7 +76,7 @@ Podgląd nadąża za zmianami rysunku. Przycisk **Ścieżki** (zielony, gdy wł�
 
 ## 6. Obejrzyj G-code
 
-**Podgląd G-code** (obok **Zapisz G-code** na pasku) robi G-code projektu i pokazuje go jako tekst w karcie **Podgląd G-code: nazwa.nc**; nic nie jest zapisywane na dysk. Słowa są pokolorowane (słowa G i M, osie, prędkości, komentarze), a tekst można edytować.
+**Podgląd G-code** (obok **Zapisz G-code** na pasku) robi G-code projektu i pokazuje go jako tekst w karcie **Podgląd G-code: nazwa.nc**; nic nie jest zapisywane na dysk. To ten sam G-code, który zapisuje **Zapisz G-code** (jego pierwszy wiersz to `(PenCreator: nazwa)`). Słowa są pokolorowane (słowa G i M, osie, prędkości, komentarze), a tekst można edytować.
 
 * **Zapisz G-code** w karcie zapisuje tekst, z Twoimi zmianami, do pliku.
 * **Wygeneruj ponownie** robi go od nowa z projektu; gdy był edytowany, przycisk najpierw pyta **Stracić zmiany?**, a drugie kliknięcie go robi.

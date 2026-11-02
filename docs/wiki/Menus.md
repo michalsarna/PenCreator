@@ -7,7 +7,7 @@ The menu bar has nine menus, in this order: **File · Edit · Insert · Arrange 
 * On **Windows and Linux** the menu bar is in the window, under the title bar. It is shown in the editor, not on the start screen.
 * On **macOS** the menus are in the system menu bar at the top of the screen. It has two more menus: the app menu **PenCreator** (**About PenCreator**, the usual entries of the system, **Quit**) and **Window** (minimise and maximise). That is why **Quit** is not at the end of **File** and **About** is not at the end of **Help** on a Mac.
 * An entry that cannot be used now is grey (for example **Trace image…** when no picture is selected, **Save** on the start screen). A switch has a tick when it is on.
-* The keys are listed next to the entries; all of them are on the page [Keyboard Shortcuts](Keyboard-Shortcuts). Read the note about macOS there.
+* The keys are listed next to the entries; all of them are on the page [Keyboard Shortcuts](Keyboard-Shortcuts). They work on every system; on macOS the system menu bar shows only the keys of **New**, **Open…**, **Save**, **Save as…** and **Quit**.
 
 ## File
 

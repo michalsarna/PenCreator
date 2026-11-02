@@ -2,7 +2,7 @@
 
 # Skróty klawiszowe
 
-Ctrl to na Macu Cmd. Klawisze działają w edytorze (nie na ekranie startowym) i żaden z nich nie jest przejmowany, gdy pole tekstowe ma klawiaturę: pisanie w polu, w karcie **Opis** albo w karcie z tekstem G-code wpisuje litery. Przeczytaj niżej [W macOS](#w-macos): tam część klawiszy menu jeszcze nie działa.
+Ctrl to na Macu Cmd. Klawisze działają w edytorze (nie na ekranie startowym) i żaden z nich nie jest przejmowany, gdy pole tekstowe ma klawiaturę: pisanie w polu, w karcie **Opis** albo w karcie z tekstem G-code wpisuje litery. Na Macu systemowy pasek menu nie pokazuje wszystkich klawiszy; zobacz [W macOS](#w-macos).
 
 ## Klawisze menu
 
@@ -90,8 +90,7 @@ Gdy na karcie **Sterowanie** zaznaczysz **Klawiatura** (domyślnie wyłączone),
 
 ## W macOS
 
-Menu są na systemowym pasku menu macOS. W tej wersji:
+Menu są na systemowym pasku menu macOS. Wszystkie klawisze z tej strony działają także tam:
 
-* **Cmd+N**, **Cmd+O**, **Cmd+S**, **Cmd+Shift+S** i **Cmd+Q** (w menu aplikacji **PenCreator**) są klawiszami tego paska i działają.
-* **Cmd+Z**, **Cmd+Shift+Z**, **Cmd+Y**, **Cmd+C**, **Cmd+V**, **Cmd+D**, **Cmd+A**, **Cmd+G**, **Cmd+Shift+G**, Delete, klawisze kart (Cmd+1 … Cmd+0, Cmd+W), litery narzędzi i Esc działają w oknie.
-* Pozostałe klawisze z tabeli wyżej (**Cmd+E**, **Cmd+Shift+P**, **Cmd+L**, **Cmd+Shift+L**, klawisze powiększenia) nie są jeszcze połączone z systemowym paskiem menu i nie uruchamiają swoich poleceń; użyj menu (**Ploter → Eksportuj G-code…**, **Ploter → Wykres zadania…**, **Widok → Powiększ** …) albo przycisków **Zapisz G-code** i **Podgląd…**.
+* **Cmd+N**, **Cmd+O**, **Cmd+S**, **Cmd+Shift+S** i **Cmd+Q** (w menu aplikacji **PenCreator**) należą do systemowego paska menu, który pokazuje je obok pozycji.
+* Pozostałe klawisze menu (**Cmd+E**, **Cmd+Shift+P**, **Cmd+L**, **Cmd+Shift+L**, **Cmd+=** / **Cmd+-**, **Cmd+Shift+0** / **Cmd+Shift+9**, klawisze edycji) przejmuje sam program w swoim oknie. Działają tak samo jak w Windows i Linuksie, ale systemowy pasek menu nie pokazuje ich obok pozycji; wymienia je tabela wyżej.
