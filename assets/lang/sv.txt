@@ -261,3 +261,4 @@
 260|Pennan från förinställningen finns inte i biblioteket: lagret har ingen penna
 261|Zoom
 262|Inte en kameraadress (http, https, rtsp, udp, rtp eller rtmp).
+263|Om PenCreator

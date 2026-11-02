@@ -261,3 +261,4 @@
 260|Pennen fra forhåndsinnstillingen er ikke i biblioteket: laget har ingen penn
 261|Zoom
 262|Ikke en kameraadresse (http, https, rtsp, udp, rtp eller rtmp).
+263|Om PenCreator
