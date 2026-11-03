@@ -43,7 +43,7 @@ Każdy rysunek to karta nad obszarem roboczym; **Nowy** (Ctrl+N) albo **+** na k
 ## 3. Rysuj albo importuj
 
 * **Rysuj** narzędziami po lewej: **Zaznaczanie (V)**, **Edycja węzłów (N)**, **Prostokąt (R)**, **Elipsa (E)**, **Trójkąt (Y)**, **Gwiazda (S)**, **Wielokąt (G)**, **Serce (K)**, **Spirala (I)**, **Linia (L)**, **Linia łamana / pióro (P)**, **Tekst (T)**, **Przesuwanie widoku (H)**, **Powiększ (Z)** i **Pomniejsz (X)**. Menu **Wstawianie** ma te same narzędzia rysowania. Karta **Właściwości** zmienia rozmiar, położenie i szczegóły zaznaczonego kształtu.
-* **Importuj** przez **Plik → Importuj**: **Import obrazu…**, **Importuj DXF…**, **Importuj projekt LightBurn…**, **Importuj projekt UGS…** albo importery i generatory wtyczek. Kształty są dodawane do rysunku, zaznaczone. Projekt UGS ustawia też puste warstwy dla swoich sposobów cięcia (kieszeń lub wypełnienie dostaje rysowanie **Wypełnienie liniami**, pozostałe **Kontur**).
+* **Importuj** przez **Plik → Importuj**: **Importuj obraz…**, **Importuj SVG…**, **Importuj Adobe Illustrator / PDF…**, **Importuj DXF…**, **Importuj projekt LightBurn…**, **Importuj projekt UGS…** albo importery i generatory wtyczek. Kształty są dodawane do rysunku, zaznaczone. Projekt UGS ustawia też puste warstwy dla swoich sposobów cięcia (kieszeń lub wypełnienie dostaje rysowanie **Wypełnienie liniami**, pozostałe **Kontur**).
 * **Clipart**: karta **Clipart** ma galerię obrazków do wstawienia, a **Wstawianie → Online clipart…** szuka w internecie.
 
 Tekst jest rysowany konturami czcionki (każda litera dookoła krawędzi), nie pojedynczymi liniami. Edycja, rozmieszczanie i obrazy są opisane na stronie [Narzędzia projektowe](Narzedzia-projektowe).
