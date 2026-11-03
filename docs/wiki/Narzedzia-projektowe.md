@@ -36,9 +36,9 @@ Polecenia menu **Rozmieść** (takie same w LightCreatorze, MillCreatorze i PenC
 
 **Plik → Eksport → Eksportuj zaznaczenie jako SVG…** / **Eksportuj zaznaczenie jako DXF…** zapisuje zaznaczone kształty (wszystkie, gdy nic nie jest zaznaczone).
 
-## Obraz w tle (menu Widok) i okno wektoryzacji
+## Nakładka z kamery (menu Widok) i okno wektoryzacji
 
-**Widok → Obraz w tle…** kładzie zdjęcie, plan albo skan **pod rysunkiem**: **Wczytaj obraz z pliku…** (PNG, JPG, BMP, WebP, GIF). Zaznacz **Przesuwaj narożniki** i przeciągnij cztery narożniki obrazu na narożniki papieru albo obszaru roboczego (obraz podąża za nimi z przekształceniem perspektywicznym); **Krycie**, **Pokaż**, **Dopasuj do obszaru roboczego** i **Usuń** są w tym samym oknie. Obraz nie jest zapisywany w projekcie. W oknie **Wektoryzacja obrazu** obraz można przybliżać kółkiem myszy albo przyciskami **Powiększ**, **Pomniejsz** i **Resetuj widok**, a zielony przycisk **Wektoryzuj** tworzy kontury.
+**Widok → Nakładka z…** kładzie zdjęcie, plan albo skan **pod rysunkiem** (**Wczytaj obraz…**) albo obraz na żywo z kamery urządzenia (**Włącz kamerę**, **Zatrzymaj klatkę**; także przycisk **Nakładka** na karcie kamery). Zaznacz wyrównywanie i przeciągnij cztery narożniki obrazu na narożniki materiału albo obszaru roboczego (obraz podąża za nimi z przekształceniem perspektywicznym) albo podaj **Punkty odniesienia**, które zostają przy urządzeniu. Krycie, pokazywanie, powrót do obszaru roboczego, odbicia, obrót i usuwanie są w tym samym oknie, a **Widok → Pokaż nakładkę z kamery** pokazuje ją lub ukrywa. Obraz jest zapisywany w projekcie. W oknie **Wektoryzacja obrazu** obraz można przybliżać kółkiem myszy albo przyciskami **Powiększ**, **Pomniejsz** i **Resetuj widok**, a zielony przycisk **Wektoryzuj** tworzy kontury.
 
 ## Panel boczny
 
