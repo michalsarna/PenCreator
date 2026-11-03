@@ -36,4 +36,4 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. **Wczesna 
 * **Sterowanie maszyną:** przesuw, zerowanie, makra, ustawienia firmware, kalibracja, statystyki (zobacz [Sterowanie maszyną](Sterowanie-maszyna)).
 * **Planowane:** HPGL, czcionki jednoliniowe.
 
-Najnowsza wersja: **v0.5.6** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
+Najnowsza wersja: **v0.5.7** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
