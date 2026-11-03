@@ -4,7 +4,7 @@
 
 A first job from start to end: choose the plotter, draw or import something, give the shapes their pens, look at the plot and the G-code, and save the G-code (or send it to the machine).
 
-> PenCreator is early: it has not yet been tried on a real plotter. The G-code is checked by automatic tests and in a GRBL simulator. Read [Safety and Limitations](Safety-and-Limitations) before you run a job.
+> PenCreator has been tested on a pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL); your machine may differ. The G-code is also checked by automatic tests and in a GRBL simulator. Read [Safety and Limitations](Safety-and-Limitations) before you run a job.
 
 ## 1. Choose the device
 

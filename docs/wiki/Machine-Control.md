@@ -2,7 +2,7 @@
 
 # Machine control
 
-PenCreator drives a GRBL machine from the **Device** tab (connect), the **Control** tab and the **Machine** menu. All of it comes from baseCreator, so MillCreator, PenCreator and LightCreator behave the same. **Nothing here has been tried on a real plotter yet**: test with the pen lifted or no pen, and keep a hand on the stop. The first steps are on [Quick Start](Quick-Start#8-save-the-g-code-or-plot-it).
+PenCreator drives a GRBL machine from the **Device** tab (connect), the **Control** tab and the **Machine** menu. All of it comes from baseCreator, so MillCreator, PenCreator and LightCreator behave the same. PenCreator has been tested on a pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL), but not everything here: the change of the pen at a fixed place has not been tried on a real plotter yet. On a new machine, test with the pen lifted or no pen, and keep a hand on the stop. The first steps are on [Quick Start](Quick-Start#8-save-the-g-code-or-plot-it).
 
 ## Reading the machine
 

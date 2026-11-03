@@ -4,7 +4,7 @@
 
 # PenCreator
 
-Open-source software for pen plotters, written in Rust. **Early:** it has not yet been tried on a real plotter. Devices, pens as layers, fill lines, a plot preview and G-code for GRBL; it writes G-code and can stream it to a GRBL plotter. It is the sibling of [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) and uses the same window, editor and files through [baseCreator](https://github.com/michalsarna/baseCreator).
+Open-source software for pen plotters, written in Rust. It has been tested on a pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL). Devices, pens as layers, fill lines, a plot preview and G-code for GRBL; it writes G-code and can stream it to a GRBL plotter. It is the sibling of [LightCreator](https://github.com/michalsarna/LightCreator) (laser) and [MillCreator](https://github.com/michalsarna/MillCreator) (CNC mill) and uses the same window, editor and files through [baseCreator](https://github.com/michalsarna/baseCreator).
 
 ![Editor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
 

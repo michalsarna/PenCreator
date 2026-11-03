@@ -27,4 +27,4 @@ commands to a machine, are in scope. Problems in the shared code are handled in
 
 ## Safety reminder
 
-A plotter is a machine with moving parts. PenCreator writes G-code and can stream it to a GRBL plotter, but neither has been tried on a real plotter: set the pen up and down values of the device with care, test new jobs with the pen lifted first and never leave a running machine unattended.
+A plotter is a machine with moving parts. PenCreator writes G-code and can stream it to a GRBL plotter. It has been tested on a pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL), but your machine may differ: set the pen up and down values of the device with care, test new jobs with the pen lifted first and never leave a running machine unattended.

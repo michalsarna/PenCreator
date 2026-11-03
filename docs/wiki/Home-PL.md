@@ -4,7 +4,7 @@
 
 # PenCreator
 
-Otwartoźródłowy program dla ploterów piszących, napisany w Rust. **Wczesna wersja:** nie był jeszcze sprawdzony na prawdziwym ploterze. Urządzenia, pisaki jako warstwy, wypełnianie liniami, podgląd wykresu i G-code dla GRBL; zapisuje G-code i może przesłać go do plotera GRBL. To rodzeństwo [LightCreatora](https://github.com/michalsarna/LightCreator) (laser) i [MillCreatora](https://github.com/michalsarna/MillCreator) (frezarka CNC): to samo okno, ten sam edytor i te same pliki dzięki [baseCreatorowi](https://github.com/michalsarna/baseCreator).
+Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Testowany na ploterze zbudowanym na wzór [Drawing Robota](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL). Urządzenia, pisaki jako warstwy, wypełnianie liniami, podgląd wykresu i G-code dla GRBL; zapisuje G-code i może przesłać go do plotera GRBL. To rodzeństwo [LightCreatora](https://github.com/michalsarna/LightCreator) (laser) i [MillCreatora](https://github.com/michalsarna/MillCreator) (frezarka CNC): to samo okno, ten sam edytor i te same pliki dzięki [baseCreatorowi](https://github.com/michalsarna/baseCreator).
 
 ![Edytor](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/05-layers.png)
 
