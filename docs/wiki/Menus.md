@@ -19,12 +19,16 @@ The menu bar has nine menus, in this order: **File · Edit · Insert · Arrange 
 | **Save** | Ctrl+S | Writes the project as `.cre`. A drawing that has no project file yet (new, or opened from SVG or PDF) asks for a name first. |
 | **Save as…** | Ctrl+Shift+S | Writes the project under a new name. |
 | **Import → Import image…** | | A picture (PNG, JPG, BMP, GIF, WebP) through the import dialog. See [Design Tools](Design-Tools). |
+| **Import → Import SVG…** | Ctrl+I | The paths of an SVG are added to the open drawing, each on the layer nearest to its colour. **Open…** would make a new tab of the file. |
+| **Import → Import Adobe Illustrator / PDF…** | | The same for a PDF or a PDF-compatible `.ai`. A file with Illustrator layers asks whether to go by colour or by those layers. |
 | **Import → Import DXF…** | | The lines, arcs and curves of a DXF drawing are added to the drawing. |
 | **Import → Import LightBurn project…** | | The shapes of a LightBurn project (`.lbrn2`, `.lbrn`) are added to the drawing. |
 | **Import → Import UGS design…** | | The shapes of a UGS Designer file (`.ugsd`) are added to the drawing. |
 | **Import → Import with a plugin…** | | A file of a format that an installed plugin reads. See [Plugins](Plugins). |
 | **Import → Generate shape…** | | The generators of the installed plugins. |
 | **Export → Export G-code…** | | The same as **Plotter → Export G-code…**. |
+| **Export → Export SVG…** | | The whole drawing as SVG, the size of the work area. Curves are kept; pictures are left out. |
+| **Export → Export PLT / DXF…** | | The outlines of the whole drawing as HPGL (`.plt`, one pen per layer) or DXF R12, by the extension you choose. These are the shapes, not the moves of the machine. |
 | **Export → Export selection as SVG…** / **Export selection as DXF…** | | Writes the selected shapes (all of them when nothing is selected) as SVG or DXF. |
 | **View G-code file…** | | Opens a G-code file (`.gcode`, `.nc`, `.gc`, `.gco`, `.ngc`, `.tap`, `.cnc`) in the **G-code analysis** tab: its toolpaths, without changing the drawing. |
 | **Quit** | Ctrl+Q | Closes the program; every drawing with unsaved work is asked about first. Windows and Linux only (on macOS it is in the app menu). |
