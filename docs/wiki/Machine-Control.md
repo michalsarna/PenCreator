@@ -56,7 +56,7 @@ An alarm, an error in a job or a controller that does not answer opens a **windo
 
 ## Overrides and saved positions
 
-With a GRBL 1.1 or newer controller that reports them, the Control tab has **Overrides**: the feed can be changed in steps of 10 % and 1 % while a job runs, and the rapids slowed to 50 % or 25 %. **Saved positions** (also GRBL 1.1 or newer) remembers where the tool is (**Save here**: the machine position, with a name) and goes back there: Z first up to the higher of the two heights, then X and Y, then Z down to the saved one. ✖ forgets a position. The list is kept in `saved_positions.json` in the shared data folder. **Smoothieware (not GRBL)** is streamed like GRBL and untried on a real board.
+With a GRBL 1.1 or newer controller that reports them, the Control tab has **Overrides**: the feed can be changed in steps of 10 % and 1 % while a job runs, and the rapids slowed to 50 % or 25 %. **Saved positions** (also GRBL 1.1 or newer) remembers where the tool is (**Save here**: the machine position, with a name) and goes back there: Z first up to the higher of the two heights, then X and Y, then Z down to the saved one. × forgets a position. The list is kept in `saved_positions.json` in the shared data folder. **Smoothieware (not GRBL)** is streamed like GRBL and untried on a real board.
 
 ## Camera: RTSP, photos, video and time-lapse
 

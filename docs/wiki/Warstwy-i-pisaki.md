@@ -73,7 +73,7 @@ Po jednym kolorze na każdą z 64 warstw, w rzędzie przewijanym w bok (strzałk
 **Zapisz preset…** i **Wczytaj preset** nad ustawieniami warstwy otwierają okno **Presety warstw**:
 
 * wpisz nazwę i naciśnij **Zapisz preset…**, żeby zachować ustawienia aktywnej warstwy pod tą nazwą (najwyżej 60 presetów);
-* pole **Szukaj** zawęża listę; kliknięcie presetu nakłada jego ustawienia na aktywną warstwę; **✎** zmienia jego nazwę, a **✖** go zapomina;
+* pole **Szukaj** zawęża listę; kliknięcie presetu nakłada jego ustawienia na aktywną warstwę; ołówek zmienia jego nazwę, a **×** go zapomina;
 * **Eksportuj…** zapisuje wszystkie presety do pliku, a **Importuj…** dodaje te z pliku.
 
 Preset zachowuje wszystko poza nazwą, kolorem, widocznością, tym, czy warstwa jest rysowana, i jej miejscem w kolejności: sposób rysowania, pisak, szerokość, prędkość, sposób rysowania obrazu i rastrowanie, wypełnienie i liczbę przejść. Preset z pisakiem, którego nie ma już w bibliotece, zostawia warstwę bez pisaka (szerokość zostaje), a pasek stanu mówi *Pisaka z presetu nie ma w bibliotece: warstwa jest bez pisaka*. Presety są w pliku `pen_layer_presets.json` we wspólnym folderze danych (zobacz [Ustawienia i pliki](Ustawienia-i-pliki)).

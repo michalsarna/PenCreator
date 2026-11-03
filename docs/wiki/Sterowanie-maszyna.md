@@ -56,7 +56,7 @@ Alarm, błąd w zadaniu albo kontroler, który nie odpowiada, otwiera **okno po�
 
 ## Korekty i zapisane pozycje
 
-Przy kontrolerze GRBL 1.1 lub nowszym, który je podaje, karta Sterowanie ma **Korekty**: posuw można zmieniać co 10 % i 1 % podczas zadania, a ruchy szybkie zwolnić do 50 % lub 25 %. **Zapisane pozycje** (też GRBL 1.1 lub nowszy) zapamiętują, gdzie jest narzędzie (**Zapisz tutaj**: pozycja maszynowa, z nazwą) i wracają tam: najpierw Z w górę do wyższej z dwóch wysokości, potem X i Y, potem Z w dół do zapisanej. ✖ zapomina pozycję. Lista leży w `saved_positions.json` we wspólnym folderze danych. **Smoothieware (nie GRBL)** jest strumieniowany jak GRBL i nie był sprawdzony na prawdziwej płytce.
+Przy kontrolerze GRBL 1.1 lub nowszym, który je podaje, karta Sterowanie ma **Korekty**: posuw można zmieniać co 10 % i 1 % podczas zadania, a ruchy szybkie zwolnić do 50 % lub 25 %. **Zapisane pozycje** (też GRBL 1.1 lub nowszy) zapamiętują, gdzie jest narzędzie (**Zapisz tutaj**: pozycja maszynowa, z nazwą) i wracają tam: najpierw Z w górę do wyższej z dwóch wysokości, potem X i Y, potem Z w dół do zapisanej. × zapomina pozycję. Lista leży w `saved_positions.json` we wspólnym folderze danych. **Smoothieware (nie GRBL)** jest strumieniowany jak GRBL i nie był sprawdzony na prawdziwej płytce.
 
 ## Kamera: RTSP, zdjęcia, wideo i poklatkowe
 
