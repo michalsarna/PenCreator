@@ -4,6 +4,10 @@
 
 PenCreator edits shapes with the same tools as LightCreator and MillCreator (baseCreator). The keys of the tools are on [Keyboard Shortcuts](Keyboard-Shortcuts), the menus on [Menus](Menus).
 
+## Text
+
+Choose **Text (T)** and click on the page: a text appears and the **Properties** tab opens with the field to type in. There you set the font, the size, bold and italic, the letter and line spacing and the alignment. **Convert to curves** turns the text into shapes whose nodes can be edited. A new text takes the settings of the text changed last.
+
 ## Editing
 
 * **Right mouse button** on a shape opens its menu: **Copy**, **Paste**, **Duplicate**, **Delete**, **Select all**, **Group**, **Ungroup**, **Lock**, **Unlock**, the flips and quarter turns, the submenu **Arrange** (order, alignment, centring, **Edit nodes**, **Convert to path**) and the submenu **Shape operations** (**Union**, **Intersection**, **Subtract**, **Exclusive or**, **Offset shape…**, **Round corners…**, **Convert to curves**; they are also in the **Arrange** menu); for a picture also **Adjust image…** and **Trace image…**. The entries that do not fit the selection are grey.

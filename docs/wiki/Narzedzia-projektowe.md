@@ -4,6 +4,10 @@
 
 PenCreator edytuje kształty tymi samymi narzędziami co LightCreator i MillCreator (baseCreator). Klawisze narzędzi są na stronie [Skróty klawiszowe](Skroty-klawiszowe), menu na stronie [Menu](Menu).
 
+## Tekst
+
+Wybierz **Tekst (T)** i kliknij na obszarze roboczym: pojawia się tekst, a karta **Właściwości** otwiera się z polem do pisania. Ustawisz tam czcionkę, rozmiar, pogrubienie i kursywę, odstępy między literami i wierszami oraz wyrównanie. **Zamień na krzywe** robi z tekstu kształty, których węzły można edytować. Nowy tekst bierze ustawienia ostatnio zmienianego.
+
 ## Edycja
 
 * **Prawy przycisk myszy** na kształcie otwiera jego menu: **Kopiuj**, **Wklej**, **Powiel**, **Usuń**, **Zaznacz wszystko**, **Grupuj**, **Rozgrupuj**, **Zablokuj**, **Odblokuj**, odbicia i obroty o ćwierć, podmenu **Rozmieść** (kolejność, wyrównanie, wyśrodkowanie, **Edytuj węzły**, **Zamień na ścieżkę**) i podmenu **Operacje na kształtach** (**Suma**, **Część wspólna**, **Odejmij**, **Różnica symetryczna**, **Przesuń obrys…**, **Zaokrąglij rogi…**, **Zamień na krzywe**; są też w menu **Rozmieść**); dla obrazu także **Dostosuj obraz…** i **Wektoryzacja obrazu…**. Pozycje, które nie pasują do zaznaczenia, są szare.

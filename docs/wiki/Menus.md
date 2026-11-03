@@ -120,7 +120,7 @@ All of them are explained on [Machine Control](Machine-Control).
 
 | Entry | What it does |
 |---|---|
-| **View options…** | The grid, the colours of the work area, the thickness of the lines, **Show layer names**, **Preview G-code after saving**, **Show variable names**. |
+| **View options…** | The grid, the colours of the work area, the thickness of the lines, **Show layer names**, **Preview G-code after saving**, **Show variable names**, the font size and colours of the **G-code console**. |
 | **Program options…** | **Look for a newer version when the program starts** (on by default). |
 | **Plugins…** | Installs, switches and removes plugins. See [Plugins](Plugins). |
 | **Language** | 30 languages; the choice is kept. |

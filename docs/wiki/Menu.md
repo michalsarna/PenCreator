@@ -120,7 +120,7 @@ Wszystkie są opisane na stronie [Sterowanie maszyną](Sterowanie-maszyna).
 
 | Pozycja | Co robi |
 |---|---|
-| **Opcje widoku…** | Siatka, kolory obszaru roboczego, grubość linii, **Pokaż nazwy warstw**, **Podgląd G-code po zapisaniu**, **Pokaż nazwy zmiennych**. |
+| **Opcje widoku…** | Siatka, kolory obszaru roboczego, grubość linii, **Pokaż nazwy warstw**, **Podgląd G-code po zapisaniu**, **Pokaż nazwy zmiennych**, rozmiar czcionki i kolory **konsoli G-code**. |
 | **Opcje programu…** | **Szukaj nowszej wersji przy uruchamianiu programu** (domyślnie włączone). |
 | **Wtyczki…** | Instalowanie, włączanie i usuwanie wtyczek. Zobacz [Wtyczki](Wtyczki). |
 | **Język** | 30 języków; wybór jest zapamiętywany. |
