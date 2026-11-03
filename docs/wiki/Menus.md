@@ -31,6 +31,7 @@ The menu bar has nine menus, in this order: **File · Edit · Insert · Arrange 
 | **Export → Export PLT / DXF…** | | The outlines of the whole drawing as HPGL (`.plt`, one pen per layer) or DXF R12, by the extension you choose. These are the shapes, not the moves of the machine. |
 | **Export → Export selection as SVG…** / **Export selection as DXF…** | | Writes the selected shapes (all of them when nothing is selected) as SVG or DXF. |
 | **View G-code file…** | | Opens a G-code file (`.gcode`, `.nc`, `.gc`, `.gco`, `.ngc`, `.tap`, `.cnc`) in the **G-code analysis** tab: its toolpaths, without changing the drawing. |
+| **Print…** | Ctrl+P | Prints the design on a paper printer, or saves it as a PDF. |
 | **Quit** | Ctrl+Q | Closes the program; every drawing with unsaved work is asked about first. Windows and Linux only (on macOS it is in the app menu). |
 
 ## Edit
@@ -93,16 +94,21 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Auto-fit work area to window** | | A switch: the work area stays fitted when the window changes size. Zooming or panning by hand switches it off. |
 | **Split view: side by side**, **Split view: one above the other** | | Divides the work area into panes (up to three). With one pane, its last tab goes to a new pane (when the pane has two tabs or more). See [Design Tools](Design-Tools#tabs-and-panes). |
 | **Single view** | | Puts all the tabs together in one pane again. |
-| **Background picture…** | | A photo or a scan under the drawing, to draw over. |
+| **Show camera overlay** | | Shows or hides the picture under the drawing. |
+| **Overlay from…** | | A photo or the live picture of the camera under the drawing, aligned by its four corners or by reference points. Saved with the project. |
 
 ## Machine
 
 | Entry | What it does |
 |---|---|
+| **Switch device…** | Goes back to the start screen to choose another device. |
 | **Device settings…** | The settings of the device of the project (pages General, Machine, Pen, G-code, Connection, Camera, Jogging, Macros, Maintenance, Notes). See [Quick Start](Quick-Start) and [Machine Control](Machine-Control). |
 | **Firmware settings ($$)…** | The settings of the GRBL controller, with copies and a backup. |
 | **Calibration…** | Steps per millimetre and the squareness of the axes. |
 | **Diagnostics and statistics…** | The inputs of the controller, the statistics and maintenance of the machine, a report to save. |
+| **Share over network (ser2net)…** | Linux only: shares the serial port of the machine over the network. |
+| **Frame** | Goes round the box of the job (needs a connected machine). |
+| **Start job** | Sends the job (needs a connected machine). |
 | **Start from line…** | Opens the window that starts the job at a line of the program (when there is something to draw); starting needs a connected machine. |
 | **Check the program** | The controller goes through the program in check mode (`$C`); nothing moves. Needs a connected machine. |
 
@@ -133,5 +139,7 @@ All of them are explained on [Machine Control](Machine-Control).
 | **Project page on GitHub** | Opens the page of PenCreator in the browser. |
 | **Download backup…** | Saves the settings and the shared clipart gallery in a zip. See [Settings and Files](Settings-and-Files). |
 | **Restore from backup…** | Reads such a zip back after a question. |
+| **Quick guide** (F1) | The guide inside the program, with a search. |
+| **Export diagnostics (zip)…** | One file with the report, the settings and the console, to attach to a bug report. |
 | **Check for updates…** | Looks for a newer release. |
 | **About** | The version, the licence and the credits. Windows and Linux only (on macOS: **About PenCreator** in the app menu). |

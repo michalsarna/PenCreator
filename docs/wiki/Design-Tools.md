@@ -36,9 +36,9 @@ Commands of the **Arrange** menu (the same in LightCreator, MillCreator and PenC
 
 **File → Export → Export selection as SVG…** / **Export selection as DXF…** writes the selected shapes (all of them when nothing is selected).
 
-## Background picture (View menu) and the trace dialog
+## Camera overlay (View menu) and the trace dialog
 
-**View → Background picture…** puts a photo, a plan or a scan **under the drawing**: **Load a picture from a file…** (PNG, JPG, BMP, WebP, GIF). Tick **Move the corners** and drag its four corners onto the corners of the paper or of the work area (the picture follows with a perspective transform); **Opacity**, **Show**, **Fit to the work area** and **Remove** are in the same window. The picture is not saved with the project. In the **Trace image** dialog the picture can be zoomed with the scroll wheel or the **Zoom in**, **Zoom out** and **Reset view** buttons, and the green **Trace** button makes the outlines.
+**View → Overlay from…** puts a photo, a plan or a scan **under the drawing** (**Load picture…**), or the live picture of the camera of the device (**Start camera**, **Freeze frame**; also the **Overlay** button on the camera tab). Tick **Align: drag the four corners on the work area** and drag its corners onto the corners of the material or of the work area (the picture follows with a perspective transform), or give **Reference points**, which are kept with the device. **Opacity**, **Show overlay**, **Reset to work area**, **Flip H**, **Flip V**, **Rotate 90°** and **Remove** are in the same window, and **View → Show camera overlay** shows or hides it. The picture is saved with the project. In the **Trace image** dialog the picture can be zoomed with the scroll wheel or the **Zoom in**, **Zoom out** and **Reset view** buttons, and the green **Trace** button makes the outlines.
 
 ## The side panel
 

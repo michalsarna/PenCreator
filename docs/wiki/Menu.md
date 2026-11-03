@@ -31,6 +31,7 @@ Pasek menu ma dziewięć menu, w tej kolejności: **Plik · Edycja · Wstawianie
 | **Eksport → Eksportuj PLT / DXF…** | | Obrysy całego rysunku jako HPGL (`.plt`, jeden pisak na warstwę) albo DXF R12, zależnie od wybranego rozszerzenia. To kształty, a nie ruchy maszyny. |
 | **Eksport → Eksportuj zaznaczenie jako SVG…** / **Eksportuj zaznaczenie jako DXF…** | | Zapisuje zaznaczone kształty (wszystkie, gdy nic nie jest zaznaczone) jako SVG albo DXF. |
 | **Pokaż plik G-code…** | | Otwiera plik G-code (`.gcode`, `.nc`, `.gc`, `.gco`, `.ngc`, `.tap`, `.cnc`) w karcie **Analiza G-code**: jego ścieżki, bez zmiany rysunku. |
+| **Drukuj…** | Ctrl+P | Drukuje projekt na drukarce papierowej albo zapisuje go jako PDF. |
 | **Zakończ** | Ctrl+Q | Zamyka program; o każdy rysunek z niezapisaną pracą najpierw pyta. Tylko Windows i Linux (w macOS jest w menu aplikacji). |
 
 ## Edycja
@@ -93,16 +94,21 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Automatycznie dopasuj obszar roboczy do okna** | | Przełącznik: obszar roboczy zostaje dopasowany, gdy okno zmienia rozmiar. Ręczne przybliżanie lub przesuwanie go wyłącza. |
 | **Podziel widok: obok siebie**, **Podziel widok: jeden nad drugim** | | Dzieli obszar roboczy na panele (najwyżej trzy). Przy jednym panelu jego ostatnia karta trafia do nowego panelu (gdy panel ma co najmniej dwie karty). Zobacz [Narzędzia projektowe](Narzedzia-projektowe#karty-i-panele). |
 | **Jeden widok** | | Zbiera wszystkie karty znów w jednym panelu. |
-| **Obraz w tle…** | | Zdjęcie lub skan pod rysunkiem, do odrysowania. |
+| **Pokaż nakładkę z kamery** | | Pokazuje lub ukrywa obraz pod rysunkiem. |
+| **Nakładka z…** | | Zdjęcie albo obraz na żywo z kamery pod rysunkiem, ustawiane czterema narożnikami albo punktami odniesienia. Zapisywana w projekcie. |
 
 ## Maszyna
 
 | Pozycja | Co robi |
 |---|---|
+| **Zmień urządzenie…** | Wraca do ekranu startowego, aby wybrać inne urządzenie. |
 | **Ustawienia urządzenia…** | Ustawienia urządzenia projektu (strony Ogólne, Maszyna, Pisak, G-code, Połączenie, Kamera, Przesuw ręczny, Makra, Konserwacja, Notatki). Zobacz [Szybki start](Szybki-start) i [Sterowanie maszyną](Sterowanie-maszyna). |
 | **Ustawienia firmware ($$)…** | Ustawienia kontrolera GRBL, z kopiami i kopią zapasową. |
 | **Kalibracja…** | Kroki na milimetr i prostopadłość osi. |
 | **Diagnostyka i statystyki…** | Wejścia kontrolera, statystyki i konserwacja maszyny, raport do zapisania. |
+| **Udostępnij w sieci (ser2net)…** | Tylko Linux: udostępnia port szeregowy maszyny w sieci. |
+| **Obrys** | Obchodzi prostokąt zadania (wymaga podłączonej maszyny). |
+| **Rozpocznij zadanie** | Wysyła zadanie (wymaga podłączonej maszyny). |
 | **Start od wiersza…** | Otwiera okno, które zaczyna zadanie od wiersza programu (gdy jest co rysować); start wymaga podłączonej maszyny. |
 | **Sprawdź program** | Kontroler przechodzi przez program w trybie sprawdzania (`$C`); nic się nie rusza. Wymaga podłączonej maszyny. |
 
@@ -133,5 +139,7 @@ Wszystkie są opisane na stronie [Sterowanie maszyną](Sterowanie-maszyna).
 | **Strona projektu na GitHubie** | Otwiera stronę PenCreatora w przeglądarce. |
 | **Pobierz kopię zapasową…** | Zapisuje ustawienia i wspólną galerię clipartów w pliku zip. Zobacz [Ustawienia i pliki](Ustawienia-i-pliki). |
 | **Przywróć z kopii zapasowej…** | Wczytuje taki plik zip po pytaniu. |
+| **Krótki przewodnik** (F1) | Przewodnik w programie, z wyszukiwarką. |
+| **Eksportuj diagnostykę (zip)…** | Jeden plik z raportem, ustawieniami i konsolą, do dołączenia do zgłoszenia błędu. |
 | **Sprawdź aktualizacje…** | Szuka nowszego wydania. |
 | **O programie** | Wersja, licencja i podziękowania. Tylko Windows i Linux (w macOS: **About PenCreator** w menu aplikacji). |
