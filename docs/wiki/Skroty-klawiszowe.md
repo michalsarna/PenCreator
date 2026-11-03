@@ -63,6 +63,9 @@ Litera bez Ctrl wybiera narzędzie z lewej palety (litera jest w podpowiedzi jeg
 |---|---|
 | Esc | Czyści zaznaczenie (i rysowaną linię łamaną). |
 | Esc dwa razy (w ciągu pół sekundy) | Wraca do narzędzia **Zaznaczanie (V)**. |
+| Spacja (przytrzymana) | Przesuwanie widoku przy każdym narzędziu; po puszczeniu wraca poprzednie narzędzie. |
+| Strzałki | Przesuwają zaznaczenie o 1 mm; **Shift** + strzałka = 10 mm (nie przy zaznaczonej **Klawiaturze** na karcie Sterowanie). |
+| G, I | Wielokąt i spirala: małe okno ustawia liczbę boków lub zwojów, także w kształcie narysowanym ostatnio. |
 | Enter | Kończy linię łamaną rysowaną narzędziem **Linia łamana / pióro (P)**. |
 
 ## Mysz z klawiszami
