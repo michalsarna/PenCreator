@@ -73,7 +73,7 @@ One swatch for each of the 64 layers, in a row that scrolls sideways (the arrows
 **Save preset…** and **Load preset** above the settings of a layer both open the window **Layer presets**:
 
 * type a name and press **Save preset…** to keep the settings of the active layer under that name (at most 60 presets);
-* the **Search** field narrows the list; a click on a preset puts its settings on the active layer; **✎** renames it and **✖** forgets it;
+* the **Search** field narrows the list; a click on a preset puts its settings on the active layer; the pencil renames it and **×** forgets it;
 * **Export…** writes all the presets to a file and **Import…** adds those of a file.
 
 A preset keeps everything but the name, the colour, the visibility, whether the layer is drawn and its place in the order: the drawing, the pen, the width, the speed, the picture method and dithering, the fill and the number of passes. A preset whose pen is not in the library any more leaves the layer without a pen (its width stays), and the status line says *The pen of the preset is not in the library: the layer has no pen*. The presets are kept in `pen_layer_presets.json` in the shared data folder (see [Settings and Files](Settings-and-Files)).

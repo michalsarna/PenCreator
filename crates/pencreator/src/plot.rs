@@ -1132,6 +1132,17 @@ mod tests {
     }
 
     #[test]
+    fn the_negative_of_a_white_picture_is_drawn_and_the_white_picture_is_not() {
+        let lines = |invert: bool| {
+            let mut scene = Scene::default();
+            let im = base_core::image::ImageData { name: "t".into(), px_w: 8, px_h: 8, gray: vec![255; 64], w: 20.0, h: 20.0, invert };
+            scene.add(0, Kind::Image(im), Xf::translate(10.0, 10.0));
+            generate(&scene, &picture_layers(PictureMethod::Rows), &Device::dummy()).moves.len()
+        };
+        assert!(lines(true) > lines(false));
+    }
+
+    #[test]
     fn a_picture_is_drawn_with_rows_of_lines_dots_or_hatching_by_tone() {
         let mut scene = Scene::default();
         picture(&mut scene, 0, 20.0, 20.0, 20.0, 10.0, false);
