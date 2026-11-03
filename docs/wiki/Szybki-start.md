@@ -4,7 +4,7 @@
 
 Pierwsze zadanie od początku do końca: wybierz ploter, narysuj lub zaimportuj coś, daj kształtom pisaki, obejrzyj wykres i G-code, a potem zapisz G-code (albo wyślij go do maszyny).
 
-> PenCreator jest na wczesnym etapie: nie był jeszcze sprawdzony na prawdziwym ploterze. G-code sprawdzają automatyczne testy i symulator GRBL. Zanim uruchomisz zadanie, przeczytaj [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia).
+> PenCreator był testowany na ploterze zbudowanym na wzór [Drawing Robota](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL); Twoja maszyna może się różnić. G-code sprawdzają też automatyczne testy i symulator GRBL. Zanim uruchomisz zadanie, przeczytaj [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia).
 
 ## 1. Wybierz urządzenie
 
