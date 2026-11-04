@@ -135,7 +135,7 @@
 134|Murija fiż-żona tax-xogħol
 135|Veloċità
 136|Veloċità tal-movimenti bil-pinna mgħollija
-137|Ibda
+137|Start
 138|Ibda minn
 139|Ibda x-xogħol minn linja tal-programm
 140|Qed jinbeda x-xogħol: {} linji, ~{}

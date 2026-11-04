@@ -135,7 +135,7 @@
 134|Mostrada na área de trabalho
 135|Velocidade
 136|Velocidade dos movimentos com a caneta levantada
-137|Iniciar
+137|Start
 138|Começar a partir de
 139|Começar o trabalho numa linha do programa
 140|A iniciar o trabalho: {} linhas, ~{}

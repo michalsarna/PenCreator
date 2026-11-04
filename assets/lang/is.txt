@@ -135,7 +135,7 @@
 134|Sýnt á vinnusvæðinu
 135|Hraði
 136|Hraði hreyfinga með pennann uppi
-137|Byrja
+137|Start
 138|Byrja frá
 139|Hefja verkið í línu forritsins
 140|Verk hafið: {} línur, ~{}

@@ -135,7 +135,7 @@
 134|Taispeántar é sa limistéar oibre
 135|Luas
 136|Luas na ngluaiseachtaí le peann in airde
-137|Tosaigh
+137|Start
 138|Tosaigh ó
 139|Tosaigh an obair ag líne den chlár
 140|Ag tosú na hoibre: {} líne, ~{}

@@ -135,7 +135,7 @@
 134|Se muestra en el área de trabajo
 135|Velocidad
 136|Velocidad de los movimientos con el bolígrafo levantado
-137|Iniciar
+137|Start
 138|Empezar desde
 139|Empezar el trabajo en una línea del programa
 140|Iniciando el trabajo: {} líneas, ~{}

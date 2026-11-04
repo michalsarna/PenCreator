@@ -135,7 +135,7 @@
 134|Prikazano v delovnem območju
 135|Hitrost
 136|Hitrost premikov z dvignjenim pisalom
-137|Začni
+137|Start
 138|Začni od
 139|Začni opravilo pri vrstici programa
 140|Začetek dela: {} vrstic, ~{}
