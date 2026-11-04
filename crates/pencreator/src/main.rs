@@ -431,7 +431,8 @@ impl App {
             autosave: Default::default(),
             saved_rev: 0,
             tabs_state: Default::default(),
-            presets: None,
+            // The tests never touch the presets of whoever runs them.
+            presets: cfg!(test).then(|| base_ui::layer_presets_ui::Library::from_path(None, &crate::layer_presets::valid)),
             presets_ui: Default::default(),
             gcode_texts: vec![],
             closing_text: None,

@@ -93,7 +93,7 @@ Preset zachowuje wszystko poza nazwą, kolorem, widocznością, tym, czy warstwa
 | **Obrót końcówki** | Kierunek szerokości ściętej końcówki lub stalówki, w stopniach. Linia wzdłuż szerokości jest tak gruba jak szerokość, linia w poprzek – tak cienka jak wysokość. |
 | **Końce linii** | **Zaokrąglone końce** albo **Płaskie końce**. |
 | **Kolor tuszu** | Kolor linii w podglądzie. |
-| **Krycie** | 5 … 100 %: mniej to przezroczysty tusz (zakreślacz), a tam, gdzie linie się krzyżują, robią się ciemniejsze. |
+| **Przezroczystość (krycie)** | 5 … 100 %: mniej to przezroczysty tusz (zakreślacz), a tam, gdzie linie się krzyżują, robią się ciemniejsze. |
 
 Pisak warstwy zmienia **Podgląd**: każda linia jest tak gruba, jak robi ją pisak w jej kierunku, z jego końcami, kolorem tuszu i kryciem. Warstwa bez pisaka z biblioteki jest rysowana w swoim kolorze, z zaokrąglonymi końcami, z grubością równą wartości **Szerokość pisaka**.
 
@@ -101,7 +101,7 @@ Pisak warstwy zmienia **Podgląd**: każda linia jest tak gruba, jak robi ją pi
 
 Nazwy gotowych pisaków to dane, nie teksty interfejsu, więc są po angielsku.
 
-| Pisak | Rodzaj | Ślad | Końce | Tusz | Krycie |
+| Pisak | Rodzaj | Ślad | Końce | Tusz | Przezroczystość (krycie) |
 |---|---|---|---|---|---|
 | Fineliner 0.2 mm | Cienkopis | 0,2 mm | zaokrąglone | czarny | 100 % |
 | Fineliner 0.4 mm | Cienkopis | 0,4 mm | zaokrąglone | czarny | 100 % |
