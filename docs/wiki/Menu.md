@@ -130,7 +130,7 @@ Wszystkie są opisane na stronie [Sterowanie maszyną](Sterowanie-maszyna).
 | **Opcje programu…** | **Szukaj nowszej wersji przy uruchamianiu programu** (domyślnie włączone). |
 | **Wtyczki…** | Instalowanie, włączanie i usuwanie wtyczek. Zobacz [Wtyczki](Wtyczki). |
 | **Język** | 30 języków; wybór jest zapamiętywany. |
-| **Schemat kolorów** | 14 schematów kolorów (i świąteczny w okolicy niektórych świąt). |
+| **Schemat kolorów** | 18 schematów kolorów (i świąteczny w okolicy niektórych świąt). |
 
 ## Pomoc
 
