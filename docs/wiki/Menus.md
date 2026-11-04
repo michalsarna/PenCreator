@@ -130,7 +130,7 @@ All of them are explained on [Machine Control](Machine-Control).
 | **Program options…** | **Look for a newer version when the program starts** (on by default). |
 | **Plugins…** | Installs, switches and removes plugins. See [Plugins](Plugins). |
 | **Language** | 30 languages; the choice is kept. |
-| **Colour scheme** | 14 colour schemes (and a festive one around some holidays). |
+| **Colour scheme** | 18 colour schemes (and a festive one around some holidays). |
 
 ## Help
 
