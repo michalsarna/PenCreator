@@ -135,7 +135,7 @@
 134|Affiché dans la zone de travail
 135|Vitesse
 136|Vitesse des déplacements stylo levé
-137|Démarrer
+137|Start
 138|Partir de
 139|Démarrer le travail à une ligne du programme
 140|Démarrage du travail : {} lignes, ~{}

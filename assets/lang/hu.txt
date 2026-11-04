@@ -135,7 +135,7 @@
 134|A munkaterületen látható
 135|Sebesség
 136|A mozgások sebessége felemelt tollal
-137|Indítás
+137|Start
 138|Indulás innen
 139|A munka indítása a program egy sorától
 140|A munka indul: {} sor, ~{}

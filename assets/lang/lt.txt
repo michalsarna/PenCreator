@@ -135,7 +135,7 @@
 134|Rodoma darbo srityje
 135|Greitis
 136|Judesių greitis pakeltu rašikliu
-137|Pradėti
+137|Start
 138|Pradėti nuo
 139|Pradėti darbą nuo programos eilutės
 140|Pradedamas darbas: {} eilučių, ~{}

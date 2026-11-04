@@ -135,7 +135,7 @@
 134|Tiek rādīts darba apgabalā
 135|Ātrums
 136|Kustību ātrums ar paceltu pildspalvu
-137|Sākt
+137|Start
 138|Sākt no
 139|Sākt darbu no programmas rindas
 140|Sāk darbu: {} rindas, ~{}

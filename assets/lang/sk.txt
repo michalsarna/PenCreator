@@ -135,7 +135,7 @@
 134|Zobrazené v pracovnej ploche
 135|Rýchlosť
 136|Rýchlosť pohybov so zdvihnutým perom
-137|Štart
+137|Start
 138|Začať od
 139|Začať úlohu od riadku programu
 140|Spúšťa sa úloha: {} riadkov, ~{}

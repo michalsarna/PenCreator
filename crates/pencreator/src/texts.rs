@@ -180,7 +180,7 @@ const TABLE: &[[&str; 7]] = &[
     ["Shown in the work area", "Pokazana w obszarze roboczym", "Im Arbeitsbereich angezeigt", "Mostrato nell'area di lavoro", "Näytetään työalueella", "显示在工作区域", "कार्य क्षेत्र में दिखाया गया"],
     ["Speed", "Prędkość", "Geschwindigkeit", "Velocità", "Nopeus", "速度", "गति"],
     ["Speed of moves with the pen up", "Prędkość ruchów z podniesionym pisakiem", "Geschwindigkeit der Bewegungen mit angehobenem Stift", "Velocità dei movimenti con la penna alzata", "Liikkeiden nopeus kynä ylhäällä", "抬笔移动的速度", "पेन उठाकर चालों की गति"],
-    ["Start", "Start", "Start", "Avvia", "Käynnistä", "开始", "शुरू"],
+    ["Start", "Start", "Start", "Start", "Start", "Start", "Start"],
     ["Start from", "Start od", "Start von", "Parti da", "Aloituspiste", "起点", "यहाँ से शुरू करें"],
     ["Start the job at a line of the program", "Zacznij zadanie od wiersza programu", "Den Auftrag bei einer Zeile des Programms starten", "Avvia il lavoro da una riga del programma", "Aloita työ ohjelman riviltä", "从程序的某一行开始作业", "प्रोग्राम की एक पंक्ति से कार्य शुरू करें"],
     ["Starting job: {} lines, ~{}", "Start zadania: {} linii, ok. {}", "Auftrag startet: {} Zeilen, ca. {}", "Avvio lavoro: {} righe, ~{}", "Työn aloitus: {} riviä, ~{}", "开始任务：{} 行，约 {}", "जॉब शुरू: {} पंक्तियाँ, ~{}"],

@@ -135,7 +135,7 @@
 134|Es mostra a l'àrea de treball
 135|Velocitat
 136|Velocitat dels moviments amb el bolígraf aixecat
-137|Inicia
+137|Start
 138|Comença des de
 139|Comença la tasca des d'una línia del programa
 140|S'inicia el treball: {} línies, ~{}
