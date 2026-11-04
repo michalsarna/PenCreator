@@ -41,7 +41,9 @@ use base_ui::control_ui::{self, ControlCtx, ControlUi};
 use base_ui::dialogs::AboutInfo;
 use base_ui::job_ui::StartFrom;
 use base_ui::tools_ui::{CalUi, DiagUi};
-use base_ui::editor::{EditorCommands, EditorHost, EditorImages, EditorShapeOps, EditorState, Tool};
+use base_ui::editor::{EditorCommands, EditorHost, EditorImages, EditorShapeOps, EditorState};
+#[cfg(test)]
+use base_ui::editor::Tool;
 #[cfg(test)]
 use base_ui::editor::EditorCanvas;
 use base_ui::i18n::{self, tr, Lang};
