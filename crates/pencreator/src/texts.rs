@@ -266,7 +266,7 @@ const TABLE: &[[&str; 7]] = &[
     ["Round ends", "Zaokrąglone końce", "Runde Enden", "Estremità arrotondate", "Pyöreät päät", "圆头", "गोल सिरे"],
     ["Flat ends", "Płaskie końce", "Flache Enden", "Estremità piatte", "Suorat päät", "平头", "सपाट सिरे"],
     ["Ink colour", "Kolor tuszu", "Tintenfarbe", "Colore dell'inchiostro", "Musteen väri", "墨水颜色", "स्याही का रंग"],
-    ["Opacity", "Krycie", "Deckkraft", "Opacità", "Peittävyys", "不透明度", "अपारदर्शिता"],
+    ["Opacity", "Przezroczystość (krycie)", "Deckkraft", "Opacità", "Peittävyys", "不透明度", "अपारदर्शिता"],
     ["No pen chosen", "Nie wybrano pisaka", "Kein Stift gewählt", "Nessuna penna scelta", "Kynää ei valittu", "未选择笔", "कोई पेन नहीं चुना"],
     ["Pencil", "Ołówek", "Bleistift", "Matita", "Lyijykynä", "铅笔", "पेंसिल"],
     ["Fountain pen (nib)", "Piórko (stalówka)", "Füller (Feder)", "Penna stilografica (pennino)", "Täytekynä (kärki)", "钢笔（笔尖）", "फ़ाउंटेन पेन (निब)"],

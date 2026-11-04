@@ -26,10 +26,10 @@ Pasek menu ma dziewięć menu, w tej kolejności: **Plik · Edycja · Wstawianie
 | **Importuj → Importuj projekt UGS…** | | Kształty pliku UGS Designera (`.ugsd`) są dodawane do rysunku. |
 | **Importuj → Importuj wtyczką…** | | Plik w formacie, który czyta zainstalowana wtyczka. Zobacz [Wtyczki](Wtyczki). |
 | **Importuj → Generuj kształt…** | | Generatory zainstalowanych wtyczek. |
-| **Eksport → Eksportuj G-code…** | | To samo co **Ploter → Eksportuj G-code…**. |
-| **Eksport → Eksportuj SVG…** | | Cały rysunek jako SVG, w rozmiarze obszaru roboczego. Krzywe zostają; obrazy są pomijane. |
-| **Eksport → Eksportuj PLT / DXF…** | | Obrysy całego rysunku jako HPGL (`.plt`, jeden pisak na warstwę) albo DXF R12, zależnie od wybranego rozszerzenia. To kształty, a nie ruchy maszyny. |
-| **Eksport → Eksportuj zaznaczenie jako SVG…** / **Eksportuj zaznaczenie jako DXF…** | | Zapisuje zaznaczone kształty (wszystkie, gdy nic nie jest zaznaczone) jako SVG albo DXF. |
+| **Eksportuj → Eksportuj G-code…** | | To samo co **Ploter → Eksportuj G-code…**. |
+| **Eksportuj → Eksportuj SVG…** | | Cały rysunek jako SVG, w rozmiarze obszaru roboczego. Krzywe zostają; obrazy są pomijane. |
+| **Eksportuj → Eksportuj PLT / DXF…** | | Obrysy całego rysunku jako HPGL (`.plt`, jeden pisak na warstwę) albo DXF R12, zależnie od wybranego rozszerzenia. To kształty, a nie ruchy maszyny. |
+| **Eksportuj → Eksportuj zaznaczenie jako SVG…** / **Eksportuj zaznaczenie jako DXF…** | | Zapisuje zaznaczone kształty (wszystkie, gdy nic nie jest zaznaczone) jako SVG albo DXF. |
 | **Pokaż plik G-code…** | | Otwiera plik G-code (`.gcode`, `.nc`, `.gc`, `.gco`, `.ngc`, `.tap`, `.cnc`) w karcie **Analiza G-code**: jego ścieżki, bez zmiany rysunku. |
 | **Drukuj…** | Ctrl+P | Drukuje projekt na drukarce papierowej albo zapisuje go jako PDF. |
 | **Zakończ** | Ctrl+Q | Zamyka program; o każdy rysunek z niezapisaną pracą najpierw pyta. Tylko Windows i Linux (w macOS jest w menu aplikacji). |
