@@ -1239,7 +1239,7 @@ impl App {
         }
         self.print = print;
         let footer = tr("This guide is available in English and Polish; other languages show the English text.");
-        base_ui::dialogs::guide_window(ctx, &mut self.show_guide, &mut self.guide_filter, guide::sections(), &["Getting started", "Pierwsze kroki"], "https://github.com/michalsarna/PenCreator", footer);
+        base_ui::dialogs::guide_window(ctx, &mut self.show_guide, &mut self.guide_filter, &guide::sections(), &["Getting started", "Pierwsze kroki"], "https://github.com/michalsarna/PenCreator", footer);
         let ports: Vec<String> = self.machine.ports.iter().map(|p| p.name.clone()).collect();
         if base_ui::ser2net_ui::window(ctx, &mut self.ser2net, &ports) {
             self.machine.refresh_ports();
