@@ -129,6 +129,9 @@ pub struct Device {
     /// Jogging, macros, statistics and maintenance of the machine.
     #[serde(default)]
     pub control: Control,
+    /// The keyboard or pad of this machine; without one the default one drives it.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub control_device: Option<String>,
     /// The very start and the very end of the file.
     #[serde(default, skip_serializing_if = "is_unset")]
     pub frame: base_core::gcode_out::Frame,
@@ -171,6 +174,7 @@ impl Default for Device {
             notes: String::new(),
             connection: Connection::default(),
             control: Control::default(),
+            control_device: None,
             frame: Default::default(),
             flavour: Default::default(),
         }
