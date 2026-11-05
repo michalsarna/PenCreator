@@ -105,6 +105,7 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Ustawienia urządzenia…** | Ustawienia urządzenia projektu (strony Ogólne, Maszyna, Pisak, G-code, Połączenie, Kamera, Przesuw ręczny, Makra, Konserwacja, Notatki). Zobacz [Szybki start](Szybki-start) i [Sterowanie maszyną](Sterowanie-maszyna). |
 | **Ustawienia firmware ($$)…** | Ustawienia kontrolera GRBL, z kopiami i kopią zapasową. |
 | **Kalibracja…** | Kroki na milimetr i prostopadłość osi. |
+| **Urządzenia sterujące ▸** | Ustawienia urządzeń sterujących… otwiera okno klawiatur i padów oraz ich klawiszy; Urządzenie sterujące tej maszyny… wybiera urządzenie otwartej maszyny. Zobacz [Urządzenia sterujące](Urzadzenia-sterujace). |
 | **Diagnostyka i statystyki…** | Wejścia kontrolera, statystyki i konserwacja maszyny, raport do zapisania. |
 | **Udostępnij w sieci (ser2net)…** | Tylko Linux: udostępnia port szeregowy maszyny w sieci. |
 | **Obrys** | Obchodzi prostokąt zadania (wymaga podłączonej maszyny). |

@@ -5,6 +5,7 @@ mod autosave_glue;
 mod backup_ui;
 mod device;
 mod device_ui;
+mod control_devices_glue;
 mod layer_presets;
 mod layers;
 mod layers_ui;
@@ -139,6 +140,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::Firmware => Some("settings"),
         Act::Calibration => Some("sliders-horizontal"),
         Act::Diagnostics => Some("zap"),
+        Act::ControlDevices | Act::ControlDeviceOfMachine => Some("settings"),
         Act::StartFrom => Some("play"),
         Act::CheckProgram => Some("check"),
         Act::ExportGcode => Some("file-code"),
@@ -302,6 +304,7 @@ struct App {
     cam_fit: base_ui::window::FitWindow,
     machine: MachineLink,
     control_ui: ControlUi,
+    control_devices: base_ui::control_devices_ui::ControlDevicesUi,
     fw_open: bool,
     cal: CalUi,
     diag: DiagUi,
@@ -459,6 +462,7 @@ impl App {
                 m
             },
             control_ui: ControlUi::default(),
+            control_devices: if cfg!(test) { Default::default() } else { base_ui::control_devices_ui::ControlDevicesUi::from_file() },
             fw_open: false,
             cal: CalUi::default(),
             diag: DiagUi::default(),
@@ -1120,6 +1124,7 @@ impl App {
         self.image_dialogs(ctx);
         pens_ui::pens_window(ctx, &mut self.pens_win, &mut self.pens);
         self.layer_presets_window(ctx);
+        self.control_devices_windows(ctx);
         self.refresh_gcode_text(ctx);
         self.closing_text_dialog(ctx);
         let mut show = self.show_options;
@@ -1151,6 +1156,8 @@ impl App {
     fn draw(&mut self, ui: &mut egui::Ui) {
         let drawn_last = self.drop_idle_camera();
         let ctx = ui.ctx().clone();
+        // Before the editor: a key of the control device is not also a key of the editor.
+        self.control_devices_frame(&ctx);
         // A recording goes on when no view shows the camera.
         if !drawn_last && self.cam_rec.active() {
             self.camera_pump(&ctx);
@@ -1414,6 +1421,8 @@ impl MenuHost for App {
             Act::DeviceSettings => self.open_device_settings(),
             Act::Firmware => self.fw_open = true,
             Act::Calibration => self.cal.open = true,
+            Act::ControlDevices => self.control_devices.open = true,
+            Act::ControlDeviceOfMachine => self.control_devices.choice_open = true,
             Act::Diagnostics => {
                 self.diag_gcode = self.job_lines().map(|(l, _)| l.join("\n"));
                 self.diag.open = true;
