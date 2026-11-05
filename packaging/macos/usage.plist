@@ -1,0 +1,4 @@
+  <key>NSCameraUsageDescription</key>
+  <string>PenCreator shows the live picture of a camera that watches the machine.</string>
+  <key>NSLocalNetworkUsageDescription</key>
+  <string>PenCreator connects to a controller or a camera on your local network.</string>
