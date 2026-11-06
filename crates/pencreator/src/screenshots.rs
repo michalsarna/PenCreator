@@ -63,7 +63,7 @@ fn render_screenshots() {
     {
         let a = app(&mut h);
         a.start_add_device();
-        let e = a.dev_edit.as_mut().expect("window");
+        let e = a.add_dev.as_mut().expect("window");
         e.draft.name = "A3 plotter".into();
         e.draft.area.x = 420.0;
         e.draft.area.y = 297.0;
@@ -71,6 +71,9 @@ fn render_screenshots() {
     save(&mut h, "02-add-device.png");
     {
         let a = app(&mut h);
+        // More settings…: the whole device window with what was entered.
+        let draft = a.add_dev.take().expect("window").draft;
+        a.dev_edit = Some(crate::device_ui::DeviceEdit { idx: None, draft, page: crate::device_ui::Page::General, error: String::new() });
         let e = a.dev_edit.as_mut().expect("window");
         e.page = crate::device_ui::Page::Pen;
         e.draft.pen.lift = crate::device::Lift::Servo;
