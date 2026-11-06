@@ -233,9 +233,6 @@ impl App {
     pub(crate) fn preview_body(&mut self, ui: &mut egui::Ui) {
         let prog = self.prog.as_ref().expect("the program was made above");
         ui.horizontal_wrapped(|ui| {
-            if ui.button(tr("Reset view")).on_hover_text(tr("Back to the first view. Double click on the picture does the same.")).clicked() {
-                self.view.reset();
-            }
             // The two buttons that fit the picture: the work area, and all the objects.
             if let Some(f) = Self::preview_fit_buttons(ui) {
                 self.view.fit = Some(f);
@@ -371,11 +368,17 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     if let Some(p) = pen_at {
         painter.circle_stroke(at(p), 5.0, Stroke::new(1.5, Color32::from_rgb(0xd0, 0x30, 0x30)));
     }
-    // The slider of the zoom at the right edge: the same as the wheel, for a mouse without one.
-    let track = egui::Rect::from_min_max(Pos2::new(rect.right() - 28.0, rect.top() + 24.0), Pos2::new(rect.right() - 8.0, (rect.bottom() - 24.0).max(rect.top() + 80.0)));
-    let mut z = view.zoom.max(0.2).ln();
-    if ui.put(track, egui::Slider::new(&mut z, 0.2f32.ln()..=50.0f32.ln()).vertical().show_value(false)).on_hover_text(tr("Zoom")).changed() {
-        view.zoom = z.exp().clamp(0.2, 50.0);
+    // The zoom bar of every picture, in the lower left corner: the same as the wheel and the double click.
+    let zoom_about_middle = |view: &mut PlotView, f: f32| {
+        let z = (view.zoom * f).clamp(0.2, 50.0);
+        view.pan *= z / view.zoom;
+        view.zoom = z;
+    };
+    match base_ui::zoom_bar::overlay(ui, rect, view.zoom, &tr("Scroll to zoom, drag to move, double click to see the whole picture")) {
+        Some(base_ui::zoom_bar::ZoomCmd::In) => zoom_about_middle(view, base_ui::zoom_bar::STEP),
+        Some(base_ui::zoom_bar::ZoomCmd::Out) => zoom_about_middle(view, 1.0 / base_ui::zoom_bar::STEP),
+        Some(base_ui::zoom_bar::ZoomCmd::Whole) => view.reset(),
+        None => {}
     }
 }
 
