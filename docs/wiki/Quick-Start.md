@@ -68,7 +68,7 @@ When the next layer needs another pen, the job stops for the change. Everything 
 * an animation (**Play** / **Pause**, **Back to the start**, **Repeat**, **Animation speed**) with a slider of the progress; a red circle is the pen;
 * the time (**Time** so far / in all), the length of the lines and of the moves with the pen up, the number of pen lifts and the minutes;
 * warnings in orange: a picture that cannot be drawn, a drawing that lies partly outside the work area, a fill with too many lines;
-* **Reset view** and the two buttons that fit the work area or all the lines; the wheel zooms, a drag moves, a double click goes back to the first view.
+* The two buttons that fit the work area or all the lines, and the zoom bar in the lower left corner of the picture (zoom in, zoom out, **Reset view**); the wheel zooms, a drag moves, a double click goes back to the first view.
 
 The preview follows the drawing as you change it. The **Toolpaths** button (green while it is on) draws the same paths over the work area instead: the lines in the colours of their layers and the moves with the pen up in light blue.
 

@@ -68,7 +68,7 @@ Gdy następna warstwa wymaga innego pisaka, zadanie zatrzymuje się na zmianę. 
 * animacja (**Odtwarzaj** / **Pauza**, **Z powrotem na początek**, **Powtarzaj**, **Szybkość animacji**) z suwakiem postępu; czerwone kółko to pisak;
 * czas (**Czas** dotąd / razem), długość linii i ruchów z podniesionym pisakiem, liczba podniesień pisaka i minuty;
 * ostrzeżenia na pomarańczowo: obraz, którego nie da się narysować, rysunek częściowo poza obszarem roboczym, wypełnienie ze zbyt wieloma liniami;
-* **Resetuj widok** i dwa przyciski dopasowujące obszar roboczy albo wszystkie linie; kółko przybliża, przeciąganie przesuwa, dwuklik wraca do pierwszego widoku.
+* Dwa przyciski dopasowujące obszar roboczy albo wszystkie linie i pasek powiększenia w lewym dolnym rogu obrazu (przybliż, oddal, **Resetuj widok**); kółko przybliża, przeciąganie przesuwa, dwuklik wraca do pierwszego widoku.
 
 Podgląd nadąża za zmianami rysunku. Przycisk **Ścieżki** (zielony, gdy włączony) rysuje te same drogi na obszarze roboczym: linie w kolorach ich warstw i ruchy z podniesionym pisakiem na jasnoniebiesko.
 
