@@ -132,6 +132,9 @@ pub struct Device {
     /// The keyboard or pad of this machine; without one the default one drives it.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub control_device: Option<String>,
+    /// How the camera view opens: the way, the zoom and where its window of its own was (not written while it was never changed).
+    #[serde(default, skip_serializing_if = "is_unset")]
+    pub camera_view: base_core::camimg::CameraView,
     /// The very start and the very end of the file.
     #[serde(default, skip_serializing_if = "is_unset")]
     pub frame: base_core::gcode_out::Frame,
@@ -175,6 +178,7 @@ impl Default for Device {
             connection: Connection::default(),
             control: Control::default(),
             control_device: None,
+            camera_view: Default::default(),
             frame: Default::default(),
             flavour: Default::default(),
         }
@@ -223,6 +227,10 @@ impl Device {
             if t.lines().count() > 20 || t.lines().any(|l| l.len() > 100 || l.chars().any(char::is_control)) {
                 return Err("the very start or the very end of the file has too many lines, lines that are too long or control characters".into());
             }
+        }
+        let cv = &self.camera_view;
+        if cv.mode > 3 || !(cv.zoom.is_finite() && (0.5..=20.0).contains(&cv.zoom)) || [cv.win_pos, cv.win_size, cv.float_pos, cv.float_size].iter().flatten().flatten().any(|v| !v.is_finite() || v.abs() > 100_000.0) {
+            return Err("the camera view settings are out of range".into());
         }
         if self.cameras.len() > 8 || self.active_camera > 8 || self.notes.len() > 20_000 {
             return Err("too many cameras or too long notes".into());
