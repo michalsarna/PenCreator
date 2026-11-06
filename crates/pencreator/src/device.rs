@@ -242,6 +242,7 @@ impl Device {
             return Err("the connection settings are out of range".into());
         }
         self.control.check()?;
+        self.connection.plotter.check()?;
         Ok(())
     }
 

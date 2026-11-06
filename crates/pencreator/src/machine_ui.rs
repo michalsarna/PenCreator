@@ -25,6 +25,18 @@ pub fn target_of(dev: &Device) -> Option<Target> {
     })
 }
 
+/// How the link talks to a plotter that does not speak G-code (AxiDraw, HPGL): the G-code of the program says the pen is up or
+/// down by the Z axis or by the servo, as the device lifts it. `None` for a GRBL.
+pub fn plotter_setup(dev: &Device) -> Option<base_core::plotter::Setup> {
+    let language = dev.connection.grbl_version.controller().plotter_language()?;
+    let (up, down) = (dev.pen.up, dev.pen.down);
+    let pen = match dev.pen.lift {
+        crate::device::Lift::Z => base_core::plotter::PenSense::Z { up, down },
+        crate::device::Lift::Servo => base_core::plotter::PenSense::Servo { up, down },
+    };
+    Some(base_core::plotter::Setup { language, settings: dev.connection.plotter.clone(), pen, rapid: dev.rapid })
+}
+
 /// A job that waits for the check run to find nothing wrong.
 pub struct AfterCheck {
     pub lines: Vec<String>,
@@ -39,6 +51,9 @@ impl App {
             return;
         };
         self.machine.set_grbl_version(self.device.connection.grbl_version);
+        if let Some(setup) = plotter_setup(&self.device) {
+            self.machine.set_plotter(setup);
+        }
         self.machine.connect(target, self.device.connection.streaming);
     }
 

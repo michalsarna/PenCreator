@@ -469,22 +469,27 @@ impl App {
                             ui.end_row();
                             ui.label(tr("GRBL version"));
                             egui::ComboBox::from_id_salt("grbl_dialect").selected_text(tr(d.connection.grbl_version.label())).show_ui(ui, |ui| {
-                                for k in GrblVersion::ALL {
+                                // A pen plotter may also be one that does not speak G-code (AxiDraw, HPGL).
+                                for k in GrblVersion::ALL.into_iter().chain(GrblVersion::PLOTTERS) {
                                     ui.selectable_value(&mut d.connection.grbl_version, k, tr(k.label()));
                                 }
                             })
                             .response
                             .on_hover_text(tr("Older GRBL (0.9) reports positions in another format and has no jog command: the program moves the head with ordinary moves instead."));
                             ui.end_row();
-                            ui.label(tr("Streaming"));
-                            egui::ComboBox::from_id_salt("streaming").selected_text(tr(d.connection.streaming.label())).show_ui(ui, |ui| {
-                                for m in Streaming::ALL {
-                                    ui.selectable_value(&mut d.connection.streaming, m, tr(m.label()));
-                                }
-                            })
-                            .response
-                            .on_hover_text(tr("Counting fills the controller's buffer and is fast. Simple sends one line and waits for its ok: slow, but for firmware that answers wrongly."));
-                            ui.end_row();
+                            base_ui::plotter_ui::settings_rows(ui, d.connection.grbl_version, &mut d.connection.plotter);
+                            // A plotter that does not speak G-code is fed by the program in its own way.
+                            if !d.connection.grbl_version.is_plotter() {
+                                ui.label(tr("Streaming"));
+                                egui::ComboBox::from_id_salt("streaming").selected_text(tr(d.connection.streaming.label())).show_ui(ui, |ui| {
+                                    for m in Streaming::ALL {
+                                        ui.selectable_value(&mut d.connection.streaming, m, tr(m.label()));
+                                    }
+                                })
+                                .response
+                                .on_hover_text(tr("Counting fills the controller's buffer and is fast. Simple sends one line and waits for its ok: slow, but for firmware that answers wrongly."));
+                                ui.end_row();
+                            }
                         });
                     }
                     Page::Camera => base_ui::camera_feed::camera_page(ui, &mut d.cameras, &mut d.active_camera, &mut self.cam_test_wanted),

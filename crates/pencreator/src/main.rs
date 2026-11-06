@@ -1374,6 +1374,8 @@ impl MenuHost for App {
         match a {
             Act::Std(s) => self.screen == Screen::Editor && s.enabled(self),
             Act::Print | Act::SwitchDevice => self.screen == Screen::Editor,
+            // A plotter that does not speak G-code has no `$` settings to read, change or calibrate.
+            Act::Firmware | Act::Calibration => !self.device.connection.grbl_version.is_plotter(),
             Act::Frame => self.screen == Screen::Editor && self.machine.connected && !self.machine.job_running(),
             Act::StartJob => self.screen == Screen::Editor && self.can_start(),
             Act::ToggleOverlay => self.ed.background.is_some(),

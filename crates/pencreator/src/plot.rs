@@ -1063,6 +1063,40 @@ mod tests {
     }
 
     #[test]
+    fn the_program_becomes_commands_of_an_axidraw_and_of_an_hpgl_plotter() {
+        use base_core::machine::GrblVersion;
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 10.0);
+        square(&mut scene, 1, 60.0, 20.0, 10.0);
+        let layers = default_layers();
+        for (version, lift) in [(GrblVersion::Ebb, Lift::Z), (GrblVersion::Ebb, Lift::Servo), (GrblVersion::Hpgl, Lift::Z)] {
+            let mut dev = Device::dummy();
+            dev.connection.grbl_version = version;
+            if lift == Lift::Servo {
+                dev.pen = crate::device::PenLift { lift, up: 800.0, down: 300.0, delay_ms: 150.0 };
+            }
+            let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
+            let setup = crate::machine_ui::plotter_setup(&dev).expect("a plotter");
+            let mut t = base_core::plotter::Translator::new(setup);
+            let mut cmds = t.start();
+            for l in base_ui::link::clean_gcode(&g) {
+                cmds.extend(t.translate(&l));
+            }
+            let (down, up) = if version == GrblVersion::Ebb { ("SP,0", "SP,1") } else { ("PD;", "PU;") };
+            // Two squares, one pen down each, and the pen up at the end.
+            assert_eq!(cmds.iter().filter(|c| *c == down).count(), 2, "{version:?} {lift:?}: {cmds:?}");
+            assert!(!t.pen_is_down(), "{cmds:?}");
+            assert!(cmds.iter().filter(|c| *c == up).count() >= 2);
+            assert!(cmds.iter().all(|c| !c.starts_with('G') && !c.starts_with('M') && !c.starts_with('$')), "only the plotter's own commands: {cmds:?}");
+            // The last square ends where it began: 60 mm right, 20 mm up from the corner.
+            let w = t.work_position();
+            assert!((w[0] - 60.0).abs() < 0.01 && (w[1] - 20.0).abs() < 0.01 || w == [0.0, 0.0], "{w:?}");
+        }
+        // A GRBL device has no plotter setup.
+        assert!(crate::machine_ui::plotter_setup(&Device::dummy()).is_none());
+    }
+
+    #[test]
     fn a_servo_uses_m3_and_the_machine_zero_moves_the_numbers() {
         let mut scene = Scene::default();
         square(&mut scene, 0, 20.0, 20.0, 10.0);
