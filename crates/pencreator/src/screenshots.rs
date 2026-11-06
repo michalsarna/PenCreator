@@ -126,7 +126,7 @@ fn render_screenshots() {
         a.machine.mpos = [-80.5, -12.25, 0.0];
         a.machine.wpos = [19.5, 37.75, 0.0];
         a.machine.pos = a.machine.wpos;
-        a.machine.fw.info = base_core::firmware::FirmwareInfo { name: "Grbl".into(), version: "1.1h".into(), options: "V".into(), raw: vec!["[VER:1.1h.20190825:]".into(), "[OPT:V,15,128]".into()] };
+        a.machine.fw.info = base_core::firmware::FirmwareInfo { name: "Grbl".into(), version: "1.1h".into(), options: "V".into(), raw: vec!["[VER:1.1h.20190825:]".into(), "[OPT:V,15,128]".into()], ..Default::default() };
         a.device.control.macros = vec![base_core::control::Macro { name: "Pen up".into(), code: "G0 Z[safez]".into() }, base_core::control::Macro { name: "Park".into(), code: "G0 Z[safez]\nG0 X0 Y0".into() }];
         a.side_tab = crate::SideTab::Control;
     }
