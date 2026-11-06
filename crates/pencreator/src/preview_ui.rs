@@ -228,10 +228,6 @@ impl App {
     pub(crate) fn preview_body(&mut self, ui: &mut egui::Ui) {
         let prog = self.prog.as_ref().expect("the program was made above");
         ui.horizontal_wrapped(|ui| {
-            // The two buttons that fit the picture: the work area, and all the objects.
-            if let Some(f) = Self::preview_fit_buttons(ui) {
-                self.view.fit = Some(f);
-            }
             ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
         });
         ui.horizontal(|ui| {
@@ -251,17 +247,6 @@ impl App {
         } else {
             show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, self.device.area.x, self.device.area.y);
         }
-    }
-
-    /// The two buttons that fit the picture, the work area on the left.
-    fn preview_fit_buttons(ui: &mut egui::Ui) -> Option<Fit> {
-        let mut fit = None;
-        for (what, icon, tip) in [(Fit::Area, "scan", "Fit work area"), (Fit::Elements, "expand", "Fit all objects")] {
-            if base_ui::widgets::icon_button(ui, icon, &tr(tip), true, 22.0) {
-                fit = Some(what);
-            }
-        }
-        fit
     }
 
     /// The preview as a tab of the work area, in place of the drawing.
@@ -369,10 +354,12 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
         view.pan *= z / view.zoom;
         view.zoom = z;
     };
-    match base_ui::zoom_bar::overlay(ui, rect, view.zoom, &tr("Scroll to zoom, drag to move, double click to see the whole picture")) {
+    // Its fourth button fits all the objects (the whole picture is the work area).
+    match base_ui::zoom_bar::overlay_with(ui, rect, view.zoom, &tr("Scroll to zoom, drag to move, double click to see the whole picture"), true) {
+        Some(base_ui::zoom_bar::ZoomCmd::FitObjects) => view.fit = Some(Fit::Elements),
         Some(base_ui::zoom_bar::ZoomCmd::In) => zoom_about_middle(view, base_ui::zoom_bar::STEP),
         Some(base_ui::zoom_bar::ZoomCmd::Out) => zoom_about_middle(view, 1.0 / base_ui::zoom_bar::STEP),
-        Some(base_ui::zoom_bar::ZoomCmd::Whole) => view.reset(),
+        Some(base_ui::zoom_bar::ZoomCmd::Whole) => view.fit = Some(Fit::Area),
         None => {}
     }
 }
