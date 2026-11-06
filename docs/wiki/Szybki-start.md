@@ -13,13 +13,9 @@ Pierwsze zadanie od początku do końca: wybierz ploter, narysuj lub zaimportuj 
 Ekran startowy pokazuje Twoje plotery pod nagłówkiem **Urządzenie** (każdy z rozmiarem obszaru roboczego). Kliknij jeden, żeby go wybrać.
 
 * **Nie mam urządzenia** dodaje i wybiera zwykłe urządzenie o nazwie **Dummy**: arkusz A4, pisak podnoszony osią Z. Pod listą **Papier** A4 **Poziomo** / **Pionowo** obraca jego arkusz (później to samo jest na karcie **Urządzenie** w edytorze). Gdy nie ma żadnego urządzenia, **Nowy** i **Otwórz…** używają Dummy.
-* **Dodaj urządzenie…** otwiera okno **Dodaj urządzenie**. Strony ważne dla pierwszego zadania:
-  * **Ogólne**: **Nazwa**; **Start od** (**Zwykły rozmiar arkusza…**, punkt wyjścia dla obszaru roboczego i prędkości); **Jednostki**; **Zero maszyny (0,0)**, narożnik obszaru roboczego, w którym startuje pisak (**Przód po lewej**, **Przód po prawej**, **Tył po lewej**, **Tył po prawej**).
-  * **Maszyna**: **Obszar roboczy** (X i Y, arkusz, do którego sięga pisak) i **Prędkość ruchów z podniesionym pisakiem**.
-  * **Pisak**: **Pisak podnosi się za pomocą** **Oś Z** (wtedy **Pisak podniesiony** i **Pisak opuszczony** to wysokości w mm; opuszczony 0 to papier) albo **Serwo (M3 S…)** na wyjściu wrzeciona (wtedy to wartości `S`, 0 … 1000), oraz **Czekanie po ruchu pisaka** (ms). Nowe urządzenie zaczyna od 3 mm w górze, 0 w dole i 150 ms.
-  * **Połączenie**: potrzebne tylko do wysyłania zadań z programu (zobacz krok 8).
+* **Dodaj urządzenie…** otwiera jedno okno z podstawowymi ustawieniami, takie samo jak w LightCreator i MillCreator: **Nazwa**, **Sterownik** (wersja GRBL, AxiDraw / EggBot albo ploter HPGL), połączenie z **Odczytaj z urządzenia** (GRBL podaje obszar roboczy i prędkość), **Jednostki**, **Obszar roboczy** (X i Y, arkusz, do którego sięga pisak), **Zero maszyny (0,0)** (narożnik, w którym startuje pisak), **Pisak podnosi się za pomocą** **Oś Z** (wtedy **Pisak podniesiony** i **Pisak opuszczony** to wysokości w mm; opuszczony 0 to papier) albo **Serwo (M3 S…)** (wtedy to wartości `S`, 0 … 1000), opcjonalna kamera oraz **Warto sprawdzić**. Nowe urządzenie zaczyna od 3 mm w górze i 0 w dole.
 
-  Przycisk **Dodaj urządzenie** je zapisuje. **Edytuj…**, **Powiel** i **Importuj…** (plik urządzenia) są obok **Dodaj urządzenie…**.
+  Przycisk **Dodaj urządzenie** je zapisuje; **Więcej ustawień…** otwiera całe okno urządzenia z tym, co wpisano (czekanie po ruchu pisaka, prędkość ruchów z podniesionym pisakiem, **Start od → Zwykły rozmiar arkusza…**). **Edytuj…**, **Powiel** i **Importuj…** (plik urządzenia) są obok **Dodaj urządzenie…**.
 
 ![Dodawanie urządzenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-add-device.png)
 

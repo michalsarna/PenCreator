@@ -13,13 +13,9 @@ A first job from start to end: choose the plotter, draw or import something, giv
 The start screen lists your plotters under **Device** (each with the size of its work area). Click one to choose it.
 
 * **I have no device** adds and chooses a plain device called **Dummy**: an A4 sheet, the pen lifted by the Z axis. Under the list, **Paper** A4 **Landscape** / **Portrait** turns its sheet (later the same is on the **Device** tab of the editor). Without any device, **New** and **Open…** use the Dummy.
-* **Add device…** opens the window **Add a device**. The pages that matter for a first job:
-  * **General**: **Name**; **Start from** (**A usual sheet size…**, a starting point for the work area and the speed); **Units**; **Machine zero (0,0)**, the corner of the work area where the pen starts (**Front left**, **Front right**, **Back left**, **Back right**).
-  * **Machine**: the **Work area** (X and Y, the sheet the pen can reach) and the **Speed of moves with the pen up**.
-  * **Pen**: **The pen is lifted by** the **Z axis** (then **Pen up** and **Pen down** are heights in mm; down 0 is the paper) or a **Servo (M3 S…)** on the spindle output (then they are `S` values, 0 … 1000), and the **Wait after the pen moves** (ms). A new device starts with up 3 mm, down 0 and 150 ms.
-  * **Connection**: only needed to send jobs from the program (see step 8).
+* **Add device…** opens one window with the basic settings, the same as in LightCreator and MillCreator: the **Name**, the **Controller** (a GRBL version, an AxiDraw / EggBot or an HPGL plotter), the connection with **Read from device** (a GRBL gives its work area and speed), the **Units**, the **Work area** (X and Y, the sheet the pen can reach), the **Machine zero (0,0)** (the corner where the pen starts), **The pen is lifted by** the **Z axis** (then **Pen up** and **Pen down** are heights in mm; down 0 is the paper) or a **Servo (M3 S…)** (then they are `S` values, 0 … 1000), an optional camera, and **Worth checking**. A new device starts with up 3 mm and down 0.
 
-  **Add device** saves it. **Edit…**, **Duplicate** and **Import…** (a device file) are next to **Add device…**.
+  **Add device** saves it; **More settings…** opens the whole device window with what is entered (the wait after the pen moves, the speed of the moves with the pen up, **Start from → A usual sheet size…**). **Edit…**, **Duplicate** and **Import…** (a device file) are next to **Add device…**.
 
 ![Adding a device](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-add-device.png)
 

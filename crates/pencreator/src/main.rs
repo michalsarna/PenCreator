@@ -1,6 +1,7 @@
 //! PenCreator: design and prepare drawings for pen plotters. It looks like LightCreator (the window frame, the menus, the
 //! control and status bars, the tool palette, the Properties tab, the colour schemes and the languages come from
 //! baseCreator). It adds devices (with cameras), layers that are pens, fill lines, a plot preview and G-code.
+mod add_device_ui;
 mod autosave_glue;
 mod camera_glue;
 mod backup_ui;
@@ -250,6 +251,8 @@ struct App {
     active: Option<usize>,
     start_sel: usize,
     dev_edit: Option<DeviceEdit>,
+    /// The window for a new device (`add_device_ui`).
+    add_dev: Option<add_device_ui::AddDev>,
     confirm_delete: bool,
     layers: Vec<PenLayer>,
     view: PlotView,
@@ -426,6 +429,7 @@ impl App {
             devices,
             start_sel: 0,
             dev_edit: None,
+            add_dev: None,
             confirm_delete: false,
             layers: layers::default_layers(),
             view: PlotView::default(),
@@ -1150,6 +1154,7 @@ impl App {
         self.online_clipart_window(ctx);
         self.plugin_windows(ctx);
         self.device_window(ctx);
+        self.add_device_window(ctx);
         self.machine_windows(ctx);
         self.camera_window(ctx);
         self.shared_windows(ctx);
