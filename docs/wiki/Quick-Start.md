@@ -60,7 +60,7 @@ When the next layer needs another pen, the job stops for the change. Everything 
 
 **Plotter → Plot of the job…** (Ctrl+Shift+P), or the **Preview…** button in the bar under the menu, opens the tab **Preview: name** next to the drawing:
 
-* the sheet with the lines the pens will draw, in their ink and thickness, and the moves with the pen up as dashed blue lines (**Moves with the pen up** switches them off);
+* the sheet with the lines the pens will draw, in their ink and thickness, and the moves with the pen up as dashed blue lines (**Moves with the pen up** switches them off); **Paper colour** next to it gives the sheet the colour of your paper (white until you choose one; **Automatic** goes back to white);
 * an animation (**Play** / **Pause**, **Back to the start**, **Repeat**, **Animation speed**) with a slider of the progress; a red circle is the pen;
 * the time (**Time** so far / in all), the length of the lines and of the moves with the pen up, the number of pen lifts and the minutes;
 * warnings in orange: a picture that cannot be drawn, a drawing that lies partly outside the work area, a fill with too many lines;

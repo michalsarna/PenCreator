@@ -229,6 +229,8 @@ impl App {
         let prog = self.prog.as_ref().expect("the program was made above");
         ui.horizontal_wrapped(|ui| {
             ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
+            ui.separator();
+            base_ui::widgets::area_colour(ui, tr("Paper colour"), &mut self.ed.grid_prefs.preview_color, Color32::WHITE);
         });
         ui.horizontal(|ui| {
             self.playback.show(ui, &mut self.view.progress);
@@ -245,7 +247,8 @@ impl App {
             ui.add_space(30.0);
             ui.label(RichText::new(tr("There is nothing to show yet: draw shapes and put them on layers that are switched on.")).color(theme::text_dim()));
         } else {
-            show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, self.device.area.x, self.device.area.y);
+            let paper = self.ed.grid_prefs.preview_color.map_or(Color32::WHITE, |c| Color32::from_rgba_unmultiplied(c[0], c[1], c[2], c[3]));
+            show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, (self.device.area.x, self.device.area.y), paper);
         }
     }
 
@@ -274,7 +277,7 @@ impl App {
 }
 
 /// The paper and the lines on it, with the pen at the end of what is shown.
-fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], pens: &crate::pens::PenLibrary, w: f64, h: f64) {
+fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], pens: &crate::pens::PenLibrary, (w, h): (f64, f64), paper_fill: Color32) {
     let size = base_ui::window::fill_size(ui).max(egui::vec2(200.0, 200.0));
     let (rect, resp) = ui.allocate_exact_size(size, egui::Sense::click_and_drag());
     if resp.double_clicked() {
@@ -312,7 +315,7 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     let origin = rect.center() + view.pan - egui::vec2(w as f32 * scale / 2.0, -(h as f32) * scale / 2.0);
     let at = |p: [f64; 2]| Pos2::new(origin.x + p[0] as f32 * scale, origin.y - p[1] as f32 * scale);
     let paper = egui::Rect::from_two_pos(at([0.0, 0.0]), at([w, h]));
-    painter.rect_filled(paper, 0.0, Color32::WHITE);
+    painter.rect_filled(paper, 0.0, paper_fill);
     painter.rect_stroke(paper, 0.0, Stroke::new(1.0, theme::border()), egui::StrokeKind::Outside);
     let total: f64 = prog.moves.iter().map(|m| m.length()).sum();
     let shown = total * view.progress as f64;
@@ -448,5 +451,27 @@ mod tests {
         });
         out.textures_delta.clear();
         assert!(a.preview_work_tab() && a.pv_tab_shown && !a.cam_ws_shown);
+    }
+
+    #[test]
+    fn the_paper_is_white_until_a_colour_is_chosen_in_the_bar() {
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(20.0, 20.0));
+        a.touch_rev();
+        a.open_preview();
+        let mut fills = |a: &mut App| {
+            let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+                a.preview_window(ui.ctx());
+                egui::CentralPanel::no_frame().show(ui, |ui| a.preview_work_panel(ui));
+            });
+            out.textures_delta.clear();
+            let label = out.shapes.iter().any(|s| matches!(&s.shape, egui::epaint::Shape::Text(t) if t.galley.text() == "Paper colour"));
+            assert!(label, "the colour is in the bar of the preview");
+            out.shapes.iter().filter_map(|s| if let egui::epaint::Shape::Rect(r) = &s.shape { Some(r.fill) } else { None }).collect::<Vec<_>>()
+        };
+        assert!(fills(&mut a).contains(&egui::Color32::WHITE));
+        a.ed.grid_prefs.preview_color = Some([0xf0, 0xe0, 0xc0, 0xff]);
+        assert!(fills(&mut a).contains(&egui::Color32::from_rgb(0xf0, 0xe0, 0xc0)));
     }
 }
