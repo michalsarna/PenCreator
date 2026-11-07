@@ -60,7 +60,7 @@ Gdy następna warstwa wymaga innego pisaka, zadanie zatrzymuje się na zmianę. 
 
 **Ploter → Wykres zadania…** (Ctrl+Shift+P) albo przycisk **Podgląd…** na pasku pod menu otwiera obok rysunku kartę **Podgląd: nazwa**:
 
-* arkusz z liniami, które narysują pisaki, w ich tuszu i grubości, oraz ruchy z podniesionym pisakiem jako przerywane niebieskie linie (**Ruchy z podniesionym pisakiem** je wyłącza);
+* arkusz z liniami, które narysują pisaki, w ich tuszu i grubości, oraz ruchy z podniesionym pisakiem jako przerywane niebieskie linie (**Ruchy z podniesionym pisakiem** je wyłącza); **Kolor papieru** obok nadaje arkuszowi kolor Twojego papieru (biały, dopóki go nie wybierzesz; **Automatyczny** wraca do białego);
 * animacja (**Odtwarzaj** / **Pauza**, **Z powrotem na początek**, **Powtarzaj**, **Szybkość animacji**) z suwakiem postępu; czerwone kółko to pisak;
 * czas (**Czas** dotąd / razem), długość linii i ruchów z podniesionym pisakiem, liczba podniesień pisaka i minuty;
 * ostrzeżenia na pomarańczowo: obraz, którego nie da się narysować, rysunek częściowo poza obszarem roboczym, wypełnienie ze zbyt wieloma liniami;
