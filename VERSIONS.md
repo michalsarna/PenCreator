@@ -2,6 +2,17 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.8.0
+
+* **Files of LightBurn and MillMage, both ways:** checked against the same drawings saved by LightBurn 2.2 and MillMage 0.9.
+  * **Import:** MillMage projects (`.mage`, **File → Import → Import LightBurn / MillMage project…**, the file window and drag and drop), the Illustrator files of the old PostScript kind that LightBurn writes, and the pictures inside an SVG (on the active layer). DXF of both kinds (current and R12, *legacy*) and LightBurn projects were read already.
+  * **Export:** **File → Export → Export DXF…** (the current kind, as LightBurn writes it), **Export DXF R12 (legacy)…**, **Export Adobe Illustrator…**, **Export LightBurn project…** (`.lbrn2`, or `.lbrn` when you name the file so) and **Export MillMage project…**. **Export SVG…** keeps the pictures now. Pictures go into SVG, LightBurn and MillMage files; DXF and Illustrator have no room for them.
+  * A LightBurn path closed by a curve into its first point came in slightly flattened there; fixed.
+* **Auto levels** in the image import window changed nothing on a real photo (it has a black and a white pixel somewhere). Now the outer 0.5 % of the pixels on each side are left out, and while it is on the two sliders of **Levels** are locked and show the range found in the picture.
+* **LinuxCNC (file):** a controller for machines run by LinuxCNC: no connection, **Start** saves the G-code file.
+* **Pen lifted by G-code of your own:** separate lines for up and down (for example `M3 S1000` / `M5` for a solenoid, `M280 P0 S…` for a servo on Marlin). Plotters with a language of their own (AxiDraw / EggBot, HPGL) do not offer it. Not tried on a real machine yet: try the first job with no paper.
+* **Preview:** **Paper colour** in the bar of the preview (white until you choose one).
+
 ## v0.7.0
 
 * **AxiDraw / EggBot and HPGL plotters:** the Connection page offers them after the GRBL versions. The program's G-code is turned into the plotter's own commands, so Start, the progress, the stop at a pen change, Pause and Stop work. Not tried on real plotters yet: try the first job with the pen raised and no paper.
