@@ -139,12 +139,12 @@ The program writes G-code for GRBL. With the defaults (the pen lifted by the Z a
 (Device: name of the device)
 (Note: the lines of the Description tab)
 G21 G90 G17
-G0 Z3            ← pen up (with a servo: M3 S<up>)
+G0 Z3            ← pen up (with a servo: M3 S<up>; with own G-code: its lines for up)
 G4 P0.15         ← the wait after the pen moves, when it is not 0
 (Layer: Black pen)
 (Pen: Black pen, 0.4 mm)
 G0 X… Y…         ← a move with the pen up
-G0 Z0            ← pen down (with a servo: M3 S<down>)
+G0 Z0            ← pen down (with a servo: M3 S<down>; with own G-code: its lines for down)
 G4 P0.15
 G1 X… Y… F3000   ← the lines, at the speed of the layer
 …

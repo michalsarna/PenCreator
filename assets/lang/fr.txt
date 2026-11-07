@@ -262,3 +262,7 @@
 261|Zoom
 262|Ce n'est pas une adresse de caméra (http, https, rtsp, udp, rtp ou rtmp).
 263|À propos de PenCreator
+264|LinuxCNC (fichier)
+265|LinuxCNC exécute le programme lui-même : Démarrer enregistre le fichier G-code pour lui. Non essayé sur une vraie machine.
+266|G-code personnel
+267|G-code personnel : les lignes ci-dessus sont écrites chaque fois que le stylo monte ou descend (par exemple M3 S1000 et M5 pour un solénoïde, ou M280 P0 S… pour un servo de Marlin).

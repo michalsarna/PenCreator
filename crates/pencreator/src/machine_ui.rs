@@ -33,6 +33,8 @@ pub fn plotter_setup(dev: &Device) -> Option<base_core::plotter::Setup> {
     let pen = match dev.pen.lift {
         crate::device::Lift::Z => base_core::plotter::PenSense::Z { up, down },
         crate::device::Lift::Servo => base_core::plotter::PenSense::Servo { up, down },
+        // Refused by the check of the device: such a plotter cannot read G-code of one's own.
+        crate::device::Lift::Custom => return None,
     };
     Some(base_core::plotter::Setup { language, settings: dev.connection.plotter.clone(), pen, rapid: dev.rapid })
 }
@@ -171,7 +173,8 @@ impl App {
     }
 
     pub(crate) fn can_start(&self) -> bool {
-        self.machine.connected && !self.machine.job_active() && !self.machine.job_running()
+        // LinuxCNC: Start saves the file, there is no link.
+        self.device.linuxcnc || (self.machine.connected && !self.machine.job_active() && !self.machine.job_running())
     }
 
     /// Frame: the tool goes round the box where the work will be done, at the safe height, with the spindle off.
@@ -237,6 +240,10 @@ impl App {
 
     /// Start the job at line `from` of the program (0-based; 0 is the whole program).
     pub(crate) fn start_job_from(&mut self, from: usize) {
+        if self.device.linuxcnc {
+            self.export_gcode();
+            return;
+        }
         if !self.can_start() {
             self.status = tr("Connect to the machine first (Device tab)").to_string();
             return;

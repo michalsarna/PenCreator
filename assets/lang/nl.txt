@@ -262,3 +262,7 @@
 261|Zoom
 262|Geen cameraadres (http, https, rtsp, udp, rtp of rtmp).
 263|Over PenCreator
+264|LinuxCNC (bestand)
+265|LinuxCNC voert het programma zelf uit: Start slaat het G-code-bestand ervoor op. Niet geprobeerd op een echte machine.
+266|Eigen G-code
+267|Eigen G-code: de regels hierboven worden geschreven telkens als de pen omhoog of omlaag gaat (bijvoorbeeld M3 S1000 en M5 voor een solenoïde, of M280 P0 S… voor een servo van Marlin).

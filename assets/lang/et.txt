@@ -262,3 +262,7 @@
 261|Suum
 262|See pole kaamera aadress (http, https, rtsp, udp, rtp või rtmp).
 263|Teave PenCreatori kohta
+264|LinuxCNC (fail)
+265|LinuxCNC käivitab programmi ise: Start salvestab selle jaoks G-code faili. Pole päris masinal proovitud.
+266|Oma G-kood
+267|Oma G-code: ülalolevad read kirjutatakse iga kord, kui pliiats tõuseb või laskub (nt M3 S1000 ja M5 solenoidile või M280 P0 S… Marlini servole).

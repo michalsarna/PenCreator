@@ -262,3 +262,7 @@
 261|Aðdráttur
 262|Ekki vistfang myndavélar (http, https, rtsp, udp, rtp eða rtmp).
 263|Um PenCreator
+264|LinuxCNC (skrá)
+265|LinuxCNC keyrir forritið sjálft: Ræsa vistar G-code skrána fyrir það. Ekki prófað á raunverulegri vél.
+266|Eigin G-kóði
+267|Eigin G-code: línurnar hér að ofan eru skrifaðar í hvert sinn sem penninn fer upp eða niður (t.d. M3 S1000 og M5 fyrir segulloka eða M280 P0 S… fyrir servó í Marlin).

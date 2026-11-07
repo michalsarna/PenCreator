@@ -262,3 +262,7 @@
 261|Mastelis
 262|Tai ne kameros adresas (http, https, rtsp, udp, rtp arba rtmp).
 263|Apie PenCreator
+264|LinuxCNC (failas)
+265|LinuxCNC programą vykdo pats: Pradėti įrašo jam G-code failą. Neišbandyta su tikra mašina.
+266|Savas G kodas
+267|Savas G-code: viršuje esančios eilutės įrašomos kiekvieną kartą, kai rašiklis pakyla ar nusileidžia (pvz., M3 S1000 ir M5 solenoidui arba M280 P0 S… Marlin servai).

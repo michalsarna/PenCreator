@@ -74,6 +74,26 @@ fn grbl_sim_a_servo_pen_is_driven_with_m3_and_is_off_at_the_end() {
 
 #[test]
 #[ignore = "needs grbl-sim: tools/grbl-sim/build.sh of baseCreator"]
+fn grbl_sim_a_pen_of_own_g_code_runs_and_is_up_at_the_end() {
+    let mut s = Session::connect();
+    s.wait_banner();
+    s.fast_machine(&[]);
+    let mut scene = Scene::default();
+    square(&mut scene, 0, 20.0, 20.0, 30.0);
+    let mut dev = Device::dummy();
+    // A solenoid on the spindle output: on lowers the pen, off lifts it.
+    dev.pen.lift = Lift::Custom;
+    dev.pen_gcode = crate::device::PenGcode::suggestion();
+    let job = job_of(&scene, &dev);
+    assert!(job.iter().any(|l| l == "M3 S1000") && job.iter().any(|l| l == "M5"), "{job:?}");
+    s.run_job(job, 120.0);
+    s.wait_idle_at(0.0, 0.0, 60.0);
+    assert!(s.parser_state().contains("M5"), "the pen is up");
+    assert!(s.errors().is_empty(), "GRBL rejected lines: {:?}", s.errors_described());
+}
+
+#[test]
+#[ignore = "needs grbl-sim: tools/grbl-sim/build.sh of baseCreator"]
 fn grbl_sim_the_pen_change_stops_the_job_and_it_goes_on_when_told() {
     let mut s = Session::connect();
     s.wait_banner();
