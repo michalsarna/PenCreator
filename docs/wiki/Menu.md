@@ -19,16 +19,21 @@ Pasek menu ma dziewięć menu, w tej kolejności: **Plik · Edycja · Wstawianie
 | **Zapisz** | Ctrl+S | Zapisuje projekt jako `.cre`. Rysunek, który nie ma jeszcze pliku projektu (nowy albo otwarty z SVG lub PDF), najpierw pyta o nazwę. |
 | **Zapisz jako…** | Ctrl+Shift+S | Zapisuje projekt pod nową nazwą. |
 | **Importuj → Importuj obraz…** | | Obraz (PNG, JPG, BMP, GIF, WebP) przez okno importu. Zobacz [Narzędzia projektowe](Narzedzia-projektowe). |
-| **Importuj → Importuj SVG…** | Ctrl+I | Ścieżki pliku SVG są dodawane do otwartego rysunku, każda na warstwę o najbliższym kolorze. **Otwórz…** zrobiłoby z pliku nową kartę. |
-| **Importuj → Importuj Adobe Illustrator / PDF…** | | To samo dla pliku PDF lub zgodnego z PDF `.ai`. Plik z warstwami Illustratora pyta, czy układać według koloru, czy według tych warstw. |
+| **Importuj → Importuj SVG…** | Ctrl+I | Ścieżki pliku SVG są dodawane do otwartego rysunku, każda na warstwę o najbliższym kolorze, a jego obrazy na aktywną warstwę. **Otwórz…** zrobiłoby z pliku nową kartę. |
+| **Importuj → Importuj Adobe Illustrator / PDF…** | | To samo dla pliku PDF, zgodnego z PDF `.ai` albo `.ai` starego rodzaju w PostScripcie (takie zapisuje LightBurn). Plik z warstwami Illustratora pyta, czy układać według koloru, czy według tych warstw. |
 | **Importuj → Importuj DXF…** | | Linie, łuki i krzywe rysunku DXF są dodawane do rysunku. |
-| **Importuj → Importuj projekt LightBurn…** | | Kształty projektu LightBurna (`.lbrn2`, `.lbrn`) są dodawane do rysunku. |
+| **Importuj → Importuj projekt LightBurn / MillMage…** | | Kształty projektu LightBurna (`.lbrn2`, `.lbrn`) albo MillMage'a (`.mage`) są dodawane do rysunku. |
 | **Importuj → Importuj projekt UGS…** | | Kształty pliku UGS Designera (`.ugsd`) są dodawane do rysunku. |
 | **Importuj → Importuj wtyczką…** | | Plik w formacie, który czyta zainstalowana wtyczka. Zobacz [Wtyczki](Wtyczki). |
 | **Importuj → Generuj kształt…** | | Generatory zainstalowanych wtyczek. |
 | **Eksportuj → Eksportuj G-code…** | | To samo co **Ploter → Eksportuj G-code…**. |
-| **Eksportuj → Eksportuj SVG…** | | Cały rysunek jako SVG, w rozmiarze obszaru roboczego. Krzywe zostają; obrazy są pomijane. |
+| **Eksportuj → Eksportuj SVG…** | | Cały rysunek jako SVG, w rozmiarze obszaru roboczego. Krzywe i obrazy zostają. |
 | **Eksportuj → Eksportuj PLT / DXF…** | | Obrysy całego rysunku jako HPGL (`.plt`, jeden pisak na warstwę) albo DXF R12, zależnie od wybranego rozszerzenia. To kształty, a nie ruchy maszyny. |
+| **Eksportuj → Eksportuj DXF…** | | Cały rysunek jako DXF obecnego rodzaju (AutoCAD 2007), tak jak zapisuje go LightBurn; krzywe są spłaszczane do 0,01 mm. |
+| **Eksportuj → Eksportuj DXF R12 (starszy)…** | | To samo jako DXF R12, dla starszych programów i ploterów tnących (LightBurn nazywa go *legacy*). |
+| **Eksportuj → Eksportuj Adobe Illustrator…** | | Obrysy jako plik Illustratora w postaci PostScript (tak jak zapisuje go LightBurn), z krzywymi, osobna warstwa Illustratora dla każdej warstwy projektu. Obrazy są pomijane. |
+| **Eksportuj → Eksportuj projekt LightBurn…** | | Projekt LightBurna (`.lbrn2`, albo `.lbrn`, gdy tak nazwiesz plik): kształty z krzywymi i obrazy, osobna warstwa LightBurna dla każdej warstwy projektu. |
+| **Eksportuj → Eksportuj projekt MillMage…** | | To samo jako projekt MillMage (`.mage`), materiał w rozmiarze obszaru roboczego. |
 | **Eksportuj → Eksportuj zaznaczenie jako SVG…** / **Eksportuj zaznaczenie jako DXF…** | | Zapisuje zaznaczone kształty (wszystkie, gdy nic nie jest zaznaczone) jako SVG albo DXF. |
 | **Pokaż plik G-code…** | | Otwiera plik G-code (`.gcode`, `.nc`, `.gc`, `.gco`, `.ngc`, `.tap`, `.cnc`) w karcie **Analiza G-code**: jego ścieżki, bez zmiany rysunku. |
 | **Drukuj…** | Ctrl+P | Drukuje projekt na drukarce papierowej albo zapisuje go jako PDF. |
