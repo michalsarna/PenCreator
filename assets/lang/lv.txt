@@ -262,3 +262,7 @@
 261|Tālummaiņa
 262|Nav kameras adrese (http, https, rtsp, udp, rtp vai rtmp).
 263|Par PenCreator
+264|LinuxCNC (fails)
+265|LinuxCNC programmu izpilda pats: Sākt saglabā tam G-code failu. Nav izmēģināts uz īstas mašīnas.
+266|Savs G-kods
+267|Savs G-code: augšējās rindas tiek ierakstītas katru reizi, kad pildspalva paceļas vai nolaižas (piem., M3 S1000 un M5 solenoīdam vai M280 P0 S… Marlin servo).

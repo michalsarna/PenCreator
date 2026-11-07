@@ -262,3 +262,7 @@
 261|Ampliação
 262|Não é um endereço de câmara (http, https, rtsp, udp, rtp ou rtmp).
 263|Acerca do PenCreator
+264|LinuxCNC (ficheiro)
+265|O LinuxCNC executa o programa sozinho: Iniciar guarda o ficheiro G-code para ele. Não experimentado numa máquina real.
+266|G-code próprio
+267|G-code próprio: as linhas acima são escritas sempre que a caneta sobe ou desce (por exemplo M3 S1000 e M5 para um solenoide, ou M280 P0 S… para um servo do Marlin).

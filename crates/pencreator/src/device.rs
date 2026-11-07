@@ -27,14 +27,17 @@ pub enum Lift {
     Z,
     /// A servo on the spindle output (`M3 S…`): `up` and `down` are the S values (0 to 1000).
     Servo,
+    /// G-code of one's own for up and for down (`Device::pen_gcode`): a solenoid, a servo of Marlin (`M280`), anything else.
+    Custom,
 }
 
 impl Lift {
-    pub const ALL: [Lift; 2] = [Lift::Z, Lift::Servo];
+    pub const ALL: [Lift; 3] = [Lift::Z, Lift::Servo, Lift::Custom];
     pub fn label(self) -> &'static str {
         match self {
             Lift::Z => "Z axis",
             Lift::Servo => "Servo (M3 S…)",
+            Lift::Custom => "Own G-code",
         }
     }
 }
@@ -141,6 +144,32 @@ pub struct Device {
     /// The last pass over the finished program, for controllers that read G-code in their own way (all off by default).
     #[serde(default, skip_serializing_if = "is_unset")]
     pub flavour: base_core::gcode_out::Flavour,
+    /// The G-code of the pen with `Lift::Custom` (not written while unset).
+    #[serde(default, skip_serializing_if = "PenGcode::is_empty")]
+    pub pen_gcode: PenGcode,
+    /// LinuxCNC runs the program by itself: Start saves the G-code file for it, nothing is streamed (not written while off).
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub linuxcnc: bool,
+}
+
+/// The G-code of one's own that takes the pen up and down (`Lift::Custom`): one or more lines each.
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
+pub struct PenGcode {
+    #[serde(default)]
+    pub up: String,
+    #[serde(default)]
+    pub down: String,
+}
+
+impl PenGcode {
+    pub fn is_empty(&self) -> bool {
+        self.up.trim().is_empty() && self.down.trim().is_empty()
+    }
+
+    /// A start for a pen on the spindle output switched on and off (a solenoid).
+    pub fn suggestion() -> PenGcode {
+        PenGcode { up: "M5".into(), down: "M3 S1000".into() }
+    }
 }
 
 /// A setting that was never changed is not written: files made before the setting existed stay the same.
@@ -181,6 +210,8 @@ impl Default for Device {
             camera_view: Default::default(),
             frame: Default::default(),
             flavour: Default::default(),
+            pen_gcode: PenGcode::default(),
+            linuxcnc: false,
         }
     }
 }
@@ -212,9 +243,24 @@ impl Device {
             return Err("the speed of the moves is out of range".into());
         }
         let p = &self.pen;
-        let (lo, hi) = if p.lift == Lift::Z { (-100.0, 200.0) } else { (0.0, 1000.0) };
-        if !ok(p.up, lo, hi) || !ok(p.down, lo, hi) || p.up == p.down || !ok(p.delay_ms, 0.0, 10_000.0) {
-            return Err("the pen up and down values are out of range or the same".into());
+        if p.lift == Lift::Custom {
+            let g = &self.pen_gcode;
+            if g.up.trim().is_empty() || g.down.trim().is_empty() || g.up.trim() == g.down.trim() || !ok(p.delay_ms, 0.0, 10_000.0) {
+                return Err("the G-code of the pen up and down is empty or the same".into());
+            }
+            for t in [&g.up, &g.down] {
+                if t.lines().count() > 10 || t.lines().any(|l| l.len() > 100 || l.chars().any(|c| c.is_control() || !c.is_ascii())) {
+                    return Err("the G-code of the pen has too many lines, lines that are too long or characters that are not plain ASCII".into());
+                }
+            }
+            if self.connection.grbl_version.controller().plotter_language().is_some() {
+                return Err("a plotter that does not speak G-code (AxiDraw, HPGL) lifts the pen by the Z axis or the servo, not by G-code of one's own".into());
+            }
+        } else {
+            let (lo, hi) = if p.lift == Lift::Z { (-100.0, 200.0) } else { (0.0, 1000.0) };
+            if !ok(p.up, lo, hi) || !ok(p.down, lo, hi) || p.up == p.down || !ok(p.delay_ms, 0.0, 10_000.0) {
+                return Err("the pen up and down values are out of range or the same".into());
+            }
         }
         let c = &self.pen_change;
         if !ok(c.x, -10_000.0, 10_000.0) || !ok(c.y, -10_000.0, 10_000.0) {

@@ -141,12 +141,12 @@ Program zapisuje G-code dla GRBL. Przy ustawieniach domyślnych (pisak podnoszon
 (Device: nazwa urządzenia)
 (Note: wiersze karty Opis)
 G21 G90 G17
-G0 Z3            ← pisak w górę (z serwem: M3 S<góra>)
+G0 Z3            ← pisak w górę (z serwem: M3 S<góra>; z własnym G-code: jego wiersze dla góry)
 G4 P0.15         ← czekanie po ruchu pisaka, gdy nie jest 0
 (Layer: Black pen)
 (Pen: Black pen, 0.4 mm)
 G0 X… Y…         ← ruch z podniesionym pisakiem
-G0 Z0            ← pisak w dół (z serwem: M3 S<dół>)
+G0 Z0            ← pisak w dół (z serwem: M3 S<dół>; z własnym G-code: jego wiersze dla dołu)
 G4 P0.15
 G1 X… Y… F3000   ← linie, z prędkością warstwy
 …

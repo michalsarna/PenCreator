@@ -262,3 +262,7 @@
 261|Priblíženie
 262|Nie je to adresa kamery (http, https, rtsp, udp, rtp alebo rtmp).
 263|O programe PenCreator
+264|LinuxCNC (súbor)
+265|LinuxCNC spúšťa program sám: Štart preň uloží súbor G-code. Nevyskúšané na skutočnom stroji.
+266|Vlastný G-kód
+267|Vlastný G-code: riadky vyššie sa zapíšu pri každom zdvihnutí a spustení pera (napr. M3 S1000 a M5 pre solenoid alebo M280 P0 S… pre servo Marlinu).

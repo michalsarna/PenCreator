@@ -262,3 +262,7 @@
 261|Zoom
 262|Mhuwiex indirizz ta' kamera (http, https, rtsp, udp, rtp jew rtmp).
 263|Dwar PenCreator
+264|LinuxCNC (fajl)
+265|LinuxCNC iħaddem il-programm waħdu: Ibda jsalva l-fajl G-code għalih. Ma ġiex ippruvat fuq magna vera.
+266|G-code tiegħek
+267|G-code tiegħek: il-linji ta' fuq jinkitbu kull darba li l-pinna titla' jew tinżel (eż. M3 S1000 u M5 għal solenojde, jew M280 P0 S… għal servo ta' Marlin).

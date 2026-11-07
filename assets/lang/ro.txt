@@ -262,3 +262,7 @@
 261|Mărire
 262|Nu este o adresă de cameră (http, https, rtsp, udp, rtp sau rtmp).
 263|Despre PenCreator
+264|LinuxCNC (fișier)
+265|LinuxCNC rulează singur programul: Pornește salvează fișierul G-code pentru el. Neîncercat pe o mașină reală.
+266|G-code propriu
+267|G-code propriu: rândurile de mai sus sunt scrise de fiecare dată când creionul urcă sau coboară (de exemplu M3 S1000 și M5 pentru un solenoid sau M280 P0 S… pentru un servo Marlin).

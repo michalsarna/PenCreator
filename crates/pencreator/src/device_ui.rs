@@ -44,6 +44,40 @@ impl Page {
     }
 }
 
+/// The rows of the pen mechanism, in a grid: what lifts it and its up and down (the values, or the G-code of one's own). The same
+/// in the window that adds a device and in the device window.
+pub(crate) fn lift_rows(ui: &mut egui::Ui, d: &mut Device, in_add_window: bool) {
+    ui.label(tr("The pen is lifted by"));
+    egui::ComboBox::from_id_salt(if in_add_window { "add_lift" } else { "dev_lift" }).selected_text(tr(d.pen.lift.label())).show_ui(ui, |ui| {
+        for l in Lift::ALL {
+            // A plotter of its own language (AxiDraw, HPGL) has no G-code of one's own.
+            let can = l != Lift::Custom || d.connection.grbl_version.controller().plotter_language().is_none();
+            if ui.add_enabled(can, egui::Button::selectable(d.pen.lift == l, tr(l.label()))).clicked() {
+                d.pen.lift = l;
+                if l == Lift::Custom && d.pen_gcode.is_empty() {
+                    d.pen_gcode = crate::device::PenGcode::suggestion();
+                }
+            }
+        }
+    });
+    ui.end_row();
+    if d.pen.lift == Lift::Custom {
+        for (label, text) in [(tr("Pen up"), &mut d.pen_gcode.up), (tr("Pen down"), &mut d.pen_gcode.down)] {
+            ui.label(label);
+            ui.add(egui::TextEdit::multiline(text).code_editor().desired_rows(2).desired_width(260.0).hint_text("M3 S1000"));
+            ui.end_row();
+        }
+        return;
+    }
+    let (suffix, lo, hi) = if d.pen.lift == Lift::Z { (" mm", -100.0, 200.0) } else { ("", 0.0, 1000.0) };
+    ui.label(tr("Pen up"));
+    ui.add(egui::DragValue::new(&mut d.pen.up).range(lo..=hi).speed(0.5).suffix(suffix));
+    ui.end_row();
+    ui.label(tr("Pen down"));
+    ui.add(egui::DragValue::new(&mut d.pen.down).range(lo..=hi).speed(0.5).suffix(suffix));
+    ui.end_row();
+}
+
 /// A device being added or changed.
 pub struct DeviceEdit {
     /// The place in the list; `None` for a new device.
@@ -356,26 +390,14 @@ impl App {
                     Page::Pen => {
                         egui::Grid::new("dev_pen").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
                             ui.label(tr("The pen is lifted by"));
-                            egui::ComboBox::from_id_salt("dev_lift").selected_text(tr(d.pen.lift.label())).show_ui(ui, |ui| {
-                                for l in Lift::ALL {
-                                    ui.selectable_value(&mut d.pen.lift, l, tr(l.label()));
-                                }
-                            });
-                            ui.end_row();
-                            let (suffix, hi) = if d.pen.lift == Lift::Z { (" mm", 200.0) } else { ("", 1000.0) };
-                            let lo = if d.pen.lift == Lift::Z { -100.0 } else { 0.0 };
-                            ui.label(tr("Pen up"));
-                            ui.add(egui::DragValue::new(&mut d.pen.up).range(lo..=hi).speed(0.5).suffix(suffix));
-                            ui.end_row();
-                            ui.label(tr("Pen down"));
-                            ui.add(egui::DragValue::new(&mut d.pen.down).range(lo..=hi).speed(0.5).suffix(suffix));
-                            ui.end_row();
+                            lift_rows(ui, d, false);
                             ui.label(tr("Wait after the pen moves"));
                             ui.add(egui::DragValue::new(&mut d.pen.delay_ms).range(0.0..=10000.0).suffix(" ms"));
                             ui.end_row();
                         });
                         ui.add_space(4.0);
                         ui.label(RichText::new(tr("With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).")).color(theme::text_dim()));
+                        ui.label(RichText::new(tr("Own G-code: the lines above are written each time the pen goes up or down (for example M3 S1000 and M5 for a solenoid, or M280 P0 S… for a servo of Marlin).")).color(theme::text_dim()));
                         ui.add_space(8.0);
                         ui.separator();
                         ui.add_space(4.0);
@@ -398,6 +420,8 @@ impl App {
                         });
                     }
                     Page::Connection => {
+                        ui.checkbox(&mut d.linuxcnc, tr("LinuxCNC (file)")).on_hover_text(tr("LinuxCNC runs the program by itself: Start saves the G-code file for it. Not tried on a real machine."));
+                        ui.add_space(4.0);
                         egui::Grid::new("dev_link").num_columns(2).min_col_width(150.0).spacing([12.0, 6.0]).show(ui, |ui| {
                             ui.label(tr("Connection type"));
                             egui::ComboBox::from_id_salt("link_kind").width(230.0).selected_text(tr(d.connection.link.label())).show_ui(ui, |ui| {

@@ -262,3 +262,7 @@
 261|Povečava
 262|To ni naslov kamere (http, https, rtsp, udp, rtp ali rtmp).
 263|O programu PenCreator
+264|LinuxCNC (datoteka)
+265|LinuxCNC program izvede sam: Začni zanj shrani datoteko G-code. Ni preizkušeno na pravem stroju.
+266|Lastna G-koda
+267|Lastna G-code: zgornje vrstice se zapišejo ob vsakem dvigu in spustu peresa (npr. M3 S1000 in M5 za solenoid ali M280 P0 S… za servo Marlina).

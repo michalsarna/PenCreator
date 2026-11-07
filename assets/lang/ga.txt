@@ -262,3 +262,7 @@
 261|Zúmáil
 262|Ní seoladh ceamara é (http, https, rtsp, udp, rtp nó rtmp).
 263|Maidir le PenCreator
+264|LinuxCNC (comhad)
+265|Ritheann LinuxCNC an clár é féin: sábhálann Tosaigh an comhad G-code dó. Níor triaileadh ar fhíor-mheaisín é.
+266|G-chód féin
+267|Do G-code féin: scríobhtar na línte thuas gach uair a ardaítear nó a íslítear an peann (m.sh. M3 S1000 agus M5 do sholanóideach, nó M280 P0 S… do sheirbhea Marlin).

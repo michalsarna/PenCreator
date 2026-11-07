@@ -32,8 +32,8 @@ Open-source software for pen plotters, written in Rust. It has been tested on a 
 * **Import:** SVG, PDF / Illustrator, DXF, LightBurn projects (`.lbrn2`), UGS Designer files (`.ugsd`); 310 clipart pictures with online search.
 * **Project file:** `.cre`, shared with LightCreator and MillCreator; the sections of other programs are kept when you save.
 * **Interface:** 30 languages (including PenCreator's own texts) and 18 colour schemes.
-* **Devices and pens:** a list of plotters on the start screen (**I have no device** makes the Dummy), 64 layers that are pens (colour, width, speed, outline, fill with lines or a picture drawn with lines), a pen library (**Plotter → Pen library…**), a plot of the job, the G-code as text in a tab, and G-code for GRBL.
+* **Devices and pens:** a list of plotters on the start screen (**I have no device** makes the Dummy), 64 layers that are pens (colour, width, speed, outline, fill with lines or a picture drawn with lines), a pen library (**Plotter → Pen library…**), a plot of the job, the G-code as text in a tab, G-code for GRBL (the pen lifted by the Z axis, a servo or G-code of your own), AxiDraw / EggBot and HPGL plotters, and a G-code file for LinuxCNC.
 * **Machine control:** jogging, zero, macros, firmware settings, calibration, statistics (see [Machine Control](Machine-Control)).
-* **Planned:** HPGL, single-line fonts.
+* **Planned:** single-line fonts.
 
 Latest release: **v0.7.0** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option

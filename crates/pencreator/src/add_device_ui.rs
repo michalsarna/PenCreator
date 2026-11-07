@@ -33,7 +33,11 @@ impl App {
 
     /// The things worth checking before the device is used.
     pub(crate) fn add_dev_warnings(d: &Device) -> Vec<String> {
-        add::common_warnings(&d.connection, true, &tr("Nothing here has been tried on your plotter: run a first test with the pen raised and no paper."))
+        let mut w = add::common_warnings(&d.connection, !d.linuxcnc, tr("Nothing here has been tried on your plotter: run a first test with the pen raised and no paper."));
+        if d.linuxcnc {
+            w.insert(0, tr("LinuxCNC runs the program by itself: Start saves the G-code file for it. Not tried on a real machine.").to_string());
+        }
+        w
     }
 
     /// Is a read from the controller of the new device going on? The link is the new device's then (nothing is homed or unlocked).
@@ -98,17 +102,31 @@ impl App {
                 ui.end_row();
                 ui.label(tr("Controller"));
                 // A pen plotter may also be one that does not speak G-code (AxiDraw, HPGL).
-                egui::ComboBox::from_id_salt("add_controller").selected_text(tr(d.connection.grbl_version.label())).show_ui(ui, |ui| {
+                let shown = if d.linuxcnc { tr("LinuxCNC (file)") } else { tr(d.connection.grbl_version.label()) };
+                egui::ComboBox::from_id_salt("add_controller").selected_text(shown).show_ui(ui, |ui| {
                     for v in GrblVersion::ALL.into_iter().chain(GrblVersion::PLOTTERS) {
-                        ui.selectable_value(&mut d.connection.grbl_version, v, tr(v.label()));
+                        if ui.selectable_label(!d.linuxcnc && d.connection.grbl_version == v, tr(v.label())).clicked() {
+                            d.linuxcnc = false;
+                            d.connection.grbl_version = v;
+                            // AxiDraw and HPGL lift the pen by themselves: no G-code of one's own.
+                            if v.controller().plotter_language().is_some() && d.pen.lift == Lift::Custom {
+                                d.pen.lift = Lift::Servo;
+                            }
+                        }
+                    }
+                    if ui.selectable_label(d.linuxcnc, tr("LinuxCNC (file)")).clicked() {
+                        d.linuxcnc = true;
+                        d.connection.grbl_version = GrblVersion::default();
                     }
                 });
                 ui.end_row();
-                refresh = add::connection_rows(ui, &mut d.connection, &ports);
-                // `$$` is read from a GRBL that has it (not 0.7, not Smoothieware, not a plotter of its own language).
-                let can = matches!(d.connection.grbl_version, GrblVersion::Grbl11 | GrblVersion::Grbl10 | GrblVersion::Grbl09 | GrblVersion::Grbl08) && d.has_target();
-                read = add::read_row(ui, state, can);
-                base_ui::plotter_ui::settings_rows(ui, d.connection.grbl_version, &mut d.connection.plotter);
+                if !d.linuxcnc {
+                    refresh = add::connection_rows(ui, &mut d.connection, &ports);
+                    // `$$` is read from a GRBL that has it (not 0.7, not Smoothieware, not a plotter of its own language).
+                    let can = matches!(d.connection.grbl_version, GrblVersion::Grbl11 | GrblVersion::Grbl10 | GrblVersion::Grbl09 | GrblVersion::Grbl08) && d.has_target();
+                    read = add::read_row(ui, state, can);
+                    base_ui::plotter_ui::settings_rows(ui, d.connection.grbl_version, &mut d.connection.plotter);
+                }
                 ui.label(tr("Units"));
                 egui::ComboBox::from_id_salt("add_units").selected_text(tr(d.units.label())).show_ui(ui, |ui| {
                     for u in base_core::units::Units::ALL {
@@ -132,20 +150,7 @@ impl App {
                     }
                 });
                 ui.end_row();
-                ui.label(tr("The pen is lifted by"));
-                egui::ComboBox::from_id_salt("add_lift").selected_text(tr(d.pen.lift.label())).show_ui(ui, |ui| {
-                    for l in Lift::ALL {
-                        ui.selectable_value(&mut d.pen.lift, l, tr(l.label()));
-                    }
-                });
-                ui.end_row();
-                let (suffix, lo, hi) = if d.pen.lift == Lift::Z { (" mm", -100.0, 200.0) } else { ("", 0.0, 1000.0) };
-                ui.label(tr("Pen up"));
-                ui.add(egui::DragValue::new(&mut d.pen.up).range(lo..=hi).speed(0.5).suffix(suffix));
-                ui.end_row();
-                ui.label(tr("Pen down"));
-                ui.add(egui::DragValue::new(&mut d.pen.down).range(lo..=hi).speed(0.5).suffix(suffix));
-                ui.end_row();
+                crate::device_ui::lift_rows(ui, d, true);
             });
             ui.add_space(4.0);
             test_cam = add::camera_section(ui, &mut d.cameras, &mut d.active_camera, base_ui::camera::SUPPORTED);
@@ -231,5 +236,19 @@ mod tests {
         ad.read_since = Some(Instant::now() - READ_TIMEOUT - Duration::from_secs(1));
         a.add_dev_follow_read();
         assert_eq!(a.add_dev.as_ref().unwrap().read, ReadState::Failed);
+    }
+
+    #[test]
+    fn linuxcnc_needs_no_port_and_start_saves_the_file() {
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        let mut d = Device { name: "Plotter".into(), ..Device::default() };
+        d.linuxcnc = true;
+        let w = App::add_dev_warnings(&d);
+        assert_eq!(w.len(), 2, "{w:?}");
+        assert!(w[0].starts_with("LinuxCNC runs the program by itself") && !w.iter().any(|t| t.contains("No port")), "{w:?}");
+        assert!(!a.can_start(), "a connected plotter is needed for the others");
+        a.device = d;
+        assert!(a.can_start(), "Start is there without a link: it saves the file");
     }
 }

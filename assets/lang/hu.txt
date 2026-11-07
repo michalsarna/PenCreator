@@ -262,3 +262,7 @@
 261|Nagyítás
 262|Nem kameracím (http, https, rtsp, udp, rtp vagy rtmp).
 263|A PenCreator névjegye
+264|LinuxCNC (fájl)
+265|A LinuxCNC maga futtatja a programot: az Indítás elmenti hozzá a G-code fájlt. Valódi gépen nincs kipróbálva.
+266|Saját G-kód
+267|Saját G-code: a fenti sorok a toll minden emelésekor és leengedésekor beíródnak (pl. M3 S1000 és M5 mágnesszelephez, vagy M280 P0 S… a Marlin szervójához).

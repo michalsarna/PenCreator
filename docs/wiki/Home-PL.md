@@ -32,8 +32,8 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Testowany 
 * **Import:** SVG, PDF / Illustrator, DXF, projekty LightBurna (`.lbrn2`), pliki UGS Designera (`.ugsd`); 310 clipartów z wyszukiwaniem w sieci.
 * **Plik projektu:** `.cre`, wspólny z LightCreatorem i MillCreatorem; sekcje innych programów są zachowywane przy zapisie.
 * **Interfejs:** 30 języków (także własne teksty PenCreatora) i 18 schematów kolorów.
-* **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 64 warstwy, które są pisakami (kolor, szerokość, prędkość, kontur, wypełnienie liniami albo obraz rysowany liniami), biblioteka pisaków (**Ploter → Biblioteka pisaków…**), wykres zadania, G-code jako tekst w karcie i G-code dla GRBL.
+* **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 64 warstwy, które są pisakami (kolor, szerokość, prędkość, kontur, wypełnienie liniami albo obraz rysowany liniami), biblioteka pisaków (**Ploter → Biblioteka pisaków…**), wykres zadania, G-code jako tekst w karcie G-code dla GRBL (pisak podnoszony osią Z, serwem albo własnym G-code), plotery AxiDraw / EggBot i HPGL oraz plik G-code dla LinuxCNC.
 * **Sterowanie maszyną:** przesuw, zerowanie, makra, ustawienia firmware, kalibracja, statystyki (zobacz [Sterowanie maszyną](Sterowanie-maszyna)).
-* **Planowane:** HPGL, czcionki jednoliniowe.
+* **Planowane:** czcionki jednoliniowe.
 
 Najnowsza wersja: **v0.7.0** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru

@@ -590,15 +590,27 @@ fn num(v: f64) -> String {
     }
 }
 
-/// G-code that lifts the pen (`down` false) or lowers it onto the paper, where it stands, for the buttons of the Control tab.
-/// A servo keeps its position as long as the spindle output is on, so there is no `M5` here.
-pub fn pen_gcode(dev: &Device, down: bool) -> String {
+/// The line (or the lines of one's own) that take the pen up, or down onto the paper (`down`), without the wait.
+fn pen_move(g: &mut String, dev: &Device, down: bool) {
     let at = if down { dev.pen.down } else { dev.pen.up };
-    let mut g = String::from("G21 G90\n");
     match dev.pen.lift {
         Lift::Z => g.push_str(&format!("G0 Z{}\n", num(at))),
         Lift::Servo => g.push_str(&format!("M3 S{}\n", num(at))),
+        Lift::Custom => {
+            let own = if down { &dev.pen_gcode.down } else { &dev.pen_gcode.up };
+            for l in own.lines().map(str::trim).filter(|l| !l.is_empty()) {
+                g.push_str(&base_core::gcode_out::ascii(l));
+                g.push('\n');
+            }
+        }
     }
+}
+
+/// G-code that lifts the pen (`down` false) or lowers it onto the paper, where it stands, for the buttons of the Control tab.
+/// A servo keeps its position as long as the spindle output is on, so there is no `M5` here.
+pub fn pen_gcode(dev: &Device, down: bool) -> String {
+    let mut g = String::from("G21 G90\n");
+    pen_move(&mut g, dev, down);
     if dev.pen.delay_ms > 0.0 {
         g.push_str(&format!("G4 P{}\n", num(dev.pen.delay_ms / 1000.0)));
     }
@@ -612,10 +624,7 @@ pub fn frame_gcode(b: [f64; 4], dev: &Device) -> String {
     let (x0, y0) = machine_xy(dev, b[0], b[1]);
     let (x1, y1) = machine_xy(dev, b[2], b[3]);
     let mut g = String::from("G21 G90\n");
-    match dev.pen.lift {
-        Lift::Z => g.push_str(&format!("G0 Z{}\n", num(dev.pen.up))),
-        Lift::Servo => g.push_str(&format!("M3 S{}\n", num(dev.pen.up))),
-    }
+    pen_move(&mut g, dev, false);
     g.push_str(&format!("G0 X{} Y{}\n", num(x0), num(y0)));
     for (x, y) in [(x1, y0), (x1, y1), (x0, y1), (x0, y0)] {
         g.push_str(&format!("G1 X{} Y{} F{}\n", num(x), num(y), num(feed)));
@@ -681,17 +690,11 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     g.push_str("G21 G90 G17\n");
     let wait = if dev.pen.delay_ms > 0.0 { format!("G4 P{}\n", num(dev.pen.delay_ms / 1000.0)) } else { String::new() };
     let up = |g: &mut String| {
-        match dev.pen.lift {
-            Lift::Z => g.push_str(&format!("G0 Z{}\n", num(dev.pen.up))),
-            Lift::Servo => g.push_str(&format!("M3 S{}\n", num(dev.pen.up))),
-        }
+        pen_move(g, dev, false);
         g.push_str(&wait);
     };
     let down = |g: &mut String| {
-        match dev.pen.lift {
-            Lift::Z => g.push_str(&format!("G0 Z{}\n", num(dev.pen.down))),
-            Lift::Servo => g.push_str(&format!("M3 S{}\n", num(dev.pen.down))),
-        }
+        pen_move(g, dev, true);
         g.push_str(&wait);
     };
     let used: std::collections::BTreeSet<usize> = prog.moves.iter().map(|m| m.layer).collect();
@@ -1110,6 +1113,46 @@ mod tests {
         assert!(g.contains("M3 S800") && g.contains("M3 S300") && g.contains("M5"));
         // Back left: Y counts from the back, so the points are negative.
         assert!(g.lines().any(|l| l.starts_with("G1 X") && l.contains(" Y-")), "{g}");
+    }
+
+    #[test]
+    fn own_g_code_lifts_the_pen_everywhere_and_a_plotter_of_its_own_language_refuses_it() {
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 10.0);
+        let mut dev = Device::dummy();
+        dev.pen.lift = Lift::Custom;
+        dev.pen.delay_ms = 0.0;
+        dev.pen_gcode = crate::device::PenGcode { up: "M280 P0 S90\n".into(), down: "  M280 P0 S10\nG4 P0.05".into() };
+        assert!(dev.check().is_ok(), "{:?}", dev.check());
+        let layers = default_layers();
+        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
+        assert!(!g.lines().any(|l| l.starts_with("G0 Z") || l.starts_with("M3 S") || l == "M5"), "no Z and no servo of the spindle output: {g}");
+        let (ups, downs) = (g.lines().filter(|l| *l == "M280 P0 S90").count(), g.lines().filter(|l| *l == "M280 P0 S10").count());
+        assert!(downs >= 1 && ups == downs + 1, "up before and after each line, down for it: {ups} {downs}");
+        assert!(g.contains("M280 P0 S10\nG4 P0.05\n"), "every line of its own, trimmed");
+        // Before the job ends the pen is up.
+        let end = g.rfind("M280 P0 S90").unwrap();
+        assert!(end < g.find("(End of the job)").unwrap());
+        assert_eq!(pen_gcode(&dev, false), "G21 G90\nM280 P0 S90\n");
+        assert!(frame_gcode([0.0, 0.0, 10.0, 10.0], &dev).starts_with("G21 G90\nM280 P0 S90\nG0 X"));
+        // Empty, the same for up and down, or not plain ASCII: refused.
+        let mut bad = dev.clone();
+        bad.pen_gcode.down = " ".into();
+        assert!(bad.check().is_err());
+        bad.pen_gcode.down = "M280 P0 S90".into();
+        assert!(bad.check().is_err());
+        bad.pen_gcode.down = "M280 P0 S10 ; ü".into();
+        assert!(bad.check().is_err());
+        // AxiDraw and HPGL read no G-code of one's own.
+        let mut ebb = dev.clone();
+        ebb.connection.grbl_version = base_core::machine::GrblVersion::Ebb;
+        assert!(ebb.check().is_err());
+        assert!(crate::machine_ui::plotter_setup(&ebb).is_none());
+        // Not written while unset: a device of an older version is read and written as before.
+        let plain = serde_json::to_string(&Device::dummy()).unwrap();
+        assert!(!plain.contains("pen_gcode") && !plain.contains("linuxcnc"));
+        let back: Device = serde_json::from_str(&serde_json::to_string(&dev).unwrap()).unwrap();
+        assert_eq!(back.pen_gcode, dev.pen_gcode);
     }
 
     #[test]
