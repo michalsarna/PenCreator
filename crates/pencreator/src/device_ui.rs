@@ -46,9 +46,9 @@ impl Page {
 
 /// The rows of the pen mechanism, in a grid: what lifts it and its up and down (the values, or the G-code of one's own). The same
 /// in the window that adds a device and in the device window.
-pub(crate) fn lift_rows(ui: &mut egui::Ui, d: &mut Device, salt: &str) {
+pub(crate) fn lift_rows(ui: &mut egui::Ui, d: &mut Device, in_add_window: bool) {
     ui.label(tr("The pen is lifted by"));
-    egui::ComboBox::from_id_salt(salt).selected_text(tr(d.pen.lift.label())).show_ui(ui, |ui| {
+    egui::ComboBox::from_id_salt(if in_add_window { "add_lift" } else { "dev_lift" }).selected_text(tr(d.pen.lift.label())).show_ui(ui, |ui| {
         for l in Lift::ALL {
             // A plotter of its own language (AxiDraw, HPGL) has no G-code of one's own.
             let can = l != Lift::Custom || d.connection.grbl_version.controller().plotter_language().is_none();
@@ -390,7 +390,7 @@ impl App {
                     Page::Pen => {
                         egui::Grid::new("dev_pen").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
                             ui.label(tr("The pen is lifted by"));
-                            lift_rows(ui, d, "dev_lift");
+                            lift_rows(ui, d, false);
                             ui.label(tr("Wait after the pen moves"));
                             ui.add(egui::DragValue::new(&mut d.pen.delay_ms).range(0.0..=10000.0).suffix(" ms"));
                             ui.end_row();

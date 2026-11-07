@@ -150,7 +150,7 @@ impl App {
                     }
                 });
                 ui.end_row();
-                crate::device_ui::lift_rows(ui, d, "add_lift");
+                crate::device_ui::lift_rows(ui, d, true);
             });
             ui.add_space(4.0);
             test_cam = add::camera_section(ui, &mut d.cameras, &mut d.active_camera, base_ui::camera::SUPPORTED);
