@@ -13,6 +13,8 @@ pub struct PlotView {
     /// From 0 to 1: how much of the program is shown.
     pub progress: f32,
     pub show_travel: bool,
+    /// The sizes of the drawing over the paper, as on a technical drawing.
+    pub show_dims: bool,
     /// Asked for by a button, done by the next picture (which knows the size of its window).
     pub fit: Option<Fit>,
 }
@@ -28,7 +30,7 @@ pub enum Fit {
 
 impl Default for PlotView {
     fn default() -> PlotView {
-        PlotView { zoom: 1.0, pan: egui::Vec2::ZERO, progress: 1.0, show_travel: true, fit: None }
+        PlotView { zoom: 1.0, pan: egui::Vec2::ZERO, progress: 1.0, show_travel: true, show_dims: false, fit: None }
     }
 }
 
@@ -228,7 +230,8 @@ impl App {
     pub(crate) fn preview_body(&mut self, ui: &mut egui::Ui) {
         let prog = self.prog.as_ref().expect("the program was made above");
         ui.horizontal_wrapped(|ui| {
-            ui.checkbox(&mut self.view.show_travel, tr("Moves with the pen up"));
+            base_ui::widgets::toggle(ui, &mut self.view.show_travel, tr("Moves with the pen up"), "");
+            base_ui::widgets::toggle(ui, &mut self.view.show_dims, tr("Dimensions"), tr("Show the sizes of the job as on a technical drawing"));
             ui.separator();
             base_ui::widgets::area_colour(ui, tr("Paper colour"), &mut self.ed.grid_prefs.preview_color, Color32::WHITE);
         });
@@ -248,7 +251,18 @@ impl App {
             ui.label(RichText::new(tr("There is nothing to show yet: draw shapes and put them on layers that are switched on.")).color(theme::text_dim()));
         } else {
             let paper = self.ed.grid_prefs.preview_color.map_or(Color32::WHITE, |c| Color32::from_rgba_unmultiplied(c[0], c[1], c[2], c[3]));
-            show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, (self.device.area.x, self.device.area.y), paper);
+            let (w, h) = (self.device.area.x, self.device.area.y);
+            // The shapes that are drawn, in the coordinates of the plot (Y up from the bottom of the sheet).
+            let parts: Vec<base_core::geom::Rect> = self
+                .scene
+                .shapes
+                .iter()
+                .filter(|s| self.layers.get(s.layer).is_some_and(|l| l.enabled && l.visible))
+                .filter_map(|s| s.bounds())
+                .map(|b| base_core::geom::Rect { min: base_core::geom::Pt::new(b.min.x, h - b.max.y), max: base_core::geom::Pt::new(b.max.x, h - b.min.y) })
+                .collect();
+            let sheet = Sheet { size: (w, h), fill: paper, parts: &parts, units: self.device.units };
+            show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, &sheet);
         }
     }
 
@@ -277,7 +291,17 @@ impl App {
 }
 
 /// The paper and the lines on it, with the pen at the end of what is shown.
-fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], pens: &crate::pens::PenLibrary, (w, h): (f64, f64), paper_fill: Color32) {
+/// The sheet of the preview: its size, its colour, and the shapes that are drawn on it (for the dimensions).
+struct Sheet<'a> {
+    size: (f64, f64),
+    fill: Color32,
+    parts: &'a [base_core::geom::Rect],
+    units: base_core::units::Units,
+}
+
+fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], pens: &crate::pens::PenLibrary, sheet: &Sheet) {
+    let (w, h) = sheet.size;
+    let paper_fill = sheet.fill;
     let size = base_ui::window::fill_size(ui).max(egui::vec2(200.0, 200.0));
     let (rect, resp) = ui.allocate_exact_size(size, egui::Sense::click_and_drag());
     if resp.double_clicked() {
@@ -350,6 +374,10 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     painter.extend(shapes);
     if let Some(p) = pen_at {
         painter.circle_stroke(at(p), 5.0, Stroke::new(1.5, Color32::from_rgb(0xd0, 0x30, 0x30)));
+    }
+    if view.show_dims {
+        let to = |p: base_core::geom::Pt| at([p.x, p.y]);
+        base_ui::dims::plan(&painter, &to, sheet.parts, Some(base_core::geom::Pt::new(0.0, 0.0)), sheet.units, &base_ui::dims::DimStyle::on(paper_fill));
     }
     // The zoom bar of every picture, in the lower left corner: the same as the wheel and the double click.
     let zoom_about_middle = |view: &mut PlotView, f: f32| {
