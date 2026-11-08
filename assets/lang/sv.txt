@@ -266,3 +266,17 @@
 265|LinuxCNC kör programmet själv: Start sparar G-code-filen åt det. Inte provat på en riktig maskin.
 266|Egen G-kod
 267|Egen G-code: raderna ovan skrivs varje gång pennan lyfts eller sänks (t.ex. M3 S1000 och M5 för en solenoid, eller M280 P0 S… för ett servo i Marlin).
+268|Verktyget är en släpkniv
+269|Ett blad som vrider sig fritt med spetsen släpande bakom axeln: konturerna skärs med förskjutningen utjämnad, hålen först, och inget fylls
+270|Blad
+271|Förskjutning {} mm
+272|Spetsens förskjutning
+273|Hur långt bladets spets är bakom axeln: tillverkaren av bladet anger det
+274|Vrid vid hörn skarpare än
+275|Skär vidare förbi starten
+276|En sluten kontur skärs så långt förbi sin start att den sluts
+277|Skärplottern utjämnar förskjutningen själv
+278|De flesta vinylskärare gör det: konturerna skärs då som de är ritade
+279|Bladet går ner och upp som pennan (inställningarna ovan): nere är snittets djup. Ännu inte provat på en riktig skärare: gör det första snittet på en överbit.
+280|en släpkniv skär bara konturer: lagrens fyllningar och bilder utelämnades
+281|{} kontur(er) är för små för knivens förskjutning och blir avrundade

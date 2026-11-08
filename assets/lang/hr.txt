@@ -266,3 +266,17 @@
 265|LinuxCNC sam izvodi program: Pokreni sprema G-code datoteku za njega. Nije isprobano na pravom stroju.
 266|Vlastiti G-kod
 267|Vlastiti G-code: gornji se retci zapisuju pri svakom podizanju i spuštanju olovke (npr. M3 S1000 i M5 za solenoid ili M280 P0 S… za servo Marlina).
+268|Alat je vučeni nož
+269|Oštrica koja se slobodno okreće, a vrh joj se vuče iza osi: obrisi se režu s ispravljenim pomakom, najprije rupe, i ništa se ne ispunjava
+270|Oštrica
+271|Pomak {} mm
+272|Pomak vrha
+273|Koliko je vrh oštrice iza njezine osi: daje ga proizvođač oštrice
+274|Okretanje na kutovima oštrijim od
+275|Reži dalje od početka
+276|Zatvoreni obris reže se toliko dalje od početka da se zatvori
+277|Rezač sam ispravlja pomak
+278|Većina rezača za vinil to radi: obrisi se tada režu kako su nacrtani
+279|Oštrica se spušta i diže kao olovka (postavke iznad): dolje je dubina reza. Još nije isprobano na pravom rezaču: prvi rez napravite na otpadnom komadu.
+280|vučeni nož reže samo obrise: ispune i slike slojeva su izostavljene
+281|{} obris(a) je premalo za pomak noža i izlazi zaobljeno

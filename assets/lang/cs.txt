@@ -266,3 +266,17 @@
 265|LinuxCNC spouští program sám: Start pro něj uloží soubor G-code. Nevyzkoušeno na skutečném stroji.
 266|Vlastní G-kód
 267|Vlastní G-code: řádky výše se zapíšou při každém zvednutí a spuštění pera (např. M3 S1000 a M5 pro solenoid nebo M280 P0 S… pro servo Marlinu).
+268|Nástrojem je vlečný nůž
+269|Volně se otáčející čepel, jejíž špička se vleče za osou: obrysy se řežou s vyrovnaným posunem, nejprve otvory, a nic se nevyplňuje
+270|Čepel
+271|Posun {} mm
+272|Posun špičky
+273|Jak daleko je špička čepele za její osou: udává ji výrobce čepele
+274|Otáčet v rozích ostřejších než
+275|Řezat dál za začátek
+276|Uzavřený obrys se řeže tak daleko za svůj začátek, aby se uzavřel
+277|Řezací plotr vyrovná posun sám
+278|Většina plotrů na fólii to dělá: obrysy se pak řežou tak, jak jsou nakresleny
+279|Čepel jde dolů a nahoru jako pero (nastavení výše): dole je hloubka řezu. Zatím nevyzkoušeno na skutečném řezacím plotru: první řez udělejte na zbytku materiálu.
+280|vlečný nůž řeže jen obrysy: výplně a obrázky vrstev byly vynechány
+281|{} obrys(ů) je příliš malých na posun nože a vyjdou zaoblené

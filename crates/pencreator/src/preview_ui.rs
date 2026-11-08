@@ -343,6 +343,10 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     let mut pen_at = None;
     let marks: Vec<crate::pens::Pen> = layers.iter().map(|l| crate::pens_ui::pen_of_layer(l, pens)).collect();
     let mut shapes = vec![];
+    // A drag knife: the moves are the path of its axis (grey); what the tip cuts is drawn for every cut done so far.
+    let knife = !prog.knife_tips.is_empty();
+    let mut cuts_done = 0usize;
+    let mut cutting = false;
     for m in &prog.moves {
         let len = m.length();
         if done >= shown {
@@ -353,6 +357,17 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
         done += len;
         pen_at = Some(to);
         match m.kind {
+            MoveKind::Draw if knife => {
+                cutting = true;
+                painter.line_segment([at(m.from), at(to)], Stroke::new(1.0, Color32::from_gray(0xa0)));
+            }
+            MoveKind::Travel if knife && cutting => {
+                cutting = false;
+                cuts_done += 1;
+                if view.show_travel {
+                    painter.extend(egui::Shape::dashed_line(&[at(m.from), at(to)], Stroke::new(1.0, Color32::from_rgb(0x60, 0x90, 0xd0)), 5.0, 4.0));
+                }
+            }
             MoveKind::Draw => {
                 if let Some(pen) = marks.get(m.layer) {
                     let dir = (m.to[1] - m.from[1]).atan2(m.to[0] - m.from[0]);
@@ -368,6 +383,15 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
         }
     }
     painter.extend(shapes);
+    if knife {
+        if cutting || view.progress >= 0.999 {
+            cuts_done += 1;
+        }
+        for (layer, tip) in prog.knife_tips.iter().take(cuts_done) {
+            let colour = layers.get(*layer).map_or(Color32::BLACK, |l| l.color32());
+            painter.add(egui::Shape::line(tip.iter().map(|p| at(*p)).collect(), Stroke::new(1.6, colour)));
+        }
+    }
     if let Some(p) = pen_at {
         painter.circle_stroke(at(p), 5.0, Stroke::new(1.5, Color32::from_rgb(0xd0, 0x30, 0x30)));
     }

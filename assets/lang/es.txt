@@ -266,3 +266,17 @@
 265|LinuxCNC ejecuta el programa por sí mismo: Iniciar guarda el archivo G-code para él. No probado en una máquina real.
 266|G-code propio
 267|G-code propio: las líneas de arriba se escriben cada vez que el bolígrafo sube o baja (por ejemplo M3 S1000 y M5 para un solenoide, o M280 P0 S… para un servo de Marlin).
+268|La herramienta es una cuchilla de arrastre
+269|Una cuchilla que gira libremente, con la punta arrastrándose tras su eje: los contornos se cortan con el desplazamiento compensado, primero los agujeros, y no se rellena nada
+270|Cuchilla
+271|Desplazamiento {} mm
+272|Desplazamiento de la punta
+273|A qué distancia está la punta de la cuchilla detrás de su eje: lo indica el fabricante de la cuchilla
+274|Girar en las esquinas más agudas que
+275|Cortar más allá del inicio
+276|Un contorno cerrado se corta esta distancia más allá de su inicio, para que se cierre
+277|El plóter de corte compensa el desplazamiento por sí mismo
+278|La mayoría de los plóteres de vinilo lo hacen: los contornos se cortan entonces tal como están dibujados
+279|La cuchilla baja y sube como el bolígrafo (los ajustes de arriba): abajo es la profundidad del corte. Aún no se ha probado en un plóter de corte real: haz el primer corte en un trozo sobrante.
+280|una cuchilla de arrastre solo corta contornos: se omitieron los rellenos y las imágenes de las capas
+281|{} contorno(s) son demasiado pequeños para el desplazamiento de la cuchilla y salen redondeados

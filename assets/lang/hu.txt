@@ -266,3 +266,17 @@
 265|A LinuxCNC maga futtatja a programot: az Indítás elmenti hozzá a G-code fájlt. Valódi gépen nincs kipróbálva.
 266|Saját G-kód
 267|Saját G-code: a fenti sorok a toll minden emelésekor és leengedésekor beíródnak (pl. M3 S1000 és M5 mágnesszelephez, vagy M280 P0 S… a Marlin szervójához).
+268|Az eszköz egy vonszolt kés
+269|Szabadon forgó penge, amelynek hegye a tengelye mögött húzódik: a körvonalakat az eltolás kiegyenlítésével vágja, először a lyukakat, és semmit sem tölt ki
+270|Penge
+271|Eltolás {} mm
+272|A hegy eltolása
+273|Milyen messze van a penge hegye a tengelye mögött: a penge gyártója adja meg
+274|Fordítás az ennél élesebb sarkoknál
+275|Vágás a kezdeten túl
+276|A zárt körvonalat ennyivel a kezdete után is vágja, hogy bezáródjon
+277|A vágóplotter maga egyenlíti ki az eltolást
+278|A legtöbb fóliavágó így tesz: a körvonalakat ekkor úgy vágja, ahogy meg vannak rajzolva
+279|A penge úgy süllyed és emelkedik, mint a toll (a fenti beállítások): a lent a vágás mélysége. Valódi vágón még nem próbálták: az első vágást egy hulladékdarabon végezze.
+280|a vonszolt kés csak körvonalakat vág: a rétegek kitöltései és képei kimaradtak
+281|{} körvonal túl kicsi a kés eltolásához, és lekerekítve jön ki

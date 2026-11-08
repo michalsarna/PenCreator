@@ -266,3 +266,17 @@
 265	LinuxCNC runs the program by itself: Start saves the G-code file for it. Not tried on a real machine.
 266	Own G-code
 267	Own G-code: the lines above are written each time the pen goes up or down (for example M3 S1000 and M5 for a solenoid, or M280 P0 S… for a servo of Marlin).
+268	The tool is a drag knife
+269	A blade that turns freely, its tip trailing behind its axis: the outlines are cut with the offset made good, the holes first, and nothing is filled
+270	Blade
+271	Offset {} mm
+272	Offset of the tip
+273	How far the tip of the blade is behind its axis: the maker of the blade gives it
+274	Turn round corners sharper than
+275	Cut on past the start
+276	A closed outline is cut on this far past its start, so it closes
+277	The cutter makes good the offset itself
+278	Most vinyl cutters do: the outlines are then cut as they are drawn
+279	The blade goes down and up as the pen does (the settings above): down is the depth of the cut. Not tried on a real cutter yet: try the first cut on a spare piece.
+280	a drag knife only cuts outlines: the fills and the pictures of the layers were left out
+281	{} outline(s) are too small for the offset of the knife and come out rounded

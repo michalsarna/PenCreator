@@ -266,3 +266,17 @@
 265|LinuxCNC keyrir forritið sjálft: Ræsa vistar G-code skrána fyrir það. Ekki prófað á raunverulegri vél.
 266|Eigin G-kóði
 267|Eigin G-code: línurnar hér að ofan eru skrifaðar í hvert sinn sem penninn fer upp eða niður (t.d. M3 S1000 og M5 fyrir segulloka eða M280 P0 S… fyrir servó í Marlin).
+268|Verkfærið er dráttarhnífur
+269|Blað sem snýst frjálst og oddurinn dregst á eftir ásnum: útlínur eru skornar með leiðréttri hliðrun, götin fyrst, og ekkert er fyllt
+270|Blað
+271|Hliðrun {} mm
+272|Hliðrun oddsins
+273|Hversu langt oddur blaðsins er á eftir ásnum: framleiðandi blaðsins gefur það upp
+274|Snúa við horn sem eru skarpari en
+275|Skera áfram fram hjá byrjuninni
+276|Lokuð útlína er skorin svona langt fram hjá byrjun sinni svo hún lokist
+277|Skerinn leiðréttir hliðrunina sjálfur
+278|Flestir vínylskerar gera það: útlínur eru þá skornar eins og þær eru teiknaðar
+279|Blaðið fer niður og upp eins og penninn (stillingarnar að ofan): niðri er dýpt skurðarins. Ekki enn prófað á alvöru skera: gerðu fyrsta skurðinn á afgangsbút.
+280|dráttarhnífur sker aðeins útlínur: fyllingum og myndum laganna var sleppt
+281|{} útlína(r) eru of litlar fyrir hliðrun hnífsins og verða ávalar

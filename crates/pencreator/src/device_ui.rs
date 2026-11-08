@@ -44,6 +44,39 @@ impl Page {
     }
 }
 
+/// The drag knife: on or off, the blade (its offset), the corners, the overcut, and whether the cutter makes good the offset itself.
+fn knife_rows(ui: &mut egui::Ui, d: &mut Device) {
+    let mut on = d.knife.is_some();
+    if ui.checkbox(&mut on, tr("The tool is a drag knife")).on_hover_text(tr("A blade that turns freely, its tip trailing behind its axis: the outlines are cut with the offset made good, the holes first, and nothing is filled")).changed() {
+        d.knife = on.then(crate::device::DragKnife::default);
+    }
+    let Some(k) = d.knife.as_mut() else { return };
+    egui::Grid::new("dev_knife").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
+        ui.label(tr("Blade"));
+        ui.horizontal(|ui| {
+            for (name, offset) in crate::device::DragKnife::BLADES {
+                if ui.selectable_label((k.offset - offset).abs() < 1e-9, name).on_hover_text(trf("Offset {} mm", &[&offset])).clicked() {
+                    k.offset = offset;
+                }
+            }
+        });
+        ui.end_row();
+        ui.label(tr("Offset of the tip"));
+        ui.add(egui::DragValue::new(&mut k.offset).range(0.0..=3.0).speed(0.01).suffix(" mm")).on_hover_text(tr("How far the tip of the blade is behind its axis: the maker of the blade gives it"));
+        ui.end_row();
+        ui.label(tr("Turn round corners sharper than"));
+        ui.add(egui::DragValue::new(&mut k.swivel_deg).range(1.0..=90.0).speed(0.5).suffix("°"));
+        ui.end_row();
+        ui.label(tr("Cut on past the start"));
+        ui.add(egui::DragValue::new(&mut k.overcut).range(0.0..=5.0).speed(0.05).suffix(" mm")).on_hover_text(tr("A closed outline is cut on this far past its start, so it closes"));
+        ui.end_row();
+        ui.label("");
+        ui.checkbox(&mut k.by_controller, tr("The cutter makes good the offset itself")).on_hover_text(tr("Most vinyl cutters do: the outlines are then cut as they are drawn"));
+        ui.end_row();
+    });
+    ui.label(RichText::new(tr("The blade goes down and up as the pen does (the settings above): down is the depth of the cut. Not tried on a real cutter yet: try the first cut on a spare piece.")).color(theme::text_dim()));
+}
+
 /// The rows of the pen mechanism, in a grid: what lifts it and its up and down (the values, or the G-code of one's own). The same
 /// in the window that adds a device and in the device window.
 pub(crate) fn lift_rows(ui: &mut egui::Ui, d: &mut Device, in_add_window: bool) {
@@ -398,6 +431,10 @@ impl App {
                         ui.add_space(4.0);
                         ui.label(RichText::new(tr("With the Z axis the pen goes to the heights above; with a servo the G-code switches the spindle output on with the S value (M3 S…).")).color(theme::text_dim()));
                         ui.label(RichText::new(tr("Own G-code: the lines above are written each time the pen goes up or down (for example M3 S1000 and M5 for a solenoid, or M280 P0 S… for a servo of Marlin).")).color(theme::text_dim()));
+                        ui.add_space(8.0);
+                        ui.separator();
+                        ui.add_space(4.0);
+                        knife_rows(ui, d);
                         ui.add_space(8.0);
                         ui.separator();
                         ui.add_space(4.0);

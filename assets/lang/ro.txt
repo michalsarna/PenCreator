@@ -266,3 +266,17 @@
 265|LinuxCNC rulează singur programul: Pornește salvează fișierul G-code pentru el. Neîncercat pe o mașină reală.
 266|G-code propriu
 267|G-code propriu: rândurile de mai sus sunt scrise de fiecare dată când creionul urcă sau coboară (de exemplu M3 S1000 și M5 pentru un solenoid sau M280 P0 S… pentru un servo Marlin).
+268|Unealta este un cuțit tras
+269|O lamă care se rotește liber, cu vârful tras în urma axei: contururile sunt tăiate cu decalajul compensat, întâi găurile, și nimic nu este umplut
+270|Lamă
+271|Decalaj {} mm
+272|Decalajul vârfului
+273|Cât de departe este vârful lamei în spatele axei: îl dă producătorul lamei
+274|Rotește la colțurile mai ascuțite decât
+275|Taie dincolo de început
+276|Un contur închis este tăiat atât dincolo de început, ca să se închidă
+277|Plotterul de tăiere compensează singur decalajul
+278|Majoritatea plotterelor de vinil fac asta: contururile sunt tăiate atunci așa cum sunt desenate
+279|Lama coboară și urcă la fel ca pixul (setările de mai sus): jos este adâncimea tăieturii. Încă nu a fost încercat pe un plotter de tăiere adevărat: faceți prima tăietură pe o bucată de rezervă.
+280|un cuțit tras taie doar contururi: umplerile și imaginile straturilor au fost omise
+281|{} contur(uri) sunt prea mici pentru decalajul cuțitului și ies rotunjite
