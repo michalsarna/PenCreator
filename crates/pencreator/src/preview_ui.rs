@@ -253,15 +253,10 @@ impl App {
             let paper = self.ed.grid_prefs.preview_color.map_or(Color32::WHITE, |c| Color32::from_rgba_unmultiplied(c[0], c[1], c[2], c[3]));
             let (w, h) = (self.device.area.x, self.device.area.y);
             // The shapes that are drawn, in the coordinates of the plot (Y up from the bottom of the sheet).
-            let parts: Vec<base_core::geom::Rect> = self
-                .scene
-                .shapes
-                .iter()
-                .filter(|s| self.layers.get(s.layer).is_some_and(|l| l.enabled && l.visible))
-                .filter_map(|s| s.bounds())
-                .map(|b| base_core::geom::Rect { min: base_core::geom::Pt::new(b.min.x, h - b.max.y), max: base_core::geom::Pt::new(b.max.x, h - b.min.y) })
-                .collect();
-            let sheet = Sheet { size: (w, h), fill: paper, parts: &parts, units: self.device.units };
+            let drawn = self.scene.shapes.iter().filter(|s| self.layers.get(s.layer).is_some_and(|l| l.enabled && l.visible));
+            let parts = base_ui::dims::Features::of(drawn, &|p| base_core::geom::Pt::new(p.x, h - p.y));
+            let shown = base_ui::editor::EditorHost::units(self);
+            let sheet = Sheet { size: (w, h), fill: paper, parts: &parts, units: (shown, self.device.units) };
             show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, &sheet);
         }
     }
@@ -295,8 +290,9 @@ impl App {
 struct Sheet<'a> {
     size: (f64, f64),
     fill: Color32,
-    parts: &'a [base_core::geom::Rect],
-    units: base_core::units::Units,
+    parts: &'a base_ui::dims::Features,
+    /// The units of the program and those of the machine.
+    units: (base_core::units::Units, base_core::units::Units),
 }
 
 fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[crate::layers::PenLayer], pens: &crate::pens::PenLibrary, sheet: &Sheet) {
@@ -377,7 +373,8 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     }
     if view.show_dims {
         let to = |p: base_core::geom::Pt| at([p.x, p.y]);
-        base_ui::dims::plan(&painter, &to, sheet.parts, Some(base_core::geom::Pt::new(0.0, 0.0)), sheet.units, &base_ui::dims::DimStyle::on(paper_fill));
+        let st = base_ui::dims::DimStyle::on(paper_fill).in_units(sheet.units.0, sheet.units.1);
+        base_ui::dims::drawing(&painter, &to, sheet.parts, Some(base_core::geom::Pt::new(0.0, 0.0)), &st);
     }
     // The zoom bar of every picture, in the lower left corner: the same as the wheel and the double click.
     let zoom_about_middle = |view: &mut PlotView, f: f32| {
