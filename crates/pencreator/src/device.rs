@@ -488,8 +488,6 @@ impl Default for DragKnife {
 }
 
 impl DragKnife {
-    /// The usual blades: the angle of the blade and the offset of its tip.
-    pub const BLADES: [(&'static str, f64); 3] = [("30°", 0.15), ("45°", 0.25), ("60°", 0.5)];
     /// The knife the program makes good, or `None` when the cutter does it.
     pub fn compensated(&self) -> Option<base_core::drag_knife::Knife> {
         (!self.by_controller).then_some(base_core::drag_knife::Knife { offset: self.offset, swivel_deg: self.swivel_deg, overcut: self.overcut })

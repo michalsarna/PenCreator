@@ -168,3 +168,23 @@ fn grbl_sim_one_element_at_a_time_runs_with_the_same_pen() {
     s.wait_idle_at(0.0, 0.0, 60.0);
     assert!(s.errors().is_empty(), "GRBL rejected lines: {:?}", s.errors_described());
 }
+
+#[test]
+#[ignore = "needs grbl-sim: tools/grbl-sim/build.sh of baseCreator"]
+fn grbl_sim_a_drag_knife_cuts_the_outlines_with_the_offset_and_ends_up_at_zero() {
+    let mut s = Session::connect();
+    s.wait_banner();
+    s.fast_machine(&[]);
+    let mut scene = Scene::default();
+    square(&mut scene, 0, 20.0, 20.0, 40.0);
+    square(&mut scene, 0, 30.0, 30.0, 10.0);
+    scene.add(0, base_core::scene::Kind::Ellipse { w: 8.0, h: 8.0 }, Xf::translate(50.0, 50.0));
+    let mut dev = Device::dummy();
+    dev.knife = Some(crate::device::DragKnife { offset: 0.5, ..Default::default() });
+    let job = job_of(&scene, &dev);
+    // The axis runs past the corners of the hole by the offset of the blade.
+    assert!(job.iter().any(|l| l.contains("X40.5")), "{job:?}");
+    s.run_job(job, 240.0);
+    s.wait_idle_at(0.0, 0.0, 60.0);
+    assert!(s.errors().is_empty(), "GRBL rejected lines: {:?}", s.errors_described());
+}

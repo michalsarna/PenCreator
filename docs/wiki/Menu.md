@@ -125,6 +125,7 @@ Wszystkie są opisane na stronie [Sterowanie maszyną](Sterowanie-maszyna).
 | Pozycja | Klawisz | Co robi |
 |---|---|---|
 | **Biblioteka pisaków…** | | Gotowe pisaki i Twoje własne. Zobacz [Warstwy i pisaki](Warstwy-i-pisaki#biblioteka-pisaków). |
+| **Biblioteka noży…** | | Gotowe noże wleczone i Twoje własne. Zobacz [Narzędzia projektowe](Narzedzia-projektowe#nóż-wleczony). |
 | **Wykres zadania…** | Ctrl+Shift+P | Otwiera kartę **Podgląd**: co narysuje pisak, z ruchami z podniesionym pisakiem, czasem i animacją. Zobacz [Szybki start](Szybki-start). |
 | **Eksportuj G-code…** | Ctrl+E | Pyta, gdzie zapisać, i zapisuje G-code projektu (to samo robi przycisk **Zapisz G-code**). |
 

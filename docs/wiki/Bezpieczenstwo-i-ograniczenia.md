@@ -9,5 +9,5 @@ PenCreator tworzy ścieżki plotowania i zapisuje **G-code dla GRBL**. Może **p
 * Przesuw, przyciski pisaka, **Obrys** i pauzy na zmianę pisaka wysyłają prawdziwe ruchy. **Obrys** podnosi pisak i obchodzi prostokąt rysunku: sprawdź, czy podniesiony pisak nie zahaczy o papier i zaciski.
 * Obraz (bitmapa) jest rysowany tylko na warstwie, której **Rysowanie** to **Obraz**; na każdej innej jest pomijany z ostrzeżeniem (najpierw zwektoryzuj go na linie albo przełącz warstwę na **Obraz**). Tekst jest rysowany konturami czcionki (każda litera dookoła krawędzi), nie literami jednoliniowymi.
 * Linie wypełnienia to równoległe linie pod kątem; bardzo mały odstęp daje ogromną liczbę linii, a po 200 000 linii wypełnienia reszta wypełnienia jest pomijana z ostrzeżeniem.
-* Nie ma jeszcze HPGL ani czcionek jednoliniowych.
+* Nie ma jeszcze czcionek jednoliniowych. Plotery i plotery tnące HPGL są sterowane przez port szeregowy, ale nie sprawdzono tego jeszcze na prawdziwym urządzeniu.
 * Co jest testowane: edytor i plik projektu (sekcje innych programów są zachowywane), otwieranie plików, urządzenia, warstwy, kolejność pociągnięć, wypełnienie, G-code, menu i ich klawisze oraz tłumaczenia, automatycznymi testami przy każdej zmianie; G-code zadań także na symulowanym kontrolerze GRBL. Ekrany są też sprawdzane w rendererze bez okna przy każdej zmianie.

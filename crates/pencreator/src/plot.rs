@@ -1208,6 +1208,42 @@ mod tests {
     }
 
     #[test]
+    fn a_cutter_of_its_own_hpgl_gets_its_commands_from_the_start_to_the_end_of_a_job() {
+        use base_core::machine::GrblVersion;
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 30.0);
+        square(&mut scene, 0, 30.0, 30.0, 10.0);
+        let layers = default_layers();
+        let mut dev = Device::dummy();
+        dev.connection.grbl_version = GrblVersion::Hpgl;
+        dev.knife = Some(crate::device::DragKnife { by_controller: true, ..Default::default() });
+        dev.connection.plotter.hpgl = base_core::plotter::HpglCommands {
+            start: "IN;SP1;".into(),
+            end: "PU0,0;SP0;".into(),
+            pen_down: "PD;".into(),
+            pen_up: "PU;".into(),
+            speed: "VS{speed};".into(),
+            max_speed: 10,
+            force: "FS{force};".into(),
+            force_value: 80,
+        };
+        assert!(dev.check().is_ok(), "{:?}", dev.check());
+        let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
+        let mut t = base_core::plotter::Translator::new(crate::machine_ui::plotter_setup(&dev).expect("a plotter"));
+        let mut cmds = t.start();
+        for l in base_ui::link::clean_gcode(&g) {
+            cmds.extend(t.translate(&l));
+        }
+        assert_eq!(&cmds[..3], ["IN;", "SP1;", "FS80;"], "{cmds:?}");
+        assert_eq!(&cmds[cmds.len() - 2..], ["PU0,0;", "SP0;"], "the end of the device comes last: {cmds:?}");
+        assert_eq!(cmds.iter().filter(|c| *c == "PD;").count(), 2, "{cmds:?}");
+        let speeds: Vec<u32> = cmds.iter().filter_map(|c| c.strip_prefix("VS")?.strip_suffix(';')?.parse().ok()).collect();
+        assert!(!speeds.is_empty() && speeds.iter().all(|v| *v <= 10), "the speed is kept under the top speed: {cmds:?}");
+        // The cutter makes good the offset: the outlines are cut as drawn (the hole first), 40 units to the millimetre.
+        assert_eq!(&cmds[3..7], ["PA1200,7200;", "PD;", "VS5;", "PA1600,7200;"], "{cmds:?}");
+    }
+
+    #[test]
     fn a_servo_uses_m3_and_the_machine_zero_moves_the_numbers() {
         let mut scene = Scene::default();
         square(&mut scene, 0, 20.0, 20.0, 10.0);

@@ -24,10 +24,11 @@ pub enum Page {
     Macros,
     Maintenance,
     Notes,
+    Hpgl,
 }
 
 impl Page {
-    const ALL: [Page; 10] = [Page::General, Page::Connection, Page::Machine, Page::Pen, Page::Gcode, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Notes];
+    const ALL: [Page; 11] = [Page::General, Page::Connection, Page::Hpgl, Page::Machine, Page::Pen, Page::Gcode, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Notes];
     fn label(self) -> &'static str {
         match self {
             Page::General => "General",
@@ -40,36 +41,24 @@ impl Page {
             Page::Macros => "Macros",
             Page::Maintenance => "Maintenance",
             Page::Notes => "Notes",
+            Page::Hpgl => "HPGL",
         }
     }
 }
 
-/// The drag knife: on or off, the blade (its offset), the corners, the overcut, and whether the cutter makes good the offset itself.
-fn knife_rows(ui: &mut egui::Ui, d: &mut Device) {
+/// The drag knife: on or off, the knife of the library (its values), the corners, the overcut, and whether the cutter makes good
+/// the offset itself. `open_library` is set when the knife library is to be opened.
+fn knife_rows(ui: &mut egui::Ui, d: &mut Device, lib: &base_core::knife_lib::KnifeLibrary, open_library: &mut bool) {
     let mut on = d.knife.is_some();
     if ui.checkbox(&mut on, tr("The tool is a drag knife")).on_hover_text(tr("A blade that turns freely, its tip trailing behind its axis: the outlines are cut with the offset made good, the holes first, and nothing is filled")).changed() {
         d.knife = on.then(crate::device::DragKnife::default);
     }
     let Some(k) = d.knife.as_mut() else { return };
     egui::Grid::new("dev_knife").num_columns(2).spacing([12.0, 6.0]).show(ui, |ui| {
-        ui.label(tr("Blade"));
-        ui.horizontal(|ui| {
-            for (name, offset) in crate::device::DragKnife::BLADES {
-                if ui.selectable_label((k.offset - offset).abs() < 1e-9, name).on_hover_text(trf("Offset {} mm", &[&offset])).clicked() {
-                    k.offset = offset;
-                }
-            }
-        });
-        ui.end_row();
-        ui.label(tr("Offset of the tip"));
-        ui.add(egui::DragValue::new(&mut k.offset).range(0.0..=3.0).speed(0.01).suffix(" mm")).on_hover_text(tr("How far the tip of the blade is behind its axis: the maker of the blade gives it"));
-        ui.end_row();
-        ui.label(tr("Turn round corners sharper than"));
-        ui.add(egui::DragValue::new(&mut k.swivel_deg).range(1.0..=90.0).speed(0.5).suffix("°"));
-        ui.end_row();
-        ui.label(tr("Cut on past the start"));
-        ui.add(egui::DragValue::new(&mut k.overcut).range(0.0..=5.0).speed(0.05).suffix(" mm")).on_hover_text(tr("A closed outline is cut on this far past its start, so it closes"));
-        ui.end_row();
+        let mut values = base_core::drag_knife::Knife { offset: k.offset, swivel_deg: k.swivel_deg, overcut: k.overcut };
+        base_ui::knives_ui::library_row(ui, "device", lib, &mut values, open_library);
+        base_ui::knives_ui::knife_rows(ui, &mut values);
+        (k.offset, k.swivel_deg, k.overcut) = (values.offset, values.swivel_deg, values.overcut);
         ui.label("");
         ui.checkbox(&mut k.by_controller, tr("The cutter makes good the offset itself")).on_hover_text(tr("Most vinyl cutters do: the outlines are then cut as they are drawn"));
         ui.end_row();
@@ -327,11 +316,21 @@ impl App {
         let ports = self.machine.ports.clone();
         let mut refresh_ports = false;
         let machine = &mut self.machine;
+        let knives = &self.knives;
+        let mut open_knives = false;
         let new = edit.idx.is_none();
         let title = if new { tr("Add a device") } else { tr("Device settings") };
         popup(ctx, "device_window", &title, [640.0, 560.0], &mut open, |ui| {
             ui.horizontal(|ui| {
+                // The HPGL commands are only for a plotter or a cutter that speaks HPGL.
+                let hpgl = edit.draft.connection.grbl_version == base_core::machine::GrblVersion::Hpgl;
+                if edit.page == Page::Hpgl && !hpgl {
+                    edit.page = Page::Connection;
+                }
                 for p in Page::ALL {
+                    if p == Page::Hpgl && !hpgl {
+                        continue;
+                    }
                     if ui.add(egui::Button::selectable(edit.page == p, RichText::new(tr(p.label())).strong())).clicked() {
                         edit.page = p;
                     }
@@ -434,7 +433,7 @@ impl App {
                         ui.add_space(8.0);
                         ui.separator();
                         ui.add_space(4.0);
-                        knife_rows(ui, d);
+                        knife_rows(ui, d, knives, &mut open_knives);
                         ui.add_space(8.0);
                         ui.separator();
                         ui.add_space(4.0);
@@ -550,6 +549,7 @@ impl App {
                         });
                     }
                     Page::Camera => base_ui::camera_feed::camera_page(ui, &mut d.cameras, &mut d.active_camera, &mut self.cam_test_wanted),
+                    Page::Hpgl => base_ui::plotter_ui::hpgl_page(ui, &mut d.connection.plotter.hpgl),
                     Page::Notes => {
                         ui.add(egui::TextEdit::multiline(&mut d.notes).desired_rows(10).desired_width(f32::INFINITY).hint_text(tr("Notes about this machine")));
                     }
@@ -589,6 +589,9 @@ impl App {
         });
         if refresh_ports {
             self.machine.refresh_ports();
+        }
+        if open_knives {
+            self.knives_win.open = true;
         }
         if let Some(i) = edit.idx {
             if export {
@@ -849,6 +852,65 @@ mod tests {
         h.state_mut().dev_edit.as_mut().unwrap().draft.pen_change.enabled = true;
         h.run_steps(2);
         assert!(h.state().dev_edit.as_ref().unwrap().draft.pen_change.enabled);
+    }
+
+    #[test]
+    fn the_hpgl_page_is_there_only_for_an_hpgl_plotter_and_its_commands_are_kept() {
+        use egui_kittest::kittest::Queryable;
+        let mut a = app();
+        a.open_device_settings();
+        let mut h = egui_kittest::Harness::builder().with_accessibility_check(false).with_context_setup(|ctx| {
+            base_ui::fonts::install(ctx);
+            base_ui::icons::install(ctx);
+        }).with_size([900.0, 800.0]).build_ui_state(|ui, a: &mut App| a.device_window(ui.ctx()), a);
+        h.run_steps(2);
+        assert!(h.query_by_label("HPGL").is_none(), "a GRBL machine has no HPGL page");
+        h.state_mut().dev_edit.as_mut().unwrap().draft.connection.grbl_version = base_core::machine::GrblVersion::Hpgl;
+        h.run_steps(2);
+        h.get_by_label("HPGL").click();
+        h.run_steps(2);
+        assert_eq!(h.state().dev_edit.as_ref().unwrap().page, Page::Hpgl);
+        assert!(h.query_by_label("Pen or knife down").is_some());
+        h.state_mut().dev_edit.as_mut().unwrap().draft.connection.plotter.hpgl.pen_down = "PD;PD;".into();
+        h.run_steps(2);
+        let e = h.state_mut().dev_edit.take().unwrap();
+        let mut a = h.into_state();
+        a.commit_device(&e);
+        assert!(a.devices.iter().any(|d| d.connection.plotter.hpgl.pen_down == "PD;PD;"), "the commands are kept with the device");
+        // Back to GRBL: the page goes and the window shows the connection.
+        a.open_device_settings();
+        a.dev_edit.as_mut().unwrap().page = Page::Hpgl;
+        a.dev_edit.as_mut().unwrap().draft.connection.grbl_version = base_core::machine::GrblVersion::Grbl11;
+        let mut h = egui_kittest::Harness::builder().with_accessibility_check(false).with_context_setup(|ctx| {
+            base_ui::fonts::install(ctx);
+            base_ui::icons::install(ctx);
+        }).with_size([900.0, 800.0]).build_ui_state(|ui, a: &mut App| a.device_window(ui.ctx()), a);
+        h.run_steps(2);
+        assert_eq!(h.state().dev_edit.as_ref().unwrap().page, Page::Connection);
+    }
+
+    #[test]
+    fn a_knife_of_the_library_sets_the_drag_knife_of_the_device() {
+        use egui_kittest::kittest::Queryable;
+        let mut a = app();
+        a.open_device_settings();
+        a.dev_edit.as_mut().unwrap().page = Page::Pen;
+        a.dev_edit.as_mut().unwrap().draft.knife = Some(crate::device::DragKnife::default());
+        let mut h = egui_kittest::Harness::builder().with_accessibility_check(false).with_context_setup(|ctx| {
+            base_ui::fonts::install(ctx);
+            base_ui::icons::install(ctx);
+        }).with_size([900.0, 900.0]).build_ui_state(|ui, a: &mut App| a.device_window(ui.ctx()), a);
+        h.run_steps(2);
+        assert!(h.query_by_label("The tool is a drag knife").is_some(), "the knife rows are shown");
+        h.get_by(|n| n.value().as_deref() == Some("45° blade")).click();
+        h.run_steps(2);
+        h.get_by_label("60° blade").click();
+        h.run_steps(2);
+        let k = h.state().dev_edit.as_ref().unwrap().draft.knife.unwrap();
+        assert_eq!((k.offset, k.overcut), (0.5, 0.8));
+        h.get_by_label("Knife library…").click();
+        h.run_steps(2);
+        assert!(h.state().knives_win.open);
     }
 
     #[test]
