@@ -114,4 +114,4 @@ A plotter can cut with a **drag knife** (vinyl, paper, card, stencils) in place 
 * The blade goes down and up as the pen does: with the Z axis **down** is the depth of the cut.
 * The preview draws the path of the axis in grey and what the tip cuts in the colour of the layer.
 
-Not tried on a real cutter yet: try the first cut on a spare piece.
+Not tried on a real cutter yet: try the first cut on a spare piece. The whole story, with the knife library and the HPGL commands of a cutter: [Drag Knife](Drag-Knife).

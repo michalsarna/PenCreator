@@ -114,4 +114,4 @@ Ploter może ciąć **nożem wleczonym** (folia, papier, karton, szablony) zamia
 * Ostrze opuszcza się i podnosi jak pisak: przy osi Z **dół** to głębokość cięcia.
 * Podgląd rysuje ścieżkę osi na szaro, a to, co tnie czubek, kolorem warstwy.
 
-Jeszcze nie sprawdzone na prawdziwym ploterze: pierwsze cięcie zrób na zbędnym kawałku.
+Jeszcze nie sprawdzone na prawdziwym ploterze: pierwsze cięcie zrób na zbędnym kawałku. Całość, z biblioteką noży i poleceniami HPGL plotera tnącego: [Nóż wleczony](Noz-wleczony).

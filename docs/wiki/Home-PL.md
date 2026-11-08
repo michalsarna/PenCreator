@@ -19,12 +19,23 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Testowany 
 | Poznać klawisze | [Skróty klawiszowe](Skroty-klawiszowe) |
 | Dzielić projekt z LightCreatorem i MillCreatorem | [Plik projektu](Plik-projektu) |
 | Edytować kształty, importować obrazy, karty i panele | [Narzędzia projektowe](Narzedzia-projektowe) |
+| Ciąć nożem wleczonym, biblioteka noży, plotery tnące HPGL | [Nóż wleczony](Noz-wleczony) |
 | Ułożyć obszar roboczy: panele, karty, okna | [Panele i karty](Panele-i-karty) |
 | Sterować maszyną: przesuw, zerowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |
 | Zobaczyć, jak to wygląda | [Zrzuty ekranu](Zrzuty-ekranu) |
 | Znaleźć plik ustawień | [Ustawienia i pliki](Ustawienia-i-pliki) |
 | Poczytać o kodzie | [Architektura](Architektura) |
 | Wiedzieć, co jest, a czego nie ma | [Bezpieczeństwo i ograniczenia](Bezpieczenstwo-i-ograniczenia) |
+
+## Sprawdzone urządzenia
+
+Program został wypróbowany na tych maszynach i na nich działa:
+
+| Urządzenie | Rodzaj | Sterownik |
+|---|---|---|
+| Ploter pisakowy zbudowany na wzór [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) | ploter pisakowy | Arduino UNO, CNC Shield, GRBL |
+
+Działa na innej maszynie? Napisz w [zgłoszeniu](https://github.com/michalsarna/PenCreator/issues), a trafi na listę.
 
 ## W skrócie
 
