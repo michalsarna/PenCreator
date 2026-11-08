@@ -1364,7 +1364,11 @@ impl EditorHost for App {
     fn work_size(&self) -> (f64, f64) {
         self.work_size_mm()
     }
+    /// The units of the program (Settings → Program options), or those of the device.
     fn units(&self) -> Units {
+        self.ed.grid_prefs.display_units(self.device.units)
+    }
+    fn machine_units(&self) -> Units {
         self.device.units
     }
     fn workspace_fill(&self) -> egui::Color32 {
@@ -1648,6 +1652,24 @@ mod tests {
         for f in ["Export DXF…", "Export DXF R12 (legacy)…", "Export Adobe Illustrator…", "Export LightBurn project…", "Export MillMage project…"] {
             assert!(export.contains(&f), "{f}");
         }
+    }
+
+    /// A device in inches gets its G-code in inches: G20, the lengths and the feeds divided by 25.4. The units of the program do not
+    /// change the G-code.
+    #[test]
+    fn a_machine_in_inches_gets_g_code_in_inches_whatever_the_program_shows() {
+        let mut a = app();
+        a.scene.add(0, base_core::scene::Kind::Rect { w: 40.0, h: 20.0 }, base_core::geom::Xf::translate(10.0, 10.0));
+        a.layers[0].enabled = true;
+        let (mm, _) = a.gcode_text("job").expect("a program");
+        assert!(mm.contains("G21") && !mm.contains("G20"));
+        a.device.units = base_core::units::Units::Inch;
+        a.ed.grid_prefs.units = Some(base_core::units::Units::Cm);
+        let (inch, _) = a.gcode_text("job").expect("a program");
+        assert!(inch.contains("G20") && !inch.lines().any(|l| l.split(';').next().unwrap_or("").split_whitespace().any(|w| w == "G21")), "{}", &inch[..400.min(inch.len())]);
+        assert_eq!(inch, base_core::gcode_units::to_inches(&mm), "every length and feed in inches");
+        assert_eq!(base_ui::editor::EditorHost::units(&a), base_core::units::Units::Cm, "the program shows centimetres");
+        assert_eq!(base_ui::editor::EditorHost::machine_units(&a), base_core::units::Units::Inch);
     }
 
     fn app() -> App {

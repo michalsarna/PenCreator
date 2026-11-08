@@ -92,6 +92,9 @@ impl App {
 
     /// The text of a G-code file after the postprocessor the person chose (as it is when none).
     pub(crate) fn postprocessed(&mut self, text: String) -> Option<String> {
+        // In the units of the machine: a device in inches gets G20 and lengths and feeds in inches. A plotter with a language of its
+        // own reads the G-code in millimetres and turns it into its own words.
+        let text = if crate::machine_ui::plotter_setup(&self.device).is_none() { base_core::gcode_units::for_machine(text, self.device.units) } else { text };
         let area = self.work_size_mm();
         match self.plugins.export_text(&text, area) {
             Ok((t, said)) => {
