@@ -102,3 +102,16 @@ Każdy otwarty rysunek, **Podgląd**, G-code projektu jako tekst (**Podgląd G-c
 * **Ustawienia → Opcje programu… → Jednostki** wybiera jednostki, w których program pokazuje długości: milimetry, centymetry, metry, cale albo stopy, albo **Jak w urządzeniu**. Używają ich rozmiary we **Właściwościach**, linijka, **Wymiary** na rysunku i w podglądzie oraz rysunek techniczny.
 * **Jednostki urządzenia** (milimetry albo cale, w oknie urządzenia) to jednostki maszyny: w nich jest zapisany G-code. Urządzenie w calach dostaje **G20** i wszystkie długości oraz posuwy w calach; urządzenie w milimetrach **G21** i milimetry. Upewnij się, że to jednostki, w których pracuje sterownik.
 * Gdy urządzenie liczy w innym systemie niż program (cale wobec milimetrów), wymiary i linijka pokazują oba: najpierw jednostki programu, w nawiasie jednostki maszyny, na przykład **25.4 mm [1.000"]**.
+
+## Nóż wleczony
+
+Ploter może ciąć **nożem wleczonym** (folia, papier, karton, szablony) zamiast rysować pisakiem: w oknie urządzenia, na stronie **Pisak**, zaznacz **Narzędziem jest nóż wleczony**.
+
+* **Ostrze:** 30°, 45° albo 60° ustawia typowe **przesunięcie czubka** (0,15, 0,25, 0,5 mm), czyli jak daleko czubek ostrza wlecze się za jego osią. Dokładną wartość podaje producent ostrza.
+* Program koryguje przesunięcie: oś idzie przed czubkiem, a na narożu ostrzejszym niż **Obracaj na narożach ostrzejszych niż** (domyślnie 15°) obchodzi naroże po małym łuku, więc ostrze obraca się w miejscu i naroże zostaje ostre. Każde cięcie zaczyna się od obrócenia ostrza z kierunku, w którym zostało po poprzednim cięciu, a zamknięty obrys jest cięty dalej za początek o **Tnij dalej za początkiem** (0,5 mm), żeby się domknął.
+* Otwory są cięte przed częściami wokół nich, więc część trzyma się materiału, dopóki nie zostanie wycięta. Nóż tnie tylko obrysy: wypełnienia i obrazy są pomijane (podgląd o tym mówi), a obrysy mniejsze niż mniej więcej cztery przesunięcia wychodzą zaokrąglone (ostrzeżenie).
+* **Ploter sam koryguje przesunięcie:** większość ploterów do folii (HPGL) robi to w sterowniku; zaznacz to, a obrysy będą cięte tak, jak są narysowane.
+* Ostrze opuszcza się i podnosi jak pisak: przy osi Z **dół** to głębokość cięcia.
+* Podgląd rysuje ścieżkę osi na szaro, a to, co tnie czubek, kolorem warstwy.
+
+Jeszcze nie sprawdzone na prawdziwym ploterze: pierwsze cięcie zrób na zbędnym kawałku.

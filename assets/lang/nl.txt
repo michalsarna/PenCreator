@@ -266,3 +266,17 @@
 265|LinuxCNC voert het programma zelf uit: Start slaat het G-code-bestand ervoor op. Niet geprobeerd op een echte machine.
 266|Eigen G-code
 267|Eigen G-code: de regels hierboven worden geschreven telkens als de pen omhoog of omlaag gaat (bijvoorbeeld M3 S1000 en M5 voor een solenoïde, of M280 P0 S… voor een servo van Marlin).
+268|Het gereedschap is een sleepmes
+269|Een vrij draaiend mes, de punt sleept achter de as: de contouren worden gesneden met de verschuiving gecompenseerd, eerst de gaten, en niets wordt gevuld
+270|Mes
+271|Verschuiving {} mm
+272|Verschuiving van de punt
+273|Hoe ver de punt van het mes achter de as ligt: de maker van het mes geeft het op
+274|Draaien bij hoeken scherper dan
+275|Doorsnijden voorbij het begin
+276|Een gesloten contour wordt zo ver voorbij het begin gesneden, zodat hij sluit
+277|De snijplotter compenseert de verschuiving zelf
+278|De meeste vinylsnijders doen dat: de contouren worden dan gesneden zoals ze getekend zijn
+279|Het mes gaat omlaag en omhoog zoals de pen (de instellingen hierboven): omlaag is de diepte van de snede. Nog niet geprobeerd op een echte snijplotter: doe de eerste snede op een reststuk.
+280|een sleepmes snijdt alleen contouren: de vullingen en afbeeldingen van de lagen zijn weggelaten
+281|{} contour(en) zijn te klein voor de verschuiving van het mes en worden afgerond

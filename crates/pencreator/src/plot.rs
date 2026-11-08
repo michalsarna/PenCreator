@@ -57,6 +57,8 @@ pub struct Program {
     pub notes: Vec<Note>,
     /// What could not be done, or looks wrong, in words for the user.
     pub warnings: Vec<Warn>,
+    /// With a drag knife: the path its tip cuts, for each cut (the moves are the path of the axis), by layer.
+    pub knife_tips: Vec<(usize, Vec<P2>)>,
 }
 
 impl Program {
@@ -321,6 +323,28 @@ fn picture_strokes(shape: &Shape, im: &ImageData, l: &PenLayer, area_y: f64, bud
 
 /// A better order for the strokes: always the one that starts nearest to where the pen is (open lines may be drawn
 /// from either end).
+/// The order of the cuts of a drag knife: the deepest outlines first (the holes before the parts round them, the parts before what
+/// is round them), each depth in the order of the shortest moves.
+fn inside_first(strokes: Vec<Stroke>, start: P2) -> Vec<Stroke> {
+    let rings: Vec<(Vec<Pt>, bool)> = strokes.iter().map(|s| (s.pts.iter().map(|p| Pt::new(p[0], p[1])).collect(), s.closed)).collect();
+    let depth = base_core::drag_knife::nesting(&rings);
+    let deepest = depth.iter().copied().max().unwrap_or(0);
+    let mut by_depth: Vec<Vec<Stroke>> = (0..=deepest).map(|_| vec![]).collect();
+    for (s, d) in strokes.into_iter().zip(depth) {
+        by_depth[d].push(s);
+    }
+    let mut out = vec![];
+    let mut at = start;
+    for group in by_depth.into_iter().rev() {
+        let ordered = order(group, at);
+        if let Some(last) = ordered.last().and_then(|s| s.pts.last()) {
+            at = *last;
+        }
+        out.extend(ordered);
+    }
+    out
+}
+
 fn order(strokes: Vec<Stroke>, start: P2) -> Vec<Stroke> {
     if strokes.len() > MAX_ORDERED || strokes.len() < 2 {
         return strokes;
@@ -381,6 +405,12 @@ struct Gen {
     budget: usize,
     pen: Option<PenKey>,
     last_layer: usize,
+    /// The way the drag knife points after the last cut.
+    heading: P2,
+    /// Fills or pictures left out because the tool is a knife.
+    knife_no_fill: bool,
+    /// Closed outlines too small for the offset of the knife.
+    knife_small: usize,
 }
 
 impl Gen {
@@ -440,7 +470,7 @@ fn elements_by_distance(scene: &Scene, dev: &Device) -> Vec<Scene> {
 
 /// The moves as `generate` makes them, with what the program asks of the job (`JobOptions`).
 pub fn generate_with(scene: &Scene, layers: &[PenLayer], dev: &Device, opts: JobOptions) -> Program {
-    let mut g = Gen { prog: Program::default(), at: [0.0, 0.0], images: 0, outside: false, too_many: false, budget: MAX_HATCH_LINES, pen: None, last_layer: 0 };
+    let mut g = Gen { prog: Program::default(), at: [0.0, 0.0], images: 0, outside: false, too_many: false, budget: MAX_HATCH_LINES, pen: None, last_layer: 0, heading: [1.0, 0.0], knife_no_fill: false, knife_small: 0 };
     if opts.one_by_one {
         let elements = elements_by_distance(scene, dev);
         let total = elements.len();
@@ -455,7 +485,13 @@ pub fn generate_with(scene: &Scene, layers: &[PenLayer], dev: &Device, opts: Job
     } else {
         run_layers(&mut g, scene, layers, dev);
     }
-    let Gen { mut prog, images, outside, too_many, .. } = g;
+    let Gen { mut prog, images, outside, too_many, knife_no_fill, knife_small, .. } = g;
+    if knife_no_fill {
+        prog.warnings.push(Warn::new("a drag knife only cuts outlines: the fills and the pictures of the layers were left out", &[]));
+    }
+    if knife_small > 0 {
+        prog.warnings.push(Warn::new("{} outline(s) are too small for the offset of the knife and come out rounded", &[&knife_small]));
+    }
     if images > 0 {
         prog.warnings.push(Warn::new("{} picture(s) on the layers cannot be drawn: trace them to lines first", &[&images]));
     }
@@ -504,6 +540,21 @@ fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
                 line.push(Stroke { pts, closed: o.closed });
             }
         }
+        // A knife cuts outlines only, the holes before the parts round them.
+        if let Some(knife) = dev.knife {
+            if !fill.is_empty() {
+                g.knife_no_fill = true;
+                fill.clear();
+            }
+            let small = 4.0 * knife.offset;
+            g.knife_small += line.iter().filter(|s| s.closed && {
+                let (mut x0, mut y0, mut x1, mut y1) = (f64::MAX, f64::MAX, f64::MIN, f64::MIN);
+                for p in &s.pts {
+                    (x0, y0, x1, y1) = (x0.min(p[0]), y0.min(p[1]), x1.max(p[0]), y1.max(p[1]));
+                }
+                (x1 - x0).max(y1 - y0) < small
+            }).count();
+        }
         if fill.is_empty() && line.is_empty() {
             continue;
         }
@@ -524,7 +575,7 @@ fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
             if group.is_empty() {
                 continue;
             }
-            let strokes = order(group, g.at);
+            let strokes = if dev.knife.is_some() && !filling { inside_first(group, g.at) } else { order(group, g.at) };
             let n = strokes.len();
             if filling {
                 g.note(format!("Fill start: {n} lines"));
@@ -545,7 +596,19 @@ fn run_layers(g: &mut Gen, scene: &Scene, layers: &[PenLayer], dev: &Device) {
                     if l.passes > 1 && !filling {
                         g.note(format!("Pass {} of {}", pass + 1, l.passes));
                     }
-                    let pts: Vec<P2> = if pass % 2 == 1 && !s.closed { s.pts.iter().rev().copied().collect() } else { s.pts.clone() };
+                    let mut pts: Vec<P2> = if pass % 2 == 1 && !s.closed { s.pts.iter().rev().copied().collect() } else { s.pts.clone() };
+                    // A drag knife: the axis goes ahead of the tip, round the corners, and on past the start of a closed outline.
+                    if let Some(k) = dev.knife.and_then(|k| k.compensated()) {
+                        let outline: Vec<Pt> = pts.iter().map(|p| Pt::new(p[0], p[1])).collect();
+                        let heading = Pt::new(g.heading[0], g.heading[1]);
+                        let (axis, end) = base_core::drag_knife::compensate(&outline, s.closed, heading, &k);
+                        if axis.len() >= 2 {
+                            let tip = base_core::drag_knife::simulate(&axis, outline[0], k.offset);
+                            g.prog.knife_tips.push((li, tip.iter().map(|p| [p.x, p.y]).collect()));
+                            pts = axis.iter().map(|p| [p.x, p.y]).collect();
+                            g.heading = [end.x, end.y];
+                        }
+                    }
                     if pts[0] != g.at {
                         // Back to the other end with the pen down would draw a line: lift it instead.
                         g.prog.moves.push(Move { kind: MoveKind::Travel, from: g.at, to: pts[0], layer: li });
@@ -809,6 +872,51 @@ mod tests {
 
     fn drawn(prog: &Program) -> f64 {
         prog.draw_length()
+    }
+
+    /// A drag knife: the moves go along the axis, ahead of the tip; the tip cuts the square with sharp corners; the hole is cut
+    /// before the part round it; a fill is left out with a warning; a cutter that makes good the offset itself gets the outline.
+    #[test]
+    fn a_drag_knife_cuts_the_outline_with_its_offset_made_good_and_the_hole_first() {
+        let mut dev = Device::dummy();
+        dev.knife = Some(crate::device::DragKnife { offset: 0.5, ..Default::default() });
+        let mut layers = default_layers();
+        layers[0].draw = Draw::Outline;
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 60.0);
+        square(&mut scene, 0, 40.0, 40.0, 10.0);
+        let p = generate(&scene, &layers, &dev);
+        assert_eq!(p.knife_tips.len(), 2, "two cuts");
+        // The hole (10 × 10) first: its tip trace is the smaller one.
+        let size = |t: &Vec<P2>| t.iter().map(|q| q[0]).fold(f64::MIN, f64::max) - t.iter().map(|q| q[0]).fold(f64::MAX, f64::min);
+        assert!(size(&p.knife_tips[0].1) < 11.0 && size(&p.knife_tips[1].1) > 59.0, "the hole before the part");
+        // The axis runs ahead of the tip: the cut moves are not the outline itself, but the tip lands on it.
+        let first_cut = p.moves.iter().find(|m| m.kind == MoveKind::Draw).unwrap();
+        let tip0 = p.knife_tips[0].1[0];
+        let ahead = ((first_cut.from[0] - tip0[0]).powi(2) + (first_cut.from[1] - tip0[1]).powi(2)).sqrt();
+        assert!((ahead - 0.5).abs() < 1e-6, "the blade goes down 0.5 mm from where it cuts: {ahead}");
+        let ring = |x: f64, y: f64, s: f64, q: P2| {
+            let (dx, dy) = ((q[0] - x).min(x + s - q[0]).abs(), (q[1] - y).min(y + s - q[1]).abs());
+            let inside = q[0] >= x - 0.05 && q[0] <= x + s + 0.05 && q[1] >= y - 0.05 && q[1] <= y + s + 0.05;
+            inside && dx.min(dy) < 0.05
+        };
+        // The big square in the coordinates of the machine (Y up from the bottom of the sheet).
+        let y0 = dev.area.y - 80.0;
+        assert!(p.knife_tips[1].1.iter().all(|q| ring(20.0, y0, 60.0, *q)), "the tip cuts the outline");
+        // A fill is not cut, and says so.
+        layers[0].draw = Draw::OutlineAndFill;
+        let p = generate(&scene, &layers, &dev);
+        assert!(p.warnings.iter().any(|w| w.to_string().contains("drag knife")), "{:?}", p.warnings);
+        // A cutter that makes good the offset itself gets the outline as it is.
+        dev.knife = Some(crate::device::DragKnife { by_controller: true, ..Default::default() });
+        layers[0].draw = Draw::Outline;
+        let p = generate(&scene, &layers, &dev);
+        assert!(p.knife_tips.is_empty());
+        let d = p.moves.iter().find(|m| m.kind == MoveKind::Draw).unwrap();
+        assert!(d.from[0].fract().abs() < 1e-9 && d.from[1].fract().abs() < 1e-9, "on the corner of the square: {:?}", d.from);
+        // The settings are checked.
+        dev.knife = Some(crate::device::DragKnife { offset: 9.0, ..Default::default() });
+        assert!(dev.check().is_err());
     }
 
     #[test]

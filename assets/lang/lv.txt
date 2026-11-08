@@ -266,3 +266,17 @@
 265|LinuxCNC programmu izpilda pats: Sākt saglabā tam G-code failu. Nav izmēģināts uz īstas mašīnas.
 266|Savs G-kods
 267|Savs G-code: augšējās rindas tiek ierakstītas katru reizi, kad pildspalva paceļas vai nolaižas (piem., M3 S1000 un M5 solenoīdam vai M280 P0 S… Marlin servo).
+268|Rīks ir velkamais nazis
+269|Brīvi griežams asmens, kura gals velkas aiz ass: kontūras griež ar izlīdzinātu nobīdi, vispirms caurumus, un neko neaizpilda
+270|Asmens
+271|Nobīde {} mm
+272|Gala nobīde
+273|Cik tālu asmens gals ir aiz tā ass: to norāda asmens ražotājs
+274|Griezt stūros, kas asāki par
+275|Griezt tālāk par sākumu
+276|Slēgtu kontūru griež tik tālu aiz tās sākuma, lai tā noslēgtos
+277|Griezējs pats izlīdzina nobīdi
+278|Lielākā daļa vinila griezēju to dara: kontūras tad griež tā, kā tās ir uzzīmētas
+279|Asmens nolaižas un paceļas kā pildspalva (augstāk esošie iestatījumi): lejā ir griezuma dziļums. Vēl nav izmēģināts uz īsta griezēja: pirmo griezumu izdariet uz liekā gabala.
+280|velkamais nazis griež tikai kontūras: slāņu aizpildījumi un attēli tika izlaisti
+281|{} kontūra(-as) ir pārāk maza(-as) naža nobīdei un sanāk noapaļota(-as)

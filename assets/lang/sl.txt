@@ -266,3 +266,17 @@
 265|LinuxCNC program izvede sam: Začni zanj shrani datoteko G-code. Ni preizkušeno na pravem stroju.
 266|Lastna G-koda
 267|Lastna G-code: zgornje vrstice se zapišejo ob vsakem dvigu in spustu peresa (npr. M3 S1000 in M5 za solenoid ali M280 P0 S… za servo Marlina).
+268|Orodje je vlečni nož
+269|Rezilo, ki se prosto vrti, konica pa se vleče za osjo: obrisi se režejo s popravljenim zamikom, najprej luknje, in nič se ne zapolni
+270|Rezilo
+271|Zamik {} mm
+272|Zamik konice
+273|Kako daleč je konica rezila za njegovo osjo: navede jo proizvajalec rezila
+274|Obrni na vogalih, ostrejših od
+275|Reži naprej mimo začetka
+276|Zaprt obris se reže toliko mimo začetek, da se zapre
+277|Rezalnik sam popravi zamik
+278|Večina rezalnikov za vinil to naredi: obrisi se tedaj režejo, kot so narisani
+279|Rezilo se spušča in dviga kot pisalo (nastavitve zgoraj): spodaj je globina reza. Še ni preizkušeno na pravem rezalniku: prvi rez naredite na odpadnem kosu.
+280|vlečni nož reže samo obrise: polnila in slike plasti so bili izpuščeni
+281|{} obris(ov) je premajhnih za zamik noža in pridejo zaobljeni

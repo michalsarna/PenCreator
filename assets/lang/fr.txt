@@ -266,3 +266,17 @@
 265|LinuxCNC exécute le programme lui-même : Démarrer enregistre le fichier G-code pour lui. Non essayé sur une vraie machine.
 266|G-code personnel
 267|G-code personnel : les lignes ci-dessus sont écrites chaque fois que le stylo monte ou descend (par exemple M3 S1000 et M5 pour un solénoïde, ou M280 P0 S… pour un servo de Marlin).
+268|L'outil est un couteau à traîne
+269|Une lame qui tourne librement, sa pointe traînant derrière son axe : les contours sont coupés en compensant le décalage, les trous d'abord, et rien n'est rempli
+270|Lame
+271|Décalage {} mm
+272|Décalage de la pointe
+273|À quelle distance la pointe de la lame se trouve derrière son axe : le fabricant de la lame l'indique
+274|Pivoter aux angles plus aigus que
+275|Couper au-delà du départ
+276|Un contour fermé est coupé de cette longueur au-delà de son départ, pour qu'il se ferme
+277|Le traceur de découpe compense lui-même le décalage
+278|La plupart des traceurs de découpe vinyle le font : les contours sont alors coupés tels qu'ils sont dessinés
+279|La lame descend et monte comme le stylo (les réglages ci-dessus) : en bas, c'est la profondeur de coupe. Pas encore essayé sur un vrai traceur de découpe : faites la première coupe sur une chute.
+280|un couteau à traîne ne coupe que des contours : les remplissages et les images des calques ont été omis
+281|{} contour(s) sont trop petits pour le décalage du couteau et sortent arrondis

@@ -266,3 +266,17 @@
 265|LinuxCNC kjører programmet selv: Start lagrer G-code-filen for det. Ikke prøvd på en ekte maskin.
 266|Egen G-kode
 267|Egen G-code: linjene over skrives hver gang pennen løftes eller senkes (f.eks. M3 S1000 og M5 for en solenoid, eller M280 P0 S… for en servo i Marlin).
+268|Verktøyet er en slepekniv
+269|Et blad som dreier fritt, med spissen slepende bak aksen: konturene skjæres med forskyvningen utlignet, hullene først, og ingenting fylles
+270|Blad
+271|Forskyvning {} mm
+272|Spissens forskyvning
+273|Hvor langt bladets spiss er bak aksen: produsenten av bladet oppgir det
+274|Drei rundt hjørner skarpere enn
+275|Skjær videre forbi starten
+276|En lukket kontur skjæres så langt forbi starten at den lukkes
+277|Kutteren utligner forskyvningen selv
+278|De fleste vinylkuttere gjør det: konturene skjæres da som de er tegnet
+279|Bladet går ned og opp som pennen (innstillingene over): nede er dybden på kuttet. Ennå ikke prøvd på en ekte kutter: gjør det første kuttet på et restestykke.
+280|en slepekniv skjærer bare konturer: lagenes fyll og bilder ble utelatt
+281|{} kontur(er) er for små for knivens forskyvning og blir avrundet

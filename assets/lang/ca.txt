@@ -266,3 +266,17 @@
 265|LinuxCNC executa el programa pel seu compte: Inicia desa el fitxer G-code per a ell. No s'ha provat en una màquina real.
 266|G-code propi
 267|G-code propi: les línies de dalt s'escriuen cada vegada que el bolígraf puja o baixa (per exemple M3 S1000 i M5 per a un solenoide, o M280 P0 S… per a un servo de Marlin).
+268|L'eina és una fulla d'arrossegament
+269|Una fulla que gira lliurement, amb la punta arrossegant-se darrere l'eix: els contorns es tallen amb el desplaçament compensat, primer els forats, i no s'omple res
+270|Fulla
+271|Desplaçament {} mm
+272|Desplaçament de la punta
+273|A quina distància és la punta de la fulla darrere el seu eix: ho indica el fabricant de la fulla
+274|Gira a les cantonades més agudes que
+275|Talla més enllà de l'inici
+276|Un contorn tancat es talla aquesta distància més enllà del seu inici, perquè es tanqui
+277|El plòter de tall compensa el desplaçament ell mateix
+278|La majoria de plòters de vinil ho fan: els contorns es tallen tal com estan dibuixats
+279|La fulla baixa i puja com la ploma (els paràmetres de dalt): avall és la profunditat del tall. Encara no s'ha provat en un plòter de tall real: feu el primer tall en un tros sobrant.
+280|una fulla d'arrossegament només talla contorns: s'han omès els farciments i les imatges de les capes
+281|{} contorn(s) són massa petits per al desplaçament de la fulla i surten arrodonits

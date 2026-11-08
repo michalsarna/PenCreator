@@ -266,3 +266,17 @@
 265|LinuxCNC käivitab programmi ise: Start salvestab selle jaoks G-code faili. Pole päris masinal proovitud.
 266|Oma G-kood
 267|Oma G-code: ülalolevad read kirjutatakse iga kord, kui pliiats tõuseb või laskub (nt M3 S1000 ja M5 solenoidile või M280 P0 S… Marlini servole).
+268|Tööriist on veetav nuga
+269|Vabalt pöörlev tera, mille ots veab telje taga: kontuurid lõigatakse nihet arvestades, augud enne, ja midagi ei täideta
+270|Tera
+271|Nihe {} mm
+272|Otsa nihe
+273|Kui kaugel on tera ots oma teljest: selle annab tera tootja
+274|Pööra nurkades, mis on teravamad kui
+275|Lõika algusest edasi
+276|Suletud kontuur lõigatakse nii kaugele algusest edasi, et see sulguks
+277|Lõikur korrigeerib nihet ise
+278|Enamik vinüüllõikureid teeb seda: kontuurid lõigatakse siis nii, nagu need on joonistatud
+279|Tera laskub ja tõuseb nagu pliiats (ülal olevad seaded): all on lõike sügavus. Pole veel päris lõikuril proovitud: tee esimene lõige ülejäägitükil.
+280|veetav nuga lõikab ainult kontuure: kihtide täidised ja pildid jäeti välja
+281|{} kontuur(i) on noa nihke jaoks liiga väike(sed) ja tulevad ümarad

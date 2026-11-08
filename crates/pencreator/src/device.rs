@@ -147,6 +147,10 @@ pub struct Device {
     /// The G-code of the pen with `Lift::Custom` (not written while unset).
     #[serde(default, skip_serializing_if = "PenGcode::is_empty")]
     pub pen_gcode: PenGcode,
+    /// The tool is a drag knife (cutting vinyl, paper, card): its outlines are cut with the offset of the blade made good, inside
+    /// first, and nothing is filled (not written while it is a pen).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub knife: Option<DragKnife>,
     /// LinuxCNC runs the program by itself: Start saves the G-code file for it, nothing is streamed (not written while off).
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub linuxcnc: bool,
@@ -212,6 +216,7 @@ impl Default for Device {
             flavour: Default::default(),
             pen_gcode: PenGcode::default(),
             linuxcnc: false,
+            knife: None,
         }
     }
 }
@@ -238,6 +243,11 @@ impl Device {
         }
         if !ok(self.area.x, 10.0, 10_000.0) || !ok(self.area.y, 10.0, 10_000.0) {
             return Err("the work area is out of range".into());
+        }
+        if let Some(k) = self.knife {
+            if !ok(k.offset, 0.0, 3.0) || !ok(k.swivel_deg, 1.0, 90.0) || !ok(k.overcut, 0.0, 5.0) {
+                return Err("the settings of the drag knife are out of range".into());
+            }
         }
         if !ok(self.rapid, 1.0, 100_000.0) {
             return Err("the speed of the moves is out of range".into());
@@ -453,5 +463,35 @@ mod tests {
         let taken = vec!["A".to_string(), "A (2)".to_string()];
         assert_eq!(Device::free_name("B", &taken), "B");
         assert_eq!(Device::free_name("A", &taken), "A (3)");
+    }
+}
+
+/// A drag knife on the plotter: its blade turns freely and its tip trails `offset` behind the axis.
+#[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
+pub struct DragKnife {
+    /// The tip behind the axis (mm).
+    pub offset: f64,
+    /// A turn sharper than this (degrees) is made by turning the blade round the corner.
+    pub swivel_deg: f64,
+    /// How far a closed outline is cut on past its start (mm).
+    pub overcut: f64,
+    /// The cutter makes good the offset itself (most vinyl cutters do): the program cuts the outlines as they are.
+    #[serde(default)]
+    pub by_controller: bool,
+}
+
+impl Default for DragKnife {
+    fn default() -> DragKnife {
+        let k = base_core::drag_knife::Knife::default();
+        DragKnife { offset: k.offset, swivel_deg: k.swivel_deg, overcut: k.overcut, by_controller: false }
+    }
+}
+
+impl DragKnife {
+    /// The usual blades: the angle of the blade and the offset of its tip.
+    pub const BLADES: [(&'static str, f64); 3] = [("30°", 0.15), ("45°", 0.25), ("60°", 0.5)];
+    /// The knife the program makes good, or `None` when the cutter does it.
+    pub fn compensated(&self) -> Option<base_core::drag_knife::Knife> {
+        (!self.by_controller).then_some(base_core::drag_knife::Knife { offset: self.offset, swivel_deg: self.swivel_deg, overcut: self.overcut })
     }
 }

@@ -266,3 +266,17 @@
 265|LinuxCNC iħaddem il-programm waħdu: Ibda jsalva l-fajl G-code għalih. Ma ġiex ippruvat fuq magna vera.
 266|G-code tiegħek
 267|G-code tiegħek: il-linji ta' fuq jinkitbu kull darba li l-pinna titla' jew tinżel (eż. M3 S1000 u M5 għal solenojde, jew M280 P0 S… għal servo ta' Marlin).
+268|L-għodda hija sikkina mkaxkra
+269|Xafra li ddur liberament, bil-ponta tkaxkar wara l-assi: il-kontorni jinqatgħu bl-offset ikkumpensat, l-ewwel it-toqob, u xejn ma jimtela
+270|Xafra
+271|Offset {} mm
+272|Offset tal-ponta
+273|Kemm il-ponta tax-xafra tinsab wara l-assi tagħha: jagħtih il-manifattur tax-xafra
+274|Dawwar fil-kantunieri iktar ippuntati minn
+275|Aqta' lil hinn mill-bidu
+276|Kontorn magħluq jinqata' daqshekk lil hinn mill-bidu tiegħu, biex jagħlaq
+277|Il-cutter jikkumpensa l-offset waħdu
+278|Il-biċċa l-kbira tal-cutters tal-vinil jagħmlu hekk: il-kontorni mbagħad jinqatgħu kif inhuma mpinġija
+279|Ix-xafra tinżel u titla' bħall-pinna (l-issettjar ta' hawn fuq): 'l isfel huwa l-fond tal-qatgħa. Għadha ma ġietx ippruvata fuq cutter veru: agħmel l-ewwel qatgħa fuq biċċa żejda.
+280|sikkina mkaxkra taqta' biss kontorni: il-mili u l-istampi tas-saffi tħallew barra
+281|{} kontorn(i) huma żgħar wisq għall-offset tas-sikkina u joħorġu tondi

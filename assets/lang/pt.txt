@@ -266,3 +266,17 @@
 265|O LinuxCNC executa o programa sozinho: Iniciar guarda o ficheiro G-code para ele. Não experimentado numa máquina real.
 266|G-code próprio
 267|G-code próprio: as linhas acima são escritas sempre que a caneta sobe ou desce (por exemplo M3 S1000 e M5 para um solenoide, ou M280 P0 S… para um servo do Marlin).
+268|A ferramenta é uma lâmina de arrasto
+269|Uma lâmina que roda livremente, com a ponta a arrastar atrás do eixo: os contornos são cortados com o desvio compensado, primeiro os furos, e nada é preenchido
+270|Lâmina
+271|Desvio {} mm
+272|Desvio da ponta
+273|A que distância a ponta da lâmina está atrás do seu eixo: o fabricante da lâmina indica-o
+274|Rodar nos cantos mais agudos do que
+275|Cortar para além do início
+276|Um contorno fechado é cortado esta distância para além do seu início, para que feche
+277|O plotter de corte compensa o desvio sozinho
+278|A maioria dos plotters de vinil fá-lo: os contornos são então cortados tal como estão desenhados
+279|A lâmina desce e sobe como a caneta (as definições acima): em baixo é a profundidade do corte. Ainda não testado num plotter de corte real: faça o primeiro corte num pedaço de sobra.
+280|uma lâmina de arrasto só corta contornos: os preenchimentos e as imagens das camadas foram omitidos
+281|{} contorno(s) são demasiado pequenos para o desvio da lâmina e saem arredondados

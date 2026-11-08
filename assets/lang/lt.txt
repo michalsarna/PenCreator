@@ -266,3 +266,17 @@
 265|LinuxCNC programą vykdo pats: Pradėti įrašo jam G-code failą. Neišbandyta su tikra mašina.
 266|Savas G kodas
 267|Savas G-code: viršuje esančios eilutės įrašomos kiekvieną kartą, kai rašiklis pakyla ar nusileidžia (pvz., M3 S1000 ir M5 solenoidui arba M280 P0 S… Marlin servai).
+268|Įrankis yra velkamas peilis
+269|Laisvai besisukantis peilis, kurio smaigalys velkasi už ašies: kontūrai pjaunami ištaisant poslinkį, pirmiausia skylės, ir niekas neužpildoma
+270|Peilis
+271|Poslinkis {} mm
+272|Smaigalio poslinkis
+273|Kiek peilio smaigalys yra už jo ašies: nurodo peilio gamintojas
+274|Sukti kampuose, aštresniuose nei
+275|Pjauti už pradžios
+276|Uždaras kontūras pjaunamas tiek už pradžios, kad užsidarytų
+277|Pjaustytuvas pats ištaiso poslinkį
+278|Dauguma vinilo pjaustytuvų taip daro: kontūrai tada pjaunami taip, kaip nupiešti
+279|Peilis leidžiasi ir kyla kaip rašiklis (aukščiau esantys nustatymai): apačia yra pjūvio gylis. Dar neišbandyta su tikru pjaustytuvu: pirmą pjūvį darykite atliekamame gabale.
+280|velkamas peilis pjauna tik kontūrus: sluoksnių užpildai ir paveikslai praleisti
+281|{} kontūras(-ai) per maži peilio poslinkiui ir išeina suapvalinti

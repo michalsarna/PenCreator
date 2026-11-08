@@ -266,3 +266,17 @@
 265|Ritheann LinuxCNC an clár é féin: sábhálann Tosaigh an comhad G-code dó. Níor triaileadh ar fhíor-mheaisín é.
 266|G-chód féin
 267|Do G-code féin: scríobhtar na línte thuas gach uair a ardaítear nó a íslítear an peann (m.sh. M3 S1000 agus M5 do sholanóideach, nó M280 P0 S… do sheirbhea Marlin).
+268|Is scian tarraingthe í an uirlis
+269|Lann a chasann go saor, a barr ag tarraingt taobh thiar dá ais: gearrtar na himlínte agus an fritháireamh ceartaithe, na poill ar dtús, agus ní líontar faic
+270|Lann
+271|Fritháireamh {} mm
+272|Fritháireamh an bharr
+273|Cé chomh fada is atá barr na lainne taobh thiar dá hais: tugann déantóir na lainne é
+274|Cas ag coirnéil níos géire ná
+275|Gearr thar an tús
+276|Gearrtar imlíne dhúnta an fad seo thar a tús, ionas go ndúntar í
+277|Ceartaíonn an gearrthóir an fritháireamh é féin
+278|Déanann formhór na ngearrthóirí vinile é: gearrtar na himlínte ansin mar atá siad tarraingthe
+279|Téann an lann síos agus suas mar a dhéanann an peann (na socruithe thuas): is é síos doimhneacht an ghearrtha. Níor triaileadh fós ar ghearrthóir fíor: déan an chéad ghearradh ar phíosa breise.
+280|ní ghearrann scian tarraingthe ach imlínte: fágadh líonadh agus pictiúir na sraitheanna ar lár
+281|Tá {} imlíne ró-bheag d'fhritháireamh na scine agus tagann siad amach cruinn

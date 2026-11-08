@@ -102,3 +102,16 @@ Every open drawing, the **Preview**, the G-code of a project as text (**Preview 
 * **Settings → Program options… → Units** chooses the units the program shows lengths in: millimetres, centimetres, metres, inches or feet, or **As the device**. They are used by the sizes in **Properties**, the ruler, the **Dimensions** over the drawing and in the preview, and the technical drawing.
 * **The units of the device** (millimetres or inches, in the device window) are those of the machine: the G-code is written in them. A device in inches gets **G20** and every length and feed in inches; a device in millimetres **G21** and millimetres. Make sure they are the units the controller works in.
 * When the device counts in the other system than the program (inches against millimetres), the dimensions and the ruler show both: the units of the program first, those of the machine in brackets, for example **25.4 mm [1.000"]**.
+
+## Drag knife
+
+A plotter can cut with a **drag knife** (vinyl, paper, card, stencils) in place of a pen: in the device window, page **Pen**, tick **The tool is a drag knife**.
+
+* **Blade:** 30°, 45° or 60° set the usual **offset of the tip** (0.15, 0.25, 0.5 mm): how far the tip of the blade trails behind its axis. The maker of the blade gives the exact value.
+* The program makes good the offset: the axis goes ahead of the tip, and at a corner sharper than **Turn round corners sharper than** (15° by default) it goes round the corner on a small arc, so the blade turns on the spot and the corner stays sharp. Every cut starts by turning the blade from the way it pointed after the last cut, and a closed outline is cut on past its start by **Cut on past the start** (0.5 mm), so it closes.
+* The holes are cut before the parts round them, so a part stays held until it is cut out. A knife only cuts outlines: fills and pictures are left out (the preview says so), and outlines smaller than about four offsets come out rounded (a warning).
+* **The cutter makes good the offset itself:** most vinyl cutters (HPGL) do it in the controller; tick it and the outlines are cut as they are drawn.
+* The blade goes down and up as the pen does: with the Z axis **down** is the depth of the cut.
+* The preview draws the path of the axis in grey and what the tip cuts in the colour of the layer.
+
+Not tried on a real cutter yet: try the first cut on a spare piece.
