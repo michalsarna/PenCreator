@@ -9,5 +9,5 @@ PenCreator makes plotting paths and writes **G-code for GRBL**. It can **connect
 * Jogging, the pen buttons, **Frame** and the pauses for a pen change send real moves. **Frame** lifts the pen and goes round the box of the drawing: check that the lifted pen is clear of the paper and of the clamps.
 * A picture (bitmap) is drawn only on a layer whose **Drawing** is **Picture**; on any other layer it is left out with a warning (trace it to lines first, or switch the layer to **Picture**). Text is drawn as the outlines of the font (each letter round its edge), not with single-line letters.
 * Fill lines are parallel lines at an angle; a very small gap makes a huge number of lines, and after 200 000 fill lines the rest of the fill is left out with a warning.
-* No HPGL and no single-line fonts yet.
+* No single-line fonts yet. HPGL plotters and cutters are driven over the serial port, but not tried on a real one yet.
 * What is tested: the editor and the project file (the sections of other programs are kept), the opening of files, devices, layers, the order of the strokes, the fill, the G-code, the menus and their keys, and the translations, by automatic tests on every change; the G-code of jobs also in a simulated GRBL controller. The screens are also checked in the headless renderer on every change.

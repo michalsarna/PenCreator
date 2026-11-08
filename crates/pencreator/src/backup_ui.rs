@@ -77,6 +77,9 @@ impl App {
         if let Some(t) = get("pens") {
             self.pens.load_text(t);
         }
+        if let Some(t) = get("knives") {
+            self.knives.load_text(t);
+        }
         // A backup from before the presets were in it leaves them alone.
         if let Some(text) = get(base_ui::layer_presets_ui::BACKUP_KEY) {
             let valid = &crate::layer_presets::valid;

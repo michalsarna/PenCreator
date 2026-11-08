@@ -129,6 +129,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::ViewGcode => Some("eye"),
         Act::Plugins => Some("package-open"),
         Act::Pens => Some("pencil"),
+        Act::Knives => Some("scissors"),
         Act::GenerateShape => Some("shapes"),
         Act::OnlineClipart => Some("globe"),
         Act::Preview => Some("eye"),
@@ -261,6 +262,9 @@ struct App {
     /// The pens (ready-made and the person's) and the window that edits them.
     pens: pens::PenLibrary,
     pens_win: pens_ui::PensWindow,
+    /// The drag knives (ready-made and the person's) and the window that edits them.
+    knives: base_core::knife_lib::KnifeLibrary,
+    knives_win: base_ui::knives_ui::KnivesWindow,
     /// The list of layers shows all of them (not only those with shapes).
     show_all_layers: bool,
     autosave: base_core::autosave::Timer,
@@ -440,6 +444,14 @@ impl App {
                 lib
             },
             pens_win: Default::default(),
+            knives: {
+                let mut lib = base_core::knife_lib::KnifeLibrary::default();
+                if let Some(t) = saved("knives") {
+                    lib.load_text(&t);
+                }
+                lib
+            },
+            knives_win: Default::default(),
             show_all_layers: false,
             autosave: Default::default(),
             saved_rev: 0,
@@ -524,6 +536,7 @@ impl App {
             ("devices", self.devices_text()),
             ("check_updates", flag(self.check_updates)),
             ("pens", self.pens.save_text()),
+            ("knives", self.knives.save_text()),
             ("tab_order", self.tabs.order_string()),
             ("panes", self.panes.to_json()),
             ("side_collapsed", flag(self.tabs.collapsed)),
@@ -1138,6 +1151,7 @@ impl App {
         self.close_dialogs(ctx);
         self.image_dialogs(ctx);
         pens_ui::pens_window(ctx, &mut self.pens_win, &mut self.pens);
+        base_ui::knives_ui::knives_window(ctx, &mut self.knives_win, &mut self.knives);
         self.layer_presets_window(ctx);
         self.control_devices_windows(ctx);
         self.refresh_gcode_text(ctx);
@@ -1447,6 +1461,7 @@ impl MenuHost for App {
             Act::ImportPlugin => self.import_with_plugin_dialog(),
             Act::Plugins => self.plugins.open = true,
             Act::Pens => self.pens_win.open = true,
+            Act::Knives => self.knives_win.open = true,
             Act::GenerateShape => self.plugins.gen_open = true,
             Act::OnlineClipart => self.open_online_clipart_search(ctx),
             Act::Preview => self.open_preview(),

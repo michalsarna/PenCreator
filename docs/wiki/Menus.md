@@ -125,6 +125,7 @@ All of them are explained on [Machine Control](Machine-Control).
 | Entry | Key | What it does |
 |---|---|---|
 | **Pen library…** | | The ready-made pens and your own ones. See [Layers and Pens](Layers-and-Pens#the-pen-library). |
+| **Knife library…** | | The ready-made drag knives and your own ones. See [Design Tools](Design-Tools#drag-knife). |
 | **Plot of the job…** | Ctrl+Shift+P | Opens the **Preview** tab: what the pen will draw, with the moves with the pen up, the time and an animation. See [Quick Start](Quick-Start). |
 | **Export G-code…** | Ctrl+E | Asks where to save and writes the G-code of the project (the **Save G-code** button does the same). |
 
