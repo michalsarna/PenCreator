@@ -56,7 +56,7 @@ Litera bez Ctrl wybiera narzędzie z lewej palety (litera jest w podpowiedzi jeg
 | Y | **Trójkąt (Y)** | Z | **Powiększ (Z)** |
 | S | **Gwiazda (S)** | X | **Pomniejsz (X)** |
 | G | **Wielokąt (G)** | | |
-| K | **Serce (K)** | | |
+| K | **Serce (K)** | M | **Linijka (M)** |
 | I | **Spirala (I)** | | |
 
 | Klawisz | Co robi |

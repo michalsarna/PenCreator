@@ -56,7 +56,7 @@ A letter without Ctrl chooses a tool of the left palette (the letter is in the t
 | Y | **Triangle (Y)** | Z | **Zoom in (Z)** |
 | S | **Star (S)** | X | **Zoom out (X)** |
 | G | **Polygon (G)** | | |
-| K | **Heart (K)** | | |
+| K | **Heart (K)** | M | **Ruler (M)** |
 | I | **Spiral (I)** | | |
 
 | Key | What it does |
