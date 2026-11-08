@@ -19,12 +19,23 @@ Open-source software for pen plotters, written in Rust. It has been tested on a 
 | Learn the keys | [Keyboard Shortcuts](Keyboard-Shortcuts) |
 | Share a project with LightCreator and MillCreator | [Project File](Project-File) |
 | Edit shapes, import pictures, tabs and panes | [Design Tools](Design-Tools) |
+| Cut with a drag knife, the knife library, HPGL cutters | [Drag Knife](Drag-Knife) |
 | Arrange the work area: panes, tabs, windows | [Panes and Tabs](Panes-and-Tabs) |
 | Drive the machine: jog, zero, firmware, calibration | [Machine Control](Machine-Control) |
 | See what it looks like | [Screenshots](Screenshots) |
 | Find the settings file | [Settings and Files](Settings-and-Files) |
 | Read about the code | [Architecture](Architecture) |
 | Know what is there and what is not | [Safety and Limitations](Safety-and-Limitations) |
+
+## Tested devices
+
+The program has been tried on these machines and works there:
+
+| Device | Kind | Controller |
+|---|---|---|
+| Pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) | pen plotter | Arduino UNO, CNC Shield, GRBL |
+
+It runs on another machine? Tell me in an [issue](https://github.com/michalsarna/PenCreator/issues) and it goes on the list.
 
 ## At a glance
 
