@@ -368,6 +368,7 @@ impl App {
         if ui.add(btn).on_hover_text(tr("Show the toolpaths on the work area")).clicked() {
             self.toolpaths_on = !self.toolpaths_on;
         }
+        base_ui::editor::dims_button(ui, &mut self.ed);
         if base_ui::widgets::window_toggle(ui, &tr("Preview…"), &tr("Open the preview window"), self.show_plot, self.screen == crate::Screen::Editor) {
             if self.show_plot {
                 self.show_plot = false;
