@@ -47,4 +47,4 @@ It runs on another machine? Tell me in an [issue](https://github.com/michalsarna
 * **Machine control:** jogging, zero, macros, firmware settings, calibration, statistics (see [Machine Control](Machine-Control)).
 * **Planned:** single-line fonts.
 
-Latest release: **v0.8.2** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option
+Latest release: **v0.8.3** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option

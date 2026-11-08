@@ -2,6 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.8.3
+
+* **Drag knife:** a plotter can cut (vinyl, paper, card, stencils) in place of drawing: on the **Pen** page of the device tick **The tool is a drag knife**. The offset of the tip is made good at every corner (the blade turns round a sharp corner on the spot), the holes are cut before the parts round them and a closed outline is cut on past its start, so it closes; **The cutter makes good the offset itself** for vinyl cutters that do it in their controller. The preview shows the path of the axis and what the tip cuts.
+* **Knife library:** **Plotter → Knife library…** has ready-made knives (the 30°, 45° and 60° blades and a drag knife in a holder of a CNC machine) and your own: **Copy** makes one with a name, the offset of the tip, the corners, the overcut and notes. A device picks its knife from a list; the library is kept with the settings and in the backup.
+* **HPGL commands of a device:** a device with an HPGL plotter or cutter has an **HPGL** page, only such devices have it: what is sent at the start and at the end, pen or knife down and up, the speed (with a top limit, or never) and the force of the knife (or never). **Back to the usual commands** puts the defaults back.
+* **Help:** a new wiki page **Drag Knife** (**Nóż wleczony**), and the README and the wiki list the machines PenCreator has been tested on (a pen plotter built after the Drawing Robot, Arduino UNO, CNC Shield, GRBL).
+
 ## v0.8.2
 
 * **G-code in the units of the machine:** a device set to inches gets **G20** and every length and feed in inches; a device in millimetres **G21** and millimetres. Before, every program was written in millimetres whatever the device said: check the units of your devices before the first job.
