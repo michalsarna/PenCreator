@@ -1400,6 +1400,23 @@ impl EditorHost for App {
     fn layer_color(&self, layer: usize) -> egui::Color32 {
         self.layers.get(layer).map_or(egui::Color32::from_rgb(0x20, 0x20, 0x30), |l| l.color32())
     }
+    fn layer_count(&self) -> usize {
+        self.layers.len()
+    }
+    fn layer_name(&self, layer: usize) -> String {
+        self.layers.get(layer).map_or_else(|| format!("Layer {}", layer + 1), |l| l.name.clone())
+    }
+    /// The lines of a style trace are drawn with the pen: an empty layer that draws outlines, else any empty one.
+    fn line_layer(&self, picture_layer: usize) -> usize {
+        let empty = |l: usize| l != picture_layer && !self.scene.shapes.iter().any(|s| s.layer == l);
+        let n = self.layers.len();
+        (0..n).find(|&l| empty(l) && self.layers[l].draw == layers::Draw::Outline).or_else(|| (0..n).find(|&l| empty(l))).unwrap_or(picture_layer)
+    }
+    fn make_line_layer(&mut self, layer: usize) {
+        if let Some(l) = self.layers.get_mut(layer) {
+            l.draw = layers::Draw::Outline;
+        }
+    }
     fn paint_over_shapes(&mut self, v: &base_ui::editor::CanvasView) {
         self.paint_toolpaths(v);
     }
@@ -1780,6 +1797,27 @@ mod tests {
             b.extend(line);
         }
         std::fs::write(path, b).unwrap();
+    }
+
+    /// A style trace of a picture goes on the first empty layer that draws outlines, and every dot of it is drawn.
+    #[test]
+    fn a_style_trace_goes_on_an_outline_layer_and_every_dot_is_drawn() {
+        use base_ui::editor::{EditorStyleTrace, StyleDlg};
+        let mut a = app();
+        let im = base_core::image::ImageData { name: "grey.png".into(), px_w: 40, px_h: 30, gray: vec![40; 1200], w: 40.0, h: 30.0, invert: false };
+        let id = a.scene.add(0, base_core::scene::Kind::Image(im.clone()), base_core::geom::Xf::translate(10.0, 10.0));
+        a.ed.sel = vec![id];
+        a.open_style_trace();
+        let mut d: StyleDlg = a.ed.style_dlg.take().expect("the window opened");
+        assert!(d.layer != 0 && a.layers[d.layer].draw == layers::Draw::Outline, "layer {}", d.layer);
+        d.params = base_core::style_trace::Style::Stipple.defaults();
+        d.params.detail = 150.0;
+        let out = base_core::style_trace::style_trace(&im, &d.params, &|| false);
+        assert_eq!(out.lines.len(), 150);
+        a.apply_style_trace(&d, &out);
+        let prog = plot::generate(&a.scene, &a.layers, &a.device);
+        let downs = prog.moves.iter().filter(|m| m.kind == plot::MoveKind::Draw && m.layer == d.layer).count();
+        assert!(downs >= 150 * 6, "every dot is drawn: {downs} moves with the pen down");
     }
 
     #[test]

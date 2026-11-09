@@ -86,6 +86,7 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Przytnij kształtem…**, **Usuń duplikaty**, **Rozdziel**, **Uprość…** | | Przycina linie kształtem, usuwa podwójne, dzieli kształt na kontury, usuwa zbędne punkty. |
 | **Tekst seryjny…**, **Kod kreskowy / QR…**, **Rozmieść kształty (nesting)…**, **Pomiar…** | | Numerowane teksty, kody, upakowanie kształtów na obszarze, pomiar. |
 | **Dostosuj obraz…**, **Wektoryzacja obrazu…** | | Zmienia zaznaczony obraz albo zamienia go na kontury. Szare, gdy nie zaznaczono obrazu. |
+| **Obrysuj w stylu…** | | Rysuje zaznaczony obraz na nowo liniami w jednym z 19 stylów. Zobacz [Obrysuj w stylu](Obrys-w-stylu). |
 
 ## Widok
 
