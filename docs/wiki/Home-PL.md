@@ -19,6 +19,7 @@ Otwartoźródłowy program dla ploterów piszących, napisany w Rust. Testowany 
 | Poznać klawisze | [Skróty klawiszowe](Skroty-klawiszowe) |
 | Dzielić projekt z LightCreatorem i MillCreatorem | [Plik projektu](Plik-projektu) |
 | Edytować kształty, importować obrazy, karty i panele | [Narzędzia projektowe](Narzedzia-projektowe) |
+| Narysować obraz liniami w stylu (puentylizm, wężyki, kreskowanie…) | [Obrysuj w stylu](Obrys-w-stylu) |
 | Ciąć nożem wleczonym, biblioteka noży, plotery tnące HPGL | [Nóż wleczony](Noz-wleczony) |
 | Ułożyć obszar roboczy: panele, karty, okna | [Panele i karty](Panele-i-karty) |
 | Sterować maszyną: przesuw, zerowanie, firmware, kalibracja | [Sterowanie maszyną](Sterowanie-maszyna) |

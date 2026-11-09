@@ -19,6 +19,7 @@ Open-source software for pen plotters, written in Rust. It has been tested on a 
 | Learn the keys | [Keyboard Shortcuts](Keyboard-Shortcuts) |
 | Share a project with LightCreator and MillCreator | [Project File](Project-File) |
 | Edit shapes, import pictures, tabs and panes | [Design Tools](Design-Tools) |
+| Draw a picture as lines in a style (stippling, squiggles, hatching…) | [Style Trace](Style-Trace) |
 | Cut with a drag knife, the knife library, HPGL cutters | [Drag Knife](Drag-Knife) |
 | Arrange the work area: panes, tabs, windows | [Panes and Tabs](Panes-and-Tabs) |
 | Drive the machine: jog, zero, firmware, calibration | [Machine Control](Machine-Control) |

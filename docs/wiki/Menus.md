@@ -86,6 +86,7 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Trim by shape…**, **Remove duplicates**, **Break apart**, **Simplify…** | | Cuts lines by a shape, removes doubles, splits a shape into its outlines, takes away needless points. |
 | **Serial text…**, **Barcode / QR code…**, **Nest shapes…**, **Measure…** | | Numbered texts, codes, packing shapes on an area, measuring. |
 | **Adjust image…**, **Trace image…** | | Changes the selected picture, or turns it into outlines. Grey unless a picture is selected. |
+| **Style trace…** | | Draws the selected picture again as lines in one of 19 styles. See [Style Trace](Style-Trace). |
 
 ## View
 
