@@ -2,6 +2,11 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.8.4
+
+* **Style trace:** **Arrange → Style trace…** (also in the right-click menu of a picture and in **Properties**) draws a picture again as lines in one of 19 styles: squiggle, sawtooth, springs, spiral, waves, halftone circles, etching, squares, needles, Truchet tiles, contour lines, Hilbert curve, stippling, one continuous line (TSP), triangles and cells, line art, flow lines, sketch and scribble. A live preview, the settings of each style, tone (black and white point, gamma), a random pattern for the random styles, and the layer the lines go on. The lines go on the first empty layer that draws outlines; every dot of stippling is drawn. A layer that already holds shapes keeps how it works.
+* **Help:** a new wiki page **Style Trace** (**Obrysuj w stylu**).
+
 ## v0.8.3
 
 * **Drag knife:** a plotter can cut (vinyl, paper, card, stencils) in place of drawing: on the **Pen** page of the device tick **The tool is a drag knife**. The offset of the tip is made good at every corner (the blade turns round a sharp corner on the spot), the holes are cut before the parts round them and a closed outline is cut on past its start, so it closes; **The cutter makes good the offset itself** for vinyl cutters that do it in their controller. The preview shows the path of the axis and what the tip cuts.
