@@ -1226,6 +1226,7 @@ mod tests {
             max_speed: 10,
             force: "FS{force};".into(),
             force_value: 80,
+            park: String::new(),
         };
         assert!(dev.check().is_ok(), "{:?}", dev.check());
         let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");

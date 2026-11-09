@@ -302,6 +302,8 @@ struct App {
     cam_rec: base_ui::camera_rec::Recorder,
     /// Where the layers of the job being sent end, for a picture after each layer.
     layer_watch: base_ui::camera_rec::LayerWatch,
+    /// The photos of the time-lapse taken with the head moved aside, for the job that runs.
+    trips: base_ui::photo_trip::Trips,
     /// The camera window shrinks to the picture.
     cam_fit: base_ui::window::FitWindow,
     /// The way the camera view is shown, its zoom and shift, the size of its window of its own as it was last seen, and the device and
@@ -475,6 +477,7 @@ impl App {
             cam_drawn: false,
             cam_rec: base_ui::camera_rec::Recorder::default(),
             layer_watch: base_ui::camera_rec::LayerWatch::default(),
+            trips: base_ui::photo_trip::Trips::default(),
             cam_fit: Default::default(),
             stream_mode: base_ui::camera_view::StreamMode::Tab,
             cam_zoom: 1.0,
@@ -1056,6 +1059,10 @@ impl App {
                     let c = ControlCtx { control: &self.device.control, safe_z, tool_diameter: 0.0, job_box, probe: false, travel, spindle: None, zeroing: true, z_axis: true, hold_to_move: self.device.connection.grbl_version == base_core::machine::GrblVersion::Grbl11 };
                     if let Some(s) = control_ui::panel(ui, &mut self.machine, &mut self.control_ui, &c) {
                         self.status = s;
+                    }
+                    let mpos = self.machine.connected.then(|| control_ui::ControlTarget::mpos(&self.machine));
+                    if control_ui::park_and_split_ui(ui, &mut self.device.control.park, &mut self.device.control.split, mpos, false) {
+                        self.keep_control();
                     }
                 });
             }

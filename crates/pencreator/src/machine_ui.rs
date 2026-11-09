@@ -93,10 +93,16 @@ impl App {
                 }
                 Notice::ReconnectDue => self.connect_machine(),
                 Notice::Barrier(b) => self.status = trf("The job is paused: {}", &[&b.message()]),
+                Notice::PhotoStop { line } => {
+                    let m = &mut self.machine;
+                    self.trips.stopped(line, &mut |c| m.photo_cmd(c));
+                }
+                Notice::PhotoReady => self.trips.ready(std::time::Instant::now()),
                 Notice::JobFinished { seconds, issues, checked } => {
                     if checked {
                         self.finish_check(issues);
                     } else {
+                        self.trips.stop();
                         for _ in 0..self.layer_watch.finished() {
                             self.cam_rec.layer_done(std::time::Instant::now());
                         }
@@ -149,6 +155,36 @@ impl App {
         for _ in 0..self.layer_watch.progress(self.machine.progress.0) {
             self.cam_rec.layer_done(std::time::Instant::now());
         }
+        // The photos aside: a picture that is due stops the job before its next move with the pen up.
+        let m = &mut self.machine;
+        self.trips.frame(&mut self.cam_rec, std::time::Instant::now(), &mut |c| m.photo_cmd(c));
+    }
+
+    /// How this plotter goes aside for a photo: before a move with the pen up, the pen left as it is (up); an HPGL plotter
+    /// with its own commands for the way aside uses them.
+    pub(crate) fn trip_setup(&self) -> base_ui::photo_trip::TripSetup {
+        let hpgl = plotter_setup(&self.device).is_some_and(|s| s.language == base_core::plotter::Language::Hpgl);
+        base_ui::photo_trip::TripSetup {
+            // Only a controller that says when it stands still can stop for a photo.
+            park: base_core::photo_park::ParkSettings { enabled: self.device.control.park.enabled && self.machine.controller().stops_for_photos(), ..self.device.control.park.clone() },
+            kind: base_core::photo_park::StopKind::Lift,
+            safe_z: self.safe_z(),
+            spin_up: 0.0,
+            spindle_off: false,
+            hpgl_park: hpgl && !self.device.connection.plotter.hpgl.park.trim().is_empty(),
+            every_lift: false,
+        }
+    }
+
+    /// The job is handed to the machine, with its photos aside.
+    fn send_job(&mut self, lines: Vec<String>, before: Vec<String>, after: Vec<String>) {
+        // A picture after each layer of the time-lapse of the camera, when it is on.
+        self.layer_watch.start(link::layer_marks(&lines));
+        let setup = self.trip_setup();
+        let trip_lines = if setup.park.enabled { lines.clone() } else { vec![] };
+        self.machine.start_job(lines, before, after, false);
+        let m = &mut self.machine;
+        self.trips.start(&trip_lines, Some(setup), &mut |c| m.photo_cmd(c));
     }
 
     /// The windows of the machine: firmware settings, calibration, diagnostics, start from a line, the pause of a job.
@@ -256,18 +292,19 @@ impl App {
                 return;
             }
         };
+        // Long straight lines in shorter ones, when the device asks for it.
+        let lines = base_core::gcode_split::split_long_lines(&lines, &self.device.control.split);
         let Some((before, after)) = self.hook_lines() else { return };
         self.machine.info(trf("Starting job: {} lines, ~{}", &[&lines.len(), &base_ui::widgets::fmt_time(secs)]));
         if self.device.control.check_first && from == 0 {
             // The real job waits for a clean check run.
             self.after_check = Some(AfterCheck { lines: lines.clone(), before, after });
+            self.trips.stop();
             self.machine.start_job(lines, vec![], vec![], true);
             self.status = tr("Checking the program first…").to_string();
             return;
         }
-        // A picture after each layer of the time-lapse of the camera, when it is on.
-        self.layer_watch.start(link::layer_marks(&lines));
-        self.machine.start_job(lines, before, after, false);
+        self.send_job(lines, before, after);
         self.status = tr("The job is running.").to_string();
     }
 
@@ -279,6 +316,7 @@ impl App {
         }
         let Some((lines, _)) = self.job_lines() else { return };
         self.after_check = None;
+        self.trips.stop();
         self.machine.start_job(lines, vec![], vec![], true);
         self.status = tr("Checking the program…").to_string();
     }
@@ -289,8 +327,7 @@ impl App {
         if issues == 0 {
             match pending {
                 Some(job) => {
-                    self.layer_watch.start(link::layer_marks(&job.lines));
-                    self.machine.start_job(job.lines, job.before, job.after, false);
+                    self.send_job(job.lines, job.before, job.after);
                     self.status = tr("The check found nothing. The job is running.").to_string();
                 }
                 None => self.status = tr("The check found nothing wrong.").to_string(),
@@ -304,6 +341,7 @@ impl App {
     pub(crate) fn abort_job(&mut self) {
         self.after_check = None;
         self.layer_watch.stop();
+        self.trips.stop();
         self.machine.stop_job();
     }
 
@@ -458,6 +496,8 @@ mod tests {
     use std::time::{Duration, Instant};
 
     /// A GRBL that says `ok` to every line and reports Idle.
+    use base_ui::link::Dir;
+
     fn fake_grbl(listener: TcpListener) {
         std::thread::spawn(move || {
             let (mut s, _) = listener.accept().unwrap();
@@ -531,6 +571,64 @@ mod tests {
         assert_eq!(a.safe_z(), a.device.pen.up.max(0.1));
         a.device.pen.lift = crate::device::Lift::Servo;
         assert_eq!(a.safe_z(), 5.0);
+    }
+
+    #[test]
+    fn a_time_lapse_after_every_lift_takes_its_pictures_with_the_pen_aside_and_long_lines_are_split() {
+        use base_ui::camera_rec::{LapseMode, RecSettings};
+        let dir = std::env::temp_dir().join(format!("pen-park-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+        let port = listener.local_addr().unwrap().port();
+        fake_grbl(listener);
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        a.device.connection.link = LinkKind::Tcp;
+        a.device.connection.host = "127.0.0.1".into();
+        a.device.connection.tcp_port = port;
+        a.device.control.park = base_core::photo_park::ParkSettings { enabled: true, x: 1.0, y: 2.0, settle: 0.0, keep_spindle: false };
+        a.device.control.split = base_core::gcode_split::SplitSettings { enabled: true, parts: 2, min_part: 1.0 };
+        a.devices = vec![a.device.clone()];
+        a.active = Some(0);
+        crate::screenshots::demo_job(&mut a);
+        a.cam_rec = base_ui::camera_rec::Recorder::new(RecSettings { dir: Some(dir.clone()), interval: 5.0, mode: LapseMode::EveryLift, format: Default::default() });
+        a.cam_rec.feed(Instant::now(), 4, 2, vec![90; 24]);
+        a.cam_rec.start_lapse(Instant::now());
+        a.connect_machine();
+        let until = |a: &mut App, secs: f64, mut f: Box<dyn FnMut(&mut App) -> bool>| {
+            let end = Instant::now() + Duration::from_secs_f64(secs);
+            while Instant::now() < end {
+                a.poll_machine();
+                if f(a) {
+                    return true;
+                }
+                std::thread::sleep(Duration::from_millis(10));
+            }
+            false
+        };
+        assert!(until(&mut a, 3.0, Box::new(|a| a.machine.connected)));
+        let all = a.job_lines().unwrap().0;
+        a.start_job();
+        // Two trips are enough to see it work: then the time-lapse stops and the job runs to its end.
+        assert!(until(&mut a, 15.0, Box::new(|a| {
+            a.cam_rec.feed(Instant::now(), 4, 2, vec![90; 24]);
+            if a.machine.barrier.is_some() {
+                a.machine.continue_job();
+            }
+            if a.cam_rec.lapse_shots() >= Some(2) {
+                a.cam_rec.stop_lapse();
+            }
+            !a.machine.job_active()
+        })), "the job ends: {:?}", a.machine.progress);
+        let sent: Vec<&str> = a.machine.console.iter().filter(|l| l.dir == Dir::Tx && !l.poll).map(|l| l.text.as_str()).collect();
+        let trips = sent.iter().filter(|l| **l == "G53 G0 X1 Y2").count();
+        assert!(trips >= 2, "the pen went aside: {sent:?}");
+        // The pen stays as it is (up) for the trip: nothing switches it off.
+        let first = sent.iter().position(|l| *l == "G53 G0 X1 Y2").unwrap();
+        assert!(!sent[first.saturating_sub(3)..first].contains(&"M5"), "{:?}", &sent[first.saturating_sub(3)..first]);
+        assert!(a.machine.progress.1 > all.len(), "{} lines for a program of {}", a.machine.progress.1, all.len());
+        std::fs::remove_dir_all(dir).ok();
     }
 
     #[test]
