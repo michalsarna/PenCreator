@@ -871,6 +871,7 @@ mod tests {
         h.run_steps(2);
         assert_eq!(h.state().dev_edit.as_ref().unwrap().page, Page::Hpgl);
         assert!(h.query_by_label("Pen or knife down").is_some());
+        assert!(h.query_by_label("Way aside for photos").is_some(), "the way aside for the photos of a time-lapse");
         h.state_mut().dev_edit.as_mut().unwrap().draft.connection.plotter.hpgl.pen_down = "PD;PD;".into();
         h.run_steps(2);
         let e = h.state_mut().dev_edit.take().unwrap();
