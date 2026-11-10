@@ -104,7 +104,7 @@ impl App {
                     } else {
                         self.trips.stop();
                         for _ in 0..self.layer_watch.finished() {
-                            self.cam_rec.layer_done(std::time::Instant::now());
+                            self.rigs.recorders().into_iter().for_each(|r| r.layer_done(std::time::Instant::now()));
                         }
                         self.device.control.stats.job_done(seconds);
                         self.keep_control();
@@ -153,11 +153,11 @@ impl App {
         }
         // The layers of the job that are done by now: a picture each, for the time-lapse of the camera.
         for _ in 0..self.layer_watch.progress(self.machine.progress.0) {
-            self.cam_rec.layer_done(std::time::Instant::now());
+            self.rigs.recorders().into_iter().for_each(|r| r.layer_done(std::time::Instant::now()));
         }
         // The photos aside: a picture that is due stops the job before its next move with the pen up.
         let m = &mut self.machine;
-        self.trips.frame(&mut self.cam_rec, std::time::Instant::now(), &mut |c| m.photo_cmd(c));
+        self.trips.frame_all(self.rigs.recorders(), std::time::Instant::now(), &mut |c| m.photo_cmd(c));
     }
 
     /// How this plotter goes aside for a photo: before a move with the pen up, the pen left as it is (up); an HPGL plotter
@@ -592,9 +592,10 @@ mod tests {
         a.devices = vec![a.device.clone()];
         a.active = Some(0);
         crate::screenshots::demo_job(&mut a);
-        a.cam_rec = base_ui::camera_rec::Recorder::new(RecSettings { dir: Some(dir.clone()), interval: 5.0, mode: LapseMode::EveryLift, format: Default::default() });
-        a.cam_rec.feed(Instant::now(), 4, 2, vec![90; 24]);
-        a.cam_rec.start_lapse(Instant::now());
+        a.rigs.sync(&[base_core::camimg::CameraSource::url("t", "http://127.0.0.1:1/x", 0)], None);
+        *a.rigs.rec(0).unwrap() = base_ui::camera_rec::Recorder::new(RecSettings { dir: Some(dir.clone()), interval: 5.0, mode: LapseMode::EveryLift, format: Default::default() });
+        a.rigs.rec(0).unwrap().feed(Instant::now(), 4, 2, vec![90; 24]);
+        a.rigs.rec(0).unwrap().start_lapse(Instant::now());
         a.connect_machine();
         let until = |a: &mut App, secs: f64, mut f: Box<dyn FnMut(&mut App) -> bool>| {
             let end = Instant::now() + Duration::from_secs_f64(secs);
@@ -612,12 +613,12 @@ mod tests {
         a.start_job();
         // Two trips are enough to see it work: then the time-lapse stops and the job runs to its end.
         assert!(until(&mut a, 15.0, Box::new(|a| {
-            a.cam_rec.feed(Instant::now(), 4, 2, vec![90; 24]);
+            a.rigs.rec(0).unwrap().feed(Instant::now(), 4, 2, vec![90; 24]);
             if a.machine.barrier.is_some() {
                 a.machine.continue_job();
             }
-            if a.cam_rec.lapse_shots() >= Some(2) {
-                a.cam_rec.stop_lapse();
+            if a.rigs.rec(0).unwrap().lapse_shots() >= Some(2) {
+                a.rigs.rec(0).unwrap().stop_lapse();
             }
             !a.machine.job_active()
         })), "the job ends: {:?}", a.machine.progress);
