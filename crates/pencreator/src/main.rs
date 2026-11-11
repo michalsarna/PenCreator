@@ -1391,6 +1391,12 @@ impl EditorHost for App {
     fn say(&mut self, msg: String) {
         self.status = msg;
     }
+    fn can_add_sheets(&self) -> bool {
+        true
+    }
+    fn add_sheets(&mut self, sheets: Vec<Vec<base_core::scene::Shape>>) -> usize {
+        self.open_sheets(sheets)
+    }
     fn said(&self) -> &str {
         &self.status
     }
@@ -1656,6 +1662,22 @@ mod tests {
 
     /// Without the "links" feature of eframe, open_url silently does nothing: no link of the program (the download page of an
     /// update, the project page, the list of plugins) would open.
+    #[test]
+    fn a_nesting_opens_new_sheets_in_tabs_with_the_same_layers() {
+        use base_core::scene::Kind;
+        let mut a = app();
+        a.layers[0].speed = 1234.0;
+        a.scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, base_core::geom::Xf::IDENTITY);
+        let mut other = base_core::scene::Scene::default();
+        other.add(0, Kind::Rect { w: 20.0, h: 20.0 }, base_core::geom::Xf::IDENTITY);
+        assert_eq!(a.open_sheets(vec![other.shapes.clone()]), 1);
+        assert_eq!(a.tab_count(), 2);
+        assert_eq!(a.scene.shapes.len(), 1);
+        a.switch_to(1);
+        assert_eq!(a.layers[0].speed, 1234.0);
+        assert!(a.is_dirty());
+    }
+
     #[test]
     fn the_colours_of_the_workspace_and_of_the_work_area_follow_the_view_options_and_are_kept() {
         use base_ui::editor::EditorHost;
