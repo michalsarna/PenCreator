@@ -87,6 +87,7 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Tekst seryjny…**, **Kod kreskowy / QR…**, **Rozmieść kształty (nesting)…**, **Pomiar…** | | Numerowane teksty, kody, upakowanie kształtów na obszarze, pomiar. |
 | **Dostosuj obraz…**, **Wektoryzacja obrazu…** | | Zmienia zaznaczony obraz albo zamienia go na kontury. Szare, gdy nie zaznaczono obrazu. |
 | **Obrysuj w stylu…** | | Rysuje zaznaczony obraz na nowo liniami w jednym z 19 stylów. Zobacz [Obrysuj w stylu](Obrys-w-stylu). |
+| **Dodaj jako strefę zakazaną** (Add as no-go zone) | | Każdy zaznaczony, niezablokowany kształt staje się strefą zakazaną urządzenia (okręgiem, gdy jest okrągły, w przeciwnym razie prostokątem wokół niego) i znika z rysunku. Jest też w menu prawego przycisku. |
 
 ## Widok
 
@@ -101,6 +102,7 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Podziel widok: obok siebie**, **Podziel widok: jeden nad drugim** | | Dzieli obszar roboczy na panele (najwyżej trzy). Przy jednym panelu jego ostatnia karta trafia do nowego panelu (gdy panel ma co najmniej dwie karty). Zobacz [Narzędzia projektowe](Narzedzia-projektowe#karty-i-panele). |
 | **Jeden widok** | | Zbiera wszystkie karty znów w jednym panelu. |
 | **Pokaż nakładkę z kamery** | | Pokazuje lub ukrywa obraz pod rysunkiem. |
+| **Pokaż strefy zakazane** (Show no-go zones) | | Rysuje na czerwono strefy zakazane urządzenia; wyszarzona, gdy urządzenie ich nie ma. |
 | **Nakładka z…** | | Zdjęcie albo obraz na żywo z kamery pod rysunkiem, ustawiane czterema narożnikami albo punktami odniesienia. Zapisywana w projekcie. |
 
 ## Maszyna
@@ -111,6 +113,7 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Ustawienia urządzenia…** | Ustawienia urządzenia projektu (strony Ogólne, Maszyna, Pisak, G-code, Połączenie, Kamera, Przesuw ręczny, Makra, Konserwacja, Strefy zakazane, Notatki). Zobacz [Szybki start](Szybki-start) i [Sterowanie maszyną](Sterowanie-maszyna). |
 | **Ustawienia firmware ($$)…** | Ustawienia kontrolera GRBL, z kopiami i kopią zapasową. |
 | **Kalibracja…** | Kroki na milimetr i prostopadłość osi. |
+| **Strefy zakazane…** (No-go zones…) | | Okno urządzenia na stronie **Strefy zakazane**. |
 | **Urządzenia sterujące ▸** | Ustawienia urządzeń sterujących… otwiera okno klawiatur i padów oraz ich klawiszy; Urządzenie sterujące tej maszyny… wybiera urządzenie otwartej maszyny. Zobacz [Urządzenia sterujące](Urzadzenia-sterujace). |
 | **Diagnostyka i statystyki…** | Wejścia kontrolera, statystyki i konserwacja maszyny, raport do zapisania. |
 | **Udostępnij w sieci (ser2net)…** | Tylko Linux: udostępnia port szeregowy maszyny w sieci. |
@@ -127,6 +130,8 @@ Wszystkie są opisane na stronie [Sterowanie maszyną](Sterowanie-maszyna).
 |---|---|---|
 | **Biblioteka pisaków…** | | Gotowe pisaki i Twoje własne. Zobacz [Warstwy i pisaki](Warstwy-i-pisaki#biblioteka-pisaków). |
 | **Biblioteka noży…** | | Gotowe noże wleczone i Twoje własne. Zobacz [Narzędzia projektowe](Narzedzia-projektowe#nóż-wleczony). |
+| **Presety warstw…** (Layer presets…) | | Okno presetów warstw: zapisz aktywną warstwę pod nazwą albo nałóż na nią preset. |
+| **Podgląd G-code** (Preview G-code) | | G-code zadania jako tekst na karcie, bez zapisywania (to samo co przycisk **Podgląd G-code**). |
 | **Wykres zadania…** | Ctrl+Shift+P | Otwiera kartę **Podgląd**: co narysuje pisak, z ruchami z podniesionym pisakiem, czasem i animacją. Zobacz [Szybki start](Szybki-start). |
 | **Eksportuj G-code…** | Ctrl+E | Pyta, gdzie zapisać, i zapisuje G-code projektu (to samo robi przycisk **Zapisz G-code**). |
 
