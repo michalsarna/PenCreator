@@ -15,7 +15,7 @@ The start screen lists your plotters under **Device** (each with the size of its
 * **I have no device** adds and chooses a plain device called **Dummy**: an A4 sheet, the pen lifted by the Z axis. Under the list, **Paper** A4 **Landscape** / **Portrait** turns its sheet (later the same is on the **Device** tab of the editor). Without any device, **New** and **Open…** use the Dummy.
 * **Add device…** opens one window with the basic settings, the same as in LightCreator and MillCreator: the **Name**, the **Controller** (a GRBL version, an AxiDraw / EggBot, an HPGL plotter or LinuxCNC), the connection with **Read from device** (a GRBL gives its work area and speed), the **Units**, the **Work area** (X and Y, the sheet the pen can reach), the **Machine zero (0,0)** (the corner where the pen starts), **The pen is lifted by** the **Z axis** (then **Pen up** and **Pen down** are heights in mm; down 0 is the paper) or a **Servo (M3 S…)** (then they are `S` values, 0 … 1000), an optional camera, and **Worth checking**. A new device starts with up 3 mm and down 0.
 
-  **Add device** saves it; **More settings…** opens the whole device window with what is entered (the wait after the pen moves, the speed of the moves with the pen up, **Start from → A usual sheet size…**). **Edit…**, **Duplicate** and **Import…** (a device file) are next to **Add device…**.
+  **Add device** saves it; **More settings…** opens the whole device window with what is entered (the wait after the pen moves, the speed of the moves with the pen up, the **Acceleration of X, Y, Z** and the **Junction deviation** for the time of a drawing, **Start from → A usual sheet size…**). **Edit…**, **Duplicate** and **Import…** (a device file) are next to **Add device…**.
 
 ![Adding a device](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-add-device.png)
 
@@ -62,7 +62,7 @@ When the next layer needs another pen, the job stops for the change. Everything 
 
 * the sheet with the lines the pens will draw, in their ink and thickness, and the moves with the pen up as dashed blue lines (**Moves with the pen up** switches them off); **Paper colour** next to it gives the sheet the colour of your paper (white until you choose one; **Automatic** goes back to white);
 * an animation (**Play** / **Pause**, **Back to the start**, **Repeat**, **Animation speed**) with a slider of the progress; a red circle is the pen;
-* the time (**Time** so far / in all), the length of the lines and of the moves with the pen up, the number of pen lifts and the minutes;
+* the time (**Time** so far / in all; with the accelerations of the device it counts the speeding up and slowing down, the slower corners and the stops where the pen goes up or down, as GRBL plans them), the length of the lines and of the moves with the pen up, the number of pen lifts and the minutes;
 * warnings in orange: a picture that cannot be drawn, a drawing that lies partly outside the work area, a fill with too many lines;
 * The zoom bar in the lower left corner of the picture: zoom in, zoom out, **Reset view** (the work area) and **Fit all objects** (all the lines); the wheel zooms, a drag moves, a double click goes back to the first view.
 
