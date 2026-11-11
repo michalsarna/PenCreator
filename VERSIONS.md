@@ -2,6 +2,16 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.8.6
+
+* **Time of a drawing** with the acceleration of the plotter, its corners and look-ahead.
+* **No-go zones** (clips, a ruler): moves with the pen up go round them, a line through one is a warning. **Add as no-go zone** (right-click, Arrange), a **No-go zones** tab, **Machine → No-go zones…**, **View → Show no-go zones**.
+* **Rotary attachment** (device settings → Rotary): drawing round a cup or a bottle; lines of the way round on the work area and a warning when the drawing is higher.
+* **Nesting** by the real outlines and onto new sheets in tabs of their own.
+* **Properties → Layer** as in LightCreator; closing the last drawing asks whether to close the program.
+* **Menus:** Plotter → Layer presets…, Preview G-code; more in the right-click menu.
+* **Help:** the quick guide (F1) has the new tools; `TESTS_ON_DEVICES.md` lists the machines the program is confirmed on.
+
 ## v0.8.5
 
 * **Recording tab:** a new tab of the side panel with a panel for each camera of the device, named after the camera: **Take a photo**, **Record video**, the **Time-lapse**, the **Video format**, the **Folder** and the way its **Camera view** opens. Each camera records on its own, with its own settings kept with it; a camera that records and is not shown reads its own picture. With more than one camera the names of the files have the camera in them. The camera view keeps only the buttons: a photo, a video, the time-lapse started and stopped.
