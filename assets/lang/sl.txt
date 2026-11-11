@@ -280,3 +280,5 @@
 279|Rezilo se spušča in dviga kot pisalo (nastavitve zgoraj): spodaj je globina reza. Še ni preizkušeno na pravem rezalniku: prvi rez naredite na odpadnem kosu.
 280|vlečni nož reže samo obrise: polnila in slike plasti so bili izpuščeni
 281|{} obris(ov) je premajhnih za zamik noža in pridejo zaobljeni
+282|Gib po zraku ne more obiti prepovedane cone »{}« (začne ali konča se v njej)
+283|Črta je narisana skozi prepovedano cono »{}«

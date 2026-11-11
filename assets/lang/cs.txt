@@ -280,3 +280,5 @@
 279|Čepel jde dolů a nahoru jako pero (nastavení výše): dole je hloubka řezu. Zatím nevyzkoušeno na skutečném řezacím plotru: první řez udělejte na zbytku materiálu.
 280|vlečný nůž řeže jen obrysy: výplně a obrázky vrstev byly vynechány
 281|{} obrys(ů) je příliš malých na posun nože a vyjdou zaoblené
+282|Pohyb vzduchem nemůže objet zakázanou zónu „{}“ (začíná nebo končí v ní)
+283|Čára se kreslí přes zakázanou zónu „{}“

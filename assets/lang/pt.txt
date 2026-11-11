@@ -280,3 +280,5 @@
 279|A lâmina desce e sobe como a caneta (as definições acima): em baixo é a profundidade do corte. Ainda não testado num plotter de corte real: faça o primeiro corte num pedaço de sobra.
 280|uma lâmina de arrasto só corta contornos: os preenchimentos e as imagens das camadas foram omitidos
 281|{} contorno(s) são demasiado pequenos para o desvio da lâmina e saem arredondados
+282|Um movimento pelo ar não pode contornar a zona proibida "{}" (começa ou acaba dentro dela)
+283|Uma linha é desenhada através da zona proibida "{}"

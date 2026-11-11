@@ -280,3 +280,5 @@
 279|Lama coboară și urcă la fel ca pixul (setările de mai sus): jos este adâncimea tăieturii. Încă nu a fost încercat pe un plotter de tăiere adevărat: faceți prima tăietură pe o bucată de rezervă.
 280|un cuțit tras taie doar contururi: umplerile și imaginile straturilor au fost omise
 281|{} contur(uri) sunt prea mici pentru decalajul cuțitului și ies rotunjite
+282|O mișcare prin aer nu poate ocoli zona interzisă „{}” (începe sau se termină în ea)
+283|O linie este desenată prin zona interzisă „{}”

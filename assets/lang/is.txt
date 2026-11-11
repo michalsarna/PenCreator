@@ -280,3 +280,5 @@
 279|Blaðið fer niður og upp eins og penninn (stillingarnar að ofan): niðri er dýpt skurðarins. Ekki enn prófað á alvöru skera: gerðu fyrsta skurðinn á afgangsbút.
 280|dráttarhnífur sker aðeins útlínur: fyllingum og myndum laganna var sleppt
 281|{} útlína(r) eru of litlar fyrir hliðrun hnífsins og verða ávalar
+282|Hreyfing í lofti kemst ekki fram hjá bannsvæðinu „{}“ (hún byrjar eða endar í því)
+283|Lína er dregin í gegnum bannsvæðið „{}“

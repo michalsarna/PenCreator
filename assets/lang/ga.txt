@@ -280,3 +280,5 @@
 279|Téann an lann síos agus suas mar a dhéanann an peann (na socruithe thuas): is é síos doimhneacht an ghearrtha. Níor triaileadh fós ar ghearrthóir fíor: déan an chéad ghearradh ar phíosa breise.
 280|ní ghearrann scian tarraingthe ach imlínte: fágadh líonadh agus pictiúir na sraitheanna ar lár
 281|Tá {} imlíne ró-bheag d'fhritháireamh na scine agus tagann siad amach cruinn
+282|Ní féidir le gluaiseacht tríd an aer dul timpeall ar an gcrios coiscthe "{}" (tosaíonn nó críochnaíonn sí ann)
+283|Tarraingítear líne tríd an gcrios coiscthe "{}"

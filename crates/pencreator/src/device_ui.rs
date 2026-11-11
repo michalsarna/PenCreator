@@ -23,12 +23,13 @@ pub enum Page {
     Jog,
     Macros,
     Maintenance,
+    Zones,
     Notes,
     Hpgl,
 }
 
 impl Page {
-    const ALL: [Page; 11] = [Page::General, Page::Connection, Page::Hpgl, Page::Machine, Page::Pen, Page::Gcode, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Notes];
+    const ALL: [Page; 12] = [Page::General, Page::Connection, Page::Hpgl, Page::Machine, Page::Pen, Page::Gcode, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Zones, Page::Notes];
     fn label(self) -> &'static str {
         match self {
             Page::General => "General",
@@ -40,6 +41,7 @@ impl Page {
             Page::Jog => "Jogging",
             Page::Macros => "Macros",
             Page::Maintenance => "Maintenance",
+            Page::Zones => base_ui::zones_ui::PAGE,
             Page::Notes => "Notes",
             Page::Hpgl => "HPGL",
         }
@@ -552,6 +554,9 @@ impl App {
                     }
                     Page::Camera => base_ui::camera_feed::camera_page(ui, &mut d.cameras, &mut d.active_camera, &mut self.cam_test_wanted),
                     Page::Hpgl => base_ui::plotter_ui::hpgl_page(ui, &mut d.connection.plotter.hpgl),
+                    Page::Zones => {
+                        base_ui::zones_ui::page(ui, units, &mut d.zones, false, "");
+                    }
                     Page::Notes => {
                         ui.add(egui::TextEdit::multiline(&mut d.notes).desired_rows(10).desired_width(f32::INFINITY).hint_text(tr("Notes about this machine")));
                     }

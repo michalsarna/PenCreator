@@ -280,3 +280,5 @@
 279|Klingen går ned og op som pennen (indstillingerne ovenfor): nede er snittets dybde. Endnu ikke afprøvet på en rigtig skæreplotter: lav det første snit på et overskydende stykke.
 280|en slæbekniv skærer kun konturer: lagenes fyld og billeder blev udeladt
 281|{} kontur(er) er for små til knivens forskydning og bliver afrundede
+282|En bevægelse gennem luften kan ikke gå uden om forbudszonen "{}" (den starter eller slutter i den)
+283|En linje tegnes gennem forbudszonen "{}"

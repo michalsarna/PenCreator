@@ -280,3 +280,5 @@
 279|Het mes gaat omlaag en omhoog zoals de pen (de instellingen hierboven): omlaag is de diepte van de snede. Nog niet geprobeerd op een echte snijplotter: doe de eerste snede op een reststuk.
 280|een sleepmes snijdt alleen contouren: de vullingen en afbeeldingen van de lagen zijn weggelaten
 281|{} contour(en) zijn te klein voor de verschuiving van het mes en worden afgerond
+282|Een beweging door de lucht kan niet om de verboden zone "{}" heen (ze begint of eindigt erin)
+283|Er wordt een lijn door de verboden zone "{}" getekend

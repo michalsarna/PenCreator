@@ -280,3 +280,5 @@
 279|A penge úgy süllyed és emelkedik, mint a toll (a fenti beállítások): a lent a vágás mélysége. Valódi vágón még nem próbálták: az első vágást egy hulladékdarabon végezze.
 280|a vonszolt kés csak körvonalakat vág: a rétegek kitöltései és képei kimaradtak
 281|{} körvonal túl kicsi a kés eltolásához, és lekerekítve jön ki
+282|Egy levegőben tett mozgás nem tudja megkerülni a(z) „{}” tiltott zónát (benne kezdődik vagy végződik)
+283|Egy vonal a(z) „{}” tiltott zónán át rajzolódik

@@ -280,3 +280,5 @@
 279|Tera laskub ja tõuseb nagu pliiats (ülal olevad seaded): all on lõike sügavus. Pole veel päris lõikuril proovitud: tee esimene lõige ülejäägitükil.
 280|veetav nuga lõikab ainult kontuure: kihtide täidised ja pildid jäeti välja
 281|{} kontuur(i) on noa nihke jaoks liiga väike(sed) ja tulevad ümarad
+282|Liikumine õhus ei saa keelutsoonist "{}" mööda minna (see algab või lõpeb selles)
+283|Joon joonistatakse läbi keelutsooni "{}"
