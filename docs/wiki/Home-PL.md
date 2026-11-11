@@ -37,6 +37,7 @@ Program został wypróbowany na tych maszynach i na nich działa:
 | Ploter pisakowy zbudowany na wzór [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) | ploter pisakowy | Arduino UNO, CNC Shield, GRBL |
 
 Działa na innej maszynie? Napisz w [zgłoszeniu](https://github.com/michalsarna/PenCreator/issues), a trafi na listę.
+Lista i opis, jak dopisać maszynę: [TESTS_ON_DEVICES.md](https://github.com/michalsarna/PenCreator/blob/main/TESTS_ON_DEVICES.md).
 
 ## W skrócie
 

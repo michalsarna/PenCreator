@@ -2,6 +2,8 @@
 
 # Safety and Limitations
 
+> The machines PenCreator is confirmed to work on, and how to add yours: [TESTS_ON_DEVICES.md](https://github.com/michalsarna/PenCreator/blob/main/TESTS_ON_DEVICES.md).
+
 PenCreator makes plotting paths and writes **G-code for GRBL**. It can **connect to a GRBL plotter and stream the job** (Device tab: **Connect**; Control tab: **Start**, **STOP**, **Frame**, **From line…**), and you can also save the file and send it with your own program. The G-code has been checked by automatic tests and in a GRBL simulator (the pen is up before every move with the pen up, a pen change stops with `M0`), and PenCreator has been tested on a pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL). Your machine may differ. **The change of the pen at a fixed place has not been tried on a real plotter yet.**
 
 * Set **Pen up** and **Pen down** of the device with care: with the Z axis they are heights in mm (down 0 is the paper), with a servo they are `S` values; with **Own G-code** they are the lines you wrote (for example `M3 S1000` and `M5` for a solenoid, or `M280 P0 S…` for a servo of Marlin), sent as they are. Wrong values can press a pen into the machine or the table. Try **Raise the pen** and **Lower the pen** on the Control tab first, run a job with the pen lifted or without a pen, and stay at the machine.

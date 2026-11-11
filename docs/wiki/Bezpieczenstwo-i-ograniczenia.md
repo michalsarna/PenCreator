@@ -2,6 +2,8 @@
 
 # Bezpieczeństwo i ograniczenia
 
+> Maszyny, na których PenCreator na pewno działa, i jak dopisać swoją: [TESTS_ON_DEVICES.md](https://github.com/michalsarna/PenCreator/blob/main/TESTS_ON_DEVICES.md).
+
 PenCreator tworzy ścieżki plotowania i zapisuje **G-code dla GRBL**. Może **połączyć się z ploterem GRBL i przesłać zadanie** (karta Urządzenie: **Połącz**; karta Sterowanie: **Start**, **STOP**, **Obrys**, **Od wiersza…**), a plik można też zapisać i wysłać własnym programem. G-code sprawdzają automatyczne testy i symulator GRBL (pisak jest podniesiony przed każdym ruchem z podniesionym pisakiem, zmiana pisaka zatrzymuje `M0`), a PenCreator był testowany na ploterze zbudowanym na wzór [Drawing Robota](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL). Twoja maszyna może się różnić. **Zmiana pisaka w stałym miejscu nie była jeszcze sprawdzona na prawdziwym ploterze.**
 
 * **Pisak podniesiony** i **Pisak opuszczony** w urządzeniu ustawiaj ostrożnie: przy osi Z to wysokości w mm (opuszczony 0 to papier), przy serwie to wartości `S`; przy **Własnym G-code** to wpisane przez Ciebie wiersze (np. `M3 S1000` i `M5` dla elektromagnesu albo `M280 P0 S…` dla serwa Marlina), wysyłane bez zmian. Złe wartości mogą wcisnąć pisak w maszynę lub stół. Najpierw wypróbuj **Podnieś pisak** i **Opuść pisak** na karcie Sterowanie, uruchom zadanie z podniesionym pisakiem albo bez pisaka i bądź przy maszynie.

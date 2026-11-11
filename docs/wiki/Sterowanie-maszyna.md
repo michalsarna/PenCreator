@@ -2,6 +2,8 @@
 
 # Sterowanie maszyną
 
+> Maszyny, na których PenCreator na pewno działa, i jak dopisać swoją: [TESTS_ON_DEVICES.md](https://github.com/michalsarna/PenCreator/blob/main/TESTS_ON_DEVICES.md).
+
 PenCreator steruje maszyną z GRBL z karty **Urządzenie** (połączenie), karty **Sterowanie** i menu **Maszyna**. Wszystko to pochodzi z baseCreatora, więc MillCreator, PenCreator i LightCreator działają tak samo. PenCreator był testowany na ploterze zbudowanym na wzór [Drawing Robota](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) (Arduino UNO, CNC Shield, GRBL), ale nie wszystko z tej strony: zmiana pisaka w stałym miejscu nie była jeszcze sprawdzona na prawdziwym ploterze. Na nowej maszynie próbuj z podniesionym pisakiem albo bez pisaka i miej rękę przy zatrzymaniu. Pierwsze kroki są na stronie [Szybki start](Szybki-start#8-zapisz-g-code-albo-narysuj).
 
 ## Odczyt maszyny
