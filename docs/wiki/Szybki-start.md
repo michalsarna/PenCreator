@@ -15,7 +15,7 @@ Ekran startowy pokazuje Twoje plotery pod nagłówkiem **Urządzenie** (każdy z
 * **Nie mam urządzenia** dodaje i wybiera zwykłe urządzenie o nazwie **Dummy**: arkusz A4, pisak podnoszony osią Z. Pod listą **Papier** A4 **Poziomo** / **Pionowo** obraca jego arkusz (później to samo jest na karcie **Urządzenie** w edytorze). Gdy nie ma żadnego urządzenia, **Nowy** i **Otwórz…** używają Dummy.
 * **Dodaj urządzenie…** otwiera jedno okno z podstawowymi ustawieniami, takie samo jak w LightCreator i MillCreator: **Nazwa**, **Sterownik** (wersja GRBL, AxiDraw / EggBot, ploter HPGL albo LinuxCNC), połączenie z **Odczytaj z urządzenia** (GRBL podaje obszar roboczy i prędkość), **Jednostki**, **Obszar roboczy** (X i Y, arkusz, do którego sięga pisak), **Zero maszyny (0,0)** (narożnik, w którym startuje pisak), **Pisak podnosi się za pomocą** **Oś Z** (wtedy **Pisak podniesiony** i **Pisak opuszczony** to wysokości w mm; opuszczony 0 to papier) albo **Serwo (M3 S…)** (wtedy to wartości `S`, 0 … 1000), opcjonalna kamera oraz **Warto sprawdzić**. Nowe urządzenie zaczyna od 3 mm w górze i 0 w dole.
 
-  Przycisk **Dodaj urządzenie** je zapisuje; **Więcej ustawień…** otwiera całe okno urządzenia z tym, co wpisano (czekanie po ruchu pisaka, prędkość ruchów z podniesionym pisakiem, **Start od → Zwykły rozmiar arkusza…**). **Edytuj…**, **Powiel** i **Importuj…** (plik urządzenia) są obok **Dodaj urządzenie…**.
+  Przycisk **Dodaj urządzenie** je zapisuje; **Więcej ustawień…** otwiera całe okno urządzenia z tym, co wpisano (czekanie po ruchu pisaka, prędkość ruchów z podniesionym pisakiem, **Przyspieszenie X, Y, Z** i **Odchyłka w narożnikach** do czasu rysunku, **Start od → Zwykły rozmiar arkusza…**). **Edytuj…**, **Powiel** i **Importuj…** (plik urządzenia) są obok **Dodaj urządzenie…**.
 
 ![Dodawanie urządzenia](https://raw.githubusercontent.com/michalsarna/PenCreator/main/docs/screenshots/02-add-device.png)
 
@@ -62,7 +62,7 @@ Gdy następna warstwa wymaga innego pisaka, zadanie zatrzymuje się na zmianę. 
 
 * arkusz z liniami, które narysują pisaki, w ich tuszu i grubości, oraz ruchy z podniesionym pisakiem jako przerywane niebieskie linie (**Ruchy z podniesionym pisakiem** je wyłącza); **Kolor papieru** obok nadaje arkuszowi kolor Twojego papieru (biały, dopóki go nie wybierzesz; **Automatyczny** wraca do białego);
 * animacja (**Odtwarzaj** / **Pauza**, **Z powrotem na początek**, **Powtarzaj**, **Szybkość animacji**) z suwakiem postępu; czerwone kółko to pisak;
-* czas (**Czas** dotąd / razem), długość linii i ruchów z podniesionym pisakiem, liczba podniesień pisaka i minuty;
+* czas (**Czas** dotąd / razem; z przyspieszeniami urządzenia uwzględnia rozpędzanie i hamowanie, wolniejsze narożniki i postoje przy podnoszeniu i opuszczaniu pisaka, tak jak planuje je GRBL), długość linii i ruchów z podniesionym pisakiem, liczba podniesień pisaka i minuty;
 * ostrzeżenia na pomarańczowo: obraz, którego nie da się narysować, rysunek częściowo poza obszarem roboczym, wypełnienie ze zbyt wieloma liniami;
 * Pasek powiększenia w lewym dolnym rogu obrazu: przybliż, oddal, **Resetuj widok** (obszar roboczy) i **Dopasuj do wszystkich obiektów** (wszystkie linie); kółko przybliża, przeciąganie przesuwa, dwuklik wraca do pierwszego widoku.
 

@@ -94,19 +94,21 @@ impl Program {
 
     /// The time the plotter needs, in seconds: the lines at the speed of their layers, the moves at the speed of the
     /// device and the wait after every move of the pen.
+    /// With the accelerations of the device (when known) the speeding up, the slowing down and the slower corners count
+    /// too; the plotter stops where the pen goes up or down.
     pub fn estimate_seconds(&self, dev: &Device, layers: &[PenLayer]) -> f64 {
-        let moves: f64 = self
+        let blocks: Vec<base_core::motion::Block> = self
             .moves
             .iter()
-            .map(|m| {
-                let speed = if m.kind == MoveKind::Travel { dev.rapid } else { layers.get(m.layer).map_or(1000.0, |l| l.speed) };
-                if speed > 0.0 {
-                    m.length() / speed * 60.0
-                } else {
-                    0.0
-                }
+            .enumerate()
+            .map(|(i, m)| base_core::motion::Block {
+                to: [m.to[0], m.to[1], 0.0],
+                feed: if m.kind == MoveKind::Travel { dev.rapid } else { layers.get(m.layer).map_or(1000.0, |l| l.speed) },
+                stop: i > 0 && (self.moves[i - 1].kind != m.kind || self.moves[i - 1].to != m.from),
             })
-            .sum();
+            .collect();
+        let start = self.moves.first().map_or([0.0; 3], |m| [m.from[0], m.from[1], 0.0]);
+        let moves = base_core::motion::seconds(start, &blocks, &dev.motion);
         moves + (self.lifts() as f64 * 2.0 + 1.0) * dev.pen.delay_ms / 1000.0
     }
 }
@@ -1334,6 +1336,13 @@ mod tests {
         let t = p.estimate_seconds(&dev, &layers);
         let lines = 120.0 / layers[0].speed * 60.0;
         assert!(t > lines && t < lines + 30.0, "{t}");
+        // With the accelerations of the plotter the corners and the stops at every lift count.
+        let mut slow = dev.clone();
+        slow.motion = base_core::motion::Motion::flat(50.0);
+        let t2 = p.estimate_seconds(&slow, &layers);
+        assert!(t2 > t, "{t2} vs {t}");
+        let back: Device = serde_json::from_str(&serde_json::to_string(&slow).unwrap()).unwrap();
+        assert_eq!(back.motion, slow.motion);
     }
 
     /// A picture of `w` x `h` mm at (x, y): black everywhere, or a gradient from black (left) to white (right).
