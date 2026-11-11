@@ -282,3 +282,4 @@
 281|{} obris(ov) je premajhnih za zamik noža in pridejo zaobljeni
 282|Gib po zraku ne more obiti prepovedane cone »{}« (začne ali konča se v njej)
 283|Črta je narisana skozi prepovedano cono »{}«
+284|Risba je višja od oboda obdelovanca ({} mm)

@@ -575,7 +575,21 @@ pub fn generate_with(scene: &Scene, layers: &[PenLayer], dev: &Device, opts: Job
     if too_many {
         prog.warnings.push(Warn::new("the fill has too many lines: the gap between them is too small, so part of the fill was left out", &[]));
     }
+    if let Some(w) = rotary_too_high(&prog, dev) {
+        prog.warnings.push(w);
+    }
     prog
+}
+
+/// With a rotary attachment the drawing is wound round the workpiece: it may not be higher than the way round it.
+fn rotary_too_high(prog: &Program, dev: &Device) -> Option<Warn> {
+    if !dev.rotary.enabled {
+        return None;
+    }
+    let ys = prog.moves.iter().filter(|m| m.kind == MoveKind::Draw).flat_map(|m| [m.from[1], m.to[1]]);
+    let (lo, hi) = ys.fold((f64::INFINITY, f64::NEG_INFINITY), |(lo, hi), y| (lo.min(y), hi.max(y)));
+    let round = dev.rotary.circumference();
+    (hi - lo > round + 1e-6).then(|| Warn::new("The drawing is higher than the way round the workpiece ({} mm)", &[&format!("{round:.1}")]))
 }
 
 
@@ -946,6 +960,22 @@ mod tests {
 
     fn drawn(prog: &Program) -> f64 {
         prog.draw_length()
+    }
+
+    /// With a rotary the drawing may not be higher than the way round the workpiece.
+    #[test]
+    fn a_drawing_higher_than_the_way_round_the_workpiece_is_a_warning() {
+        let mut dev = Device::dummy();
+        let layers = default_layers();
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 60.0);
+        let says = |dev: &Device| generate_with(&scene, &layers, dev, JobOptions::default()).warnings.iter().any(|w| w.to_string().contains("way round"));
+        assert!(!says(&dev), "no rotary");
+        dev.rotary.enabled = true;
+        dev.rotary.diameter = 30.0; // 94 mm round: the 60 mm square fits
+        assert!(!says(&dev));
+        dev.rotary.diameter = 15.0; // 47 mm round
+        assert!(says(&dev));
     }
 
     /// A drag knife: the moves go along the axis, ahead of the tip; the tip cuts the square with sharp corners; the hole is cut

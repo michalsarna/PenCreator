@@ -282,3 +282,4 @@
 281|{} kontur(er) er for små for knivens forskyvning og blir avrundet
 282|En bevegelse gjennom luften kan ikke gå rundt forbudssonen «{}» (den starter eller slutter i den)
 283|En linje tegnes gjennom forbudssonen «{}»
+284|Tegningen er høyere enn omkretsen av arbeidsstykket ({} mm)

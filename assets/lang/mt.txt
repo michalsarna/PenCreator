@@ -282,3 +282,4 @@
 281|{} kontorn(i) huma żgħar wisq għall-offset tas-sikkina u joħorġu tondi
 282|Moviment fl-arja ma jistax idur maż-żona pprojbita "{}" (jibda jew jispiċċa fiha)
 283|Linja tinġibed minn ġo ż-żona pprojbita "{}"
+284|Id-disinn huwa itwal mill-perimetru tal-biċċa ({} mm)

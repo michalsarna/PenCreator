@@ -282,3 +282,4 @@
 281|{} kontuur(i) on noa nihke jaoks liiga väike(sed) ja tulevad ümarad
 282|Liikumine õhus ei saa keelutsoonist "{}" mööda minna (see algab või lõpeb selles)
 283|Joon joonistatakse läbi keelutsooni "{}"
+284|Joonis on kõrgem kui detaili ümbermõõt ({} mm)

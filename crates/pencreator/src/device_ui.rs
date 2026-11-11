@@ -24,12 +24,13 @@ pub enum Page {
     Macros,
     Maintenance,
     Zones,
+    Rotary,
     Notes,
     Hpgl,
 }
 
 impl Page {
-    const ALL: [Page; 12] = [Page::General, Page::Connection, Page::Hpgl, Page::Machine, Page::Pen, Page::Gcode, Page::Camera, Page::Jog, Page::Macros, Page::Maintenance, Page::Zones, Page::Notes];
+    const ALL: [Page; 13] = [Page::General, Page::Connection, Page::Hpgl, Page::Machine, Page::Pen, Page::Gcode, Page::Camera, Page::Rotary, Page::Jog, Page::Macros, Page::Maintenance, Page::Zones, Page::Notes];
     fn label(self) -> &'static str {
         match self {
             Page::General => "General",
@@ -42,6 +43,7 @@ impl Page {
             Page::Macros => "Macros",
             Page::Maintenance => "Maintenance",
             Page::Zones => base_ui::zones_ui::PAGE,
+            Page::Rotary => base_ui::rotary_ui::PAGE,
             Page::Notes => "Notes",
             Page::Hpgl => "HPGL",
         }
@@ -557,6 +559,9 @@ impl App {
                     Page::Zones => {
                         base_ui::zones_ui::page(ui, units, &mut d.zones, false, "");
                     }
+                    Page::Rotary => {
+                        base_ui::rotary_ui::page(ui, units, &mut d.rotary);
+                    }
                     Page::Notes => {
                         ui.add(egui::TextEdit::multiline(&mut d.notes).desired_rows(10).desired_width(f32::INFINITY).hint_text(tr("Notes about this machine")));
                     }
@@ -639,6 +644,15 @@ impl App {
     }
 
     /// The edited device goes into the list (and into the project, when it is the device in use).
+    /// New no-go zones of the device in use: into the project's device and into the list, where they are kept.
+    pub(crate) fn set_zones(&mut self, zones: Vec<base_core::zones::Zone>) {
+        if let Some(d) = self.active.and_then(|i| self.devices.get_mut(i)) {
+            d.zones = zones.clone();
+        }
+        self.device.zones = zones;
+        self.touch_rev();
+    }
+
     pub(crate) fn commit_device(&mut self, edit: &DeviceEdit) {
         let mut d = edit.draft.clone();
         match edit.idx {
@@ -751,6 +765,28 @@ mod tests {
 
     fn app() -> App {
         App::build(&egui::Context::default(), None, false)
+    }
+
+    #[test]
+    fn shapes_made_into_zones_go_to_the_device_and_its_tab_shows_while_it_has_zones() {
+        use base_core::geom::Xf;
+        use base_core::scene::Kind;
+        let mut a = app();
+        let i = a.use_dummy_device();
+        a.active = Some(i);
+        a.device = a.devices[i].clone();
+        a.device.zones.clear();
+        a.devices[i].zones.clear();
+        assert!(!a.extra_tabs().contains(&"zones"));
+        let id = a.scene.add(0, Kind::Rect { w: 30.0, h: 20.0 }, Xf::translate(10.0, 10.0));
+        a.ed.sel = vec![id];
+        base_ui::editor::add_as_zones(&mut a);
+        assert!(a.scene.shape(id).is_none(), "the shape left the drawing");
+        assert_eq!(a.device.zones.len(), 1);
+        assert_eq!(a.devices[i].zones, a.device.zones, "kept with the device");
+        assert!(a.extra_tabs().contains(&"zones") && a.side_tab == crate::SideTab::Zones);
+        a.set_zones(vec![]);
+        assert!(!a.extra_tabs().contains(&"zones"));
     }
 
     #[test]

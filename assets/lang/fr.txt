@@ -282,3 +282,4 @@
 281|{} contour(s) sont trop petits pour le décalage du couteau et sortent arrondis
 282|Un déplacement en l'air ne peut pas contourner la zone interdite « {} » (il commence ou finit dedans)
 283|Une ligne est tracée à travers la zone interdite « {} »
+284|Le dessin est plus haut que le tour de la pièce ({} mm)

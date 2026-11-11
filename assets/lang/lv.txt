@@ -282,3 +282,4 @@
 281|{} kontūra(-as) ir pārāk maza(-as) naža nobīdei un sanāk noapaļota(-as)
 282|Kustība pa gaisu nevar apiet aizliegto zonu “{}” (tā sākas vai beidzas tajā)
 283|Līnija tiek zīmēta caur aizliegto zonu “{}”
+284|Zīmējums ir augstāks par sagataves apkārtmēru ({} mm)

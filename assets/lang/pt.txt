@@ -282,3 +282,4 @@
 281|{} contorno(s) são demasiado pequenos para o desvio da lâmina e saem arredondados
 282|Um movimento pelo ar não pode contornar a zona proibida "{}" (começa ou acaba dentro dela)
 283|Uma linha é desenhada através da zona proibida "{}"
+284|O desenho é mais alto do que o perímetro da peça ({} mm)

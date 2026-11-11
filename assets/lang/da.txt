@@ -282,3 +282,4 @@
 281|{} kontur(er) er for små til knivens forskydning og bliver afrundede
 282|En bevægelse gennem luften kan ikke gå uden om forbudszonen "{}" (den starter eller slutter i den)
 283|En linje tegnes gennem forbudszonen "{}"
+284|Tegningen er højere end emnets omkreds ({} mm)
