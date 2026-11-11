@@ -280,3 +280,5 @@
 279|Ix-xafra tinżel u titla' bħall-pinna (l-issettjar ta' hawn fuq): 'l isfel huwa l-fond tal-qatgħa. Għadha ma ġietx ippruvata fuq cutter veru: agħmel l-ewwel qatgħa fuq biċċa żejda.
 280|sikkina mkaxkra taqta' biss kontorni: il-mili u l-istampi tas-saffi tħallew barra
 281|{} kontorn(i) huma żgħar wisq għall-offset tas-sikkina u joħorġu tondi
+282|Moviment fl-arja ma jistax idur maż-żona pprojbita "{}" (jibda jew jispiċċa fiha)
+283|Linja tinġibed minn ġo ż-żona pprojbita "{}"

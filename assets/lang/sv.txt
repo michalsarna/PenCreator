@@ -280,3 +280,5 @@
 279|Bladet går ner och upp som pennan (inställningarna ovan): nere är snittets djup. Ännu inte provat på en riktig skärare: gör det första snittet på en överbit.
 280|en släpkniv skär bara konturer: lagrens fyllningar och bilder utelämnades
 281|{} kontur(er) är för små för knivens förskjutning och blir avrundade
+282|En rörelse genom luften kan inte gå runt förbudszonen "{}" (den börjar eller slutar i den)
+283|En linje ritas genom förbudszonen "{}"

@@ -108,7 +108,7 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | Pozycja | Co robi |
 |---|---|
 | **Zmień urządzenie…** | Wraca do ekranu startowego, aby wybrać inne urządzenie. |
-| **Ustawienia urządzenia…** | Ustawienia urządzenia projektu (strony Ogólne, Maszyna, Pisak, G-code, Połączenie, Kamera, Przesuw ręczny, Makra, Konserwacja, Notatki). Zobacz [Szybki start](Szybki-start) i [Sterowanie maszyną](Sterowanie-maszyna). |
+| **Ustawienia urządzenia…** | Ustawienia urządzenia projektu (strony Ogólne, Maszyna, Pisak, G-code, Połączenie, Kamera, Przesuw ręczny, Makra, Konserwacja, Strefy zakazane, Notatki). Zobacz [Szybki start](Szybki-start) i [Sterowanie maszyną](Sterowanie-maszyna). |
 | **Ustawienia firmware ($$)…** | Ustawienia kontrolera GRBL, z kopiami i kopią zapasową. |
 | **Kalibracja…** | Kroki na milimetr i prostopadłość osi. |
 | **Urządzenia sterujące ▸** | Ustawienia urządzeń sterujących… otwiera okno klawiatur i padów oraz ich klawiszy; Urządzenie sterujące tej maszyny… wybiera urządzenie otwartej maszyny. Zobacz [Urządzenia sterujące](Urzadzenia-sterujace). |

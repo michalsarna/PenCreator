@@ -108,7 +108,7 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | Entry | What it does |
 |---|---|
 | **Switch device…** | Goes back to the start screen to choose another device. |
-| **Device settings…** | The settings of the device of the project (pages General, Machine, Pen, G-code, Connection, Camera, Jogging, Macros, Maintenance, Notes). See [Quick Start](Quick-Start) and [Machine Control](Machine-Control). |
+| **Device settings…** | The settings of the device of the project (pages General, Machine, Pen, G-code, Connection, Camera, Jogging, Macros, Maintenance, No-go zones, Notes). See [Quick Start](Quick-Start) and [Machine Control](Machine-Control). |
 | **Firmware settings ($$)…** | The settings of the GRBL controller, with copies and a backup. |
 | **Calibration…** | Steps per millimetre and the squareness of the axes. |
 | **Control devices ▸** | Control device settings… opens the window of the keyboards and pads and their keys; Control device of this machine… chooses the one of the open machine. See [Control Devices](Control-Devices). |

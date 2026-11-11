@@ -280,3 +280,5 @@
 279|Bladet går ned og opp som pennen (innstillingene over): nede er dybden på kuttet. Ennå ikke prøvd på en ekte kutter: gjør det første kuttet på et restestykke.
 280|en slepekniv skjærer bare konturer: lagenes fyll og bilder ble utelatt
 281|{} kontur(er) er for små for knivens forskyvning og blir avrundet
+282|En bevegelse gjennom luften kan ikke gå rundt forbudssonen «{}» (den starter eller slutter i den)
+283|En linje tegnes gjennom forbudssonen «{}»

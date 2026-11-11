@@ -1438,6 +1438,7 @@ impl EditorHost for App {
     }
     fn paint_over_shapes(&mut self, v: &base_ui::editor::CanvasView) {
         self.paint_toolpaths(v);
+        base_ui::zones_ui::paint(v.painter, &|p| self.w2s(v.origin, p), self.ed.view.zoom, &self.device.zones);
     }
 }
 

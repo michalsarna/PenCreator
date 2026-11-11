@@ -280,3 +280,5 @@
 279|Asmens nolaižas un paceļas kā pildspalva (augstāk esošie iestatījumi): lejā ir griezuma dziļums. Vēl nav izmēģināts uz īsta griezēja: pirmo griezumu izdariet uz liekā gabala.
 280|velkamais nazis griež tikai kontūras: slāņu aizpildījumi un attēli tika izlaisti
 281|{} kontūra(-as) ir pārāk maza(-as) naža nobīdei un sanāk noapaļota(-as)
+282|Kustība pa gaisu nevar apiet aizliegto zonu “{}” (tā sākas vai beidzas tajā)
+283|Līnija tiek zīmēta caur aizliegto zonu “{}”

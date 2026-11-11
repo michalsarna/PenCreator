@@ -280,3 +280,5 @@
 279|Čepeľ ide dole a hore ako pero (nastavenia vyššie): dole je hĺbka rezu. Zatiaľ nevyskúšané na skutočnom reznom plotri: prvý rez urobte na zvyšku materiálu.
 280|vlečený nôž reže len obrysy: výplne a obrázky vrstiev boli vynechané
 281|{} obrys(ov) je príliš malých na posun noža a vyjdú zaoblené
+282|Pohyb vzduchom nemôže obísť zakázanú zónu „{}“ (začína alebo končí v nej)
+283|Čiara sa kreslí cez zakázanú zónu „{}“

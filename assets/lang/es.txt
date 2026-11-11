@@ -280,3 +280,5 @@
 279|La cuchilla baja y sube como el bolígrafo (los ajustes de arriba): abajo es la profundidad del corte. Aún no se ha probado en un plóter de corte real: haz el primer corte en un trozo sobrante.
 280|una cuchilla de arrastre solo corta contornos: se omitieron los rellenos y las imágenes de las capas
 281|{} contorno(s) son demasiado pequeños para el desplazamiento de la cuchilla y salen redondeados
+282|Un movimiento por el aire no puede rodear la zona prohibida "{}" (empieza o termina dentro)
+283|Se dibuja una línea a través de la zona prohibida "{}"

@@ -113,6 +113,77 @@ impl Program {
     }
 }
 
+/// The moves with the pen up go round the enabled no-go zones of the device (1 mm away); a line drawn through a zone, or a move that
+/// cannot go round (it starts or ends in one), is a warning.
+fn keep_out_of_zones(prog: &mut Program, dev: &Device) {
+    use base_core::zones::{route, segment_hits, ZoneShape};
+    // The zones in the coordinates of the moves (y up from the front).
+    let ay = dev.area.y;
+    let zones: Vec<(ZoneShape, usize)> = dev
+        .zones
+        .iter()
+        .enumerate()
+        .filter(|(_, z)| z.enabled)
+        .map(|(i, z)| {
+            let s = match z.shape {
+                ZoneShape::Rect { x, y, w, h } => ZoneShape::Rect { x, y: ay - y - h, w, h },
+                ZoneShape::Circle { x, y, r } => ZoneShape::Circle { x, y: ay - y, r },
+            };
+            (s, i)
+        })
+        .collect();
+    if zones.is_empty() {
+        return;
+    }
+    let shapes: Vec<ZoneShape> = zones.iter().map(|(s, _)| *s).collect();
+    let pt = |p: P2| Pt::new(p[0], p[1]);
+    let mut moves = Vec::with_capacity(prog.moves.len());
+    let mut shift = vec![0usize; prog.moves.len() + 1];
+    let (mut blocked, mut drawn): (Vec<usize>, Vec<usize>) = (vec![], vec![]);
+    for (k, m) in prog.moves.iter().enumerate() {
+        shift[k] = moves.len();
+        if m.kind == MoveKind::Travel {
+            match route(&shapes, pt(m.from), pt(m.to), 1.0) {
+                Some(way) => {
+                    let mut at = m.from;
+                    for p in way {
+                        moves.push(Move { kind: MoveKind::Travel, from: at, to: [p.x, p.y], layer: m.layer });
+                        at = [p.x, p.y];
+                    }
+                    moves.push(Move { from: at, ..m.clone() });
+                    continue;
+                }
+                None => {
+                    for (s, i) in &zones {
+                        if segment_hits(s, pt(m.from), pt(m.to)) && !blocked.contains(i) {
+                            blocked.push(*i);
+                        }
+                    }
+                }
+            }
+        } else {
+            for (s, i) in &zones {
+                if segment_hits(s, pt(m.from), pt(m.to)) && !drawn.contains(i) {
+                    drawn.push(*i);
+                }
+            }
+        }
+        moves.push(m.clone());
+    }
+    shift[prog.moves.len()] = moves.len();
+    // The comments stay at the moves they were written for.
+    for n in &mut prog.notes {
+        n.at = shift[n.at.min(prog.moves.len())];
+    }
+    prog.moves = moves;
+    for i in drawn {
+        prog.warnings.push(Warn::new("A line is drawn through the no-go zone \"{}\"", &[&dev.zones[i].name]));
+    }
+    for i in blocked {
+        prog.warnings.push(Warn::new("A move through the air cannot go round the no-go zone \"{}\" (it starts or ends in it)", &[&dev.zones[i].name]));
+    }
+}
+
 /// One line the pen draws without lifting.
 struct Stroke {
     pts: Vec<P2>,
@@ -488,6 +559,7 @@ pub fn generate_with(scene: &Scene, layers: &[PenLayer], dev: &Device, opts: Job
         run_layers(&mut g, scene, layers, dev);
     }
     let Gen { mut prog, images, outside, too_many, knife_no_fill, knife_small, .. } = g;
+    keep_out_of_zones(&mut prog, dev);
     if knife_no_fill {
         prog.warnings.push(Warn::new("a drag knife only cuts outlines: the fills and the pictures of the layers were left out", &[]));
     }
@@ -1324,6 +1396,30 @@ mod tests {
         let g = frame_gcode(b, &dev);
         assert!(g.contains("G0 Z3") && !g.contains("Z0") && g.matches("G1 X").count() == 4, "{g}");
         assert!(Program::default().bounds().is_none());
+    }
+
+    #[test]
+    fn moves_with_the_pen_up_go_round_a_no_go_zone_and_a_line_through_one_is_said() {
+        use base_core::zones::{segment_hits, Zone, ZoneShape};
+        let mut scene = Scene::default();
+        square(&mut scene, 0, 20.0, 20.0, 20.0);
+        square(&mut scene, 0, 120.0, 20.0, 20.0);
+        let mut dev = Device::dummy();
+        let layers = default_layers();
+        let plain = generate(&scene, &layers, &dev);
+        dev.zones = vec![Zone { name: "Clip".into(), enabled: true, shape: ZoneShape::Rect { x: 70.0, y: 0.0, w: 20.0, h: 60.0 }, z_range: None }];
+        let prog = generate(&scene, &layers, &dev);
+        assert!(prog.warnings.is_empty(), "{:?}", prog.warnings);
+        let up = ZoneShape::Rect { x: 70.0, y: dev.area.y - 60.0, w: 20.0, h: 60.0 };
+        let hits = |p: &Program| p.moves.iter().any(|m| segment_hits(&up, Pt::new(m.from[0], m.from[1]), Pt::new(m.to[0], m.to[1])));
+        assert!(hits(&plain) && !hits(&prog));
+        assert_eq!(prog.lifts(), plain.lifts());
+        assert!((prog.draw_length() - plain.draw_length()).abs() < 1e-9);
+        // A zone on a line.
+        dev.zones[0].shape = ZoneShape::Circle { x: 30.0, y: 20.0, r: 3.0 };
+        assert!(generate(&scene, &layers, &dev).warnings.iter().any(|w| w.text().contains("Clip")));
+        let back: Device = serde_json::from_str(&serde_json::to_string(&dev).unwrap()).unwrap();
+        assert_eq!(back.zones, dev.zones);
     }
 
     #[test]

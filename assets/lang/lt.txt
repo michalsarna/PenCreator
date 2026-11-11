@@ -280,3 +280,5 @@
 279|Peilis leidžiasi ir kyla kaip rašiklis (aukščiau esantys nustatymai): apačia yra pjūvio gylis. Dar neišbandyta su tikru pjaustytuvu: pirmą pjūvį darykite atliekamame gabale.
 280|velkamas peilis pjauna tik kontūrus: sluoksnių užpildai ir paveikslai praleisti
 281|{} kontūras(-ai) per maži peilio poslinkiui ir išeina suapvalinti
+282|Judesys ore negali apeiti draudžiamos zonos „{}“ (jis prasideda arba baigiasi joje)
+283|Linija brėžiama per draudžiamą zoną „{}“

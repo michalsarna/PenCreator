@@ -157,6 +157,9 @@ pub struct Device {
     /// How the plotter speeds up and slows down (for the time of a job); not known by default.
     #[serde(default, skip_serializing_if = "base_core::motion::Motion::is_unset")]
     pub motion: base_core::motion::Motion,
+    /// Parts of the work area the pen must never enter (clips, a ruler).
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub zones: Vec<base_core::zones::Zone>,
 }
 
 /// The G-code of one's own that takes the pen up and down (`Lift::Custom`): one or more lines each.
@@ -221,6 +224,7 @@ impl Default for Device {
             linuxcnc: false,
             knife: None,
             motion: Default::default(),
+            zones: vec![],
         }
     }
 }
@@ -254,6 +258,7 @@ impl Device {
             }
         }
         self.motion.check()?;
+        base_core::zones::check_all(&self.zones)?;
         if !ok(self.rapid, 1.0, 100_000.0) {
             return Err("the speed of the moves is out of range".into());
         }

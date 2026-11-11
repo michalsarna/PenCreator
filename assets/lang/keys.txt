@@ -280,3 +280,5 @@
 279	The blade goes down and up as the pen does (the settings above): down is the depth of the cut. Not tried on a real cutter yet: try the first cut on a spare piece.
 280	a drag knife only cuts outlines: the fills and the pictures of the layers were left out
 281	{} outline(s) are too small for the offset of the knife and come out rounded
+282	A move through the air cannot go round the no-go zone "{}" (it starts or ends in it)
+283	A line is drawn through the no-go zone "{}"

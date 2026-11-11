@@ -280,3 +280,5 @@
 279|La lame descend et monte comme le stylo (les réglages ci-dessus) : en bas, c'est la profondeur de coupe. Pas encore essayé sur un vrai traceur de découpe : faites la première coupe sur une chute.
 280|un couteau à traîne ne coupe que des contours : les remplissages et les images des calques ont été omis
 281|{} contour(s) sont trop petits pour le décalage du couteau et sortent arrondis
+282|Un déplacement en l'air ne peut pas contourner la zone interdite « {} » (il commence ou finit dedans)
+283|Une ligne est tracée à travers la zone interdite « {} »

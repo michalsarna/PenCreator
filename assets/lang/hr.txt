@@ -280,3 +280,5 @@
 279|Oštrica se spušta i diže kao olovka (postavke iznad): dolje je dubina reza. Još nije isprobano na pravom rezaču: prvi rez napravite na otpadnom komadu.
 280|vučeni nož reže samo obrise: ispune i slike slojeva su izostavljene
 281|{} obris(a) je premalo za pomak noža i izlazi zaobljeno
+282|Kretnja kroz zrak ne može obići zabranjenu zonu „{}” (počinje ili završava u njoj)
+283|Linija se crta kroz zabranjenu zonu „{}”
