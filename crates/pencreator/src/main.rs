@@ -160,6 +160,10 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::Frame => Some("square-dashed"),
         Act::StartJob => Some("play"),
         Act::ToggleOverlay => Some("layers"),
+        Act::ToggleZones => Some("eye"),
+        Act::ZoneSettings => Some("ban"),
+        Act::PreviewGcode => Some("file-code"),
+        Act::LayerPresets => Some("layers"),
         Act::SetLang(_) | Act::SetScheme(_) => None,
     }
 }
@@ -294,6 +298,8 @@ struct App {
     quitting: bool,
     /// The last tab was closed: the program closes too.
     close_program: bool,
+    /// Draw the no-go zones on the work area (kept between runs).
+    zones_visible: bool,
     /// The last tab was closed: asking whether to close the program or to go back to the start screen.
     ask_quit: bool,
     allow_close: bool,
@@ -524,6 +530,7 @@ impl App {
             pv_tab_seen: false,
             show_options: false,
             check_updates: on("check_updates", true),
+            zones_visible: on("zones_visible", true),
             update: Default::default(),
             show_program_options: false,
             show_about: false,
@@ -551,6 +558,7 @@ impl App {
             ("grid_main_mm", self.ed.grid.to_string()),
             ("devices", self.devices_text()),
             ("check_updates", flag(self.check_updates)),
+            ("zones_visible", flag(self.zones_visible)),
             ("pens", self.pens.save_text()),
             ("knives", self.knives.save_text()),
             ("tab_order", self.tabs.order_string()),
@@ -1472,7 +1480,9 @@ impl EditorHost for App {
     }
     fn paint_over_shapes(&mut self, v: &base_ui::editor::CanvasView) {
         self.paint_toolpaths(v);
-        base_ui::zones_ui::paint(v.painter, &|p| self.w2s(v.origin, p), self.ed.view.zoom, &self.device.zones);
+        if self.zones_visible {
+            base_ui::zones_ui::paint(v.painter, &|p| self.w2s(v.origin, p), self.ed.view.zoom, &self.device.zones);
+        }
         let units = base_ui::editor::EditorHost::units(self);
         base_ui::rotary_ui::paint(v.painter, &|p| self.w2s(v.origin, p), v.bed, units, &self.device.rotary, self.device.area.y);
     }
@@ -1492,6 +1502,8 @@ impl MenuHost for App {
             Act::Frame => self.screen == Screen::Editor && self.machine.connected && !self.machine.job_running(),
             Act::StartJob => self.screen == Screen::Editor && self.can_start(),
             Act::ToggleOverlay => self.ed.background.is_some(),
+            Act::ToggleZones => !self.device.zones.is_empty(),
+            Act::PreviewGcode | Act::LayerPresets => self.screen == Screen::Editor,
             Act::Save | Act::SaveAs | Act::Preview | Act::ExportGcode | Act::ExportSvg | Act::ExportCam => self.screen == Screen::Editor,
             _ => true,
         }
@@ -1500,6 +1512,7 @@ impl MenuHost for App {
         match a {
             Act::Std(s) => s.checked(self),
             Act::ToggleOverlay => Some(self.ed.background.as_ref().is_some_and(|b| b.visible)),
+            Act::ToggleZones => Some(self.zones_visible),
             Act::SetLang(l) => Some(self.lang == l),
             Act::SetScheme(s) => Some(self.scheme == s),
             _ => None,
@@ -1616,6 +1629,15 @@ impl MenuHost for App {
                     b.visible = !b.visible;
                 }
             }
+            Act::ToggleZones => self.zones_visible = !self.zones_visible,
+            Act::ZoneSettings => {
+                self.open_device_settings();
+                if let Some(e) = self.dev_edit.as_mut() {
+                    e.page = device_ui::Page::Zones;
+                }
+            }
+            Act::PreviewGcode => self.preview_gcode(),
+            Act::LayerPresets => self.presets_ui.show(),
         }
     }
 }

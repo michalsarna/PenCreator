@@ -87,6 +87,7 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Serial text…**, **Barcode / QR code…**, **Nest shapes…**, **Measure…** | | Numbered texts, codes, packing shapes on an area, measuring. |
 | **Adjust image…**, **Trace image…** | | Changes the selected picture, or turns it into outlines. Grey unless a picture is selected. |
 | **Style trace…** | | Draws the selected picture again as lines in one of 19 styles. See [Style Trace](Style-Trace). |
+| **Add as no-go zone** | | Every unlocked selected shape becomes a no-go zone of the device (a circle when it is round, otherwise the rectangle round it) and leaves the drawing. Also in the right-click menu. |
 
 ## View
 
@@ -101,6 +102,7 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Split view: side by side**, **Split view: one above the other** | | Divides the work area into panes (up to three). With one pane, its last tab goes to a new pane (when the pane has two tabs or more). See [Design Tools](Design-Tools#tabs-and-panes). |
 | **Single view** | | Puts all the tabs together in one pane again. |
 | **Show camera overlay** | | Shows or hides the picture under the drawing. |
+| **Show no-go zones** | | Draws the no-go zones of the device in red; greyed out when the device has none. |
 | **Overlay from…** | | A photo or the live picture of the camera under the drawing, aligned by its four corners or by reference points. Saved with the project. |
 
 ## Machine
@@ -111,6 +113,7 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Device settings…** | The settings of the device of the project (pages General, Machine, Pen, G-code, Connection, Camera, Jogging, Macros, Maintenance, No-go zones, Notes). See [Quick Start](Quick-Start) and [Machine Control](Machine-Control). |
 | **Firmware settings ($$)…** | The settings of the GRBL controller, with copies and a backup. |
 | **Calibration…** | Steps per millimetre and the squareness of the axes. |
+| **No-go zones…** | | The device window on its **No-go zones** page. |
 | **Control devices ▸** | Control device settings… opens the window of the keyboards and pads and their keys; Control device of this machine… chooses the one of the open machine. See [Control Devices](Control-Devices). |
 | **Diagnostics and statistics…** | The inputs of the controller, the statistics and maintenance of the machine, a report to save. |
 | **Share over network (ser2net)…** | Linux only: shares the serial port of the machine over the network. |
@@ -127,6 +130,8 @@ All of them are explained on [Machine Control](Machine-Control).
 |---|---|---|
 | **Pen library…** | | The ready-made pens and your own ones. See [Layers and Pens](Layers-and-Pens#the-pen-library). |
 | **Knife library…** | | The ready-made drag knives and your own ones. See [Design Tools](Design-Tools#drag-knife). |
+| **Layer presets…** | | The window of the presets of layers: save the active layer under a name, or put a preset on it. |
+| **Preview G-code** | | The G-code of the job as text in a tab, without saving it (the same as the **Preview G-code** button). |
 | **Plot of the job…** | Ctrl+Shift+P | Opens the **Preview** tab: what the pen will draw, with the moves with the pen up, the time and an animation. See [Quick Start](Quick-Start). |
 | **Export G-code…** | Ctrl+E | Asks where to save and writes the G-code of the project (the **Save G-code** button does the same). |
 

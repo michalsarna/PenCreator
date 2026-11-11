@@ -57,6 +57,12 @@ pub enum Act {
     Frame,
     StartJob,
     ToggleOverlay,
+    /// Draw the no-go zones on the work area.
+    ToggleZones,
+    /// The device settings, on their page of the no-go zones.
+    ZoneSettings,
+    PreviewGcode,
+    LayerPresets,
 }
 
 impl From<StdAct> for Act {
@@ -101,14 +107,14 @@ pub fn menus() -> Menus<Act> {
         export_first: vec![Item(Act::ExportGcode, "Export G-code…", None)],
         export_extra: vec![],
         output_extra: vec![Item(Act::Print, "Print…", key("CmdOrCtrl+P", "Ctrl+P"))],
-        view_extra: overlay_entries(Act::ToggleOverlay, Act::Std(StdAct::BackgroundPicture)),
+        view_extra: [overlay_entries(Act::ToggleOverlay, Act::Std(StdAct::BackgroundPicture)), vec![Item(Act::ToggleZones, "Show no-go zones", None)]].concat(),
         background: false,
         machine: machine_menu(MachineMenu {
             switch_device: Act::SwitchDevice,
             device_settings: Act::DeviceSettings,
             firmware: Act::Firmware,
             calibration: Act::Calibration,
-            own: vec![],
+            own: vec![Item(Act::ZoneSettings, "No-go zones…", None)],
             control_devices: Act::ControlDevices,
             control_device_of_machine: Act::ControlDeviceOfMachine,
             diagnostics: Act::Diagnostics,
@@ -118,10 +124,11 @@ pub fn menus() -> Menus<Act> {
             start_from: Act::StartFrom,
             check_program: Act::CheckProgram,
         }),
-        process: ("Plotter", vec![Item(Act::Pens, "Pen library…", None), Item(Act::Knives, "Knife library…", None), Sep, Item(Act::Preview, "Plot of the job…", key("CmdOrCtrl+Shift+P", "Ctrl+Shift+P")), Item(Act::ExportGcode, "Export G-code…", key("CmdOrCtrl+E", "Ctrl+E"))]),
+        process: ("Plotter", vec![Item(Act::Pens, "Pen library…", None), Item(Act::Knives, "Knife library…", None), Item(Act::LayerPresets, "Layer presets…", None), Sep, Item(Act::PreviewGcode, "Preview G-code", None), Item(Act::Preview, "Plot of the job…", key("CmdOrCtrl+Shift+P", "Ctrl+Shift+P")), Item(Act::ExportGcode, "Export G-code…", key("CmdOrCtrl+E", "Ctrl+E"))]),
         settings_extra: vec![],
         help_first: vec![Item(Act::QuickGuide, "Quick guide", key("F1", "F1"))],
         help_extra: vec![Item(Act::ExportDiagnostics, "Export diagnostics (zip)…", None)],
+        zones: true,
     })
 }
 
