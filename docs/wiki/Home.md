@@ -37,6 +37,7 @@ The program has been tried on these machines and works there:
 | Pen plotter built after the [Drawing Robot](https://www.printables.com/model/137296-drawing-robot-arduino-uno-cnc-shield-grbl) | pen plotter | Arduino UNO, CNC Shield, GRBL |
 
 It runs on another machine? Tell me in an [issue](https://github.com/michalsarna/PenCreator/issues) and it goes on the list.
+The list with how to add a machine: [TESTS_ON_DEVICES.md](https://github.com/michalsarna/PenCreator/blob/main/TESTS_ON_DEVICES.md).
 
 ## At a glance
 
