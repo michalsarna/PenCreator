@@ -282,3 +282,4 @@
 281|{} contour(en) zijn te klein voor de verschuiving van het mes en worden afgerond
 282|Een beweging door de lucht kan niet om de verboden zone "{}" heen (ze begint of eindigt erin)
 283|Er wordt een lijn door de verboden zone "{}" getekend
+284|De tekening is hoger dan de omtrek van het werkstuk ({} mm)

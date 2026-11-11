@@ -282,3 +282,4 @@
 281	{} outline(s) are too small for the offset of the knife and come out rounded
 282	A move through the air cannot go round the no-go zone "{}" (it starts or ends in it)
 283	A line is drawn through the no-go zone "{}"
+284	The drawing is higher than the way round the workpiece ({} mm)

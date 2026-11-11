@@ -282,3 +282,4 @@
 281|{} contur(uri) sunt prea mici pentru decalajul cuțitului și ies rotunjite
 282|O mișcare prin aer nu poate ocoli zona interzisă „{}” (începe sau se termină în ea)
 283|O linie este desenată prin zona interzisă „{}”
+284|Desenul este mai înalt decât circumferința piesei ({} mm)

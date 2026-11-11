@@ -282,3 +282,4 @@
 281|{} körvonal túl kicsi a kés eltolásához, és lekerekítve jön ki
 282|Egy levegőben tett mozgás nem tudja megkerülni a(z) „{}” tiltott zónát (benne kezdődik vagy végződik)
 283|Egy vonal a(z) „{}” tiltott zónán át rajzolódik
+284|A rajz magasabb, mint a munkadarab kerülete ({} mm)

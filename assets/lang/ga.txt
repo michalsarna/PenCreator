@@ -282,3 +282,4 @@
 281|Tá {} imlíne ró-bheag d'fhritháireamh na scine agus tagann siad amach cruinn
 282|Ní féidir le gluaiseacht tríd an aer dul timpeall ar an gcrios coiscthe "{}" (tosaíonn nó críochnaíonn sí ann)
 283|Tarraingítear líne tríd an gcrios coiscthe "{}"
+284|Tá an líníocht níos airde ná imfhálú an phíosa oibre ({} mm)

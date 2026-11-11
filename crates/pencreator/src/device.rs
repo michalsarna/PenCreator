@@ -160,6 +160,10 @@ pub struct Device {
     /// Parts of the work area the pen must never enter (clips, a ruler).
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub zones: Vec<base_core::zones::Zone>,
+    /// A rotary attachment: the Y motor turns the work (a cup, a bottle, an egg), so the drawing is wound round it (not written
+    /// while never changed).
+    #[serde(default, skip_serializing_if = "is_unset")]
+    pub rotary: base_core::machine::Rotary,
 }
 
 /// The G-code of one's own that takes the pen up and down (`Lift::Custom`): one or more lines each.
@@ -225,6 +229,7 @@ impl Default for Device {
             knife: None,
             motion: Default::default(),
             zones: vec![],
+            rotary: Default::default(),
         }
     }
 }
@@ -259,6 +264,10 @@ impl Device {
         }
         self.motion.check()?;
         base_core::zones::check_all(&self.zones)?;
+        let r = &self.rotary;
+        if ![r.diameter, r.roller_diameter, r.microsteps_per_rev].iter().all(|v| v.is_finite() && *v > 0.0 && *v <= 1_000_000.0) {
+            return Err("the rotary settings are out of range".into());
+        }
         if !ok(self.rapid, 1.0, 100_000.0) {
             return Err("the speed of the moves is out of range".into());
         }
@@ -383,6 +392,20 @@ pub fn load_all(text: &str) -> Vec<Device> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_rotary_is_kept_and_checked_and_an_older_device_has_none() {
+        let mut d = Device::dummy();
+        assert!(!d.rotary.enabled);
+        assert!(!serde_json::to_string(&d).unwrap().contains("rotary"), "not written while never changed");
+        d.rotary.enabled = true;
+        d.rotary.diameter = 70.0;
+        let back: Device = serde_json::from_str(&serde_json::to_string(&d).unwrap()).unwrap();
+        assert_eq!(back.rotary, d.rotary);
+        assert!(back.check().is_ok());
+        d.rotary.diameter = f64::NAN;
+        assert!(d.check().is_err());
+    }
 
     #[test]
     fn the_defaults_and_the_dummy_are_valid() {

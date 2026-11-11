@@ -28,6 +28,7 @@ const EN: &[Section] = &[
         title: "Running a job",
         lines: &[
             "Machine > Frame goes round the box of the job with the pen up. Machine > Start job sends the job; a change of pen stops it and asks for the pen.",
+            "To draw round a cup or a bottle, switch on the Rotary page of Machine > Device settings…: the Y motor turns the work, and the work area shows a line at every way round it.",
         ],
     },
 ];
@@ -57,6 +58,7 @@ const PL: &[Section] = &[
         title: "Uruchamianie zadania",
         lines: &[
             "Maszyna > Obrys obchodzi prostokąt zadania z podniesionym pisakiem. Maszyna > Rozpocznij zadanie wysyła zadanie; zmiana pisaka je zatrzymuje i prosi o pisak.",
+            "Aby rysować na kubku albo butelce, włącz stronę Obrotowy w Maszyna > Ustawienia urządzenia…: silnik Y obraca przedmiot, a obszar roboczy pokazuje linię co jeden obwód.",
         ],
     },
 ];

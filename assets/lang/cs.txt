@@ -282,3 +282,4 @@
 281|{} obrys(ů) je příliš malých na posun nože a vyjdou zaoblené
 282|Pohyb vzduchem nemůže objet zakázanou zónu „{}“ (začíná nebo končí v ní)
 283|Čára se kreslí přes zakázanou zónu „{}“
+284|Kresba je vyšší než obvod obrobku ({} mm)

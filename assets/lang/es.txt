@@ -282,3 +282,4 @@
 281|{} contorno(s) son demasiado pequeños para el desplazamiento de la cuchilla y salen redondeados
 282|Un movimiento por el aire no puede rodear la zona prohibida "{}" (empieza o termina dentro)
 283|Se dibuja una línea a través de la zona prohibida "{}"
+284|El dibujo es más alto que el contorno de la pieza ({} mm)

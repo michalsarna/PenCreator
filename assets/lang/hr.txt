@@ -282,3 +282,4 @@
 281|{} obris(a) je premalo za pomak noža i izlazi zaobljeno
 282|Kretnja kroz zrak ne može obići zabranjenu zonu „{}” (počinje ili završava u njoj)
 283|Linija se crta kroz zabranjenu zonu „{}”
+284|Crtež je viši od opsega obratka ({} mm)

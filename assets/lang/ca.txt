@@ -282,3 +282,4 @@
 281|{} contorn(s) són massa petits per al desplaçament de la fulla i surten arrodonits
 282|Un moviment per l'aire no pot envoltar la zona prohibida "{}" (comença o acaba dins)
 283|Es dibuixa una línia a través de la zona prohibida "{}"
+284|El dibuix és més alt que el perímetre de la peça ({} mm)
