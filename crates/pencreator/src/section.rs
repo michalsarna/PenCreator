@@ -41,12 +41,15 @@ pub struct PenSection {
     /// The pens of the person that the layers use: a project made on another computer brings them along.
     #[serde(default)]
     pub pens: Vec<Pen>,
+    /// The sheet of the project setup (width, height, thickness, mm), when it was given.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub piece: Option<[f64; 3]>,
 }
 
 impl PenSection {
     pub fn new(layers: &[PenLayer], device: &Device, library: &PenLibrary) -> PenSection {
         let used: Vec<Pen> = library.user.iter().filter(|p| layers.iter().any(|l| l.pen.as_deref() == Some(p.id.as_str()))).cloned().collect();
-        PenSection { format: SECTION_FORMAT, layers: layers.to_vec(), machine: Machine::of(device), pens: used }
+        PenSection { format: SECTION_FORMAT, layers: layers.to_vec(), machine: Machine::of(device), pens: used, piece: None }
     }
 }
 
@@ -55,13 +58,14 @@ pub struct Loaded {
     pub layers: Vec<PenLayer>,
     pub machine: Option<Machine>,
     pub pens: Vec<Pen>,
+    pub piece: Option<[f64; 3]>,
 }
 
 /// Read the section of a project. A project without one (a drawing, or a project of another program) gets the default
 /// layers; a layer with wrong numbers is replaced by the default one.
 pub fn load(p: &base_core::project::Project) -> Result<Loaded, String> {
     let Some(s) = p.section::<PenSection>(SECTION)? else {
-        return Ok(Loaded { layers: default_layers(), machine: None, pens: vec![] });
+        return Ok(Loaded { layers: default_layers(), machine: None, pens: vec![], piece: None });
     };
     if s.format > SECTION_FORMAT {
         return Err(format!("the plotting part of the project has format {}, this program reads up to {SECTION_FORMAT}; update the program", s.format));
@@ -76,7 +80,8 @@ pub fn load(p: &base_core::project::Project) -> Result<Loaded, String> {
     while layers.len() < LAYER_COUNT {
         layers.push(defaults[layers.len()].clone());
     }
-    Ok(Loaded { layers, machine: Some(s.machine), pens: s.pens })
+    let piece = s.piece.filter(|v| v.iter().all(|x| x.is_finite() && *x > 0.0 && *x <= 100_000.0));
+    Ok(Loaded { layers, machine: Some(s.machine), pens: s.pens, piece })
 }
 
 #[cfg(test)]

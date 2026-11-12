@@ -36,6 +36,10 @@ Edytor ma pasek menu (zobacz [Menu](Menu)), pod nim pasek przycisków, narzędzi
 
 Każdy rysunek to karta nad obszarem roboczym; **Nowy** (Ctrl+N) albo **+** na końcu kart otwiera następny (najwyżej 10). Plik upuszczony na okno jest otwierany: obraz przechodzi przez okno importu, plik LightBurna, UGS lub DXF jest importowany do rysunku, plik G-code jest pokazywany w analizie.
 
+### Ustawienia projektu
+
+Po **Nowy** okno **Ustawienia projektu** (także **Plik → Ustawienia projektu…**) pyta o **kartkę**: jej szerokość i wysokość albo **Rozmiar papieru** z listy typowych (A6 … A1, B5, B4, Letter, Legal, Tabloid), tylko tych, które mieszczą się w ploterze, pionowo (↕) albo poziomo (↔); albo o **Walec (obrotnica)** (średnica i długość; zastosowanie włącza obrotnicę). Kartka leży w rogu zera plotera, 3 mm od krawędzi (przerywany obrys). **Zadanie dwustronne** daje stronę A i stronę B z przełącznikiem **Strona A / Strona B** nad obszarem roboczym: wybierz, wokół której osi kartka jest **odwracana**, **H** (tył i przód zamieniają się miejscami) albo **V** (lewa i prawa strona zamieniają się miejscami), i czy dodać **Znaczniki bazujące** (cztery znaczniki narożników tuż poza kartką, na warstwie 64, rysowane na podkładzie przed stroną A). Stronę B rysuje się tak, jak kartka leży po odwróceniu, i jest kreślona tak, jak narysowana (zadanie to pokazana strona); każda strona pokazuje drugą odwróconą jako blade, przerywane **duchy**.
+
 ## 3. Rysuj albo importuj
 
 * **Rysuj** narzędziami po lewej: **Zaznaczanie (V)**, **Edycja węzłów (N)**, **Prostokąt (R)**, **Elipsa (E)**, **Trójkąt (Y)**, **Gwiazda (S)**, **Wielokąt (G)**, **Serce (K)**, **Spirala (I)**, **Linia (L)**, **Linia łamana / pióro (P)**, **Tekst (T)**, **Przesuwanie widoku (H)**, **Powiększ (Z)** i **Pomniejsz (X)**. Menu **Wstawianie** ma te same narzędzia rysowania. Karta **Właściwości** zmienia rozmiar, położenie i szczegóły zaznaczonego kształtu.

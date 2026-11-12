@@ -59,6 +59,8 @@ pub enum Act {
     ToggleOverlay,
     /// Draw the no-go zones on the work area.
     ToggleZones,
+    /// File → Project setup…: the sheet, a cylinder, a two-sided drawing.
+    ProjectSetup,
     /// The device settings, on their page of the no-go zones.
     ZoneSettings,
     PreviewGcode,
@@ -95,7 +97,7 @@ pub fn menus() -> Menus<Act> {
         download_backup: Act::DownloadBackup,
         restore_backup: Act::RestoreBackup,
         check_updates: Act::CheckUpdates,
-        file_extra: vec![],
+        file_extra: vec![Item(Act::ProjectSetup, "Project setup…", None)],
         import_svg: Act::ImportSvg,
         import_ai: Act::ImportAi,
         import_dxf: Act::ImportDxf,

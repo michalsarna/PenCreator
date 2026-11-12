@@ -24,6 +24,7 @@ mod plot;
 mod plugins_glue;
 mod preview_ui;
 mod section;
+mod sides;
 mod texts;
 mod ugs_import;
 mod web_glue;
@@ -162,6 +163,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::StartJob => Some("play"),
         Act::ToggleOverlay => Some("layers"),
         Act::ToggleZones => Some("eye"),
+        Act::ProjectSetup => Some("sliders-horizontal"),
         Act::ZoneSettings => Some("ban"),
         Act::PreviewGcode => Some("file-code"),
         Act::LayerPresets => Some("layers"),
@@ -301,6 +303,10 @@ struct App {
     close_program: bool,
     /// Draw the no-go zones on the work area (kept between runs).
     zones_visible: bool,
+    /// The sheet of the project setup (width, height, thickness), a two-sided drawing, and the window of the setup.
+    piece: Option<[f64; 3]>,
+    two: Option<sides::Sides>,
+    setup: base_ui::project_setup::Setup,
     /// The web server and API (Program options).
     web: base_ui::web_api::WebApi,
     /// When the running job started and how long it was thought to take (for the web page).
@@ -536,6 +542,9 @@ impl App {
             show_options: false,
             check_updates: on("check_updates", true),
             zones_visible: on("zones_visible", true),
+            piece: None,
+            two: None,
+            setup: Default::default(),
             web: base_ui::web_api::WebApi::from_saved("PenCreator", base_ui::web_api::PORT_PENCREATOR, &|k| saved(k)),
             web_job: None,
             update: Default::default(),
@@ -597,6 +606,8 @@ impl App {
         self.kept = Project::default();
         self.background_from_project(&Project::default());
         self.layers = layers::default_layers();
+        self.piece = None;
+        self.two = None;
         self.touch_rev();
         self.reset_picture_layers();
         self.autosave_in_sync();
@@ -658,14 +669,16 @@ impl App {
                     }
                 };
                 self.layers = loaded.layers;
+                self.piece = loaded.piece;
                 self.pens.adopt(loaded.pens);
                 self.touch_rev();
                 // Sections of other programs wait here until the next save; a drawing from SVG or PDF has none.
                 self.description = file.as_ref().map(|p| p.description.clone()).unwrap_or_default();
                 self.kept = file.unwrap_or_default();
                 self.kept.scene = Scene::default();
-                let kept = std::mem::take(&mut self.kept);
+                let mut kept = std::mem::take(&mut self.kept);
                 self.background_from_project(&kept);
+                self.sides_from_project(&mut kept);
                 self.kept = kept;
                 self.status = format!("Opened {name}: {} shapes", scene.shapes.len());
                 if let Some(m) = loaded.machine.as_ref().and_then(|m| m.differences(&self.device)) {
@@ -747,10 +760,11 @@ impl App {
     fn to_project(&self) -> Project {
         let mut p = Project::new(self.scene.clone());
         p.description = self.description.clone();
-        p.set_section(section::SECTION, &section::PenSection::new(&self.layers, &self.device, &self.pens));
+        p.set_section(section::SECTION, &section::PenSection { piece: self.piece, ..section::PenSection::new(&self.layers, &self.device, &self.pens) });
         p.restore_sections(&self.kept.other_sections(section::SECTION));
         p.restore_extra(self.kept.extra());
         self.background_to_project(&mut p);
+        sides::sides_into(&mut p, &self.scene, self.two.as_ref());
         p
     }
 
@@ -1222,6 +1236,7 @@ impl App {
         self.update.tick(ctx, &update_glue::CONFIG);
         base_ui::alert_ui::window(ctx, &mut self.machine);
         self.program_options_window(ctx);
+        self.setup_window(ctx);
         let about = AboutInfo {
             title: "About PenCreator",
             name: "PenCreator",
@@ -1493,6 +1508,9 @@ impl EditorHost for App {
             l.draw = layers::Draw::Outline;
         }
     }
+    fn paint_under_shapes(&mut self, v: &base_ui::editor::CanvasView) {
+        self.paint_sides(v);
+    }
     fn paint_over_shapes(&mut self, v: &base_ui::editor::CanvasView) {
         self.paint_toolpaths(v);
         if self.zones_visible {
@@ -1548,8 +1566,11 @@ impl MenuHost for App {
     fn run_act(&mut self, ctx: &egui::Context, a: Act) {
         match a {
             Act::New => {
-                self.new_tab();
+                if self.new_tab() {
+                    self.open_setup();
+                }
             }
+            Act::ProjectSetup => self.open_setup(),
             Act::Open => self.open_dialog(),
             Act::Save => self.save(false),
             Act::SaveAs => self.save(true),

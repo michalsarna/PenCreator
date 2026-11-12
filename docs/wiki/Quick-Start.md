@@ -36,6 +36,10 @@ The editor has the menu bar (see [Menus](Menus)), a bar of buttons under it, the
 
 Each drawing is a tab above the work area; **New** (Ctrl+N) or the **+** at the end of the tabs opens another one (at most 10). A file dropped on the window is opened: a picture goes through the import dialog, a LightBurn, UGS or DXF file is imported into the drawing, a G-code file is shown in the analysis.
 
+### The project setup
+
+After **New** the window **Project setup** (also **File → Project setup…**) asks about the **Sheet**: its width and height, or a **Paper size** from a list of the usual ones (A6 … A1, B5, B4, Letter, Legal, Tabloid) with only those that fit the plotter, upright (↕) or lying (↔); or a **Cylinder (rotary)** (its diameter and length; applying switches the rotary attachment on). The sheet lies in the corner of the zero of the plotter, 3 mm in from the edges (a dashed outline). A **Two-sided job** gives side A and side B with a **Side A / Side B** switch over the work area: choose the line the sheet is **Turned over round**, **H** (back and front change places) or **V** (left and right change places), and whether to add **Alignment marks** (four corner marks just outside the sheet, on layer 64, drawn on the paper under it before side A). Side B is drawn as the sheet lies after it is turned over and is plotted as drawn (the job is the side that is shown); each side shows the other turned over as faint dashed **ghosts**.
+
 ## 3. Draw or import
 
 * **Draw** with the tools on the left: **Select (V)**, **Node edit (N)**, **Rectangle (R)**, **Ellipse (E)**, **Triangle (Y)**, **Star (S)**, **Polygon (G)**, **Heart (K)**, **Spiral (I)**, **Line (L)**, **Polyline / pen (P)**, **Text (T)**, **Pan (H)**, **Zoom in (Z)** and **Zoom out (X)**. The **Insert** menu has the same drawing tools. The **Properties** tab changes the size, the place and the details of the selected shape.
