@@ -44,3 +44,5 @@ Nothing below exists yet; the list is a plan, not a promise.
 * HPGL output.
 * Text in single-line fonts.
 * Pen pressure and a second pen holder; hatching that follows the shape.
+
+* **Web server and API** (Settings → Program options…, off by default): a page in the browser (also on a phone) with the state of the machine, the job, the camera, the project and STOP / Home / jog buttons, and an API for other programs, at `http://localhost:8767` behind an access phrase (no encryption). The same server as in LightCreator; each program has its own port (8765 LightCreator, 8766 MillCreator, 8767 PenCreator, 8768 BaseCreator).
