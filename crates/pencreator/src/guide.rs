@@ -9,6 +9,7 @@ const EN: &[Section] = &[
         lines: &[
             "The start screen lists your plotters. Click one, or press I have no device for a stand-in called Dummy (an A4 sheet). Add device… makes a new one: the work area, how the pen is lifted (the Z axis or a servo) and the connection. Then press New or Open….",
             "A first job: draw or import something, give the shapes their pens on the Layers tab, look at the plot, then save the G-code or send it to the plotter.",
+            "After New, the window of File > Project setup… asks about the sheet: a usual paper size that fits the plotter (upright or lying) or a cylinder on the rotary attachment. A Two-sided job gives side A and side B, turned over round the horizontal (H) or vertical (V) axis, with corner marks to put the sheet back: a switch over the work area shows one side or the other, with the ghosts of the other side turned over.",
         ],
     },
     Section {
@@ -39,6 +40,7 @@ const PL: &[Section] = &[
         lines: &[
             "Ekran startowy pokazuje Twoje plotery. Kliknij jeden albo naciśnij Nie mam urządzenia, żeby użyć zastępczego urządzenia Dummy (arkusz A4). Dodaj urządzenie… tworzy nowe: obszar roboczy, sposób podnoszenia pisaka (oś Z albo serwo) i połączenie. Potem naciśnij Nowy albo Otwórz….",
             "Pierwsze zadanie: narysuj albo zaimportuj coś, daj kształtom pisaki na karcie Warstwy, obejrzyj wykres, a potem zapisz G-code albo wyślij go do plotera.",
+            "Po wybraniu Nowy okno Plik > Ustawienia projektu… pyta o kartkę: typowy format papieru mieszczący się w ploterze (pionowo albo poziomo) albo walec na obrotnicy. Zadanie dwustronne daje stronę A i stronę B, odwracane wokół osi poziomej (H) albo pionowej (V), ze znacznikami narożników do ponownego ułożenia kartki: przełącznik nad obszarem roboczym pokazuje jedną albo drugą stronę, z duchami drugiej strony odwróconymi.",
         ],
     },
     Section {
