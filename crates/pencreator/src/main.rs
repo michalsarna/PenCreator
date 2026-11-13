@@ -307,6 +307,8 @@ struct App {
     piece: Option<[f64; 3]>,
     two: Option<sides::Sides>,
     setup: base_ui::project_setup::Setup,
+    /// The question how the G-code of a two-sided drawing is saved.
+    sides_save: base_ui::two_sided::SaveDialog,
     /// The web server and API (Program options).
     web: base_ui::web_api::WebApi,
     /// When the running job started and how long it was thought to take (for the web page).
@@ -545,6 +547,7 @@ impl App {
             piece: None,
             two: None,
             setup: Default::default(),
+            sides_save: Default::default(),
             web: base_ui::web_api::WebApi::from_saved("PenCreator", base_ui::web_api::PORT_PENCREATOR, &|k| saved(k)),
             web_job: None,
             update: Default::default(),
@@ -1237,6 +1240,7 @@ impl App {
         base_ui::alert_ui::window(ctx, &mut self.machine);
         self.program_options_window(ctx);
         self.setup_window(ctx);
+        self.sides_save_window(ctx);
         let about = AboutInfo {
             title: "About PenCreator",
             name: "PenCreator",
@@ -1411,6 +1415,15 @@ impl EditorHost for App {
     }
     fn scene_mut(&mut self) -> &mut Scene {
         &mut self.scene
+    }
+    /// Tests never read the clipboard of the system: there is one for the whole machine, and parallel tests that read it at once
+    /// crash in AppKit.
+    #[cfg(test)]
+    fn clipboard_image(&self) -> Option<base_ui::clip_image::ClipImage> {
+        None
+    }
+    fn ghost_shapes(&self) -> Vec<base_core::scene::Shape> {
+        self.ghosts()
     }
     fn layer_visible(&self, layer: usize) -> bool {
         self.layers.get(layer).is_none_or(|l| l.visible)

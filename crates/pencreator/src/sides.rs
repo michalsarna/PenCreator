@@ -93,6 +93,7 @@ impl App {
         std::mem::swap(&mut self.history, &mut two.other_history);
         two.shown_b = b;
         self.ed.sel.clear();
+        self.ed.ghost_sel.clear();
         self.ed.node_sel.clear();
         self.touch_rev();
     }
@@ -228,6 +229,91 @@ impl App {
         }
     }
 
+    /// The ghosts of the other side as they lie under the shown one (turned over), while they are shown.
+    pub(crate) fn ghosts(&self) -> Vec<Shape> {
+        match &self.two {
+            Some(t) if t.ghosts => {
+                let turn = self.side_turn().unwrap_or(Xf::IDENTITY);
+                t.other.shapes.iter().map(|s| Shape { xf: s.xf.then(turn), ..s.clone() }).collect()
+            }
+            _ => vec![],
+        }
+    }
+
+    /// The question of Save G-code in a two-sided drawing, and the saving when it is answered.
+    pub(crate) fn sides_save_window(&mut self, ctx: &egui::Context) {
+        let Some(flip) = self.two.as_ref().map(|t| t.flip) else {
+            self.sides_save.open = false;
+            return;
+        };
+        if let Some(c) = base_ui::two_sided::save_window(ctx, &mut self.sides_save, flip) {
+            self.export_sides(c);
+        }
+    }
+
+    /// The G-code of both sides of a two-sided drawing: in one file (side A, a stop to turn the sheet over or none, side B) or in two
+    /// files named `_A` and `_B`. Each side says at its head which one it is.
+    pub(crate) fn export_sides(&mut self, how: base_ui::two_sided::SaveSides) {
+        use base_ui::two_sided::{side_paths, SaveSides};
+        if !self.gcode_variables_ok() {
+            return;
+        }
+        let name = self.gcode_name();
+        let (a, b) = self.side_programs();
+        if a.is_empty() && b.is_empty() {
+            self.status = self.nothing_to_draw();
+            return;
+        }
+        let Some(p) = rfd::FileDialog::new().add_filter("G-code", &["nc", "gcode", "ngc"]).set_file_name(format!("{name}.nc")).save_file() else { return };
+        let info = self.gcode_info(&name);
+        let text = |prog: &crate::plot::Program| crate::plot::to_gcode_info(prog, &self.device, &self.layers, &self.pens, &info);
+        let files: Vec<(std::path::PathBuf, String)> = match how {
+            SaveSides::Separate => {
+                let (pa, pb) = side_paths(&p);
+                vec![(pa, text(&a)), (pb, text(&b))]
+            }
+            SaveSides::OneFile | SaveSides::OneFileWithHold => vec![(p, text(&self.sides_in_one(a, b, how == SaveSides::OneFileWithHold)))],
+        };
+        let mut saved = vec![];
+        for (path, text) in files {
+            let Some(text) = self.postprocessed(text) else { return };
+            if let Err(e) = std::fs::write(&path, text) {
+                self.status = trf("Could not save: {}", &[&e]);
+                return;
+            }
+            saved.push(path);
+        }
+        self.status = trf("Saved {}", &[&saved.iter().map(|p| p.display().to_string()).collect::<Vec<_>>().join(", ")]);
+        if let Some(first) = saved.into_iter().next().filter(|p| self.ed.grid_prefs.gcode_preview_after_save && p.exists()) {
+            self.time_gcode_for_device();
+            if let Err(e) = base_ui::gcode_view_ui::open(&mut self.gcode_view, first) {
+                self.status = e;
+            }
+        }
+    }
+
+    /// The programs of side A and side B, each with the name of its side at its head.
+    pub(crate) fn side_programs(&self) -> (crate::plot::Program, crate::plot::Program) {
+        let (a, b) = self.sides_scenes();
+        let empty = Scene::default();
+        let flip = self.two.as_ref().map_or(FlipAxis::SideToSide, |t| t.flip);
+        let prog = |s: &Scene, side_b: bool| {
+            let mut p = crate::plot::generate_with(s, &self.layers, &self.device, crate::plot::JobOptions { one_by_one: self.one_by_one });
+            p.notes.insert(0, crate::plot::Note { at: 0, text: base_ui::two_sided::side_comment(side_b, flip), before_layer: true });
+            p
+        };
+        (prog(a, false), prog(b.unwrap_or(&empty), true))
+    }
+
+    /// Side B after side A in one program, with a stop to turn the sheet over between them when `hold`.
+    pub(crate) fn sides_in_one(&self, mut a: crate::plot::Program, mut b: crate::plot::Program, hold: bool) -> crate::plot::Program {
+        let flip = self.two.as_ref().map_or(FlipAxis::SideToSide, |t| t.flip);
+        // The name of side B goes in once, where it starts.
+        let note = b.notes.remove(0).text;
+        a.then(b, note, hold.then(|| base_ui::two_sided::hold_comment(flip)));
+        a
+    }
+
     /// The sheet where it lies (a faint dashed outline), the ghosts of the other side under the shapes of the shown one, and the name of
     /// the shown side.
     pub(crate) fn paint_sides(&self, v: &base_ui::editor::CanvasView) {
@@ -240,8 +326,7 @@ impl App {
         }
         let Some(t) = &self.two else { return };
         if t.ghosts {
-            let turn = self.side_turn().unwrap_or(Xf::IDENTITY);
-            let ghosts: Vec<Shape> = t.other.shapes.iter().map(|s| Shape { xf: s.xf.then(turn), ..s.clone() }).collect();
+            let ghosts = self.ghosts();
             let colour = base_ui::two_sided::ghost_colour(self.ed.grid_prefs.bed_fill(self.scheme.is_dark()));
             base_ui::two_sided::paint_ghosts(v.painter, &to, &ghosts, colour);
         }
@@ -283,5 +368,59 @@ mod tests {
         a.setup.two_sided = true;
         a.apply_setup();
         assert!(a.piece.unwrap()[0] <= a.device.area.x);
+    }
+
+    /// The G-code of both sides in one file says which side is which, stops with the pen up between them when asked, and ends once.
+    #[test]
+    fn both_sides_in_one_file_with_a_stop_between_them() {
+        let mut a = crate::tests::app();
+        a.open_setup();
+        a.setup.two_sided = true;
+        a.setup.marks = false;
+        a.apply_setup();
+        a.scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(20.0, 20.0));
+        a.show_side(true);
+        a.scene.add(0, Kind::Rect { w: 5.0, h: 5.0 }, Xf::translate(60.0, 40.0));
+        let (pa, pb) = a.side_programs();
+        let info = a.gcode_info("job");
+        let one = a.sides_in_one(pa.clone(), pb.clone(), true);
+        let g = crate::plot::to_gcode_info(&one, &a.device, &a.layers, &a.pens, &info);
+        let at = |t: &str| g.find(t).unwrap_or_else(|| panic!("no {t:?} in\n{g}"));
+        let (side_a, stop, side_b) = (at("(Side A)"), at("M0 (Turn the material over"), at("(Side B:"));
+        assert!(side_a < stop && stop < side_b, "{g}");
+        assert_eq!(g.matches("M30").count(), 1);
+        assert!(!g[..stop].lines().rev().take_while(|l| !l.starts_with("G1")).any(|l| l.starts_with("G1")));
+        // Without the stop, and each side alone.
+        let g = crate::plot::to_gcode_info(&a.sides_in_one(pa.clone(), pb.clone(), false), &a.device, &a.layers, &a.pens, &info);
+        assert!(!g.contains("M0 (Turn") && g.contains("(Side B:"));
+        let g = crate::plot::to_gcode_info(&pb, &a.device, &a.layers, &a.pens, &info);
+        assert!(g.contains("(Side B:") && !g.contains("(Side A)"));
+    }
+
+    /// The preview has the switch of the side; the picture follows it (the program of the side chosen is shown, never the other one).
+    #[test]
+    fn the_preview_switches_the_side_and_its_program() {
+        use egui_kittest::kittest::Queryable;
+        let mut a = crate::tests::app();
+        a.open_setup();
+        a.setup.two_sided = true;
+        a.setup.marks = false;
+        a.apply_setup();
+        a.scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(20.0, 20.0));
+        a.show_side(true);
+        a.scene.add(0, Kind::Rect { w: 5.0, h: 5.0 }, Xf::translate(150.0, 40.0));
+        a.touch_rev();
+        a.show_plot = true;
+        let mut h = egui_kittest::Harness::builder().with_accessibility_check(false).with_context_setup(|ctx| {
+            base_ui::fonts::install(ctx);
+            base_ui::icons::install(ctx);
+        }).with_size([1000.0, 700.0]).build_ui_state(|ui, a: &mut crate::App| a.preview_work_panel(ui), a);
+        h.run_steps(3);
+        let right = |a: &crate::App| a.prog.as_ref().and_then(|p| p.bounds()).map_or(f64::NAN, |b| b[2]);
+        assert!(right(h.state()) >= 150.0, "side B: {}", right(h.state()));
+        h.get_by_label("Side A").click();
+        h.run_steps(3);
+        assert!(!h.state().two.as_ref().unwrap().shown_b);
+        assert!(right(h.state()) <= 31.0, "side A: {}", right(h.state()));
     }
 }

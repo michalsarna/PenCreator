@@ -59,9 +59,26 @@ pub struct Program {
     pub warnings: Vec<Warn>,
     /// With a drag knife: the path its tip cuts, for each cut (the moves are the path of the axis), by layer.
     pub knife_tips: Vec<(usize, Vec<P2>)>,
+    /// Stops of the machine (M0) before a move, with what they say: the material is turned over between the sides of a job.
+    pub holds: Vec<(usize, String)>,
 }
 
 impl Program {
+    /// `other` drawn after this program in the same file (side B of a two-sided job), with `note` at its head and, when `hold` is
+    /// given, a stop before it: the pen goes up and home and the machine waits.
+    pub fn then(&mut self, other: Program, note: String, hold: Option<String>) {
+        let at = self.moves.len();
+        if let Some(h) = hold {
+            self.holds.push((at, h));
+        }
+        self.notes.push(Note { at, text: note, before_layer: true });
+        self.notes.extend(other.notes.into_iter().map(|n| Note { at: n.at + at, ..n }));
+        self.holds.extend(other.holds.into_iter().map(|(i, h)| (i + at, h)));
+        self.moves.extend(other.moves);
+        self.warnings.extend(other.warnings);
+        self.knife_tips.extend(other.knife_tips);
+    }
+
     pub fn is_empty(&self) -> bool {
         !self.moves.iter().any(|m| m.kind == MoveKind::Draw)
     }
@@ -860,6 +877,17 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     let mut feed = f64::NAN;
     let mut current: Option<([u8; 3], u64, Option<String>)> = None;
     for (i, m) in prog.moves.iter().enumerate() {
+        // A stop to turn the material over: the pen up and home first; the layer is named again after it.
+        if let Some((_, h)) = prog.holds.iter().find(|(at, _)| *at == i) {
+            if pen_down {
+                up(&mut g);
+                pen_down = false;
+            }
+            let (hx, hy) = machine_xy(dev, 0.0, 0.0);
+            g.push_str(&format!("G0 X{} Y{}\n", num(hx), num(hy)));
+            g.push_str(&format!("M0 ({})\n", note_text(h)));
+            layer = usize::MAX;
+        }
         // The comments at this move in their order: the ends of what came before (and the start of an element) go before a
         // new layer, from the first one that starts something on everything comes after the commands of the layer.
         let here_notes: Vec<&Note> = prog.notes[next_note..].iter().take_while(|n| n.at == i).collect();
