@@ -40,6 +40,7 @@ fn kind() -> SetupKind {
         cylinder_note: "The workpiece lies on the rotary attachment; Y of the drawing goes round it and the drawing is unrolled from its surface.",
         colour: [0xf4, 0xf1, 0xe8],
         paper: true,
+        solids: false,
     }
 }
 
@@ -126,7 +127,7 @@ impl App {
             round: rot.enabled,
             diameter: rot.diameter.clamp(1.0, 1000.0),
             length: aw.min(150.0),
-            two_sided: self.two.is_some(),
+            sides: if self.two.is_some() { base_ui::project_setup::Sides::Two } else { base_ui::project_setup::Sides::One },
             flip: self.two.as_ref().map_or(FlipAxis::SideToSide, |t| t.flip),
             marks: self.two.is_none(),
             max: (aw, ah),
@@ -172,7 +173,7 @@ impl App {
         if was_rotary {
             self.status = format!("{} {}", self.status, tr("The rotary attachment of the device is off."));
         }
-        if st.two_sided {
+        if st.sides == base_ui::project_setup::Sides::Two {
             let first = self.two.is_none();
             match self.two.as_mut() {
                 Some(t) => t.flip = st.flip,
@@ -400,7 +401,7 @@ mod tests {
         assert!(a.setup.max == (a.device.area.x, a.device.area.y), "the paper sizes are those that fit the plotter");
         a.setup.w = 148.0;
         a.setup.h = 105.0;
-        a.setup.two_sided = true;
+        a.setup.sides = base_ui::project_setup::Sides::Two;
         a.apply_setup();
         assert_eq!(a.scene.shapes.len(), 4, "four corner marks");
         assert!(a.scene.shapes.iter().all(|s| s.layer == a.layers.len() - 1));
@@ -419,7 +420,7 @@ mod tests {
         assert!(b.two.as_ref().is_some_and(|t| t.other.shape(on_b).is_some()));
         // A sheet bigger than the plotter is not taken.
         a.setup.w = 10_000.0;
-        a.setup.two_sided = true;
+        a.setup.sides = base_ui::project_setup::Sides::Two;
         a.apply_setup();
         assert!(a.piece.unwrap()[0] <= a.device.area.x);
     }
@@ -429,7 +430,7 @@ mod tests {
     fn both_sides_in_one_file_with_a_stop_between_them() {
         let mut a = crate::tests::app();
         a.open_setup();
-        a.setup.two_sided = true;
+        a.setup.sides = base_ui::project_setup::Sides::Two;
         a.setup.marks = false;
         a.apply_setup();
         a.scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(20.0, 20.0));
@@ -457,7 +458,7 @@ mod tests {
         use egui_kittest::kittest::Queryable;
         let mut a = crate::tests::app();
         a.open_setup();
-        a.setup.two_sided = true;
+        a.setup.sides = base_ui::project_setup::Sides::Two;
         a.setup.marks = false;
         a.apply_setup();
         a.scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(20.0, 20.0));
@@ -485,7 +486,7 @@ mod tests {
         use base_ui::two_sided::{SaveSides, SIDE_B_TEXT};
         let mut a = crate::tests::app();
         a.open_setup();
-        a.setup.two_sided = true;
+        a.setup.sides = base_ui::project_setup::Sides::Two;
         a.setup.marks = false;
         a.apply_setup();
         a.scene.add(0, Kind::Rect { w: 10.0, h: 10.0 }, Xf::translate(20.0, 20.0));
