@@ -44,7 +44,12 @@ impl PlotView {
 impl App {
     /// The moves of the pen for the project as it is now.
     pub(crate) fn make_program(&self) -> Program {
-        plot::generate_with(&self.job_scene(), &self.layers, &self.device, plot::JobOptions { one_by_one: self.one_by_one })
+        let mut p = plot::generate_with(&self.job_scene(), &self.layers, &self.device, plot::JobOptions { one_by_one: self.one_by_one });
+        // A two-sided drawing says at its head which side it is.
+        if let Some(t) = &self.two {
+            p.notes.insert(0, plot::Note { at: 0, text: base_ui::two_sided::side_comment(t.shown_b, t.flip), before_layer: true });
+        }
+        p
     }
 
     /// What the job is made of: the whole drawing, or with "Selection only" the shapes that are selected now.
@@ -166,6 +171,11 @@ impl App {
 
     /// Ask where to write the G-code and write it.
     pub(crate) fn export_gcode(&mut self) {
+        if self.two.is_some() && !self.selection_only {
+            // A two-sided drawing: asked first whether in one file or in two (`export_sides`).
+            self.sides_save.open = true;
+            return;
+        }
         let name = self.gcode_name();
         let Some((text, prog)) = self.gcode_text(&name) else { return };
         let Some(p) = rfd::FileDialog::new().add_filter("G-code", &["nc", "gcode", "ngc"]).set_file_name(format!("{name}.nc")).save_file() else { return };
@@ -230,7 +240,16 @@ impl App {
     /// The options, totals and the picture (the same in the window and in the tab).
     pub(crate) fn preview_body(&mut self, ui: &mut egui::Ui) {
         let prog = self.prog.as_ref().expect("the program was made above");
+        // A two-sided drawing: the preview is of one side, the same one as the work area shows (and the one that is drawn). The side
+        // changes after the picture, so the program shown is never one of the other side.
+        let side_b = self.two.as_ref().map(|t| t.shown_b);
+        let mut want_b = side_b;
         ui.horizontal_wrapped(|ui| {
+            if let Some(b) = want_b.as_mut() {
+                ui.selectable_value(b, false, tr("Side A"));
+                ui.selectable_value(b, true, tr("Side B"));
+                ui.separator();
+            }
             base_ui::widgets::toggle(ui, &mut self.view.show_travel, tr("Moves with the pen up"), "");
             base_ui::widgets::toggle(ui, &mut self.view.show_dims, tr("Dimensions"), tr("Show the sizes of the job as on a technical drawing"));
             ui.separator();
@@ -259,6 +278,11 @@ impl App {
             let shown = base_ui::editor::EditorHost::units(self);
             let sheet = Sheet { size: (w, h), fill: paper, parts: &parts, units: (shown, self.device.units) };
             show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, &sheet);
+        }
+        if let (Some(now), Some(want)) = (side_b, want_b) {
+            if now != want {
+                self.show_side(want);
+            }
         }
     }
 
