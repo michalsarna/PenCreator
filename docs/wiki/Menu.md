@@ -20,7 +20,7 @@ Pasek menu ma dziewięć menu, w tej kolejności: **Plik · Edycja · Wstawianie
 | **Zapisz jako…** | Ctrl+Shift+S | Zapisuje projekt pod nową nazwą. |
 | **Importuj → Importuj obraz…** | | Obraz (PNG, JPG, BMP, GIF, WebP) przez okno importu. Zobacz [Narzędzia projektowe](Narzedzia-projektowe). |
 | **Importuj → Importuj SVG…** | Ctrl+I | Ścieżki pliku SVG są dodawane do otwartego rysunku, każda na warstwę o najbliższym kolorze, a jego obrazy na aktywną warstwę. **Otwórz…** zrobiłoby z pliku nową kartę. |
-| **Importuj → Importuj Adobe Illustrator / PDF…** | | To samo dla pliku PDF, zgodnego z PDF `.ai` albo `.ai` starego rodzaju w PostScripcie. Plik z warstwami Illustratora pyta, czy układać według koloru, czy według tych warstw. |
+| **Importuj → Importuj Adobe Illustrator / PDF / EPS / VectorCraft…** | | To samo dla pliku PDF, zgodnego z PDF `.ai`, `.ai` starego rodzaju w PostScripcie, pliku EPS albo rysunku VectorCrafta (`.vectorcraft`, razem z obrazami). Plik z warstwami Illustratora pyta, czy układać według koloru, czy według tych warstw. |
 | **Importuj → Importuj DXF…** | | Linie, łuki i krzywe rysunku DXF są dodawane do rysunku. |
 | **Importuj → Importuj projekt LightBurn / MillMage…** | | Kształty projektu LightBurna (`.lbrn2`, `.lbrn`) albo MillMage'a (`.mage`) są dodawane do rysunku. |
 | **Importuj → Importuj projekt UGS…** | | Kształty pliku UGS Designera (`.ugsd`) są dodawane do rysunku. |

@@ -43,7 +43,7 @@ After **New** the window **Project setup** (also **File → Project setup…**) 
 ## 3. Draw or import
 
 * **Draw** with the tools on the left: **Select (V)**, **Node edit (N)**, **Rectangle (R)**, **Ellipse (E)**, **Triangle (Y)**, **Star (S)**, **Polygon (G)**, **Heart (K)**, **Spiral (I)**, **Line (L)**, **Polyline / pen (P)**, **Text (T)**, **Pan (H)**, **Zoom in (Z)** and **Zoom out (X)**. The **Insert** menu has the same drawing tools. The **Properties** tab changes the size, the place and the details of the selected shape.
-* **Import** with **File → Import**: **Import image…**, **Import SVG…**, **Import Adobe Illustrator / PDF…**, **Import DXF…**, **Import LightBurn / MillMage project…**, **Import UGS design…**, or the importers and generators of plugins. The shapes are added to the drawing, selected. A UGS design also sets up the empty layers for its ways of cutting (a pocket or a fill becomes **Fill with lines**, the others **Outline**).
+* **Import** with **File → Import**: **Import image…**, **Import SVG…**, **Import Adobe Illustrator / PDF / EPS / VectorCraft…**, **Import DXF…**, **Import LightBurn / MillMage project…**, **Import UGS design…**, or the importers and generators of plugins. The shapes are added to the drawing, selected. A UGS design also sets up the empty layers for its ways of cutting (a pocket or a fill becomes **Fill with lines**, the others **Outline**).
 * **Clipart**: the **Clipart** tab has a gallery of pictures to place, and **Insert → Online clipart…** searches the internet.
 
 Text is drawn as the outlines of the font (each letter round its edge), not with single lines. See [Design Tools](Design-Tools) for editing, arranging and pictures.
