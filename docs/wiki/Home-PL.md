@@ -49,4 +49,4 @@ Lista i opis, jak dopisać maszynę: [TESTS_ON_DEVICES.md](https://github.com/mi
 * **Sterowanie maszyną:** przesuw, zerowanie, makra, ustawienia firmware, kalibracja, statystyki (zobacz [Sterowanie maszyną](Sterowanie-maszyna)).
 * **Planowane:** czcionki jednoliniowe.
 
-Najnowsza wersja: **v0.8.7** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru
+Najnowsza wersja: **v0.9.0** · [Wydania](https://github.com/michalsarna/PenCreator/releases) · [Zgłoszenia](https://github.com/michalsarna/PenCreator/issues) · Licencja: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) lub [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), do wyboru

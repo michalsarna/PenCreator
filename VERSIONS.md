@@ -2,7 +2,7 @@
 
 Each release gets the next version number. Newest first.
 
-## v0.8.8 (not released yet)
+## v0.9.0
 
 * **Project setup** (File → Project setup…, and the window of every new project): a sheet of a paper size that fits the plotter, or a cylinder on the rotary attachment, with a picture and its sizes.
 * **Two-sided drawings**: side A and side B, turned over round the axis chosen, with marks at the corners; the shapes of the other side show as **ghosts**, which can be clicked to align and snap to. The preview has a switch of the sides; **Save G-code** and **Preview G-code** ask how: one file with a stop to turn the sheet, one without, or a file for each side.
