@@ -2,6 +2,13 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.8.8 (not released yet)
+
+* **Project setup** (File → Project setup…, and the window of every new project): a sheet of a paper size that fits the plotter, or a cylinder on the rotary attachment, with a picture and its sizes.
+* **Two-sided drawings**: side A and side B, turned over round the axis chosen, with marks at the corners; the shapes of the other side show as **ghosts**, which can be clicked to align and snap to. The preview has a switch of the sides; **Save G-code** and **Preview G-code** ask how: one file with a stop to turn the sheet, one without, or a file for each side.
+* **The start window of the project setup**: the green **Apply** and the blue **Skip** are bigger, in the middle at the bottom under a line; the pictures are bigger and in the middle. **Skip** or closing the window gives a project on one side over the whole work area of the plotter.
+* **The switch of the sides** over the work area has the colour of the theme.
+
 ## v0.8.7
 
 * **Web server and API** (Settings → Program options…, off by default): a page in the browser, also on a phone, with the plotter, the job, the camera and the project, and STOP / Home / jog buttons; an API for other programs at `http://localhost:8767`, behind an access phrase (at first `PenCreator`; no encryption). The same server as in LightCreator (8765), MillCreator (8766) and BaseCreator (8768).
