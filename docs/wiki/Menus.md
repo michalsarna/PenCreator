@@ -20,7 +20,7 @@ The menu bar has nine menus, in this order: **File · Edit · Insert · Arrange 
 | **Save as…** | Ctrl+Shift+S | Writes the project under a new name. |
 | **Import → Import image…** | | A picture (PNG, JPG, BMP, GIF, WebP) through the import dialog. See [Design Tools](Design-Tools). |
 | **Import → Import SVG…** | Ctrl+I | The paths of an SVG are added to the open drawing, each on the layer nearest to its colour, and its pictures on the active layer. **Open…** would make a new tab of the file. |
-| **Import → Import Adobe Illustrator / PDF…** | | The same for a PDF, a PDF-compatible `.ai` or an `.ai` of the old PostScript kind. A file with Illustrator layers asks whether to go by colour or by those layers. |
+| **Import → Import Adobe Illustrator / PDF / EPS / VectorCraft…** | | The same for a PDF, a PDF-compatible `.ai`, an `.ai` of the old PostScript kind, an EPS or a VectorCraft drawing (`.vectorcraft`, with its pictures). A file with Illustrator layers asks whether to go by colour or by those layers. |
 | **Import → Import DXF…** | | The lines, arcs and curves of a DXF drawing are added to the drawing. |
 | **Import → Import LightBurn / MillMage project…** | | The shapes of a LightBurn project (`.lbrn2`, `.lbrn`) or a MillMage project (`.mage`) are added to the drawing. |
 | **Import → Import UGS design…** | | The shapes of a UGS Designer file (`.ugsd`) are added to the drawing. |
