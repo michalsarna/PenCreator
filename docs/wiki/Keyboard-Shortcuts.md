@@ -73,7 +73,7 @@ A letter without Ctrl chooses a tool of the left palette (the letter is in the t
 | Action | What it does |
 |---|---|
 | Wheel (or pinch) on the work area | Zooms about the pointer. |
-| Middle button drag | Pans the view (with **Pan (H)** the left button does it). |
+| Middle or right button drag | Pans the view, on the work area and beside it (with **Pan (H)** the left button does it; a right click that does not move opens the menu). |
 | Shift+click or Ctrl+click | Adds a shape to the selection, or takes it out. |
 | Shift while drawing a rectangle, ellipse, triangle, star, polygon, heart or spiral | Keeps the width and the height equal. |
 | Dragging a corner handle | Keeps the proportions; with Shift the width and the height change freely. |

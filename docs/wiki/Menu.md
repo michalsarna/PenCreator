@@ -103,6 +103,8 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Jeden widok** | | Zbiera wszystkie karty znów w jednym panelu. |
 | **Pokaż nakładkę z kamery** | | Pokazuje lub ukrywa obraz pod rysunkiem. |
 | **Pokaż strefy zakazane** (Show no-go zones) | | Rysuje na czerwono strefy zakazane urządzenia; wyszarzona, gdy urządzenie ich nie ma. |
+| **Podgląd** (Preview) | | Pokazuje albo chowa podgląd, jak przycisk **Podgląd…**. |
+| **Podgląd G-code** (Preview G-code) | | G-code zadania w karcie, jak przycisk **Podgląd G-code**. |
 | **Nakładka z…** | | Zdjęcie albo obraz na żywo z kamery pod rysunkiem, ustawiane czterema narożnikami albo punktami odniesienia. Zapisywana w projekcie. |
 
 ## Maszyna
