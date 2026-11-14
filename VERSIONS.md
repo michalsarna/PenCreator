@@ -2,6 +2,10 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.9.1 (not released yet)
+
+* Updated dependencies (zip 9.5.0).
+
 ## v0.9.0
 
 * **Project setup** (File → Project setup…, and the window of every new project): a sheet of a paper size that fits the plotter, or a cylinder on the rotary attachment, with a picture and its sizes.
