@@ -284,7 +284,7 @@ impl App {
             let drawn = self.scene.shapes.iter().filter(|s| self.layers.get(s.layer).is_some_and(|l| l.enabled && l.visible));
             let parts = base_ui::dims::Features::of(drawn, &|p| base_core::geom::Pt::new(p.x, h - p.y));
             let shown = base_ui::editor::EditorHost::units(self);
-            let sheet = Sheet { size: (w, h), fill: paper, parts: &parts, units: (shown, self.device.units) };
+            let sheet = Sheet { back: base_ui::editor::EditorHost::workspace_fill(self), size: (w, h), fill: paper, parts: &parts, units: (shown, self.device.units) };
             show_plot(ui, &mut self.view, prog, &self.layers, &self.pens, &sheet);
         }
         if let (Some(now), Some(want)) = (side_b, want_b) {
@@ -296,6 +296,9 @@ impl App {
 
     /// The preview as a tab of the work area, in place of the drawing.
     pub(crate) fn preview_work_panel(&mut self, ui: &mut egui::Ui) {
+        // The whole tab has the colour under the work area (of the theme, or the one of the view options), not the black of the window.
+        let fill = base_ui::editor::EditorHost::workspace_fill(self);
+        ui.painter().rect_filled(ui.max_rect(), 0.0, fill);
         self.refresh_program();
         ui.horizontal(|ui| {
             ui.spacing_mut().item_spacing.x = 4.0;
@@ -323,6 +326,8 @@ impl App {
 struct Sheet<'a> {
     size: (f64, f64),
     fill: Color32,
+    /// Round the sheet: the colour under the work area of the editor.
+    back: Color32,
     parts: &'a base_ui::dims::Features,
     /// The units of the program and those of the machine.
     units: (base_core::units::Units, base_core::units::Units),
@@ -346,7 +351,7 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
         }
     }
     let painter = ui.painter_at(rect);
-    painter.rect_filled(rect, 0.0, theme::panel());
+    painter.rect_filled(rect, 0.0, sheet.back);
     let fit = ((rect.width() - 40.0) / w as f32).min((rect.height() - 40.0) / h as f32).max(0.01);
     match view.fit.take() {
         Some(Fit::Area) => view.reset(),
