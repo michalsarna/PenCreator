@@ -2,6 +2,11 @@
 
 Each release gets the next version number. Newest first.
 
+## v0.9.3 (not released yet)
+
+* **Auto-save in the program options** (from baseCreator, the same in every program): on or off, and how often (10 s to an hour, 2 minutes to begin with).
+* baseCreator v2.3.0.
+
 ## v0.9.2
 
 * **Faster drawing of the toolpaths** (the preview and the Toolpaths button): moves that follow each other are one line, straight runs one piece, points closer than half a pixel and what is out of sight are left out.
