@@ -136,6 +136,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::GenerateShape => Some("shapes"),
         Act::OnlineClipart => Some("globe"),
         Act::Preview => Some("eye"),
+        Act::TogglePreview => Some("eye"),
         Act::DeviceSettings => Some("settings"),
         Act::Firmware => Some("settings"),
         Act::Calibration => Some("sliders-horizontal"),
@@ -1550,7 +1551,7 @@ impl MenuHost for App {
             Act::ToggleOverlay => self.ed.background.is_some(),
             Act::ToggleZones => !self.device.zones.is_empty(),
             Act::PreviewGcode | Act::LayerPresets => self.screen == Screen::Editor,
-            Act::Save | Act::SaveAs | Act::Preview | Act::ExportGcode | Act::ExportSvg | Act::ExportCam => self.screen == Screen::Editor,
+            Act::Save | Act::SaveAs | Act::Preview | Act::TogglePreview | Act::ExportGcode | Act::ExportSvg | Act::ExportCam => self.screen == Screen::Editor,
             _ => true,
         }
     }
@@ -1559,6 +1560,7 @@ impl MenuHost for App {
             Act::Std(s) => s.checked(self),
             Act::ToggleOverlay => Some(self.ed.background.as_ref().is_some_and(|b| b.visible)),
             Act::ToggleZones => Some(self.zones_visible),
+            Act::TogglePreview => Some(self.show_plot),
             Act::SetLang(l) => Some(self.lang == l),
             Act::SetScheme(s) => Some(self.scheme == s),
             _ => None,
@@ -1600,6 +1602,13 @@ impl MenuHost for App {
             Act::GenerateShape => self.plugins.gen_open = true,
             Act::OnlineClipart => self.open_online_clipart_search(ctx),
             Act::Preview => self.open_preview(),
+            Act::TogglePreview => {
+                if self.show_plot {
+                    self.show_plot = false;
+                } else {
+                    self.open_preview();
+                }
+            }
             Act::DeviceSettings => self.open_device_settings(),
             Act::Firmware => self.fw_open = true,
             Act::Calibration => self.cal.open = true,

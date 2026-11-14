@@ -25,6 +25,8 @@ pub enum Act {
     GenerateShape,
     OnlineClipart,
     Preview,
+    /// The preview window shown or hidden, as the Preview… button does (View menu).
+    TogglePreview,
     Firmware,
     DeviceSettings,
     Calibration,
@@ -109,7 +111,11 @@ pub fn menus() -> Menus<Act> {
         export_first: vec![Item(Act::ExportGcode, "Export G-code…", None)],
         export_extra: vec![],
         output_extra: vec![Item(Act::Print, "Print…", key("CmdOrCtrl+P", "Ctrl+P"))],
-        view_extra: [overlay_entries(Act::ToggleOverlay, Act::Std(StdAct::BackgroundPicture)), vec![Item(Act::ToggleZones, "Show no-go zones", None)]].concat(),
+        view_extra: [overlay_entries(Act::ToggleOverlay, Act::Std(StdAct::BackgroundPicture)), vec![Item(Act::ToggleZones, "Show no-go zones", None)],
+            // What the buttons of the main window show: the preview and the G-code.
+            vec![Sep, Item(Act::TogglePreview, "Preview", None), Item(Act::PreviewGcode, "Preview G-code", None)],
+        ]
+        .concat(),
         background: false,
         machine: machine_menu(MachineMenu {
             switch_device: Act::SwitchDevice,
@@ -147,5 +153,9 @@ mod tests {
         let titles: Vec<&str> = m.iter().map(|(t, _)| *t).collect();
         assert_eq!(&titles[..6], ["File", "Edit", "Insert", "Arrange", "View", "Machine"]);
         assert_eq!(&titles[7..], ["Settings", "Help"]);
+        // View ends with the preview and the G-code, as the buttons of the main window.
+        let view = &m.iter().find(|(t, _)| *t == "View").unwrap().1;
+        let items: Vec<Act> = view.iter().filter_map(|e| match e { Entry::Item(a, ..) => Some(*a), _ => None }).collect();
+        assert_eq!(items.iter().rev().take(2).copied().collect::<Vec<_>>(), [Act::PreviewGcode, Act::TogglePreview]);
     }
 }

@@ -103,6 +103,8 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Single view** | | Puts all the tabs together in one pane again. |
 | **Show camera overlay** | | Shows or hides the picture under the drawing. |
 | **Show no-go zones** | | Draws the no-go zones of the device in red; greyed out when the device has none. |
+| **Preview** | | Shows or hides the preview, as the **Preview…** button. |
+| **Preview G-code** | | The G-code of the job in a tab, as the **Preview G-code** button. |
 | **Overlay from…** | | A photo or the live picture of the camera under the drawing, aligned by its four corners or by reference points. Saved with the project. |
 
 ## Machine

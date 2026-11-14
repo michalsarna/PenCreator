@@ -73,7 +73,7 @@ Litera bez Ctrl wybiera narzędzie z lewej palety (litera jest w podpowiedzi jeg
 | Czynność | Co robi |
 |---|---|
 | Kółko (albo gest szczypania) na obszarze roboczym | Przybliża i oddala względem wskaźnika. |
-| Przeciąganie środkowym przyciskiem | Przesuwa widok (z narzędziem **Przesuwanie widoku (H)** robi to lewy przycisk). |
+| Przeciąganie środkowym lub prawym przyciskiem | Przesuwa widok, na obszarze roboczym i obok niego (z narzędziem **Przesuwanie widoku (H)** robi to lewy przycisk; prawy klik bez ruchu otwiera menu). |
 | Shift+kliknięcie albo Ctrl+kliknięcie | Dodaje kształt do zaznaczenia albo go z niego wyjmuje. |
 | Shift podczas rysowania prostokąta, elipsy, trójkąta, gwiazdy, wielokąta, serca albo spirali | Szerokość i wysokość zostają równe. |
 | Przeciąganie uchwytu w rogu | Zachowuje proporcje; z Shift szerokość i wysokość zmieniają się niezależnie. |
