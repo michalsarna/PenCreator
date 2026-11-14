@@ -1580,7 +1580,7 @@ impl MenuHost for App {
         match a {
             Act::New => {
                 if self.new_tab() {
-                    self.open_setup();
+                    self.open_start_setup();
                 }
             }
             Act::ProjectSetup => self.open_setup(),

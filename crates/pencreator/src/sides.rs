@@ -137,9 +137,32 @@ impl App {
 
     pub(crate) fn setup_window(&mut self, ctx: &egui::Context) {
         let units = base_ui::editor::EditorHost::units(self);
-        if base_ui::project_setup::window(ctx, &mut self.setup, units, kind()) == Some(Answer::Apply) {
-            self.apply_setup();
+        match base_ui::project_setup::window(ctx, &mut self.setup, units, kind()) {
+            Some(Answer::Apply) => self.apply_setup(),
+            Some(Answer::Skip) if self.setup.start => self.skip_start_setup(),
+            _ => {}
         }
+    }
+
+    /// The window of a new project: Skip (or closing it) leaves the project as the program starts one.
+    pub(crate) fn open_start_setup(&mut self) {
+        self.open_setup();
+        self.setup.start = true;
+    }
+
+    /// Skip of the window of a new project: one side and no sheet of its own, so the drawing is the whole work area of the plotter,
+    /// all of it in the view.
+    pub(crate) fn skip_start_setup(&mut self) {
+        if self.sides_scenes().1.is_some_and(|b| !b.shapes.is_empty()) {
+            return;
+        }
+        if self.two.is_some() {
+            self.show_side(false);
+            self.two = None;
+        }
+        self.piece = None;
+        self.ed.view.need_fit = true;
+        self.touch_rev();
     }
 
     /// Switch the rotary attachment of the plotter in use on or off, in the project and in the list of plotters.
@@ -512,5 +535,23 @@ mod tests {
         let whole = tab(&a, slot).unwrap();
         assert!(whole.1.contains("(Side A)") && whole.1.contains("M0 (Turn") && whole.1.contains("(Side B"), "{}", whole.1);
         assert_eq!(whole.2, Some(SaveSides::OneFileWithHold));
+    }
+
+    #[test]
+    fn skipping_the_window_of_a_new_project_gives_one_side_and_the_whole_work_area() {
+        let mut a = crate::tests::app();
+        a.open_setup();
+        a.setup.sides = base_ui::project_setup::Sides::Two;
+        a.setup.w = 100.0;
+        a.setup.h = 80.0;
+        a.apply_setup();
+        assert!(a.two.is_some() && a.piece.is_some());
+        a.open_start_setup();
+        assert!(a.setup.start);
+        a.skip_start_setup();
+        assert!(a.two.is_none() && a.piece.is_none());
+        assert!(a.ed.view.need_fit);
+        a.open_setup();
+        assert!(!a.setup.start);
     }
 }
