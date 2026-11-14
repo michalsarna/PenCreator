@@ -4,8 +4,10 @@ Each release gets the next version number. Newest first.
 
 ## v0.9.2 (not released yet)
 
+* **Faster drawing of the toolpaths** (the preview and the Toolpaths button): moves that follow each other are one line, straight runs one piece, points closer than half a pixel and what is out of sight are left out.
+* **The toolpaths over the work area are not made again while a shape is being dragged**: the old ones stay until the drag ends.
+* baseCreator v2.2.0.
 * **Import of EPS and VectorCraft drawings** (File → Import → Import Adobe Illustrator / PDF / EPS / VectorCraft…, File → Open…, or a file dropped on the window): a `.vectorcraft` file (VectorCraft 0.8 and later) with its paths, colours, layers and pictures; an EPS (also with a TIFF preview): the one VectorCraft writes with its pictures, others as PostScript (their paths).
-* baseCreator v2.1.0.
 
 ## v0.9.1
 
