@@ -97,24 +97,27 @@ impl App {
         if !self.toolpaths_on {
             return;
         }
-        self.refresh_program();
+        // Not made again while a shape is being dragged (a big job would be made at every frame of the drag): the old toolpaths
+        // stay until the drag ends.
+        if self.ed.drag.is_none() || self.prog.is_none() {
+            self.refresh_program();
+        }
         let Some(prog) = self.prog.as_ref() else { return };
         let h = self.device.area.y;
         let to_screen = |p: plot::P2| self.w2s(v.origin, base_core::geom::Pt::new(p[0], h - p[1]));
-        let many = prog.moves.len() > 100_000;
-        let mut shapes = Vec::with_capacity(prog.moves.len());
+        // Moves that follow each other are one line, what is too small or out of sight is left out (`base_ui::lines`).
+        let mut lines = base_ui::lines::Lines::new(v.painter.clip_rect());
+        let travel = Stroke::new(0.6, Color32::from_rgb(0x70, 0x90, 0xc0).gamma_multiply(0.8));
         for m in &prog.moves {
-            let (a, b) = (to_screen(m.from), to_screen(m.to));
             match m.kind {
                 MoveKind::Draw => {
                     let c = self.layers.get(m.layer).map_or(Color32::RED, |l| l.color32());
-                    shapes.push(egui::Shape::line_segment([a, b], Stroke::new(1.5, c)));
+                    lines.add(to_screen(m.from), to_screen(m.to), Stroke::new(1.5, c), false);
                 }
-                MoveKind::Travel if !many => shapes.push(egui::Shape::line_segment([a, b], Stroke::new(0.6, Color32::from_rgb(0x70, 0x90, 0xc0).gamma_multiply(0.8)))),
-                MoveKind::Travel => {}
+                MoveKind::Travel => lines.add(to_screen(m.from), to_screen(m.to), travel, false),
             }
         }
-        v.painter.extend(shapes);
+        lines.paint(&v.painter);
     }
 
     /// The camera view in the work area, in place of the drawing.
@@ -373,6 +376,9 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     let mut pen_at = None;
     let marks: Vec<crate::pens::Pen> = layers.iter().map(|l| crate::pens_ui::pen_of_layer(l, pens)).collect();
     let mut shapes = vec![];
+    // Moves that follow each other are one line, what is too small or out of sight is left out (`base_ui::lines`).
+    let mut lines = base_ui::lines::Lines::new(painter.clip_rect());
+    let travel = Stroke::new(1.0, Color32::from_rgb(0x60, 0x90, 0xd0));
     // A drag knife: the moves are the path of its axis (grey); what the tip cuts is drawn for every cut done so far.
     let knife = !prog.knife_tips.is_empty();
     let mut cuts_done = 0usize;
@@ -389,29 +395,35 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
         match m.kind {
             MoveKind::Draw if knife => {
                 cutting = true;
-                painter.line_segment([at(m.from), at(to)], Stroke::new(1.0, Color32::from_gray(0xa0)));
+                lines.add(at(m.from), at(to), Stroke::new(1.0, Color32::from_gray(0xa0)), false);
             }
             MoveKind::Travel if knife && cutting => {
                 cutting = false;
                 cuts_done += 1;
                 if view.show_travel {
-                    painter.extend(egui::Shape::dashed_line(&[at(m.from), at(to)], Stroke::new(1.0, Color32::from_rgb(0x60, 0x90, 0xd0)), 5.0, 4.0));
+                    lines.add(at(m.from), at(to), travel, true);
                 }
             }
             MoveKind::Draw => {
                 if let Some(pen) = marks.get(m.layer) {
                     let dir = (m.to[1] - m.from[1]).atan2(m.to[0] - m.from[0]);
-                    crate::pens_ui::mark_shapes(at(m.from), at(to), dir, pen, scale, &mut shapes);
+                    let t = (pen.thickness(dir) as f32 * scale).max(1.0);
+                    let (a, b) = (at(m.from), at(to));
+                    // A plain stroke of a thin pen goes into the lines; dots and the round ends of a thick pen are drawn as marks.
+                    if (b - a).length() >= 0.3 && !(pen.cap == crate::pens::Cap::Round && t > 2.0) {
+                        lines.add(a, b, Stroke::new(t, pen.color32()), false);
+                    } else {
+                        crate::pens_ui::mark_shapes(a, b, dir, pen, scale, &mut shapes);
+                    }
                 } else {
-                    painter.line_segment([at(m.from), at(to)], Stroke::new(1.0, Color32::BLACK));
+                    lines.add(at(m.from), at(to), Stroke::new(1.0, Color32::BLACK), false);
                 }
             }
-            MoveKind::Travel if view.show_travel => {
-                painter.extend(egui::Shape::dashed_line(&[at(m.from), at(to)], Stroke::new(1.0, Color32::from_rgb(0x60, 0x90, 0xd0)), 5.0, 4.0));
-            }
+            MoveKind::Travel if view.show_travel => lines.add(at(m.from), at(to), travel, true),
             MoveKind::Travel => {}
         }
     }
+    lines.paint(&painter);
     painter.extend(shapes);
     if knife {
         if cutting || view.progress >= 0.999 {
