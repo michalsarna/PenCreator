@@ -2,7 +2,7 @@
 
 Each release gets the next version number. Newest first.
 
-## v0.9.2 (not released yet)
+## v0.9.2
 
 * **Faster drawing of the toolpaths** (the preview and the Toolpaths button): moves that follow each other are one line, straight runs one piece, points closer than half a pixel and what is out of sight are left out.
 * **The toolpaths over the work area are not made again while a shape is being dragged**: the old ones stay until the drag ends.
