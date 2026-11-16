@@ -86,6 +86,8 @@ Most entries work on the selected shapes; the same commands are in the right-cli
 | **Trim by shape…**, **Remove duplicates**, **Break apart**, **Simplify…** | | Cuts lines by a shape, removes doubles, splits a shape into its outlines, takes away needless points. |
 | **Serial text…**, **Barcode / QR code…**, **Nest shapes…**, **Measure…** | | Numbered texts, codes, packing shapes on an area, measuring. |
 | **Adjust image…**, **Trace image…** | | Changes the selected picture, or turns it into outlines. Grey unless a picture is selected. |
+| **Edit image…** | | The photo editor of the selected picture: brush, eraser, clone stamp, fill, in greys. |
+| **Convert to image…** | | The selected shapes (no pictures) as one picture, with its resolution and size. |
 | **Style trace…** | | Draws the selected picture again as lines in one of 21 styles. See [Style Trace](Style-Trace). |
 | **Geometric polygons…** | | The selected picture as geometric (low poly) polygons with a gap between them and round the outline: the Style trace window on that style. See [Style Trace](Style-Trace). |
 | **Add as no-go zone** | | Every unlocked selected shape becomes a no-go zone of the device (a circle when it is round, otherwise the rectangle round it) and leaves the drawing. Also in the right-click menu. |
