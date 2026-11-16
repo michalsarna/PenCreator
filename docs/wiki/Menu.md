@@ -86,6 +86,8 @@ Większość pozycji działa na zaznaczonych kształtach; te same polecenia są 
 | **Przytnij kształtem…**, **Usuń duplikaty**, **Rozdziel**, **Uprość…** | | Przycina linie kształtem, usuwa podwójne, dzieli kształt na kontury, usuwa zbędne punkty. |
 | **Tekst seryjny…**, **Kod kreskowy / QR…**, **Rozmieść kształty (nesting)…**, **Pomiar…** | | Numerowane teksty, kody, upakowanie kształtów na obszarze, pomiar. |
 | **Dostosuj obraz…**, **Wektoryzacja obrazu…** | | Zmienia zaznaczony obraz albo zamienia go na kontury. Szare, gdy nie zaznaczono obrazu. |
+| **Edytuj obraz…** | | Edytor zdjęć zaznaczonego obrazu: pędzel, gumka, klonowanie, wypełnienie, w szarościach. |
+| **Zamień na obraz…** | | Zaznaczone kształty (bez obrazów) jako jeden obraz, z jego rozdzielczością i rozmiarem. |
 | **Obrysuj w stylu…** | | Rysuje zaznaczony obraz na nowo liniami w jednym z 21 stylów. Zobacz [Obrysuj w stylu](Obrys-w-stylu). |
 | **Wielokąty geometryczne…** | | Zaznaczony obraz jako geometryczne wielokąty (low poly) z odstępem między nimi i wokół obrysu: okno obrysu w stylu na tym stylu. Zobacz [Obrysuj w stylu](Obrys-w-stylu). |
 | **Dodaj jako strefę zakazaną** (Add as no-go zone) | | Każdy zaznaczony, niezablokowany kształt staje się strefą zakazaną urządzenia (okręgiem, gdy jest okrągły, w przeciwnym razie prostokątem wokół niego) i znika z rysunku. Jest też w menu prawego przycisku. |
