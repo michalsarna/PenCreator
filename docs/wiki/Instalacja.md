@@ -11,6 +11,8 @@ Każde wydanie na [stronie Releases](https://github.com/michalsarna/PenCreator/r
 | macOS, Intel | `pencreator-vX.Y.Z-macos-x86_64.dmg` | – |
 | Debian / Ubuntu i pochodne, x86_64 | `pencreator-vX.Y.Z-linux-amd64.deb` | `pencreator-vX.Y.Z-linux-x86_64.tar.gz` |
 | Debian / Ubuntu i pochodne, ARM64 | `pencreator-vX.Y.Z-linux-arm64.deb` | `pencreator-vX.Y.Z-linux-arm64.tar.gz` |
+| Fedora, openSUSE, x86_64 | `pencreator-vX.Y.Z-linux-x86_64.rpm` | `pencreator-vX.Y.Z-linux-x86_64.tar.gz` |
+| Fedora, openSUSE, ARM64 | `pencreator-vX.Y.Z-linux-aarch64.rpm` | `pencreator-vX.Y.Z-linux-arm64.tar.gz` |
 | Inny Linux | – | `.tar.gz` powyżej |
 
 ## Menedżery pakietów
@@ -36,7 +38,7 @@ xattr -dr com.apple.quarantine /Applications/PenCreator.app
 ```
 
 ## Linux
-Zainstaluj `.deb` (`sudo apt install ./pencreator-vX.Y.Z-linux-amd64.deb`) albo rozpakuj `.tar.gz` i uruchom `pencreator`. Program potrzebuje zwykłych bibliotek X11 / Wayland i OpenGL (`libxkbcommon-x11-0`, `libgl1`); pakiet `.deb` je wymienia.
+Zainstaluj `.deb` (`sudo apt install ./pencreator-vX.Y.Z-linux-amd64.deb`), na Fedorze lub openSUSE `.rpm` (`sudo dnf install ./pencreator-vX.Y.Z-linux-x86_64.rpm`, openSUSE: `sudo zypper install ./...`; wymaga nowego glibc, więc nie RHEL / Alma / Rocky 9), albo rozpakuj `.tar.gz` i uruchom `pencreator`. Program potrzebuje zwykłych bibliotek X11 / Wayland i OpenGL (`libxkbcommon-x11-0`, `libgl1`); pakiety `.deb` i `.rpm` je wymieniają.
 
 ## Ze źródeł
 ```sh
