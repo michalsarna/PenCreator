@@ -12,6 +12,7 @@ each system and `SHA256SUMS.txt` to verify them.
 | Debian / Ubuntu, ARM64 | `pencreator-vX.Y.Z-linux-arm64.deb` | `pencreator-vX.Y.Z-linux-arm64.tar.gz` |
 | Fedora / openSUSE, x86_64 | `pencreator-vX.Y.Z-linux-x86_64.rpm` | `pencreator-vX.Y.Z-linux-x86_64.tar.gz` |
 | Fedora / openSUSE, ARM64 | `pencreator-vX.Y.Z-linux-aarch64.rpm` | `pencreator-vX.Y.Z-linux-arm64.tar.gz` |
+| FreeBSD, x86_64 | – | `pencreator-vX.Y.Z-freebsd-x86_64.tar.gz` (needs `pkg install libudev-devd libxkbcommon mesa-libs ffmpeg`) |
 
 Details for each system (SmartScreen, Gatekeeper, libraries on Linux) are on the wiki page
 [Installation](https://github.com/michalsarna/PenCreator/wiki/Installation).
