@@ -14,6 +14,7 @@ Every release on the [Releases page](https://github.com/michalsarna/PenCreator/r
 | Fedora, openSUSE, x86_64 | `pencreator-vX.Y.Z-linux-x86_64.rpm` | `pencreator-vX.Y.Z-linux-x86_64.tar.gz` |
 | Fedora, openSUSE, ARM64 | `pencreator-vX.Y.Z-linux-aarch64.rpm` | `pencreator-vX.Y.Z-linux-arm64.tar.gz` |
 | Other Linux | – | the `.tar.gz` above |
+| FreeBSD, x86_64 | – | `pencreator-vX.Y.Z-freebsd-x86_64.tar.gz` |
 
 ## Package managers
 
@@ -39,6 +40,15 @@ xattr -dr com.apple.quarantine /Applications/PenCreator.app
 
 ## Linux
 Install the `.deb` (`sudo apt install ./pencreator-vX.Y.Z-linux-amd64.deb`), on Fedora or openSUSE the `.rpm` (`sudo dnf install ./pencreator-vX.Y.Z-linux-x86_64.rpm`, openSUSE: `sudo zypper install ./...`; it needs a recent glibc, so not RHEL / Alma / Rocky 9), or unpack the `.tar.gz` and run `pencreator`. The program needs the usual X11 / Wayland and OpenGL libraries (`libxkbcommon-x11-0`, `libgl1`); the `.deb` and the `.rpm` list them.
+
+## FreeBSD
+Unpack `pencreator-vX.Y.Z-freebsd-x86_64.tar.gz` and run `pencreator`. It needs a few packages and an X11 or Wayland desktop (as root):
+
+```sh
+pkg install libudev-devd libxkbcommon mesa-libs ffmpeg
+```
+
+`ffmpeg` is for network (IP) cameras; USB cameras do not work on FreeBSD yet (the camera says so). The plotter on USB is `/dev/cuaU0`: add yourself to the group `dialer` (`pw groupmod dialer -m $USER`, then log in again). Built and its tests run on FreeBSD 15.0 (x86_64 only); not yet tried on a FreeBSD desktop. To build it from source there: `pkg install rust pkgconf libudev-devd evdev-proto` first.
 
 ## From source
 ```sh
