@@ -128,6 +128,7 @@ pub fn act_icon(a: Act) -> Option<&'static str> {
         Act::New => Some("file-plus"),
         Act::Open => Some("folder-open"),
         Act::Save | Act::SaveAs => Some("save"),
+        Act::ProjectInfo => Some("info"),
         Act::ImportSvg | Act::ImportAi | Act::ImportLightburn | Act::ImportDxf | Act::ImportUgsd | Act::ImportPlugin => Some("file-input"),
         Act::ViewGcode => Some("eye"),
         Act::Plugins => Some("package-open"),
@@ -387,6 +388,8 @@ struct App {
     check_updates: bool,
     update: base_ui::dialogs::UpdateState,
     show_program_options: bool,
+    /// File → Project information.
+    show_project_info: bool,
     show_about: bool,
     show_guide: bool,
     guide_filter: String,
@@ -423,6 +426,8 @@ fn is_import(p: &std::path::Path) -> bool {
 
 impl App {
     fn new(cc: &eframe::CreationContext<'_>) -> App {
+        // The name recorded in the projects that are saved (Program options), shared by all the programs.
+        base_ui::authorship_ui::init(&data_paths().base);
         let mut app = App::build(&cc.egui_ctx, cc.storage, cfg!(target_os = "macos"));
         if app.check_updates {
             app.update.start(&cc.egui_ctx, &update_glue::CONFIG, false);
@@ -563,6 +568,7 @@ impl App {
             web_job: None,
             update: Default::default(),
             show_program_options: false,
+            show_project_info: false,
             show_about: false,
             show_guide: false,
             guide_filter: String::new(),
@@ -775,6 +781,7 @@ impl App {
     fn to_project(&self) -> Project {
         let mut p = Project::new(self.scene.clone());
         p.description = self.description.clone();
+        p.authorship = self.kept.authorship.clone();
         p.set_section(section::SECTION, &section::PenSection { piece: self.piece, ..section::PenSection::new(&self.layers, &self.device, &self.pens) });
         p.restore_sections(&self.kept.other_sections(section::SECTION));
         p.restore_extra(self.kept.extra());
@@ -790,6 +797,8 @@ impl App {
         };
         let Some(path) = path else { return };
         let name = path.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+        // Who saves it, and when: kept with the project for the next save too.
+        base_ui::authorship_ui::stamp(&mut self.kept.authorship, "PenCreator", VERSION, false);
         match std::fs::write(&path, self.to_project().to_json()) {
             Ok(()) => {
                 self.status = format!("Saved {name}");
@@ -1266,6 +1275,10 @@ impl App {
         self.update.tick(ctx, &update_glue::CONFIG);
         base_ui::alert_ui::window(ctx, &mut self.machine);
         self.program_options_window(ctx);
+        if self.show_project_info {
+            let info = base_ui::authorship_ui::Info { path: self.path.as_deref(), authorship: &self.kept.authorship };
+            base_ui::authorship_ui::window(ctx, &mut self.show_project_info, &info);
+        }
         self.setup_window(ctx);
         self.sides_save_window(ctx);
         let about = AboutInfo {
@@ -1577,7 +1590,7 @@ impl MenuHost for App {
             Act::ToggleOverlay => self.ed.background.is_some(),
             Act::ToggleZones => !self.device.zones.is_empty(),
             Act::PreviewGcode | Act::LayerPresets => self.screen == Screen::Editor,
-            Act::Save | Act::SaveAs | Act::Preview | Act::TogglePreview | Act::ExportGcode | Act::ExportSvg | Act::ExportCam => self.screen == Screen::Editor,
+            Act::Save | Act::SaveAs | Act::ProjectInfo | Act::Preview | Act::TogglePreview | Act::ExportGcode | Act::ExportSvg | Act::ExportCam => self.screen == Screen::Editor,
             _ => true,
         }
     }
@@ -1615,6 +1628,7 @@ impl MenuHost for App {
             Act::Open => self.open_dialog(),
             Act::Save => self.save(false),
             Act::SaveAs => self.save(true),
+            Act::ProjectInfo => self.show_project_info = true,
             Act::ImportLightburn => self.import_lightburn_dialog(),
             Act::ImportSvg => self.import_drawing_dialog("SVG", &["svg"]),
             Act::ImportAi => self.import_drawing_dialog("Adobe Illustrator / PDF / EPS / VectorCraft", &["ai", "pdf", "eps", "vectorcraft"]),
@@ -2069,6 +2083,32 @@ mod tests {
         std::fs::write(&svg, SVG).unwrap();
         a.open(svg);
         assert!(a.path.is_none());
+        std::fs::remove_dir_all(dir).ok();
+    }
+
+    /// A project made by someone else gets the person saving it as a contributor, once, with this program and its version.
+    #[test]
+    fn saving_a_project_of_someone_else_adds_a_contributor_once() {
+        use base_core::authorship::Signer;
+        let _data = DATA.lock().unwrap_or_else(|e| e.into_inner());
+        let dir = std::env::temp_dir().join(format!("pencreator-authorship-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut p = Project::new(read_scene(SVG).unwrap());
+        p.authorship.stamp(Signer { name: "Anna", program: "LightCreator", version: "v0.9.9" }, 1_795_000_000, false);
+        let file = dir.join("box.cre");
+        std::fs::write(&file, p.to_json()).unwrap();
+        base_ui::authorship_ui::init(&dir);
+        base_ui::authorship_ui::set_name("Jan").unwrap();
+        let mut a = app();
+        a.open(file.clone());
+        assert!(a.act_enabled(Act::ProjectInfo));
+        a.save(false);
+        a.save(false);
+        let back = Project::from_json(&std::fs::read_to_string(&file).unwrap()).unwrap().authorship;
+        assert_eq!(back.creator.unwrap().name, "Anna");
+        assert_eq!(back.contributors.len(), 1);
+        assert_eq!((back.contributors[0].name.as_str(), back.contributors[0].program.as_str(), back.contributors[0].version.as_str()), ("Jan", "PenCreator", VERSION));
+        assert_eq!(back.edits.len(), 3, "the edit of Anna and the two saves");
         std::fs::remove_dir_all(dir).ok();
     }
 

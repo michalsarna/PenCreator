@@ -18,6 +18,7 @@ Pasek menu ma dziewięć menu, w tej kolejności: **Plik · Edycja · Wstawianie
 | **Otwórz ostatnie** | | Ostatnie 10 plików; **Wyczyść listę** opróżnia listę. |
 | **Zapisz** | Ctrl+S | Zapisuje projekt jako `.cre`. Rysunek, który nie ma jeszcze pliku projektu (nowy albo otwarty z SVG lub PDF), najpierw pyta o nazwę. |
 | **Zapisz jako…** | Ctrl+Shift+S | Zapisuje projekt pod nową nazwą. |
+| **Informacje o projekcie…** | | Plik (nazwa, folder, rozmiar, czas utworzenia i zmiany), czas utworzenia projektu, twórca, współtwórcy i edycje. Każdy zapis zapamiętuje imię ustawione w **Ustawienia → Opcje programu → Twoje imię i nazwisko** (takie samo w każdym programie), czas oraz program z wersją. |
 | **Importuj → Importuj obraz…** | | Obraz (PNG, JPG, BMP, GIF, WebP) przez okno importu. Zobacz [Narzędzia projektowe](Narzedzia-projektowe). |
 | **Importuj → Importuj SVG…** | Ctrl+I | Ścieżki pliku SVG są dodawane do otwartego rysunku, każda na warstwę o najbliższym kolorze, a jego obrazy na aktywną warstwę. **Otwórz…** zrobiłoby z pliku nową kartę. |
 | **Importuj → Importuj Adobe Illustrator / PDF / EPS / VectorCraft…** | | To samo dla pliku PDF, zgodnego z PDF `.ai`, `.ai` starego rodzaju w PostScripcie, pliku EPS albo rysunku VectorCrafta (`.vectorcraft`, razem z obrazami). Plik z warstwami Illustratora pyta, czy układać według koloru, czy według tych warstw. |
