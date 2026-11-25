@@ -1,0 +1,285 @@
+0|Sloj je olovka: kada sljedeći sloj ima drugu olovku, G-code staje da biste je zamijenili.
+1|Naziv porta ili USB ID proizvođača i proizvoda (VID:PID, heksadecimalno): koristi se port koji ima te ID-ove.
+2|Drugi skup linija popune poprijeko prvog
+3|Uobičajena veličina lista…
+4|Prekini posao koji radi
+5|O programu
+6|Dodaj kameru
+7|Dodaj uređaj
+8|Dodaj uređaj
+9|Dodaj uređaj…
+10|Adresa
+11|Nakon povezivanja
+12|Alarm {}
+13|Raspored
+14|Nazad lijevo
+15|Nazad desno
+16|Nazad na prvi pogled. Dvoklik na sliku radi isto.
+17|Brzina prijenosa
+18|Veži za ovaj port
+19|Vezani USB uređaj
+20|Kamera
+21|Naziv kamere
+22|Broj kamere
+23|Kamera ovog računara
+24|Rotacija kamere
+25|Pogled kamere
+26|Kamere
+27|Provjeri program
+28|Prvo se provjerava program…
+29|Provjera programa…
+30|Prvo odaberite port ili host u postavkama uređaja.
+31|Odaberite mašinu s kojom ćete raditi.
+32|Očisti alarm
+33|Čišćenje alarma preskače početni položaj: koristite samo kada se zna da glava stoji na sigurnom mjestu.
+34|Zatvoreni oblici se popunjavaju paralelnim linijama; rupe ostaju prazne.
+35|Potvrdi brisanje
+36|Poveži
+37|Automatski se ponovo poveži
+38|Povezano
+39|Veza
+40|Tip veze
+41|Konzola
+42|Upravljanje
+43|Kopirano u {}
+44|Nije moguće sačuvati: {}
+45|Brojanje puni bafer kontrolera i brzo je. Jednostavno šalje jedan red i čeka njegov ok: sporo, ali za firmver koji pogrešno odgovara.
+46|Ukrštene linije
+47|Obriši ovu kameru
+48|Uređaj
+49|Postavke uređaja
+50|Postavke uređaja…
+51|Dijagnostika i statistika…
+52|Prekini vezu
+53|Crtanje
+54|Puta nacrtano
+55|Crta se: ulazi u crtež i G-code
+56|Uređivanje
+57|Uredi…
+58|Greška {} u redu {}: {}
+59|Greška {}: {}
+60|Izvezi G-code…
+61|Izvezi…
+62|Popuna i obris
+63|Ugao linija popune
+64|Razmak linija popune
+65|Popuni linijama
+66|Postavke firmvera ($$)…
+67|Okvir
+68|Uokviravanje radnog prostora
+69|Od reda…
+70|Naprijed lijevo
+71|Naprijed desno
+72|Općenito
+73|Obiđi okvir gdje će se raditi
+74|Pomoć
+75|Početni položaj
+76|Dovedi mašinu u početni položaj
+77|Host
+78|Koliko puta se svaka linija crta: za olovku koja je preslaba
+79|Nemam uređaj
+80|Uvezi LightBurn projekat…
+81|Uvezen uređaj {}
+82|Uvezi…
+83|Položeno
+84|Slojevi
+85|Linije: {} m, pokreti s podignutom olovkom: {} m, podizanja olovke: {}, oko {} min
+86|Nula mašine (0,0)
+87|Pokreti s podignutom olovkom
+88|Novo
+89|Još nema uređaja. Dodajte jedan ili radite bez mašine.
+90|Nema porta
+91|Nije http ili https adresa.
+92|Bilješke
+93|Bilješke o ovoj mašini
+94|Ništa nije odabrano
+95|Otvorite crtež ili započnite prazan dizajn.
+96|Otvori vezu prema kontroleru postavljenu u postavkama uređaja
+97|Otvori prozor pregleda
+98|Otvori…
+99|Obris
+100|Papir
+101|Olovka
+102|Olovka dolje
+103|Olovka gore
+104|Širina olovke
+105|Crtež posla…
+106|Ploter
+107|Port
+108|Port ili USB ID
+109|Uspravno
+110|Pregled
+111|Pregled…
+112|Svojstva
+113|Stavi odabrane oblike na ovaj sloj
+114|Učitaj uređaj iz datoteke
+115|Spremno
+116|Ponovo poveži
+117|Osvježi
+118|Zapamti USB ID-ove odabranog porta: port se ponovo nalazi po njima kada mu se promijeni naziv.
+119|Resetuj pogled
+120|Nastavi
+121|STOP
+122|Sačuvaj
+123|Sačuvaj G-code
+124|Sačuvaj kao…
+125|Sačuvaj ovaj uređaj u datoteku
+126|Uređaj sačuvan u {}
+127|Sačuvano {}
+128|Servo (M3 S…)
+129|Postavke
+130|Oblici na ovom sloju
+131|Prikaži sliku kamere uživo ove mašine
+132|Prikaži putanje alata na radnom prostoru
+133|Prikazano na kartici Kamera
+134|Prikazano u radnom prostoru
+135|Brzina
+136|Brzina pokreta s podignutom olovkom
+137|Start
+138|Počni od
+139|Počni posao od reda programa
+140|Počinje posao: {} redova, ~{}
+141|Šalji posao povezanoj mašini
+142|Slanje
+143|Uključeno
+144|TCP port
+145|G-code oko posla: {}
+146|Provjera nije našla ništa pogrešno.
+147|Provjera nije našla ništa. Posao radi.
+148|Provjera je našla problema: {}, prvi u redu {}. Posao nije pokrenut.
+149|Uređaj ovog projekta
+150|Uređaj je dodan.
+151|Uređaj je sačuvan.
+152|Prvo popuna, zatim obris preko nje, da ivica bude čista.
+153|Posao je završen, s {} problema (pogledajte Konzolu).
+154|Posao je završen.
+155|Posao je pauziran: {}
+156|Posao radi.
+157|Olovka prati linije oblika. Rade i otvorene linije.
+158|Olovka se podiže za
+159|Radni prostor je list do kojeg olovka doseže. Nula mašine je ugao gdje olovka počinje.
+160|Nema šta da se crta: stavite oblike na uključene slojeve.
+161|Nema šta da se uokviri: stavite oblike na uključene slojeve.
+162|Još nema šta da se prikaže: nacrtajte oblike i stavite ih na uključene slojeve.
+163|Ova verzija ne može koristiti kamere računara.
+164|Ovaj uređaj nema uključenu kameru. Dodajte je u postavkama uređaja.
+165|Ovaj uređaj nije na listi: došao je s projektom
+166|Ovo je zamjena za uređaj (Dummy): zadani radni prostor i brzine.
+167|Vrijeme {} / {}
+168|Previše uređaja
+169|Putanje alata
+170|Odveži
+171|Jedinice
+172|Prikaz
+173|Opcije prikaza…
+174|Sačekaj nakon pokreta olovke
+175|Čeka se slika…
+176|Kada veza sama pukne, pokušavaj ponovo svakih nekoliko sekundi dok ne pritisnete Prekini vezu.
+177|Sa Z osom olovka ide na visine iznad; sa servom G-code uključuje izlaz vretena sa S vrijednošću (M3 S…).
+178|Radite na projektu bez mašine: jednostavan uređaj po imenu Dummy, sa zadanim radnim prostorom i brzinama
+179|Z osa
+180|npr. Moj ploter s olovkom
+181|ništa
+182|dio crteža leži van radnog prostora
+183|popuna ima previše linija: razmak je premalen, pa je dio popune izostavljen
+184|ovaj projekat je napravljen za drugu mašinu: {}
+185|Slika na slojevima: {}, ne mogu se nacrtati: prvo ih trasirajte u linije
+186|Uvezi UGS dizajn…
+187|Slika
+188|Slika na sloju crta se linijama: diterovani redovi, tačke ili ukrštena šrafura po tonu.
+189|Diterovani redovi
+190|Tačke
+191|Šrafura po tonu
+192|Svaki red se crta kao linije gdje je diterovana slika tamna. Metod diterovanja se bira ispod.
+193|Tačka za svaku tamnu ćeliju diterovane slike.
+194|Ukrštena šrafura: što je slika tamnija, to više smjerova linija.
+195|Metod slike
+196|Diterovanje
+197|Biblioteka olovaka
+198|Biblioteka olovaka…
+199|Gotove olovke
+200|Moje olovke
+201|Ovdje još nema ničega
+202|Nova olovka
+203|Kopija među vašim olovkama
+204|Učitaj olovke iz datoteke
+205|Datoteka je prevelika
+206|olovaka dodano
+207|Izostavljeno
+208|Datoteka se ne može koristiti
+209|Sačuvaj svoje olovke u datoteku
+210|Sačuvano
+211|Nije moguće sačuvati
+212|Izvezi ovu olovku…
+213|Odaberi olovku
+214|Gotova olovka se ne može mijenjati. Napravite kopiju da biste je promijenili.
+215|Vrsta
+216|Širina traga
+217|Visina traga
+218|Okret vrha
+219|Krajevi linije
+220|Zaobljeni krajevi
+221|Ravni krajevi
+222|Boja mastila
+223|Neprozirnost
+224|Nije odabrana olovka
+225|Grafitna olovka
+226|Nalivpero (pero)
+227|Fajnlajner
+228|Flomaster
+229|Marker za isticanje
+230|Olovka-četkica
+231|Uklopi u radni prostor
+232|Uklopi u elemente
+233|Zumiraj da se vidi cijeli list
+234|Zumiraj da sve linije ispune prozor
+235|Podigni olovku
+236|Spusti olovku
+237|Jedan po jedan element
+238|Svaki element (grupa ili oblik koji nije ni u jednoj) crta se u potpunosti, svi njegovi slojevi i svi prolazi, prije sljedećeg; najbliži element ide prvi. Isključeno: sloj po sloj, prolaz po prolaz.
+239|Samo odabir
+240|Crtaju se samo oblici odabrani na radnom prostoru kada se G-code sačuva ili posao pokrene.
+241|Nema šta da se crta: ništa nije odabrano
+242|Mijenjaj olovku na stalnom mjestu
+243|Kada sljedeći sloj treba drugu olovku, olovka se podiže, ploter ide na ovo mjesto (u koordinatama radnog prostora, može biti i van njega), izvršava G-code ispod i tu staje (M0) da se olovka zamijeni, rukom ili mehanizmom. Isključeno: posao staje gdje jeste.
+244|Stani tamo (M0)
+245|G-code na mjestu
+246|Redovi poslani kad ploter stigne, prije zaustavljanja: za mehanizam koji sam mijenja olovku. Kad je zaustavljanje isključeno, posao se nastavlja odmah nakon njih.
+247|Uvezi DXF…
+248|Umetni
+249|Pogled ima najviše tri okna
+250|Prikaži pregled ovdje
+251|Nijedna G-code datoteka nije otvorena: Datoteka, Pogledaj G-code datoteku…
+252|Pregled G-code
+253|Prikaži G-code bez čuvanja
+254|pregled
+255|G-code se prikazuje, ništa se ne čuva
+256|Vlastiti G-code uređaja: {}
+257|I u G-code zamjene olovke:
+258|Vlastiti G-code dodaje se svakom programu, jedna komanda po redu (najviše 20 redova).
+259|Učitaj predložak
+260|Olovka iz predloška nije u biblioteci: sloj nema olovku
+261|Zum
+262|Nije adresa kamere (http, https, rtsp, udp, rtp ili rtmp).
+263|O programu PenCreator
+264|LinuxCNC (datoteka)
+265|LinuxCNC sam pokreće program: Počni čuva G-code datoteku za njega. Nije isprobano na pravoj mašini.
+266|Vlastiti G-code
+267|Vlastiti G-code: redovi iznad upisuju se svaki put kad se olovka podigne ili spusti (na primjer M3 S1000 i M5 za solenoid, ili M280 P0 S… za servo na Marlinu).
+268|Alat je vlačeći nož
+269|Sječivo koje se slobodno okreće, vrh mu vuče iza ose: obrisi se sijeku s nadoknađenim pomakom, prvo rupe, i ništa se ne popunjava
+270|Sječivo
+271|Pomak {} mm
+272|Pomak vrha
+273|Koliko je vrh sječiva iza svoje ose: daje ga proizvođač sječiva
+274|Okreni na uglovima oštrijim od
+275|Sijeci i preko početka
+276|Zatvoreni obris siječe se ovoliko preko početka, da se zatvori
+277|Rezač sam nadoknađuje pomak
+278|Većina rezača za vinil to radi: obrisi se tada sijeku onako kako su nacrtani
+279|Sječivo se spušta i podiže kao olovka (postavke iznad): dolje je dubina reza. Još nije isprobano na pravom rezaču: prvi rez probajte na višku materijala.
+280|vlačeći nož siječe samo obrise: popune i slike slojeva su izostavljene
+281|Obrisa: {}, premali su za pomak noža i izlaze zaobljeni
+282|Pokret kroz zrak ne može zaobići zabranjenu zonu „{}” (počinje ili se završava u njoj)
+283|Linija se crta kroz zabranjenu zonu „{}”
+284|Crtež je viši od obima radnog predmeta ({} mm)

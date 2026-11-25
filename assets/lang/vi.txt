@@ -1,0 +1,285 @@
+0|Mỗi lớp là một cây bút: khi lớp tiếp theo dùng bút khác, G-code dừng lại để bạn thay bút.
+1|Tên cổng, hoặc mã nhà sản xuất và mã sản phẩm USB (VID:PID, hệ thập lục phân): cổng có các mã này sẽ được dùng.
+2|Bộ đường tô thứ hai cắt ngang bộ thứ nhất
+3|Một khổ giấy thông dụng…
+4|Hủy công việc đang chạy
+5|Giới thiệu
+6|Thêm camera
+7|Thêm một thiết bị
+8|Thêm thiết bị
+9|Thêm thiết bị…
+10|Địa chỉ
+11|Sau khi kết nối
+12|Báo động {}
+13|Sắp xếp
+14|Sau trái
+15|Sau phải
+16|Trở về góc nhìn ban đầu. Nhấp đúp vào hình cũng vậy.
+17|Tốc độ baud
+18|Gắn với cổng này
+19|Thiết bị USB đã gắn
+20|Camera
+21|Tên camera
+22|Số camera
+23|Camera của máy tính này
+24|Xoay camera
+25|Chế độ xem camera
+26|Camera
+27|Kiểm tra chương trình
+28|Đang kiểm tra chương trình trước…
+29|Đang kiểm tra chương trình…
+30|Hãy chọn cổng hoặc máy chủ trong cài đặt thiết bị trước.
+31|Chọn máy bạn sẽ làm việc cùng.
+32|Xóa báo động
+33|Xóa báo động sẽ bỏ qua về gốc: chỉ dùng khi biết chắc đầu đang ở chỗ an toàn.
+34|Hình kín được tô bằng các đường song song; lỗ để trống.
+35|Xác nhận xóa
+36|Kết nối
+37|Tự động kết nối lại
+38|Đã kết nối
+39|Kết nối
+40|Kiểu kết nối
+41|Bảng điều khiển
+42|Điều khiển
+43|Đã sao chép vào {}
+44|Không thể lưu: {}
+45|Kiểu đếm lấp đầy bộ đệm của bộ điều khiển và nhanh. Kiểu đơn giản gửi một dòng và chờ ok: chậm, nhưng dành cho firmware trả lời sai.
+46|Đường đan chéo
+47|Xóa camera này
+48|Thiết bị
+49|Cài đặt thiết bị
+50|Cài đặt thiết bị…
+51|Chẩn đoán và thống kê…
+52|Ngắt kết nối
+53|Vẽ
+54|Số lần vẽ
+55|Được vẽ: đưa vào bản vẽ và G-code
+56|Chỉnh sửa
+57|Sửa…
+58|Lỗi {} ở dòng {}: {}
+59|Lỗi {}: {}
+60|Xuất G-code…
+61|Xuất…
+62|Tô và đường viền
+63|Góc đường tô
+64|Khoảng cách đường tô
+65|Tô bằng đường
+66|Cài đặt firmware ($$)…
+67|Khung
+68|Đang chạy khung vùng làm việc
+69|Từ dòng…
+70|Trước trái
+71|Trước phải
+72|Chung
+73|Đi vòng quanh khung nơi sẽ làm việc
+74|Trợ giúp
+75|Về gốc
+76|Về gốc máy
+77|Máy chủ
+78|Mỗi đường được vẽ bao nhiêu lần: cho bút quá nhạt
+79|Tôi không có thiết bị
+80|Nhập dự án LightBurn…
+81|Đã nhập thiết bị {}
+82|Nhập…
+83|Ngang
+84|Lớp
+85|Đường: {} m, di chuyển nhấc bút: {} m, số lần nhấc bút: {}, khoảng {} phút
+86|Điểm không của máy (0,0)
+87|Di chuyển khi nhấc bút
+88|Mới
+89|Chưa có thiết bị. Hãy thêm một cái, hoặc làm việc không có máy.
+90|Không có cổng
+91|Không phải địa chỉ http hoặc https.
+92|Ghi chú
+93|Ghi chú về máy này
+94|Chưa chọn gì
+95|Mở một bản vẽ hoặc bắt đầu một thiết kế trống.
+96|Mở liên kết đến bộ điều khiển đặt trong cài đặt thiết bị
+97|Mở cửa sổ xem trước
+98|Mở…
+99|Đường viền
+100|Giấy
+101|Bút
+102|Hạ bút
+103|Nhấc bút
+104|Độ rộng nét bút
+105|Bản vẽ của công việc…
+106|Máy vẽ
+107|Cổng
+108|Cổng hoặc mã USB
+109|Dọc
+110|Xem trước
+111|Xem trước…
+112|Thuộc tính
+113|Đưa các hình đã chọn vào lớp này
+114|Đọc thiết bị từ tệp
+115|Sẵn sàng
+116|Kết nối lại
+117|Làm mới
+118|Ghi nhớ mã USB của cổng đã chọn: khi tên cổng đổi, cổng sẽ được tìm lại bằng các mã này.
+119|Đặt lại góc nhìn
+120|Tiếp tục
+121|DỪNG
+122|Lưu
+123|Lưu G-code
+124|Lưu thành…
+125|Lưu thiết bị này ra tệp
+126|Đã lưu thiết bị vào {}
+127|Đã lưu {}
+128|Servo (M3 S…)
+129|Cài đặt
+130|Các hình trên lớp này
+131|Hiện hình camera trực tiếp của máy này
+132|Hiện đường chạy trên vùng làm việc
+133|Hiện trong thẻ Camera
+134|Hiển thị trong vùng làm việc
+135|Tốc độ
+136|Tốc độ di chuyển khi nhấc bút
+137|Start
+138|Bắt đầu từ
+139|Bắt đầu công việc tại một dòng của chương trình
+140|Bắt đầu công việc: {} dòng, ~{}
+141|Truyền công việc đến máy đã kết nối
+142|Đang truyền
+143|Đã bật
+144|Cổng TCP
+145|G-code quanh công việc: {}
+146|Kiểm tra không thấy lỗi nào.
+147|Kiểm tra không thấy gì. Công việc đang chạy.
+148|Kiểm tra thấy {} lỗi, lỗi đầu ở dòng {}. Công việc chưa được bắt đầu.
+149|Thiết bị của dự án này
+150|Đã thêm thiết bị.
+151|Đã lưu thiết bị.
+152|Tô trước, rồi vẽ đường viền lên trên, để mép sạch.
+153|Công việc đã xong, có {} lỗi (xem Bảng điều khiển).
+154|Công việc đã xong.
+155|Công việc tạm dừng: {}
+156|Công việc đang chạy.
+157|Bút đi theo các đường của hình. Đường hở cũng được.
+158|Bút được nhấc lên
+159|Vùng làm việc là tờ giấy bút có thể với tới. Điểm không của máy là góc nơi bút bắt đầu.
+160|Không có gì để vẽ: hãy đặt hình lên các lớp đang bật.
+161|Không có gì để chạy khung: hãy đặt hình lên các lớp đang bật.
+162|Chưa có gì để hiển thị: hãy vẽ hình và đặt chúng lên các lớp đang bật.
+163|Bản dựng này không thể dùng camera của máy tính.
+164|Thiết bị này không có camera nào đang bật. Hãy thêm trong cài đặt thiết bị.
+165|Thiết bị này không có trong danh sách: nó đi kèm dự án
+166|Đây là thiết bị thay thế (Dummy): vùng làm việc và tốc độ mặc định.
+167|Thời gian {} / {}
+168|Quá nhiều thiết bị
+169|Đường chạy
+170|Bỏ gắn
+171|Đơn vị
+172|Xem
+173|Tùy chọn hiển thị…
+174|Chờ sau khi bút di chuyển
+175|Đang chờ hình…
+176|Khi kết nối tự rớt, thử lại mỗi vài giây cho đến khi bạn nhấn Ngắt kết nối.
+177|Với trục Z, bút đi đến các độ cao ở trên; với servo, G-code bật đầu ra trục chính với giá trị S (M3 S…).
+178|Làm dự án không có máy: một thiết bị đơn giản tên Dummy, với vùng làm việc và tốc độ mặc định
+179|Trục Z
+180|vd. Máy vẽ bút của tôi
+181|không có
+182|một phần bản vẽ nằm ngoài vùng làm việc
+183|phần tô có quá nhiều đường: khoảng cách giữa chúng quá nhỏ, nên một phần đã bị bỏ
+184|dự án này được làm cho máy khác: {}
+185|{} ảnh trên các lớp không thể vẽ: hãy dò chúng thành đường trước
+186|Nhập thiết kế UGS…
+187|Hình ảnh
+188|Ảnh trên lớp được vẽ bằng đường: các hàng dithering, chấm, hoặc gạch chéo theo tông.
+189|Hàng dithering
+190|Chấm
+191|Gạch theo tông
+192|Mỗi hàng được vẽ thành đường ở chỗ ảnh dithering tối. Phương pháp dithering chọn ở dưới.
+193|Một chấm cho mỗi ô tối của ảnh dithering.
+194|Gạch chéo: ảnh càng tối, càng nhiều hướng đường.
+195|Cách vẽ ảnh
+196|Dithering
+197|Thư viện bút
+198|Thư viện bút…
+199|Bút có sẵn
+200|Bút của tôi
+201|Chưa có gì ở đây
+202|Bút mới
+203|Một bản sao trong bút của bạn
+204|Đọc bút từ tệp
+205|Tệp quá lớn
+206|bút đã thêm
+207|Bị bỏ
+208|Không thể dùng tệp
+209|Lưu bút của bạn ra tệp
+210|Đã lưu
+211|Không thể lưu
+212|Xuất bút này…
+213|Chọn bút
+214|Không thể thay đổi bút có sẵn. Hãy tạo bản sao để thay đổi.
+215|Loại
+216|Độ rộng nét
+217|Độ cao nét
+218|Góc xoay của ngòi
+219|Đầu nét
+220|Đầu tròn
+221|Đầu phẳng
+222|Màu mực
+223|Độ mờ đục
+224|Chưa chọn bút
+225|Bút chì
+226|Bút máy (ngòi)
+227|Bút kim
+228|Bút dạ
+229|Bút dạ quang
+230|Bút lông
+231|Vừa với vùng làm việc
+232|Vừa với các phần tử
+233|Thu phóng để thấy cả tờ giấy
+234|Thu phóng để mọi đường lấp đầy cửa sổ
+235|Nhấc bút
+236|Hạ bút
+237|Từng phần tử một
+238|Mỗi phần tử (một nhóm, hoặc hình không thuộc nhóm nào) được vẽ trọn vẹn, mọi lớp và mọi lượt, rồi mới sang cái tiếp; phần tử gần nhất đi trước. Tắt: từng lớp, từng lượt.
+239|Chỉ vùng chọn
+240|Chỉ vẽ các hình đang được chọn trên vùng làm việc khi lưu G-code hoặc bắt đầu công việc.
+241|Không có gì để vẽ: chưa chọn gì
+242|Thay bút ở vị trí cố định
+243|Khi lớp tiếp theo cần bút khác, bút nhấc lên, máy vẽ chạy đến chỗ này (theo tọa độ vùng làm việc, có thể nằm ngoài vùng), chạy G-code bên dưới và dừng ở đó (M0) để thay bút, bằng tay hoặc bằng cơ cấu. Tắt: công việc dừng tại chỗ.
+244|Dừng ở đó (M0)
+245|G-code tại vị trí
+246|Các dòng gửi khi máy vẽ đã đến, trước khi dừng: cho cơ cấu tự thay bút. Khi tắt dừng, công việc tiếp tục ngay sau chúng.
+247|Nhập DXF…
+248|Chèn
+249|Khung nhìn có tối đa ba ngăn
+250|Hiện xem trước ở đây
+251|Chưa mở tệp G-code nào: Tệp, Xem tệp G-code…
+252|Xem trước G-code
+253|Hiện G-code mà không lưu
+254|xem trước
+255|G-code được hiển thị, không lưu gì
+256|G-code riêng của thiết bị: {}
+257|Cũng trong G-code thay bút:
+258|G-code riêng được thêm vào mọi chương trình, mỗi dòng một lệnh (tối đa 20 dòng).
+259|Tải thiết lập sẵn
+260|Bút của thiết lập sẵn không có trong thư viện: lớp không có bút
+261|Thu phóng
+262|Không phải địa chỉ camera (http, https, rtsp, udp, rtp hoặc rtmp).
+263|Giới thiệu PenCreator
+264|LinuxCNC (tệp)
+265|LinuxCNC tự chạy chương trình: Bắt đầu sẽ lưu tệp G-code cho nó. Chưa thử trên máy thật.
+266|G-code riêng
+267|G-code riêng: các dòng trên được ghi mỗi khi bút nhấc lên hoặc hạ xuống (ví dụ M3 S1000 và M5 cho nam châm điện, hoặc M280 P0 S… cho servo của Marlin).
+268|Dụng cụ là dao kéo
+269|Lưỡi dao quay tự do, mũi kéo theo sau trục: các đường viền được cắt có bù độ lệch, cắt lỗ trước, và không tô gì
+270|Lưỡi dao
+271|Độ lệch {} mm
+272|Độ lệch mũi dao
+273|Mũi lưỡi dao nằm sau trục bao xa: nhà sản xuất lưỡi dao cho biết
+274|Xoay quanh các góc nhọn hơn
+275|Cắt vượt qua điểm bắt đầu
+276|Đường viền kín được cắt vượt qua điểm bắt đầu một đoạn này, để nó khép lại
+277|Máy cắt tự bù độ lệch
+278|Hầu hết máy cắt decal đều vậy: khi đó đường viền được cắt đúng như vẽ
+279|Lưỡi dao hạ và nhấc như bút (các cài đặt ở trên): hạ là độ sâu cắt. Chưa thử trên máy cắt thật: hãy cắt thử lần đầu trên miếng thừa.
+280|dao kéo chỉ cắt đường viền: phần tô và ảnh của các lớp đã bị bỏ
+281|{} đường viền quá nhỏ so với độ lệch của dao và sẽ bị bo tròn
+282|Một lần di chuyển trên không không thể đi vòng vùng cấm "{}" (bắt đầu hoặc kết thúc trong đó)
+283|Một đường được vẽ xuyên qua vùng cấm "{}"
+284|Bản vẽ cao hơn chu vi phôi ({} mm)

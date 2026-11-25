@@ -56,7 +56,7 @@ The **Console** tab shows what goes to the controller (`>`) and what comes back 
 
 **Pen lifted by G-code of your own.** On the **Pen** page of the device (and in the window that adds one) **The pen is lifted by** has **Own G-code** next to the Z axis and the servo: write the lines for **Pen up** and **Pen down** (up to 10 lines each, plain ASCII), for example `M3 S1000` and `M5` for a solenoid on the spindle output, or `M280 P0 S…` for a servo of Marlin. They are written each time the pen moves, followed by the wait of the device. AxiDraw / EggBot and HPGL plotters read no G-code, so for them this choice is not offered.
 
-When GRBL says `ALARM:n` or `error:n`, the console gets a line under it that explains it, and the status bar shows it. The explanations are in the 30 languages of the program.
+When GRBL says `ALARM:n` or `error:n`, the console gets a line under it that explains it, and the status bar shows it. The explanations are in the 38 languages of the program.
 
 > ⚠️ Jogging, the pen buttons and the pauses send real moves. Keep the stop within reach.
 
