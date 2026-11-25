@@ -44,7 +44,7 @@ Lista i opis, jak dopisać maszynę: [TESTS_ON_DEVICES.md](https://github.com/mi
 * **Edytor** z baseCreatora: kształty, edycja węzłów, tekst, grupowanie, wyrównanie, cofanie, siatka i przyciąganie, na obszarze roboczym urządzenia (A4 dla Dummy). Rysunki, podgląd, tekst G-code i kamera to karty, w najwyżej trzech panelach.
 * **Import i eksport:** SVG, PDF / Illustrator, DXF (także R12), projekty LightBurna (`.lbrn2`, `.lbrn`), projekty MillMage'a (`.mage`), pliki UGS Designera (`.ugsd`, tylko import); 310 clipartów z wyszukiwaniem w sieci.
 * **Plik projektu:** `.cre`, wspólny z LightCreatorem i MillCreatorem; sekcje innych programów są zachowywane przy zapisie.
-* **Interfejs:** 30 języków (także własne teksty PenCreatora) i 18 schematów kolorów.
+* **Interfejs:** 38 języków (także własne teksty PenCreatora) i 18 schematów kolorów.
 * **Urządzenia i pisaki:** lista ploterów na ekranie startowym (**Nie mam urządzenia** tworzy Dummy), 64 warstwy, które są pisakami (kolor, szerokość, prędkość, kontur, wypełnienie liniami albo obraz rysowany liniami), biblioteka pisaków (**Ploter → Biblioteka pisaków…**), wykres zadania, G-code jako tekst w karcie G-code dla GRBL (pisak podnoszony osią Z, serwem albo własnym G-code), plotery AxiDraw / EggBot i HPGL oraz plik G-code dla LinuxCNC.
 * **Sterowanie maszyną:** przesuw, zerowanie, makra, ustawienia firmware, kalibracja, statystyki (zobacz [Sterowanie maszyną](Sterowanie-maszyna)).
 * **Planowane:** czcionki jednoliniowe.

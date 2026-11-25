@@ -56,7 +56,7 @@ Karta **Konsola** pokazuje, co idzie do sterownika (`>`) i co wraca (`<`), oraz 
 
 **Pisak podnoszony własnym G-code.** Na stronie **Pisak** urządzenia (i w oknie dodawania) pole **Pisak podnosi się za pomocą** ma obok osi Z i serwa pozycję **Własny G-code**: wpisz wiersze dla **Pisak podniesiony** i **Pisak opuszczony** (do 10 wierszy każdy, zwykłe ASCII), np. `M3 S1000` i `M5` dla elektromagnesu na wyjściu wrzeciona albo `M280 P0 S…` dla serwa Marlina. Są zapisywane przy każdym ruchu pisaka, a po nich czekanie urządzenia. Plotery AxiDraw / EggBot i HPGL nie czytają G-code, więc dla nich tej pozycji nie ma.
 
-Gdy GRBL powie `ALARM:n` albo `error:n`, konsola dostaje pod spodem wiersz z wyjaśnieniem, a pasek stanu je pokazuje. Wyjaśnienia są w 30 językach programu.
+Gdy GRBL powie `ALARM:n` albo `error:n`, konsola dostaje pod spodem wiersz z wyjaśnieniem, a pasek stanu je pokazuje. Wyjaśnienia są w 38 językach programu.
 
 > ⚠️ Przesuw, przyciski pisaka i pauzy wysyłają prawdziwe ruchy. Miej zatrzymanie w zasięgu ręki.
 

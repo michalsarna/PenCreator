@@ -1,0 +1,285 @@
+0|Bir katman bir kalemdir: sonraki katmanın kalemi farklıysa, değiştirebilmeniz için G-code durur.
+1|Bir port adı veya USB satıcı ve ürün kimliği (VID:PID, onaltılık): bu kimliklere sahip port kullanılır.
+2|İlkini kesen ikinci bir dolgu çizgisi takımı
+3|Yaygın bir sayfa boyutu…
+4|Çalışan işi iptal et
+5|Hakkında
+6|Kamera ekle
+7|Bir cihaz ekle
+8|Cihaz ekle
+9|Cihaz ekle…
+10|Adres
+11|Bağlandıktan sonra
+12|Alarm {}
+13|Düzenle
+14|Sol arka
+15|Sağ arka
+16|İlk görünüme dön. Resme çift tıklamak da aynısını yapar.
+17|Baud hızı
+18|Bu porta bağla
+19|Bağlı USB cihazı
+20|Kamera
+21|Kamera adı
+22|Kamera numarası
+23|Bu bilgisayarın kamerası
+24|Kamera döndürme
+25|Kamera görünümü
+26|Kameralar
+27|Programı denetle
+28|Önce program denetleniyor…
+29|Program denetleniyor…
+30|Önce cihaz ayarlarında bir port veya ana bilgisayar seçin.
+31|Çalışacağınız makineyi seçin.
+32|Alarmı temizle
+33|Alarmı temizlemek referanslamayı atlar: yalnızca kafanın güvenli bir yerde durduğu biliniyorsa kullanın.
+34|Kapalı şekiller paralel çizgilerle doldurulur; delikler boş kalır.
+35|Silmeyi onayla
+36|Bağlan
+37|Otomatik olarak yeniden bağlan
+38|Bağlı
+39|Bağlantı
+40|Bağlantı türü
+41|Konsol
+42|Kontrol
+43|{} konumuna kopyalandı
+44|Kaydedilemedi: {}
+45|Sayma, denetleyicinin arabelleğini doldurur ve hızlıdır. Basit, bir satır gönderip ok yanıtını bekler: yavaştır ama yanlış yanıt veren donanım yazılımları içindir.
+46|Çapraz çizgiler
+47|Bu kamerayı sil
+48|Cihaz
+49|Cihaz ayarları
+50|Cihaz ayarları…
+51|Tanılama ve istatistikler…
+52|Bağlantıyı kes
+53|Çizim
+54|Çizim sayısı
+55|Çizilir: çizime ve G-code'a dahil edilir
+56|Düzen
+57|Düzenle…
+58|{}. satırda hata {}: {}
+59|Hata {}: {}
+60|G-code dışa aktar…
+61|Dışa aktar…
+62|Dolgu ve kontur
+63|Dolgu çizgisi açısı
+64|Dolgu çizgisi aralığı
+65|Çizgilerle doldur
+66|Donanım yazılımı ayarları ($$)…
+67|Çerçeve
+68|Çalışma alanı çerçeveleniyor
+69|Satırdan…
+70|Sol ön
+71|Sağ ön
+72|Genel
+73|İşin yapılacağı kutunun çevresinden dolaş
+74|Yardım
+75|Referans
+76|Makineyi referansla
+77|Ana bilgisayar
+78|Her çizginin kaç kez çizileceği: çok açık çizen bir kalem için
+79|Cihazım yok
+80|LightBurn projesi içe aktar…
+81|{} cihazı içe aktarıldı
+82|İçe aktar…
+83|Yatay
+84|Katmanlar
+85|Çizgiler: {} m, kalem yukarıdaki hareketler: {} m, kalem kalkışları: {}, yaklaşık {} dk
+86|Makine sıfırı (0,0)
+87|Kalem yukarıdayken hareketler
+88|Yeni
+89|Henüz cihaz yok. Bir tane ekleyin ya da makinesiz çalışın.
+90|Port yok
+91|http veya https adresi değil.
+92|Notlar
+93|Bu makine hakkında notlar
+94|Hiçbir şey seçilmedi
+95|Bir çizim açın veya boş bir tasarıma başlayın.
+96|Cihaz ayarlarında belirtilen denetleyici bağlantısını aç
+97|Önizleme penceresini aç
+98|Aç…
+99|Kontur
+100|Kâğıt
+101|Kalem
+102|Kalem aşağı
+103|Kalem yukarı
+104|Kalem kalınlığı
+105|İşin çizimi…
+106|Çizici
+107|Port
+108|Port veya USB kimliği
+109|Dikey
+110|Önizleme
+111|Önizleme…
+112|Özellikler
+113|Seçili şekilleri bu katmana taşı
+114|Bir dosyadan cihaz oku
+115|Hazır
+116|Yeniden bağlan
+117|Yenile
+118|Seçilen portun USB kimliklerini hatırla: adı değiştiğinde port bu kimliklerle yeniden bulunur.
+119|Görünümü sıfırla
+120|Sürdür
+121|DUR
+122|Kaydet
+123|G-code kaydet
+124|Farklı kaydet…
+125|Bu cihazı bir dosyaya kaydet
+126|Cihaz {} konumuna kaydedildi
+127|{} kaydedildi
+128|Servo (M3 S…)
+129|Ayarlar
+130|Bu katmandaki şekiller
+131|Bu makinenin canlı kamera resmini göster
+132|Takım yollarını çalışma alanında göster
+133|Kamera sekmesinde gösterilir
+134|Çalışma alanında gösterilir
+135|Hız
+136|Kalem yukarıdayken hareket hızı
+137|Start
+138|Başlangıç
+139|İşi programın bir satırından başlat
+140|İş başlıyor: {} satır, ~{}
+141|İşi bağlı makineye akıt
+142|Akıtılıyor
+143|Açık
+144|TCP portu
+145|İşin etrafındaki G-code: {}
+146|Denetim hiçbir sorun bulmadı.
+147|Denetim hiçbir şey bulmadı. İş çalışıyor.
+148|Denetim {} sorun buldu, ilki {}. satırda. İş başlatılmadı.
+149|Bu projenin cihazı
+150|Cihaz eklendi.
+151|Cihaz kaydedildi.
+152|Önce dolgu, sonra üzerine kontur; böylece kenar temiz olur.
+153|İş bitti, {} sorunla (Konsol'a bakın).
+154|İş bitti.
+155|İş duraklatıldı: {}
+156|İş çalışıyor.
+157|Kalem şekillerin çizgilerini izler. Açık çizgiler de olur.
+158|Kalem şu kadar kaldırılır
+159|Çalışma alanı, kalemin ulaşabildiği sayfadır. Makine sıfırı kalemin başladığı köşedir.
+160|Çizilecek bir şey yok: şekilleri açık olan katmanlara koyun.
+161|Çerçevelenecek bir şey yok: şekilleri açık olan katmanlara koyun.
+162|Henüz gösterilecek bir şey yok: şekiller çizin ve onları açık katmanlara koyun.
+163|Bu derleme bilgisayarın kameralarını kullanamaz.
+164|Bu cihazın açık kamerası yok. Cihaz ayarlarından ekleyin.
+165|Bu cihaz listede değil: projeyle birlikte geldi
+166|Bu yedek cihazdır (Dummy): varsayılan çalışma alanı ve hızlar.
+167|Süre {} / {}
+168|Çok fazla cihaz
+169|Takım yolları
+170|Bağı kaldır
+171|Birimler
+172|Görünüm
+173|Görünüm seçenekleri…
+174|Kalem hareketinden sonra bekle
+175|Resim bekleniyor…
+176|Bağlantı kendiliğinden koptuğunda, Bağlantıyı kes'e basana kadar birkaç saniyede bir yeniden dene.
+177|Z ekseniyle kalem yukarıdaki yüksekliklere gider; servoyla G-code iş mili çıkışını S değeriyle açar (M3 S…).
+178|Makinesiz bir projede çalışın: varsayılan çalışma alanı ve hızlarla Dummy adlı basit bir cihaz
+179|Z ekseni
+180|ör. Kalem çizicim
+181|yok
+182|çizimin bir kısmı çalışma alanının dışında
+183|dolguda çok fazla çizgi var: aralık çok küçük, dolgunun bir kısmı atlandı
+184|bu proje başka bir makine için yapıldı: {}
+185|Katmanlardaki {} resim çizilemiyor: önce onları çizgilere izleyin
+186|UGS tasarımı içe aktar…
+187|Resim
+188|Katmandaki bir resim çizgilerle çizilir: titreşimli sıralar, noktalar veya tona göre çapraz tarama.
+189|Titreşimli sıralar
+190|Noktalar
+191|Tona göre tarama
+192|Her sıra, titreşimli resmin koyu olduğu yerlerde çizgi olarak çizilir. Titreşim yöntemi aşağıda seçilir.
+193|Titreşimli resmin her koyu hücresi için bir nokta.
+194|Çapraz tarama: resim koyulaştıkça çizgi yönleri artar.
+195|Resim yöntemi
+196|Titreşim
+197|Kalem kitaplığı
+198|Kalem kitaplığı…
+199|Hazır kalemler
+200|Kalemlerim
+201|Burada henüz bir şey yok
+202|Yeni kalem
+203|Kendi kalemleriniz arasına bir kopya
+204|Bir dosyadan kalemleri oku
+205|Dosya çok büyük
+206|kalem eklendi
+207|Dışarıda bırakıldı
+208|Dosya kullanılamıyor
+209|Kalemlerinizi bir dosyaya kaydedin
+210|Kaydedildi
+211|Kaydedilemedi
+212|Bu kalemi dışa aktar…
+213|Bir kalem seçin
+214|Hazır bir kalem değiştirilemez. Değiştirmek için bir kopya yapın.
+215|Tür
+216|İzin genişliği
+217|İzin yüksekliği
+218|Ucun dönüşü
+219|Çizgi uçları
+220|Yuvarlak uçlar
+221|Düz uçlar
+222|Mürekkep rengi
+223|Opaklık
+224|Kalem seçilmedi
+225|Kurşun kalem
+226|Dolma kalem (uç)
+227|İnce uçlu kalem
+228|Keçeli kalem
+229|Fosforlu kalem
+230|Fırça kalem
+231|Çalışma alanına sığdır
+232|Öğelere sığdır
+233|Tüm sayfa görünecek şekilde yakınlaştır
+234|Tüm çizgiler pencereyi dolduracak şekilde yakınlaştır
+235|Kalemi kaldır
+236|Kalemi indir
+237|Her seferinde bir öğe
+238|Her öğe (bir grup veya hiçbirinde olmayan bir şekil), tüm katmanları ve geçişleriyle tamamen çizilir, sonra bir sonrakine geçilir; en yakın öğe önce gelir. Kapalı: katman katman, geçiş geçiş.
+239|Yalnızca seçim
+240|Yalnızca G-code kaydedildiğinde veya iş başlatıldığında çalışma alanında seçili olan şekiller çizilir.
+241|Çizilecek bir şey yok: hiçbir şey seçili değil
+242|Kalemi sabit bir yerde değiştir
+243|Sonraki katman başka bir kalem gerektirdiğinde kalem kalkar, çizici bu yere (çalışma alanı koordinatlarında; alanın dışında olabilir) gider, aşağıdaki G-code'u çalıştırır ve kalemin elle veya bir mekanizmayla değiştirilebilmesi için orada durur (M0). Kapalı: iş olduğu yerde durur.
+244|Orada dur (M0)
+245|O yerdeki G-code
+246|Çizici vardığında, durmadan önce gönderilen satırlar: kalemi kendiliğinden değiştiren bir mekanizma için. Durma kapalıysa iş hemen ardından sürer.
+247|DXF içe aktar…
+248|Ekle
+249|Görünümde en fazla üç bölme olur
+250|Önizlemeyi burada göster
+251|Açık G-code dosyası yok: Dosya, G-code dosyasını görüntüle…
+252|G-code önizleme
+253|G-code'u kaydetmeden göster
+254|önizleme
+255|G-code gösterilir, hiçbir şey kaydedilmez
+256|Cihazın kendi G-code'u: {}
+257|Kalem değişiminin G-code'unda da:
+258|Kendi G-code her programa eklenir, satır başına bir komut (en fazla 20 satır).
+259|Ön ayar yükle
+260|Ön ayarın kalemi kitaplıkta yok: katmanın kalemi yok
+261|Yakınlaştır
+262|Bir kamera adresi değil (http, https, rtsp, udp, rtp veya rtmp).
+263|PenCreator hakkında
+264|LinuxCNC (dosya)
+265|LinuxCNC programı kendisi çalıştırır: Başlat, onun için G-code dosyasını kaydeder. Gerçek bir makinede denenmedi.
+266|Kendi G-code
+267|Kendi G-code: yukarıdaki satırlar kalem her kalkıp indiğinde yazılır (örneğin bir solenoid için M3 S1000 ve M5, Marlin'in bir servosu için M280 P0 S…).
+268|Takım bir sürüklemeli bıçaktır
+269|Serbestçe dönen, ucu ekseninin arkasından gelen bir bıçak: konturlar ofset telafi edilerek kesilir, önce delikler, hiçbir şey doldurulmaz
+270|Bıçak
+271|Ofset {} mm
+272|Ucun ofseti
+273|Bıçak ucunun ekseninin ne kadar gerisinde olduğu: bıçağın üreticisi verir
+274|Bundan keskin köşelerde dön
+275|Başlangıcı geçerek kes
+276|Kapalı bir kontur başlangıcını bu kadar geçerek kesilir, böylece kapanır
+277|Kesici ofseti kendisi telafi eder
+278|Çoğu vinil kesici bunu yapar: konturlar o zaman çizildiği gibi kesilir
+279|Bıçak, kalem gibi iner ve kalkar (yukarıdaki ayarlar): aşağısı kesim derinliğidir. Henüz gerçek bir kesicide denenmedi: ilk kesimi artık bir parçada deneyin.
+280|sürüklemeli bıçak yalnızca kontur keser: katmanların dolguları ve resimleri dışarıda bırakıldı
+281|{} kontur bıçağın ofseti için çok küçük ve yuvarlak çıkar
+282|Havadaki bir hareket "{}" yasak bölgesinin etrafından dolaşamıyor (içinde başlıyor veya bitiyor)
+283|"{}" yasak bölgesinin içinden bir çizgi çiziliyor
+284|Çizim iş parçasının çevresinden ({} mm) yüksek

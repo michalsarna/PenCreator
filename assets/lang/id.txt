@@ -1,0 +1,285 @@
+0|Satu lapisan adalah satu pena: bila lapisan berikutnya memakai pena lain, G-code berhenti agar Anda bisa menggantinya.
+1|Nama port, atau ID vendor dan produk USB (VID:PID, heksadesimal): port yang memiliki ID ini yang dipakai.
+2|Set kedua garis isian yang menyilang set pertama
+3|Ukuran kertas umum…
+4|Batalkan pekerjaan yang berjalan
+5|Tentang
+6|Tambah kamera
+7|Tambah perangkat
+8|Tambah perangkat
+9|Tambah perangkat…
+10|Alamat
+11|Setelah terhubung
+12|Alarm {}
+13|Atur
+14|Kiri belakang
+15|Kanan belakang
+16|Kembali ke tampilan pertama. Klik ganda pada gambar juga sama.
+17|Baud rate
+18|Ikat ke port ini
+19|Perangkat USB terikat
+20|Kamera
+21|Nama kamera
+22|Nomor kamera
+23|Kamera komputer ini
+24|Rotasi kamera
+25|Tampilan kamera
+26|Kamera
+27|Periksa program
+28|Memeriksa program terlebih dahulu…
+29|Memeriksa program…
+30|Pilih port atau host di pengaturan perangkat terlebih dahulu.
+31|Pilih mesin yang akan Anda pakai.
+32|Hapus alarm
+33|Menghapus alarm melewati homing: gunakan hanya bila kepala diketahui berada di tempat aman.
+34|Bentuk tertutup diisi garis sejajar; lubang tetap kosong.
+35|Konfirmasi hapus
+36|Hubungkan
+37|Hubungkan ulang otomatis
+38|Terhubung
+39|Koneksi
+40|Jenis koneksi
+41|Konsol
+42|Kontrol
+43|Disalin ke {}
+44|Tidak dapat menyimpan: {}
+45|Mode hitung mengisi buffer kontroler dan cepat. Mode sederhana mengirim satu baris dan menunggu ok: lambat, tetapi untuk firmware yang menjawab salah.
+46|Garis bersilang
+47|Hapus kamera ini
+48|Perangkat
+49|Pengaturan perangkat
+50|Pengaturan perangkat…
+51|Diagnostik dan statistik…
+52|Putuskan
+53|Gambar
+54|Jumlah gambar ulang
+55|Digambar: masuk ke plot dan G-code
+56|Edit
+57|Edit…
+58|Galat {} di baris {}: {}
+59|Galat {}: {}
+60|Ekspor G-code…
+61|Ekspor…
+62|Isian dan garis tepi
+63|Sudut garis isian
+64|Jarak garis isian
+65|Isi dengan garis
+66|Pengaturan firmware ($$)…
+67|Bingkai
+68|Membingkai area kerja
+69|Dari baris…
+70|Kiri depan
+71|Kanan depan
+72|Umum
+73|Kelilingi kotak tempat pekerjaan akan dilakukan
+74|Bantuan
+75|Home
+76|Homing mesin
+77|Host
+78|Berapa kali setiap garis digambar: untuk pena yang terlalu tipis
+79|Saya tidak punya perangkat
+80|Impor proyek LightBurn…
+81|Perangkat {} diimpor
+82|Impor…
+83|Lanskap
+84|Lapisan
+85|Garis: {} m, gerakan pena naik: {} m, angkat pena: {}, sekitar {} mnt
+86|Nol mesin (0,0)
+87|Gerakan dengan pena naik
+88|Baru
+89|Belum ada perangkat. Tambahkan satu, atau bekerja tanpa mesin.
+90|Tidak ada port
+91|Bukan alamat http atau https.
+92|Catatan
+93|Catatan tentang mesin ini
+94|Tidak ada yang dipilih
+95|Buka gambar atau mulai desain kosong.
+96|Buka tautan ke kontroler yang diatur di pengaturan perangkat
+97|Buka jendela pratinjau
+98|Buka…
+99|Garis tepi
+100|Kertas
+101|Pena
+102|Pena turun
+103|Pena naik
+104|Lebar pena
+105|Plot pekerjaan…
+106|Plotter
+107|Port
+108|Port atau ID USB
+109|Potret
+110|Pratinjau
+111|Pratinjau…
+112|Properti
+113|Pindahkan bentuk yang dipilih ke lapisan ini
+114|Baca perangkat dari file
+115|Siap
+116|Hubungkan ulang
+117|Segarkan
+118|Ingat ID USB port yang dipilih: port ditemukan lagi dengan ID itu bila namanya berubah.
+119|Atur ulang tampilan
+120|Lanjutkan
+121|STOP
+122|Simpan
+123|Simpan G-code
+124|Simpan sebagai…
+125|Simpan perangkat ini ke file
+126|Perangkat disimpan ke {}
+127|{} disimpan
+128|Servo (M3 S…)
+129|Pengaturan
+130|Bentuk pada lapisan ini
+131|Tampilkan gambar kamera langsung mesin ini
+132|Tampilkan jalur alat di area kerja
+133|Ditampilkan di tab Kamera
+134|Ditampilkan di area kerja
+135|Kecepatan
+136|Kecepatan gerak dengan pena naik
+137|Start
+138|Mulai dari
+139|Mulai pekerjaan dari sebuah baris program
+140|Memulai pekerjaan: {} baris, ~{}
+141|Alirkan pekerjaan ke mesin yang terhubung
+142|Mengalirkan
+143|Dinyalakan
+144|Port TCP
+145|G-code di sekitar pekerjaan: {}
+146|Pemeriksaan tidak menemukan masalah.
+147|Pemeriksaan tidak menemukan apa pun. Pekerjaan berjalan.
+148|Pemeriksaan menemukan {} masalah, yang pertama di baris {}. Pekerjaan tidak dimulai.
+149|Perangkat proyek ini
+150|Perangkat ditambahkan.
+151|Perangkat disimpan.
+152|Isian dulu, lalu garis tepi di atasnya, agar tepinya rapi.
+153|Pekerjaan selesai, dengan {} masalah (lihat Konsol).
+154|Pekerjaan selesai.
+155|Pekerjaan dijeda: {}
+156|Pekerjaan sedang berjalan.
+157|Pena mengikuti garis bentuk. Garis terbuka juga bisa.
+158|Pena diangkat dengan
+159|Area kerja adalah lembar yang dapat dijangkau pena. Nol mesin adalah sudut tempat pena mulai.
+160|Tidak ada yang digambar: taruh bentuk di lapisan yang dinyalakan.
+161|Tidak ada yang dibingkai: taruh bentuk di lapisan yang dinyalakan.
+162|Belum ada yang ditampilkan: gambar bentuk dan taruh di lapisan yang dinyalakan.
+163|Build ini tidak dapat memakai kamera komputer.
+164|Perangkat ini tidak punya kamera yang dinyalakan. Tambahkan di pengaturan perangkat.
+165|Perangkat ini tidak ada di daftar: datang bersama proyek
+166|Ini perangkat pengganti (Dummy): area kerja dan kecepatan bawaan.
+167|Waktu {} / {}
+168|Terlalu banyak perangkat
+169|Jalur alat
+170|Lepas ikatan
+171|Satuan
+172|Tampilan
+173|Opsi tampilan…
+174|Tunggu setelah pena bergerak
+175|Menunggu gambar…
+176|Bila koneksi putus sendiri, coba lagi setiap beberapa detik sampai Anda menekan Putuskan.
+177|Dengan sumbu Z, pena menuju ketinggian di atas; dengan servo, G-code menyalakan output spindel dengan nilai S (M3 S…).
+178|Kerjakan proyek tanpa mesin: perangkat sederhana bernama Dummy, dengan area kerja dan kecepatan bawaan
+179|Sumbu Z
+180|mis. Plotter pena saya
+181|tidak ada
+182|sebagian desain berada di luar area kerja
+183|isian punya terlalu banyak garis: jaraknya terlalu kecil, sehingga sebagian isian dihilangkan
+184|proyek ini dibuat untuk mesin lain: {}
+185|{} gambar di lapisan tidak dapat digambar: lacak menjadi garis terlebih dahulu
+186|Impor desain UGS…
+187|Gambar
+188|Gambar di lapisan digambar dengan garis: baris dithering, titik, atau arsiran silang menurut nada.
+189|Baris dithering
+190|Titik
+191|Arsiran menurut nada
+192|Setiap baris digambar sebagai garis di bagian gambar dithering yang gelap. Metode dithering dipilih di bawah.
+193|Satu titik untuk setiap sel gelap gambar dithering.
+194|Arsiran silang: makin gelap gambar, makin banyak arah garis.
+195|Metode gambar
+196|Dithering
+197|Pustaka pena
+198|Pustaka pena…
+199|Pena siap pakai
+200|Pena saya
+201|Belum ada apa-apa di sini
+202|Pena baru
+203|Salinan di antara pena Anda
+204|Baca pena dari file
+205|File terlalu besar
+206|pena ditambahkan
+207|Dilewati
+208|Tidak dapat memakai file
+209|Simpan pena Anda ke file
+210|Disimpan
+211|Tidak dapat menyimpan
+212|Ekspor pena ini…
+213|Pilih pena
+214|Pena siap pakai tidak dapat diubah. Buat salinan untuk mengubahnya.
+215|Jenis
+216|Lebar goresan
+217|Tinggi goresan
+218|Putaran ujung
+219|Ujung garis
+220|Ujung bulat
+221|Ujung datar
+222|Warna tinta
+223|Opasitas
+224|Belum ada pena dipilih
+225|Pensil
+226|Pena tinta (nib)
+227|Fineliner
+228|Spidol
+229|Stabilo
+230|Brush pen
+231|Paskan ke area kerja
+232|Paskan ke elemen
+233|Zoom agar seluruh lembar terlihat
+234|Zoom agar semua garis memenuhi jendela
+235|Angkat pena
+236|Turunkan pena
+237|Satu elemen setiap kali
+238|Setiap elemen (grup, atau bentuk yang tidak masuk grup mana pun) digambar lengkap, semua lapisan dan semua lintasannya, sebelum elemen berikutnya; elemen terdekat lebih dulu. Mati: lapisan demi lapisan, lintasan demi lintasan.
+239|Hanya pilihan
+240|Hanya bentuk yang dipilih di area kerja saat G-code disimpan atau pekerjaan dimulai yang digambar.
+241|Tidak ada yang digambar: tidak ada yang dipilih
+242|Ganti pena di tempat tetap
+243|Bila lapisan berikutnya memerlukan pena lain, pena naik, plotter menuju tempat ini (dalam koordinat area kerja, boleh di luarnya), menjalankan G-code di bawah dan berhenti di sana (M0) agar pena bisa diganti, manual atau dengan mekanisme. Mati: pekerjaan berhenti di tempatnya.
+244|Berhenti di sana (M0)
+245|G-code di tempat itu
+246|Baris yang dikirim saat plotter tiba, sebelum berhenti: untuk mekanisme yang mengganti pena sendiri. Bila berhenti dimatikan, pekerjaan langsung berlanjut setelahnya.
+247|Impor DXF…
+248|Sisipkan
+249|Tampilan punya paling banyak tiga panel
+250|Tampilkan pratinjau di sini
+251|Tidak ada file G-code yang terbuka: File, Lihat file G-code…
+252|Pratinjau G-code
+253|Tampilkan G-code tanpa menyimpannya
+254|pratinjau
+255|G-code ditampilkan, tidak ada yang disimpan
+256|G-code milik perangkat: {}
+257|Juga di G-code penggantian pena:
+258|G-code sendiri ditambahkan ke setiap program, satu perintah per baris (paling banyak 20 baris).
+259|Muat preset
+260|Pena preset tidak ada di pustaka: lapisan tidak punya pena
+261|Zoom
+262|Bukan alamat kamera (http, https, rtsp, udp, rtp, atau rtmp).
+263|Tentang PenCreator
+264|LinuxCNC (file)
+265|LinuxCNC menjalankan program sendiri: Mulai menyimpan file G-code untuknya. Belum dicoba di mesin nyata.
+266|G-code sendiri
+267|G-code sendiri: baris di atas ditulis setiap kali pena naik atau turun (misalnya M3 S1000 dan M5 untuk solenoid, atau M280 P0 S… untuk servo Marlin).
+268|Alatnya pisau seret
+269|Mata pisau yang berputar bebas, ujungnya tertinggal di belakang porosnya: garis tepi dipotong dengan offset dikompensasi, lubang lebih dulu, dan tidak ada yang diisi
+270|Mata pisau
+271|Offset {} mm
+272|Offset ujung
+273|Seberapa jauh ujung pisau di belakang porosnya: diberikan oleh pembuat pisau
+274|Putar di sudut yang lebih tajam dari
+275|Potong melewati awal
+276|Garis tepi tertutup dipotong sejauh ini melewati awalnya, agar tertutup
+277|Pemotong mengompensasi offset sendiri
+278|Sebagian besar pemotong vinil begitu: garis tepi lalu dipotong seperti digambar
+279|Mata pisau turun dan naik seperti pena (pengaturan di atas): turun adalah kedalaman potong. Belum dicoba di pemotong nyata: coba potongan pertama pada sisa bahan.
+280|pisau seret hanya memotong garis tepi: isian dan gambar lapisan dilewati
+281|{} garis tepi terlalu kecil untuk offset pisau dan menjadi membulat
+282|Gerakan di udara tidak dapat memutari zona terlarang "{}" (dimulai atau berakhir di dalamnya)
+283|Sebuah garis digambar melewati zona terlarang "{}"
+284|Desain lebih tinggi dari keliling benda kerja ({} mm)

@@ -148,7 +148,7 @@ Wszystkie są opisane na stronie [Sterowanie maszyną](Sterowanie-maszyna).
 | **Opcje widoku…** | Siatka, kolory obszaru roboczego, grubość linii, **Pokaż nazwy warstw**, **Podgląd G-code po zapisaniu**, **Pokaż nazwy zmiennych**, rozmiar czcionki i kolory **konsoli G-code**. |
 | **Opcje programu…** | **Szukaj nowszej wersji przy uruchamianiu programu** (domyślnie włączone).; **Automatyczny zapis**: zapisuj pracę automatycznie (plik z nazwą na miejscu, bez nazwy do pliku odzyskiwania) i jak często (od 10 s do godziny, na początek 2 min). |
 | **Wtyczki…** | Instalowanie, włączanie i usuwanie wtyczek. Zobacz [Wtyczki](Wtyczki). |
-| **Język** | 30 języków; wybór jest zapamiętywany. |
+| **Język** | 38 języków; wybór jest zapamiętywany. |
 | **Schemat kolorów** | 18 schematów kolorów (i świąteczny w okolicy niektórych świąt). |
 
 ## Pomoc
