@@ -1,4 +1,4 @@
-🌐 **English** · [Polski](Home-PL)
+🌐 **English** · [Polski](Home-PL) · [简体中文](Home-ZH) · [한국어](Home-KO)
 
 <p align="center"><img src="https://raw.githubusercontent.com/michalsarna/PenCreator/main/assets/icons/icon-256.png" alt="PenCreator" width="128"></p>
 
@@ -49,4 +49,4 @@ The list with how to add a machine: [TESTS_ON_DEVICES.md](https://github.com/mic
 * **Machine control:** jogging, zero, macros, firmware settings, calibration, statistics (see [Machine Control](Machine-Control)).
 * **Planned:** single-line fonts.
 
-Latest release: **v0.9.9** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option
+Latest release: **v0.9.10** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · Licence: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) or [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE), at your option
