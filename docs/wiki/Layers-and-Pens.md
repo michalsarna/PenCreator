@@ -1,4 +1,4 @@
-🌐 **English** · [Warstwy i pisaki](Warstwy-i-pisaki)
+🌐 **English** · [Warstwy i pisaki](Warstwy-i-pisaki) · [简体中文](Layers-and-Pens-ZH) · [한국어](Layers-and-Pens-KO)
 
 # Layers and Pens
 

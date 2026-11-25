@@ -1,1 +1,1 @@
-PenCreator · MIT OR Apache-2.0 · [GitHub](https://github.com/michalsarna/PenCreator) · [Issues](https://github.com/michalsarna/PenCreator/issues) · [☕ Buy me a coffee](https://buymeacoffee.com/michalsarna) · Polska wersja / Polish: [Home-PL](Home-PL)
+PenCreator · MIT OR Apache-2.0 · [GitHub](https://github.com/michalsarna/PenCreator) · [Issues](https://github.com/michalsarna/PenCreator/issues) · [☕ Buy me a coffee](https://buymeacoffee.com/michalsarna) · Polska wersja / Polish: [Home-PL](Home-PL) · 简体中文: [Home-ZH](Home-ZH) · 한국어: [Home-KO](Home-KO)
