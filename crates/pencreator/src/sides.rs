@@ -93,6 +93,7 @@ impl App {
         std::mem::swap(&mut self.scene, &mut two.other);
         std::mem::swap(&mut self.history, &mut two.other_history);
         two.shown_b = b;
+        self.lock.rearm(&self.scene);
         self.ed.sel.clear();
         self.ed.ghost_sel.clear();
         self.ed.node_sel.clear();
@@ -131,6 +132,7 @@ impl App {
             flip: self.two.as_ref().map_or(FlipAxis::SideToSide, |t| t.flip),
             marks: self.two.is_none(),
             max: (aw, ah),
+            protect: self.lock.fields(),
             ..Default::default()
         };
     }
@@ -138,7 +140,17 @@ impl App {
     pub(crate) fn setup_window(&mut self, ctx: &egui::Context) {
         let units = base_ui::editor::EditorHost::units(self);
         match base_ui::project_setup::window(ctx, &mut self.setup, units, kind()) {
-            Some(Answer::Apply) => self.apply_setup(),
+            Some(Answer::Apply) => {
+                // The passwords first (the window checked them); a change makes the project need saving.
+                let change = self.setup.protect.take_change();
+                let real = !matches!(change, base_ui::protect_ui::Change::Keep);
+                match base_ui::protect_ui::apply(change, &mut self.lock.protection) {
+                    Ok(()) if real => self.touch_rev(),
+                    Ok(()) => {}
+                    Err(e) => self.status = e,
+                }
+                self.apply_setup();
+            }
             Some(Answer::Skip) if self.setup.start => self.skip_start_setup(),
             _ => {}
         }

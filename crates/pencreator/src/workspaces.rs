@@ -16,6 +16,8 @@ const APP: &str = "pencreator";
 /// themselves are not kept, because the caches of the program (the toolpaths) are keyed by the live revision, which is a
 /// new number every time a tab is shown.
 pub struct Workspace {
+    /// Its password protection.
+    pub lock: base_ui::protect_ui::DocLock,
     pub scene: Scene,
     pub history: History,
     pub path: Option<PathBuf>,
@@ -36,6 +38,7 @@ pub struct Workspace {
 impl Workspace {
     fn empty(layers: Vec<PenLayer>, slot: usize) -> Workspace {
         Workspace {
+            lock: Default::default(),
             scene: Scene::default(),
             history: History::default(),
             path: None,
@@ -83,7 +86,9 @@ impl App {
     /// The shown tab with a parked one: a swap of every field that belongs to a drawing. The pattern has no `..`, so a field
     /// added to `Workspace` has to be handled here.
     fn swap_ws(&mut self, w: &mut Workspace) {
-        let Workspace { scene, history, path, description, kept, layers, picture_layers, clean, autosaved_clean, view, slot, piece, two } = w;
+        let Workspace { lock, scene, history, path, description, kept, layers, picture_layers, clean, autosaved_clean, view, slot, piece, two } = w;
+        std::mem::swap(&mut self.lock, lock);
+        self.ed.locked = self.lock.locked();
         std::mem::swap(&mut self.piece, piece);
         std::mem::swap(&mut self.two, two);
         std::mem::swap(&mut self.scene, scene);
@@ -282,7 +287,7 @@ impl App {
                 // Written to its own file: a save of the project (joined with the edit before it).
                 base_ui::authorship_ui::stamp(&mut w.kept.authorship, "PenCreator", crate::VERSION, true);
             }
-            let text = w.to_project(&device, pens).to_json();
+            let text = w.lock.seal(w.to_project(&device, pens).to_json());
             let ok = match &w.path {
                 Some(p) => base_core::autosave::write_atomic(p, &text).is_ok(),
                 None => base_core::autosave::save_slot(&base, APP, w.slot, &text).is_ok(),
