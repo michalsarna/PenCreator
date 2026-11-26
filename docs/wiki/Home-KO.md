@@ -51,4 +51,4 @@ Rust로 작성된 펜 플로터용 오픈 소스 소프트웨어입니다. [Draw
 * **기계 제어:** 조그, 원점, 매크로, 펌웨어 설정, 보정, 통계([기계 제어](Machine-Control-KO) 참조).
 * **계획 중:** 단선 글꼴.
 
-최신 릴리스: **v0.9.10** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · 라이선스: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) 또는 [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE) 중 선택
+최신 릴리스: **v1.0.0** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · 라이선스: [MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) 또는 [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE) 중 선택
