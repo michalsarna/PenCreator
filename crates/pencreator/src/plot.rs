@@ -885,7 +885,7 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
             }
             let (hx, hy) = machine_xy(dev, 0.0, 0.0);
             g.push_str(&format!("G0 X{} Y{}\n", num(hx), num(hy)));
-            g.push_str(&format!("M0 ({})\n", note_text(h)));
+            g.push_str(&format!("M0 ; {}\n", note_text(h)));
             layer = usize::MAX;
         }
         // The comments at this move in their order: the ends of what came before (and the start of an element) go before a
@@ -925,7 +925,7 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
                             }
                         }
                         if !change.enabled || change.pause {
-                            g.push_str(&format!("M0 (Change the pen to: {what})\n"));
+                            g.push_str(&format!("M0 ; Change the pen to: {what}\n"));
                         } else {
                             g.push_str(&format!("(Change the pen to: {what})\n"));
                         }
@@ -973,7 +973,8 @@ pub fn to_gcode_info(prog: &Program, dev: &Device, layers: &[PenLayer], pens: &P
     }
     g.push_str("M30\n");
     let lines = |text: &str| -> Vec<String> { text.lines().map(str::trim).filter(|l| !l.is_empty()).map(|l| base_core::gcode_out::substitute(l, &|n| value_of(&info, &here, n))).collect() };
-    base_core::gcode_out::finish(&g, &lines(&dev.frame.very_start), &lines(&dev.frame.very_end), &dev.flavour)
+    // Comments with a semicolon in front, as LightCreator writes them.
+    base_core::gcode_out::finish(&base_core::gcode_out::semicolon_comments(&g), &lines(&dev.frame.very_start), &lines(&dev.frame.very_end), &dev.flavour)
 }
 
 #[cfg(test)]
@@ -1060,27 +1061,27 @@ mod tests {
         let mut dev = Device::dummy();
         let prog = generate(&scene, &layers, &dev);
         let plain = to_gcode(&prog, &dev, &layers, &PenLibrary::new(), "job");
-        assert!(plain.starts_with("(PenCreator: job)\n(Device: ") && plain.trim_end().ends_with("M30") && !plain.contains('%'));
+        assert!(plain.starts_with("; PenCreator: job\n; Device: ") && plain.trim_end().ends_with("M30") && !plain.contains('%'));
         dev.frame.very_start = "%\nO{project_name}".into();
-        dev.frame.very_end = "(done {machine_name} {min_x} {width})".into();
+        dev.frame.very_end = "; done {machine_name} {min_x} {width}".into();
         let info = base_core::gcode_out::Info { project_name: "part".into(), project_path: "/w/part.cre".into(), date: "2026-11-01".into(), time: "12:00".into(), ..Default::default() };
         let text = to_gcode_info(&prog, &dev, &layers, &PenLibrary::new(), &info);
         let lines: Vec<&str> = text.lines().collect();
-        assert_eq!(&lines[..3], &["%", "Opart", "(PenCreator: part)"]);
+        assert_eq!(&lines[..3], &["%", "Opart", "; PenCreator: part"]);
         // The notes of the project come after the name as comments, with nothing in them that could end a comment.
         let noted = base_core::gcode_out::Info { notes: "Birch (3 mm); first\n\nglue".into(), ..info.clone() };
         let with_notes = to_gcode_info(&prog, &dev, &layers, &PenLibrary::new(), &noted);
         let lines: Vec<&str> = with_notes.lines().collect();
-        assert_eq!(&lines[2..5], &["(PenCreator: part)", "(Device: {})".replace("{}", &dev.name).as_str(), "(Note: Birch <3 mm>, first)"][..], "{with_notes}");
-        assert_eq!(lines[5], "(Note: glue)");
-        assert!(!text.contains("(Note"), "no notes, no note lines");
+        assert_eq!(&lines[2..5], &["; PenCreator: part", "; Device: {}".replace("{}", &dev.name).as_str(), "; Note: Birch <3 mm>, first"][..], "{with_notes}");
+        assert_eq!(lines[5], "; Note: glue");
+        assert!(!text.contains("; Note"), "no notes, no note lines");
         assert_eq!(lines[lines.len() - 2], "M30");
-        assert!(lines.last().unwrap().starts_with("(done ") && !lines.last().unwrap().contains('{'), "{text}");
+        assert!(lines.last().unwrap().starts_with("; done ") && !lines.last().unwrap().contains('{'), "{text}");
         assert!(dev.check_variables().is_ok());
         dev.frame.very_end = "{nope}".into();
         assert!(dev.check_variables().unwrap_err().contains("Very end of the file"));
         dev.frame = Default::default();
-        dev.pen_change.gcode = "(into {layer_name} {layer_index}/{total_layers})".into();
+        dev.pen_change.gcode = "; into {layer_name} {layer_index}/{total_layers}".into();
         assert!(dev.check_variables().is_ok());
         dev.pen.delay_ms = 2000.0;
         dev.flavour = Flavour { decimal_point: true, percent: true, dwell: DwellWord::XSeconds, line_numbers: true, number_step: 5, remove_comments: true };
@@ -1089,7 +1090,7 @@ mod tests {
         assert_eq!((l[0], l[l.len() - 1]), ("%", "%"));
         assert!(l[1].starts_with("N5 G21 G90 G17"), "{}", l[1]);
         assert!(l.iter().any(|x| x.contains("G4 X2.")), "{g}");
-        assert!(!g.contains("(PenCreator"));
+        assert!(!g.contains("; PenCreator"));
         // The old device files read as they were.
         let old: Device = serde_json::from_str(&serde_json::to_string(&Device::dummy()).unwrap().replace(",\"frame\"", ",\"zzz\"")).unwrap();
         assert!(old.frame == Default::default() && old.flavour.is_default());
@@ -1252,14 +1253,14 @@ mod tests {
         let mut dev = Device::dummy();
         // Without a place the job stops where it is, as before.
         let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
-        assert!(g.contains("M0 (Change the pen to: Red pen, 0.4 mm)") && !g.contains("X-30"), "{g}");
+        assert!(g.contains("M0 ; Change the pen to: Red pen, 0.4 mm") && !g.contains("X-30"), "{g}");
         // With one: up, to the place, the G-code of the mechanism, the stop, then on to the drawing.
         dev.pen_change = crate::device::PenChange { enabled: true, x: -30.0, y: 100.0, pause: true, gcode: "M8\n\n G4 P1 ".into() };
         let prog = generate(&scene, &layers, &dev);
         assert!(prog.moves.iter().any(|m| m.kind == MoveKind::Travel && m.to == [-30.0, 100.0]), "the preview shows the way to the place");
         let g = to_gcode(&prog, &dev, &layers, &PenLibrary::new(), "t");
         let at = g.find("G0 X-30 Y100").expect(&g);
-        let m0 = g.find("M0 (Change the pen to: Red pen, 0.4 mm)").expect(&g);
+        let m0 = g.find("M0 ; Change the pen to: Red pen, 0.4 mm").expect(&g);
         let (m8, g4) = (g.find("M8\n").expect(&g), g.rfind("G4 P1\n").expect(&g));
         assert!(at < m8 && m8 < g4 && g4 < m0, "{g}");
         assert!(g[..at].rfind("G0 Z3").is_some(), "the pen is up before it drives there: {g}");
@@ -1269,7 +1270,7 @@ mod tests {
         // A mechanism that needs no stop: the lines are sent and the job goes on.
         dev.pen_change.pause = false;
         let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "t");
-        assert!(!g.contains("M0") && g.contains("M8\n") && g.contains("(Change the pen to: Red pen"), "{g}");
+        assert!(!g.contains("M0") && g.contains("M8\n") && g.contains("; Change the pen to: Red pen"), "{g}");
         // Two layers with the same pen need no change at all.
         let mut same = layers.clone();
         same[1].color = same[0].color;
@@ -1287,9 +1288,9 @@ mod tests {
         let dev = Device::dummy();
         let layers = default_layers();
         let g = to_gcode(&generate(&scene, &layers, &dev), &dev, &layers, &PenLibrary::new(), "test");
-        assert!(g.starts_with("(PenCreator: test)"));
-        assert!(g.contains("M0 (Change the pen to: Red pen, 0.4 mm)"), "{g}");
-        assert!(!g.contains("M0 (Change the pen to: Black"), "no stop before the first pen");
+        assert!(g.starts_with("; PenCreator: test"));
+        assert!(g.contains("M0 ; Change the pen to: Red pen, 0.4 mm"), "{g}");
+        assert!(!g.contains("M0 ; Change the pen to: Black"), "no stop before the first pen");
         assert_eq!(g.matches("G0 Z0\n").count(), 2, "down once per pen: {g}");
         assert!(g.trim_end().ends_with("M30"));
         // The pen is up before every travel: no G0 X with the pen down.
@@ -1409,7 +1410,7 @@ mod tests {
         assert!(g.contains("M280 P0 S10\nG4 P0.05\n"), "every line of its own, trimmed");
         // Before the job ends the pen is up.
         let end = g.rfind("M280 P0 S90").unwrap();
-        assert!(end < g.find("(End of the job)").unwrap());
+        assert!(end < g.find("; End of the job").unwrap());
         assert_eq!(pen_gcode(&dev, false), "G21 G90\nM280 P0 S90\n");
         assert!(frame_gcode([0.0, 0.0, 10.0, 10.0], &dev).starts_with("G21 G90\nM280 P0 S90\nG0 X"));
         // Empty, the same for up and down, or not plain ASCII: refused.
@@ -1585,21 +1586,21 @@ mod tests {
         let dev = Device::dummy();
         let prog = generate(&scene, &layers, &dev);
         let g = to_gcode(&prog, &dev, &layers, &PenLibrary::default(), "comments");
-        assert!(g.is_ascii() && g.contains("(Layer: Pioro czerwien)"), "{g}");
-        for want in ["(Job: 2 layers", "(Part 1 of 2 of the job:", "(Fill start:", "(Fill end)", "(Line 1 of 1 start: closed", "(Pass 2 of 2)", "(Line 1 end)", "(End of layer", "(End of the job)"] {
+        assert!(g.is_ascii() && g.contains("; Layer: Pioro czerwien"), "{g}");
+        for want in ["; Job: 2 layers", "; Part 1 of 2 of the job:", "; Fill start:", "; Fill end", "; Line 1 of 1 start: closed", "; Pass 2 of 2", "; Line 1 end", "; End of layer", "; End of the job"] {
             assert!(g.contains(want), "{want} missing in:\n{g}");
         }
         for l in g.lines() {
             assert!(l.len() <= 80, "too long: {l}");
-            if l.starts_with('(') {
-                assert!(l.ends_with(')') && l[1..l.len() - 1].chars().all(|c| c != '(' && c != ')' && c != ';'), "{l}");
+            if let Some(c) = l.strip_prefix("; ") {
+                assert!(c.chars().all(|c| c != '(' && c != ')' && c != ';'), "{l}");
             }
         }
-        assert_eq!(g.lines().filter(|l| l.starts_with("(Layer:")).count(), 2);
+        assert_eq!(g.lines().filter(|l| l.starts_with("; Layer:")).count(), 2);
         // The commands are the same as without the comments.
         let mut bare = prog.clone();
         bare.notes.clear();
-        let strip = |t: &str| t.lines().filter(|l| !l.starts_with('(')).map(String::from).collect::<Vec<_>>();
+        let strip = |t: &str| t.lines().filter(|l| !l.starts_with(';')).map(String::from).collect::<Vec<_>>();
         assert_eq!(strip(&g), strip(&to_gcode(&bare, &dev, &layers, &PenLibrary::default(), "comments")));
     }
 }

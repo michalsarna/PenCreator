@@ -478,15 +478,15 @@ mod tests {
         let one = a.sides_in_one(pa.clone(), pb.clone(), true);
         let g = crate::plot::to_gcode_info(&one, &a.device, &a.layers, &a.pens, &info);
         let at = |t: &str| g.find(t).unwrap_or_else(|| panic!("no {t:?} in\n{g}"));
-        let (side_a, stop, side_b) = (at("(Side A)"), at("M0 (Turn the material over"), at("(Side B:"));
+        let (side_a, stop, side_b) = (at("; Side A"), at("M0 ; Turn the material over"), at("; Side B:"));
         assert!(side_a < stop && stop < side_b, "{g}");
         assert_eq!(g.matches("M30").count(), 1);
         assert!(!g[..stop].lines().rev().take_while(|l| !l.starts_with("G1")).any(|l| l.starts_with("G1")));
         // Without the stop, and each side alone.
         let g = crate::plot::to_gcode_info(&a.sides_in_one(pa.clone(), pb.clone(), false), &a.device, &a.layers, &a.pens, &info);
-        assert!(!g.contains("M0 (Turn") && g.contains("(Side B:"));
+        assert!(!g.contains("M0 ; Turn") && g.contains("; Side B:"));
         let g = crate::plot::to_gcode_info(&pb, &a.device, &a.layers, &a.pens, &info);
-        assert!(g.contains("(Side B:") && !g.contains("(Side A)"));
+        assert!(g.contains("; Side B:") && !g.contains("; Side A"));
     }
 
     /// The preview has the switch of the side; the picture follows it (the program of the side chosen is shown, never the other one).
@@ -536,7 +536,7 @@ mod tests {
         let tab = |a: &crate::App, key: usize| a.gcode_texts.iter().find(|g| g.slot == key).map(|g| (g.name.clone(), g.text.clone(), g.sides));
         let (ta, tb) = (tab(&a, slot).unwrap(), tab(&a, slot | SIDE_B_TEXT).unwrap());
         assert!(ta.0.ends_with("_A.nc") && tb.0.ends_with("_B.nc"));
-        assert!(ta.1.contains("(Side A)") && !ta.1.contains("Side B") && tb.1.contains("(Side B"), "{}", ta.1);
+        assert!(ta.1.contains("; Side A") && !ta.1.contains("Side B") && tb.1.contains("; Side B"), "{}", ta.1);
         // The tab of side B follows the project (a new note changes what the G-code is made of).
         let before = tb.1.clone();
         a.scene.add(0, Kind::Rect { w: 7.0, h: 7.0 }, Xf::translate(90.0, 40.0));
@@ -547,7 +547,7 @@ mod tests {
         a.show_sides(SaveSides::OneFileWithHold);
         assert!(tab(&a, slot | SIDE_B_TEXT).is_none());
         let whole = tab(&a, slot).unwrap();
-        assert!(whole.1.contains("(Side A)") && whole.1.contains("M0 (Turn") && whole.1.contains("(Side B"), "{}", whole.1);
+        assert!(whole.1.contains("; Side A") && whole.1.contains("M0 ; Turn") && whole.1.contains("; Side B"), "{}", whole.1);
         assert_eq!(whole.2, Some(SaveSides::OneFileWithHold));
     }
 
