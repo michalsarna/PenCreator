@@ -2,11 +2,15 @@
 
 Each release gets the next version number. Newest first.
 
-## v1.0.1 (not released yet)
+## v1.1.0
 
+* **The G-code tab** (baseCreator v2.9.7): the numbers of the lines on the left (only shown, never in the file), the name of every shape beside its first line (**Shape 1**, **Shape 2**…) and on the right a list of the **Stages** of the G-code: the start, the sides, the layers, the shapes, the stops and the end. A click on one brings its line to the top of the text.
+* The question how the G-code of a job on two sides or more faces is shown or saved: the title in the colour of the scheme, a line over the buttons, a green **Preview G-code** and an orange **Cancel**, both bigger.
 * baseCreator v2.9.6 (faster offset fills in the shared code).
 * **Only what lies on the work area is drawn**: a shape wholly beside the work area is not in the G-code, nor on side B of a two-sided drawing, in a file of its own and in one file for both.
 * **The preview shows only what lies on the work area** (the plot and the toolpaths over the work area): a drawing kept beside the work area is never in it and no longer makes the preview slow, and the part of a line that reaches past the edge of the sheet is cut off there. baseCreator v2.9.4.
+* The wiki (in English, Polish, Simplified Chinese and Korean) describes the line numbers and the stages of the G-code tab.
+* baseCreator v2.9.7.
 
 ## v1.0.0
 
