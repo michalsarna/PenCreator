@@ -67,6 +67,8 @@ Every open drawing, the **Preview**, the G-code of a project as text (**Preview 
 
 **Preview G-code** (the button next to **Save G-code**) makes the program of the project (with the postprocessors that are on) and shows it **as text in a tab**, coloured (G and M words, axes, speeds, comments) and open to edits. **Save G-code** in the tab writes it to a file; **Make again** makes it from the project again (with edits it first asks **Lose the edits?**); **Analyse** shows its toolpaths in the **G-code analysis** tab. A tab with edits shows *Changed by hand* and a dot, and asks whether to save them when it is closed. Without edits the text is made again by itself after the project is saved, the notes change, a setting of the device changes or the postprocessors change. **Settings → View options… → Preview G-code after saving** (off by default) opens the saved file in the analysis after every **Save G-code**.
 
+**Line numbers and stages:** the numbers of the lines stand on the left (only shown, never in the file), and every shape has its name (**Shape 1**, **Shape 2**…) beside its first line. The list of **Stages** on the right has a small box for the start, side A and B, every layer, element and shape, every stop (M0) and the end of the job: a click brings its line to the top of the text. The stage of the first line in view is lit.
+
 ## View options
 
 **Settings → View options…** has the main and the secondary grid, the colours of the work area and of the space around it, the line thickness, and:

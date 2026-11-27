@@ -51,4 +51,4 @@
 * **机器控制：** 点动、归零、宏、固件设置、校准、统计（参见[机器控制](Machine-Control-ZH)）。
 * **计划中：** 单线字体。
 
-最新版本：**v1.0.0** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · 许可证：[MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) 或 [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE)，任选其一
+最新版本：**v1.1.0** · [Releases](https://github.com/michalsarna/PenCreator/releases) · [Issues](https://github.com/michalsarna/PenCreator/issues) · 许可证：[MIT](https://github.com/michalsarna/PenCreator/blob/main/LICENSE) 或 [Apache-2.0](https://github.com/michalsarna/PenCreator/blob/main/LICENSE-APACHE)，任选其一

@@ -67,6 +67,8 @@ Każdy otwarty rysunek, **Podgląd**, G-code projektu jako tekst (**Podgląd G-c
 
 **Podgląd G-code** (przycisk obok **Zapisz G-code**) robi program projektu (z włączonymi postprocesorami) i pokazuje go **jako tekst w karcie**, pokolorowany (słowa G i M, osie, prędkości, komentarze) i otwarty do edycji. **Zapisz G-code** w karcie zapisuje go do pliku; **Wygeneruj ponownie** robi go od nowa z projektu (przy zmianach najpierw pyta **Stracić zmiany?**); **Analizuj** pokazuje jego ścieżki w karcie **Analiza G-code**. Karta ze zmianami pokazuje *Zmieniony ręcznie* i kropkę, a przy zamykaniu pyta, czy je zapisać. Bez zmian tekst jest robiony od nowa sam po zapisaniu projektu, zmianie notatek, zmianie ustawienia urządzenia albo zmianie postprocesorów. **Ustawienia → Opcje widoku… → Podgląd G-code po zapisaniu** (domyślnie wyłączone) otwiera zapisany plik w analizie po każdym **Zapisz G-code**.
 
+**Numery wierszy i etapy:** po lewej stoją numery wierszy (tylko na ekranie, nigdy w pliku), a każdy kształt ma swoją nazwę (**Kształt 1**, **Kształt 2**…) obok swojego pierwszego wiersza. Lista **Etapy** po prawej ma małe okienko dla początku, strony A i B, każdej warstwy, elementu i kształtu, każdego zatrzymania (M0) i końca zadania: kliknięcie przenosi jego wiersz na górę tekstu. Etap pierwszego widocznego wiersza jest podświetlony.
+
 ## Opcje widoku
 
 **Ustawienia → Opcje widoku…** ma siatkę główną i pomocniczą, kolory obszaru roboczego i przestrzeni wokół niego, grubość linii oraz:
