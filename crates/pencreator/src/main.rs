@@ -16,6 +16,8 @@ mod gcode_view_glue;
 mod panes_glue;
 #[cfg(test)]
 mod grbl_sim_tests;
+#[cfg(test)]
+mod perf_tests;
 mod guide;
 mod menu;
 mod pens;
