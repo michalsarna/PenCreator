@@ -4,8 +4,9 @@ Each release gets the next version number. Newest first.
 
 ## v1.0.1 (not released yet)
 
+* baseCreator v2.9.6 (faster offset fills in the shared code).
 * **Only what lies on the work area is drawn**: a shape wholly beside the work area is not in the G-code, nor on side B of a two-sided drawing, in a file of its own and in one file for both.
-* **The preview shows only what lies on the work area** (the plot and the toolpaths over the work area): a drawing kept beside the work area is never in it and no longer makes the preview slow, and the part of a line that reaches past the edge of the sheet is cut off there. The G-code is not changed. baseCreator v2.9.4.
+* **The preview shows only what lies on the work area** (the plot and the toolpaths over the work area): a drawing kept beside the work area is never in it and no longer makes the preview slow, and the part of a line that reaches past the edge of the sheet is cut off there. baseCreator v2.9.4.
 
 ## v1.0.0
 
