@@ -387,7 +387,9 @@ impl App {
         let (a, b) = self.sides_scenes();
         let empty = Scene::default();
         let flip = self.two.as_ref().map_or(FlipAxis::SideToSide, |t| t.flip);
+        // Only what lies on the work area, of each side.
         let prog = |s: &Scene, side_b: bool| {
+            let s = &s.on_area(self.device.area.x, self.device.area.y);
             let mut p = crate::plot::generate_with(s, &self.layers, &self.device, crate::plot::JobOptions { one_by_one: self.one_by_one });
             p.notes.insert(0, crate::plot::Note { at: 0, text: base_ui::two_sided::side_comment(side_b, flip), before_layer: true });
             p
