@@ -44,7 +44,17 @@ impl PlotView {
 impl App {
     /// The moves of the pen for the project as it is now.
     pub(crate) fn make_program(&self) -> Program {
-        let mut p = plot::generate_with(&self.job_scene(), &self.layers, &self.device, plot::JobOptions { one_by_one: self.one_by_one });
+        self.program_of(&self.job_scene())
+    }
+
+    /// The moves of the preview (the plot window and the toolpaths over the work area): only of what lies on the work area. What
+    /// lies beside it is never in a preview, and a big drawing kept there does not make the preview slow.
+    pub(crate) fn preview_program(&self) -> Program {
+        self.program_of(&self.job_scene().on_area(self.device.area.x, self.device.area.y))
+    }
+
+    fn program_of(&self, scene: &base_core::scene::Scene) -> Program {
+        let mut p = plot::generate_with(scene, &self.layers, &self.device, plot::JobOptions { one_by_one: self.one_by_one });
         // A two-sided drawing says at its head which side it is.
         if let Some(t) = &self.two {
             p.notes.insert(0, plot::Note { at: 0, text: base_ui::two_sided::side_comment(t.shown_b, t.flip), before_layer: true });
@@ -86,7 +96,7 @@ impl App {
     /// The program is made again when the project changed since it was made.
     pub(crate) fn refresh_program(&mut self) {
         if self.prog.is_none() || self.prog_rev != self.job_stamp() {
-            self.prog = Some(self.make_program());
+            self.prog = Some(self.preview_program());
             self.prog_rev = self.job_stamp();
         }
     }
@@ -106,7 +116,10 @@ impl App {
         let h = self.device.area.y;
         let to_screen = |p: plot::P2| self.w2s(v.origin, base_core::geom::Pt::new(p[0], h - p[1]));
         // Moves that follow each other are one line, what is too small or out of sight is left out (`base_ui::lines`).
-        let mut lines = base_ui::lines::Lines::new(v.painter.clip_rect());
+        // Only on the work area: the part of a path that reaches past its edge is cut off there.
+        let bed = egui::Rect::from_two_pos(self.w2s(v.origin, base_core::geom::Pt::new(0.0, 0.0)), self.w2s(v.origin, base_core::geom::Pt::new(self.device.area.x, h)));
+        let on_bed = v.painter.with_clip_rect(v.painter.clip_rect().intersect(bed.expand(1.0)));
+        let mut lines = base_ui::lines::Lines::new(on_bed.clip_rect());
         let travel = Stroke::new(0.6, Color32::from_rgb(0x70, 0x90, 0xc0).gamma_multiply(0.8));
         for m in &prog.moves {
             match m.kind {
@@ -117,7 +130,7 @@ impl App {
                 MoveKind::Travel => lines.add(to_screen(m.from), to_screen(m.to), travel, false),
             }
         }
-        lines.paint(&v.painter);
+        lines.paint(&on_bed);
     }
 
     /// The camera view in the work area, in place of the drawing.
@@ -129,7 +142,7 @@ impl App {
 
     /// Open the plot window with a fresh program.
     pub(crate) fn open_preview(&mut self) {
-        self.prog = Some(self.make_program());
+        self.prog = Some(self.preview_program());
         self.prog_rev = self.job_stamp();
         self.show_plot = true;
     }
@@ -281,7 +294,8 @@ impl App {
             let paper = self.ed.grid_prefs.preview_color.map_or(Color32::WHITE, |c| Color32::from_rgba_unmultiplied(c[0], c[1], c[2], c[3]));
             let (w, h) = (self.device.area.x, self.device.area.y);
             // The shapes that are drawn, in the coordinates of the plot (Y up from the bottom of the sheet).
-            let drawn = self.scene.shapes.iter().filter(|s| self.layers.get(s.layer).is_some_and(|l| l.enabled && l.visible));
+            let on = self.scene.on_area(w, h);
+            let drawn = on.shapes.iter().filter(|s| self.layers.get(s.layer).is_some_and(|l| l.enabled && l.visible));
             let parts = base_ui::dims::Features::of(drawn, &|p| base_core::geom::Pt::new(p.x, h - p.y));
             let shown = base_ui::editor::EditorHost::units(self);
             let sheet = Sheet { back: base_ui::editor::EditorHost::workspace_fill(self), size: (w, h), fill: paper, parts: &parts, units: (shown, self.device.units) };
@@ -381,8 +395,10 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
     let mut pen_at = None;
     let marks: Vec<crate::pens::Pen> = layers.iter().map(|l| crate::pens_ui::pen_of_layer(l, pens)).collect();
     let mut shapes = vec![];
-    // Moves that follow each other are one line, what is too small or out of sight is left out (`base_ui::lines`).
-    let mut lines = base_ui::lines::Lines::new(painter.clip_rect());
+    // Moves that follow each other are one line, what is too small or out of sight is left out (`base_ui::lines`). Nothing is drawn
+    // beside the sheet: the part of a line that reaches past its edge is cut off there.
+    let on_paper = painter.with_clip_rect(painter.clip_rect().intersect(paper.expand(1.0)));
+    let mut lines = base_ui::lines::Lines::new(on_paper.clip_rect());
     let travel = Stroke::new(1.0, Color32::from_rgb(0x60, 0x90, 0xd0));
     // A drag knife: the moves are the path of its axis (grey); what the tip cuts is drawn for every cut done so far.
     let knife = !prog.knife_tips.is_empty();
@@ -428,15 +444,15 @@ fn show_plot(ui: &mut egui::Ui, view: &mut PlotView, prog: &Program, layers: &[c
             MoveKind::Travel => {}
         }
     }
-    lines.paint(&painter);
-    painter.extend(shapes);
+    lines.paint(&on_paper);
+    on_paper.extend(shapes);
     if knife {
         if cutting || view.progress >= 0.999 {
             cuts_done += 1;
         }
         for (layer, tip) in prog.knife_tips.iter().take(cuts_done) {
             let colour = layers.get(*layer).map_or(Color32::BLACK, |l| l.color32());
-            painter.add(egui::Shape::line(tip.iter().map(|p| at(*p)).collect(), Stroke::new(1.6, colour)));
+            on_paper.add(egui::Shape::line(tip.iter().map(|p| at(*p)).collect(), Stroke::new(1.6, colour)));
         }
     }
     if let Some(p) = pen_at {
@@ -468,6 +484,26 @@ mod tests {
     use crate::App;
     use base_core::geom::Xf;
     use base_core::scene::Kind;
+
+    #[test]
+    fn the_preview_never_holds_what_lies_beside_the_work_area() {
+        let ctx = egui::Context::default();
+        let mut a = App::build(&ctx, None, false);
+        let (w, h) = (a.device.area.x, a.device.area.y);
+        a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(20.0, 20.0));
+        a.touch_rev();
+        let on = a.preview_program().moves.len();
+        assert!(on > 0);
+        // Beside the work area, right and below: in the G-code, but not in the preview.
+        a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(w + 50.0, 20.0));
+        a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(20.0, h + 50.0));
+        a.touch_rev();
+        assert_eq!(a.preview_program().moves.len(), on);
+        assert!(a.make_program().moves.len() > on);
+        a.open_preview();
+        assert!(a.show_plot);
+        assert_eq!(a.prog.as_ref().unwrap().moves.len(), on);
+    }
 
     #[test]
     fn the_window_follows_the_project_and_is_drawn() {
