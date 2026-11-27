@@ -42,15 +42,15 @@ impl PlotView {
 }
 
 impl App {
-    /// The moves of the pen for the project as it is now.
+    /// The moves of the pen for the project as it is now: of what lies at least partly on the work area. What lies beside it is never
+    /// drawn, nor shown in a preview, and a big drawing kept there does not make them slow.
     pub(crate) fn make_program(&self) -> Program {
-        self.program_of(&self.job_scene())
+        self.program_of(&self.job_scene().on_area(self.device.area.x, self.device.area.y))
     }
 
-    /// The moves of the preview (the plot window and the toolpaths over the work area): only of what lies on the work area. What
-    /// lies beside it is never in a preview, and a big drawing kept there does not make the preview slow.
+    /// The moves of the preview (the plot window and the toolpaths over the work area): those of the job.
     pub(crate) fn preview_program(&self) -> Program {
-        self.program_of(&self.job_scene().on_area(self.device.area.x, self.device.area.y))
+        self.make_program()
     }
 
     fn program_of(&self, scene: &base_core::scene::Scene) -> Program {
@@ -494,12 +494,12 @@ mod tests {
         a.touch_rev();
         let on = a.preview_program().moves.len();
         assert!(on > 0);
-        // Beside the work area, right and below: in the G-code, but not in the preview.
+        // Beside the work area, right and below: neither in the preview nor in the G-code.
         a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(w + 50.0, 20.0));
         a.scene.add(0, Kind::Rect { w: 30.0, h: 30.0 }, Xf::translate(20.0, h + 50.0));
         a.touch_rev();
         assert_eq!(a.preview_program().moves.len(), on);
-        assert!(a.make_program().moves.len() > on);
+        assert_eq!(a.make_program().moves.len(), on);
         a.open_preview();
         assert!(a.show_plot);
         assert_eq!(a.prog.as_ref().unwrap().moves.len(), on);
