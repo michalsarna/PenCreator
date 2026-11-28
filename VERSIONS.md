@@ -8,7 +8,10 @@ Each release gets the next version number. Newest first.
 * **Settings → Program options → G-code editor**: the typeface (Noto Sans Mono, JetBrains Mono, IBM Plex Mono or Fira Mono) and the size of the text of the G-code tab, with a sample; the same in every program.
 * **Folding**: an arrow by the number of every line that starts a block (a side, an element, a layer, a pass, a shape, a pass of a shape) folds the block to that line, with how many lines it hides; a click there opens it again.
 * **The right button on a stage** of the list: **Fold** / **Unfold**, and **Preview**: a window with only that shape on the material of the whole job, as if nothing else were made, with its length of cut and time.
-* baseCreator v3.0.1: the window of the preview of one shape keeps its size (it grew up to the height of the screen).
+* **The shape on the drawing**: with the G-code tab beside the drawing (a split view), a click on a shape in the list of stages selects the object it was made from and brings it to the middle of the work area, showing its side or face first. The shape is found by its place: a letter of a text selects the whole text.
+* **Program options with Save and Cancel** at the bottom of the window; the options scroll above them. Cancel puts back what the options were when the window opened; the typeface and size of the G-code editor are taken only when the window is saved or closed.
+* **The list of layers**: the name on the left, cut short with … when it does not fit, and the number of shapes in one column on the right.
+* baseCreator v3.0.2 (v3.0.1: the window of the preview of one shape keeps its size; it grew up to the height of the screen).
 
 ## v1.1.1
 

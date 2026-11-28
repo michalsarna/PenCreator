@@ -3,7 +3,6 @@
 use crate::{App, VERSION};
 use base_ui::dialogs::UpdateConfig;
 use base_ui::i18n::tr;
-use base_ui::window::popup;
 use eframe::egui;
 
 pub static CONFIG: UpdateConfig = UpdateConfig { app_name: "PenCreator", repo: "michalsarna/PenCreator", version: VERSION };
@@ -12,7 +11,9 @@ impl App {
     /// Settings → Program options…: what the program does by itself.
     pub(crate) fn program_options_window(&mut self, ctx: &egui::Context) {
         let mut open = self.show_program_options;
-        popup(ctx, "program_options", &tr("Program options"), [460.0, 480.0], &mut open, |ui| {
+        // Cancel gives back the options as they were when the window opened.
+        let now = (self.check_updates, self.autosave_opts, self.ed.grid_prefs.units);
+        let end = base_ui::options_ui::window(ctx, "program_options", [460.0, 520.0], &mut open, now, |ui| {
             use base_ui::widgets::{options_grid, options_line};
             options_grid(ui, "program_options_updates", |ui| {
                 ui.label(tr("Updates"));
@@ -31,6 +32,11 @@ impl App {
             // The typeface and size of the G-code tab, the same in every program.
             base_ui::gcode_text_ui::options_section(ui);
         });
+        if let base_ui::options_ui::OptionsEnd::Cancelled((check_updates, autosave_opts, units)) = end {
+            self.check_updates = check_updates;
+            self.autosave_opts = autosave_opts;
+            self.ed.grid_prefs.units = units;
+        }
         self.show_program_options = open;
     }
 }
