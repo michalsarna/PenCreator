@@ -517,6 +517,50 @@ mod tests {
         assert!(right(h.state()) <= 31.0, "side A: {}", right(h.state()));
     }
 
+    /// A shape clicked in the stages of the G-code tab selects the object it was drawn from, on its side, in the tab of both sides
+    /// and in the tab of side B alone.
+    #[test]
+    fn a_shape_clicked_in_the_g_code_selects_its_object_on_its_side() {
+        use base_ui::two_sided::{SaveSides, SIDE_B_TEXT};
+        let mut a = crate::tests::app();
+        a.open_setup();
+        a.setup.sides = base_ui::project_setup::Sides::Two;
+        a.setup.marks = false;
+        a.apply_setup();
+        let mut all = vec![];
+        for (w, h, x, y) in [(10.0, 14.0, 20.0, 20.0), (22.0, 6.0, 60.0, 15.0), (8.0, 8.0, 35.0, 60.0)] {
+            all.push((0, a.scene.add(0, Kind::Rect { w, h }, Xf::translate(x, y))));
+        }
+        a.show_side(true);
+        for (w, h, x, y) in [(12.0, 5.0, 70.0, 50.0), (6.0, 18.0, 15.0, 30.0)] {
+            all.push((1, a.scene.add(0, Kind::Rect { w, h }, Xf::translate(x, y))));
+        }
+        a.show_side(false);
+        let slot = a.slot;
+        let check = |a: &mut crate::App, key: usize| {
+            let text = a.gcode_texts.iter().find(|g| g.slot == key).expect("the tab").text.clone();
+            let mut g = base_ui::gcode_text_ui::GcodeText::new(key, "t.nc", text);
+            let shapes: Vec<usize> = g.stages().iter().filter(|s| matches!(s.kind, base_ui::gcode_text_ui::StageKind::Shape(_))).map(|s| s.line).collect();
+            let mut found = vec![];
+            for line in shapes {
+                let l = g.locate(line).expect("a shape that draws");
+                a.show_located(key, &l);
+                assert_eq!(a.two.as_ref().map(|t| t.shown_b), Some(l.face == 1), "its side is shown");
+                let id = a.ed.sel[0];
+                let b = a.scene.shapes.iter().find(|s| s.id == id).and_then(|s| s.bounds()).unwrap();
+                assert!((l.shape[2] - l.shape[0] - b.width()).abs() < 0.05 && (l.shape[3] - l.shape[1] - b.height()).abs() < 0.05, "line {line}: {:?} is not object {id}", l.shape);
+                found.push((l.face, id));
+            }
+            found.sort();
+            found
+        };
+        a.show_sides(SaveSides::OneFileWithHold);
+        all.sort();
+        assert_eq!(check(&mut a, slot), all, "every object found once, on its side");
+        a.show_sides(SaveSides::Separate);
+        assert_eq!(check(&mut a, slot | SIDE_B_TEXT), all[3..].to_vec(), "the tab of side B");
+    }
+
     /// Preview G-code of a two-sided job asks how, then shows one tab with the whole job or a tab for each side; the tab of side B is
     /// made again with the project like the other one.
     #[test]

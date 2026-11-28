@@ -177,6 +177,39 @@ impl App {
         waiting
     }
 
+    /// A shape clicked in the stages of the G-code tab `key`: in a split view, where the drawing is in sight beside the text, the
+    /// object it was made from is selected and brought to the middle of the work area; its project and its side are shown first
+    /// when another one is.
+    pub(crate) fn locate_shape(&mut self, key: usize, line: usize) {
+        if self.panes.is_single() {
+            return;
+        }
+        // The text is read for the places of its shapes only here, at the first click after it was made.
+        if let Some(l) = self.gcode_texts.iter_mut().find(|g| g.slot == key).and_then(|g| g.locate(line)) {
+            self.show_located(key, &l);
+        }
+    }
+
+    /// Select the object of shape `l` of the G-code tab `key` and bring it into view, with its project and its side.
+    pub(crate) fn show_located(&mut self, key: usize, l: &base_ui::gcode_text_ui::Locate) {
+        self.activate_slot(base_ui::two_sided::text_slot(key));
+        let b = l.face == 1;
+        if self.two.as_ref().is_some_and(|t| t.shown_b != b) && l.face < 2 {
+            // The other side is shown: the job is the same, so the G-code is not made again for it.
+            let before = self.gcode_stamp();
+            self.show_side(b);
+            let after = self.gcode_stamp();
+            for g in self.gcode_texts.iter_mut().filter(|g| g.stamp == before) {
+                g.stamp = after;
+            }
+        }
+        let layers = &self.layers;
+        let objects = base_core::locate::objects(&self.scene, |i| layers.get(i).is_some_and(|l| l.enabled));
+        if let Some(id) = base_core::locate::find(&l.shape, &l.side, &objects) {
+            base_ui::editor::EditorHost::show_object(self, id);
+        }
+    }
+
     /// Make the G-code text of the tab `key` again (its project becomes the active one first: the program is made from it). A text of a
     /// two-sided job is made the way it was chosen: the whole job, or the side of the tab.
     fn remake_gcode_text(&mut self, key: usize) {
@@ -285,6 +318,7 @@ impl PaneHost for App {
                             self.status = e;
                         }
                     }
+                    TextAction::Locate(line) => self.locate_shape(slot, line),
                     TextAction::None => {}
                 }
             }

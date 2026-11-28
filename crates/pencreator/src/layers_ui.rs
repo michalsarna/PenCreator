@@ -88,11 +88,9 @@ impl App {
                         changed = true;
                     }
                     let text = format!("{}  ·  {}", l.name, tr(l.draw.label()));
-                    let r = ui.add_sized([ui.available_width() - 44.0, 22.0], egui::Button::selectable(i == active, text));
-                    if r.clicked() {
+                    if base_ui::widgets::layer_button(ui, i == active, &text, counts[i]).clicked() {
                         pick = Some(i);
                     }
-                    ui.label(RichText::new(counts[i].to_string()).color(theme::text_dim())).on_hover_text(tr("Shapes on this layer"));
                 });
             }
         });
