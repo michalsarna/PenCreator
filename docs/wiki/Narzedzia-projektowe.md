@@ -69,6 +69,8 @@ Każdy otwarty rysunek, **Podgląd**, G-code projektu jako tekst (**Podgląd G-c
 
 **Numery wierszy i etapy:** po lewej stoją numery wierszy (tylko na ekranie, nigdy w pliku), a każdy kształt ma swoją nazwę (**Kształt 1**, **Kształt 2**…) obok swojego pierwszego wiersza. Lista **Etapy** po prawej ma małe okienko dla początku, strony A i B, każdej warstwy, elementu i kształtu, każdego zatrzymania (M0) i końca zadania: kliknięcie przenosi jego wiersz na górę tekstu. Etap pierwszego widocznego wiersza jest podświetlony.
 
+**Zwijanie, podgląd jednego kształtu, kolory i czcionka:** strzałka przy numerze wiersza, w którym zaczyna się blok (strona, element, warstwa, przejście, kształt, przejście kształtu), zwija blok do tego wiersza, a obok widać, ile wierszy ukrywa; kliknięcie tam rozwija go z powrotem. Prawy przycisk na etapie z listy zwija go lub rozwija, a **Podgląd** otwiera okienko z samym tym kształtem na materiale całej pracy, tak jakby tylko on miał być wykonany, z jego długością cięcia i czasem. Edytor ma kolory schematu kolorów; krój pisma (Noto Sans Mono, JetBrains Mono, IBM Plex Mono, Fira Mono) i rozmiar ustawia się w **Ustawienia → Opcje programu → Edytor G-code**, wspólnie dla wszystkich programów.
+
 ## Opcje widoku
 
 **Ustawienia → Opcje widoku…** ma siatkę główną i pomocniczą, kolory obszaru roboczego i przestrzeni wokół niego, grubość linii oraz:

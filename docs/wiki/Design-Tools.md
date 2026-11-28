@@ -69,6 +69,8 @@ Every open drawing, the **Preview**, the G-code of a project as text (**Preview 
 
 **Line numbers and stages:** the numbers of the lines stand on the left (only shown, never in the file), and every shape has its name (**Shape 1**, **Shape 2**…) beside its first line. The list of **Stages** on the right has a small box for the start, side A and B, every layer, element and shape, every stop (M0) and the end of the job: a click brings its line to the top of the text. The stage of the first line in view is lit.
 
+**Folding, the preview of one shape, colours and font:** an arrow by the number of a line that starts a block (a side, an element, a layer, a pass, a shape, a pass of a shape) folds the block to that line, with how many lines it hides beside it; a click there opens it again. The right button on a stage of the list folds or unfolds it, and **Preview** opens a window with only that shape on the material of the whole job, as if nothing else were made, with its length of cut and time. The editor has the colours of the colour scheme; its typeface (Noto Sans Mono, JetBrains Mono, IBM Plex Mono, Fira Mono) and size are set in **Settings → Program options → G-code editor**, the same in every program.
+
 ## View options
 
 **Settings → View options…** has the main and the secondary grid, the colours of the work area and of the space around it, the line thickness, and:
