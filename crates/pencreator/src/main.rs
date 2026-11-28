@@ -438,6 +438,7 @@ impl App {
     fn new(cc: &eframe::CreationContext<'_>) -> App {
         // The name recorded in the projects that are saved (Program options), shared by all the programs.
         base_ui::authorship_ui::init(&data_paths().base);
+        base_ui::gcode_text_ui::init(&data_paths().base);
         let mut app = App::build(&cc.egui_ctx, cc.storage, cfg!(target_os = "macos"));
         if app.check_updates {
             app.update.start(&cc.egui_ctx, &update_glue::CONFIG, false);
